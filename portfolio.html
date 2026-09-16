@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Forascom فرصكم — المشاريع والحلول الرقمية</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@500;700&amp;family=Plus+Jakarta+Sans:wght@500;700;800&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#00101D",
+            "surface-dim": "#000B14",
+            "surface-container-lowest": "#00080F",
+            "surface-container-low": "#001525",
+            "surface-container": "#001A2E",
+            "surface-container-high": "#03243F",
+            "surface-container-highest": "#072F50",
+            "surface-bright": "#0B3960",
+            "primary": "#99CBFF",
+            "primary-container": "#1D9BF0",
+            "tertiary": "#00C4EE",
+            "tertiary-glow": "rgba(0, 196, 238, 0.4)",
+            "on-surface": "#E0E3E5",
+            "on-surface-variant": "#94A3B8",
+            "outline": "#64748B",
+            "outline-variant": "#1E293B",
+            "error": "#FF6B6B"
+          },
+          fontFamily: {
+            sans: ['Cairo', 'Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+            body: ['Cairo', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+
+  <style>
+    @layer base {
+      body {
+        font-family: 'Cairo', sans-serif;
+        background-color: #00101D;
+        color: #E0E3E5;
+        overflow-x: hidden;
+      }
+    }
+
+    /* Ambient glow & backdrop animations */
+    @keyframes ambientDrift {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.15;
+      }
+
+      50% {
+        transform: translate(30px, -20px) scale(1.1);
+        opacity: 0.25;
+      }
+    }
+
+    .animate-ambient-1 {
+      animation: ambientDrift 14s ease-in-out infinite alternate;
+    }
+
+    .animate-ambient-2 {
+      animation: ambientDrift 18s ease-in-out 4s infinite alternate;
+    }
+
+    .cyan-glow-text {
+      text-shadow: 0 0 24px rgba(0, 196, 238, 0.55), 0 0 45px rgba(0, 196, 238, 0.25);
+    }
+
+    .cyan-glow-box {
+      box-shadow: 0 0 35px -5px rgba(0, 196, 238, 0.3), inset 0 0 20px -5px rgba(0, 196, 238, 0.15);
+    }
+
+    .cyan-glow-box-subtle {
+      box-shadow: 0 0 25px -8px rgba(0, 196, 238, 0.22);
+    }
+
+    .cyan-border {
+      border: 1px solid rgba(0, 196, 238, 0.3);
+    }
+
+    .btn-smooth {
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .btn-smooth:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Project card transitions */
+    .project-card {
+      transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card.filter-hidden {
+      display: none !important;
+      opacity: 0;
+      transform: scale(0.96);
+    }
+  </style>
+
+</head>
+
+<body class="bg-surface min-h-screen text-on-surface antialiased selection:bg-tertiary/20 selection:text-tertiary">
+
+  <!-- GLOBAL AMBIENT BACKDROPS -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div
+      class="absolute -top-40 -right-40 w-[650px] h-[650px] rounded-full bg-tertiary/10 blur-[130px] animate-ambient-1">
+    </div>
+    <div
+      class="absolute top-1/3 -left-48 w-[600px] h-[600px] rounded-full bg-primary-container/10 blur-[140px] animate-ambient-2">
+    </div>
+    <div
+      class="absolute bottom-10 right-1/4 w-[700px] h-[700px] rounded-full bg-tertiary/10 blur-[160px] animate-ambient-1">
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION BAR (MULTI-PAGE NAVIGATION)
+       ========================================================================== -->
+  <!-- GLOBAL AMBIENT BACKDROPS -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div
+      class="absolute -top-40 -right-40 w-[650px] h-[650px] rounded-full bg-tertiary/10 blur-[130px] animate-ambient-1">
+    </div>
+    <div
+      class="absolute top-1/3 -left-48 w-[600px] h-[600px] rounded-full bg-primary-container/10 blur-[140px] animate-ambient-2">
+    </div>
+    <div
+      class="absolute bottom-10 right-1/4 w-[700px] h-[700px] rounded-full bg-tertiary/10 blur-[160px] animate-ambient-1">
+    </div>
+  </div>
+
+
+  <!-- 1. DESKTOP TOP NAVIGATION HEADER -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-[#00101D]/80 backdrop-blur-xl border-b border-white/5 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-10">
+
+        <a href="index.html" class="flex items-center gap-3 group">
+          <img src="assets/images/Logo.png" alt="Forascom — فرصكم"
+            class="h-12 w-auto object-contain hover:scale-105 transition-transform" />
+        </a>
+
+        <nav class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-7 font-semibold text-sm">
+          <a class="text-sm font-semibold text-on-surface-variant hover:text-white transition-colors" href="index.html">
+            الرئيسية
+          </a>
+
+          <a class="text-sm font-semibold text-on-surface-variant hover:text-white transition-colors" href="about.html">
+            عن
+            فرصكم
+          </a>
+
+          <a class="text-sm font-semibold text-on-surface-variant hover:text-white transition-colors"
+            href="services.html">
+            خدماتنا</a>
+
+
+          <div class="relative py-2"><a class="text-sm font-bold text-tertiary cyan-glow-text transition-colors"
+              href="portfolio.html">معرض الأعمال</a>
+
+            <span class="absolute bottom-0 inset-x-0 h-0.5 bg-tertiary shadow-[0_0_8px_#00C4EE] rounded-full"></span>
+          </div>
+
+
+          <a class="text-sm font-semibold text-on-surface-variant hover:text-white transition-colors"
+            href="contact.html">تواصل معنا</a>
+
+        </nav>
+
+      </div>
+      <div class="flex items-center gap-4"><a
+          class="btn-smooth inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-[#00101D] bg-tertiary hover:bg-[#34d4f6] shadow-[0_0_20px_rgba(0,196,238,0.4)]"
+          href="contact.html"><span class="">استشارة مجانية</span><span
+            class="material-symbols-outlined text-base">arrow_back</span></a>
+      </div>
+    </div>
+  </header>
+
+
+
+
+  <!-- ==========================================================================
+       PAGE HERO — PORTFOLIO & CASE STUDIES (FORASCOM SHOWCASE)
+       ========================================================================== -->
+
+  <!-- 2. HERO SECTION (Desktop 2-Column Split) -->
+  <main class="relative z-10 pt-20 pb-16">
+    <section class="max-w-7xl mx-auto px-8 py-12 lg:py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <!-- Left Editorial Copy (7 Cols) -->
+        <div class="lg:col-span-7 flex flex-col gap-6">
+          <div
+            class="inline-flex items-center gap-2.5 self-start px-3.5 py-1.5 rounded-full bg-surface-container-high/90 border border-tertiary/30 shadow-[0_0_15px_rgba(0,196,238,0.15)]">
+            <span class="w-2.5 h-2.5 rounded-full bg-tertiary animate-ping shadow-[0_0_8px_#00C4EE]"></span>
+            <span class="text-xs font-bold font-mono tracking-wider text-tertiary">FORASCOM SHOWCASE • سِجل الإنجازات
+              والحلول</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.2] tracking-tight text-white">
+            حلول تحوّل <span class="text-tertiary cyan-glow-text inline-block">التحديات</span> إلى فرص.
+          </h1>
+          <p class="text-lg lg:text-xl text-on-surface-variant font-normal leading-relaxed max-w-2xl">
+            مجموعة مختارة من الأنظمة والحلول الرقمية التي بنيناها لمعالجة تحديات أعمال حقيقية، وتحويل الاختناقات
+            التشغيلية
+            إلى قنوات نمو مستدام، كفاءة غير مسبوقة، وقيمة ملموسة تظهر في نتائج الشركات.
+          </p>
+          <!-- Quick Metrics Bar -->
+          <div class="grid grid-cols-3 gap-4 pt-4 border-t border-white/10 max-w-xl">
+            <div class="flex flex-col">
+              <span class="text-2xl lg:text-3xl font-black text-tertiary font-mono">12+</span>
+              <span class="text-xs font-medium text-on-surface-variant mt-0.5">مشروع تم تسليمه</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-2xl lg:text-3xl font-black text-white font-mono">99.98%</span>
+              <span class="text-xs font-medium text-on-surface-variant mt-0.5">جاهزية تشغيلية</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-2xl lg:text-3xl font-black text-[#25D366] font-mono">100%</span>
+              <span class="text-xs font-medium text-on-surface-variant mt-0.5">بيئات إنتاج نشطة</span>
+            </div>
+          </div>
+        </div>
+        <!-- Right System Architecture Visual Card (5 Cols) -->
+        <div class="lg:col-span-5">
+          <div
+            class="relative rounded-3xl bg-surface-container/90 backdrop-blur-xl p-8 cyan-border cyan-glow-box shadow-2xl overflow-hidden">
+            <!-- Ambient corner decoration -->
+            <div class="absolute -top-16 -left-16 w-40 h-40 rounded-full bg-tertiary/20 blur-2xl pointer-events-none">
+            </div>
+            <div class="flex items-center justify-between pb-6 border-b border-white/10">
+              <div class="flex items-center gap-2.5">
+                <span class="w-3 h-3 rounded-full bg-error"></span>
+                <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                <span class="w-3 h-3 rounded-full bg-tertiary"></span>
+                <span class="text-xs font-mono tracking-widest text-outline uppercase mr-2">SYSTEM PIPELINE</span>
+              </div>
+              <span
+                class="px-2.5 py-1 rounded-md bg-tertiary/10 border border-tertiary/30 text-tertiary text-xs font-bold font-mono">منهجية
+                فرصكم</span>
+            </div>
+            <!-- Pipeline Flow Stack -->
+            <div class="relative flex flex-col gap-4 mt-6">
+              <!-- Step 1 -->
+              <div
+                class="flex items-center justify-between p-4 rounded-xl bg-surface-container-high/80 border border-white/5 hover:border-tertiary/40 transition-all group">
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-outline group-hover:text-tertiary border border-white/5 transition-colors">
+                    <span class="material-symbols-outlined text-xl">lightbulb</span>
+                  </div>
+                  <div>
+                    <span class="block text-xs font-mono text-outline">STAGE 01</span>
+                    <h4 class="text-base font-bold text-white">الفكرة — Idea</h4>
+                  </div>
+                </div>
+                <span
+                  class="w-2.5 h-2.5 rounded-full bg-outline-variant group-hover:bg-tertiary transition-colors"></span>
+              </div>
+              <!-- Connecting Line -->
+              <div class="w-0.5 h-4 bg-gradient-to-b from-tertiary/60 to-primary-container mr-9"></div>
+              <!-- Step 2 -->
+              <div
+                class="flex items-center justify-between p-4 rounded-xl bg-surface-container-high/80 border border-white/5 hover:border-tertiary/40 transition-all group">
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary-container border border-primary-container/30">
+                    <span class="material-symbols-outlined text-xl">terminal</span>
+                  </div>
+                  <div>
+                    <span class="block text-xs font-mono text-outline">STAGE 02</span>
+                    <h4 class="text-base font-bold text-white">البرمجة — Code</h4>
+                  </div>
+                </div>
+                <span class="w-2.5 h-2.5 rounded-full bg-primary-container shadow-[0_0_8px_#1D9BF0]"></span>
+              </div>
+              <!-- Connecting Line -->
+              <div class="w-0.5 h-4 bg-gradient-to-b from-primary-container to-tertiary mr-9"></div>
+              <!-- Step 3 -->
+              <div
+                class="flex items-center justify-between p-4 rounded-xl bg-surface-container-high/80 border border-white/5 hover:border-tertiary/40 transition-all group">
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-tertiary border border-tertiary/30">
+                    <span class="material-symbols-outlined text-xl">check_circle</span>
+                  </div>
+                  <div>
+                    <span class="block text-xs font-mono text-outline">STAGE 03</span>
+                    <h4 class="text-base font-bold text-white">الحل — Solution</h4>
+                  </div>
+                </div>
+                <span class="w-2.5 h-2.5 rounded-full bg-tertiary shadow-[0_0_8px_#00C4EE] animate-pulse"></span>
+              </div>
+              <!-- Connecting Line (Glowing Active) -->
+              <div class="w-0.5 h-4 bg-gradient-to-b from-tertiary to-tertiary mr-9 shadow-[0_0_8px_#00C4EE]"></div>
+              <!-- Step 4 (Active Opportunity) -->
+              <div
+                class="flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-surface-bright/70 via-surface-container-high to-surface-container border border-tertiary shadow-[0_0_20px_rgba(0,196,238,0.25)]">
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-tertiary/20 flex items-center justify-center text-tertiary border border-tertiary shadow-[0_0_12px_rgba(0,196,238,0.5)]">
+                    <span class="material-symbols-outlined text-xl">rocket_launch</span>
+                  </div>
+                  <div>
+                    <span class="block text-xs font-mono text-tertiary font-bold">STAGE 04 — DELIVERED</span>
+                    <h4 class="text-base font-extrabold text-white">الفرصة — Opportunity</h4>
+                  </div>
+                </div>
+                <span class="w-3.5 h-3.5 rounded-full bg-tertiary shadow-[0_0_12px_#00C4EE] animate-ping"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+
+
+
+
+
+  <!-- ==========================================================================
+       FILTER TABS + PROJECT GRID
+       ========================================================================== -->
+  <!-- 3. CATEGORY FILTER NAVIGATION BAR -->
+  <!-- 3. CATEGORY FILTER NAVIGATION BAR -->
+  <section class="max-w-7xl mx-auto px-8 py-6">
+    <div
+      class="p-2.5 rounded-2xl bg-surface-container-low/80 backdrop-blur-lg border border-white/5 flex items-center justify-between flex-wrap gap-3">
+      <div class="flex items-center gap-2.5 flex-wrap" id="category-filters">
+        <button
+          class="filter-btn px-6 py-2.5 rounded-xl text-sm transition-all flex items-center gap-2 font-extrabold bg-tertiary text-[#00101D] shadow-[0_0_20px_rgba(0,196,238,0.4)]"
+          data-filter="all">
+          <span class="">الكل</span>
+          <span class="filter-counter px-2 py-0.5 rounded-full bg-[#00101D]/20 text-xs font-mono font-bold">5</span>
+        </button>
+        <button
+          class="filter-btn px-5 py-2.5 rounded-xl hover:bg-surface-container-high hover:text-white font-bold text-sm border border-transparent hover:border-tertiary/30 transition-all flex items-center gap-2 bg-surface-container-high/60 text-on-surface-variant"
+          data-filter="ai">
+          <span class="">ذكاء اصطناعي</span>
+          <span class="filter-counter px-2 py-0.5 rounded-full bg-white/5 text-xs font-mono">2</span>
+        </button>
+        <button
+          class="filter-btn px-5 py-2.5 rounded-xl hover:bg-surface-container-high hover:text-white font-bold text-sm border border-transparent hover:border-tertiary/30 transition-all flex items-center gap-2 bg-surface-container-high/60 text-on-surface-variant"
+          data-filter="automation">
+          <span class="">أتمتة العمليات</span>
+          <span class="filter-counter px-2 py-0.5 rounded-full bg-white/5 text-xs font-mono">2</span>
+        </button>
+        <button
+          class="filter-btn px-5 py-2.5 rounded-xl hover:bg-surface-container-high hover:text-white font-bold text-sm border border-transparent hover:border-tertiary/30 transition-all flex items-center gap-2 bg-surface-container-high/60 text-on-surface-variant"
+          data-filter="platform">
+          <span class="">المنصات السحابية</span>
+          <span class="filter-counter px-2 py-0.5 rounded-full bg-white/5 text-xs font-mono">1</span>
+        </button>
+        <button
+          class="filter-btn px-5 py-2.5 rounded-xl hover:bg-surface-container-high hover:text-white font-bold text-sm border border-transparent hover:border-tertiary/30 transition-all flex items-center gap-2 bg-surface-container-high/60 text-on-surface-variant"
+          data-filter="power-platform">
+          <span class="">Power Platform</span>
+          <span class="filter-counter px-2 py-0.5 rounded-full bg-white/5 text-xs font-mono">1</span>
+        </button>
+      </div>
+      <div class="hidden xl:flex items-center gap-2 text-xs font-mono text-outline">
+        <span class="material-symbols-outlined text-sm text-tertiary">check_circle</span>
+        <span class="">جميع الأنظمة تعمل بكفاءة إنتاجية 100%</span>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- 4. UNIFIED PROJECTS SHOWCASE (قصص مشاريع حقيقية) -->
+  <section class="max-w-7xl mx-auto px-8 py-10" id="projects-showcase">
+    <!-- Unified Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+      <div>
+        <div
+          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-bright text-tertiary text-xs font-mono font-bold border border-tertiary/30 shadow-[0_0_15px_rgba(0,196,238,0.15)] mb-3">
+          <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+          <span>CASE ARCHIVES • دراسات حقيقية</span>
+        </div>
+        <h2 class="text-3xl lg:text-5xl font-black text-white tracking-tight">قصص مشاريع حقيقية</h2>
+        <p class="text-on-surface-variant text-base lg:text-lg mt-2.5 max-w-3xl leading-relaxed">
+          مجموعة مختارة من الحلول الرقمية والأنظمة المؤسسية التي تم تنفيذها وتعمل حالياً في بيئات إنتاج حقيقية
+          وملموسة.
+        </p>
+      </div>
+      <div class="flex items-center gap-3 shrink-0">
+        <span
+          class="px-3.5 py-1.5 rounded-full bg-surface-container-high text-xs font-mono text-tertiary border border-tertiary/20 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span>
+          <span id="active-studies-badge">5 دراسات تشغيلية نشطة</span>
+        </span>
+      </div>
+    </div>
+    <div class="flex flex-col gap-8" id="projects-container">
+      <!-- FEATURED FLAGSHIP CARD: FOCUSZONE (Full-width / Hero treatment) -->
+      <a class="project-card cursor-pointer group block relative rounded-3xl bg-surface-container-low/90 border border-tertiary/40 overflow-hidden shadow-2xl p-6 lg:p-10 transition-all duration-300 hover:-translate-y-1 hover:border-[#00C4EE] hover:shadow-[0_12px_36px_rgba(0,196,238,0.15)] cyan-glow-box-subtle"
+        data-project="focuszone" aria-label="FocusZone project details" data-category="ai"
+        href="project-details.html?project=focuszone" target="_self">
+        <div
+          class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-tertiary/15 blur-[120px] pointer-events-none group-hover:bg-tertiary/25 transition-all duration-700">
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          <!-- Visual Mockup (7 Cols) with Skeleton Loading Layer -->
+          <div class="lg:col-span-7">
+            <div
+              class="relative rounded-2xl overflow-hidden cyan-border bg-surface-container-low aspect-video flex flex-col justify-between group/preview transition-all duration-500 group-hover:shadow-[0_0_35px_rgba(0,196,238,0.35)]">
+              <!-- Skeleton Placeholder Layer -->
+              <div class="absolute inset-0 bg-surface-container-low animate-pulse"></div>
+              <img alt="FocusZone Live Software UI"
+                class="absolute inset-0 w-full h-full object-cover object-top opacity-75 group-hover:scale-105 transition-transform duration-700 relative z-0"
+                loading="lazy"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoQGBpnR5YOtx63m0ayiRLrEPzGeEGwJpeMf8aOkTrWiiC1RuM2DXWLbQC278Qf4cmQNAgUjNF1ubMzZHKRleulvpj0pJZE3LU4fisX_6zKqKedCwMOiq9hU-3Tb2F7Mm2lN2ss5norSsEj0EYs2bGqm-hezL62_YHMq7FDilW3G2HzqtmepKo-3DkVVh1C7hfPrdr-cPUIX48M44X1m_V95n545Ujsfc3nAjjMW-7j-bNj5mHREaS" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#00080F] via-[#00101D]/40 to-transparent pointer-events-none z-10">
+              </div>
+              <!-- Live Telemetry Stream Header -->
+              <div
+                class="relative z-20 p-3.5 flex items-center justify-between border-b border-white/10 bg-[#00101D]/80 backdrop-blur-md">
+                <div class="flex items-center gap-2.5 text-xs font-mono text-tertiary">
+                  <span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span>
+                  <span class="font-bold">LIVE TELEMETRY STREAM</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span
+                    class="px-2 py-0.5 rounded bg-tertiary/10 border border-tertiary/30 text-[11px] font-mono text-tertiary">48.2
+                    req/s</span>
+                  <span
+                    class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[11px] font-mono text-outline">v2.4-prod</span>
+                </div>
+              </div>
+              <!-- Center Hover Trigger -->
+              <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
+                <div
+                  class="opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95 group-hover:scale-100 px-5 py-2.5 rounded-full bg-tertiary text-[#00101D] font-extrabold text-sm flex items-center gap-2 shadow-[0_0_30px_#00C4EE]">
+                  <span>استكشف المشروع</span>
+                  <span class="material-symbols-outlined text-base">north_east</span>
+                </div>
+              </div>
+              <!-- Bottom Overlay Metrics -->
+              <div
+                class="relative z-20 p-4 bg-[#00101D]/90 backdrop-blur-xl border-t border-white/10 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 rounded-xl bg-tertiary/10 border border-tertiary/30 flex items-center justify-center text-tertiary shadow-[0_0_12px_rgba(0,196,238,0.3)] shrink-0">
+                    <span class="material-symbols-outlined text-xl">insights</span>
+                  </div>
+                  <div>
+                    <div class="flex items-center gap-1.5">
+                      <span class="text-xs font-mono text-outline">معدل التفاعل اللحظي</span>
+                      <span class="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse"></span>
+                    </div>
+                    <span class="text-xl font-black text-tertiary font-mono cyan-glow-text">+84% تفاعل نشط</span>
+                  </div>
+                </div>
+                <div class="hidden sm:flex items-center gap-3 text-xs font-mono">
+                  <span class="text-outline text-[11px]">LATENCY: <span class="text-white font-bold">18ms</span></span>
+                  <span
+                    class="px-2.5 py-1 rounded-lg bg-tertiary/15 text-tertiary text-xs font-bold border border-tertiary/40">سحابي
+                    مباشر</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Details & Impact (5 Cols) -->
+          <div class="lg:col-span-5 flex flex-col justify-between gap-5">
+            <div class="flex flex-col gap-3.5">
+              <div class="flex items-center justify-between">
+                <span
+                  class="px-3 py-1 rounded-full bg-surface-bright text-xs font-mono font-bold text-tertiary border border-tertiary/30">
+                  ذكاء اصطناعي • منظومة رائدة 01
+                </span>
+                <span class="text-xs font-mono text-outline">PRODUCTION READY</span>
+              </div>
+              <h3 class="text-2xl lg:text-3xl font-black text-white group-hover:text-tertiary transition-colors">
+                FOCUSZONE — منظومة التعلّم الذكية
+              </h3>
+              <p class="text-sm lg:text-base text-on-surface-variant leading-relaxed">
+                منظومة تعليمية ذكية تحلل مسارات المتدربين لحظياً وتقدّم توصيات آلية مخصصة، لخفض معدلات الانسحاب وتوحيد
+                تجارب التدريب المؤسسي.
+              </p>
+              <!-- Prominent Metric Callout -->
+              <div
+                class="grid grid-cols-2 gap-3 p-4 rounded-2xl bg-surface-bright/50 border border-tertiary/30 cyan-glow-box-subtle">
+                <div class="p-2.5 rounded-xl bg-surface-container-high/90 border border-white/5 text-center">
+                  <span class="text-[11px] text-on-surface-variant block font-medium">إكمال البرامج</span>
+                  <span class="text-3xl font-black text-tertiary font-mono cyan-glow-text">92%</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-surface-container-high/90 border border-white/5 text-center">
+                  <span class="text-[11px] text-on-surface-variant block font-medium">وفر الساعات</span>
+                  <span class="text-3xl font-black text-primary font-mono">+600 س</span>
+                </div>
+              </div>
+            </div>
+            <!-- Action Link CTA -->
+            <div
+              class="flex items-center justify-between text-sm font-extrabold text-tertiary group-hover:text-white pt-4 border-t border-white/10 transition-colors">
+              <span class="flex items-center gap-1.5 font-bold">
+                <span>استكشف دراسة الحالة</span>
+              </span>
+              <span
+                class="material-symbols-outlined text-lg group-hover:-translate-x-1.5 transition-transform">arrow_back</span>
+            </div>
+          </div>
+        </div>
+      </a>
+      <!-- BALANCED 2-COLUMN GRID FOR THE OTHER 4 PROJECTS -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="secondary-projects-grid">
+        <!-- CARD 02: سَنَد (Logistics Automation) -->
+        <a class="project-card cursor-pointer group block rounded-3xl bg-surface-container/80 border border-white/10 p-6 lg:p-7 shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:border-[#00C4EE] hover:shadow-[0_12px_36px_rgba(0,196,238,0.15)] flex flex-col justify-between"
+          data-category="automation supply-chain" href="project-details.html?project=sanad" target="_self">
+          <div class="flex flex-col gap-5">
+            <!-- Top Mockup Preview with Skeleton Loader -->
+            <div
+              class="relative rounded-2xl overflow-hidden cyan-border bg-surface-container-low aspect-video flex flex-col justify-between group/preview transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(0,196,238,0.3)]">
+              <div class="absolute inset-0 bg-surface-container-low animate-pulse"></div>
+              <img alt="Sanad Dispatch Live Engine"
+                class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700 relative z-0"
+                loading="lazy"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtn7W6eqglCjePtAQhBikhDa2l0O5hxnBoaE94vIlaxNOUm27AL6VpJHRq1H6Zf6vPWcgLWPR-s4787z5YzQOix1A32bbSIZoa1IX7zS3imNH-sQyDReQtnMxANfTD5d782O2otbMC0SNVjTMm7LIFnBECcV0h63eJOwZDzbnvlD3pEvLiTYcln7_jkZcaJygH1znPsQl87pgs5iSGo7dy2DJLl4K1Y1ioWFjLPD3r0oQwmVh9kfAc" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#00080F] via-[#00101D]/50 to-transparent pointer-events-none z-10">
+              </div>
+              <!-- Top Stream Header -->
+              <div
+                class="relative z-20 p-3 flex items-center justify-between border-b border-white/10 bg-[#00101D]/75 backdrop-blur-md">
+                <div class="flex items-center gap-2 text-xs font-mono text-tertiary">
+                  <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+                  <span>DISPATCH BOT • ACTIVE</span>
+                </div>
+                <span
+                  class="px-2 py-0.5 rounded bg-surface-bright text-[10px] font-mono text-white/90 border border-white/10">Auto
+                  99.4%</span>
+              </div>
+              <!-- Center Hover Trigger -->
+              <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
+                <div
+                  class="opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95 group-hover:scale-100 px-4 py-2 rounded-full bg-tertiary text-[#00101D] font-extrabold text-xs flex items-center gap-1.5 shadow-[0_0_20px_#00C4EE]">
+                  <span>استكشف المنظومة</span>
+                  <span class="material-symbols-outlined text-sm">north_east</span>
+                </div>
+              </div>
+              <!-- Bottom Preview Badges -->
+              <div
+                class="relative z-20 p-3 bg-[#00101D]/90 backdrop-blur-md border-t border-white/10 flex items-center justify-between text-xs font-mono">
+                <span class="text-tertiary font-bold">API الربط المباشر</span>
+                <span class="text-outline">معالجة فورية</span>
+              </div>
+            </div>
+            <!-- Project Title + Tag -->
+            <div>
+              <div class="flex items-center justify-between mb-2.5">
+                <span
+                  class="px-3 py-1 rounded-full bg-surface-bright text-xs font-mono font-semibold text-tertiary border border-tertiary/20">
+                  أتمتة العمليات • 02
+                </span>
+                <span class="text-xs font-mono text-outline">SUPPLY CHAIN</span>
+              </div>
+              <h3 class="text-xl lg:text-2xl font-black text-white group-hover:text-tertiary transition-colors">
+                سند — محرك أتمتة سلاسل الإمداد
+              </h3>
+              <p class="text-sm text-on-surface-variant mt-2 leading-relaxed line-clamp-2">
+                أتمتة دورات شحن البضائع وإصدار بوالص الشحن اللحظية دون تدخل بشري، مع المزامنة التلقائية لمستودعات
+                الموردين.
+              </p>
+            </div>
+            <!-- Prominent Metric Callout -->
+            <div
+              class="p-3.5 rounded-2xl bg-surface-container-high/60 border border-tertiary/25 flex items-center justify-around text-center">
+              <div>
+                <span class="text-2xl lg:text-3xl font-black text-tertiary font-mono cyan-glow-text block">3
+                  دقائق</span>
+                <span class="text-xs text-on-surface-variant font-medium mt-0.5 block">بدلاً من 4 ساعات سابقة</span>
+              </div>
+              <div class="w-px h-8 bg-white/10"></div>
+              <div>
+                <span
+                  class="text-2xl lg:text-3xl font-black text-white font-mono drop-shadow-[0_0_12px_rgba(255,255,255,0.4)] block">صفر
+                  أخطاء</span>
+                <span class="text-xs text-on-surface-variant font-medium mt-0.5 block">أتمتة إصدار البوالص 100%</span>
+              </div>
+            </div>
+          </div>
+          <!-- Action Link CTA -->
+          <div
+            class="flex items-center justify-between text-sm font-extrabold text-tertiary group-hover:text-white pt-4 mt-5 border-t border-white/10 transition-colors">
+            <span>استكشف دراسة الحالة</span>
+            <span
+              class="material-symbols-outlined text-lg group-hover:-translate-x-1.5 transition-transform">arrow_back</span>
+          </div>
+        </a>
+        <!-- CARD 03: مِداد (ERP & E-Commerce) -->
+        <a class="project-card cursor-pointer group block rounded-3xl bg-surface-container/80 border border-white/10 p-6 lg:p-7 shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:border-[#00C4EE] hover:shadow-[0_12px_36px_rgba(0,196,238,0.15)] flex flex-col justify-between"
+          data-project="medad" aria-label="مِداد project details" data-category="platform e-com"
+          href="project-details.html?project=medad" target="_self">
+          <div class="flex flex-col gap-5">
+            <!-- Top Mockup Preview with Skeleton Loader -->
+            <div
+              class="relative rounded-2xl overflow-hidden cyan-border bg-surface-container-low aspect-video flex flex-col justify-between group/preview transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(0,196,238,0.3)]">
+              <div class="absolute inset-0 bg-surface-container-low animate-pulse"></div>
+              <img alt="Midad Checkout and ERP System"
+                class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700 relative z-0"
+                loading="lazy"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1QdXrPN4L53rjiSDQkytd0OdCIRHfCMhzbx3y8hlw24jDxHa4_kD0i9hECZJfryfBXoCnPDQwUc8qvVeAThh_avsMc102iZgBpjy58JY9q0UcvZKs8ueIpQbqIJFZlyETT4d5WgQNUpEsn3v0hVQdQuxyteANdbInfzkTJgpOPnjSOWwJzyzE0XMnjzrtkY-IUpCrhu2jIWMz44gCD7zAx3wUzrbKVNIH67Xa3uK1W-e7oA3MWL7f" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#00080F] via-[#00101D]/50 to-transparent pointer-events-none z-10">
+              </div>
+              <!-- Top Stream Header -->
+              <div
+                class="relative z-20 p-3 flex items-center justify-between border-b border-white/10 bg-[#00101D]/75 backdrop-blur-md">
+                <div class="flex items-center gap-2 text-xs font-mono text-[#25D366]">
+                  <span class="w-2 h-2 rounded-full bg-[#25D366] animate-ping"></span>
+                  <span>ERP SYNC ENGINE • 0 ERRORS</span>
+                </div>
+                <span
+                  class="px-2 py-0.5 rounded bg-surface-bright text-[10px] font-mono text-tertiary border border-tertiary/20">Sync:
+                  0.8s</span>
+              </div>
+              <!-- Center Hover Trigger -->
+              <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
+                <div
+                  class="opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95 group-hover:scale-100 px-4 py-2 rounded-full bg-tertiary text-[#00101D] font-extrabold text-xs flex items-center gap-1.5 shadow-[0_0_20px_#00C4EE]">
+                  <span>استكشف المنظومة</span>
+                  <span class="material-symbols-outlined text-sm">north_east</span>
+                </div>
+              </div>
+              <!-- Bottom Preview Badges -->
+              <div
+                class="relative z-20 p-3 bg-[#00101D]/90 backdrop-blur-md border-t border-white/10 flex items-center justify-between text-xs font-mono">
+                <span class="text-tertiary font-bold">تزامن المبيعات والمخزون</span>
+                <span class="text-[#25D366]">100% متطابق</span>
+              </div>
+            </div>
+            <!-- Project Title + Tag -->
+            <div>
+              <div class="flex items-center justify-between mb-2.5">
+                <span
+                  class="px-3 py-1 rounded-full bg-surface-bright text-xs font-mono font-semibold text-tertiary border border-tertiary/20">
+                  تجارة رقمية وتكامل ERP • 03
+                </span>
+                <span class="text-xs font-mono text-outline">ENTERPRISE E-COM</span>
+              </div>
+              <h3 class="text-xl lg:text-2xl font-black text-white group-hover:text-tertiary transition-colors">
+                مِداد — متجر متكامل وتكامل ERP سلس
+              </h3>
+              <p class="text-sm text-on-surface-variant mt-2 leading-relaxed line-clamp-2">
+                بنية تجارية فائقة السرعة مربوطة لحظياً بمستودعات التخزين وأنظمة الفوترة، لمنع نفاد المخزون وفروقات
+                الجرد بين الفروع.
+              </p>
+            </div>
+            <!-- Prominent Metric Callout -->
+            <div
+              class="p-3.5 rounded-2xl bg-surface-container-high/60 border border-tertiary/25 flex items-center justify-around text-center">
+              <div>
+                <span class="text-2xl lg:text-3xl font-black text-tertiary font-mono cyan-glow-text block">0.8
+                  ثانية</span>
+                <span class="text-xs text-on-surface-variant font-medium mt-0.5 block">سرعة معالجة الطلب اللحظي</span>
+              </div>
+              <div class="w-px h-8 bg-white/10"></div>
+              <div>
+                <span
+                  class="text-2xl lg:text-3xl font-black text-white font-mono drop-shadow-[0_0_12px_rgba(255,255,255,0.4)] block">100%</span>
+                <span class="text-xs text-on-surface-variant font-medium mt-0.5 block">تزامن المخزون والمبيعات</span>
+              </div>
+            </div>
+          </div>
+          <!-- Action Link CTA -->
+          <div
+            class="flex items-center justify-between text-sm font-extrabold text-tertiary group-hover:text-white pt-4 mt-5 border-t border-white/10 transition-colors">
+            <span>استكشف دراسة الحالة</span>
+            <span
+              class="material-symbols-outlined text-lg group-hover:-translate-x-1.5 transition-transform">arrow_back</span>
+          </div>
+        </a>
+        <!-- CARD 04: أُفُق (Power Platform Governance) -->
+        <a class="project-card cursor-pointer group block rounded-3xl bg-surface-container/80 border border-white/10 p-6 lg:p-7 shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:border-[#00C4EE] hover:shadow-[0_12px_36px_rgba(0,196,238,0.15)] flex flex-col justify-between"
+          data-project="ofok" aria-label="أفق project details" data-category="power-platform automation"
+          href="project-details.html?project=ofok" target="_self">
+          <div class="flex flex-col gap-5">
+            <!-- Top Mockup Preview with Skeleton Loader -->
+            <div
+              class="relative rounded-2xl overflow-hidden cyan-border bg-surface-container-low aspect-video flex flex-col justify-between group/preview transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(0,196,238,0.3)]">
+              <div class="absolute inset-0 bg-surface-container-low animate-pulse"></div>
+              <img alt="Ofuq Approval Governance Interface"
+                class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700 relative z-0"
+                loading="lazy"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiqf0V3RJL6X0V25bYwacfDxS7OtsJiIsY_eg2VdKww12GHSLqKWQPDAzHAPd_hsULsaMoT6qnNiaAzl0iJf30b5JVEOxFY5QQrBqEKmV8wIeIEqbS58Amxq8ksDeYmXuGIDTNBYfQdJBRv6B1mTe5jo2JP9TT0KHQcXagJHH62k71bsKXt6z91D4nnquypffyt_b8nAh6jiDyLWF3UF8O9wuMyStWo8w3K1x9YhAT7CMsD3dLt-ma" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#00080F] via-[#00101D]/40 to-transparent pointer-events-none z-10">
+              </div>
+              <!-- Top Stream Header -->
+              <div
+                class="relative z-20 p-3 flex items-center justify-between border-b border-white/10 bg-[#00101D]/75 backdrop-blur-md">
+                <div class="flex items-center gap-2 text-xs font-mono text-primary">
+                  <span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+                  <span>POWER AUTOMATE • SLA 100%</span>
+                </div>
+                <span
+                  class="px-2 py-0.5 rounded bg-surface-bright text-[10px] font-mono text-white/90 border border-white/10">0
+                  Errors</span>
+              </div>
+              <!-- Center Hover Trigger -->
+              <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
+                <div
+                  class="opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95 group-hover:scale-100 px-4 py-2 rounded-full bg-tertiary text-[#00101D] font-extrabold text-xs flex items-center gap-1.5 shadow-[0_0_20px_#00C4EE]">
+                  <span>استكشف المنظومة</span>
+                  <span class="material-symbols-outlined text-sm">north_east</span>
+                </div>
+              </div>
+              <!-- Bottom Preview Badges -->
+              <div
+                class="relative z-20 p-3 bg-[#00101D]/90 backdrop-blur-md border-t border-white/10 flex items-center justify-between text-xs font-mono">
+                <span class="text-tertiary font-bold">حوكمة سلاسل الاعتمادات</span>
+                <span class="text-primary font-bold">سحابي مؤسسي</span>
+              </div>
+            </div>
+            <!-- Project Title + Tag -->
+            <div>
+              <div class="flex items-center justify-between mb-2.5">
+                <span
+                  class="px-3 py-1 rounded-full bg-surface-bright text-xs font-mono font-semibold text-tertiary border border-tertiary/20">
+                  Power Platform • 04
+                </span>
+                <span class="text-xs font-mono text-outline">WORKFLOW GOVERNANCE</span>
+              </div>
+              <h3 class="text-xl lg:text-2xl font-black text-white group-hover:text-tertiary transition-colors">
+                أفق — إدارة موارد المؤسسة والموافقات
+              </h3>
+              <p class="text-sm text-on-surface-variant mt-2 leading-relaxed line-clamp-2">
+                منظومة مرنة تُمكّن من حوكمة سلاسل الاعتمادات والقرارات الإدارية، وتتبع الإجراءات التراكمية بلا أي
+                تأخير أو هدر.
+              </p>
+            </div>
+            <!-- Prominent Metric Callout -->
+            <div
+              class="p-3.5 rounded-2xl bg-surface-container-high/60 border border-tertiary/25 flex items-center justify-around text-center">
+              <div>
+                <span class="text-2xl lg:text-3xl font-black text-tertiary font-mono cyan-glow-text block">صفر
+                  معلق</span>
+                <span class="text-xs text-on-surface-variant font-medium mt-0.5 block">موافقات خارج اتفاقية SLA</span>
+              </div>
+              <div class="w-px h-8 bg-white/10"></div>
+              <div>
+                <span
+                  class="text-2xl lg:text-3xl font-black text-white font-mono drop-shadow-[0_0_12px_rgba(255,255,255,0.4)] block">100%</span>
+                <span class="text-xs text-on-surface-variant font-medium mt-0.5 block">شفافية تتبع دورات
+                  القرارات</span>
+              </div>
+            </div>
+          </div>
+          <!-- Action Link CTA -->
+          <div
+            class="flex items-center justify-between text-sm font-extrabold text-tertiary group-hover:text-white pt-4 mt-5 border-t border-white/10 transition-colors">
+            <span>استكشف دراسة الحالة</span>
+            <span
+              class="material-symbols-outlined text-lg group-hover:-translate-x-1.5 transition-transform">arrow_back</span>
+          </div>
+        </a>
+        <!-- CARD 05: نَبْض (Predictive Analytics) -->
+        <a class="project-card cursor-pointer group block rounded-3xl bg-surface-container/80 border border-white/10 p-6 lg:p-7 shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:border-[#00C4EE] hover:shadow-[0_12px_36px_rgba(0,196,238,0.15)] flex flex-col justify-between"
+          data-project="nabd" aria-label="نبض project details" data-category="ai predictive"
+          href="project-details.html?project=nabd" target="_self">
+          <div class="flex flex-col gap-5">
+            <!-- Top Mockup Preview with Skeleton Loader -->
+            <div
+              class="relative rounded-2xl overflow-hidden cyan-border bg-surface-container-low aspect-video flex flex-col justify-between group/preview transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(0,196,238,0.3)]">
+              <div class="absolute inset-0 bg-surface-container-low animate-pulse"></div>
+              <img alt="Nabd Predictive Analytics Telemetry"
+                class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700 relative z-0"
+                loading="lazy"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoQGBpnR5YOtx63m0ayiRLrEPzGeEGwJpeMf8aOkTrWiiC1RuM2DXWLbQC278Qf4cmQNAgUjNF1ubMzZHKRleulvpj0pJZE3LU4fisX_6zKqKedCwMOiq9hU-3Tb2F7Mm2lN2ss5norSsEj0EYs2bGqm-hezL62_YHMq7FDilW3G2HzqtmepKo-3DkVVh1C7hfPrdr-cPUIX48M44X1m_V95n545Ujsfc3nAjjMW-7j-bNj5mHREaS" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#00080F] via-[#00101D]/50 to-transparent pointer-events-none z-10">
+              </div>
+              <!-- Top Stream Header -->
+              <div
+                class="relative z-20 p-3 flex items-center justify-between border-b border-white/10 bg-[#00101D]/75 backdrop-blur-md">
+                <div class="flex items-center gap-2 text-xs font-mono text-tertiary">
+                  <span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span>
+                  <span>PREDICTIVE MESH • ACTIVE</span>
+                </div>
+                <span
+                  class="px-2 py-0.5 rounded bg-surface-bright text-[10px] font-mono text-tertiary border border-tertiary/20">Risk:
+                  0.02%</span>
+              </div>
+              <!-- Center Hover Trigger -->
+              <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
+                <div
+                  class="opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95 group-hover:scale-100 px-4 py-2 rounded-full bg-tertiary text-[#00101D] font-extrabold text-xs flex items-center gap-1.5 shadow-[0_0_20px_#00C4EE]">
+                  <span>استكشف المنظومة</span>
+                  <span class="material-symbols-outlined text-sm">north_east</span>
+                </div>
+              </div>
+              <!-- Bottom Preview Badges -->
+              <div
+                class="relative z-20 p-3 bg-[#00101D]/90 backdrop-blur-md border-t border-white/10 flex items-center justify-between text-xs font-mono">
+                <span class="text-tertiary font-bold">مراقبة استباقية للأعطال</span>
+                <span class="text-primary font-bold">ML Pipeline</span>
+              </div>
+            </div>
+            <!-- Project Title + Tag -->
+            <div>
+              <div class="flex items-center justify-between mb-2.5">
+                <span
+                  class="px-3 py-1 rounded-full bg-surface-bright text-xs font-mono font-semibold text-tertiary border border-tertiary/20">
+                  تحليل تنبؤي • 05
+                </span>
+                <span class="text-xs font-mono text-outline">PREDICTIVE OPS</span>
+              </div>
+              <h3 class="text-xl lg:text-2xl font-black text-white group-hover:text-tertiary transition-colors">
+                نبض — التحليل التنبؤي والعمليات الذكية
+              </h3>
+              <p class="text-sm text-on-surface-variant mt-2 leading-relaxed line-clamp-2">
+                منصة استشرافية تعتمد نماذج تعلّم متطورة لمراقبة مؤشرات الإنتاج والتنبؤ بأعطال المعدات وسلاسل التشغيل
+                مسبقاً.
+              </p>
+            </div>
+            <!-- Prominent Metric Callout -->
+            <div
+              class="p-3.5 rounded-2xl bg-surface-container-high/60 border border-tertiary/25 flex items-center justify-around text-center">
+              <div>
+                <span class="text-2xl lg:text-3xl font-black text-tertiary font-mono cyan-glow-text block">72
+                  ساعة</span>
+                <span class="text-xs text-on-surface-variant font-medium mt-0.5 block">تنبؤ استباقي قبل الأعطال</span>
+              </div>
+              <div class="w-px h-8 bg-white/10"></div>
+              <div>
+                <span
+                  class="text-2xl lg:text-3xl font-black text-white font-mono drop-shadow-[0_0_12px_rgba(255,255,255,0.4)] block">-65%</span>
+                <span class="text-xs text-on-surface-variant font-medium mt-0.5 block">انخفاض تكاليف الصيانة</span>
+              </div>
+            </div>
+          </div>
+          <!-- Action Link CTA -->
+          <div
+            class="flex items-center justify-between text-sm font-extrabold text-tertiary group-hover:text-white pt-4 mt-5 border-t border-white/10 transition-colors">
+            <span>استكشف دراسة الحالة</span>
+            <span
+              class="material-symbols-outlined text-lg group-hover:-translate-x-1.5 transition-transform">arrow_back</span>
+          </div>
+        </a>
+      </div>
+      <!-- Empty State Notification Card if filtered category has no extra items -->
+      <div
+        class="hidden p-8 rounded-3xl bg-surface-container/60 border border-white/10 text-center flex flex-col items-center justify-center gap-3"
+        id="empty-category-notice">
+        <div
+          class="w-12 h-12 rounded-full bg-surface-bright flex items-center justify-center text-tertiary border border-tertiary/30">
+          <span class="material-symbols-outlined text-2xl">dataset</span>
+        </div>
+        <h4 class="text-lg font-bold text-white">يتم تحديث وإدراج المزيد من المشاريع في هذا التصنيف</h4>
+        <p class="text-sm text-on-surface-variant max-w-md">لدينا سجل إنجازات أوسع قيد التوثيق، تواصل معنا مباشرة
+          للاطلاع على نماذج حية مطابقة لقطاعك.</p>
+      </div>
+      <!-- UNIFIED SECTION FOOTER CTA -->
+      <div class="pt-6 flex justify-center">
+        <a class="btn-smooth inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-surface-container-high hover:bg-tertiary text-white hover:text-[#00101D] font-extrabold text-sm border border-tertiary/30 hover:border-tertiary shadow-[0_0_20px_rgba(0,196,238,0.15)] hover:shadow-[0_0_30px_rgba(0,196,238,0.4)] transition-all group"
+          href="https://wa.me/?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20%D9%81%D8%B1%D8%B5%D9%83%D9%85%D8%8C%20%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%A3%D8%B1%D8%B4%D9%8A%D9%81%20%D9%85%D8%B4%D8%A7%D8%B1%D9%8A%D8%B9%D9%83%D9%85%20%D9%88%D8%A7%D9%84%D8%AD%D9%84%D9%88%D9%84%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D8%A7%D8%AD%D8%A9."
+          target="_blank">
+          <span>تصفّح جميع المشاريع والأرشيف الكامل</span>
+          <span
+            class="material-symbols-outlined text-lg group-hover:-translate-x-1 transition-transform">arrow_back</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- 6. SIGNATURE SECTION (من التحدي.. إلى الفرصة - Desktop 4-Step Process) -->
+  <section class="max-w-7xl mx-auto px-8 py-14" id="methodology">
+    <div
+      class="relative rounded-3xl bg-surface-container/60 border border-white/10 p-8 lg:p-12 overflow-hidden shadow-2xl">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <span class="text-xs font-mono font-bold text-tertiary uppercase tracking-wider">FORASCOM METHODOLOGY</span>
+          <h2 class="text-3xl lg:text-4xl font-black text-white mt-1">من التحدي.. إلى الفرصة</h2>
+          <p class="text-on-surface-variant text-base mt-2">خطوات منهجية محكمة لتحويل المشكلات المعقدة لمحركات إنتاجية
+            ونمو مستمر.</p>
+        </div>
+        <span
+          class="px-3.5 py-1.5 rounded-full bg-surface-bright text-tertiary text-xs font-mono font-bold border border-tertiary/20">
+          4 مراحل هندسية متكاملة
+        </span>
+      </div>
+      <!-- 4-Step Horizontal Pipeline on Desktop -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+        <!-- Step 1 -->
+        <div
+          class="p-6 rounded-2xl bg-surface-container-low border border-white/5 hover:border-tertiary/40 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span
+                class="w-10 h-10 rounded-xl bg-surface-bright flex items-center justify-center font-mono font-black text-base text-outline border border-white/5 group-hover:text-tertiary group-hover:border-tertiary/30 transition-colors">01</span>
+              <span
+                class="material-symbols-outlined text-outline group-hover:text-tertiary text-2xl transition-colors">troubleshoot</span>
+            </div>
+            <h3 class="text-lg font-bold text-white group-hover:text-tertiary transition-colors mb-2">1. التشخيص والتحدي
+            </h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+              تحديد جذور المعضلة التشغيلية وفهم السياق المؤسسي بدقة بدلاً من معالجة الأعراض السطحية المؤقتة.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/5 flex items-center gap-2 text-xs font-mono text-outline">
+            <span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+            <span class="">تحليل الثغرات التشغيلية</span>
+          </div>
+        </div>
+        <!-- Step 2 -->
+        <div
+          class="p-6 rounded-2xl bg-surface-container-low border border-white/5 hover:border-tertiary/40 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span
+                class="w-10 h-10 rounded-xl bg-surface-bright flex items-center justify-center font-mono font-black text-base text-outline border border-white/5 group-hover:text-tertiary group-hover:border-tertiary/30 transition-colors">02</span>
+              <span
+                class="material-symbols-outlined text-outline group-hover:text-tertiary text-2xl transition-colors">account_tree</span>
+            </div>
+            <h3 class="text-lg font-bold text-white group-hover:text-tertiary transition-colors mb-2">2. الفهم وهندسة
+              العمليات</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+              تحليل سير العمل الفعلي وتفكيك المتطلبات لنرسم معمارية رقمية رشيقة خالية من الهدر والتكرار اليدوي.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/5 flex items-center gap-2 text-xs font-mono text-outline">
+            <span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+            <span class="">هندسة وتصميم المسارات</span>
+          </div>
+        </div>
+        <!-- Step 3 -->
+        <div
+          class="p-6 rounded-2xl bg-surface-container-low border border-primary-container/30 hover:border-primary-container transition-all flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span
+                class="w-10 h-10 rounded-xl bg-primary-container/20 text-primary-container flex items-center justify-center font-mono font-black text-base border border-primary-container/30">03</span>
+              <span class="material-symbols-outlined text-primary-container text-2xl">terminal</span>
+            </div>
+            <h3 class="text-lg font-bold text-white group-hover:text-primary-container transition-colors mb-2">3. بناء
+              الحل البرمجي</h3>
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+              كتابة كود رشيق، وتأسيس بنى تحتية سحابية موثوقة، وواجهات استخدام بدهية تجعل أداء العمل اليومي أسرع وأسلس.
+            </p>
+          </div>
+          <div
+            class="mt-6 pt-4 border-t border-white/5 flex items-center gap-2 text-xs font-mono text-primary-container">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+            <span class="">تطوير واختبار معتمد</span>
+          </div>
+        </div>
+        <!-- Step 4 (Highlight Growth) -->
+        <div
+          class="p-6 rounded-2xl bg-surface-bright/80 border border-tertiary cyan-glow-box flex flex-col justify-between relative overflow-hidden group">
+          <div class="absolute -bottom-10 -left-10 w-28 h-28 bg-tertiary/20 rounded-full blur-xl pointer-events-none">
+          </div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-6">
+              <span
+                class="w-10 h-10 rounded-xl bg-tertiary text-[#00101D] flex items-center justify-center font-mono font-black text-base shadow-[0_0_15px_#00C4EE]">04</span>
+              <span
+                class="material-symbols-outlined text-tertiary text-2xl drop-shadow-[0_0_10px_#00C4EE]">rocket_launch</span>
+            </div>
+            <h3 class="text-lg font-black text-tertiary mb-2">4. صناعة الفرصة والنمو</h3>
+            <p class="text-sm text-white leading-relaxed">
+              تحرير طاقات الفريق، مضاعفة الكفاءة التشغيلية، وفتح آفاق جديدة للتوسع التجاري المستدام بقوة وثقة.
+            </p>
+          </div>
+          <div
+            class="mt-6 pt-4 border-t border-tertiary/30 flex items-center gap-2 text-xs font-mono text-tertiary font-bold relative z-10">
+            <span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+            <span class="">تحقيق عوائد ملموسة</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- 7. CORE CAPABILITIES (ما نبنيه للأعمال الحقيقية - Desktop 4 Cards) -->
+  <section class="max-w-7xl mx-auto px-8 py-14" id="capabilities">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-xs font-mono font-bold text-tertiary tracking-widest uppercase">CORE CAPABILITIES</span>
+      <h2 class="text-3xl lg:text-4xl font-black text-white mt-1">ما نبنيه للأعمال الحقيقية</h2>
+      <p class="text-on-surface-variant text-base mt-2">
+        نركز على القيمة التنفيذية والعائد المباشر لشركتك، لا مجرد استعراض تقنيات برمجية غير موجهة.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Cap 1 -->
+      <div
+        class="p-6 rounded-2xl bg-surface-container/80 border border-white/10 hover:border-tertiary/50 transition-all flex flex-col justify-between group hover:-translate-y-1 shadow-lg">
+        <div>
+          <div
+            class="w-12 h-12 rounded-xl bg-tertiary/10 border border-tertiary/30 text-tertiary flex items-center justify-center mb-6 group-hover:scale-105 group-hover:bg-tertiary group-hover:text-[#00101D] transition-all">
+            <span class="material-symbols-outlined text-2xl">sync_alt</span>
+          </div>
+          <h3 class="text-lg font-bold text-white group-hover:text-tertiary transition-colors mb-2">
+            أتمتة العمليات (Workflow Automation)
+          </h3>
+          <p class="text-sm text-on-surface-variant leading-relaxed">
+            نربط الأنظمة المتفرقة ونلغي الأعمال اليدوية الروتينية لرفع سرعة الإنجاز وتقليص الأخطاء والتكاليف.
+          </p>
+        </div>
+        <span class="text-xs font-mono text-outline mt-6 flex items-center gap-1">
+          <span class="">API Integrations • Webhooks</span>
+        </span>
+      </div>
+      <!-- Cap 2 -->
+      <div
+        class="p-6 rounded-2xl bg-surface-container/80 border border-white/10 hover:border-primary-container/50 transition-all flex flex-col justify-between group hover:-translate-y-1 shadow-lg">
+        <div>
+          <div
+            class="w-12 h-12 rounded-xl bg-primary-container/10 border border-primary-container/30 text-primary-container flex items-center justify-center mb-6 group-hover:scale-105 group-hover:bg-primary-container group-hover:text-white transition-all">
+            <span class="material-symbols-outlined text-2xl">web</span>
+          </div>
+          <h3 class="text-lg font-bold text-white group-hover:text-primary-container transition-colors mb-2">
+            المنصات الرقمية وتطبيقات الويب
+          </h3>
+          <p class="text-sm text-on-surface-variant leading-relaxed">
+            تجارب رقمية استثنائية وسريعة الاستجابة تبني ولاء العملاء وتخدم أهداف التوسع السريع باقتدار.
+          </p>
+        </div>
+        <span class="text-xs font-mono text-outline mt-6 flex items-center gap-1">
+          <span class="">Next.js • Cloud Architecture</span>
+        </span>
+      </div>
+      <!-- Cap 3 -->
+      <div
+        class="p-6 rounded-2xl bg-surface-container/80 border border-white/10 hover:border-tertiary/50 transition-all flex flex-col justify-between group hover:-translate-y-1 shadow-lg">
+        <div>
+          <div
+            class="w-12 h-12 rounded-xl bg-tertiary/10 border border-tertiary/30 text-tertiary flex items-center justify-center mb-6 group-hover:scale-105 group-hover:bg-tertiary group-hover:text-[#00101D] transition-all">
+            <span class="material-symbols-outlined text-2xl">smart_toy</span>
+          </div>
+          <h3 class="text-lg font-bold text-white group-hover:text-tertiary transition-colors mb-2">
+            حلول الذكاء الاصطناعي العملية
+          </h3>
+          <p class="text-sm text-on-surface-variant leading-relaxed">
+            تحويل البيانات وتوصيات الخوارزميات إلى أدوات عمل يومية تسرّع اتخاذ القرار التنفيذي وتوفر الساعات.
+          </p>
+        </div>
+        <span class="text-xs font-mono text-outline mt-6 flex items-center gap-1">
+          <span class="">Custom LLMs • NLP Analysis</span>
+        </span>
+      </div>
+      <!-- Cap 4 -->
+      <div
+        class="p-6 rounded-2xl bg-surface-container/80 border border-white/10 hover:border-secondary/50 transition-all flex flex-col justify-between group hover:-translate-y-1 shadow-lg">
+        <div>
+          <div
+            class="w-12 h-12 rounded-xl bg-secondary/10 border border-secondary/30 text-secondary flex items-center justify-center mb-6 group-hover:scale-105 group-hover:bg-secondary group-hover:text-[#00101D] transition-all">
+            <span class="material-symbols-outlined text-2xl">lan</span>
+          </div>
+          <h3 class="text-lg font-bold text-white group-hover:text-secondary transition-colors mb-2">
+            أنظمة Power Platform المؤسسية
+          </h3>
+          <p class="text-sm text-on-surface-variant leading-relaxed">
+            حلول معيارية متكاملة لربط فرق العمل، وتوحيد السجلات، وإدارة دورات الموافقات اللحظية بمرونة فائقة.
+          </p>
+        </div>
+        <span class="text-xs font-mono text-outline mt-6 flex items-center gap-1">
+          <span class="">Power Apps • Power BI</span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- 8. REAL WORLD EVIDENCE (أثر حقيقي ملموس على أرض الواقع - Desktop 3 Columns) -->
+  <section class="max-w-7xl mx-auto px-8 py-14" id="impact">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+      <div>
+        <span class="text-xs font-mono font-bold text-tertiary tracking-widest uppercase">REAL WORLD EVIDENCE</span>
+        <h2 class="text-3xl lg:text-4xl font-black text-white mt-1">أثر حقيقي ملموس على أرض الواقع</h2>
+        <p class="text-on-surface-variant text-base mt-2">أرقام وإجراءات فعلية تعيش في بيئات عمل حية كل يوم، موثقة
+          بالنتائج.</p>
+      </div>
+      <div class="flex items-center gap-2 text-xs font-mono text-outline">
+        <span class="w-2 h-2 rounded-full bg-[#25D366] animate-ping"></span>
+        <span class="">تحديثات الأداء اللحظي</span>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Impact 1: 99.98% SLA -->
+      <div
+        class="p-8 rounded-3xl bg-surface-container-low border border-white/10 hover:border-tertiary/50 transition-all flex flex-col justify-between shadow-xl">
+        <div>
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-2 text-tertiary font-bold text-sm">
+              <span class="material-symbols-outlined text-xl">verified</span>
+              <span class="">استقرار البنية التشغيلية</span>
+            </div>
+            <span class="text-xs font-mono text-outline">UPTIME SLA</span>
+          </div>
+          <!-- Big Glowing Metric -->
+          <div class="py-4">
+            <span class="text-5xl lg:text-6xl font-black text-tertiary font-mono cyan-glow-text block">99.98%</span>
+            <span class="text-sm font-semibold text-white mt-1 block">جاهزية الخدمة دون انقطاع</span>
+          </div>
+          <p class="text-sm text-on-surface-variant leading-relaxed mt-2">
+            بنى تحتية سحابية متقدمة قادرة على استيعاب مئات الآلاف من العمليات اليومية مع مرونة عالية في التوسع وتوزيع
+            الأحمال.
+          </p>
+        </div>
+        <div class="mt-8 pt-4 border-t border-white/10 flex items-center gap-2 text-xs font-bold text-on-surface">
+          <span class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_#00C4EE]"></span>
+          <span class="">جاهزية إنتاجية معتمدة ومراقبة 24/7</span>
+        </div>
+      </div>
+      <!-- Impact 2: +120h Saved -->
+      <div
+        class="p-8 rounded-3xl bg-surface-container-low border border-white/10 hover:border-primary-container/50 transition-all flex flex-col justify-between shadow-xl">
+        <div>
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-2 text-primary font-bold text-sm">
+              <span class="material-symbols-outlined text-xl">timer</span>
+              <span class="">تقليص دورات العمل</span>
+            </div>
+            <span class="text-xs font-mono text-outline">TIME SAVED</span>
+          </div>
+          <!-- Big Glowing Metric -->
+          <div class="py-4">
+            <span
+              class="text-5xl lg:text-6xl font-black text-primary font-mono drop-shadow-[0_0_20px_rgba(153,203,255,0.6)] block">+120
+              س</span>
+            <span class="text-sm font-semibold text-white mt-1 block">وفر شهري مباشر للفريق</span>
+          </div>
+          <p class="text-sm text-on-surface-variant leading-relaxed mt-2">
+            تحويل دورات الموافقات الإدارية، إدخال البيانات، ومطابقة الفواتير من أيام عمل كاملة إلى دقائق معدودة وبدون
+            خطأ بشري.
+          </p>
+        </div>
+        <div class="mt-8 pt-4 border-t border-white/10 flex items-center gap-2 text-xs font-bold text-on-surface">
+          <span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_#99CBFF]"></span>
+          <span class="">وفر تشغيلي يعادل طاقة موظفين إضافيين</span>
+        </div>
+      </div>
+      <!-- Impact 3: 100% Deployed -->
+      <div
+        class="p-8 rounded-3xl bg-surface-container-low border border-white/10 hover:border-tertiary/50 transition-all flex flex-col justify-between shadow-xl">
+        <div>
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-2 text-tertiary font-bold text-sm">
+              <span class="material-symbols-outlined text-xl">devices</span>
+              <span class="">منتجات حية قيد الاستخدام</span>
+            </div>
+            <span class="text-xs font-mono text-outline">DEPLOYMENT</span>
+          </div>
+          <!-- Big Glowing Metric -->
+          <div class="py-4">
+            <span class="text-5xl lg:text-6xl font-black text-tertiary font-mono cyan-glow-text block">100%</span>
+            <span class="text-sm font-semibold text-white mt-1 block">بيئات إنتاج حية ومفعلة</span>
+          </div>
+          <p class="text-sm text-on-surface-variant leading-relaxed mt-2">
+            تطبيقات ولوحات تحكم مدمجة يعتمد عليها الموظفون والعملاء بشكل يومي لتحقيق أهداف أعمالهم ومتابعة أرقامهم.
+          </p>
+        </div>
+        <div class="mt-8 pt-4 border-t border-white/10 flex items-center gap-2 text-xs font-bold text-on-surface">
+          <span class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_#00C4EE]"></span>
+          <span class="">مدمجة بشكل كامل مع أنظمة الشركات</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <!-- 9. FINAL FRICTIONLESS CTA (Desktop Side-by-Side Dual Buttons) -->
+  <section class="max-w-5xl mx-auto px-8 py-16" id="contact">
+    <div
+      class="relative rounded-3xl bg-gradient-to-b from-surface-container to-surface-container-low border border-tertiary/40 cyan-glow-box p-10 lg:p-14 text-center overflow-hidden shadow-2xl">
+      <!-- Radial Glow in Center -->
+      <div
+        class="absolute inset-0 bg-radial from-tertiary/15 via-transparent to-transparent blur-3xl pointer-events-none">
+      </div>
+      <div
+        class="w-16 h-16 rounded-2xl bg-tertiary/15 border border-tertiary/40 text-tertiary flex items-center justify-center mx-auto mb-6 shadow-[0_0_20px_rgba(0,196,238,0.3)]">
+        <span class="material-symbols-outlined text-3xl">chat_bubble</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
+        عندك تحدٍ؟ <span class="text-tertiary cyan-glow-text">خلينا نحوله إلى فرصة.</span>
+      </h2>
+      <p class="text-base lg:text-lg text-on-surface-variant max-w-2xl mx-auto mt-4 leading-relaxed">
+        لا تحتاج لأن تكون خبيراً في التكنولوجيا أو تملك مواصفات برمجية تفصيلية مسبقة. كل ما عليك هو إخبارنا بمشكلتك
+        التشغيلية الحالية، ونحن نتكفل بهندسة وتطوير الحل الأنسب لنموك.
+      </p>
+      <!-- Desktop Dual CTAs Side-by-Side with Exact Target Links -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-5 mt-8 max-w-xl mx-auto">
+        <!-- Direct WhatsApp Button (Green) -->
+        <a class="btn-smooth w-full sm:w-1/2 py-4 px-6 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-[#00101D] flex items-center justify-center gap-3 font-extrabold text-base shadow-[0_0_25px_rgba(37,211,102,0.4)] hover:shadow-[0_0_35px_rgba(37,211,102,0.6)]"
+          href="https://wa.me/?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20%D9%81%D8%B1%D8%B5%D9%83%D9%85%D8%8C%20%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%A3%D8%AA%D9%85%D8%AA%D8%A9%20%D9%88%D8%AA%D8%B7%D9%88%D9%8A%D8%B1%20%D8%AD%D9%84%20%D8%AA%D9%82%D9%86%D9%8A%20%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D9%8A."
+          target="_blank">
+          <span class="material-symbols-outlined text-2xl">chat</span>
+          <span class="">واتساب مباشر</span>
+        </a>
+        <!-- Primary Cyan CTA -->
+        <a class="btn-smooth w-full sm:w-1/2 py-4 px-6 rounded-xl bg-tertiary hover:bg-[#34d4f6] text-[#00101D] flex items-center justify-center gap-3 font-extrabold text-base shadow-[0_0_25px_rgba(0,196,238,0.4)] hover:shadow-[0_0_35px_rgba(0,196,238,0.65)]"
+          href="#contact">
+          <span class="material-symbols-outlined text-xl">send</span>
+          <span class="">ابدأ محادثة معنا الآن</span>
+        </a>
+      </div>
+      <div class="flex items-center justify-center gap-6 mt-8 text-xs font-mono text-outline">
+        <span class="flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+          استشارة تقنية أولية مباشرة ومجانية
+        </span>
+        <span class="hidden sm:inline text-outline/40">•</span>
+        <span class="flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#25D366]"></span>
+          الرد السريع خلال دقائق
+        </span>
+      </div>
+    </div>
+  </section>
+  </main>
+
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="bg-slate-950 text-slate-400 text-xs py-14 border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div class="space-y-3">
+          <img src="assets/images/Logo.png" alt="Forascom — فرصكم" class="h-11 w-auto object-contain rounded-lg" />
+          <p class="leading-relaxed max-w-xs">شركة تقنية عربية ناشئة — نخلق الفرص من خلال التكنولوجيا بجودة هندسية
+            عالمية.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-3">روابط سريعة</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:text-cyan transition-colors">الرئيسية</a></li>
+            <li><a href="about.html" class="hover:text-cyan transition-colors">عن فرصكم</a></li>
+            <li><a href="services.html" class="hover:text-cyan transition-colors">خدماتنا</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-3">أعمالنا</h4>
+          <ul class="space-y-2">
+            <li><a href="portfolio.html" class="hover:text-cyan transition-colors">معرض الأعمال</a></li>
+            <li><a href="contact.html" class="hover:text-cyan transition-colors">تواصل معنا</a></li>
+            <li><a href="contact.html" class="hover:text-cyan transition-colors">استشارة مجانية</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-3">تواصل</h4>
+          <ul class="space-y-2">
+            <li class="flex items-center gap-2"><span class="text-cyan">▸</span> WhatsApp مباشر</li>
+            <li class="flex items-center gap-2"><span class="text-cyan">▸</span> hello@forascom.com</li>
+            <li class="flex items-center gap-2"><span class="text-cyan">▸</span> LinkedIn</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-10 pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p>© 2026 Forascom. جميع الحقوق محفوظة — Technology that creates opportunities.</p>
+        <div class="flex items-center gap-4 font-bold text-slate-300">
+          <a href="https://www.instagram.com/foras_com?stkn=MWg1amRsY3NucHMyNg==" target="_blank"
+            rel="noopener noreferrer" class="hover:text-cyan">Instagram</a>
+          <a href="https://www.facebook.com/people/Forascom/61592914277326/?sk=directory_names" target="_blank"
+            rel="noopener noreferrer" class="hover:text-cyan">Facebook</a>
+          <a href="https://www.linkedin.com/company/forascom/" target="_blank" rel="noopener noreferrer"
+            class="hover:text-cyan">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Sticky WhatsApp Action Button -->
+  <div class="fixed bottom-6 left-6 z-50">
+    <a href="https://wa.me/201090000000?text=%D8%A3%D9%87%D9%84%D8%A3%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20Forascom%20%F0%9F%90%8B"
+      target="_blank"
+      class="group flex items-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs p-3.5 rounded-full shadow-2xl transition-all duration-500 ease-in-out hover:px-5">
+      <div class="relative flex items-center justify-center">
+        <span class="absolute -top-1 -right-1 flex h-3 w-3">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+        </span>
+        <svg class="w-6 h-6 fill-current shrink-0" viewBox="0 0 24 24">
+          <path
+            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+        </svg>
+      </div>
+      <span
+        class="max-w-0 opacity-0 overflow-hidden whitespace-nowrap transition-all duration-500 ease-in-out group-hover:max-w-xs group-hover:opacity-100 group-hover:mr-2.5">
+        تحدث مع مهندس Forascom الآن 💬
+      </span>
+    </a>
+  </div>
+
+  <!-- Back To Top Button -->
+  <button id="back-to-top" aria-label="العودة إلى الأعلى"
+    class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-white text-navy border border-slate-200 shadow-xl flex items-center justify-center hover:bg-navy hover:text-white hover:-translate-y-1 transition-all">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
+
+  <!-- GSAP & ScrollTrigger Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Hero Section Animations (Strictly scoped to Section 01 #hero) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Right Side: Existing approved fade-in animations (preserved 100% untouched)
+      const heroFadeElements = document.querySelectorAll('#hero .hero-fade-enter');
+      heroFadeElements.forEach((el, index) => {
+        setTimeout(() => {
+          el.classList.add('hero-visible');
+        }, 100 * (index + 1));
+      });
+
+      // 2. Left Side: System Pipeline GSAP Timeline (Scoped to Section 01 #hero)
+      function initHeroPipelineAnimation() {
+        const heroSection = document.getElementById('hero');
+        if (!heroSection) return;
+
+        const card = heroSection.querySelector('#hero-pipeline-card');
+        const stages = heroSection.querySelectorAll('.hero-pipeline-stage');
+        const connectors = heroSection.querySelectorAll('.hero-pipeline-connector .connector-line');
+        const stage4 = heroSection.querySelector('.hero-stage-4');
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (prefersReducedMotion || typeof gsap === 'undefined') {
+          if (card) {
+            card.style.opacity = '1';
+            card.style.transform = 'none';
+          }
+          stages.forEach(s => {
+            s.style.opacity = '1';
+            s.style.transform = 'none';
+          });
+          connectors.forEach(c => {
+            c.style.transform = 'none';
+            c.style.opacity = '1';
+          });
+          if (stage4) stage4.classList.add('hero-stage-4-active');
+          return;
+        }
+
+        if (typeof ScrollTrigger !== 'undefined') {
+          gsap.registerPlugin(ScrollTrigger);
+        }
+
+        // Initial setup for Section 01 pipeline elements
+        gsap.set(card, { opacity: 0, x: 20 });
+        gsap.set(stages, { opacity: 0, y: 12 });
+        gsap.set(connectors, { scaleY: 0, transformOrigin: 'top center' });
+
+        const tl = gsap.timeline({
+          delay: 0.25,
+          defaults: { ease: 'power2.out' }
+        });
+
+        // Pipeline entrance: card fades in + subtle x movement (0.65s)
+        tl.to(card, {
+          opacity: 1,
+          x: 0,
+          duration: 0.65
+        });
+
+        // Sequential stage reveals (~0.14s stagger) + progressive connector draws
+        stages.forEach((stage, idx) => {
+          tl.to(stage, {
+            opacity: 1,
+            y: 0,
+            duration: 0.48
+          }, idx === 0 ? '-=0.3' : '-=0.34');
+
+          // Progressive connector draw to the next stage
+          if (connectors[idx]) {
+            tl.to(connectors[idx], {
+              scaleY: 1,
+              duration: 0.24,
+              ease: 'power1.inOut'
+            }, '-=0.2');
+          }
+        });
+
+        // Stage 04 activates after previous stages with continuous subtle cyan glow
+        tl.add(() => {
+          if (stage4) {
+            stage4.classList.add('hero-stage-4-active');
+          }
+        }, '+=0.08');
+      }
+
+      initHeroPipelineAnimation();
+    });
+  </script>
+
+  <!-- App JavaScript Modules -->
+  <script src="assets/js/orbit.js"></script>
+  <script src="assets/js/portfolio.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

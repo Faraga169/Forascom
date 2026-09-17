@@ -110,11 +110,18 @@
       transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .project-card.filter-hidden {
+.project-card.filter-hidden {
       display: none !important;
       opacity: 0;
       transform: scale(0.96);
     }
+
+/* Subtle line glow animation */
+@keyframes lineGlow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+.active-line { animation: lineGlow 2.5s ease-in-out infinite; }
   </style>
 
 </head>
@@ -207,7 +214,7 @@
 
   <!-- 2. HERO SECTION (Desktop 2-Column Split) -->
   <main class="relative z-10 pt-20 pb-16">
-    <section class="max-w-7xl mx-auto px-8 py-12 lg:py-16">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         <!-- Left Editorial Copy (7 Cols) -->
         <div class="lg:col-span-7 flex flex-col gap-6">
@@ -217,16 +224,16 @@
             <span class="text-xs font-bold font-mono tracking-wider text-tertiary">FORASCOM SHOWCASE • سِجل الإنجازات
               والحلول</span>
           </div>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.2] tracking-tight text-white">
+          <h1 class="text-3xl sm:text-4xl lg:text-6xl font-black leading-[1.2] tracking-tight text-white break-words">
             حلول تحوّل <span class="text-tertiary cyan-glow-text inline-block">التحديات</span> إلى فرص.
           </h1>
-          <p class="text-lg lg:text-xl text-on-surface-variant font-normal leading-relaxed max-w-2xl">
+          <p class="text-lg lg:text-xl text-on-surface-variant font-normal leading-[1.6] max-w-2xl">
             مجموعة مختارة من الأنظمة والحلول الرقمية التي بنيناها لمعالجة تحديات أعمال حقيقية، وتحويل الاختناقات
             التشغيلية
             إلى قنوات نمو مستدام، كفاءة غير مسبوقة، وقيمة ملموسة تظهر في نتائج الشركات.
           </p>
           <!-- Quick Metrics Bar -->
-          <div class="grid grid-cols-3 gap-4 pt-4 border-t border-white/10 max-w-xl">
+          <!-- <div class="grid grid-cols-3 gap-4 pt-4 border-t border-white/10 max-w-xl">
             <div class="flex flex-col">
               <span class="text-2xl lg:text-3xl font-black text-tertiary font-mono">12+</span>
               <span class="text-xs font-medium text-on-surface-variant mt-0.5">مشروع تم تسليمه</span>
@@ -239,12 +246,12 @@
               <span class="text-2xl lg:text-3xl font-black text-[#25D366] font-mono">100%</span>
               <span class="text-xs font-medium text-on-surface-variant mt-0.5">بيئات إنتاج نشطة</span>
             </div>
-          </div>
+          </div> -->
         </div>
         <!-- Right System Architecture Visual Card (5 Cols) -->
         <div class="lg:col-span-5">
           <div
-            class="relative rounded-3xl bg-surface-container/90 backdrop-blur-xl p-8 cyan-border cyan-glow-box shadow-2xl overflow-hidden">
+            class="relative rounded-3xl bg-surface-container/90 backdrop-blur-xl p-4 sm:p-6 lg:p-8 cyan-border cyan-glow-box shadow-2xl overflow-hidden">
             <!-- Ambient corner decoration -->
             <div class="absolute -top-16 -left-16 w-40 h-40 rounded-full bg-tertiary/20 blur-2xl pointer-events-none">
             </div>
@@ -278,7 +285,7 @@
                   class="w-2.5 h-2.5 rounded-full bg-outline-variant group-hover:bg-tertiary transition-colors"></span>
               </div>
               <!-- Connecting Line -->
-              <div class="w-0.5 h-4 bg-gradient-to-b from-tertiary/60 to-primary-container mr-9"></div>
+              <div class="w-0.5 h-4 sm:h-6 mx-auto bg-gradient-to-b from-tertiary/60 to-primary-container"></div>
               <!-- Step 2 -->
               <div
                 class="flex items-center justify-between p-4 rounded-xl bg-surface-container-high/80 border border-white/5 hover:border-tertiary/40 transition-all group">
@@ -295,7 +302,7 @@
                 <span class="w-2.5 h-2.5 rounded-full bg-primary-container shadow-[0_0_8px_#1D9BF0]"></span>
               </div>
               <!-- Connecting Line -->
-              <div class="w-0.5 h-4 bg-gradient-to-b from-primary-container to-tertiary mr-9"></div>
+              <div class="w-0.5 h-4 sm:h-6 mx-auto bg-gradient-to-b from-primary-container to-tertiary"></div>
               <!-- Step 3 -->
               <div
                 class="flex items-center justify-between p-4 rounded-xl bg-surface-container-high/80 border border-white/5 hover:border-tertiary/40 transition-all group">
@@ -312,7 +319,7 @@
                 <span class="w-2.5 h-2.5 rounded-full bg-tertiary shadow-[0_0_8px_#00C4EE] animate-pulse"></span>
               </div>
               <!-- Connecting Line (Glowing Active) -->
-              <div class="w-0.5 h-4 bg-gradient-to-b from-tertiary to-tertiary mr-9 shadow-[0_0_8px_#00C4EE]"></div>
+              <div class="w-0.5 h-4 sm:h-6 mx-auto bg-gradient-to-b from-tertiary to-tertiary shadow-[0_0_8px_#00C4EE] active-line"></div>
               <!-- Step 4 (Active Opportunity) -->
               <div
                 class="flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-surface-bright/70 via-surface-container-high to-surface-container border border-tertiary shadow-[0_0_20px_rgba(0,196,238,0.25)]">

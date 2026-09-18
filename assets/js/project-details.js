@@ -13,7 +13,7 @@ const projectsDetailsData = {
     heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuAoQGBpnR5YOtx63m0ayiRLrEPzGeEGwJpeMf8aOkTrWiiC1RuM2DXWLbQC278Qf4cmQNAgUjNF1ubMzZHKRleulvpj0pJZE3LU4fisX_6zKqKedCwMOiq9hU-3Tb2F7Mm2lN2ss5norSsEj0EYs2bGqm-hezL62_YHMq7FDilW3G2HzqtmepKo-3DkVVh1C7hfPrdr-cPUIX48M44X1m_V95n545Ujsfc3nAjjMW-7j-bNj5mHREaS",
     heroImageAlt: "FocusZone Live Learning Architecture UI",
     liveUrl: "",
-    demoVideo: "",
+    demoVideo: "assets/videos/Demo.mp4",
     metaTelemetry: {
       label: "LIVE TELEMETRY STREAM",
       status: "Active Pipeline",
@@ -445,13 +445,14 @@ function renderProjectDetails(projectKey) {
 
   // 1. HERO SECTION
   const categoryBadge = document.getElementById("project-category-badge");
-  if (categoryBadge) categoryBadge.textContent = project.category;
+  if (categoryBadge) {
+    categoryBadge.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span><span>${project.category}</span>`;
+  }
 
   const titleEl = document.getElementById("project-title");
   if (titleEl) titleEl.textContent = project.title;
 
-  const subtitleEl = document.getElementById("project-subtitle");
-  if (subtitleEl) subtitleEl.textContent = project.subtitle;
+
 
   const descEl = document.getElementById("project-desc");
   if (descEl) descEl.textContent = project.description;
@@ -467,16 +468,7 @@ function renderProjectDetails(projectKey) {
   if (heroImage) {
     heroImage.src = project.heroImage;
     heroImage.alt = project.heroImageAlt || project.title;
-  }
-
-  const telemetryLabel = document.getElementById("hero-telemetry-label");
-  if (telemetryLabel && project.metaTelemetry) {
-    telemetryLabel.textContent = project.metaTelemetry.label;
-  }
-
-  const telemetryStatus = document.getElementById("hero-telemetry-status");
-  if (telemetryStatus && project.metaTelemetry) {
-    telemetryStatus.textContent = project.metaTelemetry.status;
+    heroImage.classList.remove("hidden");
   }
 
   const telemetryHighlight = document.getElementById("hero-telemetry-highlight");
@@ -484,7 +476,7 @@ function renderProjectDetails(projectKey) {
     telemetryHighlight.textContent = project.metaTelemetry.highlight;
   }
 
-  // Live URL & Demo Video Button controls in Hero
+  // Live URL Button control in Hero
   const heroLiveBtn = document.getElementById("hero-live-btn");
   if (heroLiveBtn) {
     if (project.liveUrl && project.liveUrl.trim() !== "") {
@@ -497,15 +489,86 @@ function renderProjectDetails(projectKey) {
     }
   }
 
+  // Demo Video & Play Interaction Control
   const heroDemoBtn = document.getElementById("hero-demo-btn");
+  const playMediaBtn = document.getElementById("hero-play-media-btn");
+  const demoBadgeText = document.getElementById("hero-demo-badge-text");
+  const mediaViewport = document.getElementById("hero-media-viewport");
+  const mediaOverlay = document.getElementById("hero-media-overlay");
+
+  const hasDemoVideo = Boolean(project.demoVideo && project.demoVideo.trim() !== "");
+
+  // Cleanup any active video player when project changes
+  const existingVideo = document.getElementById("project-hero-video");
+  if (existingVideo) {
+    existingVideo.remove();
+  }
+  if (mediaOverlay) mediaOverlay.classList.remove("hidden");
+
+  if (demoBadgeText) {
+    demoBadgeText.textContent = hasDemoVideo ? "PRODUCT DEMO" : "PROJECT PREVIEW";
+  }
+
+  function triggerDemoVideoPlayback() {
+    if (!hasDemoVideo || !mediaViewport) return;
+
+    let videoEl = document.getElementById("project-hero-video");
+
+    if (!videoEl) {
+      videoEl = document.createElement("video");
+
+      videoEl.id = "project-hero-video";
+      videoEl.controls = true;
+      videoEl.playsInline = true;
+      videoEl.preload = "metadata";
+
+      videoEl.className =
+        "absolute inset-0 w-full h-full object-cover z-20 rounded-2xl bg-black";
+
+      mediaViewport.appendChild(videoEl);
+    }
+
+    // Set source
+    videoEl.src = project.demoVideo;
+    videoEl.load();
+
+    // Hide preview UI
+    if (heroImage) heroImage.classList.add("hidden");
+    if (playMediaBtn) playMediaBtn.classList.add("hidden");
+    if (mediaOverlay) mediaOverlay.classList.add("hidden");
+
+    // Play after user interaction
+    videoEl.play().catch(error => {
+      console.error("Video playback failed:", error);
+    });
+  }
+
   if (heroDemoBtn) {
-    if (project.demoVideo && project.demoVideo.trim() !== "") {
-      heroDemoBtn.href = project.demoVideo;
+    if (hasDemoVideo) {
+      heroDemoBtn.href = "#project-hero";
       heroDemoBtn.classList.remove("hidden");
       heroDemoBtn.classList.add("inline-flex");
+      heroDemoBtn.onclick = (e) => {
+        e.preventDefault();
+        triggerDemoVideoPlayback();
+      };
     } else {
       heroDemoBtn.classList.add("hidden");
       heroDemoBtn.classList.remove("inline-flex");
+      heroDemoBtn.onclick = null;
+    }
+  }
+
+  if (playMediaBtn) {
+    if (hasDemoVideo) {
+      playMediaBtn.classList.remove("hidden");
+      playMediaBtn.onclick = (e) => {
+        e.preventDefault();
+        triggerDemoVideoPlayback();
+      };
+    } else {
+      playMediaBtn.classList.add("hidden");
+      playMediaBtn.onclick = null;
     }
   }
 
@@ -683,7 +746,7 @@ function initProjectDetailsMotion() {
     .fromTo("#project-desc", { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.45 }, "-=0.25")
     .fromTo("#hero-actions-container", { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.45 }, "-=0.25")
     .fromTo("#project-hero-card", { opacity: 0, scale: 0.94, y: 25 }, { opacity: 1, scale: 1, y: 0, duration: 0.75 }, "-=0.5");
-// Subtle floating ambient motion for the hero visual (only if motion is allowed)
+  // Subtle floating ambient motion for the hero visual (only if motion is allowed)
   if (!prefersReducedMotion && typeof gsap !== "undefined") {
     gsap.to("#project-hero-card", {
       y: -8,
@@ -694,19 +757,20 @@ function initProjectDetailsMotion() {
     });
   }
   // 2. Challenge Section: Heading & Cards Reveal
-// Reveal heading first
-if (!prefersReducedMotion && typeof ScrollTrigger !== "undefined") {
-  gsap.fromTo("#project-challenge h2",
-    { opacity: 0, y: 12 },
-    { opacity: 1, y: 0, duration: 0.5, ease: "power2.out",
-      scrollTrigger: {
-        trigger: "#project-challenge",
-        start: "top 85%",
-        toggleActions: "play none none none"
-      }
-    });
-}
-// 2. Challenge Cards Stagger Reveal
+  // Reveal heading first
+  if (!prefersReducedMotion && typeof ScrollTrigger !== "undefined") {
+    gsap.fromTo("#project-challenge h2",
+      { opacity: 0, y: 12 },
+      {
+        opacity: 1, y: 0, duration: 0.5, ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#project-challenge",
+          start: "top 85%",
+          toggleActions: "play none none none"
+        }
+      });
+  }
+  // 2. Challenge Cards Stagger Reveal
   const challengeCards = document.querySelectorAll(".challenge-card");
   if (challengeCards.length > 0 && typeof ScrollTrigger !== "undefined") {
     gsap.fromTo(challengeCards,
@@ -792,7 +856,7 @@ if (!prefersReducedMotion && typeof ScrollTrigger !== "undefined") {
         );
       }
     }
-    }
+  }
 
   // 4. Outcome Before -> After Reveal
   if (typeof ScrollTrigger !== "undefined") {

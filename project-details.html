@@ -224,24 +224,25 @@
     <!-- ========================================================================
          01 — HERO SECTION
          ======================================================================== -->
-    <section class="max-w-7xl mx-auto px-8 py-8 lg:py-12" id="project-hero">
+    <section class="max-w-7xl mx-auto px-6 sm:px-8 py-8 lg:py-12" id="project-hero">
       <!-- Breadcrumb / Back Link -->
       <div class="mb-6">
         <a href="portfolio.html" id="hero-back-link"
-          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-high/60 border border-white/5 text-xs font-mono font-bold text-on-surface-variant hover:text-tertiary hover:border-tertiary/30 transition-all group">
+          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-high/60 hover:bg-surface-bright border border-white/10 text-xs font-mono font-bold text-on-surface-variant hover:text-tertiary hover:border-tertiary/40 transition-all duration-300 group">
           <span
             class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
           <span>العودة لمعرض الأعمال والأرشيف</span>
         </a>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-        <!-- Hero Text Column (7 Cols) -->
-        <div class="lg:col-span-7 flex flex-col gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-12 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <!-- Hero Text Column (7 Cols on Desktop) -->
+        <div class="lg:col-span-6 md:col-span-6 flex flex-col gap-6">
           <!-- Category Badge -->
           <div id="project-category-badge"
             class="inline-flex items-center self-start gap-2.5 px-3.5 py-1.5 rounded-full bg-surface-bright text-tertiary text-xs font-mono font-bold border border-tertiary/30 shadow-[0_0_15px_rgba(0,196,238,0.15)]">
-            ذكاء اصطناعي • AI & Machine Learning
+            <span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+            <span>ذكاء اصطناعي • AI & Machine Learning</span>
           </div>
 
           <!-- Project Title -->
@@ -250,10 +251,7 @@
             تحميل تفاصيل المشروع...
           </h1>
 
-          <!-- Value Proposition / Subtitle -->
-          <p id="project-subtitle" class="text-lg lg:text-xl text-tertiary/95 font-semibold leading-relaxed max-w-2xl">
-            حلول متكاملة تترجم متطلبات العمل إلى نتائج تشغيلية ملموسة.
-          </p>
+
 
           <!-- Technology Tags -->
           <div id="project-tags" class="flex flex-wrap items-center gap-2">
@@ -261,76 +259,83 @@
           </div>
 
           <!-- Short Description -->
-          <p id="project-desc" class="text-base text-on-surface-variant font-normal leading-relaxed max-w-2xl">
+          <p id="project-desc" class="text-sm sm:text-base text-on-surface-variant font-normal leading-relaxed max-w-2xl">
             جاري استعراض البنية التشغيلية والحل الهندسي الذي تم تنفيذه في بيئة إنتاج حقيقية...
           </p>
 
           <!-- Hero Action Buttons -->
           <div id="hero-actions-container" class="flex flex-wrap items-center gap-3.5 pt-2">
-            <!-- View Live Project Button (Shown only if liveUrl exists) -->
+            <!-- 1. View Live Project Button (Primary CTA - Shown only if liveUrl exists) -->
             <a id="hero-live-btn" href="#" target="_blank" rel="noopener noreferrer"
-              class="hidden btn-smooth btn-hover items-center gap-2 px-6 py-3.5 rounded-xl bg-tertiary hover:bg-[#34d4f6] text-[#00101D] font-extrabold text-sm shadow-[0_0_20px_rgba(0,196,238,0.4)] transition-all">
+              class="hidden btn-smooth items-center gap-2 px-6 py-3.5 rounded-xl bg-tertiary hover:bg-[#34d4f6] text-[#00101D] font-extrabold text-sm shadow-[0_0_25px_rgba(0,196,238,0.4)] hover:shadow-[0_0_30px_rgba(0,196,238,0.6)] transition-all duration-300">
               <span>مشاهدة المشروع المباشر</span>
               <span class="material-symbols-outlined text-base">north_east</span>
             </a>
 
-            <!-- Watch Demo Button (Shown only if demoVideo exists) -->
+            <!-- 2. Watch Demo Button (Secondary Interactive CTA - Shown only if demoVideo exists) -->
             <a id="hero-demo-btn" href="#project-proof"
-              class="hidden btn-smooth btn-hover items-center gap-2 px-5 py-3.5 rounded-xl bg-surface-container-high hover:bg-surface-bright text-white font-bold text-sm border border-tertiary/30 hover:border-tertiary/50 transition-all">
+              class="hidden btn-smooth items-center gap-2 px-5 py-3.5 rounded-xl bg-surface-container-high/90 hover:bg-surface-bright text-white font-bold text-sm border border-tertiary/35 hover:border-tertiary/70 shadow-[0_0_15px_rgba(0,196,238,0.12)] transition-all duration-300">
               <span class="material-symbols-outlined text-base text-tertiary">play_circle</span>
               <span>مشاهدة العرض التوضيحي</span>
             </a>
 
-            <!-- Consult CTA Button -->
+            <!-- 3. Consult CTA Button (Tertiary Action) -->
             <a id="hero-consult-btn"
               href="https://wa.me/201090000000?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20%D9%81%D8%B1%D8%B5%D9%83%D9%85%D8%8C%20%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%AD%D9%84%D9%88%D9%84%20%D8%A7%D9%84%D9%87%D9%86%D8%AF%D8%B3%D9%8A%D8%A9."
               target="_blank"
-              class="btn-smooth inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-surface-container-high/70 hover:bg-surface-bright text-white font-bold text-sm border border-white/10 hover:border-tertiary/30 transition-all">
+              class="btn-smooth inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-surface-container-high/60 hover:bg-surface-bright text-on-surface-variant hover:text-white font-bold text-sm border border-white/10 hover:border-tertiary/30 transition-all duration-300">
               <span>استشر مهندسينا حول هذا الحل</span>
               <span class="material-symbols-outlined text-base">chat</span>
             </a>
           </div>
         </div>
 
-        <!-- Hero Visual Mockup Column (5 Cols) -->
-        <div class="lg:col-span-5">
+        <!-- Hero Visual / Demo Showcase Column (5 Cols on Desktop) -->
+        <div class="lg:col-span-6 md:col-span-6">
           <div id="project-hero-card"
-            class="relative rounded-3xl bg-surface-container/90 backdrop-blur-xl p-3 sm:p-4 cyan-border cyan-glow-box shadow-2xl overflow-hidden group">
+            class="relative rounded-3xl bg-surface-container/95 backdrop-blur-xl p-3.5 sm:p-4 border border-tertiary/20 hover:border-tertiary/40 shadow-[0_0_35px_rgba(0,196,238,0.12)] transition-all duration-500 overflow-hidden group">
 
             <!-- Ambient corner decoration -->
-            <div class="absolute -top-16 -left-16 w-44 h-44 rounded-full bg-tertiary/20 blur-3xl pointer-events-none">
+            <div class="absolute -top-16 -left-16 w-48 h-48 rounded-full bg-tertiary/15 blur-3xl pointer-events-none">
             </div>
 
-            <!-- Top Telemetry Stream Header -->
-            <div
-              class="p-3 mb-2 flex items-center justify-between border-b border-white/10 bg-[#00101D]/75 backdrop-blur-md rounded-xl text-xs font-mono">
-              <div class="flex items-center gap-2 text-tertiary">
-                <span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span>
-                <span id="hero-telemetry-label" class="font-bold">SYSTEM TELEMETRY STREAM</span>
-              </div>
-              <span id="hero-telemetry-status"
-                class="px-2 py-0.5 rounded bg-surface-bright text-[11px] font-mono text-white/90 border border-white/10">
-                Production Ready
-              </span>
-            </div>
-
-            <!-- Main Product Screenshot Frame -->
-            <div
-              class="relative rounded-2xl overflow-hidden bg-surface-container-low aspect-video flex flex-col justify-between">
+            <!-- Main Product Demo / Media Viewport -->
+            <div id="hero-media-viewport"
+              class="relative rounded-2xl overflow-hidden bg-[#000c17] aspect-video border border-white/5 flex flex-col justify-between group/media">
+              
+              <!-- Product Preview Image -->
               <img id="project-hero-image" src="assets/images/Logo.png" alt="Product Mockup Preview"
-                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-[#00080F]/90 via-[#00101D]/30 to-transparent pointer-events-none">
+                class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.02]" />
+              
+              <!-- Contrast Gradient Overlay -->
+              <div id="hero-media-overlay"
+                class="absolute inset-0 bg-gradient-to-t from-[#00080F]/90 via-transparent to-[#00101D]/20 pointer-events-none transition-opacity duration-300">
               </div>
 
-              <!-- Bottom Telemetry Pill Overlay -->
+              <!-- Top Floating Badge: Single Clean Status (PRODUCT DEMO / LIVE DEMO) -->
+              <div id="hero-demo-badge" class="absolute top-3 right-3 z-10">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#00101D]/85 backdrop-blur-md border border-white/10 text-[10px] font-mono text-white/90">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse"></span>
+                  <span id="hero-demo-badge-text">PRODUCT DEMO</span>
+                </span>
+              </div>
+
+              <!-- Center Interactive Play Button (Real semantic button) -->
+              <div id="hero-play-container" class="absolute inset-0 z-10 flex items-center justify-center">
+                <button type="button" id="hero-play-media-btn" aria-label="تشغيل العرض التوضيحي"
+                  class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#00101D]/80 backdrop-blur-md border border-tertiary/40 text-tertiary flex items-center justify-center shadow-[0_0_25px_rgba(0,196,238,0.35)] hover:scale-110 hover:bg-tertiary hover:text-[#00101D] hover:shadow-[0_0_35px_rgba(0,196,238,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tertiary transition-all duration-300 group/btn cursor-pointer">
+                  <span class="material-symbols-outlined text-2xl font-bold translate-x-[-1px]">play_arrow</span>
+                </button>
+              </div>
+
+              <!-- Bottom Telemetry Indicator -->
               <div
-                class="absolute bottom-3 inset-x-3 p-3 bg-[#00101D]/90 backdrop-blur-md rounded-xl border border-white/10 flex items-center justify-between text-xs font-mono">
-                <span class="text-on-surface-variant flex items-center gap-1.5">
+                class="relative z-10 m-2.5 sm:m-3 p-2.5 sm:p-3 bg-[#00101D]/90 backdrop-blur-md rounded-xl border border-white/10 flex items-center justify-between text-xs font-mono">
+                <span class="text-on-surface-variant flex items-center gap-1.5 text-[11px] sm:text-xs">
                   <span class="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse"></span>
                   <span>البيئة التشغيلية:</span>
                 </span>
-                <span id="hero-telemetry-highlight" class="text-tertiary font-bold">معالجة فورية</span>
+                <span id="hero-telemetry-highlight" class="text-tertiary font-bold text-[11px] sm:text-xs">معالجة فورية</span>
               </div>
             </div>
           </div>

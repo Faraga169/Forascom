@@ -19,44 +19,14 @@ const projectsDetailsData = {
       status: "Active Pipeline",
       highlight: "معالجة تكيفية لحظية"
     },
-    challenge: [
-      {
-        index: "01",
-        title: "ارتفاع معدلات التشتت والتسرب",
-        desc: "تراجع استمرارية المتدربين في المسارات الطويلة لغياب التوجيه اللحظي الفعال والتخصيص الفردي."
-      },
-      {
-        index: "02",
-        title: "غياب الرؤية اللحظية لمستوى الاستيعاب",
-        desc: "الاعتماد على تقييمات تقليدية متأخرة تفشل في رصد مواضع التعثر والتعقيد أثناء التدريب."
-      },
-      {
-        index: "03",
-        title: "برامج تدريب جامدة وغير متكيفة",
-        desc: "تقديم نفس المواد والسرعة لجميع المتدربين دون مراعاة الفروق الفردية ومستويات المهارة السابقة."
-      }
-    ],
-    solution: "بناء محرك تدريبي تكيفي يرصد مؤشرات التفاعل لحظة بلحظة، ويوجه كل متدرب إلى المحتوى والتمارين الأنسب لمستواه تلقائياً عبر خوارزميات الذكاء الاصطناعي.",
-    features: [
-      {
-        icon: "psychology",
-        title: "تحليل وتوليد المسارات التكيفية",
-        desc: "تكييف سرعة ومستوى المحتوى تلقائياً بناءً على سرعة استيعاب وإنجاز المتدرب."
-      },
-      {
-        icon: "insights",
-        title: "لوحة مؤشرات التفاعل اللحظية (Telemetry)",
-        desc: "رصد فوري لنسب التقدم ونقاط التعثر وتنبيه المشرفين لمساعدة المتعثرين فوراً."
-      },
-      {
-        icon: "recommend",
-        title: "محرك التوصيات المعززة",
-        desc: "اقتراح مواد مكملة وتطبيقات عملية مخصصة لسد الثغرات المهارية المكتشفة لحظياً."
-      }
-    ],
-    outcome: {
+
+
+    transformation: {
+      title: "من التدريب الجامد إلى التعلّم التكيفي الذكي",
+      description: "مقارنة تشغيلية توضح الأثر الفعلي لمنظومة FocusZone على مسارات التدريب وكفاءة الإنجاز.",
       before: {
-        title: "الوضع السابق",
+        badge: "الوضع السابق • BEFORE",
+        title: "تدريب تقليدي جامد",
         subtitle: "تدريب موحد بنمط تقليدي جامد",
         points: [
           "مسارات جامدة بدون تخصيص للمتدربين",
@@ -65,22 +35,17 @@ const projectsDetailsData = {
         ]
       },
       after: {
-        title: "بعد حل فرصكم",
+        badge: "بعد حل فرصكم • AFTER",
+        title: "منظومة تعليمية تكيفية",
         subtitle: "منظومة تفاعلية مخصصة ولحظية",
         points: [
           "مسار تدريبي مخصص لكل متدرب حسب سرعته",
           "تنبيهات وتدخلات استباقية لمعالجة التعثر",
           "تقارير أداء ومؤشرات تقدم دقيقة ومباشرة"
-        ]
+        ],
+        footer: "نتائج تشغيلية محققة في بيئة إنتاج فعلية"
       }
     },
-    screenshots: [
-      {
-        url: "https://lh3.googleusercontent.com/aida-public/AB6AXuAoQGBpnR5YOtx63m0ayiRLrEPzGeEGwJpeMf8aOkTrWiiC1RuM2DXWLbQC278Qf4cmQNAgUjNF1ubMzZHKRleulvpj0pJZE3LU4fisX_6zKqKedCwMOiq9hU-3Tb2F7Mm2lN2ss5norSsEj0EYs2bGqm-hezL62_YHMq7FDilW3G2HzqtmepKo-3DkVVh1C7hfPrdr-cPUIX48M44X1m_V95n545Ujsfc3nAjjMW-7j-bNj5mHREaS",
-        title: "لوحة التحكم والتحليل اللحظي",
-        caption: "واجهة متابعة مسارات المتدربين ومؤشرات التفاعل والمسارات التكيفية"
-      }
-    ],
     ctaWhatsAppMessage: "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة منظومة FocusZone وحلول التعلم الذكية."
   },
 
@@ -100,44 +65,13 @@ const projectsDetailsData = {
       status: "API Realtime Mesh",
       highlight: "معالجة فورية للبوالص"
     },
-    challenge: [
-      {
-        index: "01",
-        title: "استنزاف ساعات في الإدخال اليدوي",
-        desc: "تكرار إدخال بيانات الشحنات يدوياً لكل بوليصة مما تسبب في اختناق وتأخير مواعيد التسليم."
-      },
-      {
-        index: "02",
-        title: "أخطاء متكررة في العناوين والبيانات",
-        desc: "أخطاء الإدخال البشري لعناوين العملاء رفعت تكاليف الشحن المرتجع ومشاكل التوصيل."
-      },
-      {
-        index: "03",
-        title: "فجوة زمنية في مزامنة المستودعات",
-        desc: "تأخر تحديث مخزون الموردين ومواقع الشحنات تسبب في تضارب بين فرق العمليات والمستودعات."
-      }
-    ],
-    solution: "تطوير محرك أتمتة متكامل يربط منصات المبيعات بشركات النقل والمستودعات عبر واجهات API فورية، لإصدار البوالص وتوزيع مسارات الشحن لحظة الشراء.",
-    features: [
-      {
-        icon: "local_shipping",
-        title: "إصدار بوالص الشحن اللحظي",
-        desc: "توليد بوليصة الشحن وإرسالها لشركة النقل وطباعتها آلياً بمجرد تأكيد الطلب."
-      },
-      {
-        icon: "sync_alt",
-        title: "مزامنة المخازن والموردين",
-        desc: "تحديث كميات المستودعات وأماكن الشحنات لحظة بلحظة دون أي ترحيل يدوي."
-      },
-      {
-        icon: "pin_drop",
-        title: "التحقق الذكي من العناوين",
-        desc: "تدقيق بيانات العناوين ومواقع التسليم وتوجيه الشحنة إلى الناقل الأنسب والأقرب."
-      }
-    ],
-    outcome: {
+
+    transformation: {
+      title: "من الإدخال اليدوي إلى أتمتة سلاسل الإمداد",
+      description: "مقارنة تشغيلية توضح الأثر الفعلي لمحرك سَنَد على كفاءة الشحن وإصدار البوالص.",
       before: {
-        title: "الوضع السابق",
+        badge: "الوضع السابق • BEFORE",
+        title: "عمليات شحن يدوية بطيئة",
         subtitle: "عمليات شحن وإدخال يدوية بطيئة",
         points: [
           "استغراق ساعات طويلة لتجهيز وإصدار البوالص",
@@ -146,22 +80,17 @@ const projectsDetailsData = {
         ]
       },
       after: {
-        title: "بعد حل فرصكم",
+        badge: "بعد حل فرصكم • AFTER",
+        title: "محرك أتمتة لوجستي متكامل",
         subtitle: "محرك أتمتة كامل وسلس",
         points: [
           "إصدار فوري للبوالص في غضون دقائق من الطلب",
           "انعدام أخطاء العناوين عبر التحقق الآلي",
           "مزامنة كاملة ولحظية مع المستودعات والناقلين"
-        ]
+        ],
+        footer: "نتائج تشغيلية محققة في بيئة إنتاج فعلية"
       }
     },
-    screenshots: [
-      {
-        url: "https://lh3.googleusercontent.com/aida-public/AB6AXuBtn7W6eqglCjePtAQhBikhDa2l0O5hxnBoaE94vIlaxNOUm27AL6VpJHRq1H6Zf6vPWcgLWPR-s4787z5YzQOix1A32bbSIZoa1IX7zS3imNH-sQyDReQtnMxANfTD5d782O2otbMC0SNVjTMm7LIFnBECcV0h63eJOwZDzbnvlD3pEvLiTYcln7_jkZcaJygH1znPsQl87pgs5iSGo7dy2DJLl4K1Y1ioWFjLPD3r0oQwmVh9kfAc",
-        title: "واجهة محرك التوجيه اللحظي",
-        caption: "رصد دورات الشحن وحالة الربط التلقائي مع شركات النقل"
-      }
-    ],
     ctaWhatsAppMessage: "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة نظام سند لأتمتة سلاسل الإمداد."
   },
 
@@ -181,44 +110,13 @@ const projectsDetailsData = {
       status: "Enterprise Dataverse",
       highlight: "تزامن لحظي ثنائي الاتجاه"
     },
-    challenge: [
-      {
-        index: "01",
-        title: "فروقات الجرد بين الفروع والمتجر",
-        desc: "بيع منتجات غير متوفرة بسبب بطء مزامنة المخزون بين المعارض الواقعية والمتجر الإلكتروني."
-      },
-      {
-        index: "02",
-        title: "انفصال دورة الفوترة والمحاسبة",
-        desc: "إعادة تسجيل الطلبات والمبيعات يدوياً في نظام الـ ERP مما هدر وقتاً كبيراً وتسبب في أخطاء ترحيل."
-      },
-      {
-        index: "03",
-        title: "ثقل وبطء تجربة إتمام الشراء",
-        desc: "بطء استجابة الصفحات وسلال الشراء مما تسبب في فقدان عمليات شراء وارتفاع معدل التراجع."
-      }
-    ],
-    solution: "بناء بنية تجارة رقمية فائقة السرعة مع محرك تكامل ثنائي الاتجاه يربط المبيعات والمخزون والفوترة بنظام الـ ERP لحظة بلحظة.",
-    features: [
-      {
-        icon: "inventory_2",
-        title: "تزامن المخزون والأسعار اللحظي",
-        desc: "تحديث فوري لكميات المنتجات عبر كل القنوات عند إتمام أي عملية بيع في الفرع أو المتجر."
-      },
-      {
-        icon: "receipt_long",
-        title: "الترحيل المحاسبي التلقائي",
-        desc: "إصدار الفواتير الإلكترونية وترحيل القيود المالية مباشرة إلى نظام الـ ERP دون تدخل بشري."
-      },
-      {
-        icon: "bolt",
-        title: "تجربة إتمام شراء فائقة الخفة",
-        desc: "واجهة checkout سريعة ومحسنة ترفع معدلات الإتمام وتدعم مختلف بوابات الدفع المعتمدة."
-      }
-    ],
-    outcome: {
+
+    transformation: {
+      title: "من جزر البيانات إلى تكامل تجاري موحد",
+      description: "مقارنة تشغيلية توضح الأثر الفعلي لمنصة مِداد على مزامنة المخزون والفوترة وتجربة الشراء.",
       before: {
-        title: "الوضع السابق",
+        badge: "الوضع السابق • BEFORE",
+        title: "جزر بيانات معزولة",
         subtitle: "جزر بيانات معزولة وتحديثات يدوية",
         points: [
           "تضارب أرصدة المخزون بين نقاط البيع والمتجر",
@@ -227,22 +125,17 @@ const projectsDetailsData = {
         ]
       },
       after: {
-        title: "بعد حل فرصكم",
+        badge: "بعد حل فرصكم • AFTER",
+        title: "منظومة تجارية موحدة لحظية",
         subtitle: "منظومة موحدة ومتزامنة في الوقت الفعلي",
         points: [
           "تطابق كامل للمخزون دون أي بيع غير مغطى",
           "أتمتة الفواتير والقيود فور تأكيد الشراء",
           "تجربة شراء سلسة وسريعة عبر مختلف الأجهزة"
-        ]
+        ],
+        footer: "نتائج تشغيلية محققة في بيئة إنتاج فعلية"
       }
     },
-    screenshots: [
-      {
-        url: "https://lh3.googleusercontent.com/aida-public/AB6AXuC1QdXrPN4L53rjiSDQkytd0OdCIRHfCMhzbx3y8hlw24jDxHa4_kD0i9hECZJfryfBXoCnPDQwUc8qvVeAThh_avsMc102iZgBpjy58JY9q0UcvZKs8ueIpQbqIJFZlyETT4d5WgQNUpEsn3v0hVQdQuxyteANdbInfzkTJgpOPnjSOWwJzyzE0XMnjzrtkY-IUpCrhu2jIWMz44gCD7zAx3wUzrbKVNIH67Xa3uK1W-e7oA3MWL7f",
-        title: "واجهة المتجر وتكامل ERP",
-        caption: "رصد عمليات التزامن ومزامنة المخازن والفواتير والطلبات"
-      }
-    ],
     ctaWhatsAppMessage: "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة مداد لتطوير المنصات وتكامل ERP."
   },
 
@@ -262,44 +155,13 @@ const projectsDetailsData = {
       status: "Cloud Native Governance",
       highlight: "حوكمة سلاسل الاعتمادات"
     },
-    challenge: [
-      {
-        index: "01",
-        title: "ضياع المعاملات في الإيميلات والورقيات",
-        desc: "تشتت الطلبات بين صناديق البريد والورق مما تسبب في بطء حسم القرارات وفقدان الوثائق."
-      },
-      {
-        index: "02",
-        title: "غياب الشفافية ومسار التتبع",
-        desc: "عدم قدرة أصحاب الطلب على معرفة المسؤول الذي تقف المعاملة لديه وأسباب التأخير."
-      },
-      {
-        index: "03",
-        title: "تجاوز المهل الزمنية المحددة",
-        desc: "غياب التنبيهات والتصعيد الآلي للطلبات العالقة مما أدى إلى تعطل أعمال حساسة."
-      }
-    ],
-    solution: "تصميم ونشر تطبيق ومنظومة سير عمل مؤتمتة عبر Power Apps و Power Automate تُمكّن من رفع وتتبع واعتماد الطلبات بنقرة واحدة عبر Teams والإيميل.",
-    features: [
-      {
-        icon: "account_tree",
-        title: "مسارات اعتماد ديناميكية متعددة المراحل",
-        desc: "توجيه المعاملات آلياً للمسؤولين حسب نوع الطلب والمبالغ والصلاحيات المحددة."
-      },
-      {
-        icon: "history",
-        title: "سجل تدقيق وتتبع زمني شامل (Audit Trail)",
-        desc: "توثيق كل خطوة وموافقة وملاحظة مع الطابع الزمني لضمان الامتثال والشفافية."
-      },
-      {
-        icon: "notifications_active",
-        title: "تنبيهات فورية وتصعيد تلقائي (SLA)",
-        desc: "إرسال إشعارات مباشرة عبر Teams وتصعيد الطلب للمستوى التالي عند تجاوز المهلة."
-      }
-    ],
-    outcome: {
+
+    transformation: {
+      title: "من الفوضى الورقية إلى حوكمة رقمية شفافة",
+      description: "مقارنة تشغيلية توضح الأثر الفعلي لمنظومة أُفُق على سرعة الموافقات والشفافية المؤسسية.",
       before: {
-        title: "الوضع السابق",
+        badge: "الوضع السابق • BEFORE",
+        title: "دورة مستندية يدوية",
         subtitle: "دورة مستندية بطيئة ومشتتة",
         points: [
           "متابعة يدوية عبر الإيميلات والاتصالات المتكررة",
@@ -308,22 +170,17 @@ const projectsDetailsData = {
         ]
       },
       after: {
-        title: "بعد حل فرصكم",
+        badge: "بعد حل فرصكم • AFTER",
+        title: "حوكمة رقمية مؤتمتة",
         subtitle: "حوكمة رقمية متكاملة وسريعة",
         points: [
           "اعتماد بنقرة واحدة من الموبايل أو Teams",
           "شفافية كاملة وتتبع لحظي لمسار المعاملة",
           "التزام صارم بمهل الـ SLA مع تنبيهات استباقية"
-        ]
+        ],
+        footer: "نتائج تشغيلية محققة في بيئة إنتاج فعلية"
       }
     },
-    screenshots: [
-      {
-        url: "https://lh3.googleusercontent.com/aida-public/AB6AXuDiqf0V3RJL6X0V25bYwacfDxS7OtsJiIsY_eg2VdKww12GHSLqKWQPDAzHAPd_hsULsaMoT6qnNiaAzl0iJf30b5JVEOxFY5QQrBqEKmV8wIeIEqbS58Amxq8ksDeYmXuGIDTNBYfQdJBRv6B1mTe5jo2JP9TT0KHQcXagJHH62k71bsKXt6z91D4nnquypffyt_b8nAh6jiDyLWF3UF8O9wuMyStWo8w3K1x9YhAT7CMsD3dLt-ma",
-        title: "لوحة حوكمة وتتبع الموافقات",
-        caption: "واجهة متابعة مسارات الاعتمادات وسجل التدقيق الزمني"
-      }
-    ],
     ctaWhatsAppMessage: "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة أفق لإدارة Power Platform وحوكمة الموافقات."
   },
 
@@ -343,44 +200,13 @@ const projectsDetailsData = {
       status: "ML Production Pipeline",
       highlight: "استشراف ذكي للأعطال"
     },
-    challenge: [
-      {
-        index: "01",
-        title: "التوقفات التشغيلية المفاجئة",
-        desc: "التعامل مع الأعطال بعد وقوعها مما كبد المنشأة توقفات غير مخططة وتكاليف صيانة طارئة."
-      },
-      {
-        index: "02",
-        title: "تراكم البيانات دون استثمار ذكي",
-        desc: "تسجيل كميات ضخمة من مؤشرات الأداء دون تحليل استباقي يكشف الأنماط التحذيرية الخفية."
-      },
-      {
-        index: "03",
-        title: "صعوبة اتخاذ إجراءات وقائية مبكرة",
-        desc: "غياب أدوات التنبؤ الدقيقة جعل خطط الصيانة تعتمد على التخمين أو الجداول الزمنية الجامدة."
-      }
-    ],
-    solution: "بناء خط أنابيب تعلم آلي (ML Pipeline) يحلل تدفقات البيانات التشغيلية لحظياً ويتنبأ بالانحرافات والأعطال المحتملة مع إصدار تنبيهات استباقية وتوصيات وقائية.",
-    features: [
-      {
-        icon: "analytics",
-        title: "كشف الشذوذ والأنماط المعقدة",
-        desc: "رصد فوري لبيانات التشغيل لاكتشاف أي سلوك غير مألوف قبل أن يتحول إلى عطل صريح."
-      },
-      {
-        icon: "query_stats",
-        title: "لوحة استشراف ومؤشرات احتمالية",
-        desc: "عرض التوقعات المستقبلية ومستويات الخطورة المحتملة لتمكين اتخاذ قرارات مبكرة."
-      },
-      {
-        icon: "crisis_alert",
-        title: "تنبيهات استباقية وتوصيات إجرائية",
-        desc: "توجيه إشعارات فورية لفرق العمليات محددة بالعنصر المعرض للعطل والخطوة الموصى بها."
-      }
-    ],
-    outcome: {
+
+    transformation: {
+      title: "من الصيانة الطارئة إلى الاستشراف الذكي",
+      description: "مقارنة تشغيلية توضح الأثر الفعلي لمنظومة نبض على كفاءة العمليات والحد من التوقفات غير المخططة.",
       before: {
-        title: "الوضع السابق",
+        badge: "الوضع السابق • BEFORE",
+        title: "صيانة استجابية تقليدية",
         subtitle: "صيانة استجابية بعد وقوع الأعطال",
         points: [
           "توقفات عمل مفاجئة وخسائر تشغيلية غير متوقعة",
@@ -389,22 +215,17 @@ const projectsDetailsData = {
         ]
       },
       after: {
-        title: "بعد حل فرصكم",
+        badge: "بعد حل فرصكم • AFTER",
+        title: "إدارة تشغيلية استباقية ذكية",
         subtitle: "إدارة تشغيلية استباقية وذكية",
         points: [
           "تنبؤ مبكر بالانحرافات قبل وقوع أي توقف",
           "استغلال كامل للبيانات في توليد رؤى تشغيلية",
           "توجيه الصيانة بدقة للمعدات الأكثر عرضة للتعطل"
-        ]
+        ],
+        footer: "نتائج تشغيلية محققة في بيئة إنتاج فعلية"
       }
     },
-    screenshots: [
-      {
-        url: "https://lh3.googleusercontent.com/aida-public/AB6AXuAoQGBpnR5YOtx63m0ayiRLrEPzGeEGwJpeMf8aOkTrWiiC1RuM2DXWLbQC278Qf4cmQNAgUjNF1ubMzZHKRleulvpj0pJZE3LU4fisX_6zKqKedCwMOiq9hU-3Tb2F7Mm2lN2ss5norSsEj0EYs2bGqm-hezL62_YHMq7FDilW3G2HzqtmepKo-3DkVVh1C7hfPrdr-cPUIX48M44X1m_V95n545Ujsfc3nAjjMW-7j-bNj5mHREaS",
-        title: "لوحة التحليل التنبؤي الذكية",
-        caption: "مراقبة تدفقات العمليات ونماذج التنبؤ بالانحرافات"
-      }
-    ],
     ctaWhatsAppMessage: "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة نبض للتحليل التنبؤي والعمليات الذكية."
   }
 };
@@ -460,7 +281,7 @@ function renderProjectDetails(projectKey) {
   const tagsContainer = document.getElementById("project-tags");
   if (tagsContainer) {
     tagsContainer.innerHTML = project.tags
-      .map(tag => `<span class="px-3 py-1 rounded-full bg-surface-container-high/90 text-xs font-mono font-medium text-tertiary border border-tertiary/20">${tag}</span>`)
+      .map(tag => `<span class="px-3 py-1 rounded-lg bg-surface-container-high/90 text-xs font-mono font-medium text-slate-200 border border-white/10 hover:border-tertiary/30 transition-colors">${tag}</span>`)
       .join("");
   }
 
@@ -471,9 +292,17 @@ function renderProjectDetails(projectKey) {
     heroImage.classList.remove("hidden");
   }
 
+  const telemetryContainer = document.getElementById("hero-telemetry-container");
   const telemetryHighlight = document.getElementById("hero-telemetry-highlight");
-  if (telemetryHighlight && project.metaTelemetry) {
-    telemetryHighlight.textContent = project.metaTelemetry.highlight;
+  if (telemetryContainer) {
+    if (project.metaTelemetry && project.metaTelemetry.highlight) {
+      if (telemetryHighlight) telemetryHighlight.textContent = project.metaTelemetry.highlight;
+      telemetryContainer.classList.remove("hidden");
+      telemetryContainer.classList.add("flex");
+    } else {
+      telemetryContainer.classList.add("hidden");
+      telemetryContainer.classList.remove("flex");
+    }
   }
 
   // Live URL Button control in Hero
@@ -572,143 +401,49 @@ function renderProjectDetails(projectKey) {
     }
   }
 
-  // 2. CHALLENGE SECTION
-  const challengeCardsContainer = document.getElementById("challenge-cards-container");
-  if (challengeCardsContainer && project.challenge) {
-    challengeCardsContainer.innerHTML = project.challenge
-      .map(item => `
-        <div class="challenge-card p-6 lg:p-7 rounded-2xl bg-surface-container-low border border-white/5 hover:border-tertiary/30 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,196,238,0.1)]">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="w-10 h-10 rounded-xl bg-surface-bright flex items-center justify-center font-mono font-black text-sm text-tertiary border border-tertiary/30 group-hover:shadow-[0_0_15px_rgba(0,196,238,0.3)] transition-all">
-                ${item.index}
-              </span>
-              <span class="material-symbols-outlined text-outline group-hover:text-tertiary text-xl transition-colors">
-                error_outline
-              </span>
-            </div>
-            <h3 class="text-lg font-bold text-white group-hover:text-tertiary transition-colors mb-2">
-              ${item.title}
-            </h3>
-            <p class="text-sm text-on-surface-variant leading-relaxed">
-              ${item.desc}
-            </p>
-          </div>
-          <div class="mt-6 pt-3 border-t border-white/5 flex items-center gap-2 text-xs font-mono text-outline">
-            <span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>
-            <span>تحدٍ تشغيلي تم استهدافه</span>
-          </div>
-        </div>
-      `)
-      .join("");
-  }
 
-  // 3. SOLUTION SECTION
-  const solutionDescEl = document.getElementById("solution-desc");
-  if (solutionDescEl) solutionDescEl.textContent = project.solution;
 
-  const featuresContainer = document.getElementById("solution-features-container");
-  if (featuresContainer && project.features) {
-    featuresContainer.innerHTML = project.features
-      .map(feat => `
-        <div class="solution-feature-card p-5 rounded-2xl bg-surface-container-low/90 border border-white/5 hover:border-tertiary/30 transition-all flex items-start gap-4">
-          <div class="w-11 h-11 rounded-xl bg-surface-bright flex items-center justify-center text-tertiary border border-tertiary/30 shrink-0 shadow-[0_0_12px_rgba(0,196,238,0.2)]">
-            <span class="material-symbols-outlined text-xl">${feat.icon || "check_circle"}</span>
-          </div>
-          <div>
-            <h4 class="text-base font-bold text-white mb-1">${feat.title}</h4>
-            <p class="text-sm text-on-surface-variant leading-relaxed">${feat.desc}</p>
-          </div>
-        </div>
-      `)
-      .join("");
-  }
 
-  const solutionVisualImg = document.getElementById("solution-visual-image");
-  if (solutionVisualImg) {
-    solutionVisualImg.src = project.heroImage;
-    solutionVisualImg.alt = project.title;
-  }
 
-  // 4. OUTCOME (BEFORE -> AFTER) SECTION
-  const outcomeBeforePoints = document.getElementById("outcome-before-points");
-  if (outcomeBeforePoints && project.outcome?.before?.points) {
-    outcomeBeforePoints.innerHTML = project.outcome.before.points
-      .map(pt => `
-        <li class="flex items-start gap-2.5 text-sm text-on-surface-variant leading-relaxed">
-          <span class="material-symbols-outlined text-error text-base shrink-0 mt-0.5">close</span>
-          <span>${pt}</span>
-        </li>
-      `)
-      .join("");
-  }
+  // 4. OUTCOME (BEFORE -> AFTER) SECTION (Refactored)
+  const trans = project.transformation || {};
+  // Header title and description
+  const outcomeTitle = document.getElementById("outcome-title");
+  if (outcomeTitle && trans.title) outcomeTitle.textContent = trans.title;
+  const outcomeDesc = document.getElementById("outcome-description");
+  if (outcomeDesc && trans.description) outcomeDesc.textContent = trans.description;
 
+  // BEFORE CARD
+  const outcomeBeforeBadge = document.getElementById("outcome-before-badge");
+  if (outcomeBeforeBadge && trans.before?.badge) outcomeBeforeBadge.textContent = trans.before.badge;
+  const outcomeBeforeTitle = document.getElementById("outcome-before-title");
+  if (outcomeBeforeTitle && trans.before?.title) outcomeBeforeTitle.textContent = trans.before.title;
   const outcomeBeforeSubtitle = document.getElementById("outcome-before-subtitle");
-  if (outcomeBeforeSubtitle && project.outcome?.before?.subtitle) {
-    outcomeBeforeSubtitle.textContent = project.outcome.before.subtitle;
-  }
-
-  const outcomeAfterPoints = document.getElementById("outcome-after-points");
-  if (outcomeAfterPoints && project.outcome?.after?.points) {
-    outcomeAfterPoints.innerHTML = project.outcome.after.points
-      .map(pt => `
-        <li class="flex items-start gap-2.5 text-sm text-white font-medium leading-relaxed">
-          <span class="material-symbols-outlined text-tertiary text-base shrink-0 mt-0.5">check_circle</span>
-          <span>${pt}</span>
-        </li>
-      `)
+  if (outcomeBeforeSubtitle && trans.before?.subtitle) outcomeBeforeSubtitle.textContent = trans.before.subtitle;
+  const outcomeBeforePoints = document.getElementById("outcome-before-points");
+  if (outcomeBeforePoints && trans.before?.points) {
+    outcomeBeforePoints.innerHTML = trans.before.points
+      .map(pt => `<li class="flex items-start gap-2.5 text-sm text-on-surface-variant leading-relaxed"><span class="material-symbols-outlined text-error text-base shrink-0 mt-0.5">close</span><span>${pt}</span></li>`)
       .join("");
   }
 
+  // AFTER CARD
+  const outcomeAfterBadge = document.getElementById("outcome-after-badge");
+  if (outcomeAfterBadge && trans.after?.badge) outcomeAfterBadge.textContent = trans.after.badge;
+  const outcomeAfterTitle = document.getElementById("outcome-after-title");
+  if (outcomeAfterTitle && trans.after?.title) outcomeAfterTitle.textContent = trans.after.title;
   const outcomeAfterSubtitle = document.getElementById("outcome-after-subtitle");
-  if (outcomeAfterSubtitle && project.outcome?.after?.subtitle) {
-    outcomeAfterSubtitle.textContent = project.outcome.after.subtitle;
-  }
-
-  // 5. PROOF & SEE IT IN ACTION SECTION
-  const proofLiveCard = document.getElementById("proof-live-card");
-  const proofLiveLink = document.getElementById("proof-live-link");
-  if (proofLiveCard && proofLiveLink) {
-    if (project.liveUrl && project.liveUrl.trim() !== "") {
-      proofLiveLink.href = project.liveUrl;
-      proofLiveCard.classList.remove("hidden");
-    } else {
-      proofLiveCard.classList.add("hidden");
-    }
-  }
-
-  const proofVideoCard = document.getElementById("proof-video-card");
-  const proofVideoIframe = document.getElementById("proof-video-iframe");
-  if (proofVideoCard) {
-    if (project.demoVideo && project.demoVideo.trim() !== "") {
-      if (proofVideoIframe) proofVideoIframe.src = project.demoVideo;
-      proofVideoCard.classList.remove("hidden");
-    } else {
-      proofVideoCard.classList.add("hidden");
-    }
-  }
-
-  const screenshotsContainer = document.getElementById("proof-screenshots-container");
-  if (screenshotsContainer && project.screenshots && project.screenshots.length > 0) {
-    screenshotsContainer.innerHTML = project.screenshots
-      .map((shot, idx) => `
-        <div class="group relative rounded-2xl overflow-hidden cyan-border bg-surface-container-low shadow-xl transition-all duration-300 hover:shadow-[0_0_35px_rgba(0,196,238,0.25)]">
-          <div class="aspect-video w-full overflow-hidden bg-surface-container-low">
-            <img src="${shot.url}" alt="${shot.title}" loading="lazy" class="w-full h-full object-cover object-top hover-scale transition-transform duration-700" />
-          </div>
-          <div class="p-4 bg-surface-container/90 backdrop-blur-md border-t border-white/5 flex flex-col gap-1">
-            <span class="text-xs font-mono font-bold text-tertiary">${shot.title}</span>
-            <span class="text-xs text-on-surface-variant">${shot.caption}</span>
-          </div>
-        </div>
-      `)
+  if (outcomeAfterSubtitle && trans.after?.subtitle) outcomeAfterSubtitle.textContent = trans.after.subtitle;
+  const outcomeAfterPoints = document.getElementById("outcome-after-points");
+  if (outcomeAfterPoints && trans.after?.points) {
+    outcomeAfterPoints.innerHTML = trans.after.points
+      .map(pt => `<li class="flex items-start gap-2.5 text-sm text-white font-medium leading-relaxed"><span class="material-symbols-outlined text-tertiary text-base shrink-0 mt-0.5">check_circle</span><span>${pt}</span></li>`)
       .join("");
-    screenshotsContainer.classList.remove("hidden");
-  } else if (screenshotsContainer) {
-    screenshotsContainer.classList.add("hidden");
   }
+  const outcomeAfterFooter = document.getElementById("outcome-after-footer");
+  if (outcomeAfterFooter && trans.after?.footer) outcomeAfterFooter.textContent = trans.after.footer;
 
-  // 6. FINAL CTA
+  // 5. FINAL CTA
   const ctaPrimaryBtn = document.getElementById("cta-primary-btn");
   if (ctaPrimaryBtn) {
     const encodedMsg = encodeURIComponent(project.ctaWhatsAppMessage || `مرحباً فريق فرصكم، حابب أستفسر عن تنفيذ مشروع مشابه لـ ${project.title}`);
@@ -739,129 +474,28 @@ function initProjectDetailsMotion() {
   });
 
   heroTl.fromTo("#hero-back-link", { opacity: 0, x: 15 }, { opacity: 1, x: 0, duration: 0.45 })
-    .fromTo("#project-category-badge", { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 0.4 }, "-=0.25")
-    .fromTo("#project-title", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.55 }, "-=0.2")
-    .fromTo("#project-subtitle", { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.5 }, "-=0.35")
+    .fromTo("#project-category-badge", { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 0.4 }, "-=0.25")
+    .fromTo("#project-title", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.55 }, "-=0.2")
     .fromTo("#project-tags", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4 }, "-=0.3")
-    .fromTo("#project-desc", { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.45 }, "-=0.25")
-    .fromTo("#hero-actions-container", { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.45 }, "-=0.25")
-    .fromTo("#project-hero-card", { opacity: 0, scale: 0.94, y: 25 }, { opacity: 1, scale: 1, y: 0, duration: 0.75 }, "-=0.5");
+    .fromTo("#project-desc", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.45 }, "-=0.25")
+    .fromTo("#hero-actions-container", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.45 }, "-=0.25")
+    .fromTo("#project-hero-card", { opacity: 0, scale: 0.96, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.7 }, "-=0.45");
+
   // Subtle floating ambient motion for the hero visual (only if motion is allowed)
   if (!prefersReducedMotion && typeof gsap !== "undefined") {
     gsap.to("#project-hero-card", {
-      y: -8,
-      duration: 4,
+      y: -6,
+      duration: 4.5,
       ease: "sine.inOut",
       yoyo: true,
       repeat: -1
     });
   }
-  // 2. Challenge Section: Heading & Cards Reveal
-  // Reveal heading first
-  if (!prefersReducedMotion && typeof ScrollTrigger !== "undefined") {
-    gsap.fromTo("#project-challenge h2",
-      { opacity: 0, y: 12 },
-      {
-        opacity: 1, y: 0, duration: 0.5, ease: "power2.out",
-        scrollTrigger: {
-          trigger: "#project-challenge",
-          start: "top 85%",
-          toggleActions: "play none none none"
-        }
-      });
-  }
-  // 2. Challenge Cards Stagger Reveal
-  const challengeCards = document.querySelectorAll(".challenge-card");
-  if (challengeCards.length > 0 && typeof ScrollTrigger !== "undefined") {
-    gsap.fromTo(challengeCards,
-      { opacity: 0, y: 28 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        stagger: 0.14,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: "#project-challenge",
-          start: "top 82%",
-          toggleActions: "play none none none"
-        }
-      }
-    );
-  }
 
-  // 3. Solution Section Split Reveal
-  if (typeof ScrollTrigger !== "undefined") {
-    gsap.fromTo("#solution-content-col",
-      { opacity: 0, x: 25 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 0.65,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: "#project-solution",
-          start: "top 80%",
-          toggleActions: "play none none none"
-        }
-      }
-    );
-
-    gsap.fromTo("#solution-visual-col",
-      { opacity: 0, scale: 0.96, x: -20 },
-      {
-        opacity: 1,
-        scale: 1,
-        x: 0,
-        duration: 0.75,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: "#project-solution",
-          start: "top 80%",
-          toggleActions: "play none none none"
-        }
-      }
-    );
-    // Subtle parallax for solution visual image (only if motion allowed)
-    if (!prefersReducedMotion && typeof ScrollTrigger !== "undefined") {
-      gsap.to("#solution-visual-image", {
-        y: -12,
-        ease: "none",
-        scrollTrigger: {
-          trigger: "#project-solution",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true
-        }
-      });
-    }
-    // Proof screenshots stagger reveal
-    if (!prefersReducedMotion && typeof ScrollTrigger !== "undefined") {
-      const proofScreens = document.querySelectorAll("#proof-screenshots-container .group");
-      if (proofScreens.length) {
-        gsap.fromTo(proofScreens,
-          { opacity: 0, y: 20 },
-          {
-            opacity: 1,
-            y: 0,
-            stagger: 0.14,
-            duration: 0.6,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: "#project-proof",
-              start: "top 80%",
-              toggleActions: "play none none none"
-            }
-          }
-        );
-      }
-    }
-  }
-
-  // 4. Outcome Before -> After Reveal
+  // 2. Transformation Reveal
   if (typeof ScrollTrigger !== "undefined") {
     gsap.fromTo("#outcome-before-card",
-      { opacity: 0, y: 25 },
+      { opacity: 0, y: 20 },
       {
         opacity: 1,
         y: 0,
@@ -876,12 +510,12 @@ function initProjectDetailsMotion() {
     );
 
     gsap.fromTo("#outcome-arrow-connector",
-      { opacity: 0, scale: 0.8 },
+      { opacity: 0, scale: 0.85 },
       {
         opacity: 1,
         scale: 1,
         duration: 0.4,
-        delay: 0.2,
+        delay: 0.15,
         ease: "power2.out",
         scrollTrigger: {
           trigger: "#project-outcome",
@@ -892,12 +526,12 @@ function initProjectDetailsMotion() {
     );
 
     gsap.fromTo("#outcome-after-card",
-      { opacity: 0, y: 25 },
+      { opacity: 0, y: 20 },
       {
         opacity: 1,
         y: 0,
         duration: 0.55,
-        delay: 0.3,
+        delay: 0.25,
         ease: "power2.out",
         scrollTrigger: {
           trigger: "#project-outcome",
@@ -908,15 +542,15 @@ function initProjectDetailsMotion() {
     );
   }
 
-  // 5. Final CTA Reveal
+  // 3. Final CTA Reveal
   if (typeof ScrollTrigger !== "undefined") {
     gsap.fromTo("#project-cta .cta-inner-card",
-      { opacity: 0, y: 30, scale: 0.98 },
+      { opacity: 0, y: 25, scale: 0.98 },
       {
         opacity: 1,
         y: 0,
         scale: 1,
-        duration: 0.7,
+        duration: 0.65,
         ease: "power2.out",
         scrollTrigger: {
           trigger: "#project-cta",
@@ -927,6 +561,7 @@ function initProjectDetailsMotion() {
     );
   }
 }
+
 
 /**
  * Initialize page on DOM ready

@@ -79,23 +79,23 @@
     }
 
     .cyan-glow-text {
-      text-shadow: 0 0 24px rgba(0, 196, 238, 0.55), 0 0 45px rgba(0, 196, 238, 0.25);
+      text-shadow: 0 0 20px rgba(0, 196, 238, 0.4);
     }
 
     .cyan-glow-box {
-      box-shadow: 0 0 35px -5px rgba(0, 196, 238, 0.3), inset 0 0 20px -5px rgba(0, 196, 238, 0.15);
+      box-shadow: 0 0 30px -5px rgba(0, 196, 238, 0.2);
     }
 
     .cyan-glow-box-subtle {
-      box-shadow: 0 0 25px -8px rgba(0, 196, 238, 0.22);
+      box-shadow: 0 0 20px -5px rgba(0, 196, 238, 0.15);
     }
 
     .cyan-border {
-      border: 1px solid rgba(0, 196, 238, 0.3);
+      border: 1px solid rgba(0, 196, 238, 0.25);
     }
 
     .btn-smooth {
-      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .btn-smooth:hover {
@@ -104,11 +104,11 @@
 
     /* Utility classes for micro‑interactions */
     .hover-scale {
-      transition: transform 0.6s ease;
+      transition: transform 0.5s ease;
     }
 
     .hover-scale:hover {
-      transform: scale(1.025);
+      transform: scale(1.02);
     }
 
     .btn-hover {
@@ -117,7 +117,7 @@
 
     .btn-hover:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0, 196, 238, 0.3);
+      box-shadow: 0 4px 12px rgba(0, 196, 238, 0.2);
     }
 
 
@@ -224,57 +224,56 @@
     <!-- ========================================================================
          01 — HERO SECTION
          ======================================================================== -->
-    <section class="max-w-7xl mx-auto px-6 sm:px-8 py-8 lg:py-12" id="project-hero">
+    <section class="max-w-7xl mx-auto px-6 sm:px-8 py-10 lg:py-16" id="project-hero">
       <!-- Breadcrumb / Back Link -->
       <div class="mb-6">
         <a href="portfolio.html" id="hero-back-link"
-          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-high/60 hover:bg-surface-bright border border-white/10 text-xs font-mono font-bold text-on-surface-variant hover:text-tertiary hover:border-tertiary/40 transition-all duration-300 group">
+          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container/80 hover:bg-surface-container-high border border-white/10 text-xs font-mono font-medium text-on-surface-variant hover:text-white transition-all duration-300 group">
           <span
             class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
-          <span>العودة لمعرض الأعمال والأرشيف</span>
+          <span>العودة إلى معرض الأعمال</span>
         </a>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-12 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-        <!-- Hero Text Column (7 Cols on Desktop) -->
+        <!-- Hero Content Column (6 Cols on Desktop) -->
         <div class="lg:col-span-6 md:col-span-6 flex flex-col gap-6">
           <!-- Category Badge -->
           <div id="project-category-badge"
-            class="inline-flex items-center self-start gap-2.5 px-3.5 py-1.5 rounded-full bg-surface-bright text-tertiary text-xs font-mono font-bold border border-tertiary/30 shadow-[0_0_15px_rgba(0,196,238,0.15)]">
+            class="inline-flex items-center self-start gap-2 px-3 py-1 rounded-full bg-surface-container-high/90 text-tertiary text-xs font-mono font-medium border border-tertiary/20">
             <span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
             <span>ذكاء اصطناعي • AI & Machine Learning</span>
           </div>
 
           <!-- Project Title -->
           <h1 id="project-title"
-            class="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.25] tracking-tight text-white">
+            class="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.2] tracking-tight text-white">
             تحميل تفاصيل المشروع...
           </h1>
 
-
-
           <!-- Technology Tags -->
-          <div id="project-tags" class="flex flex-wrap items-center gap-2">
+          <div id="project-tags" class="flex flex-wrap items-center gap-2 pt-0.5">
             <!-- Rendered dynamically -->
           </div>
 
           <!-- Short Description -->
-          <p id="project-desc" class="text-sm sm:text-base text-on-surface-variant font-normal leading-relaxed max-w-2xl">
+          <p id="project-desc"
+            class="text-sm sm:text-base text-on-surface-variant font-normal leading-relaxed max-w-xl">
             جاري استعراض البنية التشغيلية والحل الهندسي الذي تم تنفيذه في بيئة إنتاج حقيقية...
           </p>
 
           <!-- Hero Action Buttons -->
-          <div id="hero-actions-container" class="flex flex-wrap items-center gap-3.5 pt-2">
+          <div id="hero-actions-container" class="flex flex-wrap items-center gap-3 pt-2">
             <!-- 1. View Live Project Button (Primary CTA - Shown only if liveUrl exists) -->
             <a id="hero-live-btn" href="#" target="_blank" rel="noopener noreferrer"
-              class="hidden btn-smooth items-center gap-2 px-6 py-3.5 rounded-xl bg-tertiary hover:bg-[#34d4f6] text-[#00101D] font-extrabold text-sm shadow-[0_0_25px_rgba(0,196,238,0.4)] hover:shadow-[0_0_30px_rgba(0,196,238,0.6)] transition-all duration-300">
+              class="hidden btn-smooth items-center gap-2 px-5 py-3 rounded-xl bg-tertiary hover:bg-[#34d4f6] text-[#00101D] font-bold text-sm shadow-[0_0_20px_rgba(0,196,238,0.35)] transition-all duration-300">
               <span>مشاهدة المشروع المباشر</span>
               <span class="material-symbols-outlined text-base">north_east</span>
             </a>
 
             <!-- 2. Watch Demo Button (Secondary Interactive CTA - Shown only if demoVideo exists) -->
-            <a id="hero-demo-btn" href="#project-proof"
-              class="hidden btn-smooth items-center gap-2 px-5 py-3.5 rounded-xl bg-surface-container-high/90 hover:bg-surface-bright text-white font-bold text-sm border border-tertiary/35 hover:border-tertiary/70 shadow-[0_0_15px_rgba(0,196,238,0.12)] transition-all duration-300">
+            <a id="hero-demo-btn" href="#project-hero"
+              class="hidden btn-smooth items-center gap-2 px-4.5 py-3 rounded-xl bg-surface-container-high/90 hover:bg-surface-bright text-white font-bold text-sm border border-white/15 hover:border-tertiary/40 transition-all duration-300">
               <span class="material-symbols-outlined text-base text-tertiary">play_circle</span>
               <span>مشاهدة العرض التوضيحي</span>
             </a>
@@ -283,39 +282,40 @@
             <a id="hero-consult-btn"
               href="https://wa.me/201090000000?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20%D9%81%D8%B1%D8%B5%D9%83%D9%85%D8%8C%20%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%AD%D9%84%D9%88%D9%84%20%D8%A7%D9%84%D9%87%D9%86%D8%AF%D8%B3%D9%8A%D8%A9."
               target="_blank"
-              class="btn-smooth inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-surface-container-high/60 hover:bg-surface-bright text-on-surface-variant hover:text-white font-bold text-sm border border-white/10 hover:border-tertiary/30 transition-all duration-300">
+              class="btn-smooth inline-flex items-center gap-2 px-4.5 py-3 rounded-xl bg-surface-container/80 hover:bg-surface-container-high text-on-surface-variant hover:text-white font-bold text-sm border border-white/10 hover:border-white/20 transition-all duration-300">
               <span>استشر مهندسينا حول هذا الحل</span>
               <span class="material-symbols-outlined text-base">chat</span>
             </a>
           </div>
         </div>
 
-        <!-- Hero Visual / Demo Showcase Column (5 Cols on Desktop) -->
+        <!-- Hero Visual / Demo Showcase Column (6 Cols on Desktop) -->
         <div class="lg:col-span-6 md:col-span-6">
           <div id="project-hero-card"
-            class="relative rounded-3xl bg-surface-container/95 backdrop-blur-xl p-3.5 sm:p-4 border border-tertiary/20 hover:border-tertiary/40 shadow-[0_0_35px_rgba(0,196,238,0.12)] transition-all duration-500 overflow-hidden group">
+            class="relative rounded-3xl bg-surface-container-low/90 backdrop-blur-xl p-3 sm:p-4 border border-white/10 hover:border-tertiary/30 shadow-2xl transition-all duration-500 overflow-hidden group">
 
             <!-- Ambient corner decoration -->
-            <div class="absolute -top-16 -left-16 w-48 h-48 rounded-full bg-tertiary/15 blur-3xl pointer-events-none">
+            <div class="absolute -top-16 -left-16 w-40 h-40 rounded-full bg-tertiary/10 blur-2xl pointer-events-none">
             </div>
 
             <!-- Main Product Demo / Media Viewport -->
             <div id="hero-media-viewport"
-              class="relative rounded-2xl overflow-hidden bg-[#000c17] aspect-video border border-white/5 flex flex-col justify-between group/media">
-              
+              class="relative rounded-2xl overflow-hidden bg-[#00080F] aspect-video border border-white/10 flex flex-col justify-between group/media">
+
               <!-- Product Preview Image -->
               <img id="project-hero-image" src="assets/images/Logo.png" alt="Product Mockup Preview"
                 class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.02]" />
-              
+
               <!-- Contrast Gradient Overlay -->
               <div id="hero-media-overlay"
-                class="absolute inset-0 bg-gradient-to-t from-[#00080F]/90 via-transparent to-[#00101D]/20 pointer-events-none transition-opacity duration-300">
+                class="absolute inset-0 bg-gradient-to-t from-[#00080F]/90 via-transparent to-transparent pointer-events-none transition-opacity duration-300">
               </div>
 
               <!-- Top Floating Badge: Single Clean Status (PRODUCT DEMO / LIVE DEMO) -->
               <div id="hero-demo-badge" class="absolute top-3 right-3 z-10">
-                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#00101D]/85 backdrop-blur-md border border-white/10 text-[10px] font-mono text-white/90">
-                  <span class="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse"></span>
+                <span
+                  class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#00101D]/90 backdrop-blur-md border border-white/10 text-[10px] font-mono text-white/90">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#25D366]"></span>
                   <span id="hero-demo-badge-text">PRODUCT DEMO</span>
                 </span>
               </div>
@@ -323,19 +323,20 @@
               <!-- Center Interactive Play Button (Real semantic button) -->
               <div id="hero-play-container" class="absolute inset-0 z-10 flex items-center justify-center">
                 <button type="button" id="hero-play-media-btn" aria-label="تشغيل العرض التوضيحي"
-                  class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#00101D]/80 backdrop-blur-md border border-tertiary/40 text-tertiary flex items-center justify-center shadow-[0_0_25px_rgba(0,196,238,0.35)] hover:scale-110 hover:bg-tertiary hover:text-[#00101D] hover:shadow-[0_0_35px_rgba(0,196,238,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tertiary transition-all duration-300 group/btn cursor-pointer">
+                  class="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#00101D]/85 backdrop-blur-md border border-white/20 text-white hover:text-tertiary hover:border-tertiary/60 hover:scale-105 shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tertiary transition-all duration-300 flex items-center justify-center cursor-pointer">
                   <span class="material-symbols-outlined text-2xl font-bold translate-x-[-1px]">play_arrow</span>
                 </button>
               </div>
 
               <!-- Bottom Telemetry Indicator -->
-              <div
-                class="relative z-10 m-2.5 sm:m-3 p-2.5 sm:p-3 bg-[#00101D]/90 backdrop-blur-md rounded-xl border border-white/10 flex items-center justify-between text-xs font-mono">
+              <div id="hero-telemetry-container"
+                class="relative z-10 m-2.5 sm:m-3 px-3.5 py-2.5 bg-[#00101D]/90 backdrop-blur-md rounded-xl border border-white/10 flex items-center justify-between text-xs font-mono">
                 <span class="text-on-surface-variant flex items-center gap-1.5 text-[11px] sm:text-xs">
-                  <span class="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#25D366]"></span>
                   <span>البيئة التشغيلية:</span>
                 </span>
-                <span id="hero-telemetry-highlight" class="text-tertiary font-bold text-[11px] sm:text-xs">معالجة فورية</span>
+                <span id="hero-telemetry-highlight" class="text-tertiary font-bold text-[11px] sm:text-xs">معالجة
+                  فورية</span>
               </div>
             </div>
           </div>
@@ -343,121 +344,46 @@
       </div>
     </section>
 
+
+
     <!-- ========================================================================
-         02 — THE CHALLENGE SECTION
+         02 — TRANSFORMATION SECTION
          ======================================================================== -->
-    <section class="max-w-7xl mx-auto px-8 py-12 lg:py-16" id="project-challenge">
+    <section class="max-w-7xl mx-auto px-6 sm:px-8 py-14 lg:py-20" id="project-outcome">
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
         <div>
           <div
-            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-bright text-tertiary text-xs font-mono font-bold border border-tertiary/20 mb-3">
-            <span>01 • THE CHALLENGE</span>
-            <span class="w-1 h-1 rounded-full bg-tertiary"></span>
-            <span>التحدي التشغيلي</span>
-          </div>
-          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">المشكلة والأثر التشغيلي</h2>
-          <p class="text-on-surface-variant text-sm sm:text-base mt-2 max-w-2xl leading-relaxed">
-            العوائق والاختناقات الحقيقية التي كانت تواجه دورة العمل قبل بناء الحل الرقمي المخصص.
-          </p>
-        </div>
-      </div>
-
-      <!-- Challenge Cards Grid (2-3 items) -->
-      <div id="challenge-cards-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Dynamic Challenge Cards Injected by JS -->
-      </div>
-    </section>
-
-    <!-- ========================================================================
-         03 — ENGINEERED SOLUTION SECTION
-         ======================================================================== -->
-    <section class="max-w-7xl mx-auto px-8 py-12 lg:py-16" id="project-solution">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-        <!-- Left Editorial Column (6 Cols) -->
-        <div id="solution-content-col" class="lg:col-span-6 flex flex-col gap-6">
-          <div
-            class="inline-flex items-center self-start gap-2 px-3 py-1 rounded-full bg-surface-bright text-tertiary text-xs font-mono font-bold border border-tertiary/20">
-            <span>02 • THE SOLUTION</span>
-            <span class="w-1 h-1 rounded-full bg-tertiary"></span>
-            <span>الحل الهندسي</span>
-          </div>
-
-          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
-            ماذا بنينا لمعالجة هذا التحدي؟
-          </h2>
-
-          <p id="solution-desc" class="text-base text-on-surface-variant leading-relaxed">
-            تصميم وهندسة بنية تقنية متكاملة تتوافق مع متطلبات العمل بدقة وتضمن أعلى درجات الاعتمادية والسرعة.
-          </p>
-
-          <!-- 3 Key Capabilities -->
-          <div id="solution-features-container" class="flex flex-col gap-4 pt-2">
-            <!-- Dynamic Feature Cards Injected by JS -->
-          </div>
-        </div>
-
-        <!-- Right Product Screenshot Visual (6 Cols) -->
-        <div id="solution-visual-col" class="lg:col-span-6">
-          <div class="relative rounded-3xl overflow-hidden cyan-border bg-surface-container-low shadow-2xl group">
-            <div class="aspect-video sm:aspect-[4/3] w-full overflow-hidden bg-surface-container-low relative">
-              <img id="solution-visual-image" src="assets/images/Logo.png" alt="Solution Visual Interface"
-                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-[#00080F]/90 via-[#00101D]/20 to-transparent pointer-events-none">
-              </div>
-            </div>
-
-            <!-- Bottom Quality Seal Overlay -->
-            <div
-              class="p-5 bg-surface-container/90 backdrop-blur-md border-t border-white/10 flex items-center justify-between text-xs font-mono">
-              <div class="flex items-center gap-2 text-white">
-                <span class="material-symbols-outlined text-tertiary text-base">verified</span>
-                <span class="font-bold">FORASCOM PRODUCTION ARCHITECTURE</span>
-              </div>
-              <span class="text-tertiary font-bold">جاهزية 100%</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================================
-         04 — OUTCOME (BEFORE -> AFTER) SECTION
-         ======================================================================== -->
-    <section class="max-w-7xl mx-auto px-8 py-12 lg:py-16" id="project-outcome">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
-        <div>
-          <div
-            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-bright text-tertiary text-xs font-mono font-bold border border-tertiary/20 mb-3">
-            <span>03 • TRANSFORMATION</span>
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high text-tertiary text-xs font-mono font-medium border border-tertiary/20 mb-3">
+            <span>TRANSFORMATION</span>
             <span class="w-1 h-1 rounded-full bg-tertiary"></span>
             <span>التحول التشغيلي</span>
           </div>
-          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">الأثر الفعلي على مسار
-            العمليات</h2>
-          <p class="text-on-surface-variant text-sm sm:text-base mt-2 max-w-2xl leading-relaxed">
-            مقارنة واقعية توضح الفارق في الأداء والكفاءة بين بيئة العمل السابقة وما بعد استقرار الحل التقني.
+          <h2 id="outcome-title" class="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
+            <!-- dynamic title -->
+          </h2>
+          <p id="outcome-description"
+            class="text-on-surface-variant text-sm sm:text-base mt-2 max-w-2xl leading-relaxed">
+            <!-- dynamic description -->
           </p>
         </div>
       </div>
 
-      <!-- Before -> After Comparative Container -->
+      <!-- Before → After Comparative Container -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-        <!-- Before Card (5 Cols) -->
+        <!-- Before Card -->
         <div id="outcome-before-card"
-          class="lg:col-span-5 p-7 lg:p-8 rounded-3xl bg-surface-container/60 border border-white/10 shadow-xl flex flex-col justify-between h-full">
+          class="lg:col-span-5 p-7 lg:p-8 rounded-3xl bg-surface-container-lowest/70 border border-white/10 shadow-lg flex flex-col justify-between h-full">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span
-                class="px-3 py-1 rounded-full bg-error/15 text-error text-xs font-mono font-bold border border-error/30">
-                الوضع السابق • BEFORE
-              </span>
-              <span class="material-symbols-outlined text-error/70 text-xl">history_toggle_off</span>
+                class="px-2.5 py-1 rounded-full bg-error/10 text-error text-xs font-mono font-medium border border-error/20"
+                id="outcome-before-badge"></span>
+              <span class="material-symbols-outlined text-error/60 text-xl">history_toggle_off</span>
             </div>
-            <h3 class="text-xl font-black text-white mb-2">بيئة العمل التقليدية</h3>
-            <p id="outcome-before-subtitle" class="text-xs font-mono text-outline mb-6">إجراءات بطيئة ومشتتة</p>
+            <h3 id="outcome-before-title" class="text-xl font-black text-white mb-2"></h3>
+            <p id="outcome-before-subtitle" class="text-xs font-mono text-outline mb-6"></p>
             <ul id="outcome-before-points" class="space-y-3.5">
-              <!-- Rendered dynamically -->
+              <!-- rendered dynamically -->
             </ul>
           </div>
           <div class="mt-8 pt-4 border-t border-white/5 text-xs font-mono text-outline">
@@ -465,118 +391,60 @@
           </div>
         </div>
 
-        <!-- Center Transition Connector (2 Cols) -->
+        <!-- Center Transition Connector -->
         <div id="outcome-arrow-connector" class="lg:col-span-2 flex flex-col items-center justify-center py-4 lg:py-0">
           <div
-            class="w-12 h-12 rounded-full bg-surface-bright border border-tertiary/40 flex items-center justify-center text-tertiary shadow-[0_0_20px_rgba(0,196,238,0.3)] pulse-connector">
-            <span class="material-symbols-outlined text-2xl hidden lg:inline">west</span>
-            <span class="material-symbols-outlined text-2xl lg:hidden">south</span>
+            class="w-11 h-11 rounded-full bg-surface-container border border-tertiary/30 flex items-center justify-center text-tertiary shadow-md">
+            <span class="material-symbols-outlined text-xl hidden lg:inline">west</span>
+            <span class="material-symbols-outlined text-xl lg:hidden">south</span>
           </div>
-          <span class="text-[11px] font-mono font-bold text-tertiary mt-2">تحول هندسي</span>
+          <span class="text-[11px] font-mono font-medium text-tertiary/80 mt-2">تحول هندسي</span>
         </div>
 
-        <!-- After Card (5 Cols) -->
+        <!-- After Card -->
         <div id="outcome-after-card"
-          class="lg:col-span-5 p-7 lg:p-8 rounded-3xl bg-surface-container-high/90 border border-tertiary/40 cyan-glow-box-subtle shadow-2xl flex flex-col justify-between h-full">
+          class="lg:col-span-5 p-7 lg:p-8 rounded-3xl bg-surface-container-high/80 border border-tertiary/30 shadow-xl flex flex-col justify-between h-full">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span
-                class="px-3 py-1 rounded-full bg-tertiary/15 text-tertiary text-xs font-mono font-bold border border-tertiary/30">
-                بعد حل فرصكم • AFTER
-              </span>
+                class="px-2.5 py-1 rounded-full bg-tertiary/10 text-tertiary text-xs font-mono font-medium border border-tertiary/25"
+                id="outcome-after-badge"></span>
               <span class="material-symbols-outlined text-tertiary text-xl">verified</span>
             </div>
-            <h3 class="text-xl font-black text-white mb-2">منظومة رقمية مؤتمتة</h3>
-            <p id="outcome-after-subtitle" class="text-xs font-mono text-tertiary mb-6">سلاسة تشغيلية وتكامل لحظي</p>
+            <h3 id="outcome-after-title" class="text-xl font-black text-white mb-2"></h3>
+            <p id="outcome-after-subtitle" class="text-xs font-mono text-tertiary mb-6"></p>
             <ul id="outcome-after-points" class="space-y-3.5">
-              <!-- Rendered dynamically -->
+              <!-- rendered dynamically -->
             </ul>
           </div>
           <div
-            class="mt-8 pt-4 border-t border-white/10 text-xs font-mono text-tertiary font-bold flex items-center gap-1.5">
+            class="mt-8 pt-4 border-t border-white/10 text-xs font-mono text-tertiary font-bold flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
-            <span>نتائج تشغيلية محققة وملموسة</span>
+            <span id="outcome-after-footer"></span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========================================================================
-         05 — PROOF & SEE IT IN ACTION SECTION
-         ======================================================================== -->
-    <section class="max-w-7xl mx-auto px-8 py-12 lg:py-16" id="project-proof">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
-        <div>
-          <div
-            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-bright text-tertiary text-xs font-mono font-bold border border-tertiary/20 mb-3">
-            <span>04 • SEE IT IN ACTION</span>
-            <span class="w-1 h-1 rounded-full bg-tertiary"></span>
-            <span>التحقق الفعلي</span>
-          </div>
-          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">شاهد المنظومة على أرض الواقع
-          </h2>
-          <p class="text-on-surface-variant text-sm sm:text-base mt-2 max-w-2xl leading-relaxed">
-            استعرض الواجهات الحقيقية ومخرجات الحل التقني كما تعمل في بيئة الإنتاج الفعلية.
-          </p>
-        </div>
-      </div>
-
-      <div class="flex flex-col gap-8">
-        <!-- Live Project Proof Card (Conditionally shown) -->
-        <div id="proof-live-card"
-          class="hidden p-6 sm:p-8 rounded-3xl bg-surface-container-high/80 border border-tertiary/30 cyan-glow-box-subtle flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-          <div class="flex items-center gap-4">
-            <div
-              class="w-12 h-12 rounded-2xl bg-tertiary/10 border border-tertiary/30 flex items-center justify-center text-tertiary shrink-0">
-              <span class="material-symbols-outlined text-2xl">public</span>
-            </div>
-            <div>
-              <h4 class="text-lg font-bold text-white">المشروع يعمل حالياً في بيئة حية ومباشرة</h4>
-              <p class="text-xs sm:text-sm text-on-surface-variant mt-0.5">يمكنك زيارة الموقع أو المنظومة مباشرة وتجربة
-                سرعة وكفاءة النظام.</p>
-            </div>
-          </div>
-          <a id="proof-live-link" href="#" target="_blank" rel="noopener noreferrer"
-            class="btn-smooth inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-tertiary text-[#00101D] font-extrabold text-sm shadow-[0_0_20px_rgba(0,196,238,0.4)] shrink-0">
-            <span>مشاهدة المشروع الحي</span>
-            <span class="material-symbols-outlined text-base">north_east</span>
-          </a>
-        </div>
-
-        <!-- Demo Video Player Container (Conditionally shown) -->
-        <div id="proof-video-card"
-          class="hidden relative rounded-3xl overflow-hidden cyan-border bg-surface-container shadow-2xl p-2 sm:p-4">
-          <div class="relative rounded-2xl overflow-hidden aspect-video bg-black/90 flex items-center justify-center">
-            <iframe id="proof-video-iframe" class="w-full h-full" src="" title="Project Demo Video" allowfullscreen
-              loading="lazy"></iframe>
-          </div>
-        </div>
-
-        <!-- Screenshots Grid -->
-        <div id="proof-screenshots-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Rendered dynamically -->
-        </div>
-      </div>
-    </section>
 
     <!-- ========================================================================
-         06 — FINAL CTA SECTION
+         03 — FINAL CTA SECTION
          ======================================================================== -->
-    <section class="max-w-7xl mx-auto px-8 py-14 lg:py-20" id="project-cta">
+    <section class="max-w-7xl mx-auto px-6 sm:px-8 py-14 lg:py-20" id="project-cta">
       <div
-        class="cta-inner-card relative rounded-3xl bg-gradient-to-b from-surface-container-high/90 to-surface-container-low/90 border border-tertiary/30 p-8 sm:p-12 lg:p-16 text-center overflow-hidden shadow-2xl cyan-glow-box">
+        class="cta-inner-card relative rounded-3xl bg-gradient-to-b from-surface-container-high/80 to-surface-container-low/90 border border-white/10 p-8 sm:p-12 lg:p-16 text-center overflow-hidden shadow-2xl">
 
         <!-- Ambient corner decorative glow -->
-        <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-tertiary/15 blur-3xl pointer-events-none">
+        <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-tertiary/10 blur-3xl pointer-events-none">
         </div>
         <div
-          class="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-primary-container/15 blur-3xl pointer-events-none">
+          class="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-primary-container/10 blur-3xl pointer-events-none">
         </div>
 
         <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center gap-6">
           <div
-            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-bright text-tertiary text-xs font-mono font-bold border border-tertiary/30">
-            <span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span>
+            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container text-tertiary text-xs font-mono font-medium border border-tertiary/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
             <span>LET'S BUILD SOMETHING EXTRAORDINARY</span>
           </div>
 
@@ -593,13 +461,13 @@
             <a id="cta-primary-btn"
               href="https://wa.me/201090000000?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20%D9%81%D8%B1%D8%B5%D9%83%D9%85%D8%8C%20%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%A8%D8%AF%D8%A3%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D9%8A%20%D9%85%D8%B9%D9%83%D9%85."
               target="_blank"
-              class="btn-smooth inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-tertiary hover:bg-[#34d4f6] text-[#00101D] font-extrabold text-sm sm:text-base shadow-[0_0_25px_rgba(0,196,238,0.4)]">
+              class="btn-smooth inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-tertiary hover:bg-[#34d4f6] text-[#00101D] font-bold text-sm sm:text-base shadow-[0_0_20px_rgba(0,196,238,0.35)]">
               <span>ابدأ مشروعك الآن</span>
               <span class="material-symbols-outlined text-lg">arrow_back</span>
             </a>
 
             <a href="portfolio.html"
-              class="btn-smooth inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-surface-bright/70 hover:bg-surface-bright text-white font-bold text-sm border border-white/10 hover:border-tertiary/30">
+              class="btn-smooth inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-white font-bold text-sm border border-white/10 hover:border-white/20">
               <span>تصفّح جميع المشاريع</span>
             </a>
           </div>
@@ -634,25 +502,25 @@
         <div>
           <h4 class="text-white font-bold mb-3">روابط سريعة</h4>
           <ul class="space-y-2">
-            <li><a href="index.html" class="hover:text-cyan transition-colors">الرئيسية</a></li>
-            <li><a href="about.html" class="hover:text-cyan transition-colors">عن فرصكم</a></li>
-            <li><a href="services.html" class="hover:text-cyan transition-colors">خدماتنا</a></li>
+            <li><a href="index.html" class="hover:text-tertiary transition-colors">الرئيسية</a></li>
+            <li><a href="about.html" class="hover:text-tertiary transition-colors">عن فرصكم</a></li>
+            <li><a href="services.html" class="hover:text-tertiary transition-colors">خدماتنا</a></li>
           </ul>
         </div>
         <div>
           <h4 class="text-white font-bold mb-3">أعمالنا</h4>
           <ul class="space-y-2">
-            <li><a href="portfolio.html" class="hover:text-cyan transition-colors">معرض الأعمال</a></li>
-            <li><a href="contact.html" class="hover:text-cyan transition-colors">تواصل معنا</a></li>
-            <li><a href="contact.html" class="hover:text-cyan transition-colors">استشارة مجانية</a></li>
+            <li><a href="portfolio.html" class="hover:text-tertiary transition-colors">معرض الأعمال</a></li>
+            <li><a href="contact.html" class="hover:text-tertiary transition-colors">تواصل معنا</a></li>
+            <li><a href="contact.html" class="hover:text-tertiary transition-colors">استشارة مجانية</a></li>
           </ul>
         </div>
         <div>
           <h4 class="text-white font-bold mb-3">تواصل</h4>
           <ul class="space-y-2">
-            <li class="flex items-center gap-2"><span class="text-cyan">▸</span> WhatsApp مباشر</li>
-            <li class="flex items-center gap-2"><span class="text-cyan">▸</span> hello@forascom.com</li>
-            <li class="flex items-center gap-2"><span class="text-cyan">▸</span> LinkedIn</li>
+            <li class="flex items-center gap-2"><span class="text-tertiary">▸</span> WhatsApp مباشر</li>
+            <li class="flex items-center gap-2"><span class="text-tertiary">▸</span> hello@forascom.com</li>
+            <li class="flex items-center gap-2"><span class="text-tertiary">▸</span> LinkedIn</li>
           </ul>
         </div>
       </div>
@@ -660,11 +528,11 @@
         <p>© 2026 Forascom. جميع الحقوق محفوظة — Technology that creates opportunities.</p>
         <div class="flex items-center gap-4 font-bold text-slate-300">
           <a href="https://www.instagram.com/foras_com?stkn=MWg1amRsY3NucHMyNg==" target="_blank"
-            rel="noopener noreferrer" class="hover:text-cyan">Instagram</a>
+            rel="noopener noreferrer" class="hover:text-tertiary">Instagram</a>
           <a href="https://www.facebook.com/people/Forascom/61592914277326/?sk=directory_names" target="_blank"
-            rel="noopener noreferrer" class="hover:text-cyan">Facebook</a>
+            rel="noopener noreferrer" class="hover:text-tertiary">Facebook</a>
           <a href="https://www.linkedin.com/company/forascom/" target="_blank" rel="noopener noreferrer"
-            class="hover:text-cyan">LinkedIn</a>
+            class="hover:text-tertiary">LinkedIn</a>
         </div>
       </div>
     </div>

@@ -132,6 +132,20 @@
     .active-line {
       animation: lineGlow 2.5s ease-in-out infinite;
     }
+
+    /* Evidence Dashboard Impact Styles */
+    .impact-card {
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+      will-change: opacity, transform;
+    }
+
+    .impact-counter-glow-cyan {
+      text-shadow: 0 0 calc(16px * var(--glow-ratio, 1)) rgba(0, 196, 238, calc(0.45 * var(--glow-ratio, 1))), 0 0 calc(32px * var(--glow-ratio, 1)) rgba(0, 196, 238, calc(0.2 * var(--glow-ratio, 1)));
+    }
+
+    .impact-counter-glow-primary {
+      text-shadow: 0 0 calc(16px * var(--glow-ratio, 1)) rgba(153, 203, 255, calc(0.45 * var(--glow-ratio, 1))), 0 0 calc(32px * var(--glow-ratio, 1)) rgba(153, 203, 255, calc(0.2 * var(--glow-ratio, 1)));
+    }
   </style>
 
 </head>
@@ -788,89 +802,108 @@
         <p class="text-on-surface-variant text-base mt-2">أرقام وإجراءات فعلية تعيش في بيئات عمل حية كل يوم، موثقة
           بالنتائج.</p>
       </div>
-      <div class="flex items-center gap-2 text-xs font-mono text-outline">
-        <span class="w-2 h-2 rounded-full bg-[#25D366] animate-ping"></span>
-        <span class="">تحديثات الأداء اللحظي</span>
+      <div class="flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-surface-container-low border border-white/10 text-xs font-mono text-on-surface-variant">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+        </span>
+        <span>تحديثات الأداء اللحظي</span>
       </div>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
       <!-- Impact 1: 99.98% SLA -->
       <div
-        class="p-8 rounded-3xl bg-surface-container-low border border-white/10 hover:border-tertiary/50 transition-all flex flex-col justify-between shadow-xl">
-        <div>
+        class="impact-card group relative p-7 lg:p-8 rounded-3xl bg-surface-container-low/90 border border-tertiary/20 hover:border-tertiary/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(0,196,238,0.12)] flex flex-col justify-between overflow-hidden shadow-xl">
+        <div class="absolute -top-24 -left-24 w-64 h-64 rounded-full bg-tertiary/[0.05] blur-[80px] pointer-events-none group-hover:bg-tertiary/[0.12] transition-all duration-700"></div>
+        <div class="relative z-10">
           <div class="flex items-center justify-between mb-6">
             <div class="flex items-center gap-2 text-tertiary font-bold text-sm">
-              <span class="material-symbols-outlined text-xl">verified</span>
-              <span class="">استقرار البنية التشغيلية</span>
+              <span class="material-symbols-outlined text-xl group-hover:scale-110 transition-transform duration-300">verified</span>
+              <span>استقرار البنية التشغيلية</span>
             </div>
-            <span class="text-xs font-mono text-outline">UPTIME SLA</span>
+            <span class="text-xs font-mono text-outline uppercase tracking-wider px-2 py-0.5 rounded bg-surface-bright/40 border border-white/5">UPTIME SLA</span>
           </div>
           <!-- Big Glowing Metric -->
-          <div class="py-4">
-            <span class="text-5xl lg:text-6xl font-black text-tertiary font-mono cyan-glow-text block">99.98%</span>
-            <span class="text-sm font-semibold text-white mt-1 block">جاهزية الخدمة دون انقطاع</span>
+          <div class="py-4 my-1">
+            <span
+              class="impact-counter text-5xl lg:text-6xl font-black text-tertiary font-mono tracking-tight block transition-all duration-500 impact-counter-glow-cyan"
+              data-target="99.98" data-decimals="2" data-suffix="%">99.98%</span>
+            <span class="text-sm font-semibold text-white mt-2 block">جاهزية الخدمة دون انقطاع</span>
           </div>
           <p class="text-sm text-on-surface-variant leading-relaxed mt-2">
             بنى تحتية سحابية متقدمة قادرة على استيعاب مئات الآلاف من العمليات اليومية مع مرونة عالية في التوسع وتوزيع
             الأحمال.
           </p>
         </div>
-        <div class="mt-8 pt-4 border-t border-white/10 flex items-center gap-2 text-xs font-bold text-on-surface">
-          <span class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_#00C4EE]"></span>
-          <span class="">جاهزية إنتاجية معتمدة ومراقبة 24/7</span>
+        <div class="mt-8 pt-4 border-t border-white/10 flex items-center gap-2.5 text-xs font-semibold text-on-surface-variant relative z-10">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span>
+          </span>
+          <span>جاهزية إنتاجية معتمدة ومراقبة 24/7</span>
         </div>
       </div>
       <!-- Impact 2: +120h Saved -->
       <div
-        class="p-8 rounded-3xl bg-surface-container-low border border-white/10 hover:border-primary-container/50 transition-all flex flex-col justify-between shadow-xl">
-        <div>
+        class="impact-card group relative p-7 lg:p-8 rounded-3xl bg-surface-container-low/90 border border-primary/20 hover:border-primary/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(153,203,255,0.12)] flex flex-col justify-between overflow-hidden shadow-xl">
+        <div class="absolute -top-24 -left-24 w-64 h-64 rounded-full bg-primary/[0.05] blur-[80px] pointer-events-none group-hover:bg-primary/[0.12] transition-all duration-700"></div>
+        <div class="relative z-10">
           <div class="flex items-center justify-between mb-6">
             <div class="flex items-center gap-2 text-primary font-bold text-sm">
-              <span class="material-symbols-outlined text-xl">timer</span>
-              <span class="">تقليص دورات العمل</span>
+              <span class="material-symbols-outlined text-xl group-hover:scale-110 transition-transform duration-300">timer</span>
+              <span>تقليص دورات العمل</span>
             </div>
-            <span class="text-xs font-mono text-outline">TIME SAVED</span>
+            <span class="text-xs font-mono text-outline uppercase tracking-wider px-2 py-0.5 rounded bg-surface-bright/40 border border-white/5">TIME SAVED</span>
           </div>
           <!-- Big Glowing Metric -->
-          <div class="py-4">
+          <div class="py-4 my-1">
             <span
-              class="text-5xl lg:text-6xl font-black text-primary font-mono drop-shadow-[0_0_20px_rgba(153,203,255,0.6)] block">+120
-              س</span>
-            <span class="text-sm font-semibold text-white mt-1 block">وفر شهري مباشر للفريق</span>
+              class="impact-counter text-5xl lg:text-6xl font-black text-primary font-mono tracking-tight block transition-all duration-500 impact-counter-glow-primary"
+              data-target="120" data-prefix="+" data-suffix=" س" data-decimals="0">+120 س</span>
+            <span class="text-sm font-semibold text-white mt-2 block">وفر شهري مباشر للفريق</span>
           </div>
           <p class="text-sm text-on-surface-variant leading-relaxed mt-2">
             تحويل دورات الموافقات الإدارية، إدخال البيانات، ومطابقة الفواتير من أيام عمل كاملة إلى دقائق معدودة وبدون
             خطأ بشري.
           </p>
         </div>
-        <div class="mt-8 pt-4 border-t border-white/10 flex items-center gap-2 text-xs font-bold text-on-surface">
-          <span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_#99CBFF]"></span>
-          <span class="">وفر تشغيلي يعادل طاقة موظفين إضافيين</span>
+        <div class="mt-8 pt-4 border-t border-white/10 flex items-center gap-2.5 text-xs font-semibold text-on-surface-variant relative z-10">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+          </span>
+          <span>وفر تشغيلي يعادل طاقة موظفين إضافيين</span>
         </div>
       </div>
       <!-- Impact 3: 100% Deployed -->
       <div
-        class="p-8 rounded-3xl bg-surface-container-low border border-white/10 hover:border-tertiary/50 transition-all flex flex-col justify-between shadow-xl">
-        <div>
+        class="impact-card group relative p-7 lg:p-8 rounded-3xl bg-surface-container-low/90 border border-tertiary/20 hover:border-tertiary/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(0,196,238,0.12)] flex flex-col justify-between overflow-hidden shadow-xl">
+        <div class="absolute -top-24 -left-24 w-64 h-64 rounded-full bg-tertiary/[0.05] blur-[80px] pointer-events-none group-hover:bg-tertiary/[0.12] transition-all duration-700"></div>
+        <div class="relative z-10">
           <div class="flex items-center justify-between mb-6">
             <div class="flex items-center gap-2 text-tertiary font-bold text-sm">
-              <span class="material-symbols-outlined text-xl">devices</span>
-              <span class="">منتجات حية قيد الاستخدام</span>
+              <span class="material-symbols-outlined text-xl group-hover:scale-110 transition-transform duration-300">devices</span>
+              <span>منتجات حية قيد الاستخدام</span>
             </div>
-            <span class="text-xs font-mono text-outline">DEPLOYMENT</span>
+            <span class="text-xs font-mono text-outline uppercase tracking-wider px-2 py-0.5 rounded bg-surface-bright/40 border border-white/5">DEPLOYMENT</span>
           </div>
           <!-- Big Glowing Metric -->
-          <div class="py-4">
-            <span class="text-5xl lg:text-6xl font-black text-tertiary font-mono cyan-glow-text block">100%</span>
-            <span class="text-sm font-semibold text-white mt-1 block">بيئات إنتاج حية ومفعلة</span>
+          <div class="py-4 my-1">
+            <span
+              class="impact-counter text-5xl lg:text-6xl font-black text-tertiary font-mono tracking-tight block transition-all duration-500 impact-counter-glow-cyan"
+              data-target="100" data-decimals="0" data-suffix="%">100%</span>
+            <span class="text-sm font-semibold text-white mt-2 block">بيئات إنتاج حية ومفعلة</span>
           </div>
           <p class="text-sm text-on-surface-variant leading-relaxed mt-2">
             تطبيقات ولوحات تحكم مدمجة يعتمد عليها الموظفون والعملاء بشكل يومي لتحقيق أهداف أعمالهم ومتابعة أرقامهم.
           </p>
         </div>
-        <div class="mt-8 pt-4 border-t border-white/10 flex items-center gap-2 text-xs font-bold text-on-surface">
-          <span class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_#00C4EE]"></span>
-          <span class="">مدمجة بشكل كامل مع أنظمة الشركات</span>
+        <div class="mt-8 pt-4 border-t border-white/10 flex items-center gap-2.5 text-xs font-semibold text-on-surface-variant relative z-10">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span>
+          </span>
+          <span>مدمجة بشكل كامل مع أنظمة الشركات</span>
         </div>
       </div>
     </div>
@@ -1106,6 +1139,110 @@
       }
 
       initHeroPipelineAnimation();
+    });
+  </script>
+
+  <!-- Evidence Dashboard Counter & Scroll Reveal Script (Scoped to #impact) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const impactSection = document.getElementById('impact');
+      if (!impactSection) return;
+
+      const impactCards = impactSection.querySelectorAll('.impact-card');
+      const impactCounters = impactSection.querySelectorAll('.impact-counter');
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function setFinalValue(el) {
+        const target = parseFloat(el.dataset.target || '0');
+        const prefix = el.dataset.prefix || '';
+        const suffix = el.dataset.suffix || '';
+        const decimals = parseInt(el.dataset.decimals || '0', 10);
+        el.textContent = prefix + (decimals > 0 ? target.toFixed(decimals) : Math.round(target)) + suffix;
+        el.style.setProperty('--glow-ratio', '1');
+      }
+
+      if (prefersReducedMotion) {
+        impactCards.forEach(card => {
+          card.classList.remove('opacity-0', 'translate-y-6');
+          card.classList.add('opacity-100', 'translate-y-0');
+        });
+        impactCounters.forEach(setFinalValue);
+        return;
+      }
+
+      // Initial state for animation
+      impactCards.forEach(card => {
+        card.classList.add('opacity-0', 'translate-y-6');
+      });
+      impactCounters.forEach(el => {
+        const prefix = el.dataset.prefix || '';
+        const suffix = el.dataset.suffix || '';
+        const decimals = parseInt(el.dataset.decimals || '0', 10);
+        el.textContent = prefix + (decimals > 0 ? (0).toFixed(decimals) : '0') + suffix;
+        el.style.setProperty('--glow-ratio', '0');
+      });
+
+      function animateCounter(el, delay = 0) {
+        setTimeout(() => {
+          const target = parseFloat(el.dataset.target || '0');
+          const prefix = el.dataset.prefix || '';
+          const suffix = el.dataset.suffix || '';
+          const decimals = parseInt(el.dataset.decimals || '0', 10);
+          const duration = 1400; // 1.4s smooth duration
+          let startTime = null;
+
+          function easeOutQuart(x) {
+            return 1 - Math.pow(1 - x, 4);
+          }
+
+          function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            const elapsed = timestamp - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = easeOutQuart(progress);
+            const currentVal = target * eased;
+
+            el.textContent = prefix + (decimals > 0 ? currentVal.toFixed(decimals) : Math.round(currentVal)) + suffix;
+            el.style.setProperty('--glow-ratio', eased.toFixed(3));
+
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            } else {
+              setFinalValue(el);
+            }
+          }
+
+          requestAnimationFrame(step);
+        }, delay);
+      }
+
+      // IntersectionObserver: trigger once when scrolled into view
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            observer.disconnect();
+
+            // Reveal cards with smooth subtle stagger
+            impactCards.forEach((card, index) => {
+              setTimeout(() => {
+                card.classList.remove('opacity-0', 'translate-y-6');
+                card.classList.add('opacity-100', 'translate-y-0');
+              }, index * 100);
+
+              // Animate counters aligned with card entrance
+              const counterEl = card.querySelector('.impact-counter');
+              if (counterEl) {
+                animateCounter(counterEl, index * 100 + 60);
+              }
+            });
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -30px 0px'
+      });
+
+      observer.observe(impactSection);
     });
   </script>
 

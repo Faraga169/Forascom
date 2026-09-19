@@ -7,63 +7,132 @@ const projectsDetailsData = {
     id: "focuszone",
     title: "FOCUSZONE — منظومة التعلّم الذكية",
     subtitle:
-      "منظومة تدريبية تكيفية ترصد وتوجه مسارات المتدربين لحظياً لرفع نسب الإنجاز وخفض معدلات التسرب.",
+      "منظومة تعلّم مدعومة بالذكاء الاصطناعي تجمع بين جلسات التركيز الآمنة، المساعدة الذكية، التقييمات التكيفية، وتتبع تطور المهارات.",
+
     category: "Web Development",
+
     tags: [
       "Angular",
       "ASP.NET Core",
       "C#",
       "Entity Framework Core",
-      "SQL Server",
       "AI",
+      "RAG",
       "Qdrant",
+      "Browser Extension",
     ],
+
     categoryKey: "web-development",
     featured: true,
 
     cardImage:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAoQGBpnR5YOtx63m0ayiRLrEPzGeEGwJpeMf8aOkTrWiiC1RuM2DXWLbQC278Qf4cmQNAgUjNF1ubMzZHKRleulvpj0pJZE3LU4fisX_6zKqKedCwMOiq9hU-3Tb2F7Mm2lN2ss5norSsEj0EYs2bGqm-hezL62_YHMq7FDilW3G2HzqtmepKo-3DkVVh1C7hfPrdr-cPUIX48M44X1m_V95n545Ujsfc3nAjjMW-7j-bNj5mHREaS",
+      "assets/images/ultra_premium_16_9_cinematic_project_showcase_thumbnail_for_focuszone_an_aicard.png",
     cardImageAlt: "FOCUSZONE — منظومة التعلّم الذكية",
+
     description:
-      "بنية تعليمية ذكية متطورة تحلل استيعاب وتفاعل كل متدرب على حدة لحظياً، وتولّد مسارات تدريبية وتوصيات مخصصة لرفع جودة التأهيل المهني وتوحيد تجارب التدريب المؤسسي.",
+      "منصة تعلم متكاملة مدعومة بالذكاء الاصطناعي تتيح للطلاب الدراسة من ملفات PDF وفيديوهات YouTube ومقالات الويب داخل بيئة تركيز آمنة. تجمع FocusZone بين AI Learning Assistant وRAG والتقييمات المولدة بالذكاء الاصطناعي وتحليل المهارات، مع Browser Extension يوفر AI Jail Mode لمنع المواقع المشتتة ومواقع الذكاء الاصطناعي أثناء جلسات الدراسة.",
+
     heroImage:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAoQGBpnR5YOtx63m0ayiRLrEPzGeEGwJpeMf8aOkTrWiiC1RuM2DXWLbQC278Qf4cmQNAgUjNF1ubMzZHKRleulvpj0pJZE3LU4fisX_6zKqKedCwMOiq9hU-3Tb2F7Mm2lN2ss5norSsEj0EYs2bGqm-hezL62_YHMq7FDilW3G2HzqtmepKo-3DkVVh1C7hfPrdr-cPUIX48M44X1m_V95n545Ujsfc3nAjjMW-7j-bNj5mHREaS",
-    heroImageAlt: "FocusZone Live Learning Architecture UI",
+      "assets/images/ultra_premium_16_9_cinematic_website_hero_key_visual_for_focuszone_hero.png",
+
+    heroImageAlt: "FocusZone AI Learning Platform",
+
     liveUrl: "",
     demoVideo: "assets/videos/Demo.mp4",
+
     metaTelemetry: {
-      label: "LIVE TELEMETRY STREAM",
-      status: "Active Pipeline",
-      highlight: "معالجة تكيفية لحظية",
+      label: "AI LEARNING ECOSYSTEM",
+      status: "Active Platform",
+      highlight: "تعلم تكيفي مدعوم بالذكاء الاصطناعي",
     },
+
     transformation: {
-      title: "من التدريب الجامد إلى التعلّم التكيفي الذكي",
+      title: "من تجربة تعلم مشتتة إلى منظومة تعلم ذكية ومحمية",
       description:
-        "مقارنة تشغيلية توضح الأثر الفعلي لمنظومة FocusZone على مسارات التدريب وكفاءة الإنجاز.",
+        "مقارنة تشغيلية توضح الأثر الفعلي لمنظومة FocusZone في الجمع بين التعلم بالذكاء الاصطناعي، التركيز الآمن، التقييم المستمر، وتتبع تطور المهارات.",
+
       before: {
-        badge: "الوضع السابق • BEFORE",
-        title: "تدريب تقليدي جامد",
-        subtitle: "تدريب موحد بنمط تقليدي جامد",
+        badge: "التحديات • BEFORE",
+        title: "تعلم مشتت وتقييم محدود",
+        subtitle: "مصادر متعددة بدون بيئة تركيز أو قياس مستمر للمهارات",
         points: [
-          "مسارات جامدة بدون تخصيص للمتدربين",
-          "معدلات تسرب ملحوظة في المراحل المتقدمة",
-          "تقييمات متأخرة بدون رؤية مباشرة لنقاط الضعف",
+          "الانتقال بين مصادر وأدوات تعليمية متعددة أثناء الدراسة",
+          "إمكانية الوصول إلى المواقع المشتتة وأدوات الذكاء الاصطناعي أثناء جلسات التعلم",
+          "الاعتماد على نتائج الاختبارات العامة بدون تحليل تفصيلي لمستوى المهارات حسب الموضوع",
         ],
       },
+
       after: {
         badge: "بعد حل فرصكم • AFTER",
-        title: "منظومة تعليمية تكيفية",
-        subtitle: "منظومة تفاعلية مخصصة ولحظية",
+        title: "منظومة تعلم ذكية ومتكاملة",
+        subtitle: "تعلم مركز وتقييم قائم على المهارات وتحليل مستمر للتقدم",
         points: [
-          "مسار تدريبي مخصص لكل متدرب حسب سرعته",
-          "تنبيهات وتدخلات استباقية لمعالجة التعثر",
-          "تقارير أداء ومؤشرات تقدم دقيقة ومباشرة",
+          "AI Jail Mode وDynamic Website Whitelisting لإنشاء بيئة دراسة خالية من التشتت",
+          "AI Learning Assistant يفهم محتوى المصدر التعليمي ويدعم الشرح والإجابة عن الأسئلة",
+          "AI-Generated Assessments تقيس أداء الطالب حسب الموضوع وتحدث مستويات المهارات تلقائياً",
+          "تحليلات متكاملة للجلسات والاختبارات مع AI CV Generator وPersonalized Learning Roadmap",
         ],
-        footer: "نتائج تشغيلية محققة في بيئة إنتاج فعلية",
+
+        footer:
+          "منظومة تعلم متكاملة تربط بين التركيز والتعلم والتقييم والتطور المهاري",
       },
     },
+
     ctaWhatsAppMessage:
       "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة منظومة FocusZone وحلول التعلم الذكية.",
+  },
+
+  clinicms: {
+    id: "clinicms",
+    title: "CLINIC MANAGEMENT SYSTEM — نظام إدارة العيادات",
+    categoryKey: "web-development",
+    featured: true,
+    cardImage:
+      "assets/images/ClinicManagmentSystem.jpg",
+    subtitle: "نظام إدارة عيادات متكامل مبني بـ .NET 8، بمعمارية طبقية احترافية تدير سير عمل الرعاية الصحية عبر واجهات مخصصة للإدارة والأطباء والمرضى والزوار.",
+    category: "أنظمة مؤسسية • Enterprise Systems",
+    tags: [".NET 8", "ASP.NET Core MVC", "Layered Architecture", "Specification Pattern", "ASP.NET Identity"],
+    description: "نظام إدارة عيادات بمستوى مؤسسي (Enterprise-Grade) مبني باستخدام ASP.NET Core MVC ومعمارية طبقية صارمة (BLL, DAL, PL) لضمان قابلية الصيانة والتوسع. يعتمد على Dependency Injection وGeneric Repository وUnit of Work وSpecification Pattern لفصل منطق الأعمال عن الوصول للبيانات وإدارة الاستعلامات المعقدة بشكل منظم وقابل لإعادة الاستخدام. كما يستخدم ASP.NET Identity ونظام Role-Based Access Control مع Areas مستقلة للإدارة والطبيب والمريض والزائر لتوفير تجربة آمنة ومخصصة لكل نوع من المستخدمين.",
+    heroImage: "assets/images/ClinicManagmentSystem.jpg",
+    heroImageAlt: "Clinic Management System UI",
+    liveUrl: "",
+    demoVideo: "",
+    metaTelemetry: {
+      label: "LAYERED ARCHITECTURE PIPELINE",
+      status: "Active Pipeline",
+      highlight: "فصل صارم بين طبقات العرض والأعمال والوصول للبيانات"
+    },
+
+    transformation: {
+      title: "من نظام متشابك إلى منصة عيادات منظمة وقابلة للتوسع",
+      description: "مقارنة تشغيلية توضح كيف ساهمت المعمارية الطبقية وأنماط التصميم في تنظيم إدارة العيادات وفصل المسؤوليات وتحسين قابلية التوسع والصيانة.",
+
+      before: {
+        badge: "التحديات • BEFORE",
+        title: "منطق أعمال واستعلامات مترابطة",
+        subtitle: "صعوبة الصيانة والتوسع مع تداخل المسؤوليات",
+        points: [
+          "تداخل منطق الأعمال مع تفاصيل الوصول إلى قاعدة البيانات، مما يزيد صعوبة الصيانة والاختبار",
+          "غياب فصل واضح بين تجارب وصلاحيات الإدارة والأطباء والمرضى والزوار",
+          "تكرار منطق الاستعلام والفلترة عند التعامل مع البيانات والعمليات المختلفة"
+        ]
+      },
+
+      after: {
+        badge: "بعد الحل • AFTER",
+        title: "معمارية طبقية احترافية قابلة للتوسع",
+        subtitle: "فصل واضح للمسؤوليات وأمان قائم على الأدوار",
+        points: [
+          "فصل طبقات BLL وDAL وPL لعزل منطق الأعمال عن الوصول إلى البيانات وواجهة المستخدم",
+          "Areas مستقلة للإدارة والطبيب والمريض والزائر مع Role-Based Access Control",
+          "Specification Pattern وGeneric Repository لتنظيم وإعادة استخدام منطق الاستعلامات المعقدة",
+          "ASP.NET Identity لإدارة المصادقة والصلاحيات بشكل مركزي وآمن"
+        ],
+        footer: "نظام مصمم وفق مبادئ Clean Code وقابلية الصيانة والتوسع"
+      }
+    },
+
+    ctaWhatsAppMessage: "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة نظام إدارة العيادات وحلول الأنظمة المؤسسية."
   },
 
   watchify: {
@@ -191,64 +260,91 @@ const projectsDetailsData = {
       "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة نظام سند لأتمتة سلاسل الإمداد.",
   },
 
-  medad: {
-    id: "medad",
-    title: "مِداد — متجر متكامل وتكامل ERP سلس",
-    categoryKey: "web-development",
-    featured: false,
+  freshcart: {
+    id: "freshcart",
 
-    cardImage:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuC1QdXrPN4L53rjiSDQkytd0OdCIRHfCMhzbx3y8hlw24jDxHa4_kD0i9hECZJfryfBXoCnPDQwUc8qvVeAThh_avsMc102iZgBpjy58JY9q0UcvZKs8ueIpQbqIJFZlyETT4d5WgQNUpEsn3v0hVQdQuxyteANdbInfzkTJgpOPnjSOWwJzyzE0XMnjzrtkY-IUpCrhu2jIWMz44gCD7zAx3wUzrbKVNIH67Xa3uK1W-e7oA3MWL7f",
-    cardImageAlt: "مِداد — متجر متكامل وتكامل ERP سلس",
+    title: "FRESHCART — منصة تجارة إلكترونية متكاملة",
+
     subtitle:
-      "بنية تجارية فائقة السرعة مربوطة لحظياً بالمستودعات ونظام الفوترة لمنع تضارب المخزون.",
-    category: "Web Development",
+      "منصة تسوق إلكتروني عالية الأداء، ثنائية اللغة (عربي/إنجليزي)، تجمع بين سرعة العرض من جهة الخادم (SSR) وتجربة دفع مرنة بخيارين، مصممة لتقديم تجربة شراء سلسة بأقل احتكاك ممكن.",
+
+    category: "تجارة إلكترونية • E-Commerce",
+    categoryKey: "web-development",
+
     tags: [
-      "E-Commerce",
-      "ERP Integration",
-      "Web Development",
-      "API Integration",
+      "Angular",
+      "TypeScript",
+      "Bootstrap",
+      "SCSS",
+      "RxJS",
+      "Angular Signals",
+      "Angular SSR",
+      "Express.js",
+      "Stripe",
+      "JWT",
     ],
+
     description:
-      "بنية تجارة إلكترونية سريعة ومتقدمة متصلة كلياً بنظام الـ ERP والمستودعات المركزية لضمان تزامن الفواتير والمخزون وعمليات الشراء بين القنوات الرقمية والفروع الواقعية.",
-    heroImage:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuC1QdXrPN4L53rjiSDQkytd0OdCIRHfCMhzbx3y8hlw24jDxHa4_kD0i9hECZJfryfBXoCnPDQwUc8qvVeAThh_avsMc102iZgBpjy58JY9q0UcvZKs8ueIpQbqIJFZlyETT4d5WgQNUpEsn3v0hVQdQuxyteANdbInfzkTJgpOPnjSOWwJzyzE0XMnjzrtkY-IUpCrhu2jIWMz44gCD7zAx3wUzrbKVNIH67Xa3uK1W-e7oA3MWL7f",
-    heroImageAlt: "Midad E-Commerce & ERP Architecture",
+      "تطبيق تجارة إلكترونية متكامل (End-to-End) يغطي رحلة العميل بالكامل: من اكتشاف المنتجات والتصنيفات، مرورًا بالبحث اللحظي وإدارة السلة والمفضلة، وصولًا إلى نظام مصادقة آمن متعدد الخطوات، وخروج آمن (Checkout) بخيارين للدفع: أونلاين عبر Stripe أو الدفع عند الاستلام. مبني بالكامل على Angular مع تصيير من جهة الخادم (SSR) لتحسين الأداء والتحميل الأولي ودعم SEO.",
+
+    heroImage: "assets/images/Ecommerce.png",
+    heroImageAlt: "FreshCart E-Commerce Platform UI",
+
+    cardImage: "assets/images/Ecommerce.png",
+    cardImageAlt: "FreshCart E-Commerce Platform UI",
+
     liveUrl: "",
     demoVideo: "",
+
+    featured: false,
+
     metaTelemetry: {
-      label: "ERP SYNC ENGINE",
-      status: "Enterprise Integration",
-      highlight: "تزامن لحظي ثنائي الاتجاه",
+      label: "SSR RENDERING PIPELINE",
+      status: "Active Pipeline",
+      highlight: "Server-Side Rendering لتحسين الأداء وSEO",
     },
+
     transformation: {
-      title: "من جزر البيانات إلى تكامل تجاري موحد",
+      title: "من متجر بطيء ومجزأ إلى منصة تسوق متكاملة وسريعة",
+
       description:
-        "مقارنة تشغيلية توضح الأثر الفعلي لمنصة مِداد على مزامنة المخزون والفوترة وتجربة الشراء.",
+        "مقارنة تشغيلية توضح الأثر الفعلي لمنصة FreshCart على تجربة التسوق والأداء التقني.",
+
       before: {
         badge: "الوضع السابق • BEFORE",
-        title: "جزر بيانات معزولة",
-        subtitle: "جزر بيانات معزولة وتحديثات يدوية",
+
+        title: "واجهات تقليدية بطيئة الظهور",
+
+        subtitle: "تجربة تسوق مجزأة وغير متسقة",
+
         points: [
-          "تضارب أرصدة المخزون بين نقاط البيع والمتجر",
-          "ترحيل محاسبي يدوي يستهلك ساعات يومياً",
-          "تجربة تصفح ودفع بطيئة تثبط العملاء",
+          "صفحات فارغة عند التحميل الأول تضعف الظهور في محركات البحث (SEO)",
+          "عدادات السلة والمفضلة غير متزامنة وتحتاج تحديثًا يدويًا للصفحة",
+          "خيار دفع واحد جامد بدون بديل مرن عند الاستلام",
+          "واجهة أحادية اللغة بدون دعم حقيقي للعربية واتجاه RTL",
         ],
       },
+
       after: {
         badge: "بعد حل فرصكم • AFTER",
-        title: "منظومة تجارية موحدة لحظية",
-        subtitle: "منظومة موحدة ومتزامنة في الوقت الفعلي",
+
+        title: "منصة تسوق متكاملة وسريعة الاستجابة",
+
+        subtitle: "تجربة موحدة وتفاعلية من البداية للنهاية",
+
         points: [
-          "تزامن المخزون بين القنوات الرقمية والفروع",
-          "أتمتة الفواتير والقيود فور تأكيد الشراء",
-          "تجربة شراء سلسة وسريعة عبر مختلف الأجهزة",
+          "تصيير من جهة الخادم (SSR) لتحسين التحميل الأولي ودعم SEO",
+          "مزامنة لحظية لعدادات السلة والمفضلة عبر كل الصفحات فور أي تغيير",
+          "نظام دفع مزدوج مرن: بوابة Stripe الآمنة أو الدفع عند الاستلام",
+          "دعم كامل وتلقائي للعربية والإنجليزية مع تبديل اتجاه الواجهة RTL/LTR",
         ],
-        footer: "منظومة تجارة إلكترونية متكاملة مع أنظمة المؤسسة",
+
+        footer: "نتائج تشغيلية محققة في بيئة إنتاج فعلية",
       },
     },
+
     ctaWhatsAppMessage:
-      "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة مداد لتطوير المنصات وتكامل ERP.",
+      "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة منصة FreshCart وحلول التجارة الإلكترونية المتكاملة.",
   },
 
   ofok: {
@@ -365,17 +461,14 @@ const projectsDetailsData = {
     ctaWhatsAppMessage:
       "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة نبض للتحليل التنبؤي والعمليات الذكية.",
   },
-
-
 };
 
 // Aliases mapping for alternate spellings or case variations (without mutating projectsDetailsData)
 const projectAliases = {
   "focus-zone": "focuszone",
-  "ofuque": "ofok",
-  "ofuk": "ofok",
-  "ofuq": "ofok",
-  "midad": "medad",
+  ofuque: "ofok",
+  ofuk: "ofok",
+  ofuq: "ofok",
 };
 
 /**
@@ -619,7 +712,7 @@ function renderProjectDetails(projectKey) {
   if (ctaPrimaryBtn) {
     const encodedMsg = encodeURIComponent(
       project.ctaWhatsAppMessage ||
-        `مرحباً فريق فرصكم، حابب أستفسر عن تنفيذ مشروع مشابه لـ ${project.title}`,
+      `مرحباً فريق فرصكم، حابب أستفسر عن تنفيذ مشروع مشابه لـ ${project.title}`,
     );
     ctaPrimaryBtn.href = `https://wa.me/201090000000?text=${encodedMsg}`;
   }

@@ -52,7 +52,7 @@ const projectsDetailsData = {
         "مقارنة تشغيلية توضح الأثر الفعلي لمنظومة FocusZone في الجمع بين التعلم بالذكاء الاصطناعي، التركيز الآمن، التقييم المستمر، وتتبع تطور المهارات.",
 
       before: {
-        badge: "التحديات • BEFORE",
+        badge: "الوضع السابق • BEFORE",
         title: "تعلم مشتت وتقييم محدود",
         subtitle: "مصادر متعددة بدون بيئة تركيز أو قياس مستمر للمهارات",
         points: [
@@ -69,7 +69,7 @@ const projectsDetailsData = {
         points: [
           "AI Jail Mode وDynamic Website Whitelisting لإنشاء بيئة دراسة خالية من التشتت",
           "AI Learning Assistant يفهم محتوى المصدر التعليمي ويدعم الشرح والإجابة عن الأسئلة",
-          "AI-Generated Assessments تقيس أداء الطالب حسب الموضوع وتحدث مستويات المهارات تلقائياً",
+          "AI-Generated Assessments تقيس أداء الطالب حسب الموضوع وتحدّث مستويات المهارات تلقائيًا",
           "تحليلات متكاملة للجلسات والاختبارات مع AI CV Generator وPersonalized Learning Roadmap",
         ],
 
@@ -87,12 +87,19 @@ const projectsDetailsData = {
     title: "CLINIC MANAGEMENT SYSTEM — نظام إدارة العيادات",
     categoryKey: "web-development",
     featured: true,
-    cardImage:
-      "assets/images/ClinicManagmentSystem.jpg",
-    subtitle: "نظام إدارة عيادات متكامل مبني بـ .NET 8، بمعمارية طبقية احترافية تدير سير عمل الرعاية الصحية عبر واجهات مخصصة للإدارة والأطباء والمرضى والزوار.",
+    cardImage: "assets/images/ClinicManagmentSystem.jpg",
+    subtitle:
+      "نظام إدارة عيادات متكامل مبني بـ .NET 8، بمعمارية طبقية احترافية تدير سير عمل الرعاية الصحية عبر واجهات مخصصة للإدارة والأطباء والمرضى والزوار.",
     category: "أنظمة مؤسسية • Enterprise Systems",
-    tags: [".NET 8", "ASP.NET Core MVC", "Layered Architecture", "Specification Pattern", "ASP.NET Identity"],
-    description: "نظام إدارة عيادات بمستوى مؤسسي (Enterprise-Grade) مبني باستخدام ASP.NET Core MVC ومعمارية طبقية صارمة (BLL, DAL, PL) لضمان قابلية الصيانة والتوسع. يعتمد على Dependency Injection وGeneric Repository وUnit of Work وSpecification Pattern لفصل منطق الأعمال عن الوصول للبيانات وإدارة الاستعلامات المعقدة بشكل منظم وقابل لإعادة الاستخدام. كما يستخدم ASP.NET Identity ونظام Role-Based Access Control مع Areas مستقلة للإدارة والطبيب والمريض والزائر لتوفير تجربة آمنة ومخصصة لكل نوع من المستخدمين.",
+    tags: [
+      ".NET 8",
+      "ASP.NET Core MVC",
+      "Layered Architecture",
+      "Specification Pattern",
+      "ASP.NET Identity",
+    ],
+    description:
+      "نظام إدارة عيادات بمستوى مؤسسي (Enterprise-Grade) مبني باستخدام ASP.NET Core MVC ومعمارية طبقية صارمة (BLL, DAL, PL) لضمان قابلية الصيانة والتوسع. يعتمد على Dependency Injection وGeneric Repository وUnit of Work وSpecification Pattern لفصل منطق الأعمال عن الوصول للبيانات وإدارة الاستعلامات المعقدة بشكل منظم وقابل لإعادة الاستخدام. كما يستخدم ASP.NET Identity ونظام Role-Based Access Control مع Areas مستقلة للإدارة والطبيب والمريض والزائر لتوفير تجربة آمنة ومخصصة لكل نوع من المستخدمين.",
     heroImage: "assets/images/ClinicManagmentSystem.jpg",
     heroImageAlt: "Clinic Management System UI",
     liveUrl: "",
@@ -100,22 +107,23 @@ const projectsDetailsData = {
     metaTelemetry: {
       label: "LAYERED ARCHITECTURE PIPELINE",
       status: "Active Pipeline",
-      highlight: "فصل صارم بين طبقات العرض والأعمال والوصول للبيانات"
+      highlight: "فصل صارم بين طبقات العرض والأعمال والوصول للبيانات",
     },
 
     transformation: {
       title: "من نظام متشابك إلى منصة عيادات منظمة وقابلة للتوسع",
-      description: "مقارنة تشغيلية توضح كيف ساهمت المعمارية الطبقية وأنماط التصميم في تنظيم إدارة العيادات وفصل المسؤوليات وتحسين قابلية التوسع والصيانة.",
+      description:
+        "مقارنة تشغيلية توضح كيف ساهمت المعمارية الطبقية وأنماط التصميم في تنظيم إدارة العيادات وفصل المسؤوليات وتحسين قابلية التوسع والصيانة.",
 
       before: {
-        badge: "التحديات • BEFORE",
+        badge: "الوضع السابق • BEFORE",
         title: "منطق أعمال واستعلامات مترابطة",
         subtitle: "صعوبة الصيانة والتوسع مع تداخل المسؤوليات",
         points: [
           "تداخل منطق الأعمال مع تفاصيل الوصول إلى قاعدة البيانات، مما يزيد صعوبة الصيانة والاختبار",
           "غياب فصل واضح بين تجارب وصلاحيات الإدارة والأطباء والمرضى والزوار",
-          "تكرار منطق الاستعلام والفلترة عند التعامل مع البيانات والعمليات المختلفة"
-        ]
+          "تكرار منطق الاستعلام والفلترة عند التعامل مع البيانات والعمليات المختلفة",
+        ],
       },
 
       after: {
@@ -126,13 +134,14 @@ const projectsDetailsData = {
           "فصل طبقات BLL وDAL وPL لعزل منطق الأعمال عن الوصول إلى البيانات وواجهة المستخدم",
           "Areas مستقلة للإدارة والطبيب والمريض والزائر مع Role-Based Access Control",
           "Specification Pattern وGeneric Repository لتنظيم وإعادة استخدام منطق الاستعلامات المعقدة",
-          "ASP.NET Identity لإدارة المصادقة والصلاحيات بشكل مركزي وآمن"
+          "ASP.NET Identity لإدارة المصادقة والصلاحيات بشكل مركزي وآمن",
         ],
-        footer: "نظام مصمم وفق مبادئ Clean Code وقابلية الصيانة والتوسع"
-      }
+        footer: "نظام مصمم وفق مبادئ Clean Code وقابلية الصيانة والتوسع",
+      },
     },
 
-    ctaWhatsAppMessage: "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة نظام إدارة العيادات وحلول الأنظمة المؤسسية."
+    ctaWhatsAppMessage:
+      "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة نظام إدارة العيادات وحلول الأنظمة المؤسسية.",
   },
 
   watchify: {
@@ -204,7 +213,7 @@ const projectsDetailsData = {
     id: "sanad",
     title: "سَنَد — محرك أتمتة سلاسل الإمداد",
     subtitle:
-      "أتمتة متكاملة لدورات الشحن وتوليد البوالص اللحظية ومزامنة المستودعات بلا تدخل بشري.",
+      "أتمتة متكاملة لدورات الشحن وتوليد البوالص لحظيًا ومزامنة المستودعات من غير تدخل بشري.",
     category: "Business Automation",
     categoryKey: "business-automation",
     featured: false,
@@ -219,7 +228,7 @@ const projectsDetailsData = {
       "Workflow Automation",
     ],
     description:
-      "محرك أتمتة مؤسسي يربط أنظمة الطلبات والمستودعات وشركات الشحن لحظياً لمعالجة وتوجيه الطلبات وإصدار بوالص الشحن آلياً دون أي حاجة للتدخل البشري.",
+      "محرك أتمتة مؤسسي بيربط أنظمة الطلبات والمستودعات وشركات الشحن لحظيًا لمعالجة الطلبات وتوجيهها وإصدار بوالص الشحن تلقائيًا من غير تدخل بشري.",
     heroImage:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuBtn7W6eqglCjePtAQhBikhDa2l0O5hxnBoaE94vIlaxNOUm27AL6VpJHRq1H6Zf6vPWcgLWPR-s4787z5YzQOix1A32bbSIZoa1IX7zS3imNH-sQyDReQtnMxANfTD5d782O2otbMC0SNVjTMm7LIFnBECcV0h63eJOwZDzbnvlD3pEvLiTYcln7_jkZcaJygH1znPsQl87pgs5iSGo7dy2DJLl4K1Y1ioWFjLPD3r0oQwmVh9kfAc",
     heroImageAlt: "Sanad Supply Chain Dispatch Engine",
@@ -712,7 +721,7 @@ function renderProjectDetails(projectKey) {
   if (ctaPrimaryBtn) {
     const encodedMsg = encodeURIComponent(
       project.ctaWhatsAppMessage ||
-      `مرحباً فريق فرصكم، حابب أستفسر عن تنفيذ مشروع مشابه لـ ${project.title}`,
+        `مرحباً فريق فرصكم، حابب أستفسر عن تنفيذ مشروع مشابه لـ ${project.title}`,
     );
     ctaPrimaryBtn.href = `https://wa.me/201090000000?text=${encodedMsg}`;
   }

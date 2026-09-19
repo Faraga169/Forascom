@@ -1429,7 +1429,7 @@
     const arabicNumbers = ["٠١", "٠٢", "٠٣", "٠٤"];
     const pathLength = path.getTotalLength();
     const stageSnapPositions = [0, 0.333, 0.667, 1];
-    const stageProgress = [0.0, 0.17, 0.50, 0.83];
+    const stageProgress = [0.0, 0.17, 0.5, 0.83];
     let currentStage = 0;
     let detailRenderId = 0;
 
@@ -1996,7 +1996,6 @@
     initVisionSection();
     initStatementSection();
     initParallaxDepth();
-    initCTASection();
     initStatsCounters();
     initAboutMetricCounters();
 
@@ -2066,7 +2065,7 @@
             }
           });
         },
-        { threshold: 0.2 }
+        { threshold: 0.2 },
       );
       observer.observe(metricsBar);
     } else {
@@ -2075,7 +2074,9 @@
   }
 
   function initStatsCounters() {
-    const stats = document.querySelectorAll(".who-we-are-stats .counter[data-target]");
+    const stats = document.querySelectorAll(
+      ".who-we-are-stats .counter[data-target]",
+    );
     if (!stats.length) return;
 
     const resetStat = (stat) => {
@@ -2112,15 +2113,18 @@
     };
 
     if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            animateStat(entry.target);
-          } else {
-            resetStat(entry.target);
-          }
-        });
-      }, { threshold: 0.2 });
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateStat(entry.target);
+            } else {
+              resetStat(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 },
+      );
       stats.forEach((s) => observer.observe(s));
     } else {
       stats.forEach((s) => animateStat(s));

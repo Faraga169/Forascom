@@ -1,237 +1,650 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:title" content="تواصل معنا | Forascom — ابدأ مشروعك التقني">
-  <meta property="og:description" content="استشارة تقنية مجانية ومناقشة تفاصيل مشروعك مع فريق Forascom.">
-  <meta property="og:image" content="assets/images/Logo.jpeg">
-  <meta property="og:type" content="website">
-  <title>تواصل معنا | Forascom — ابدأ مشروعك التقني</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      property="og:title"
+      content="تواصل معنا | Forascom — ابدأ مشروعك التقني"
+    />
+    <meta
+      property="og:description"
+      content="استشارة تقنية مجانية ومناقشة تفاصيل مشروعك مع فريق Forascom."
+    />
+    <meta property="og:image" content="assets/images/Logo.jpeg" />
+    <meta property="og:type" content="website" />
+    <title>تواصل معنا | Forascom — ابدأ مشروعك التقني</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: '#001D33',
-            'navy-secondary': '#00152A',
-            'dark-blue': '#002442',
-            'blue-depth': '#00345A',
-            cyan: '#06B6D4',
-            'cyan-bright': '#22D3EE',
-            'blue-soft': '#38BDF8',
-            'text-primary': '#F8FAFC',
-            'text-secondary': '#CBD5E1',
-            'text-muted': '#94A3B8'
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navy: "#001D33",
+              "navy-secondary": "#00152A",
+              "dark-blue": "#002442",
+              "blue-depth": "#00345A",
+              cyan: "#06B6D4",
+              "cyan-bright": "#22D3EE",
+              "blue-soft": "#38BDF8",
+              "text-primary": "#F8FAFC",
+              "text-secondary": "#CBD5E1",
+              "text-muted": "#94A3B8",
+            },
+            fontFamily: {
+              arabic: ["Cairo", "sans-serif"],
+              latin: ["Plus Jakarta Sans", "sans-serif"],
+            },
           },
-          fontFamily: {
-            arabic: ['Cairo', 'sans-serif'],
-            latin: ['Plus Jakarta Sans', 'sans-serif']
-          }
-        }
-      }
-    }
-  </script>
+        },
+      };
+    </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/contact.css">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/contact.css" />
+  </head>
 
-<body class="contact-page bg-navy text-text-primary font-arabic antialiased selection:bg-cyan selection:text-white">
+  <body
+    class="contact-page bg-navy text-text-primary font-arabic antialiased selection:bg-cyan selection:text-white"
+  >
+    <div id="scroll-progress" aria-hidden="true"></div>
 
-  <div id="scroll-progress" aria-hidden="true"></div>
-
-  <!-- ==========================================================================
+    <!-- ==========================================================================
        HEADER & NAVIGATION BAR (MULTI-PAGE NAVIGATION)
        ========================================================================== -->
-  <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b" style="border-color:rgba(56,189,248,0.12);">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <header
+      class="fixed top-0 left-0 right-0 z-50 glass-nav border-b"
+      style="border-color: rgba(56, 189, 248, 0.12)"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
+      >
+        <a href="index.html" class="flex items-center gap-3 group">
+          <img
+            src="assets/images/Logo.png"
+            alt="Forascom — فرصكم"
+            class="h-12 w-auto object-contain hover:scale-105 transition-transform"
+          />
+        </a>
 
-      <a href="index.html" class="flex items-center gap-3 group">
-        <img src="assets/images/Logo.png" alt="Forascom — فرصكم" class="h-12 w-auto object-contain hover:scale-105 transition-transform" />
-      </a>
+        <nav
+          class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-7 font-semibold text-sm"
+        >
+          <a
+            href="index.html"
+            class="nav-link hover:text-cyan-bright transition-colors"
+            >الرئيسية</a
+          >
+          <a
+            href="about.html"
+            class="nav-link hover:text-cyan-bright transition-colors"
+            >عن فرصكم</a
+          >
+          <a
+            href="services.html"
+            class="nav-link hover:text-cyan-bright transition-colors"
+            >خدماتنا</a
+          >
+          <a
+            href="portfolio.html"
+            class="nav-link hover:text-cyan-bright transition-colors"
+            >معرض الأعمال</a
+          >
+          <a
+            href="contact.html"
+            aria-current="page"
+            class="nav-link nav-active hover:text-cyan-bright transition-colors"
+            >تواصل معنا</a
+          >
+        </nav>
 
-      <nav class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-7 font-semibold text-sm">
-        <a href="index.html" class="nav-link hover:text-cyan-bright transition-colors">الرئيسية</a>
-        <a href="about.html" class="nav-link hover:text-cyan-bright transition-colors">عن فرصكم</a>
-        <a href="services.html" class="nav-link hover:text-cyan-bright transition-colors">خدماتنا</a>
-        <a href="portfolio.html" class="nav-link hover:text-cyan-bright transition-colors">معرض الأعمال</a>
-        <a href="contact.html" aria-current="page" class="nav-link nav-active hover:text-cyan-bright transition-colors">تواصل معنا</a>
-      </nav>
+        <button
+          id="mobile-menu-btn"
+          class="md:hidden text-text-primary p-2 rounded-lg"
+          style="background: rgba(56, 189, 248, 0.1)"
+          aria-label="القائمة"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
 
-      <button id="mobile-menu-btn" class="md:hidden text-text-primary p-2 rounded-lg" style="background:rgba(56,189,248,0.1);" aria-label="القائمة">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-      </button>
+      <div
+        id="mobile-menu-container"
+        class="hidden md:hidden bg-navy-secondary border-b px-4 pt-2 pb-6 space-y-3 font-semibold text-text-secondary"
+        style="border-color: rgba(56, 189, 248, 0.12)"
+      >
+        <a
+          href="index.html"
+          class="block py-2 border-b hover:text-text-primary"
+          style="border-color: rgba(56, 189, 248, 0.12)"
+          >الرئيسية</a
+        >
+        <a
+          href="about.html"
+          class="block py-2 border-b hover:text-text-primary"
+          style="border-color: rgba(56, 189, 248, 0.12)"
+          >عن فرصكم</a
+        >
+        <a
+          href="services.html"
+          class="block py-2 border-b hover:text-text-primary"
+          style="border-color: rgba(56, 189, 248, 0.12)"
+          >خدماتنا</a
+        >
+        <a
+          href="portfolio.html"
+          class="block py-2 border-b hover:text-text-primary"
+          style="border-color: rgba(56, 189, 248, 0.12)"
+          >معرض الأعمال</a
+        >
+        <a
+          href="contact.html"
+          aria-current="page"
+          class="block py-2 text-cyan font-bold"
+          style="border-color: rgba(56, 189, 248, 0.12)"
+          >تواصل معنا</a
+        >
+      </div>
+    </header>
 
-    </div>
-
-    <div id="mobile-menu-container" class="hidden md:hidden bg-navy-secondary border-b px-4 pt-2 pb-6 space-y-3 font-semibold text-text-secondary" style="border-color:rgba(56,189,248,0.12);">
-      <a href="index.html" class="block py-2 border-b hover:text-text-primary" style="border-color:rgba(56,189,248,0.12);">الرئيسية</a>
-      <a href="about.html" class="block py-2 border-b hover:text-text-primary" style="border-color:rgba(56,189,248,0.12);">عن فرصكم</a>
-      <a href="services.html" class="block py-2 border-b hover:text-text-primary" style="border-color:rgba(56,189,248,0.12);">خدماتنا</a>
-      <a href="portfolio.html" class="block py-2 border-b hover:text-text-primary" style="border-color:rgba(56,189,248,0.12);">معرض الأعمال</a>
-      <a href="contact.html" aria-current="page" class="block py-2 text-cyan font-bold" style="border-color:rgba(56,189,248,0.12);">تواصل معنا</a>
-    </div>
-  </header>
-
-  <!-- ==========================================================================
+    <!-- ==========================================================================
        PAGE HERO — CONTACT
        ========================================================================== -->
-  <!-- <section class="contact-hero relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
+    <!-- <section class="contact-hero relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
     <div class="contact-hero-grid absolute inset-0 pointer-events-none"></div>
     <div class="contact-hero-glow absolute top-0 right-1/4 w-[34rem] h-[34rem] rounded-full blur-3xl pointer-events-none"></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="max-w-3xl mr-0 ml-auto text-right">
         <div class="hero-enter contact-eyebrow" style="--d:.05s"><span></span> تواصل معنا | LET'S TALK</div>
-        <h1 class="hero-enter contact-hero-title" style="--d:.15s">جاهز لتحويل فكرتك<br>إلى <span>واقع تقني؟</span></h1>
-        <p class="hero-enter contact-hero-copy" style="--d:.25s">تواصل مع فريق Forascom للحصول على استشارة تقنية مجانية ومناقشة تفاصيل مشروعك وحجم القيمة التي يمكن أن يضيفها لنشاطك.</p>
+        <h1 class="hero-enter contact-hero-title" style="--d:.15s">جاهز تحوّل فكرتك<br>لـ <span>واقع تقني؟</span></h1>
+        <p class="hero-enter contact-hero-copy" style="--d:.25s">تواصل مع فريق Forascom عشان تاخد استشارة تقنية مجانية ونناقش تفاصيل مشروعك والقيمة اللي ممكن نضيفها لشغلك.</p>
       </div>
     </div>
   </section> -->
 
+    <br /><br />
 
-<br><br>
-
-  <!-- ==========================================================================
+    <!-- ==========================================================================
        CONTACT FORM + CHANNELS
        ========================================================================== -->
-  <section id="contact" class="contact-main relative overflow-hidden">
-    <div class="contact-main-glow absolute top-0 left-1/4 w-96 h-96 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+    <section id="contact" class="contact-main relative overflow-hidden">
+      <div
+        class="contact-main-glow absolute top-0 left-1/4 w-96 h-96 rounded-full blur-3xl pointer-events-none"
+      ></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start"
+        >
+          <div
+            class="lg:col-span-5 contact-intro text-right reveal-on-scroll reveal-right"
+          >
+            <h2 class="contact-intro-title">
+              بنبدأ نفهم مشكلتك<br /><span>الأول</span>
+            </h2>
+            <p class="contact-intro-copy">
+              تواصل مع فريق Forascom عشان تاخد استشارة تقنية مجانية ونناقش
+              تفاصيل مشروعك والقيمة اللي ممكن نضيفها لشغلك.
+            </p>
 
-        <div class="lg:col-span-5 contact-intro text-right reveal-on-scroll reveal-right">
-          <h2 class="contact-intro-title">نبدأ بفهم مشكلتك<br><span>أولاً</h2>
-          <p class="contact-intro-copy">تواصل مع فريق Forascom للحصول على استشارة تقنية مجانية ومناقشة تفاصيل مشروعك وحجم القيمة التي يمكن أن يضيفها لنشاطك.</p>
+            <div class="contact-benefits">
+              <div class="contact-benefit">
+                <span class="contact-benefit-icon"
+                  ><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M9 18h6M10 22h4M8 14.5a7 7 0 1 1 8 0c-1 .7-1.5 1.7-1.5 2.5h-3v-2h-1v2h-3c0-.8-.5-1.8-1.5-2.5Z"
+                    /></svg></span
+                ><span
+                  ><strong>استشارة مجانية</strong
+                  ><small
+                    >بنساعدك تفهم فكرة مشروعك ونحدد أنسب بداية ليها.</small
+                  ></span
+                >
+              </div>
+              <div class="contact-benefit">
+                <span class="contact-benefit-icon"
+                  ><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="8" />
+                    <path d="M12 8v4l2.5 2" /></svg></span
+                ><span
+                  ><strong>استجابة خلال 24 ساعة</strong
+                  ><small
+                    >نتواصل معك في أقرب وقت لمناقشة احتياجاتك.</small
+                  ></span
+                >
+              </div>
+              <div class="contact-benefit">
+                <span class="contact-benefit-icon"
+                  ><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 21s8-4 8-10V5l-8-3-8 3v6c0 6 8 10 8 10Z" />
+                    <path d="m9 12 2 2 4-4" /></svg></span
+                ><span
+                  ><strong>معلوماتك آمنة</strong
+                  ><small
+                    >نحافظ على خصوصية تفاصيل مشروعك ومعلوماتك.</small
+                  ></span
+                >
+              </div>
+              <div class="contact-benefit">
+                <span class="contact-benefit-icon"
+                  ><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M4 14a8 8 0 0 1 16 0v3a2 2 0 0 1-2 2h-2v-6h4M4 14v5a2 2 0 0 0 2 2h2v-8H4"
+                    /></svg></span
+                ><span
+                  ><strong>دعم سريع</strong
+                  ><small
+                    >نرد على استفساراتك ونساعدك في تحديد الحل المناسب.</small
+                  ></span
+                >
+              </div>
+            </div>
 
-          <div class="contact-benefits">
-            <div class="contact-benefit"><span class="contact-benefit-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 22h4M8 14.5a7 7 0 1 1 8 0c-1 .7-1.5 1.7-1.5 2.5h-3v-2h-1v2h-3c0-.8-.5-1.8-1.5-2.5Z"/></svg></span><span><strong>استشارة مجانية</strong><small>نساعدك في فهم فكرة مشروعك وتحديد أفضل نقطة بداية.</small></span></div>
-            <div class="contact-benefit"><span class="contact-benefit-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 2"/></svg></span><span><strong>استجابة خلال 24 ساعة</strong><small>نتواصل معك في أقرب وقت لمناقشة احتياجاتك.</small></span></div>
-            <div class="contact-benefit"><span class="contact-benefit-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s8-4 8-10V5l-8-3-8 3v6c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span><span><strong>معلوماتك آمنة</strong><small>نحافظ على خصوصية تفاصيل مشروعك ومعلوماتك.</small></span></div>
-            <div class="contact-benefit"><span class="contact-benefit-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14a8 8 0 0 1 16 0v3a2 2 0 0 1-2 2h-2v-6h4M4 14v5a2 2 0 0 0 2 2h2v-8H4"/></svg></span><span><strong>دعم سريع</strong><small>نرد على استفساراتك ونساعدك في تحديد الحل المناسب.</small></span></div>
+            <a
+              href="https://wa.me/201090000000"
+              target="_blank"
+              rel="noopener"
+              class="contact-whatsapp group"
+            >
+              <span class="contact-whatsapp-icon">WA</span>
+              <span
+                ><strong>تفضل التواصل المباشر عبر واتساب؟</strong
+                ><small>اضغط هنا للانتقال مباشرة إلى المحادثة</small></span
+              >
+              <span class="contact-whatsapp-arrow" aria-hidden="true">←</span>
+            </a>
           </div>
 
-          <a href="https://wa.me/201090000000" target="_blank" rel="noopener" class="contact-whatsapp group">
-            <span class="contact-whatsapp-icon">WA</span>
-            <span><strong>تفضل التواصل المباشر عبر واتساب؟</strong><small>اضغط هنا للانتقال مباشرة إلى المحادثة</small></span>
-            <span class="contact-whatsapp-arrow" aria-hidden="true">←</span>
-          </a>
+          <div class="lg:col-span-7 reveal-on-scroll reveal-left">
+            <form id="lead-contact-form" class="contact-form field-glow">
+              <div class="contact-form-heading">
+                <div>
+                  <h3>أرسل تفاصيل مشروعك</h3>
+                  <p>سنتواصل معك خلال 24 ساعة</p>
+                </div>
+                <span class="contact-form-mark" aria-hidden="true">✦</span>
+              </div>
+              <div class="contact-form-grid">
+                <div class="contact-field">
+                  <label for="contact-name"
+                    >الاسم الكامل <span aria-hidden="true">*</span></label
+                  ><input
+                    type="text"
+                    id="contact-name"
+                    required
+                    placeholder="اكتب اسمك الكامل"
+                    autocomplete="name"
+                  />
+                </div>
+                <div class="contact-field">
+                  <label for="contact-phone"
+                    >رقم الهاتف / WhatsApp
+                    <span aria-hidden="true">*</span></label
+                  ><input
+                    type="tel"
+                    id="contact-phone"
+                    required
+                    placeholder="+20 ..."
+                    autocomplete="tel"
+                  />
+                </div>
+                <div class="contact-field">
+                  <label for="contact-email"
+                    >البريد الإلكتروني <span aria-hidden="true">*</span></label
+                  ><input
+                    type="email"
+                    id="contact-email"
+                    required
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                  />
+                </div>
+                <div class="contact-field">
+                  <label for="contact-service"
+                    >الخدمة المطلوبة <span aria-hidden="true">*</span></label
+                  ><select id="contact-service" required>
+                    <option value="" selected disabled>
+                      اختر الخدمة المناسبة لمشروعك
+                    </option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="WordPress">WordPress</option>
+                    <option value="AI Solutions">AI Solutions</option>
+                    <option value="AI Automation">AI Automation</option>
+                    <option value="Custom Software">Custom Software</option>
+                    <option value="E-commerce">E-commerce</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="contact-field">
+                  <label for="contact-budget"
+                    >الميزانية المتوقعة
+                    <span class="contact-optional">(اختياري)</span></label
+                  ><select id="contact-budget">
+                    <option value="" selected disabled>
+                      اختر النطاق المناسب
+                    </option>
+                    <option value="أقل من 50,000 جنيه">
+                      أقل من 50,000 جنيه
+                    </option>
+                    <option value="50,000 - 150,000 جنيه">
+                      50,000 - 150,000 جنيه
+                    </option>
+                    <option value="150,000 - 300,000 جنيه">
+                      150,000 - 300,000 جنيه
+                    </option>
+                    <option value="أكثر من 300,000 جنيه">
+                      أكثر من 300,000 جنيه
+                    </option>
+                    <option value="غير محددة بعد">غير محددة بعد</option>
+                  </select>
+                </div>
+                <div class="contact-field">
+                  <label for="contact-timeline"
+                    >متى تريد إطلاق المشروع؟
+                    <span class="contact-optional">(اختياري)</span></label
+                  ><select id="contact-timeline">
+                    <option value="" selected disabled>
+                      اختر الإطار الزمني
+                    </option>
+                    <option value="خلال شهر">خلال شهر</option>
+                    <option value="خلال 1 - 3 أشهر">خلال 1 - 3 أشهر</option>
+                    <option value="خلال 3 - 6 أشهر">خلال 3 - 6 أشهر</option>
+                    <option value="أكثر من 6 أشهر">أكثر من 6 أشهر</option>
+                    <option value="غير محدد بعد">غير محدد بعد</option>
+                  </select>
+                </div>
+              </div>
+              <div class="contact-field">
+                <label for="contact-msg"
+                  >ملخص عن مشروعك أو المشكلة
+                  <span aria-hidden="true">*</span></label
+                ><textarea
+                  id="contact-msg"
+                  rows="5"
+                  required
+                  placeholder="أخبرنا باختصار عن فكرتك، المشكلة التي تريد حلها، أو ما تحتاج إلى تطويره..."
+                ></textarea>
+              </div>
+              <button type="submit" class="contact-submit">
+                <span>إرسال تفاصيل المشروع</span
+                ><span aria-hidden="true">🚀</span>
+              </button>
+              <p class="contact-privacy">
+                نحترم خصوصيتك، وبياناتك آمنة ولن تتم مشاركتها مع أي جهة أخرى.
+              </p>
+            </form>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="lg:col-span-7 reveal-on-scroll reveal-left">
-          <form id="lead-contact-form" class="contact-form field-glow">
-            <div class="contact-form-heading"><div><h3>أرسل تفاصيل مشروعك</h3><p>سنتواصل معك خلال 24 ساعة</p></div><span class="contact-form-mark" aria-hidden="true">✦</span></div>
-            <div class="contact-form-grid">
-              <div class="contact-field"><label for="contact-name">الاسم الكامل <span aria-hidden="true">*</span></label><input type="text" id="contact-name" required placeholder="اكتب اسمك الكامل" autocomplete="name"></div>
-              <div class="contact-field"><label for="contact-phone">رقم الهاتف / WhatsApp <span aria-hidden="true">*</span></label><input type="tel" id="contact-phone" required placeholder="+20 ..." autocomplete="tel"></div>
-              <div class="contact-field"><label for="contact-email">البريد الإلكتروني <span aria-hidden="true">*</span></label><input type="email" id="contact-email" required placeholder="you@example.com" autocomplete="email"></div>
-              <div class="contact-field"><label for="contact-service">الخدمة المطلوبة <span aria-hidden="true">*</span></label><select id="contact-service" required><option value="" selected disabled>اختر الخدمة المناسبة لمشروعك</option><option value="Web Development">Web Development</option><option value="WordPress">WordPress</option><option value="AI Solutions">AI Solutions</option><option value="AI Automation">AI Automation</option><option value="Custom Software">Custom Software</option><option value="E-commerce">E-commerce</option><option value="Other">Other</option></select></div>
-              <div class="contact-field"><label for="contact-budget">الميزانية المتوقعة <span class="contact-optional">(اختياري)</span></label><select id="contact-budget"><option value="" selected disabled>اختر النطاق المناسب</option><option value="أقل من 50,000 جنيه">أقل من 50,000 جنيه</option><option value="50,000 - 150,000 جنيه">50,000 - 150,000 جنيه</option><option value="150,000 - 300,000 جنيه">150,000 - 300,000 جنيه</option><option value="أكثر من 300,000 جنيه">أكثر من 300,000 جنيه</option><option value="غير محددة بعد">غير محددة بعد</option></select></div>
-              <div class="contact-field"><label for="contact-timeline">متى تريد إطلاق المشروع؟ <span class="contact-optional">(اختياري)</span></label><select id="contact-timeline"><option value="" selected disabled>اختر الإطار الزمني</option><option value="خلال شهر">خلال شهر</option><option value="خلال 1 - 3 أشهر">خلال 1 - 3 أشهر</option><option value="خلال 3 - 6 أشهر">خلال 3 - 6 أشهر</option><option value="أكثر من 6 أشهر">أكثر من 6 أشهر</option><option value="غير محدد بعد">غير محدد بعد</option></select></div>
+    <section class="contact-trust" aria-labelledby="contact-trust-title">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="contact-trust-panel">
+          <div class="contact-trust-copy">
+            <img
+              class="contact-trust-logo"
+              src="assets/images/Logo.png"
+              alt="Forascom — فرصكم"
+            />
+            <div class="contact-trust-brand-text">
+              <span>ماذا يحدث بعد إرسال طلبك؟</span>
+              <p>
+                بمجرد إرسال النموذج، يبدأ معك فريق Forascom بخطوات واضحة — من
+                فهم احتياجك إلى تحديد أفضل طريق لتنفيذ فكرتك.
+              </p>
             </div>
-            <div class="contact-field"><label for="contact-msg">ملخص عن مشروعك أو المشكلة <span aria-hidden="true">*</span></label><textarea id="contact-msg" rows="5" required placeholder="أخبرنا باختصار عن فكرتك، المشكلة التي تريد حلها، أو ما تحتاج إلى تطويره..."></textarea></div>
-            <button type="submit" class="contact-submit"><span>إرسال تفاصيل المشروع</span><span aria-hidden="true">🚀</span></button>
-            <p class="contact-privacy">نحترم خصوصيتك، وبياناتك آمنة ولن تتم مشاركتها مع أي جهة أخرى.</p>
-          </form>
+          </div>
+          <div class="contact-industries">
+            <div>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 11.5 11 13.5 15 9.5" />
+                <path
+                  d="M16 4h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"
+                />
+                <path d="M9 3h6v3H9z" /></svg
+              ><span>نراجع طلبك</span>
+            </div>
+            <div>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3.5 13.5a8.5 8.5 0 0 1 14.5-6.2L21 8.5" />
+                <path d="M21 10.5a8.5 8.5 0 0 1-14.5 6.2L3 15.5" />
+                <path d="M8 10.5h8" />
+                <path d="M10 8.5h4" /></svg
+              ><span>نتواصل معك</span>
+            </div>
+            <div>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 18h6" />
+                <path d="M10 22h4" />
+                <path d="M9 18a6 6 0 1 1 12 0" />
+                <path d="M3 14a6 6 0 0 1 6-6" />
+                <path d="M7 10.5V8" /></svg
+              ><span>نحدد الحل المناسب</span>
+            </div>
+            <div>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M4 14.5c0-4.9 3.2-8.7 8.2-9.5 4.2-.7 8.3 2.3 8.3 7.3 0 4.5-3 7.7-7.2 7.7-2.9 0-5.1-1.4-6.3-3.5"
+                />
+                <path d="M10.5 17 15 12.5" />
+                <path d="m14.5 9 1.5 1.5" />
+                <path d="M15 9h1.5V7.5" /></svg
+              ><span>نبدأ معًا</span>
+            </div>
+          </div>
         </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="contact-trust" aria-labelledby="contact-trust-title">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="contact-trust-panel">
-        <div class="contact-trust-copy">
-          <img class="contact-trust-logo" src="assets/images/Logo.png" alt="Forascom — فرصكم">
-          <div class="contact-trust-brand-text"><span>ماذا يحدث بعد إرسال طلبك؟</span><p>بمجرد إرسال النموذج، يبدأ معك فريق Forascom بخطوات واضحة — من فهم احتياجك إلى تحديد أفضل طريق لتنفيذ فكرتك.</p></div>
-        </div>
-        <div class="contact-industries">
-          <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11.5 11 13.5 15 9.5"/><path d="M16 4h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 3h6v3H9z"/></svg><span>نراجع طلبك</span></div>
-          <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 13.5a8.5 8.5 0 0 1 14.5-6.2L21 8.5"/><path d="M21 10.5a8.5 8.5 0 0 1-14.5 6.2L3 15.5"/><path d="M8 10.5h8"/><path d="M10 8.5h4"/></svg><span>نتواصل معك</span></div>
-          <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M9 18a6 6 0 1 1 12 0"/><path d="M3 14a6 6 0 0 1 6-6"/><path d="M7 10.5V8"/></svg><span>نحدد الحل المناسب</span></div>
-          <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14.5c0-4.9 3.2-8.7 8.2-9.5 4.2-.7 8.3 2.3 8.3 7.3 0 4.5-3 7.7-7.2 7.7-2.9 0-5.1-1.4-6.3-3.5"/><path d="M10.5 17 15 12.5"/><path d="m14.5 9 1.5 1.5"/><path d="M15 9h1.5V7.5"/></svg><span>نبدأ معًا</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
+    <!-- ==========================================================================
        FOOTER
        ========================================================================== -->
-  <footer class="contact-footer bg-slate-950 text-slate-400 text-xs py-14 border-t border-slate-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-        <div class="space-y-3">
-          <img src="assets/images/Logo.png" alt="Forascom — فرصكم" class="h-11 w-auto object-contain rounded-lg" />
-          <p class="leading-relaxed max-w-xs">شركة تقنية عربية ناشئة — نخلق الفرص من خلال التكنولوجيا بجودة هندسية عالمية.</p>
+    <footer
+      class="contact-footer bg-slate-950 text-slate-400 text-xs py-14 border-t border-slate-900"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div class="space-y-3">
+            <img
+              src="assets/images/Logo.png"
+              alt="Forascom — فرصكم"
+              class="h-11 w-auto object-contain rounded-lg"
+            />
+            <p class="leading-relaxed max-w-xs">
+              شركة تقنية عربية ناشئة — نخلق الفرص من خلال التكنولوجيا بجودة
+              هندسية عالمية.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-white font-bold mb-3">روابط سريعة</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="index.html" class="hover:text-cyan transition-colors"
+                  >الرئيسية</a
+                >
+              </li>
+              <li>
+                <a href="about.html" class="hover:text-cyan transition-colors"
+                  >عن فرصكم</a
+                >
+              </li>
+              <li>
+                <a
+                  href="services.html"
+                  class="hover:text-cyan transition-colors"
+                  >خدماتنا</a
+                >
+              </li>
+              <li>
+                <a
+                  href="portfolio.html"
+                  class="hover:text-cyan transition-colors"
+                  >أعمالنا</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-white font-bold mb-3">أعمالنا</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="portfolio.html"
+                  class="hover:text-cyan transition-colors"
+                  >معرض الأعمال</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="hover:text-cyan transition-colors"
+                  >استشارة مجانية</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="hover:text-cyan transition-colors"
+                  >تواصل معنا</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-white font-bold mb-3">تواصل</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="https://wa.me/201090000000"
+                  target="_blank"
+                  rel="noopener"
+                  class="hover:text-cyan transition-colors"
+                  >واتساب مباشر</a
+                >
+              </li>
+              <li>
+                <a
+                  href="mailto:hello@forascom.com"
+                  class="hover:text-cyan transition-colors"
+                  >hello@forascom.com</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/forascom/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-cyan transition-colors"
+                  >LinkedIn</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
-        <div>
-          <h4 class="text-white font-bold mb-3">روابط سريعة</h4>
-          <ul class="space-y-2">
-            <li><a href="index.html" class="hover:text-cyan transition-colors">الرئيسية</a></li>
-            <li><a href="about.html" class="hover:text-cyan transition-colors">عن فرصكم</a></li>
-            <li><a href="services.html" class="hover:text-cyan transition-colors">خدماتنا</a></li>
-            <li><a href="portfolio.html" class="hover:text-cyan transition-colors">أعمالنا</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-white font-bold mb-3">أعمالنا</h4>
-          <ul class="space-y-2">
-            <li><a href="portfolio.html" class="hover:text-cyan transition-colors">معرض الأعمال</a></li>
-            <li><a href="#contact" class="hover:text-cyan transition-colors">استشارة مجانية</a></li>
-            <li><a href="#contact" class="hover:text-cyan transition-colors">تواصل معنا</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-white font-bold mb-3">تواصل</h4>
-          <ul class="space-y-2">
-            <li><a href="https://wa.me/201090000000" target="_blank" rel="noopener" class="hover:text-cyan transition-colors">واتساب مباشر</a></li>
-            <li><a href="mailto:hello@forascom.com" class="hover:text-cyan transition-colors">hello@forascom.com</a></li>
-            <li><a href="https://www.linkedin.com/company/forascom/" target="_blank" rel="noopener noreferrer" class="hover:text-cyan transition-colors">LinkedIn</a></li>
-          </ul>
+        <div
+          class="mt-10 pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
+          <p>
+            © 2026 Forascom. جميع الحقوق محفوظة — Technology that creates
+            opportunities.
+          </p>
+          <div class="flex items-center gap-4 font-bold text-slate-300">
+            <a
+              href="https://www.instagram.com/foras_com?stkn=MWg1amRsY3NucHMyNg=="
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-cyan"
+              >Instagram</a
+            >
+            <a
+              href="https://www.facebook.com/people/Forascom/61592914277326/?sk=directory_names"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-cyan"
+              >Facebook</a
+            >
+            <a
+              href="https://www.linkedin.com/company/forascom/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-cyan"
+              >LinkedIn</a
+            >
+          </div>
         </div>
       </div>
-      <div class="mt-10 pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p>© 2026 Forascom. جميع الحقوق محفوظة — Technology that creates opportunities.</p>
-        <div class="flex items-center gap-4 font-bold text-slate-300">
-          <a href="https://www.instagram.com/foras_com?stkn=MWg1amRsY3NucHMyNg==" target="_blank" rel="noopener noreferrer" class="hover:text-cyan">Instagram</a>
-          <a href="https://www.facebook.com/people/Forascom/61592914277326/?sk=directory_names" target="_blank" rel="noopener noreferrer" class="hover:text-cyan">Facebook</a>
-          <a href="https://www.linkedin.com/company/forascom/" target="_blank" rel="noopener noreferrer" class="hover:text-cyan">LinkedIn</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- Floating Sticky WhatsApp Action Button -->
-  <div class="fixed bottom-6 left-6 z-50">
-    <a href="https://wa.me/201090000000?text=%D8%A3%D9%87%D9%84%D8%A3%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20Forascom%20%F0%9F%90%8B" target="_blank" rel="noopener" class="group flex items-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs p-3.5 rounded-full shadow-2xl transition-all duration-500 ease-in-out hover:px-5">
-      <div class="relative flex items-center justify-center">
-        <span class="absolute -top-1 -right-1 flex h-3 w-3">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+    <!-- Floating Sticky WhatsApp Action Button -->
+    <div class="fixed bottom-6 left-6 z-50">
+      <a
+        href="https://wa.me/201090000000?text=%D8%A3%D9%87%D9%84%D8%A3%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20Forascom%20%F0%9F%90%8B"
+        target="_blank"
+        rel="noopener"
+        class="group flex items-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs p-3.5 rounded-full shadow-2xl transition-all duration-500 ease-in-out hover:px-5"
+      >
+        <div class="relative flex items-center justify-center">
+          <span class="absolute -top-1 -right-1 flex h-3 w-3">
+            <span
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"
+            ></span>
+            <span
+              class="relative inline-flex rounded-full h-3 w-3 bg-white"
+            ></span>
+          </span>
+          <svg class="w-6 h-6 fill-current shrink-0" viewBox="0 0 24 24">
+            <path
+              d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
+            />
+          </svg>
+        </div>
+        <span
+          class="max-w-0 opacity-0 overflow-hidden whitespace-nowrap transition-all duration-500 ease-in-out group-hover:max-w-xs group-hover:opacity-100 group-hover:mr-2.5"
+        >
+          تحدث مع مهندس Forascom الآن 💬
         </span>
-        <svg class="w-6 h-6 fill-current shrink-0" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-      </div>
-      <span class="max-w-0 opacity-0 overflow-hidden whitespace-nowrap transition-all duration-500 ease-in-out group-hover:max-w-xs group-hover:opacity-100 group-hover:mr-2.5">
-        تحدث مع مهندس Forascom الآن 💬
-      </span>
-    </a>
-  </div>
+      </a>
+    </div>
 
-  <!-- Back To Top Button -->
-  <button id="back-to-top" aria-label="العودة إلى الأعلى" class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-white text-navy border border-slate-200 shadow-xl flex items-center justify-center hover:bg-navy hover:text-white hover:-translate-y-1 transition-all">
-    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 15l7-7 7 7"/></svg>
-  </button>
+    <!-- Back To Top Button -->
+    <button
+      id="back-to-top"
+      aria-label="العودة إلى الأعلى"
+      class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-white text-navy border border-slate-200 shadow-xl flex items-center justify-center hover:bg-navy hover:text-white hover:-translate-y-1 transition-all"
+    >
+      <svg
+        class="w-5 h-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2.2"
+          d="M5 15l7-7 7 7"
+        />
+      </svg>
+    </button>
 
-  <!-- App JavaScript Modules -->
-  <script src="assets/js/orbit.js"></script>
-  <script src="assets/js/portfolio.js"></script>
-  <script src="assets/js/main.js"></script>
-</body>
+    <!-- App JavaScript Modules -->
+    <script src="assets/js/orbit.js"></script>
+    <script src="assets/js/portfolio.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>

@@ -5,385 +5,34 @@
    3. Process Automation (n8n & Power Platform)
    ========================================================================== */
 
-const projectsData = [
-  {
-    id: "ains-group",
-    title: "AINS GROUP",
-    category: "webdev",
-    categoryName: "Web Development",
-    summary: "موقع الشركة الرقمية يبرز حلول التكنولوجيا والبنية التحتية، مراكز البيانات، الأمن المادي، وبرامج إدارة الشبكات في تجربة شركة مؤسسية احترافية.",
-    problem: "كانت الشركة بحاجة إلى موقع يعكس قدراتها التقنية المتعددة ويوضح خدماتها بوضوح في مجالات البنية التحتية، الشبكات، الأمن، والدعم الفني.",
-    solution: "تم تصميم وبناء موقع احترافي يركز على عرض خدمات الشركة في هيكل واضح، مع تجربة متجاوبة ومحتوى مؤسسي عالي الوضوح لعملاء المشاريع التقنية.",
-    role: "Corporate Website Design, Information Architecture, Frontend Development, Conversion UX",
-    metrics: "عرض احترافي جاهز لعرض الخدمات التقنية والأنظمة المؤسسية عبر موقع مصمم خصيصاً",
-    techStack: ["Web Development", "UI/UX", "Corporate Website", "Responsive Design"],
-    location: "Digital Technology & Infrastructure",
-    url: "https://ains-group.com/",
-    accentBg: "from-cyan-600 to-blue-600"
-  },
-  {
-    id: "ai-document-rag-chatbot",
-    title: "شات بوت RAG ذكي لاستخراج واستعلام العقود والمستندات",
-    category: "ai",
-    categoryName: "AI & RAG Chatbots",
-    summary: "نظام شات بوت تفاعلي يستند إلى تقنية RAG وقواعد بيانات Vector لقراءة وفهم مستندات وعقود الشركات وتوفير إجابات موثقة.",
-    problem: "استغراق الفريق القانوني والمالي ساعات طويلة يومياً للبحث والتأكد من شروط وبنود مئات العقود والمستندات الورقية.",
-    solution: "قمنا بإنشاء RAG AI Chatbot مدعوم بـ OpenAI GPT-4 وقاعدة بيانات Vector لتمكين الموظفين من التحدث المباشر مع مستنداتهم واستخراج المعلومات فوراً.",
-    role: "RAG Pipeline Setup, Vector Database Architecture, Chat Interface & Integration",
-    metrics: "تسريع استخراج بنود العقود بنسبة 90% والإجابة المباشرة في أقل من ثانيتين",
-    techStack: ["OpenAI GPT-4", "LangChain", "Vector Database", "Python FastAPI", "React Chat UI"],
-    location: "الرياض، المملكة العربية السعودية",
-    accentBg: "from-teal-600 to-emerald-500"
-  },
-  {
-    id: "power-automate-workflow",
-    title: "أتمتة الموافقات والدورة المستندية بـ Power Automate",
-    category: "automation",
-    categoryName: "Process Automation (Power Platform)",
-    summary: "نظام أتمتة دورة الموافقات المالية والإدارية عبر Power Automate و Power Apps وتكامل Teams.",
-    problem: "بطء إجراءات الدورة المستندية والموافقات المالية بين الأقسام بسبب اعتمادها على الإيميلات والورقيات.",
-    solution: "تطوير تطبيق Power Apps مع سير عمل Power Automate ينقل طلبات Approval تلقائياً للمسؤول على Teams والإيميل.",
-    role: "Power Apps Portal, Power Automate Design, Microsoft Teams Integration",
-    metrics: "اختصار زمن الدورة المستندية من 3 أيام إلى 15 دقيقة فقط",
-    techStack: ["Power Automate", "Power Apps", "Microsoft Teams API", "SharePoint"],
-    location: "الكويت",
-    accentBg: "from-amber-500 to-orange-600"
-  }
-];
-
-function renderPortfolioGrid(filter = "all") {
-  const container = document.getElementById("projects-grid");
-  if (!container) return;
-
-  const filteredProjects = filter === "all"
-    ? projectsData
-    : projectsData.filter(p => (filter === "powerplatform" ? p.category === "automation" : p.category === filter));
-
-  const isFirstRender = !container.dataset.rendered;
-
-  container.innerHTML = filteredProjects.map((project, idx) => {
-    const normalizedCategory = project.category === "automation" ? "powerplatform" : project.category;
-    const tagLabel = normalizedCategory === "ai"
-      ? "AI & RAG"
-      : normalizedCategory === "webdev"
-        ? "WEB"
-        : "POWER";
-
-    const previewMarkup = project.url
-      ? `
-        <div class="project-browser" aria-label="${project.title} preview">
-          <div class="project-browser-header">
-            <div class="project-browser-dots">
-              <span class="project-browser-dot red"></span>
-              <span class="project-browser-dot yellow"></span>
-              <span class="project-browser-dot green"></span>
-            </div>
-            <span class="project-browser-url">${new URL(project.url).hostname.replace('www.', '')}</span>
-          </div>
-          <div class="project-browser-viewport">
-            <iframe src="${project.url}" title="${project.title}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
-          </div>
-        </div>
-      `
-      : `
-        <div class="portfolio-media-visual">
-          <div class="visual-ai-panel">
-            <span class="visual-bubble bubble-a">التوثيق</span>
-            <span class="visual-bubble bubble-b">Vector Search</span>
-            <span class="visual-bubble bubble-c">RAG</span>
-            <span class="visual-core">AI</span>
-          </div>
-        </div>
-      `;
-
-    return `
-      <article class="portfolio-card ${isFirstRender ? "reveal-on-scroll" : "portfolio-card-enter"}" data-category="${normalizedCategory}" data-index="${idx}" aria-label="${project.title}">
-        <div class="portfolio-card-shell">
-          <div class="portfolio-card-media">
-            <span class="portfolio-card-badge">${project.categoryName}</span>
-            ${previewMarkup}
-          </div>
-
-          <div class="portfolio-card-body">
-            <div class="portfolio-card-meta">
-              <span>${String(idx + 1).padStart(2, "0")}</span>
-              <span>${tagLabel}</span>
-            </div>
-            <h3>${project.title}</h3>
-            <p>${project.summary}</p>
-            <div class="portfolio-tag-list">
-              ${project.techStack.map(t => `<span>${t}</span>`).join('')}
-            </div>
-            <div class="portfolio-card-footer">
-              <span class="portfolio-metric-pill">${project.metrics}</span>
-              <a class="portfolio-live-link" href="${project.url}" target="_blank" rel="noreferrer noopener">VIEW LIVE PROJECT ↗</a>
-            </div>
-          </div>
-        </div>
-      </article>
-    `;
-  }).join('');
-
-  container.dataset.rendered = "1";
-  attachPortfolioTilt();
-  initPortfolioRevealMotion();
-  initPortfolioCounters();
-
-  if (window.forascomRevealScan) window.forascomRevealScan();
-}
-
-function attachPortfolioTilt() {
-  const cards = document.querySelectorAll("#portfolio .portfolio-card");
-  cards.forEach(card => {
-    card.addEventListener("pointermove", (event) => {
-      const rect = card.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
-      const rotateY = ((x / rect.width) - 0.5) * 6;
-      const rotateX = (0.5 - (y / rect.height)) * 6;
-
-      card.style.setProperty("--rotate-x", `${rotateX}deg`);
-      card.style.setProperty("--rotate-y", `${rotateY}deg`);
-      card.style.setProperty("--pointer-x", `${(x / rect.width) * 100}%`);
-      card.style.setProperty("--pointer-y", `${(y / rect.height) * 100}%`);
-    });
-
-    card.addEventListener("pointerleave", () => {
-      card.style.setProperty("--rotate-x", "0deg");
-      card.style.setProperty("--rotate-y", "0deg");
-    });
-  });
-}
-
-let portfolioRevealTweens = [];
-
-function initPortfolioRevealMotion() {
-  if (!window.gsap || !window.ScrollTrigger) return;
-
-  portfolioRevealTweens.forEach(tween => {
-    if (tween && tween.kill) tween.kill();
-  });
-  portfolioRevealTweens = [];
-
-  const cards = document.querySelectorAll("#portfolio .portfolio-card");
-  cards.forEach((card, index) => {
-    const tween = gsap.fromTo(card,
-      {
-        opacity: 0,
-        y: 52,
-        scale: 0.97,
-        filter: "blur(10px)"
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        filter: "blur(0px)",
-        duration: 0.9,
-        ease: "power2.out",
-        delay: index * 0.12,
-        scrollTrigger: {
-          trigger: card,
-          start: "top 84%",
-          end: "top 34%",
-          scrub: 1.1,
-          invalidateOnRefresh: true
-        }
-      }
-    );
-
-    portfolioRevealTweens.push(tween);
-  });
-}
-
-function initPortfolioCounters() {
-  if (!window.gsap || !window.ScrollTrigger) return;
-
-  const counters = document.querySelectorAll("#portfolio .portfolio-stat-value");
-  counters.forEach(counter => {
-    const raw = Number(counter.dataset.value || 0);
-    const suffix = counter.dataset.suffix || "";
-    const isDecimal = raw % 1 !== 0;
-
-    const tween = gsap.fromTo(
-      { value: 0 },
-      {
-        value: raw,
-        duration: 1.6,
-        ease: "power2.out",
-        onUpdate: function () {
-          const current = this.targets()[0].value;
-          const display = suffix.includes("%")
-            ? `${isDecimal ? current.toFixed(1) : current.toFixed(0)}%`
-            : suffix.includes("دقيقة")
-              ? `${current.toFixed(0)} دقيقة`
-              : `${current.toFixed(0)}%`;
-          counter.textContent = display;
-        }
-      }
-    );
-
-    ScrollTrigger.create({
-      trigger: counter,
-      start: "top 90%",
-      end: "top 50%",
-      scrub: 0.5,
-      animation: tween,
-      invalidateOnRefresh: true
-    });
-  });
-}
-
-function initPortfolioTabs() {
-  const tabs = document.querySelectorAll(".filter-tab");
-  tabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      tabs.forEach(t => {
-        t.classList.remove("is-active");
-      });
-      tab.classList.add("is-active");
-
-      const filter = tab.getAttribute("data-filter");
-      renderPortfolioGrid(filter);
-    });
-  });
-}
-
-function openProjectModal(projectId, updateHash = true) {
-  const project = projectsData.find(p => p.id === projectId);
-  if (!project) return;
-
-  const modal = document.getElementById("project-modal");
-  const modalContent = document.getElementById("modal-content-container");
-
-  if (!modal || !modalContent) return;
-
-  if (updateHash) {
-    history.pushState(null, null, `#project-${project.id}`);
-  }
-
-  const shareableUrl = `${window.location.origin}${window.location.pathname}#project-${project.id}`;
-
-  modalContent.innerHTML = `
-    <div class="p-8">
-      <div class="flex items-center justify-between mb-4">
-        <span class="bg-cyan-100 text-cyan-800 text-xs font-bold px-3 py-1 rounded-full">${project.categoryName}</span>
-        <button onclick="closeProjectModal()" class="text-slate-400 hover:text-slate-600 p-1">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
-      </div>
-
-      <h2 class="text-2xl sm:text-3xl font-black text-navy mb-4">${project.title}</h2>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div class="bg-red-50/70 p-4 rounded-xl border border-red-100">
-          <h4 class="font-bold text-red-900 text-sm mb-1 flex items-center gap-1.5">
-            <svg class="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            التحدي والمشكلة:
-          </h4>
-          <p class="text-slate-700 text-sm leading-relaxed">${project.problem}</p>
-        </div>
-
-        <div class="bg-emerald-50/70 p-4 rounded-xl border border-emerald-100">
-          <h4 class="font-bold text-emerald-900 text-sm mb-1 flex items-center gap-1.5">
-            <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            حل Forascom الهندسي:
-          </h4>
-          <p class="text-slate-700 text-sm leading-relaxed">${project.solution}</p>
-        </div>
-      </div>
-
-      <div class="bg-slate-50 p-4 rounded-xl mb-6">
-        <h4 class="font-bold text-navy text-sm mb-1">دور فريق Forascom:</h4>
-        <p class="text-slate-600 text-sm">${project.role}</p>
-      </div>
-
-      <div class="bg-cyan-50 p-4 rounded-xl border border-cyan-200 mb-6">
-        <h4 class="font-bold text-cyan-900 text-sm mb-1">النتيجة والأثر المباشر:</h4>
-        <p class="text-cyan-800 text-sm font-semibold">${project.metrics}</p>
-      </div>
-
-      <div class="mb-6">
-        <h4 class="font-bold text-navy text-sm mb-2">التقنيات المستخدمة:</h4>
-        <div class="flex flex-wrap gap-2">
-          ${project.techStack.map(t => `<span class="bg-navy text-white text-xs font-semibold px-3 py-1 rounded-lg">${t}</span>`).join('')}
-        </div>
-      </div>
-
-      <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-        <button onclick="copyProjectLink('${shareableUrl}')" class="text-xs font-bold text-slate-600 hover:text-cyan border border-slate-200 bg-slate-50 px-4 py-2 rounded-xl flex items-center gap-1.5 transition-all">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-          <span id="copy-btn-text">نسخ رابط المشروع المباشر 🔗</span>
-        </button>
-        <a href="#contact" onclick="closeProjectModal()" class="btn-cyan text-xs font-bold px-5 py-2.5 rounded-xl">اطلب مشروعاً مشابهاً ←</a>
-      </div>
-    </div>
-  `;
-
-  modal.classList.remove("hidden");
-  modal.classList.add("flex");
-  modal.classList.remove("modal-open");
-  void modal.offsetWidth; // restart entrance animation
-  modal.classList.add("modal-open");
-
-  const contentBox = document.getElementById("modal-content-container");
-  if (contentBox) {
-    contentBox.classList.remove("modal-panel");
-    void contentBox.offsetWidth;
-    contentBox.classList.add("modal-panel");
-  }
-}
-
-function closeProjectModal() {
-  const modal = document.getElementById("project-modal");
-  if (modal) {
-    modal.classList.add("hidden");
-    modal.classList.remove("flex");
-    if (window.location.hash.startsWith("#project-")) {
-      history.pushState(null, null, "#portfolio");
-    }
-  }
-}
-
-function copyProjectLink(url) {
-  navigator.clipboard.writeText(url).then(() => {
-    const textSpan = document.getElementById("copy-btn-text");
-    if (textSpan) {
-      textSpan.textContent = "تم نسخ الرابط بنجاح! 📋";
-      setTimeout(() => {
-        textSpan.textContent = "نسخ رابط المشروع المباشر 🔗";
-      }, 2500);
-    }
-  });
-}
-
-function checkDeepLinkOnLoad() {
-  const hash = window.location.hash;
-  if (hash && hash.startsWith("#project-")) {
-    const projectId = hash.replace("#project-", "");
-    setTimeout(() => {
-      const portfolioSection = document.getElementById("portfolio");
-      if (portfolioSection) {
-        portfolioSection.scrollIntoView({ behavior: "smooth" });
-      }
-      openProjectModal(projectId, false);
-    }, 400);
-  }
-}
-
 /* ==========================================================================
-   PORTFOLIO PAGE (portfolio.html) DYNAMIC CATEGORY FILTER SYSTEM
+   DYNAMIC PROJECT SHOWCASE
    ========================================================================== */
 
-const PORTFOLIO_ACTIVE_BTN_CLASSES = [
+const PROJECT_CATEGORIES = {
+  all: {
+    label: "All",
+  },
+  "web-development": {
+    label: "Web Development",
+  },
+  "business-automation": {
+    label: "Business Automation",
+  },
+  wordpress: {
+    label: "Wordpress",
+  },
+};
+
+const PROJECT_FILTER_ACTIVE_CLASSES = [
   "px-6",
   "font-extrabold",
   "bg-tertiary",
   "text-[#00101D]",
-  "shadow-[0_0_20px_rgba(0,196,238,0.4)]"
+  "shadow-[0_0_20px_rgba(0,196,238,0.4)]",
 ];
 
-const PORTFOLIO_INACTIVE_BTN_CLASSES = [
+const PROJECT_FILTER_INACTIVE_CLASSES = [
   "px-5",
   "hover:bg-surface-container-high",
   "hover:text-white",
@@ -392,127 +41,310 @@ const PORTFOLIO_INACTIVE_BTN_CLASSES = [
   "border-transparent",
   "hover:border-tertiary/30",
   "bg-surface-container-high/60",
-  "text-on-surface-variant"
+  "text-on-surface-variant",
 ];
 
-const PORTFOLIO_ACTIVE_COUNTER_CLASSES = ["bg-[#00101D]/20", "font-bold"];
-const PORTFOLIO_INACTIVE_COUNTER_CLASSES = ["bg-white/5"];
-
-function doesPortfolioCardMatchFilter(card, filter) {
-  if (!filter || filter === "all") return true;
-  const rawCategory = card.getAttribute("data-category") || "";
-  const tokens = rawCategory.toLowerCase().trim().split(/\s+/);
-  return tokens.includes(filter.toLowerCase().trim());
+function getProjects() {
+  if (typeof projectsDetailsData === "undefined") return [];
+  return Object.values(projectsDetailsData).filter(
+    (project) => project && project.id && project.categoryKey,
+  );
 }
 
-function initPortfolioPageFilters() {
-  const filterContainer = document.getElementById("category-filters");
-  if (!filterContainer) return;
+function getCategoryCount(category) {
+  if (category === "all") {
+    return getProjects().length;
+  }
 
-  const filterButtons = filterContainer.querySelectorAll(".filter-btn");
-  const projectCards = document.querySelectorAll("#projects-container .project-card");
-  const activeStudiesBadge = document.getElementById("active-studies-badge");
+  return getProjects().filter((project) => project.categoryKey === category)
+    .length;
+}
+
+function renderProjectFilters() {
+  const container = document.getElementById("category-filters");
+
+  if (!container) return;
+
+  container.innerHTML = Object.entries(PROJECT_CATEGORIES)
+    .map(([key, category], index) => {
+      const isActive = index === 0;
+      const count = getCategoryCount(key);
+
+      return `
+        <button
+          type="button"
+          class="filter-btn ${
+            isActive
+              ? PROJECT_FILTER_ACTIVE_CLASSES.join(" ")
+              : PROJECT_FILTER_INACTIVE_CLASSES.join(" ")
+          } py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm transition-all duration-200 flex items-center gap-2 cursor-pointer select-none"
+          data-filter="${key}"
+          aria-pressed="${isActive}"
+        >
+          <span>${category.label}</span>
+
+          <span
+            class="filter-counter px-2 py-0.5 rounded-full ${
+              isActive ? "bg-[#00101D]/20 font-bold" : "bg-white/5"
+            } text-[11px] sm:text-xs font-mono"
+          >
+            ${count}
+          </span>
+        </button>
+      `;
+    })
+    .join("");
+
+  if (!container.dataset.listenerAttached) {
+    container.dataset.listenerAttached = "true";
+    container.addEventListener("click", (event) => {
+      const button = event.target.closest(".filter-btn");
+
+      if (!button) return;
+
+      const filter = button.dataset.filter || "all";
+
+      setActiveProjectFilter(filter);
+    });
+  }
+}
+
+function renderProjectCard(project, index) {
+  return `
+    <a
+      href="project-details.html?project=${encodeURIComponent(project.id)}"
+      class="project-card cursor-pointer group block relative rounded-3xl bg-surface-container-low/90 border border-white/10 hover:border-tertiary/40 overflow-hidden shadow-2xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(0,196,238,0.12)] flex flex-col justify-between"
+      data-project="${project.id}"
+      data-category="${project.categoryKey}"
+      aria-label="${project.title} project details"
+    >
+      <div class="absolute -top-24 -left-24 w-52 h-52 rounded-full bg-tertiary/[0.04] blur-2xl pointer-events-none group-hover:bg-tertiary/[0.1] transition-all duration-500"></div>
+
+      <div>
+        <div class="relative rounded-2xl overflow-hidden bg-[#00080F] aspect-video border border-white/10 mb-6 group/img">
+          <div class="skeleton-loader absolute inset-0 bg-surface-container-high/70 animate-pulse transition-opacity duration-500 pointer-events-none z-10"></div>
+          ${
+            project.cardImage
+              ? `
+                <img
+                  src="${project.cardImage}"
+                  alt="${project.cardImageAlt || project.title}"
+                  loading="lazy"
+                  class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                  onload="this.style.opacity='1'; const s = this.parentElement.querySelector('.skeleton-loader'); if(s) s.style.opacity='0';"
+                  style="opacity:0; transition: opacity 0.4s ease, transform 0.7s ease-out;"
+                />
+              `
+              : `
+                <div class="w-full h-full flex items-center justify-center">
+                  <span class="text-4xl font-black text-tertiary/60">
+                    ${project.title.charAt(0)}
+                  </span>
+                </div>
+              `
+          }
+
+          <div class="absolute inset-0 bg-gradient-to-t from-[#00080F]/85 via-transparent to-transparent pointer-events-none z-10"></div>
+
+          <!-- Hover Overlay Button -->
+          <div class="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">
+            <span class="btn-smooth inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-tertiary text-[#00101D] font-bold text-xs shadow-[0_0_20px_rgba(0,196,238,0.4)] transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+              <span>استكشف المشروع</span>
+              <span class="material-symbols-outlined text-sm">arrow_back</span>
+            </span>
+          </div>
+
+          
+        </div>
+
+        <div class="flex items-center justify-between gap-4 mb-3">
+          <span class="text-xs font-bold uppercase tracking-wider text-tertiary font-mono">
+            ${PROJECT_CATEGORIES[project.categoryKey]?.label || project.category}
+          </span>
+
+         
+        </div>
+
+        <h3 class="text-xl sm:text-2xl font-black text-white mb-3 group-hover:text-tertiary transition-colors">
+          ${project.title}
+        </h3>
+
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-5 line-clamp-2">
+          ${project.subtitle || project.description || ""}
+        </p>
+
+        
+      </div>
+
+      
+    </a>
+  `;
+}
+
+function renderFeaturedProject(project) {
+  const container = document.getElementById("featured-project-container");
+
+  if (!container) return;
+
+  if (!project) {
+    container.innerHTML = "";
+    container.classList.add("hidden");
+    return;
+  }
+
+  container.classList.remove("hidden");
+
+  container.innerHTML = `
+    <a
+      href="project-details.html?project=${encodeURIComponent(project.id)}"
+      class="project-card cursor-pointer group block relative rounded-3xl bg-surface-container-low/90 backdrop-blur-xl border border-tertiary/30 hover:border-tertiary/60 p-6 sm:p-8 lg:p-10 shadow-2xl transition-all duration-500 overflow-hidden cyan-glow-box-subtle"
+      data-project="${project.id}"
+      data-category="${project.categoryKey}"
+      aria-label="${project.title} project details"
+    >
+      <!-- Ambient corner glow -->
+      <div class="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-tertiary/10 blur-3xl pointer-events-none group-hover:bg-tertiary/20 transition-all duration-700"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+
+        <!-- Large Visual / Hero treatment (7 cols) -->
+        <div class="lg:col-span-7 relative rounded-2xl overflow-hidden bg-[#00080F] aspect-video border border-white/10 group/visual">
+          <div class="skeleton-loader absolute inset-0 bg-surface-container-high/70 animate-pulse transition-opacity duration-500 pointer-events-none z-10"></div>
+          <img
+            src="${project.cardImage}"
+            alt="${project.cardImageAlt || project.title}"
+            loading="lazy"
+            class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover/visual:scale-[1.03]"
+            onload="this.style.opacity='1'; const s = this.parentElement.querySelector('.skeleton-loader'); if(s) s.style.opacity='0';"
+            style="opacity:0; transition: opacity 0.4s ease, transform 0.7s ease-out;"
+          />
+
+          <!-- Gradient Overlays -->
+          <div class="absolute inset-0 bg-gradient-to-t from-[#00080F]/90 via-[#00080F]/20 to-transparent pointer-events-none z-10"></div>
+          <div class="absolute inset-0 bg-gradient-to-tr from-tertiary/15 via-transparent to-transparent opacity-0 group-hover/visual:opacity-100 transition-opacity duration-500 pointer-events-none z-10"></div>
+
+          
+
+          <!-- Center Hover Button -->
+          <div class="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover/visual:opacity-100 transition-all duration-300 pointer-events-none">
+            <span class="btn-smooth inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-tertiary text-[#00101D] font-extrabold text-sm shadow-[0_0_30px_rgba(0,196,238,0.5)] transform translate-y-3 group-hover/visual:translate-y-0 transition-transform duration-300">
+              <span>استكشف المشروع</span>
+              <span class="material-symbols-outlined text-base">arrow_back</span>
+            </span>
+          </div>
+
+          
+        </div>
+
+        <!-- Content Column (5 cols) -->
+        <div class="lg:col-span-5 flex flex-col justify-between gap-5">
+          <div class="inline-flex items-center self-start gap-2 px-3 py-1 rounded-full bg-surface-container-high/90 text-tertiary text-xs font-mono font-medium border border-tertiary/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+            <span>${PROJECT_CATEGORIES[project.categoryKey]?.label || project.category}</span>
+          </div>
+
+          <h3 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white leading-[1.25] tracking-tight group-hover:text-tertiary transition-colors">
+            ${project.title}
+          </h3>
+
+          <p class="text-sm sm:text-base text-on-surface-variant font-normal leading-relaxed">
+            ${project.subtitle || project.description || ""}
+          </p>
+
+         
+
+         
+        </div>
+
+      </div>
+
+    </a>
+  `;
+}
+
+function renderProjectShowcase(filter = "all") {
+  const featuredContainer = document.getElementById(
+    "featured-project-container",
+  );
+
+  const grid = document.getElementById("secondary-projects-grid");
+
   const emptyNotice = document.getElementById("empty-category-notice");
 
-  if (!filterButtons.length || !projectCards.length) return;
+  if (!featuredContainer || !grid) return;
 
-  function setButtonVisualState(btn, isActive) {
-    const counter = btn.querySelector(".filter-counter");
-    if (isActive) {
-      btn.classList.remove(...PORTFOLIO_INACTIVE_BTN_CLASSES);
-      btn.classList.add(...PORTFOLIO_ACTIVE_BTN_CLASSES);
-      btn.setAttribute("aria-pressed", "true");
-      if (counter) {
-        counter.classList.remove(...PORTFOLIO_INACTIVE_COUNTER_CLASSES);
-        counter.classList.add(...PORTFOLIO_ACTIVE_COUNTER_CLASSES);
-      }
-    } else {
-      btn.classList.remove(...PORTFOLIO_ACTIVE_BTN_CLASSES);
-      btn.classList.add(...PORTFOLIO_INACTIVE_BTN_CLASSES);
-      btn.setAttribute("aria-pressed", "false");
-      if (counter) {
-        counter.classList.remove(...PORTFOLIO_ACTIVE_COUNTER_CLASSES);
-        counter.classList.add(...PORTFOLIO_INACTIVE_COUNTER_CLASSES);
-      }
-    }
+  const projects = getProjects();
+
+  const filteredProjects =
+    filter === "all"
+      ? projects
+      : projects.filter((project) => project.categoryKey === filter);
+
+  const featuredProject = filteredProjects.find((project) => project.featured);
+
+  const secondaryProjects = filteredProjects.filter(
+    (project) => project !== featuredProject,
+  );
+
+  renderFeaturedProject(featuredProject);
+
+  grid.innerHTML = secondaryProjects
+    .map((project, index) => renderProjectCard(project, index))
+    .join("");
+
+  if (emptyNotice) {
+    emptyNotice.classList.toggle("hidden", filteredProjects.length > 0);
   }
 
-  function updateFilterCounters() {
-    filterButtons.forEach(btn => {
-      const filter = btn.getAttribute("data-filter") || "all";
-      let matchCount = 0;
-      projectCards.forEach(card => {
-        if (doesPortfolioCardMatchFilter(card, filter)) {
-          matchCount++;
-        }
-      });
-      const counter = btn.querySelector(".filter-counter");
-      if (counter) {
-        counter.textContent = String(matchCount);
-      }
-    });
+  if (window.ScrollTrigger) {
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100);
   }
+}
 
-  function applyFilter(selectedFilter) {
-    let visibleCount = 0;
+function setActiveProjectFilter(filter) {
+  const buttons = document.querySelectorAll("#category-filters .filter-btn");
 
-    projectCards.forEach(card => {
-      const matches = doesPortfolioCardMatchFilter(card, selectedFilter);
-      if (matches) {
-        card.classList.remove("filter-hidden");
-        visibleCount++;
-      } else {
-        card.classList.add("filter-hidden");
-      }
-    });
+  buttons.forEach((button) => {
+    const isActive = button.dataset.filter === filter;
 
-    // Update active studies badge (e.g. "3 دراسات تشغيلية نشطة")
-    if (activeStudiesBadge) {
-      activeStudiesBadge.textContent = `${visibleCount} دراسات تشغيلية نشطة`;
+    button.classList.remove(
+      ...PROJECT_FILTER_ACTIVE_CLASSES,
+      ...PROJECT_FILTER_INACTIVE_CLASSES,
+    );
+
+    button.classList.add(
+      ...(isActive
+        ? PROJECT_FILTER_ACTIVE_CLASSES
+        : PROJECT_FILTER_INACTIVE_CLASSES),
+    );
+
+    button.setAttribute("aria-pressed", String(isActive));
+
+    const counter = button.querySelector(".filter-counter");
+
+    if (counter) {
+      counter.classList.remove("bg-[#00101D]/20", "font-bold", "bg-white/5");
+
+      counter.classList.add(
+        ...(isActive ? ["bg-[#00101D]/20", "font-bold"] : ["bg-white/5"]),
+      );
     }
-
-    // Toggle empty category notice
-    if (emptyNotice) {
-      if (visibleCount === 0) {
-        emptyNotice.classList.remove("hidden");
-      } else {
-        emptyNotice.classList.add("hidden");
-      }
-    }
-
-    // Update active/inactive styling on filter buttons
-    filterButtons.forEach(btn => {
-      const filterVal = btn.getAttribute("data-filter") || "all";
-      setButtonVisualState(btn, filterVal === selectedFilter);
-    });
-
-    // Refresh ScrollTrigger positions if library is available
-    if (window.ScrollTrigger && typeof window.ScrollTrigger.refresh === "function") {
-      window.ScrollTrigger.refresh();
-    }
-  }
-
-  // Attach click listeners to filter buttons
-  filterButtons.forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      const filter = btn.getAttribute("data-filter") || "all";
-      applyFilter(filter);
-    });
   });
 
-  // Calculate and display dynamic counters for each category
-  updateFilterCounters();
+  renderProjectShowcase(filter);
+}
 
-  // Initialize with 'all' selected
-  applyFilter("all");
+function initDynamicProjectShowcase() {
+  if (!document.getElementById("category-filters")) return;
+
+  renderProjectFilters();
+  renderProjectShowcase("all");
 }
 
 function initApp() {
-  renderPortfolioGrid();
-  initPortfolioTabs();
-  initPortfolioPageFilters();
-  checkDeepLinkOnLoad();
+  initDynamicProjectShowcase();
 }
 
 if (document.readyState === "loading") {
@@ -520,5 +352,3 @@ if (document.readyState === "loading") {
 } else {
   initApp();
 }
-
-window.addEventListener("hashchange", checkDeepLinkOnLoad);

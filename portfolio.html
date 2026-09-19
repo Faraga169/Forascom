@@ -400,299 +400,77 @@
 
 
   <!-- ==========================================================================
-       FILTER TABS + PROJECT GRID
+       UNIFIED PROJECTS SHOWCASE (قصص مشاريع حقيقية)
        ========================================================================== -->
-  <!-- 3. CATEGORY FILTER NAVIGATION BAR -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
-    <div
-      class="p-2 sm:p-2.5 rounded-2xl bg-surface-container-low/80 backdrop-blur-xl border border-white/10 shadow-xl shadow-black/20 flex items-center justify-between flex-wrap gap-2.5 sm:gap-3">
-      <div class="flex items-center gap-2 sm:gap-2.5 flex-wrap" id="category-filters">
-        <button
-          class="filter-btn px-6 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm transition-all duration-200 flex items-center gap-2 font-extrabold bg-tertiary text-[#00101D] shadow-[0_0_20px_rgba(0,196,238,0.4)] cursor-pointer select-none"
-          data-filter="all">
-          <span>الكل</span>
-          <span
-            class="filter-counter px-2 py-0.5 rounded-full bg-[#00101D]/20 text-[11px] sm:text-xs font-mono font-bold">5</span>
-        </button>
-        <button
-          class="filter-btn px-5 py-2 sm:py-2.5 rounded-xl hover:bg-surface-container-high hover:text-white font-bold text-xs sm:text-sm border border-transparent hover:border-tertiary/30 transition-all duration-200 flex items-center gap-2 bg-surface-container-high/60 text-on-surface-variant cursor-pointer select-none"
-          data-filter="ai">
-          <span>ذكاء اصطناعي</span>
-          <span class="filter-counter px-2 py-0.5 rounded-full bg-white/5 text-[11px] sm:text-xs font-mono">2</span>
-        </button>
-        <button
-          class="filter-btn px-5 py-2 sm:py-2.5 rounded-xl hover:bg-surface-container-high hover:text-white font-bold text-xs sm:text-sm border border-transparent hover:border-tertiary/30 transition-all duration-200 flex items-center gap-2 bg-surface-container-high/60 text-on-surface-variant cursor-pointer select-none"
-          data-filter="automation">
-          <span>أتمتة العمليات</span>
-          <span class="filter-counter px-2 py-0.5 rounded-full bg-white/5 text-[11px] sm:text-xs font-mono">2</span>
-        </button>
-        <button
-          class="filter-btn px-5 py-2 sm:py-2.5 rounded-xl hover:bg-surface-container-high hover:text-white font-bold text-xs sm:text-sm border border-transparent hover:border-tertiary/30 transition-all duration-200 flex items-center gap-2 bg-surface-container-high/60 text-on-surface-variant cursor-pointer select-none"
-          data-filter="platform">
-          <span>المنصات السحابية</span>
-          <span class="filter-counter px-2 py-0.5 rounded-full bg-white/5 text-[11px] sm:text-xs font-mono">1</span>
-        </button>
-        <button
-          class="filter-btn px-5 py-2 sm:py-2.5 rounded-xl hover:bg-surface-container-high hover:text-white font-bold text-xs sm:text-sm border border-transparent hover:border-tertiary/30 transition-all duration-200 flex items-center gap-2 bg-surface-container-high/60 text-on-surface-variant cursor-pointer select-none"
-          data-filter="power-platform">
-          <span>Power Platform</span>
-          <span class="filter-counter px-2 py-0.5 rounded-full bg-white/5 text-xs font-mono">1</span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- 4. UNIFIED PROJECTS SHOWCASE (قصص مشاريع حقيقية) -->
   <section class="max-w-7xl mx-auto px-8 py-10" id="projects-showcase">
 
-    <div class="flex flex-col gap-8" id="projects-container">
-      <!-- FEATURED FLAGSHIP CARD: FOCUSZONE (Full-width / Hero treatment) -->
-      <a class="project-card cursor-pointer group block relative rounded-3xl bg-surface-container-low/90 border border-tertiary/30 overflow-hidden shadow-2xl p-6 lg:p-8 xl:p-10 transition-all duration-300 hover:-translate-y-1 hover:border-[#00C4EE] hover:shadow-[0_12px_36px_rgba(0,196,238,0.15)] cyan-glow-box-subtle"
-        data-project="focuszone" aria-label="FocusZone project details" data-category="ai"
-        href="project-details.html?project=focuszone" target="_self">
-        <div
-          class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-tertiary/[0.12] blur-[120px] pointer-events-none group-hover:bg-tertiary/[0.2] transition-all duration-700">
-        </div>
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-          <!-- Visual Mockup (7 Cols) with Skeleton Loading Layer -->
-          <div class="lg:col-span-7">
-            <div
-              class="relative rounded-2xl overflow-hidden cyan-border bg-surface-container-low aspect-video flex flex-col justify-between group/preview transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(0,196,238,0.25)]">
-              <!-- Skeleton Placeholder Layer -->
-              <div class="absolute inset-0 bg-surface-container-low animate-pulse"></div>
-              <img alt="FocusZone Live Software UI"
-                class="absolute inset-0 w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 relative z-0"
-                loading="lazy"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoQGBpnR5YOtx63m0ayiRLrEPzGeEGwJpeMf8aOkTrWiiC1RuM2DXWLbQC278Qf4cmQNAgUjNF1ubMzZHKRleulvpj0pJZE3LU4fisX_6zKqKedCwMOiq9hU-3Tb2F7Mm2lN2ss5norSsEj0EYs2bGqm-hezL62_YHMq7FDilW3G2HzqtmepKo-3DkVVh1C7hfPrdr-cPUIX48M44X1m_V95n545Ujsfc3nAjjMW-7j-bNj5mHREaS" />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-[#00080F]/70 via-[#00101D]/20 to-transparent pointer-events-none z-10">
-              </div>
-              <!-- Center Hover Trigger -->
-              <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
-                <div
-                  class="opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95 group-hover:scale-100 px-5 py-2.5 rounded-full bg-tertiary text-[#00101D] font-extrabold text-sm flex items-center gap-2 shadow-[0_4px_24px_rgba(0,196,238,0.4)]">
-                  <span>استكشف المشروع</span>
-                  <span class="material-symbols-outlined text-sm">north_east</span>
-                </div>
-              </div>
+  <div class="flex flex-col gap-8" id="projects-container">
 
-            </div>
-          </div>
-          <!-- Details & Impact (5 Cols) -->
-          <div class="lg:col-span-5 flex flex-col justify-between gap-5">
-            <div class="flex flex-col gap-3.5">
-              <h3 class="text-2xl lg:text-3xl font-black text-white group-hover:text-tertiary transition-colors">
-                FOCUSZONE — منظومة التعلّم الذكية
-              </h3>
-              <p class="text-sm lg:text-base text-on-surface-variant leading-relaxed">
-                منظومة تعليمية ذكية تحلل مسارات المتدربين لحظياً وتقدّم توصيات آلية مخصصة، لخفض معدلات الانسحاب وتوحيد
-                تجارب التدريب المؤسسي.
-              </p>
-            </div>
-          </div>
-        </div>
-      </a>
-      <!-- BALANCED 2-COLUMN GRID FOR THE OTHER 4 PROJECTS -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="secondary-projects-grid">
-        <!-- CARD 02: سَنَد (Logistics Automation) -->
-        <a class="project-card cursor-pointer group block relative rounded-3xl bg-surface-container-low/90 border border-tertiary/30 overflow-hidden shadow-2xl p-6 lg:p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#00C4EE] hover:shadow-[0_12px_36px_rgba(0,196,238,0.15)] cyan-glow-box-subtle flex flex-col justify-between gap-5"
-          data-project="sanad" aria-label="سند project details" data-category="automation supply-chain"
-          href="project-details.html?project=sanad" target="_self">
-          <div
-            class="absolute -top-28 -left-28 w-80 h-80 rounded-full bg-tertiary/[0.08] blur-[100px] pointer-events-none group-hover:bg-tertiary/[0.16] transition-all duration-700">
-          </div>
-          <div class="relative z-10 flex flex-col gap-5">
-            <!-- Visual Mockup with Skeleton Loading Layer -->
-            <div
-              class="relative rounded-2xl overflow-hidden cyan-border bg-surface-container-low aspect-video flex flex-col justify-between group/preview transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(0,196,238,0.25)]">
-              <!-- Skeleton Placeholder Layer -->
-              <div class="absolute inset-0 bg-surface-container-low animate-pulse"></div>
-              <img alt="Sanad Dispatch Live Engine"
-                class="absolute inset-0 w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 relative z-0"
-                loading="lazy"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtn7W6eqglCjePtAQhBikhDa2l0O5hxnBoaE94vIlaxNOUm27AL6VpJHRq1H6Zf6vPWcgLWPR-s4787z5YzQOix1A32bbSIZoa1IX7zS3imNH-sQyDReQtnMxANfTD5d782O2otbMC0SNVjTMm7LIFnBECcV0h63eJOwZDzbnvlD3pEvLiTYcln7_jkZcaJygH1znPsQl87pgs5iSGo7dy2DJLl4K1Y1ioWFjLPD3r0oQwmVh9kfAc" />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-[#00080F]/70 via-[#00101D]/20 to-transparent pointer-events-none z-10">
-              </div>
-              <!-- Center Hover Trigger -->
-              <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
-                <div
-                  class="opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95 group-hover:scale-100 px-5 py-2.5 rounded-full bg-tertiary text-[#00101D] font-extrabold text-sm flex items-center gap-2 shadow-[0_4px_20px_rgba(0,196,238,0.35)]">
-                  <span>استكشف المشروع</span>
-                  <span class="material-symbols-outlined text-sm">north_east</span>
-                </div>
-              </div>
-
-            </div>
-            <!-- Details & Impact -->
-            <div class="flex flex-col gap-3">
-              <h3 class="text-xl lg:text-2xl font-black text-white group-hover:text-tertiary transition-colors">
-                سند — محرك أتمتة سلاسل الإمداد
-              </h3>
-              <p class="text-sm lg:text-[0.95rem] text-on-surface-variant leading-relaxed">
-                أتمتة دورات شحن البضائع وإصدار بوالص الشحن اللحظية دون تدخل بشري، مع المزامنة التلقائية لمستودعات
-                الموردين.
-              </p>
-            </div>
-          </div>
-        </a>
-        <!-- CARD 03: مِداد (ERP & E-Commerce) -->
-        <a class="project-card cursor-pointer group block relative rounded-3xl bg-surface-container-low/90 border border-tertiary/30 overflow-hidden shadow-2xl p-6 lg:p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#00C4EE] hover:shadow-[0_12px_36px_rgba(0,196,238,0.15)] cyan-glow-box-subtle flex flex-col justify-between gap-5"
-          data-project="medad" aria-label="مِداد project details" data-category="platform e-com"
-          href="project-details.html?project=medad" target="_self">
-          <div
-            class="absolute -top-28 -left-28 w-80 h-80 rounded-full bg-tertiary/[0.08] blur-[100px] pointer-events-none group-hover:bg-tertiary/[0.16] transition-all duration-700">
-          </div>
-          <div class="relative z-10 flex flex-col gap-5">
-            <!-- Visual Mockup with Skeleton Loading Layer -->
-            <div
-              class="relative rounded-2xl overflow-hidden cyan-border bg-surface-container-low aspect-video flex flex-col justify-between group/preview transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(0,196,238,0.25)]">
-              <!-- Skeleton Placeholder Layer -->
-              <div class="absolute inset-0 bg-surface-container-low animate-pulse"></div>
-              <img alt="Midad Checkout and ERP System"
-                class="absolute inset-0 w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 relative z-0"
-                loading="lazy"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1QdXrPN4L53rjiSDQkytd0OdCIRHfCMhzbx3y8hlw24jDxHa4_kD0i9hECZJfryfBXoCnPDQwUc8qvVeAThh_avsMc102iZgBpjy58JY9q0UcvZKs8ueIpQbqIJFZlyETT4d5WgQNUpEsn3v0hVQdQuxyteANdbInfzkTJgpOPnjSOWwJzyzE0XMnjzrtkY-IUpCrhu2jIWMz44gCD7zAx3wUzrbKVNIH67Xa3uK1W-e7oA3MWL7f" />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-[#00080F]/70 via-[#00101D]/20 to-transparent pointer-events-none z-10">
-              </div>
-              <!-- Center Hover Trigger -->
-              <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
-                <div
-                  class="opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95 group-hover:scale-100 px-5 py-2.5 rounded-full bg-tertiary text-[#00101D] font-extrabold text-sm flex items-center gap-2 shadow-[0_4px_20px_rgba(0,196,238,0.35)]">
-                  <span>استكشف المشروع</span>
-                  <span class="material-symbols-outlined text-sm">north_east</span>
-                </div>
-              </div>
-
-            </div>
-            <!-- Details & Impact -->
-            <div class="flex flex-col gap-3">
-              <h3 class="text-xl lg:text-2xl font-black text-white group-hover:text-tertiary transition-colors">
-                مِداد — متجر متكامل وتكامل ERP سلس
-              </h3>
-              <p class="text-sm lg:text-[0.95rem] text-on-surface-variant leading-relaxed">
-                بنية تجارية فائقة السرعة مربوطة لحظياً بمستودعات التخزين وأنظمة الفوترة، لمنع نفاد المخزون وفروقات
-                الجرد بين الفروع.
-              </p>
-            </div>
-          </div>
-        </a>
-        <!-- CARD 04: أُفُق (Power Platform Governance) -->
-        <a class="project-card cursor-pointer group block relative rounded-3xl bg-surface-container-low/90 border border-tertiary/30 overflow-hidden shadow-2xl p-6 lg:p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#00C4EE] hover:shadow-[0_12px_36px_rgba(0,196,238,0.15)] cyan-glow-box-subtle flex flex-col justify-between gap-5"
-          data-project="ofok" aria-label="أفق project details" data-category="power-platform automation"
-          href="project-details.html?project=ofok" target="_self">
-          <div
-            class="absolute -top-28 -left-28 w-80 h-80 rounded-full bg-tertiary/[0.08] blur-[100px] pointer-events-none group-hover:bg-tertiary/[0.16] transition-all duration-700">
-          </div>
-          <div class="relative z-10 flex flex-col gap-5">
-            <!-- Visual Mockup with Skeleton Loading Layer -->
-            <div
-              class="relative rounded-2xl overflow-hidden cyan-border bg-surface-container-low aspect-video flex flex-col justify-between group/preview transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(0,196,238,0.25)]">
-              <!-- Skeleton Placeholder Layer -->
-              <div class="absolute inset-0 bg-surface-container-low animate-pulse"></div>
-              <img alt="Ofuq Approval Governance Interface"
-                class="absolute inset-0 w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 relative z-0"
-                loading="lazy"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiqf0V3RJL6X0V25bYwacfDxS7OtsJiIsY_eg2VdKww12GHSLqKWQPDAzHAPd_hsULsaMoT6qnNiaAzl0iJf30b5JVEOxFY5QQrBqEKmV8wIeIEqbS58Amxq8ksDeYmXuGIDTNBYfQdJBRv6B1mTe5jo2JP9TT0KHQcXagJHH62k71bsKXt6z91D4nnquypffyt_b8nAh6jiDyLWF3UF8O9wuMyStWo8w3K1x9YhAT7CMsD3dLt-ma" />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-[#00080F]/70 via-[#00101D]/20 to-transparent pointer-events-none z-10">
-              </div>
-              <!-- Center Hover Trigger -->
-              <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
-                <div
-                  class="opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95 group-hover:scale-100 px-5 py-2.5 rounded-full bg-tertiary text-[#00101D] font-extrabold text-sm flex items-center gap-2 shadow-[0_4px_20px_rgba(0,196,238,0.35)]">
-                  <span>استكشف المشروع</span>
-                  <span class="material-symbols-outlined text-sm">north_east</span>
-                </div>
-              </div>
-
-            </div>
-            <!-- Details & Impact -->
-            <div class="flex flex-col gap-3">
-              <h3 class="text-xl lg:text-2xl font-black text-white group-hover:text-tertiary transition-colors">
-                أفق — إدارة موارد المؤسسة والموافقات
-              </h3>
-              <p class="text-sm lg:text-[0.95rem] text-on-surface-variant leading-relaxed">
-                منظومة مرنة تُمكّن من حوكمة سلاسل الاعتمادات والقرارات الإدارية، وتتبع الإجراءات التراكمية بلا أي
-                تأخير أو هدر.
-              </p>
-            </div>
-          </div>
-        </a>
-        <!-- CARD 05: نَبْض (Predictive Analytics) -->
-        <a class="project-card cursor-pointer group block relative rounded-3xl bg-surface-container-low/90 border border-tertiary/30 overflow-hidden shadow-2xl p-6 lg:p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#00C4EE] hover:shadow-[0_12px_36px_rgba(0,196,238,0.15)] cyan-glow-box-subtle flex flex-col justify-between gap-5"
-          data-project="nabd" aria-label="نبض project details" data-category="ai predictive"
-          href="project-details.html?project=nabd" target="_self">
-          <div
-            class="absolute -top-28 -left-28 w-80 h-80 rounded-full bg-tertiary/[0.08] blur-[100px] pointer-events-none group-hover:bg-tertiary/[0.16] transition-all duration-700">
-          </div>
-          <div class="relative z-10 flex flex-col gap-5">
-            <!-- Visual Mockup with Skeleton Loading Layer -->
-            <div
-              class="relative rounded-2xl overflow-hidden cyan-border bg-surface-container-low aspect-video flex flex-col justify-between group/preview transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(0,196,238,0.25)]">
-              <!-- Skeleton Placeholder Layer -->
-              <div class="absolute inset-0 bg-surface-container-low animate-pulse"></div>
-              <img alt="Nabd Predictive Analytics Telemetry"
-                class="absolute inset-0 w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 relative z-0"
-                loading="lazy"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoQGBpnR5YOtx63m0ayiRLrEPzGeEGwJpeMf8aOkTrWiiC1RuM2DXWLbQC278Qf4cmQNAgUjNF1ubMzZHKRleulvpj0pJZE3LU4fisX_6zKqKedCwMOiq9hU-3Tb2F7Mm2lN2ss5norSsEj0EYs2bGqm-hezL62_YHMq7FDilW3G2HzqtmepKo-3DkVVh1C7hfPrdr-cPUIX48M44X1m_V95n545Ujsfc3nAjjMW-7j-bNj5mHREaS" />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-[#00080F]/70 via-[#00101D]/20 to-transparent pointer-events-none z-10">
-              </div>
-              <!-- Center Hover Trigger -->
-              <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
-                <div
-                  class="opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95 group-hover:scale-100 px-5 py-2.5 rounded-full bg-tertiary text-[#00101D] font-extrabold text-sm flex items-center gap-2 shadow-[0_4px_20px_rgba(0,196,238,0.35)]">
-                  <span>استكشف المشروع</span>
-                  <span class="material-symbols-outlined text-sm">north_east</span>
-                </div>
-              </div>
-
-            </div>
-            <!-- Details & Impact -->
-            <div class="flex flex-col gap-3">
-              <h3 class="text-xl lg:text-2xl font-black text-white group-hover:text-tertiary transition-colors">
-                نبض — التحليل التنبؤي والعمليات الذكية
-              </h3>
-              <p class="text-sm lg:text-[0.95rem] text-on-surface-variant leading-relaxed">
-                منصة استشرافية تعتمد نماذج تعلّم متطورة لمراقبة مؤشرات الإنتاج والتنبؤ بأعطال المعدات وسلاسل التشغيل
-                مسبقاً.
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-      <!-- Empty State Notification Card if filtered category has no extra items -->
-      <div
-        class="hidden p-8 rounded-3xl bg-surface-container/60 border border-white/10 text-center flex flex-col items-center justify-center gap-3"
-        id="empty-category-notice">
-        <div
-          class="w-12 h-12 rounded-full bg-surface-bright flex items-center justify-center text-tertiary border border-tertiary/30">
-          <span class="material-symbols-outlined text-2xl">dataset</span>
-        </div>
-        <h4 class="text-lg font-bold text-white">يتم تحديث وإدراج المزيد من المشاريع في هذا التصنيف</h4>
-        <p class="text-sm text-on-surface-variant max-w-md">لدينا سجل إنجازات أوسع قيد التوثيق، تواصل معنا مباشرة
-          للاطلاع على نماذج حية مطابقة لقطاعك.</p>
-      </div>
-      <!-- UNIFIED SECTION FOOTER CTA -->
-      <div class="pt-6 flex justify-center">
-        <a class="btn-smooth inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-surface-container-high hover:bg-tertiary text-white hover:text-[#00101D] font-extrabold text-sm border border-tertiary/30 hover:border-tertiary shadow-[0_0_20px_rgba(0,196,238,0.15)] hover:shadow-[0_0_30px_rgba(0,196,238,0.4)] transition-all group"
-          href="https://wa.me/?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20%D9%81%D8%B1%D8%B5%D9%83%D9%85%D8%8C%20%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%A3%D8%B1%D8%B4%D9%8A%D9%81%20%D9%85%D8%B4%D8%A7%D8%B1%D9%8A%D8%B9%D9%83%D9%85%20%D9%88%D8%A7%D9%84%D8%AD%D9%84%D9%88%D9%84%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D8%A7%D8%AD%D8%A9."
-          target="_blank">
-          <span>تصفّح جميع المشاريع والأرشيف الكامل</span>
-          <span
-            class="material-symbols-outlined text-lg group-hover:-translate-x-1 transition-transform">arrow_back</span>
-        </a>
-      </div>
+    <!-- PROJECT FILTERS -->
+    <div id="category-filters" class="flex flex-wrap items-center justify-center gap-3">
+      <!-- Filters are generated dynamically by JavaScript -->
     </div>
-  </section>
 
 
+    <!-- FEATURED PROJECT -->
+    <div id="featured-project-container">
+      <!-- Featured project is generated dynamically -->
+    </div>
 
 
+    <!-- SECONDARY PROJECTS -->
+    <div
+      class="grid grid-cols-1 lg:grid-cols-2 gap-8"
+      id="secondary-projects-grid">
+      <!-- Projects are generated dynamically -->
+    </div>
 
+
+    <!-- EMPTY STATE -->
+    <div
+      class="hidden p-8 rounded-3xl bg-surface-container/60 border border-white/10 text-center flex flex-col items-center justify-center gap-3"
+      id="empty-category-notice">
+
+      <div
+        class="w-12 h-12 rounded-full bg-surface-bright flex items-center justify-center text-tertiary border border-tertiary/30">
+        <span class="material-symbols-outlined text-2xl">
+          dataset
+        </span>
+      </div>
+
+      <h4 class="text-lg font-bold text-white">
+        يتم تحديث وإدراج المزيد من المشاريع في هذا التصنيف
+      </h4>
+
+      <p class="text-sm text-on-surface-variant max-w-md">
+        لدينا سجل إنجازات أوسع قيد التوثيق، تواصل معنا مباشرة للاطلاع على نماذج حية مطابقة لقطاعك.
+      </p>
+
+    </div>
+
+
+    <!-- UNIFIED SECTION FOOTER CTA -->
+    <div class="pt-6 flex justify-center">
+
+      <a
+        class="btn-smooth inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-surface-container-high hover:bg-tertiary text-white hover:text-[#00101D] font-extrabold text-sm border border-tertiary/30 hover:border-tertiary shadow-[0_0_20px_rgba(0,196,238,0.15)] hover:shadow-[0_0_30px_rgba(0,196,238,0.4)] transition-all group"
+        href="https://wa.me/?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20%D9%81%D8%B1%D8%B5%D9%83%D9%85%D8%8C%20%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%A3%D8%B1%D8%B4%D9%8A%D9%81%20%D9%85%D8%B4%D8%A7%D8%B1%D9%8A%D8%B9%D9%83%D9%85%20%D9%88%D8%A7%D9%84%D8%AD%D9%84%D9%88%D9%84%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D8%A7%D8%AD%D8%A9."
+        target="_blank">
+
+        <span>
+          تصفّح جميع المشاريع والأرشيف الكامل
+        </span>
+
+        <span class="material-symbols-outlined text-lg group-hover:-translate-x-1 transition-transform">
+          arrow_back
+        </span>
+
+      </a>
+
+    </div>
+
+  </div>
+</section>
 
 
 
@@ -1236,6 +1014,7 @@
 
   <!-- App JavaScript Modules -->
   <script src="assets/js/orbit.js"></script>
+  <script src="assets/js/project-details.js"></script>
   <script src="assets/js/portfolio.js"></script>
   <script src="assets/js/main.js"></script>
 </body>

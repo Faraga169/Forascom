@@ -6,24 +6,40 @@ const projectsDetailsData = {
   focuszone: {
     id: "focuszone",
     title: "FOCUSZONE — منظومة التعلّم الذكية",
-    subtitle: "منظومة تدريبية تكيفية ترصد وتوجه مسارات المتدربين لحظياً لرفع نسب الإنجاز وخفض معدلات التسرب.",
-    category: "ذكاء اصطناعي • AI & Machine Learning",
-    tags: ["ذكاء اصطناعي", "مسارات تكيفية", "تحليل لحظي", "Live Telemetry"],
-    description: "بنية تعليمية ذكية متطورة تحلل استيعاب وتفاعل كل متدرب على حدة لحظياً، وتولّد مسارات تدريبية وتوصيات مخصصة لرفع جودة التأهيل المهني وتوحيد تجارب التدريب المؤسسي.",
-    heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuAoQGBpnR5YOtx63m0ayiRLrEPzGeEGwJpeMf8aOkTrWiiC1RuM2DXWLbQC278Qf4cmQNAgUjNF1ubMzZHKRleulvpj0pJZE3LU4fisX_6zKqKedCwMOiq9hU-3Tb2F7Mm2lN2ss5norSsEj0EYs2bGqm-hezL62_YHMq7FDilW3G2HzqtmepKo-3DkVVh1C7hfPrdr-cPUIX48M44X1m_V95n545Ujsfc3nAjjMW-7j-bNj5mHREaS",
+    subtitle:
+      "منظومة تدريبية تكيفية ترصد وتوجه مسارات المتدربين لحظياً لرفع نسب الإنجاز وخفض معدلات التسرب.",
+    category: "Web Development",
+    tags: [
+      "Angular",
+      "ASP.NET Core",
+      "C#",
+      "Entity Framework Core",
+      "SQL Server",
+      "AI",
+      "Qdrant",
+    ],
+    categoryKey: "web-development",
+    featured: true,
+
+    cardImage:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuAoQGBpnR5YOtx63m0ayiRLrEPzGeEGwJpeMf8aOkTrWiiC1RuM2DXWLbQC278Qf4cmQNAgUjNF1ubMzZHKRleulvpj0pJZE3LU4fisX_6zKqKedCwMOiq9hU-3Tb2F7Mm2lN2ss5norSsEj0EYs2bGqm-hezL62_YHMq7FDilW3G2HzqtmepKo-3DkVVh1C7hfPrdr-cPUIX48M44X1m_V95n545Ujsfc3nAjjMW-7j-bNj5mHREaS",
+    cardImageAlt: "FOCUSZONE — منظومة التعلّم الذكية",
+    description:
+      "بنية تعليمية ذكية متطورة تحلل استيعاب وتفاعل كل متدرب على حدة لحظياً، وتولّد مسارات تدريبية وتوصيات مخصصة لرفع جودة التأهيل المهني وتوحيد تجارب التدريب المؤسسي.",
+    heroImage:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuAoQGBpnR5YOtx63m0ayiRLrEPzGeEGwJpeMf8aOkTrWiiC1RuM2DXWLbQC278Qf4cmQNAgUjNF1ubMzZHKRleulvpj0pJZE3LU4fisX_6zKqKedCwMOiq9hU-3Tb2F7Mm2lN2ss5norSsEj0EYs2bGqm-hezL62_YHMq7FDilW3G2HzqtmepKo-3DkVVh1C7hfPrdr-cPUIX48M44X1m_V95n545Ujsfc3nAjjMW-7j-bNj5mHREaS",
     heroImageAlt: "FocusZone Live Learning Architecture UI",
     liveUrl: "",
     demoVideo: "assets/videos/Demo.mp4",
     metaTelemetry: {
       label: "LIVE TELEMETRY STREAM",
       status: "Active Pipeline",
-      highlight: "معالجة تكيفية لحظية"
+      highlight: "معالجة تكيفية لحظية",
     },
-
-
     transformation: {
       title: "من التدريب الجامد إلى التعلّم التكيفي الذكي",
-      description: "مقارنة تشغيلية توضح الأثر الفعلي لمنظومة FocusZone على مسارات التدريب وكفاءة الإنجاز.",
+      description:
+        "مقارنة تشغيلية توضح الأثر الفعلي لمنظومة FocusZone على مسارات التدريب وكفاءة الإنجاز.",
       before: {
         badge: "الوضع السابق • BEFORE",
         title: "تدريب تقليدي جامد",
@@ -31,8 +47,8 @@ const projectsDetailsData = {
         points: [
           "مسارات جامدة بدون تخصيص للمتدربين",
           "معدلات تسرب ملحوظة في المراحل المتقدمة",
-          "تقييمات متأخرة بدون رؤية مباشرة لنقاط الضعف"
-        ]
+          "تقييمات متأخرة بدون رؤية مباشرة لنقاط الضعف",
+        ],
       },
       after: {
         badge: "بعد حل فرصكم • AFTER",
@@ -41,34 +57,114 @@ const projectsDetailsData = {
         points: [
           "مسار تدريبي مخصص لكل متدرب حسب سرعته",
           "تنبيهات وتدخلات استباقية لمعالجة التعثر",
-          "تقارير أداء ومؤشرات تقدم دقيقة ومباشرة"
+          "تقارير أداء ومؤشرات تقدم دقيقة ومباشرة",
         ],
-        footer: "نتائج تشغيلية محققة في بيئة إنتاج فعلية"
-      }
+        footer: "نتائج تشغيلية محققة في بيئة إنتاج فعلية",
+      },
     },
-    ctaWhatsAppMessage: "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة منظومة FocusZone وحلول التعلم الذكية."
+    ctaWhatsAppMessage:
+      "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة منظومة FocusZone وحلول التعلم الذكية.",
+  },
+
+  watchify: {
+    id: "watchify",
+    title: "WATCHIFY — منصة المشاهدة الذكية",
+    subtitle:
+      "منصة ويب ذكية تساعد المستخدمين على اكتشاف الأفلام والمسلسلات المناسبة لهم من خلال البحث الدلالي والتوصيات المدعومة بالذكاء الاصطناعي.",
+    category: "Web Development",
+    categoryKey: "web-development",
+    featured: false,
+
+    cardImage: "assets/images/Watchify.png",
+    cardImageAlt: "WATCHIFY — منصة المشاهدة الذكية",
+    tags: [
+      "Angular",
+      "TypeScript",
+      "Bootstrap",
+      "Node.js",
+      "Express.js",
+      "Stripe",
+      "Qdrant",
+      "Cohere",
+      "Firebase",
+      "TMDB API",
+    ],
+    description:
+      "منصة مشاهدة متكاملة تجمع بين اكتشاف المحتوى، التوصيات الذكية، إدارة قوائم المشاهدة، والاشتراكات المدفوعة. يستخدم نظام التوصيات محادثة المستخدم وسياقها لإنشاء استعلام دلالي، ثم يحوله إلى embedding ويبحث في Qdrant عن أقرب المحتويات قبل إعادة ترتيب النتائج باستخدام Cohere Rerank.",
+    heroImage: "assets/images/Watchify.png",
+    heroImageAlt: "Watchify intelligent streaming platform interface",
+    liveUrl: "",
+    demoVideo: "",
+    metaTelemetry: {
+      label: "AI RECOMMENDATION PIPELINE",
+      status: "Active Pipeline",
+      highlight: "Semantic Search → Vector Retrieval → AI Reranking",
+    },
+    transformation: {
+      title: "من البحث التقليدي إلى اكتشاف المحتوى المدعوم بالذكاء الاصطناعي",
+      description:
+        "تحويل تجربة اكتشاف الأفلام والمسلسلات من البحث بالكلمات المفتاحية إلى تجربة شخصية تعتمد على فهم سياق المستخدم وتفضيلاته.",
+      before: {
+        badge: "الوضع السابق • BEFORE",
+        title: "اكتشاف محتوى تقليدي",
+        subtitle: "بحث مباشر يعتمد على الكلمات والفلترة",
+        points: [
+          "صعوبة التعبير عن الحالة المزاجية أو التفضيلات المعقدة من خلال البحث التقليدي",
+          "الاعتماد على الفلاتر والكلمات المفتاحية للوصول إلى المحتوى",
+          "الحاجة إلى أدوات منفصلة لإدارة المفضلة والمشاهدة لاحقاً وسجل المشاهدة",
+        ],
+      },
+      after: {
+        badge: "بعد حل Watchify • AFTER",
+        title: "اكتشاف محتوى ذكي وشخصي",
+        subtitle: "تجربة توصيات تعتمد على البحث الدلالي والذكاء الاصطناعي",
+        points: [
+          "محادثة طبيعية مع AI لفهم ما يريد المستخدم مشاهدته",
+          "استرجاع أفضل 10 نتائج دلالية من Qdrant ثم إعادة ترتيبها إلى أفضل 5 توصيات باستخدام Cohere",
+          "منصة موحدة لإدارة Favorites وWatch Later وWatch History مع اشتراكات Premium عبر Stripe",
+        ],
+        footer:
+          "تجربة موحدة تجمع اكتشاف المحتوى والتوصيات الذكية وإدارة المشاهدة والاشتراك",
+      },
+    },
+    ctaWhatsAppMessage:
+      "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة منصة Watchify وتجارب التوصيات الذكية.",
   },
 
   sanad: {
     id: "sanad",
     title: "سَنَد — محرك أتمتة سلاسل الإمداد",
-    subtitle: "أتمتة متكاملة لدورات الشحن وتوليد البوالص اللحظية ومزامنة المستودعات بلا تدخل بشري.",
-    category: "أتمتة العمليات • Supply Chain Automation",
-    tags: ["أتمتة العمليات", "سلاسل الإمداد", "تكامل API", "إصدار البوالص"],
-    description: "محرك أتمتة مؤسسي يربط أنظمة الطلبات والمستودعات وشركات الشحن لحظياً لمعالجة وتوجيه الطلبات وإصدار بوالص الشحن آلياً دون أي حاجة للتدخل البشري.",
-    heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuBtn7W6eqglCjePtAQhBikhDa2l0O5hxnBoaE94vIlaxNOUm27AL6VpJHRq1H6Zf6vPWcgLWPR-s4787z5YzQOix1A32bbSIZoa1IX7zS3imNH-sQyDReQtnMxANfTD5d782O2otbMC0SNVjTMm7LIFnBECcV0h63eJOwZDzbnvlD3pEvLiTYcln7_jkZcaJygH1znPsQl87pgs5iSGo7dy2DJLl4K1Y1ioWFjLPD3r0oQwmVh9kfAc",
+    subtitle:
+      "أتمتة متكاملة لدورات الشحن وتوليد البوالص اللحظية ومزامنة المستودعات بلا تدخل بشري.",
+    category: "Business Automation",
+    categoryKey: "business-automation",
+    featured: false,
+
+    cardImage:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuBtn7W6eqglCjePtAQhBikhDa2l0O5hxnBoaE94vIlaxNOUm27AL6VpJHRq1H6Zf6vPWcgLWPR-s4787z5YzQOix1A32bbSIZoa1IX7zS3imNH-sQyDReQtnMxANfTD5d782O2otbMC0SNVjTMm7LIFnBECcV0h63eJOwZDzbnvlD3pEvLiTYcln7_jkZcaJygH1znPsQl87pgs5iSGo7dy2DJLl4K1Y1ioWFjLPD3r0oQwmVh9kfAc",
+    cardImageAlt: "سَنَد — محرك أتمتة سلاسل الإمداد",
+    tags: [
+      "Automation",
+      "API Integration",
+      "Supply Chain",
+      "Workflow Automation",
+    ],
+    description:
+      "محرك أتمتة مؤسسي يربط أنظمة الطلبات والمستودعات وشركات الشحن لحظياً لمعالجة وتوجيه الطلبات وإصدار بوالص الشحن آلياً دون أي حاجة للتدخل البشري.",
+    heroImage:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuBtn7W6eqglCjePtAQhBikhDa2l0O5hxnBoaE94vIlaxNOUm27AL6VpJHRq1H6Zf6vPWcgLWPR-s4787z5YzQOix1A32bbSIZoa1IX7zS3imNH-sQyDReQtnMxANfTD5d782O2otbMC0SNVjTMm7LIFnBECcV0h63eJOwZDzbnvlD3pEvLiTYcln7_jkZcaJygH1znPsQl87pgs5iSGo7dy2DJLl4K1Y1ioWFjLPD3r0oQwmVh9kfAc",
     heroImageAlt: "Sanad Supply Chain Dispatch Engine",
     liveUrl: "",
     demoVideo: "",
     metaTelemetry: {
       label: "DISPATCH BOT • ACTIVE",
       status: "API Realtime Mesh",
-      highlight: "معالجة فورية للبوالص"
+      highlight: "معالجة فورية للبوالص",
     },
-
     transformation: {
       title: "من الإدخال اليدوي إلى أتمتة سلاسل الإمداد",
-      description: "مقارنة تشغيلية توضح الأثر الفعلي لمحرك سَنَد على كفاءة الشحن وإصدار البوالص.",
+      description:
+        "مقارنة تشغيلية توضح الأثر الفعلي لمحرك سَنَد على كفاءة الشحن وإصدار البوالص.",
       before: {
         badge: "الوضع السابق • BEFORE",
         title: "عمليات شحن يدوية بطيئة",
@@ -76,8 +172,8 @@ const projectsDetailsData = {
         points: [
           "استغراق ساعات طويلة لتجهيز وإصدار البوالص",
           "أخطاء بشرية متكررة في العناوين والبيانات",
-          "تضارب بين بيانات المخزون وشركات الشحن"
-        ]
+          "تضارب بين بيانات المخزون وشركات الشحن",
+        ],
       },
       after: {
         badge: "بعد حل فرصكم • AFTER",
@@ -86,34 +182,49 @@ const projectsDetailsData = {
         points: [
           "إصدار فوري للبوالص في غضون دقائق من الطلب",
           "انعدام أخطاء العناوين عبر التحقق الآلي",
-          "مزامنة كاملة ولحظية مع المستودعات والناقلين"
+          "مزامنة كاملة ولحظية مع المستودعات والناقلين",
         ],
-        footer: "نتائج تشغيلية محققة في بيئة إنتاج فعلية"
-      }
+        footer: "نتائج تشغيلية محققة في بيئة إنتاج فعلية",
+      },
     },
-    ctaWhatsAppMessage: "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة نظام سند لأتمتة سلاسل الإمداد."
+    ctaWhatsAppMessage:
+      "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة نظام سند لأتمتة سلاسل الإمداد.",
   },
 
   medad: {
     id: "medad",
     title: "مِداد — متجر متكامل وتكامل ERP سلس",
-    subtitle: "بنية تجارية فائقة السرعة مربوطة لحظياً بالمستودعات ونظام الفوترة لمنع تضارب المخزون.",
-    category: "منصات سحابية • Enterprise E-Commerce",
-    tags: ["منصات سحابية", "تجارة إلكترونية", "تكامل ERP", "إدارة المخزون"],
-    description: "بنية تجارة إلكترونية سريعة ومتقدمة متصلة كلياً بنظام الـ ERP والمستودعات المركزية لضمان تزامن الفواتير والمخزون وعمليات الشراء بين القنوات الرقمية والفروع الواقعية.",
-    heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuC1QdXrPN4L53rjiSDQkytd0OdCIRHfCMhzbx3y8hlw24jDxHa4_kD0i9hECZJfryfBXoCnPDQwUc8qvVeAThh_avsMc102iZgBpjy58JY9q0UcvZKs8ueIpQbqIJFZlyETT4d5WgQNUpEsn3v0hVQdQuxyteANdbInfzkTJgpOPnjSOWwJzyzE0XMnjzrtkY-IUpCrhu2jIWMz44gCD7zAx3wUzrbKVNIH67Xa3uK1W-e7oA3MWL7f",
+    categoryKey: "web-development",
+    featured: false,
+
+    cardImage:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuC1QdXrPN4L53rjiSDQkytd0OdCIRHfCMhzbx3y8hlw24jDxHa4_kD0i9hECZJfryfBXoCnPDQwUc8qvVeAThh_avsMc102iZgBpjy58JY9q0UcvZKs8ueIpQbqIJFZlyETT4d5WgQNUpEsn3v0hVQdQuxyteANdbInfzkTJgpOPnjSOWwJzyzE0XMnjzrtkY-IUpCrhu2jIWMz44gCD7zAx3wUzrbKVNIH67Xa3uK1W-e7oA3MWL7f",
+    cardImageAlt: "مِداد — متجر متكامل وتكامل ERP سلس",
+    subtitle:
+      "بنية تجارية فائقة السرعة مربوطة لحظياً بالمستودعات ونظام الفوترة لمنع تضارب المخزون.",
+    category: "Web Development",
+    tags: [
+      "E-Commerce",
+      "ERP Integration",
+      "Web Development",
+      "API Integration",
+    ],
+    description:
+      "بنية تجارة إلكترونية سريعة ومتقدمة متصلة كلياً بنظام الـ ERP والمستودعات المركزية لضمان تزامن الفواتير والمخزون وعمليات الشراء بين القنوات الرقمية والفروع الواقعية.",
+    heroImage:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuC1QdXrPN4L53rjiSDQkytd0OdCIRHfCMhzbx3y8hlw24jDxHa4_kD0i9hECZJfryfBXoCnPDQwUc8qvVeAThh_avsMc102iZgBpjy58JY9q0UcvZKs8ueIpQbqIJFZlyETT4d5WgQNUpEsn3v0hVQdQuxyteANdbInfzkTJgpOPnjSOWwJzyzE0XMnjzrtkY-IUpCrhu2jIWMz44gCD7zAx3wUzrbKVNIH67Xa3uK1W-e7oA3MWL7f",
     heroImageAlt: "Midad E-Commerce & ERP Architecture",
     liveUrl: "",
     demoVideo: "",
     metaTelemetry: {
-      label: "ERP SYNC ENGINE • 0 ERRORS",
-      status: "Enterprise Dataverse",
-      highlight: "تزامن لحظي ثنائي الاتجاه"
+      label: "ERP SYNC ENGINE",
+      status: "Enterprise Integration",
+      highlight: "تزامن لحظي ثنائي الاتجاه",
     },
-
     transformation: {
       title: "من جزر البيانات إلى تكامل تجاري موحد",
-      description: "مقارنة تشغيلية توضح الأثر الفعلي لمنصة مِداد على مزامنة المخزون والفوترة وتجربة الشراء.",
+      description:
+        "مقارنة تشغيلية توضح الأثر الفعلي لمنصة مِداد على مزامنة المخزون والفوترة وتجربة الشراء.",
       before: {
         badge: "الوضع السابق • BEFORE",
         title: "جزر بيانات معزولة",
@@ -121,44 +232,54 @@ const projectsDetailsData = {
         points: [
           "تضارب أرصدة المخزون بين نقاط البيع والمتجر",
           "ترحيل محاسبي يدوي يستهلك ساعات يومياً",
-          "تجربة تصفح ودفع بطيئة تثبط العملاء"
-        ]
+          "تجربة تصفح ودفع بطيئة تثبط العملاء",
+        ],
       },
       after: {
         badge: "بعد حل فرصكم • AFTER",
         title: "منظومة تجارية موحدة لحظية",
         subtitle: "منظومة موحدة ومتزامنة في الوقت الفعلي",
         points: [
-          "تطابق كامل للمخزون دون أي بيع غير مغطى",
+          "تزامن المخزون بين القنوات الرقمية والفروع",
           "أتمتة الفواتير والقيود فور تأكيد الشراء",
-          "تجربة شراء سلسة وسريعة عبر مختلف الأجهزة"
+          "تجربة شراء سلسة وسريعة عبر مختلف الأجهزة",
         ],
-        footer: "نتائج تشغيلية محققة في بيئة إنتاج فعلية"
-      }
+        footer: "منظومة تجارة إلكترونية متكاملة مع أنظمة المؤسسة",
+      },
     },
-    ctaWhatsAppMessage: "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة مداد لتطوير المنصات وتكامل ERP."
+    ctaWhatsAppMessage:
+      "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة مداد لتطوير المنصات وتكامل ERP.",
   },
 
   ofok: {
     id: "ofok",
     title: "أُفُق — إدارة موارد المؤسسة والموافقات",
-    subtitle: "حوكمة مرنة ومؤتمتة لسلاسل الاعتمادات والموافقات الإدارية وفق اتفاقيات مستوى الخدمة (SLA).",
-    category: "Power Platform • Workflow Governance",
-    tags: ["Power Platform", "Power Automate", "Power Apps", "حوكمة الموافقات"],
-    description: "نظام حوكمة وأتمتة مؤسسي مبني على تقنيات Power Platform لرقمنة مسارات اتخاذ القرار والاعتمادات المالية والإدارية بدقة وشفافية كاملة دون أي تأخير أو فقدان للمستندات.",
-    heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuDiqf0V3RJL6X0V25bYwacfDxS7OtsJiIsY_eg2VdKww12GHSLqKWQPDAzHAPd_hsULsaMoT6qnNiaAzl0iJf30b5JVEOxFY5QQrBqEKmV8wIeIEqbS58Amxq8ksDeYmXuGIDTNBYfQdJBRv6B1mTe5jo2JP9TT0KHQcXagJHH62k71bsKXt6z91D4nnquypffyt_b8nAh6jiDyLWF3UF8O9wuMyStWo8w3K1x9YhAT7CMsD3dLt-ma",
+    subtitle:
+      "حوكمة مرنة ومؤتمتة لسلاسل الاعتمادات والموافقات الإدارية وفق اتفاقيات مستوى الخدمة (SLA).",
+    category: "Business Automation",
+    tags: ["Power Platform", "Power Automate", "Power Apps", "Dataverse"],
+    categoryKey: "business-automation",
+    featured: false,
+
+    cardImage:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuDiqf0V3RJL6X0V25bYwacfDxS7OtsJiIsY_eg2VdKww12GHSLqKWQPDAzHAPd_hsULsaMoT6qnNiaAzl0iJf30b5JVEOxFY5QQrBqEKmV8wIeIEqbS58Amxq8ksDeYmXuGIDTNBYfQdJBRv6B1mTe5jo2JP9TT0KHQcXagJHH62k71bsKXt6z91D4nnquypffyt_b8nAh6jiDyLWF3UF8O9wuMyStWo8w3K1x9YhAT7CMsD3dLt-ma",
+    cardImageAlt: "أُفُق — إدارة موارد المؤسسة والموافقات",
+    description:
+      "نظام حوكمة وأتمتة مؤسسي مبني على تقنيات Power Platform لرقمنة مسارات اتخاذ القرار والاعتمادات المالية والإدارية بدقة وشفافية كاملة.",
+    heroImage:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuDiqf0V3RJL6X0V25bYwacfDxS7OtsJiIsY_eg2VdKww12GHSLqKWQPDAzHAPd_hsULsaMoT6qnNiaAzl0iJf30b5JVEOxFY5QQrBqEKmV8wIeIEqbS58Amxq8ksDeYmXuGIDTNBYfQdJBRv6B1mTe5jo2JP9TT0KHQcXagJHH62k71bsKXt6z91D4nnquypffyt_b8nAh6jiDyLWF3UF8O9wuMyStWo8w3K1x9YhAT7CMsD3dLt-ma",
     heroImageAlt: "Ofuq Workflow Governance Platform",
     liveUrl: "",
     demoVideo: "",
     metaTelemetry: {
-      label: "POWER AUTOMATE • SLA 100%",
+      label: "POWER AUTOMATE",
       status: "Cloud Native Governance",
-      highlight: "حوكمة سلاسل الاعتمادات"
+      highlight: "حوكمة سلاسل الاعتمادات",
     },
-
     transformation: {
       title: "من الفوضى الورقية إلى حوكمة رقمية شفافة",
-      description: "مقارنة تشغيلية توضح الأثر الفعلي لمنظومة أُفُق على سرعة الموافقات والشفافية المؤسسية.",
+      description:
+        "مقارنة تشغيلية توضح الأثر الفعلي لمنظومة أُفُق على سرعة الموافقات والشفافية المؤسسية.",
       before: {
         badge: "الوضع السابق • BEFORE",
         title: "دورة مستندية يدوية",
@@ -166,8 +287,8 @@ const projectsDetailsData = {
         points: [
           "متابعة يدوية عبر الإيميلات والاتصالات المتكررة",
           "غموض في تحديد المسؤول عن توقف المعاملة",
-          "تأخر حسم الطلبات لأيام وأسابيع"
-        ]
+          "تأخر حسم الطلبات لأيام وأسابيع",
+        ],
       },
       after: {
         badge: "بعد حل فرصكم • AFTER",
@@ -176,34 +297,49 @@ const projectsDetailsData = {
         points: [
           "اعتماد بنقرة واحدة من الموبايل أو Teams",
           "شفافية كاملة وتتبع لحظي لمسار المعاملة",
-          "التزام صارم بمهل الـ SLA مع تنبيهات استباقية"
+          "تنبيهات استباقية للطلبات المتأخرة",
         ],
-        footer: "نتائج تشغيلية محققة في بيئة إنتاج فعلية"
-      }
+        footer: "منظومة مؤتمتة لإدارة مسارات الموافقات والاعتمادات",
+      },
     },
-    ctaWhatsAppMessage: "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة أفق لإدارة Power Platform وحوكمة الموافقات."
+    ctaWhatsAppMessage:
+      "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة أفق لإدارة Power Platform وحوكمة الموافقات.",
   },
 
   nabd: {
     id: "nabd",
     title: "نبض — التحليل التنبؤي والعمليات الذكية",
-    subtitle: "منظومة استشرافية تعتمد نماذج تعلّم متطورة للتنبؤ بانحرافات التشغيل ودعم القرارات الاستباقية.",
-    category: "تحليل تنبؤي • Predictive AI",
-    tags: ["ذكاء اصطناعي", "تحليل تنبؤي", "Machine Learning", "مراقبة العمليات"],
-    description: "منصة تحليل استشرافي مبنية على نماذج Machine Learning لجمع وتحليل تدفقات بيانات التشغيل والتنبؤ بالأعطال والاختناقات مسبقاً لدعم قرارات الصيانة والتشغيل الاستباقية.",
-    heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuAoQGBpnR5YOtx63m0ayiRLrEPzGeEGwJpeMf8aOkTrWiiC1RuM2DXWLbQC278Qf4cmQNAgUjNF1ubMzZHKRleulvpj0pJZE3LU4fisX_6zKqKedCwMOiq9hU-3Tb2F7Mm2lN2ss5norSsEj0EYs2bGqm-hezL62_YHMq7FDilW3G2HzqtmepKo-3DkVVh1C7hfPrdr-cPUIX48M44X1m_V95n545Ujsfc3nAjjMW-7j-bNj5mHREaS",
+    subtitle:
+      "منظومة استشرافية تعتمد نماذج تعلّم متطورة للتنبؤ بانحرافات التشغيل ودعم القرارات الاستباقية.",
+    category: "Business Automation",
+    categoryKey: "business-automation",
+    featured: false,
+
+    cardImage:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuAoQGBpnR5YOtx63m0ayiRLrEPzGeEGwJpeMf8aOkTrWiiC1RuM2DXWLbQC278Qf4cmQNAgUjNF1ubMzZHKRleulvpj0pJZE3LU4fisX_6zKqKedCwMOiq9hU-3Tb2F7Mm2lN2ss5norSsEj0EYs2bGqm-hezL62_YHMq7FDilW3G2HzqtmepKo-3DkVVh1C7hfPrdr-cPUIX48M44X1m_V95n545Ujsfc3nAjjMW-7j-bNj5mHREaS",
+    cardImageAlt: "نبض — التحليل التنبؤي والعمليات الذكية",
+    tags: [
+      "Machine Learning",
+      "Predictive Analytics",
+      "Data Analytics",
+      "Automation",
+    ],
+    description:
+      "منصة تحليل استشرافي مبنية على نماذج Machine Learning لجمع وتحليل تدفقات بيانات التشغيل والتنبؤ بالأعطال والاختناقات مسبقاً لدعم قرارات الصيانة والتشغيل الاستباقية.",
+    heroImage:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuAoQGBpnR5YOtx63m0ayiRLrEPzGeEGwJpeMf8aOkTrWiiC1RuM2DXWLbQC278Qf4cmQNAgUjNF1ubMzZHKRleulvpj0pJZE3LU4fisX_6zKqKedCwMOiq9hU-3Tb2F7Mm2lN2ss5norSsEj0EYs2bGqm-hezL62_YHMq7FDilW3G2HzqtmepKo-3DkVVh1C7hfPrdr-cPUIX48M44X1m_V95n545Ujsfc3nAjjMW-7j-bNj5mHREaS",
     heroImageAlt: "Nabd Predictive AI Operations Engine",
     liveUrl: "",
     demoVideo: "",
     metaTelemetry: {
-      label: "PREDICTIVE MESH • ACTIVE",
-      status: "ML Production Pipeline",
-      highlight: "استشراف ذكي للأعطال"
+      label: "PREDICTIVE MESH",
+      status: "ML Pipeline",
+      highlight: "استشراف ذكي للأعطال",
     },
-
     transformation: {
       title: "من الصيانة الطارئة إلى الاستشراف الذكي",
-      description: "مقارنة تشغيلية توضح الأثر الفعلي لمنظومة نبض على كفاءة العمليات والحد من التوقفات غير المخططة.",
+      description:
+        "مقارنة تشغيلية توضح الأثر الفعلي لمنظومة نبض على كفاءة العمليات والحد من التوقفات غير المخططة.",
       before: {
         badge: "الوضع السابق • BEFORE",
         title: "صيانة استجابية تقليدية",
@@ -211,30 +347,36 @@ const projectsDetailsData = {
         points: [
           "توقفات عمل مفاجئة وخسائر تشغيلية غير متوقعة",
           "بيانات قياس مهملة في خوادم التخزين",
-          "صيانة دورية عشوائية تهدر الموارد"
-        ]
+          "صيانة دورية عشوائية تهدر الموارد",
+        ],
       },
       after: {
         badge: "بعد حل فرصكم • AFTER",
         title: "إدارة تشغيلية استباقية ذكية",
         subtitle: "إدارة تشغيلية استباقية وذكية",
         points: [
-          "تنبؤ مبكر بالانحرافات قبل وقوع أي توقف",
-          "استغلال كامل للبيانات في توليد رؤى تشغيلية",
-          "توجيه الصيانة بدقة للمعدات الأكثر عرضة للتعطل"
+          "تنبؤ مبكر بالانحرافات قبل وقوع التوقفات",
+          "استغلال البيانات في توليد رؤى تشغيلية",
+          "توجيه الصيانة للمعدات الأكثر عرضة للتعطل",
         ],
-        footer: "نتائج تشغيلية محققة في بيئة إنتاج فعلية"
-      }
+        footer: "منظومة تحليلية لدعم قرارات التشغيل والصيانة الاستباقية",
+      },
     },
-    ctaWhatsAppMessage: "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة نبض للتحليل التنبؤي والعمليات الذكية."
-  }
+    ctaWhatsAppMessage:
+      "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة نبض للتحليل التنبؤي والعمليات الذكية.",
+  },
+
+
 };
 
-// Aliases for alternate spellings or case variations
-projectsDetailsData["focus-zone"] = projectsDetailsData["focuszone"];
-projectsDetailsData["ofuque"] = projectsDetailsData["ofok"];
-projectsDetailsData["ofuk"] = projectsDetailsData["ofok"];
-projectsDetailsData["midad"] = projectsDetailsData["medad"];
+// Aliases mapping for alternate spellings or case variations (without mutating projectsDetailsData)
+const projectAliases = {
+  "focus-zone": "focuszone",
+  "ofuque": "ofok",
+  "ofuk": "ofok",
+  "ofuq": "ofok",
+  "midad": "medad",
+};
 
 /**
  * Extract active project ID from query string (?project=...) or hash fallback
@@ -242,13 +384,16 @@ projectsDetailsData["midad"] = projectsDetailsData["medad"];
 function getActiveProjectKey() {
   const urlParams = new URLSearchParams(window.location.search);
   const param = urlParams.get("project");
-  if (param && projectsDetailsData[param.toLowerCase().trim()]) {
-    return param.toLowerCase().trim();
+  if (param) {
+    const cleanParam = param.toLowerCase().trim();
+    if (projectsDetailsData[cleanParam]) return cleanParam;
+    if (projectAliases[cleanParam]) return projectAliases[cleanParam];
   }
 
   const hash = window.location.hash.replace("#", "").toLowerCase().trim();
-  if (hash && projectsDetailsData[hash]) {
-    return hash;
+  if (hash) {
+    if (projectsDetailsData[hash]) return hash;
+    if (projectAliases[hash]) return projectAliases[hash];
   }
 
   return "focuszone";
@@ -258,7 +403,9 @@ function getActiveProjectKey() {
  * Render the project details into the DOM
  */
 function renderProjectDetails(projectKey) {
-  const project = projectsDetailsData[projectKey] || projectsDetailsData["focuszone"];
+  const resolvedKey = projectAliases[projectKey] || projectKey;
+  const project =
+    projectsDetailsData[resolvedKey] || projectsDetailsData["focuszone"];
   if (!project) return;
 
   // Update page title
@@ -273,15 +420,16 @@ function renderProjectDetails(projectKey) {
   const titleEl = document.getElementById("project-title");
   if (titleEl) titleEl.textContent = project.title;
 
-
-
   const descEl = document.getElementById("project-desc");
   if (descEl) descEl.textContent = project.description;
 
   const tagsContainer = document.getElementById("project-tags");
   if (tagsContainer) {
     tagsContainer.innerHTML = project.tags
-      .map(tag => `<span class="px-3 py-1 rounded-lg bg-surface-container-high/90 text-xs font-mono font-medium text-slate-200 border border-white/10 hover:border-tertiary/30 transition-colors">${tag}</span>`)
+      .map(
+        (tag) =>
+          `<span class="px-3 py-1 rounded-lg bg-surface-container-high/90 text-xs font-mono font-medium text-slate-200 border border-white/10 hover:border-tertiary/30 transition-colors">${tag}</span>`,
+      )
       .join("");
   }
 
@@ -292,11 +440,16 @@ function renderProjectDetails(projectKey) {
     heroImage.classList.remove("hidden");
   }
 
-  const telemetryContainer = document.getElementById("hero-telemetry-container");
-  const telemetryHighlight = document.getElementById("hero-telemetry-highlight");
+  const telemetryContainer = document.getElementById(
+    "hero-telemetry-container",
+  );
+  const telemetryHighlight = document.getElementById(
+    "hero-telemetry-highlight",
+  );
   if (telemetryContainer) {
     if (project.metaTelemetry && project.metaTelemetry.highlight) {
-      if (telemetryHighlight) telemetryHighlight.textContent = project.metaTelemetry.highlight;
+      if (telemetryHighlight)
+        telemetryHighlight.textContent = project.metaTelemetry.highlight;
       telemetryContainer.classList.remove("hidden");
       telemetryContainer.classList.add("flex");
     } else {
@@ -325,7 +478,9 @@ function renderProjectDetails(projectKey) {
   const mediaViewport = document.getElementById("hero-media-viewport");
   const mediaOverlay = document.getElementById("hero-media-overlay");
 
-  const hasDemoVideo = Boolean(project.demoVideo && project.demoVideo.trim() !== "");
+  const hasDemoVideo = Boolean(
+    project.demoVideo && project.demoVideo.trim() !== "",
+  );
 
   // Cleanup any active video player when project changes
   const existingVideo = document.getElementById("project-hero-video");
@@ -335,7 +490,9 @@ function renderProjectDetails(projectKey) {
   if (mediaOverlay) mediaOverlay.classList.remove("hidden");
 
   if (demoBadgeText) {
-    demoBadgeText.textContent = hasDemoVideo ? "PRODUCT DEMO" : "PROJECT PREVIEW";
+    demoBadgeText.textContent = hasDemoVideo
+      ? "PRODUCT DEMO"
+      : "PROJECT PREVIEW";
   }
 
   function triggerDemoVideoPlayback() {
@@ -367,7 +524,7 @@ function renderProjectDetails(projectKey) {
     if (mediaOverlay) mediaOverlay.classList.add("hidden");
 
     // Play after user interaction
-    videoEl.play().catch(error => {
+    videoEl.play().catch((error) => {
       console.error("Video playback failed:", error);
     });
   }
@@ -401,52 +558,69 @@ function renderProjectDetails(projectKey) {
     }
   }
 
-
-
-
-
   // 4. OUTCOME (BEFORE -> AFTER) SECTION (Refactored)
   const trans = project.transformation || {};
   // Header title and description
   const outcomeTitle = document.getElementById("outcome-title");
   if (outcomeTitle && trans.title) outcomeTitle.textContent = trans.title;
   const outcomeDesc = document.getElementById("outcome-description");
-  if (outcomeDesc && trans.description) outcomeDesc.textContent = trans.description;
+  if (outcomeDesc && trans.description)
+    outcomeDesc.textContent = trans.description;
 
   // BEFORE CARD
   const outcomeBeforeBadge = document.getElementById("outcome-before-badge");
-  if (outcomeBeforeBadge && trans.before?.badge) outcomeBeforeBadge.textContent = trans.before.badge;
+  if (outcomeBeforeBadge && trans.before?.badge)
+    outcomeBeforeBadge.textContent = trans.before.badge;
   const outcomeBeforeTitle = document.getElementById("outcome-before-title");
-  if (outcomeBeforeTitle && trans.before?.title) outcomeBeforeTitle.textContent = trans.before.title;
-  const outcomeBeforeSubtitle = document.getElementById("outcome-before-subtitle");
-  if (outcomeBeforeSubtitle && trans.before?.subtitle) outcomeBeforeSubtitle.textContent = trans.before.subtitle;
+  if (outcomeBeforeTitle && trans.before?.title)
+    outcomeBeforeTitle.textContent = trans.before.title;
+  const outcomeBeforeSubtitle = document.getElementById(
+    "outcome-before-subtitle",
+  );
+  if (outcomeBeforeSubtitle && trans.before?.subtitle)
+    outcomeBeforeSubtitle.textContent = trans.before.subtitle;
   const outcomeBeforePoints = document.getElementById("outcome-before-points");
   if (outcomeBeforePoints && trans.before?.points) {
     outcomeBeforePoints.innerHTML = trans.before.points
-      .map(pt => `<li class="flex items-start gap-2.5 text-sm text-on-surface-variant leading-relaxed"><span class="material-symbols-outlined text-error text-base shrink-0 mt-0.5">close</span><span>${pt}</span></li>`)
+      .map(
+        (pt) =>
+          `<li class="flex items-start gap-2.5 text-sm text-on-surface-variant leading-relaxed"><span class="material-symbols-outlined text-error text-base shrink-0 mt-0.5">close</span><span>${pt}</span></li>`,
+      )
       .join("");
   }
 
   // AFTER CARD
   const outcomeAfterBadge = document.getElementById("outcome-after-badge");
-  if (outcomeAfterBadge && trans.after?.badge) outcomeAfterBadge.textContent = trans.after.badge;
+  if (outcomeAfterBadge && trans.after?.badge)
+    outcomeAfterBadge.textContent = trans.after.badge;
   const outcomeAfterTitle = document.getElementById("outcome-after-title");
-  if (outcomeAfterTitle && trans.after?.title) outcomeAfterTitle.textContent = trans.after.title;
-  const outcomeAfterSubtitle = document.getElementById("outcome-after-subtitle");
-  if (outcomeAfterSubtitle && trans.after?.subtitle) outcomeAfterSubtitle.textContent = trans.after.subtitle;
+  if (outcomeAfterTitle && trans.after?.title)
+    outcomeAfterTitle.textContent = trans.after.title;
+  const outcomeAfterSubtitle = document.getElementById(
+    "outcome-after-subtitle",
+  );
+  if (outcomeAfterSubtitle && trans.after?.subtitle)
+    outcomeAfterSubtitle.textContent = trans.after.subtitle;
   const outcomeAfterPoints = document.getElementById("outcome-after-points");
   if (outcomeAfterPoints && trans.after?.points) {
     outcomeAfterPoints.innerHTML = trans.after.points
-      .map(pt => `<li class="flex items-start gap-2.5 text-sm text-white font-medium leading-relaxed"><span class="material-symbols-outlined text-tertiary text-base shrink-0 mt-0.5">check_circle</span><span>${pt}</span></li>`)
+      .map(
+        (pt) =>
+          `<li class="flex items-start gap-2.5 text-sm text-white font-medium leading-relaxed"><span class="material-symbols-outlined text-tertiary text-base shrink-0 mt-0.5">check_circle</span><span>${pt}</span></li>`,
+      )
       .join("");
   }
   const outcomeAfterFooter = document.getElementById("outcome-after-footer");
-  if (outcomeAfterFooter && trans.after?.footer) outcomeAfterFooter.textContent = trans.after.footer;
+  if (outcomeAfterFooter && trans.after?.footer)
+    outcomeAfterFooter.textContent = trans.after.footer;
 
   // 5. FINAL CTA
   const ctaPrimaryBtn = document.getElementById("cta-primary-btn");
   if (ctaPrimaryBtn) {
-    const encodedMsg = encodeURIComponent(project.ctaWhatsAppMessage || `مرحباً فريق فرصكم، حابب أستفسر عن تنفيذ مشروع مشابه لـ ${project.title}`);
+    const encodedMsg = encodeURIComponent(
+      project.ctaWhatsAppMessage ||
+        `مرحباً فريق فرصكم، حابب أستفسر عن تنفيذ مشروع مشابه لـ ${project.title}`,
+    );
     ctaPrimaryBtn.href = `https://wa.me/201090000000?text=${encodedMsg}`;
   }
 }
@@ -455,12 +629,18 @@ function renderProjectDetails(projectKey) {
  * Initialize GSAP animations for Project Details Page
  */
 function initProjectDetailsMotion() {
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
   if (prefersReducedMotion || typeof gsap === "undefined") {
-    document.querySelectorAll(".reveal-motion, #project-hero-card, .challenge-card, .solution-feature-card").forEach(el => {
-      el.style.opacity = "1";
-      el.style.transform = "none";
-    });
+    document
+      .querySelectorAll(
+        ".reveal-motion, #project-hero-card, .challenge-card, .solution-feature-card",
+      )
+      .forEach((el) => {
+        el.style.opacity = "1";
+        el.style.transform = "none";
+      });
     return;
   }
 
@@ -470,16 +650,51 @@ function initProjectDetailsMotion() {
 
   // 1. Hero Entrance Timeline
   const heroTl = gsap.timeline({
-    defaults: { ease: "power2.out" }
+    defaults: { ease: "power2.out" },
   });
 
-  heroTl.fromTo("#hero-back-link", { opacity: 0, x: 15 }, { opacity: 1, x: 0, duration: 0.45 })
-    .fromTo("#project-category-badge", { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 0.4 }, "-=0.25")
-    .fromTo("#project-title", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.55 }, "-=0.2")
-    .fromTo("#project-tags", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4 }, "-=0.3")
-    .fromTo("#project-desc", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.45 }, "-=0.25")
-    .fromTo("#hero-actions-container", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.45 }, "-=0.25")
-    .fromTo("#project-hero-card", { opacity: 0, scale: 0.96, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.7 }, "-=0.45");
+  heroTl
+    .fromTo(
+      "#hero-back-link",
+      { opacity: 0, x: 15 },
+      { opacity: 1, x: 0, duration: 0.45 },
+    )
+    .fromTo(
+      "#project-category-badge",
+      { opacity: 0, scale: 0.95 },
+      { opacity: 1, scale: 1, duration: 0.4 },
+      "-=0.25",
+    )
+    .fromTo(
+      "#project-title",
+      { opacity: 0, y: 18 },
+      { opacity: 1, y: 0, duration: 0.55 },
+      "-=0.2",
+    )
+    .fromTo(
+      "#project-tags",
+      { opacity: 0, y: 10 },
+      { opacity: 1, y: 0, duration: 0.4 },
+      "-=0.3",
+    )
+    .fromTo(
+      "#project-desc",
+      { opacity: 0, y: 12 },
+      { opacity: 1, y: 0, duration: 0.45 },
+      "-=0.25",
+    )
+    .fromTo(
+      "#hero-actions-container",
+      { opacity: 0, y: 12 },
+      { opacity: 1, y: 0, duration: 0.45 },
+      "-=0.25",
+    )
+    .fromTo(
+      "#project-hero-card",
+      { opacity: 0, scale: 0.96, y: 20 },
+      { opacity: 1, scale: 1, y: 0, duration: 0.7 },
+      "-=0.45",
+    );
 
   // Subtle floating ambient motion for the hero visual (only if motion is allowed)
   if (!prefersReducedMotion && typeof gsap !== "undefined") {
@@ -488,13 +703,14 @@ function initProjectDetailsMotion() {
       duration: 4.5,
       ease: "sine.inOut",
       yoyo: true,
-      repeat: -1
+      repeat: -1,
     });
   }
 
   // 2. Transformation Reveal
   if (typeof ScrollTrigger !== "undefined") {
-    gsap.fromTo("#outcome-before-card",
+    gsap.fromTo(
+      "#outcome-before-card",
       { opacity: 0, y: 20 },
       {
         opacity: 1,
@@ -504,12 +720,13 @@ function initProjectDetailsMotion() {
         scrollTrigger: {
           trigger: "#project-outcome",
           start: "top 80%",
-          toggleActions: "play none none none"
-        }
-      }
+          toggleActions: "play none none none",
+        },
+      },
     );
 
-    gsap.fromTo("#outcome-arrow-connector",
+    gsap.fromTo(
+      "#outcome-arrow-connector",
       { opacity: 0, scale: 0.85 },
       {
         opacity: 1,
@@ -520,12 +737,13 @@ function initProjectDetailsMotion() {
         scrollTrigger: {
           trigger: "#project-outcome",
           start: "top 80%",
-          toggleActions: "play none none none"
-        }
-      }
+          toggleActions: "play none none none",
+        },
+      },
     );
 
-    gsap.fromTo("#outcome-after-card",
+    gsap.fromTo(
+      "#outcome-after-card",
       { opacity: 0, y: 20 },
       {
         opacity: 1,
@@ -536,15 +754,16 @@ function initProjectDetailsMotion() {
         scrollTrigger: {
           trigger: "#project-outcome",
           start: "top 80%",
-          toggleActions: "play none none none"
-        }
-      }
+          toggleActions: "play none none none",
+        },
+      },
     );
   }
 
   // 3. Final CTA Reveal
   if (typeof ScrollTrigger !== "undefined") {
-    gsap.fromTo("#project-cta .cta-inner-card",
+    gsap.fromTo(
+      "#project-cta .cta-inner-card",
       { opacity: 0, y: 25, scale: 0.98 },
       {
         opacity: 1,
@@ -555,18 +774,18 @@ function initProjectDetailsMotion() {
         scrollTrigger: {
           trigger: "#project-cta",
           start: "top 85%",
-          toggleActions: "play none none none"
-        }
-      }
+          toggleActions: "play none none none",
+        },
+      },
     );
   }
 }
-
 
 /**
  * Initialize page on DOM ready
  */
 function initProjectDetailsPage() {
+  if (!document.getElementById("project-hero")) return;
   const activeKey = getActiveProjectKey();
   renderProjectDetails(activeKey);
   initProjectDetailsMotion();
@@ -580,6 +799,7 @@ if (document.readyState === "loading") {
 
 // Support browser back/forward or hash transitions
 window.addEventListener("popstate", () => {
+  if (!document.getElementById("project-hero")) return;
   const activeKey = getActiveProjectKey();
   renderProjectDetails(activeKey);
   if (window.ScrollTrigger && window.ScrollTrigger.refresh) {

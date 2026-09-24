@@ -3,14 +3,271 @@
    ========================================================================== */
 
 const projectsDetailsData = {
+  pizza: {
+    id: "pizza",
+    title: "بيتزا باراديزو — التحول الرقمي لإدارة المطاعم",
+    subtitle: "تطبيق متكامل لرقمنة سير عمل الطلبات وإدارة المطبخ بفعالية.",
+    category: "Business Automation",
+    categoryKey: "business-automation",
+    featured: false,
+    cardImage: "",
+    cardImageAlt: "مشروع بيتزا باراديزو للتحول الرقمي",
+    tags: ["Power Apps", "Power Automate", "SharePoint"],
+    description:
+      "تطوير تطبيق متعدد المستخدمين لرقمنة إدارة الطلبات والمطابخ، مع تصميم مخطط علاقات الكيانات (ERD) وتنفيذ نظام تحكم في الوصول مبني على الأدوار للعملاء والطهاة والإدارة.",
+    heroImage: "",
+    heroImageAlt: "Pizza Paradiso Digital Transformation",
+    liveUrl: "",
+    demoVideo: "",
+    metaTelemetry: {
+      label: "RESTAURANT APP",
+      status: "Deployed",
+      highlight: "رقمنة إدارة الطلبات",
+    },
+    transformation: {
+      title: "من الإدارة اليدوية إلى الرقمنة الشاملة",
+      description:
+        "تحويل عمليات المطعم من الأساليب التقليدية إلى نظام رقمي متكامل يربط بين جميع الأطراف.",
+      before: {
+        badge: "الوضع السابق • BEFORE",
+        title: "إدارة تقليدية للطلبات",
+        subtitle: "عمليات يدوية وبطيئة",
+        points: [
+          "تأخير في معالجة الطلبات وتوجيهها للمطبخ",
+          "صعوبة في تتبع أدوار المستخدمين",
+          "غياب الهيكلة الواضحة للبيانات والقوائم",
+        ],
+      },
+      after: {
+        badge: "بعد حل فرصكم • AFTER",
+        title: "إدارة رقمية مبنية على الأدوار",
+        subtitle: "نظام متكامل وسريع",
+        points: [
+          "تطبيق متعدد المستخدمين يربط العملاء والطهاة والإدارة",
+          "هيكلة بيانات واضحة (ERD) للطلبات وعناصر القائمة",
+          "نظام تحكم في الوصول (RBAC) يضمن أمان وكفاءة العمليات",
+        ],
+        footer: "نظام رقمي لتعزيز كفاءة المطاعم وتسريع سير العمل",
+      },
+    },
+    ctaWhatsAppMessage:
+      "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة تطبيق بيتزا باراديزو لإدارة المطاعم.",
+  },
+
+  skilling: {
+    id: "skilling",
+    title: "تطبيق المهارات — نظام إدارة التدريب المؤسسي (GBG)",
+    subtitle: "بوابة داخلية لأتمتة جلسات التدريب المؤسسي وتتبع تطور الموظفين.",
+    category: "Business Automation",
+    categoryKey: "business-automation",
+    featured: false,
+    cardImage: "",
+    cardImageAlt: "تطبيق المهارات المؤسسي",
+    tags: ["Power Apps", "Power Automate", "Outlook API"],
+    description:
+      "بناء بوابة داخلية مع مسارات عمل ديناميكية للموافقة وجدولة الاجتماعات تلقائياً باستخدام Outlook API، مما يسهل تتبع وتطوير أداء الموظفين وإدارة جلسات التدريب بكفاءة.",
+    heroImage: "",
+    heroImageAlt: "Skilling App Corporate Management System",
+    liveUrl: "",
+    demoVideo: "",
+    metaTelemetry: {
+      label: "TRAINING PORTAL",
+      status: "Active",
+      highlight: "أتمتة التدريب المؤسسي",
+    },
+    transformation: {
+      title: "من العشوائية إلى التدريب الموجه",
+      description:
+        "تنظيم مسارات تطوير الموظفين وجدولة جلسات التدريب بشكل آلي بالكامل.",
+      before: {
+        badge: "الوضع السابق • BEFORE",
+        title: "إدارة يدوية للتدريب",
+        subtitle: "جدولة معقدة ومتابعة ضعيفة",
+        points: [
+          "صعوبة تتبع تقدم الموظفين وتطورهم",
+          "إهدار الوقت في الجدولة اليدوية وإرسال الدعوات",
+          "غياب الفلترة الذكية لجلسات التدريب",
+        ],
+      },
+      after: {
+        badge: "بعد حل فرصكم • AFTER",
+        title: "بوابة تدريب ديناميكية",
+        subtitle: "أتمتة شاملة لعمليات التدريب",
+        points: [
+          "فلترة ديناميكية للجلسات بناءً على حالة التسجيل والتواريخ",
+          "مسارات عمل مؤتمتة للموافقات",
+          "ربط مباشر مع Outlook لجدولة الاجتماعات وإرسال الإشعارات",
+        ],
+        footer: "بوابة مؤسسية متكاملة لرفع كفاءة برامج التدريب",
+      },
+    },
+    ctaWhatsAppMessage:
+      "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة تطبيق المهارات وإدارة التدريب المؤسسي.",
+  },
+
+  memo: {
+    id: "memo",
+    title: "نظام المذكرات — أتمتة مسارات الموافقات المؤسسية",
+    subtitle:
+      "نظام مؤسسي شامل لإدارة المذكرات ومسارات عمل الموافقات متعددة المستويات.",
+    category: "Business Automation",
+    categoryKey: "business-automation",
+    featured: false,
+    cardImage: "",
+    cardImageAlt: "نظام أتمتة الموافقات",
+    tags: ["Power Apps", "Power Automate", "SharePoint"],
+    description:
+      "تطوير نظام مؤسسي متكامل من البداية للنهاية يتضمن مخططات ERD، سير عمل موافقات متعدد المستويات، ولوحة تحكم تنفيذية لتتبع الحالة في الوقت الفعلي وأرشفة المستندات لملفات PDF.",
+    heroImage: "",
+    heroImageAlt: "Automated Memo Approval System",
+    liveUrl: "",
+    demoVideo: "",
+    metaTelemetry: {
+      label: "WORKFLOW AUTOMATION",
+      status: "Enterprise",
+      highlight: "موافقات متعددة المستويات",
+    },
+    transformation: {
+      title: "من المعاملات الورقية إلى الموافقات الرقمية الفورية",
+      description:
+        "تسريع دورة اتخاذ القرار المؤسسي عبر أتمتة مسارات الموافقات والمذكرات.",
+      before: {
+        badge: "الوضع السابق • BEFORE",
+        title: "دورة موافقات بطيئة",
+        subtitle: "مذكرات ورقية وتأخير في القرارات",
+        points: [
+          "ضياع الوقت في نقل المذكرات بين الإدارات",
+          "صعوبة تتبع حالة الموافقة عبر المستويات الإدارية",
+          "أرشفة ورقية غير فعالة",
+        ],
+      },
+      after: {
+        badge: "بعد حل فرصكم • AFTER",
+        title: "مسارات عمل رقمية وذكية",
+        subtitle: "موافقات سلسة وموثقة",
+        points: [
+          "مسارات موافقة متعددة المستويات (Multi-Level Approval)",
+          "لوحة تحكم تنفيذية لتتبع الحالات في الوقت الفعلي",
+          "إنشاء تلقائي لملفات PDF وأرشفة مركزية في SharePoint",
+        ],
+        footer: "نظام مؤسسي لتسريع الاعتمادات وتوثيق القرارات",
+      },
+    },
+    ctaWhatsAppMessage:
+      "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة نظام أتمتة المذكرات والموافقات.",
+  },
+
+  fishbowl: {
+    id: "fishbowl",
+    title: "أتمتة فيشبول — الترحيل السحابي الشامل",
+    subtitle:
+      "حل سحابي متكامل لأتمتة عمليات الجرد وتقييم الموردين وتحليل المشاعر باستخدام الذكاء الاصطناعي.",
+    category: "Business Automation",
+    categoryKey: "business-automation",
+    featured: false,
+    cardImage: "",
+    cardImageAlt: "أتمتة فيشبول والترحيل السحابي",
+    tags: ["Power Automate", "AI Builder", "Slack API"],
+    description:
+      "أتمتة عمليات المخزون اليدوية وتقييم مخاطر الموردين بأسلوب رقمي، مع دمج AI Builder لتحليل المشاعر وإرسال إشعارات التصعيد التلقائية عبر Slack.",
+    heroImage: "",
+    heroImageAlt: "Fishbowl Automation Cloud Migration",
+    liveUrl: "",
+    demoVideo: "",
+    metaTelemetry: {
+      label: "CLOUD MIGRATION",
+      status: "AI Integrated",
+      highlight: "أتمتة المخزون بذكاء",
+    },
+    transformation: {
+      title: "من إدارة المخزون اليدوية إلى السحابة الذكية",
+      description:
+        "تطوير منظومة الجرد وتحليل أداء الموردين باستخدام قدرات الذكاء الاصطناعي.",
+      before: {
+        badge: "الوضع السابق • BEFORE",
+        title: "عمليات جرد يدوية",
+        subtitle: "بطء في معالجة التصدير وتقييم الموردين",
+        points: [
+          "إدخال يدوي لبيانات المخزون",
+          "غياب نظام واضح لتقييم المخاطر",
+          "تواصل بطيء وضعف في الاستجابة للتصعيدات",
+        ],
+      },
+      after: {
+        badge: "بعد حل فرصكم • AFTER",
+        title: "أتمتة سحابية مدعومة بالذكاء الاصطناعي",
+        subtitle: "استجابة فورية وتقييم ذكي",
+        points: [
+          "أتمتة معالجة التصدير من Fishbowl مع تصنيف مبني على قواعد العمل",
+          "تسجيل مخاطر الموردين (Vendor Risk Scoring)",
+          "تحليل المشاعر باستخدام الذكاء الاصطناعي مع إشعارات تصعيد فورية عبر Slack",
+        ],
+        footer: "حل سحابي ذكي لضمان سلاسة التوريد وتقييم الموردين",
+      },
+    },
+    ctaWhatsAppMessage:
+      "مرحباً فريق فرصكم، حابب أستفسر عن مشروع أتمتة فيشبول وتقييم الموردين بالذكاء الاصطناعي.",
+  },
+
+  it: {
+    id: "it",
+    title: "الوكيل الذكي لدعم تقنية المعلومات",
+    subtitle:
+      "وكيل ذكاء اصطناعي تخاطبي لأتمتة تذاكر الدعم الفني وتتبع وإدارة الأصول والمعدات.",
+    category: "Business Automation",
+    categoryKey: "business-automation",
+    featured: false,
+    cardImage: "",
+    cardImageAlt: "الوكيل الذكي لدعم تقنية المعلومات",
+    tags: ["Copilot Studio", "Power Automate", "SharePoint", "Power BI"],
+    description:
+      "تصميم ونشر وكيل ذكاء اصطناعي متكامل باستخدام Copilot Studio لإنشاء تذاكر الدعم تلقائياً وتنفيذ المهام، مع تطوير لوحات تحكم Power BI لمراقبة مؤشرات الأداء ودعم اتخاذ القرار.",
+    heroImage: "",
+    heroImageAlt: "Intelligent IT Support Agent",
+    liveUrl: "",
+    demoVideo: "",
+    metaTelemetry: {
+      label: "AI AGENT",
+      status: "Operational",
+      highlight: "دعم فني تخاطبي",
+    },
+    transformation: {
+      title: "من الدعم التقليدي إلى المساعد الذكي",
+      description:
+        "أتمتة إدارة بلاغات تقنية المعلومات باستخدام الذكاء الاصطناعي التخاطبي لتقديم دعم فوري.",
+      before: {
+        badge: "الوضع السابق • BEFORE",
+        title: "دعم فني تقليدي",
+        subtitle: "تكدس الطلبات وغياب البيانات الحية",
+        points: [
+          "إنشاء يدوي وبطيء لتذاكر الدعم الفني",
+          "استهلاك وقت الفريق في المهام الروتينية",
+          "صعوبة متابعة مؤشرات أداء الدعم (KPIs)",
+        ],
+      },
+      after: {
+        badge: "بعد حل فرصكم • AFTER",
+        title: "دعم ذاتي مدعوم بالذكاء الاصطناعي",
+        subtitle: "وكيل تخاطبي متكامل ورؤى تحليلية",
+        points: [
+          "إنشاء التذاكر وتنفيذ العمليات عبر واجهة محادثة ذكية (Conversational AI)",
+          "ربط متكامل مع SharePoint وأتمتة مسارات العمل",
+          "لوحات تحكم Power BI لمراقبة الأداء واتخاذ قرارات مبنية على البيانات",
+        ],
+        footer:
+          "نظام دعم آلي لتعزيز إنتاجية فريق تقنية المعلومات وخدمة الموظفين",
+      },
+    },
+    ctaWhatsAppMessage:
+      "مرحباً فريق فرصكم، حابب أستفسر عن الوكيل الذكي لدعم تقنية المعلومات وتتبع الأصول.",
+  },
+
   focuszone: {
     id: "focuszone",
     title: "FOCUSZONE — منظومة التعلّم الذكية",
     subtitle:
       "منظومة تعلّم مدعومة بالذكاء الاصطناعي تجمع بين جلسات التركيز الآمنة، المساعدة الذكية، التقييمات التكيفية، وتتبع تطور المهارات.",
-
     category: "Web Development",
-
     tags: [
       "Angular",
       "ASP.NET Core",
@@ -21,36 +278,27 @@ const projectsDetailsData = {
       "Qdrant",
       "Browser Extension",
     ],
-
     categoryKey: "web-development",
     featured: true,
-
     cardImage:
       "assets/images/ultra_premium_16_9_cinematic_project_showcase_thumbnail_for_focuszone_an_aicard.png",
     cardImageAlt: "FOCUSZONE — منظومة التعلّم الذكية",
-
     description:
       "منصة تعلم متكاملة مدعومة بالذكاء الاصطناعي تتيح للطلاب الدراسة من ملفات PDF وفيديوهات YouTube ومقالات الويب داخل بيئة تركيز آمنة. تجمع FocusZone بين AI Learning Assistant وRAG والتقييمات المولدة بالذكاء الاصطناعي وتحليل المهارات، مع Browser Extension يوفر AI Jail Mode لمنع المواقع المشتتة ومواقع الذكاء الاصطناعي أثناء جلسات الدراسة.",
-
     heroImage:
       "assets/images/ultra_premium_16_9_cinematic_website_hero_key_visual_for_focuszone_hero.png",
-
     heroImageAlt: "FocusZone AI Learning Platform",
-
     liveUrl: "",
     demoVideo: "assets/videos/Demo.mp4",
-
     metaTelemetry: {
       label: "AI LEARNING ECOSYSTEM",
       status: "Active Platform",
       highlight: "تعلم تكيفي مدعوم بالذكاء الاصطناعي",
     },
-
     transformation: {
       title: "من تجربة تعلم مشتتة إلى منظومة تعلم ذكية ومحمية",
       description:
         "مقارنة تشغيلية توضح الأثر الفعلي لمنظومة FocusZone في الجمع بين التعلم بالذكاء الاصطناعي، التركيز الآمن، التقييم المستمر، وتتبع تطور المهارات.",
-
       before: {
         badge: "الوضع السابق • BEFORE",
         title: "تعلم مشتت وتقييم محدود",
@@ -61,7 +309,6 @@ const projectsDetailsData = {
           "الاعتماد على نتائج الاختبارات العامة بدون تحليل تفصيلي لمستوى المهارات حسب الموضوع",
         ],
       },
-
       after: {
         badge: "بعد حل فرصكم • AFTER",
         title: "منظومة تعلم ذكية ومتكاملة",
@@ -72,12 +319,10 @@ const projectsDetailsData = {
           "AI-Generated Assessments تقيس أداء الطالب حسب الموضوع وتحدّث مستويات المهارات تلقائيًا",
           "تحليلات متكاملة للجلسات والاختبارات مع AI CV Generator وPersonalized Learning Roadmap",
         ],
-
         footer:
           "منظومة تعلم متكاملة تربط بين التركيز والتعلم والتقييم والتطور المهاري",
       },
     },
-
     ctaWhatsAppMessage:
       "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة منظومة FocusZone وحلول التعلم الذكية.",
   },
@@ -94,9 +339,10 @@ const projectsDetailsData = {
     tags: [
       ".NET 8",
       "ASP.NET Core MVC",
-      "Layered Architecture",
-      "Specification Pattern",
+      "Entity Framework Core",
       "ASP.NET Identity",
+      "AutoMapper",
+      "SQL Server",
     ],
     description:
       "نظام إدارة عيادات بمستوى مؤسسي (Enterprise-Grade) مبني باستخدام ASP.NET Core MVC ومعمارية طبقية صارمة (BLL, DAL, PL) لضمان قابلية الصيانة والتوسع. يعتمد على Dependency Injection وGeneric Repository وUnit of Work وSpecification Pattern لفصل منطق الأعمال عن الوصول للبيانات وإدارة الاستعلامات المعقدة بشكل منظم وقابل لإعادة الاستخدام. كما يستخدم ASP.NET Identity ونظام Role-Based Access Control مع Areas مستقلة للإدارة والطبيب والمريض والزائر لتوفير تجربة آمنة ومخصصة لكل نوع من المستخدمين.",
@@ -109,12 +355,10 @@ const projectsDetailsData = {
       status: "Active Pipeline",
       highlight: "فصل صارم بين طبقات العرض والأعمال والوصول للبيانات",
     },
-
     transformation: {
       title: "من نظام متشابك إلى منصة عيادات منظمة وقابلة للتوسع",
       description:
         "مقارنة تشغيلية توضح كيف ساهمت المعمارية الطبقية وأنماط التصميم في تنظيم إدارة العيادات وفصل المسؤوليات وتحسين قابلية التوسع والصيانة.",
-
       before: {
         badge: "الوضع السابق • BEFORE",
         title: "منطق أعمال واستعلامات مترابطة",
@@ -125,13 +369,12 @@ const projectsDetailsData = {
           "تكرار منطق الاستعلام والفلترة عند التعامل مع البيانات والعمليات المختلفة",
         ],
       },
-
       after: {
         badge: "بعد الحل • AFTER",
         title: "معمارية طبقية احترافية قابلة للتوسع",
         subtitle: "فصل واضح للمسؤوليات وأمان قائم على الأدوار",
         points: [
-          "فصل طبقات BLL وDAL وPL لعزل منطق الأعمال عن الوصول إلى البيانات وواجهة المستخدم",
+          "فصل طبقات BLL وDAL وPL لعزل منطق الأعمال عن الوصول للبيانات وواجهة المستخدم",
           "Areas مستقلة للإدارة والطبيب والمريض والزائر مع Role-Based Access Control",
           "Specification Pattern وGeneric Repository لتنظيم وإعادة استخدام منطق الاستعلامات المعقدة",
           "ASP.NET Identity لإدارة المصادقة والصلاحيات بشكل مركزي وآمن",
@@ -139,7 +382,6 @@ const projectsDetailsData = {
         footer: "نظام مصمم وفق مبادئ Clean Code وقابلية الصيانة والتوسع",
       },
     },
-
     ctaWhatsAppMessage:
       "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة نظام إدارة العيادات وحلول الأنظمة المؤسسية.",
   },
@@ -152,7 +394,6 @@ const projectsDetailsData = {
     category: "Web Development",
     categoryKey: "web-development",
     featured: false,
-
     cardImage: "assets/images/Watchify.png",
     cardImageAlt: "WATCHIFY — منصة المشاهدة الذكية",
     tags: [
@@ -209,77 +450,13 @@ const projectsDetailsData = {
       "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة منصة Watchify وتجارب التوصيات الذكية.",
   },
 
-  sanad: {
-    id: "sanad",
-    title: "سَنَد — محرك أتمتة سلاسل الإمداد",
-    subtitle:
-      "أتمتة متكاملة لدورات الشحن وتوليد البوالص لحظيًا ومزامنة المستودعات من غير تدخل بشري.",
-    category: "Business Automation",
-    categoryKey: "business-automation",
-    featured: false,
-
-    cardImage:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBtn7W6eqglCjePtAQhBikhDa2l0O5hxnBoaE94vIlaxNOUm27AL6VpJHRq1H6Zf6vPWcgLWPR-s4787z5YzQOix1A32bbSIZoa1IX7zS3imNH-sQyDReQtnMxANfTD5d782O2otbMC0SNVjTMm7LIFnBECcV0h63eJOwZDzbnvlD3pEvLiTYcln7_jkZcaJygH1znPsQl87pgs5iSGo7dy2DJLl4K1Y1ioWFjLPD3r0oQwmVh9kfAc",
-    cardImageAlt: "سَنَد — محرك أتمتة سلاسل الإمداد",
-    tags: [
-      "Automation",
-      "API Integration",
-      "Supply Chain",
-      "Workflow Automation",
-    ],
-    description:
-      "محرك أتمتة مؤسسي بيربط أنظمة الطلبات والمستودعات وشركات الشحن لحظيًا لمعالجة الطلبات وتوجيهها وإصدار بوالص الشحن تلقائيًا من غير تدخل بشري.",
-    heroImage:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBtn7W6eqglCjePtAQhBikhDa2l0O5hxnBoaE94vIlaxNOUm27AL6VpJHRq1H6Zf6vPWcgLWPR-s4787z5YzQOix1A32bbSIZoa1IX7zS3imNH-sQyDReQtnMxANfTD5d782O2otbMC0SNVjTMm7LIFnBECcV0h63eJOwZDzbnvlD3pEvLiTYcln7_jkZcaJygH1znPsQl87pgs5iSGo7dy2DJLl4K1Y1ioWFjLPD3r0oQwmVh9kfAc",
-    heroImageAlt: "Sanad Supply Chain Dispatch Engine",
-    liveUrl: "",
-    demoVideo: "",
-    metaTelemetry: {
-      label: "DISPATCH BOT • ACTIVE",
-      status: "API Realtime Mesh",
-      highlight: "معالجة فورية للبوالص",
-    },
-    transformation: {
-      title: "من الإدخال اليدوي إلى أتمتة سلاسل الإمداد",
-      description:
-        "مقارنة تشغيلية توضح الأثر الفعلي لمحرك سَنَد على كفاءة الشحن وإصدار البوالص.",
-      before: {
-        badge: "الوضع السابق • BEFORE",
-        title: "عمليات شحن يدوية بطيئة",
-        subtitle: "عمليات شحن وإدخال يدوية بطيئة",
-        points: [
-          "استغراق ساعات طويلة لتجهيز وإصدار البوالص",
-          "أخطاء بشرية متكررة في العناوين والبيانات",
-          "تضارب بين بيانات المخزون وشركات الشحن",
-        ],
-      },
-      after: {
-        badge: "بعد حل فرصكم • AFTER",
-        title: "محرك أتمتة لوجستي متكامل",
-        subtitle: "محرك أتمتة كامل وسلس",
-        points: [
-          "إصدار فوري للبوالص في غضون دقائق من الطلب",
-          "انعدام أخطاء العناوين عبر التحقق الآلي",
-          "مزامنة كاملة ولحظية مع المستودعات والناقلين",
-        ],
-        footer: "نتائج تشغيلية محققة في بيئة إنتاج فعلية",
-      },
-    },
-    ctaWhatsAppMessage:
-      "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة نظام سند لأتمتة سلاسل الإمداد.",
-  },
-
   freshcart: {
     id: "freshcart",
-
     title: "FRESHCART — منصة تجارة إلكترونية متكاملة",
-
     subtitle:
       "منصة تسوق إلكتروني عالية الأداء، ثنائية اللغة (عربي/إنجليزي)، تجمع بين سرعة العرض من جهة الخادم (SSR) وتجربة دفع مرنة بخيارين، مصممة لتقديم تجربة شراء سلسة بأقل احتكاك ممكن.",
-
     category: "تجارة إلكترونية • E-Commerce",
     categoryKey: "web-development",
-
     tags: [
       "Angular",
       "TypeScript",
@@ -292,40 +469,28 @@ const projectsDetailsData = {
       "Stripe",
       "JWT",
     ],
-
     description:
       "تطبيق تجارة إلكترونية متكامل (End-to-End) يغطي رحلة العميل بالكامل: من اكتشاف المنتجات والتصنيفات، مرورًا بالبحث اللحظي وإدارة السلة والمفضلة، وصولًا إلى نظام مصادقة آمن متعدد الخطوات، وخروج آمن (Checkout) بخيارين للدفع: أونلاين عبر Stripe أو الدفع عند الاستلام. مبني بالكامل على Angular مع تصيير من جهة الخادم (SSR) لتحسين الأداء والتحميل الأولي ودعم SEO.",
-
     heroImage: "assets/images/Ecommerce.png",
     heroImageAlt: "FreshCart E-Commerce Platform UI",
-
     cardImage: "assets/images/Ecommerce.png",
     cardImageAlt: "FreshCart E-Commerce Platform UI",
-
     liveUrl: "",
     demoVideo: "",
-
     featured: false,
-
     metaTelemetry: {
       label: "SSR RENDERING PIPELINE",
       status: "Active Pipeline",
       highlight: "Server-Side Rendering لتحسين الأداء وSEO",
     },
-
     transformation: {
       title: "من متجر بطيء ومجزأ إلى منصة تسوق متكاملة وسريعة",
-
       description:
         "مقارنة تشغيلية توضح الأثر الفعلي لمنصة FreshCart على تجربة التسوق والأداء التقني.",
-
       before: {
         badge: "الوضع السابق • BEFORE",
-
         title: "واجهات تقليدية بطيئة الظهور",
-
         subtitle: "تجربة تسوق مجزأة وغير متسقة",
-
         points: [
           "صفحات فارغة عند التحميل الأول تضعف الظهور في محركات البحث (SEO)",
           "عدادات السلة والمفضلة غير متزامنة وتحتاج تحديثًا يدويًا للصفحة",
@@ -333,142 +498,93 @@ const projectsDetailsData = {
           "واجهة أحادية اللغة بدون دعم حقيقي للعربية واتجاه RTL",
         ],
       },
-
       after: {
         badge: "بعد حل فرصكم • AFTER",
-
         title: "منصة تسوق متكاملة وسريعة الاستجابة",
-
         subtitle: "تجربة موحدة وتفاعلية من البداية للنهاية",
-
         points: [
           "تصيير من جهة الخادم (SSR) لتحسين التحميل الأولي ودعم SEO",
           "مزامنة لحظية لعدادات السلة والمفضلة عبر كل الصفحات فور أي تغيير",
           "نظام دفع مزدوج مرن: بوابة Stripe الآمنة أو الدفع عند الاستلام",
           "دعم كامل وتلقائي للعربية والإنجليزية مع تبديل اتجاه الواجهة RTL/LTR",
         ],
-
         footer: "نتائج تشغيلية محققة في بيئة إنتاج فعلية",
       },
     },
-
     ctaWhatsAppMessage:
       "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة منصة FreshCart وحلول التجارة الإلكترونية المتكاملة.",
   },
 
-  ofok: {
-    id: "ofok",
-    title: "أُفُق — إدارة موارد المؤسسة والموافقات",
+  hospital: {
+    id: "hospital",
+    title:
+      "HOSPITAL APPOINTMENT & PRESCRIPTION MANAGEMENT — إدارة مواعيد وروشتات المستشفى",
     subtitle:
-      "حوكمة مرنة ومؤتمتة لسلاسل الاعتمادات والموافقات الإدارية وفق اتفاقيات مستوى الخدمة (SLA).",
-    category: "Business Automation",
-    tags: ["Power Platform", "Power Automate", "Power Apps", "Dataverse"],
-    categoryKey: "business-automation",
-    featured: false,
-
-    cardImage:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDiqf0V3RJL6X0V25bYwacfDxS7OtsJiIsY_eg2VdKww12GHSLqKWQPDAzHAPd_hsULsaMoT6qnNiaAzl0iJf30b5JVEOxFY5QQrBqEKmV8wIeIEqbS58Amxq8ksDeYmXuGIDTNBYfQdJBRv6B1mTe5jo2JP9TT0KHQcXagJHH62k71bsKXt6z91D4nnquypffyt_b8nAh6jiDyLWF3UF8O9wuMyStWo8w3K1x9YhAT7CMsD3dLt-ma",
-    cardImageAlt: "أُفُق — إدارة موارد المؤسسة والموافقات",
-    description:
-      "نظام حوكمة وأتمتة مؤسسي مبني على تقنيات Power Platform لرقمنة مسارات اتخاذ القرار والاعتمادات المالية والإدارية بدقة وشفافية كاملة.",
-    heroImage:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDiqf0V3RJL6X0V25bYwacfDxS7OtsJiIsY_eg2VdKww12GHSLqKWQPDAzHAPd_hsULsaMoT6qnNiaAzl0iJf30b5JVEOxFY5QQrBqEKmV8wIeIEqbS58Amxq8ksDeYmXuGIDTNBYfQdJBRv6B1mTe5jo2JP9TT0KHQcXagJHH62k71bsKXt6z91D4nnquypffyt_b8nAh6jiDyLWF3UF8O9wuMyStWo8w3K1x9YhAT7CMsD3dLt-ma",
-    heroImageAlt: "Ofuq Workflow Governance Platform",
-    liveUrl: "",
-    demoVideo: "",
-    metaTelemetry: {
-      label: "POWER AUTOMATE",
-      status: "Cloud Native Governance",
-      highlight: "حوكمة سلاسل الاعتمادات",
-    },
-    transformation: {
-      title: "من الفوضى الورقية إلى حوكمة رقمية شفافة",
-      description:
-        "مقارنة تشغيلية توضح الأثر الفعلي لمنظومة أُفُق على سرعة الموافقات والشفافية المؤسسية.",
-      before: {
-        badge: "الوضع السابق • BEFORE",
-        title: "دورة مستندية يدوية",
-        subtitle: "دورة مستندية بطيئة ومشتتة",
-        points: [
-          "متابعة يدوية عبر الإيميلات والاتصالات المتكررة",
-          "غموض في تحديد المسؤول عن توقف المعاملة",
-          "تأخر حسم الطلبات لأيام وأسابيع",
-        ],
-      },
-      after: {
-        badge: "بعد حل فرصكم • AFTER",
-        title: "حوكمة رقمية مؤتمتة",
-        subtitle: "حوكمة رقمية متكاملة وسريعة",
-        points: [
-          "اعتماد بنقرة واحدة من الموبايل أو Teams",
-          "شفافية كاملة وتتبع لحظي لمسار المعاملة",
-          "تنبيهات استباقية للطلبات المتأخرة",
-        ],
-        footer: "منظومة مؤتمتة لإدارة مسارات الموافقات والاعتمادات",
-      },
-    },
-    ctaWhatsAppMessage:
-      "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة أفق لإدارة Power Platform وحوكمة الموافقات.",
-  },
-
-  nabd: {
-    id: "nabd",
-    title: "نبض — التحليل التنبؤي والعمليات الذكية",
-    subtitle:
-      "منظومة استشرافية تعتمد نماذج تعلّم متطورة للتنبؤ بانحرافات التشغيل ودعم القرارات الاستباقية.",
+      "تطبيق Healthcare متكامل باستخدام Microsoft Power Apps يربط بين المريض والدكتور، من حجز الموعد واختيار التخصص وحتى تسجيل التشخيص وإصدار الروشتة.",
     category: "Business Automation",
     categoryKey: "business-automation",
     featured: false,
 
-    cardImage:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAoQGBpnR5YOtx63m0ayiRLrEPzGeEGwJpeMf8aOkTrWiiC1RuM2DXWLbQC278Qf4cmQNAgUjNF1ubMzZHKRleulvpj0pJZE3LU4fisX_6zKqKedCwMOiq9hU-3Tb2F7Mm2lN2ss5norSsEj0EYs2bGqm-hezL62_YHMq7FDilW3G2HzqtmepKo-3DkVVh1C7hfPrdr-cPUIX48M44X1m_V95n545Ujsfc3nAjjMW-7j-bNj5mHREaS",
-    cardImageAlt: "نبض — التحليل التنبؤي والعمليات الذكية",
-    tags: [
-      "Machine Learning",
-      "Predictive Analytics",
-      "Data Analytics",
-      "Automation",
-    ],
+    cardImage: "assets/images/HospitalManagment.jpg",
+    cardImageAlt: "Hospital Appointment & Prescription Management App",
+
+    tags: ["Power Apps"],
+
     description:
-      "منصة تحليل استشرافي مبنية على نماذج Machine Learning لجمع وتحليل تدفقات بيانات التشغيل والتنبؤ بالأعطال والاختناقات مسبقاً لدعم قرارات الصيانة والتشغيل الاستباقية.",
-    heroImage:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAoQGBpnR5YOtx63m0ayiRLrEPzGeEGwJpeMf8aOkTrWiiC1RuM2DXWLbQC278Qf4cmQNAgUjNF1ubMzZHKRleulvpj0pJZE3LU4fisX_6zKqKedCwMOiq9hU-3Tb2F7Mm2lN2ss5norSsEj0EYs2bGqm-hezL62_YHMq7FDilW3G2HzqtmepKo-3DkVVh1C7hfPrdr-cPUIX48M44X1m_V95n545Ujsfc3nAjjMW-7j-bNj5mHREaS",
-    heroImageAlt: "Nabd Predictive AI Operations Engine",
+      "تطبيق مبني باستخدام Microsoft Power Apps لتسهيل رحلة المريض وإدارة المواعيد والوصفات الطبية داخل تجربة واحدة. يتيح للمريض تسجيل الدخول، اختيار التخصص والدكتور، استعراض الأيام والمواعيد المتاحة، وتأكيد الحجز مع توليد Booking Number خاص بكل حجز. ومن جانب الطبيب، يوفر التطبيق إدارة المرضى والحجوزات، تسجيل الـDiagnosis، إضافة الـMedications، وإنشاء الروشتة مع إمكانية Download & Print.",
+
+    heroImage: "assets/images/HospitalManagment.jpg",
+    heroImageAlt: "Hospital Appointment & Prescription Management Application",
+
     liveUrl: "",
-    demoVideo: "",
+    demoVideo:
+      "assets/videos/power_apps_studio_hospital_application_editing_and_3_more_pages.mp4",
+
     metaTelemetry: {
-      label: "PREDICTIVE MESH",
-      status: "ML Pipeline",
-      highlight: "استشراف ذكي للأعطال",
+      label: "HEALTHCARE BUSINESS APPLICATION",
+      status: "Application Demo",
+      highlight: "من حجز الموعد إلى إصدار الروشتة داخل تطبيق واحد",
     },
+
     transformation: {
-      title: "من الصيانة الطارئة إلى الاستشراف الذكي",
+      title: "من حجز يدوي متفرق إلى رحلة رعاية صحية رقمية",
+
       description:
-        "مقارنة تشغيلية توضح الأثر الفعلي لمنظومة نبض على كفاءة العمليات والحد من التوقفات غير المخططة.",
+        "مقارنة توضح كيف يجمع التطبيق رحلة المريض وإدارة الطبيب داخل Workflow واحد منظم باستخدام Microsoft Power Apps.",
+
       before: {
         badge: "الوضع السابق • BEFORE",
-        title: "صيانة استجابية تقليدية",
-        subtitle: "صيانة استجابية بعد وقوع الأعطال",
+        title: "رحلة حجز وإدارة متفرقة",
+        subtitle: "تعدد خطوات الحجز وصعوبة ربط بيانات المريض والطبيب والروشتة",
+
         points: [
-          "توقفات عمل مفاجئة وخسائر تشغيلية غير متوقعة",
-          "بيانات قياس مهملة في خوادم التخزين",
-          "صيانة دورية عشوائية تهدر الموارد",
+          "صعوبة الوصول إلى التخصصات والأطباء والمواعيد المتاحة بشكل منظم",
+          "تعدد خطوات الحجز وعدم وجود رحلة رقمية موحدة للمريض",
+          "فصل بيانات الكشف والتشخيص والأدوية عن عملية الحجز",
+          "الحاجة إلى إدارة ومتابعة بيانات المرضى والحجوزات بشكل أكثر تنظيماً",
         ],
       },
+
       after: {
         badge: "بعد حل فرصكم • AFTER",
-        title: "إدارة تشغيلية استباقية ذكية",
-        subtitle: "إدارة تشغيلية استباقية وذكية",
+        title: "Healthcare Workflow متكامل",
+        subtitle: "تجربة رقمية تربط المريض بالطبيب من الحجز حتى إصدار الروشتة",
+
         points: [
-          "تنبؤ مبكر بالانحرافات قبل وقوع التوقفات",
-          "استغلال البيانات في توليد رؤى تشغيلية",
-          "توجيه الصيانة للمعدات الأكثر عرضة للتعطل",
+          "اختيار التخصص ثم الطبيب ثم الأيام والمواعيد المتاحة فقط",
+          "تأكيد الحجز وتوليد Booking Number فريد لكل حجز",
+          "واجهة للطبيب لعرض المرضى ومتابعة حالة الحجوزات",
+          "تسجيل Diagnosis وإضافة Medications وإنشاء الروشتة",
+          "إمكانية Download & Print للروشتة بعد إصدارها",
         ],
-        footer: "منظومة تحليلية لدعم قرارات التشغيل والصيانة الاستباقية",
+
+        footer:
+          "تطبيق عملي يحاكي سيناريو Healthcare حقيقي باستخدام Microsoft Power Apps",
       },
     },
+
     ctaWhatsAppMessage:
-      "مرحباً فريق فرصكم، حابب أستفسر عن دراسة حالة نبض للتحليل التنبؤي والعمليات الذكية.",
+      "مرحباً فريق فرصكم، حابب أستفسر عن مشروع Hospital Appointment & Prescription Management باستخدام Microsoft Power Apps.",
   },
 };
 

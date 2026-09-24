@@ -198,7 +198,7 @@
        HERO SECTION (FAANG AESTHETIC WITH TECH MATRIX BACKDROP)
        ========================================================================== -->
     <section
-      class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden"
+      class="relative h-screen min-h-screen py-12 lg:py-16 flex items-center overflow-visible"
       style="
         background: linear-gradient(
           180deg,
@@ -253,36 +253,21 @@
         ></span>
       </div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <!-- Hero Text Content -->
-          <div class="lg:col-span-7 space-y-6 text-right">
+          <div class="lg:col-span-7 self-center space-y-6 text-right">
             <!-- Badge -->
-            <div
-              class="hero-enter inline-flex items-center gap-2 text-white text-xs font-bold px-4 py-2 rounded-full border shadow-md"
-              style="
-                --d: 0.05s;
-                background: rgba(8, 35, 58, 0.6);
-                backdrop-filter: blur(18px);
-                border-color: rgba(56, 189, 248, 0.12);
-              "
-            >
-              <span class="w-2 h-2 rounded-full bg-cyan pulse-glow-dot"></span>
-              <span>Technology That Creates Opportunities</span>
-              <span class="text-text-muted">|</span>
-              <span class="text-cyan">فرصكم</span>
+            <div class="badge hero-enter" style="--d: 0.05s">
+              فرصكم | Technology That Creates Opportunities
             </div>
 
             <!-- Headline -->
             <h1
-              class="hero-enter text-3xl sm:text-5xl lg:text-6xl font-black text-text-primary leading-[1.15] tracking-tight"
+              class="hero-enter text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary leading-[1.15]"
               style="--d: 0.15s"
             >
-              نحوّل الأفكار إلى
-              <span class="gradient-text animate-gradient-text"
-                >برمجيات، أنظمة ذكية</span
-              >
-              ومنتجات رقمية عالية الجودة.
+              نحوّل الأفكار إلى برمجيات، أنظمة ذكية ومُنتجات رقمية عالية الجودة.
             </h1>
 
             <!-- Subtitle -->
@@ -290,12 +275,9 @@
               class="hero-enter text-base sm:text-lg text-text-secondary font-medium leading-relaxed max-w-2xl"
               style="--d: 0.25s"
             >
-              إحنا مش مجرد شركة بتنفّذ مشاريع وخلاص. إحنا
-              <strong class="text-text-primary"
-                >فريق تطوير تقني عربي واعد</strong
-              >
-              بيعتمد على معايير هندسية عالمية عشان نبني حلول حقيقية قابلة للتوسع
-              والنمو.
+              نحن لسنا مجرد شركة تنفذ المشاريع مقابل المال. نحن فريق تطوير تقني
+              عربي واعد يعتمد على معايير هندسية عالمية لبناء حلول حقيقية قابلة
+              للتوسع والنمو المستقبلي.
             </p>
 
             <!-- Action Buttons -->
@@ -393,135 +375,15 @@
           </div>
 
           <!-- Hero Visual Showcase -->
-          <div class="hero-enter lg:col-span-5" style="--d: 0.3s">
-            <div
-              class="relative rounded-3xl p-1 bg-gradient-to-b from-cyan via-blue to-navy shadow-2xl glow-cyan overflow-hidden group"
-            >
-              <!-- Video Container -->
-              <div
-                class="relative aspect-video rounded-2xl overflow-hidden flex items-center justify-center"
-                style="
-                  background: #002442;
-                  border: 1px solid rgba(56, 189, 248, 0.12);
-                "
-              >
-                <!-- Ambient High-Tech HTML5 Video Loop -->
-                <video
-                  id="hero-tech-video"
-                  class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
-                  autoplay
-                  loop
-                  muted
-                  playsinline
-                  poster="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
-                >
-                  <source
-                    src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-screens-and-code-41539-large.mp4"
-                    type="video/mp4"
-                  />
-                  متصفحك لا يدعم تشغيل الفيديو.
-                </video>
-
-                <!-- Video Glass Overlay & Controls -->
-                <div
-                  class="absolute inset-0 flex flex-col justify-between p-5"
-                  style="
-                    background: linear-gradient(
-                      to top,
-                      #002442,
-                      rgba(0, 36, 66, 0.4),
-                      transparent
-                    );
-                  "
-                >
-                  <div class="flex items-center justify-between">
-                    <span
-                      class="font-bold text-cyan text-[11px] px-3 py-1 rounded-full border flex items-center gap-1.5"
-                      style="
-                        background: rgba(8, 35, 58, 0.8);
-                        backdrop-filter: blur(18px);
-                        border-color: rgba(56, 189, 248, 0.3);
-                      "
-                    >
-                      <span
-                        class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"
-                      ></span>
-                      <span>Forascom Tech Showcase</span>
-                    </span>
-                    <span class="text-xs text-text-muted font-mono"
-                      >01:45 HD</span
-                    >
-                  </div>
-
-                  <div class="flex items-center justify-between">
-                    <div>
-                      <h4 class="text-text-primary font-bold text-sm">
-                        هندسة الحلول والذكاء الاصطناعي
-                      </h4>
-                      <p class="text-text-secondary text-xs">
-                        شوف إزاي بنحوّل الأفكار لأنظمة رقمية
-                      </p>
-                    </div>
-                    <button
-                      onclick="toggleHeroVideoPlay()"
-                      class="w-12 h-12 rounded-full bg-cyan text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
-                    >
-                      <svg
-                        class="w-6 h-6 fill-current mr-0.5"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Video Sub-metrics Bar -->
-              <div
-                class="rounded-b-2xl p-4 grid grid-cols-3 gap-2 text-center text-xs"
-                style="
-                  background: rgba(8, 35, 58, 0.7);
-                  backdrop-filter: blur(18px);
-                  border-top: 1px solid rgba(56, 189, 248, 0.12);
-                "
-              >
-                <div
-                  class="p-2 rounded-lg"
-                  style="
-                    background: rgba(8, 35, 58, 0.8);
-                    border: 1px solid rgba(56, 189, 248, 0.12);
-                  "
-                >
-                  <div class="text-cyan font-black">Web Dev</div>
-                  <div class="text-[10px] text-text-muted">
-                    Custom Code & WP
-                  </div>
-                </div>
-                <div
-                  class="p-2 rounded-lg"
-                  style="
-                    background: rgba(8, 35, 58, 0.8);
-                    border: 1px solid rgba(56, 189, 248, 0.12);
-                  "
-                >
-                  <div class="text-cyan font-black">AI Automation</div>
-                  <div class="text-[10px] text-text-muted">Agents & LLMs</div>
-                </div>
-                <div
-                  class="p-2 rounded-lg"
-                  style="
-                    background: rgba(8, 35, 58, 0.8);
-                    border: 1px solid rgba(56, 189, 248, 0.12);
-                  "
-                >
-                  <div class="text-cyan font-black">Power Platform</div>
-                  <div class="text-[10px] text-text-muted">
-                    Low-Code Workflow
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div
+            class="hero-enter hero-image-area lg:col-span-5 flex items-center justify-center"
+            style="--d: 0.3s"
+          >
+            <img
+              src="assets/images/HomeHero.png"
+              alt="Forascom AI platform showcase"
+              class="hero-image"
+            />
           </div>
         </div>
       </div>
@@ -798,12 +660,6 @@
           <div
             class="lg:col-span-5 space-y-5 forascom-about-content order-2 lg:order-2"
           >
-            <div
-              class="forascom-about-badge inline-flex items-center gap-2 font-bold text-[11px] tracking-[0.22em] uppercase"
-            >
-              <span class="forascom-about-badge-line"></span>
-              <span>WHO WE ARE</span>
-            </div>
             <h2
               class="forascom-about-heading text-3xl sm:text-4xl font-black leading-tight"
             >
@@ -968,39 +824,25 @@
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div
+          class="tech-orbit-heading mx-auto mb-12 max-w-3xl text-center"
+        >
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight tracking-tight"
+          >
+            قدراتنا التقنية
+          </h2>
+          <p class="mt-5 text-slate-400 text-sm sm:text-base leading-relaxed">
+            منظومة متكاملة من التقنيات السحابية، الذكاء الاصطناعي، والأتمتة
+            تدور في مدار واحد متناغم لخدمة أهداف مشروعك وتحقيق أعلى معايير
+            الجودة والأداء.
+          </p>
+        </div>
+
+        <div
           class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center"
         >
-          <!-- Right Column in RTL: Header & Dynamic Technology Detail Card -->
-          <div class="lg:col-span-5 space-y-6 tech-orbit-content text-right">
-            <!-- Badge -->
-            <div
-              class="inline-flex items-center gap-2 bg-slate-900/90 text-cyan-400 text-xs font-bold px-4 py-1.5 rounded-full border border-cyan-500/30 shadow-[0_0_15px_rgba(6,182,212,0.15)]"
-            >
-              <span
-                class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"
-              ></span>
-              <span>TECHNOLOGIES ORBIT</span>
-            </div>
-
-            <!-- Main Arabic Dominant Heading -->
-            <h2
-              class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight tracking-tight"
-            >
-              قدراتنا التقنية <br />
-              <span
-                class="bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 bg-clip-text text-transparent"
-                >تطوف حول نجاح مشروعك</span
-              >
-            </h2>
-
-            <!-- Arabic Subtitle -->
-            <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-              منظومة متكاملة من التقنيات السحابية، الذكاء الاصطناعي، والأتمتة
-              تدور في مدار واحد متناغم لخدمة أهداف مشروعك وتحقيق أعلى معايير
-              الجودة والأداء.
-            </p>
-
-            <!-- Dynamic Technology Detail Card -->
+          <!-- Right Column in RTL: Dynamic Technology Detail Card -->
+          <div class="lg:col-span-5 tech-orbit-content">
             <div
               id="tech-orbit-dynamic-card"
               class="tech-orbit-dynamic-card bg-[#0F172A]/85 backdrop-blur-xl border border-cyan-500/20 rounded-3xl p-6 sm:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.5)] space-y-4 relative overflow-hidden transition-all duration-300"
@@ -1236,17 +1078,6 @@
         <div
           class="text-center max-w-3xl mx-auto mb-20 space-y-5 reveal-on-scroll reveal-blur"
         >
-          <div
-            class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full border"
-            style="
-              background: rgba(6, 182, 212, 0.15);
-              color: #06b6d4;
-              border-color: rgba(6, 182, 212, 0.2);
-            "
-          >
-            <span class="w-2 h-2 rounded-full bg-cyan animate-pulse"></span>
-            <span>OUR APPROACH</span>
-          </div>
           <h2 class="text-3xl sm:text-5xl font-black leading-tight">
             التكنولوجيا <span class="text-cyan">وسيلة</span> وليست الهدف
           </h2>
@@ -1402,9 +1233,6 @@
           class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal-on-scroll"
         >
           <div class="w-full text-center md:text-center">
-            <div class="portfolio-eyebrow">
-              معرض الأعمال | PORTFOLIO CASE STUDIES
-            </div>
             <h2 class="portfolio-title">مشاريع تم تنفيذها بحرفية</h2>
           </div>
         </div>
@@ -1757,6 +1585,7 @@
     <script src="assets/js/about-ecosystem.js"></script>
     <script src="assets/js/orbit.js"></script>
     <script src="assets/js/portfolio.js"></script>
+    <script src="assets/js/index.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

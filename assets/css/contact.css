@@ -73,7 +73,7 @@
 }
 
 .contact-page .contact-main {
-  padding: 2rem 0 5rem;
+  padding: calc(80px + 2rem) 0 5rem;
 }
 
 .contact-page .contact-main::before {

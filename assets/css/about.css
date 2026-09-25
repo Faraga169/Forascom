@@ -3251,6 +3251,17 @@ body > footer {
   background: rgba(23, 158, 220, 0.18);
 }
 
+.n-build-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.8rem;
+}
+
+.n-build-cta .n-build-solution-cta {
+  display: inline-flex;
+  text-decoration: none;
+}
+
 @media (max-width: 820px) {
   .n-build-solution-grid {
     grid-template-columns: 1fr;

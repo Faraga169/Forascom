@@ -298,7 +298,7 @@ const projectsDetailsData = {
 
     featured: false,
 
-    cardImage: "assets/images/Itsupport.jpg",
+    cardImage: "assets/images/ITsupport.jpg",
     cardImageAlt: "الوكيل الذكي لدعم تقنية المعلومات",
 
     tags: ["Copilot Studio", "Power Automate", "SharePoint", "Power BI"],
@@ -306,7 +306,7 @@ const projectsDetailsData = {
     description:
       "وكيل ذكاء اصطناعي مؤسسي مبني باستخدام Copilot Studio للتعامل مع طلبات الدعم عبر المحادثة، وإنشاء تذاكر الدعم وتنفيذ المهام التشغيلية، مع تكامل SharePoint وأتمتة سير العمل ولوحات Power BI لمتابعة مؤشرات الأداء.",
 
-    heroImage: "assets/images/Itsupport.jpg",
+    heroImage: "assets/images/ITsupport.jpg",
     heroImageAlt: "Intelligent IT Support Agent",
 
     liveUrl: "",

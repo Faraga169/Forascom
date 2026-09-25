@@ -655,7 +655,11 @@
 
       <section class="services-showcase" id="services-showcase">
         <div class="services-shell services-showcase__grid">
-          <article class="service-card service-card--web" data-service="web">
+          <a
+            href="portfolio.html?category=web-development"
+            class="service-card service-card--web"
+            data-service="web"
+          >
             <div class="service-card__content">
               <div class="service-card__header">
                 <span class="service-number">01</span>
@@ -675,14 +679,15 @@
                 </p>
                 <div class="service-tags">
                   <span>React</span>
-                  <span>Next.js</span>
-                  <span>Node.js</span>
+                  <span>Angular</span>
+                  <span>Asp.Net</span>
+                  <span>SqlServer</span>
                   <span>JavaScript</span>
                   <span>APIs</span>
                   <span>Responsive Design</span>
                 </div>
               </div>
-              <a href="contact.html" class="service-link">اكتشف الخدمة</a>
+              <span class="service-link">اكتشف الخدمة</span>
             </div>
             <div class="service-card__visual">
               <img
@@ -690,9 +695,10 @@
                 alt="تطوير المواقع والأنظمة"
               />
             </div>
-          </article>
+          </a>
 
-          <article
+          <a
+            href="portfolio.html?category=wordpress"
             class="service-card service-card--wordpress"
             data-service="wordpress"
           >
@@ -727,10 +733,11 @@
                 alt="WordPress وتجارب رقمية"
               />
             </div>
-            <a href="contact.html" class="service-link">اكتشف الخدمة</a>
-          </article>
+            <span class="service-link">اكتشف الخدمة</span>
+          </a>
 
-          <article
+          <a
+            href="portfolio.html?category=Automation-BussinessSolution"
             class="service-card service-card--power service-card--featured"
             data-service="power"
           >
@@ -762,10 +769,14 @@
                 alt="Power Platform والأتمتة"
               />
             </div>
-            <a href="contact.html" class="service-link">اكتشف الخدمة</a>
-          </article>
+            <span class="service-link">اكتشف الخدمة</span>
+          </a>
 
-          <article class="service-card service-card--ai" data-service="ai">
+          <a
+            href="portfolio.html?category=web-development"
+            class="service-card service-card--ai"
+            data-service="ai"
+          >
             <div class="service-card__header">
               <span class="service-number">04</span>
               <div class="service-icon">
@@ -796,10 +807,11 @@
                 alt="الذكاء الاصطناعي والتعلم الآلي"
               />
             </div>
-            <a href="contact.html" class="service-link">اكتشف الخدمة</a>
-          </article>
+            <span class="service-link">اكتشف الخدمة</span>
+          </a>
 
-          <article
+          <a
+            href="portfolio.html?category=Automation-BussinessSolution"
             class="service-card service-card--automation"
             data-service="automation"
           >
@@ -833,12 +845,12 @@
                 alt="الأتمتة وربط الأنظمة"
               />
             </div>
-            <a href="contact.html" class="service-link">اكتشف الخدمة</a>
-          </article>
+            <span class="service-link">اكتشف الخدمة</span>
+          </a>
         </div>
       </section>
 
-      <section class="service-process" id="service-process">
+      <!-- <section class="service-process" id="service-process">
         <div class="services-shell">
           <div class="section-heading section-heading--light">
             <h2>إزاي نحوّل احتياجك لحل؟</h2>
@@ -893,7 +905,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <section class="tech-ecosystem" id="tech-ecosystem">
         <div class="services-shell">
@@ -912,20 +924,32 @@
                     aria-hidden="true"
                   />React</span
                 >
-                <span class="tech-pill tech-pill--logo"
-                  ><img
-                    src="assets/images/image-removebg-preview (12).png"
+                <span class="tech-pill tech-pill--logo">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg"
                     alt=""
                     aria-hidden="true"
-                  />Next.js</span
-                >
-                <span class="tech-pill tech-pill--logo"
-                  ><img
-                    src="assets/images/nodejs-icon-svgrepo-com.svg"
+                  />
+                  SQL Server
+                </span>
+
+                <span class="tech-pill tech-pill--logo">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg"
                     alt=""
                     aria-hidden="true"
-                  />Node.js</span
-                >
+                  />
+                  ASP.NET
+                </span>
+
+                <span class="tech-pill tech-pill--logo">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  Angular
+                </span>
                 <span class="tech-pill tech-pill--logo"
                   ><img
                     src="assets/images/wordpress-color-svgrepo-com.svg"
@@ -1004,7 +1028,7 @@
               </div>
             </div>
 
-            <div class="tech-cluster">
+            <!-- <div class="tech-cluster">
               <h3>DATA & CLOUD</h3>
               <div class="tech-pill-row">
                 <span class="tech-pill tech-pill--logo"
@@ -1036,7 +1060,7 @@
                   />Databases</span
                 >
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </section>
@@ -1052,7 +1076,6 @@
           </div>
           <div class="services-cta__actions">
             <a href="contact.html" class="btn-cyan">ابدأ مشروعك</a>
-            <a href="contact.html" class="btn-secondary">تواصل معنا</a>
           </div>
         </div>
       </section>

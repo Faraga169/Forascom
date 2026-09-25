@@ -1,26 +1,20 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ar" dir="rtl" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>عن فرصكم — Forascom | نبني الحلول، ونصنع الفرص.</title>
-    <meta
-      name="description"
-      content="فرصكم — شركة تكنولوجيا عربية بتبني حلول برمجية وذكية عشان تحوّل الأفكار والاحتياجات لفرص حقيقية للنمو."
-    />
-    <meta
-      property="og:title"
-      content="عن فرصكم | Forascom — نبني الحلول، ونصنع الفرص."
-    />
-    <meta
-      property="og:description"
-      content="شركة تكنولوجيا عربية بتبني حلول برمجية وذكية عشان تحوّل الأفكار لفرص حقيقية للنمو."
-    />
-    <meta property="og:image" content="assets/images/Logo.jpeg" />
-    <meta property="og:type" content="website" />
 
-    <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>عن فرصكم — Forascom | نبني الحلول، ونصنع الفرص.</title>
+  <meta name="description"
+    content="فرصكم — شركة تكنولوجيا عربية بتبني حلول برمجية وذكية عشان تحوّل الأفكار والاحتياجات لفرص حقيقية للنمو." />
+  <meta property="og:title" content="عن فرصكم | Forascom — نبني الحلول، ونصنع الفرص." />
+  <meta property="og:description"
+    content="شركة تكنولوجيا عربية بتبني حلول برمجية وذكية عشان تحوّل الأفكار لفرص حقيقية للنمو." />
+  <meta property="og:image" content="assets/images/Logo.jpeg" />
+  <meta property="og:type" content="website" />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "AboutPage",
@@ -34,2137 +28,1585 @@
       }
     </script>
 
-    <!-- Tailwind CSS via CDN with Custom Palette Config -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              navy: "#011F47",
-              blue: "#1368B9",
-              cyan: "#19A9E5",
-              dark: "#001C41",
-              surface: "#F5F8FC",
-              muted: "#64748B",
-              bordercolor: "#E2E8F0",
-            },
-            fontFamily: {
-              arabic: ["IBM Plex Sans Arabic", "Cairo", "sans-serif"],
-              latin: ["Plus Jakarta Sans", "sans-serif"],
-            },
+  <!-- Tailwind CSS via CDN with Custom Palette Config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: "#011F47",
+            blue: "#1368B9",
+            cyan: "#19A9E5",
+            dark: "#001C41",
+            surface: "#F5F8FC",
+            muted: "#64748B",
+            bordercolor: "#E2E8F0",
+          },
+          fontFamily: {
+            arabic: ["IBM Plex Sans Arabic", "Cairo", "sans-serif"],
+            latin: ["Plus Jakarta Sans", "sans-serif"],
           },
         },
-      };
-    </script>
+      },
+    };
+  </script>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Cairo:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Cairo:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
 
-    <!-- Shared Stylesheet -->
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    <!-- About Page Stylesheet -->
-    <link rel="stylesheet" href="assets/css/about.css" />
+  <!-- Shared Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <!-- About Page Stylesheet -->
+  <link rel="stylesheet" href="assets/css/about.css" />
 
-    <!-- GSAP + ScrollTrigger -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
-      defer
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
-      defer
-    ></script>
-  </head>
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+</head>
 
-  <body
-    class="bg-navy text-text-primary font-arabic antialiased selection:bg-cyan selection:text-white"
-  >
-    <div class="n-page-background" aria-hidden="true">
-      <div class="n-hero-bg-grid"></div>
-      <canvas id="n-hero-canvas" class="n-hero-canvas"></canvas>
-    </div>
+<body class="bg-navy text-text-primary font-arabic antialiased selection:bg-cyan selection:text-white">
+  <div class="n-page-background" aria-hidden="true">
+    <div class="n-hero-bg-grid"></div>
+    <canvas id="n-hero-canvas" class="n-hero-canvas"></canvas>
+  </div>
 
-    <!-- Scroll Progress Indicator -->
-    <div id="scroll-progress" aria-hidden="true"></div>
-    ```html
-    <!-- ========================================================================== 
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+  ```html
+  <!-- ========================================================================== 
        HEADER & NAVIGATION BAR (MULTI-PAGE NAVIGATION) 
        ========================================================================== -->
-    <header
-      class="fixed top-0 left-0 right-0 z-50 glass-nav border-b"
-      style="border-color: rgba(56, 189, 248, 0.12)"
-    >
-      <div
-        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
-      >
-        <a href="index.html" class="flex items-center gap-3 group">
-          <img
-            src="assets/images/Logo.png"
-            alt="Forascom — فرصكم"
-            class="h-12 w-auto object-contain hover:scale-105 transition-transform"
-          />
-        </a>
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b" style="border-color: rgba(56, 189, 248, 0.12)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="assets/images/Logo.png" alt="Forascom — فرصكم"
+          class="h-12 w-auto object-contain hover:scale-105 transition-transform" />
+      </a>
 
-        <nav
-          class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-7 font-semibold text-sm"
-        >
-          <a
-            href="index.html"
-            class="nav-link hover:text-cyan-bright transition-colors"
-            >الرئيسية</a
-          >
+      <nav class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-7 font-semibold text-sm">
+        <a href="index.html" class="nav-link hover:text-cyan-bright transition-colors">الرئيسية</a>
 
-          <a
-            href="about.html"
-            aria-current="page"
-            class="nav-active nav-link hover:text-cyan-bright transition-colors"
-            >عن فرصكم</a
-          >
+        <a href="about.html" aria-current="page" class="nav-active nav-link hover:text-cyan-bright transition-colors">عن
+          فرصكم</a>
 
-          <a
-            href="services.html"
-            class="nav-link hover:text-cyan-bright transition-colors"
-            >خدماتنا</a
-          >
-          <a
-            href="portfolio.html"
-            class="nav-link hover:text-cyan-bright transition-colors"
-            >معرض الأعمال</a
-          >
-          <a
-            href="contact.html"
-            class="nav-link hover:text-cyan-bright transition-colors"
-            >تواصل معنا</a
-          >
-        </nav>
+        <a href="services.html" class="nav-link hover:text-cyan-bright transition-colors">خدماتنا</a>
+        <a href="portfolio.html" class="nav-link hover:text-cyan-bright transition-colors">معرض الأعمال</a>
+        <a href="contact.html" class="nav-link hover:text-cyan-bright transition-colors">تواصل معنا</a>
+      </nav>
 
-        <button
-          id="mobile-menu-btn"
-          class="md:hidden text-text-primary p-2 rounded-lg"
-          style="background: rgba(56, 189, 248, 0.1)"
-          aria-label="القائمة"
-        >
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
-      </div>
+      <button id="mobile-menu-btn" class="md:hidden text-text-primary p-2 rounded-lg"
+        style="background: rgba(56, 189, 248, 0.1)" aria-label="القائمة">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
 
-      <div
-        id="mobile-menu-container"
-        class="hidden md:hidden bg-navy-secondary border-b px-4 pt-2 pb-6 space-y-3 font-semibold text-text-secondary"
-        style="border-color: rgba(56, 189, 248, 0.12)"
-      >
-        <a
-          href="index.html"
-          class="block py-2 border-b hover:text-text-primary"
-          style="border-color: rgba(56, 189, 248, 0.12)"
-          >الرئيسية</a
-        >
+    <div id="mobile-menu-container"
+      class="hidden md:hidden bg-navy-secondary border-b px-4 pt-2 pb-6 space-y-3 font-semibold text-text-secondary"
+      style="border-color: rgba(56, 189, 248, 0.12)">
+      <a href="index.html" class="block py-2 border-b hover:text-text-primary"
+        style="border-color: rgba(56, 189, 248, 0.12)">الرئيسية</a>
 
-        <a
-          href="about.html"
-          aria-current="page"
-          class="block py-2 text-cyan font-bold border-b"
-          style="border-color: rgba(56, 189, 248, 0.12)"
-          >عن فرصكم</a
-        >
+      <a href="about.html" aria-current="page" class="block py-2 text-cyan font-bold border-b"
+        style="border-color: rgba(56, 189, 248, 0.12)">عن فرصكم</a>
 
-        <a
-          href="services.html"
-          class="block py-2 border-b hover:text-text-primary"
-          style="border-color: rgba(56, 189, 248, 0.12)"
-          >خدماتنا</a
-        >
-        <a
-          href="portfolio.html"
-          class="block py-2 border-b hover:text-text-primary"
-          style="border-color: rgba(56, 189, 248, 0.12)"
-          >معرض الأعمال</a
-        >
-        <a
-          href="contact.html"
-          class="block py-2 border-b hover:text-text-primary"
-          style="border-color: rgba(56, 189, 248, 0.12)"
-          >تواصل معنا</a
-        >
-      </div>
-    </header>
+      <a href="services.html" class="block py-2 border-b hover:text-text-primary"
+        style="border-color: rgba(56, 189, 248, 0.12)">خدماتنا</a>
+      <a href="portfolio.html" class="block py-2 border-b hover:text-text-primary"
+        style="border-color: rgba(56, 189, 248, 0.12)">معرض الأعمال</a>
+      <a href="contact.html" class="block py-2 border-b hover:text-text-primary"
+        style="border-color: rgba(56, 189, 248, 0.12)">تواصل معنا</a>
+    </div>
+  </header>
 
-    <!-- ==========================================================================
+  <!-- ==========================================================================
        SECTION 01: HERO (First Impression + Abstract Interactive Visual)
        ========================================================================== -->
-    <section class="n-hero about-hero-section">
-      <!-- Section-scoped background overlay -->
-      <div class="n-hero-bg-overlay" aria-hidden="true"></div>
+  <section class="n-hero about-hero-section">
+    <!-- Section-scoped background overlay -->
+    <div class="n-hero-bg-overlay" aria-hidden="true"></div>
 
-      <!-- Enlarged Background Visual Graphic -->
-      <div class="about-hero-bg-visual-wrapper" aria-hidden="true">
-        <div class="hero-visual-glow-aura"></div>
-        <img
-          class="about-hero-3d-img"
-          src="assets/images/About_Header.png"
-          alt="Forascom Software Architecture"
-        />
-      </div>
+    <!-- Enlarged Background Visual Graphic -->
+    <div class="about-hero-bg-visual-wrapper" aria-hidden="true">
+      <div class="hero-visual-glow-aura"></div>
+      <img class="about-hero-3d-img" src="assets/images/About_Header.png" alt="Forascom Software Architecture" />
+    </div>
 
-      <div
-        class="about-hero-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full min-h-screen flex items-center pt-24 pb-16"
-      >
-        <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <!-- Text Column (sitting in front of background visual) -->
-          <div class="lg:col-span-8 space-y-6 text-right relative z-10">
-            <!-- Title -->
-            <h1 class="n-hero-title">
-              <span class="block text-white">نبني الحلول،</span>
-              <span class="block" style="color: var(--color-blue-soft)"
-                >ونصنع الفرص.</span
-              >
-            </h1>
+    <div
+      class="about-hero-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full min-h-screen flex items-center pt-24 pb-16">
+      <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- Text Column (sitting in front of background visual) -->
+        <div class="lg:col-span-8 space-y-6 text-right relative z-10">
+          <!-- Title -->
+          <h1 class="n-hero-title">
+            <span class="block text-white">نبني الحلول،</span>
+            <span class="block" style="color: var(--color-blue-soft)">ونصنع الفرص.</span>
+          </h1>
 
-            <!-- Subtitle -->
-            <p class="n-hero-subtitle text-slate-300">
-              Forascom شركة تكنولوجيا عربية بتبني حلول برمجية وذكية عشان تحوّل
-              الأفكار لفرص حقيقية للنمو.
-            </p>
+          <!-- Subtitle -->
+          <p class="n-hero-subtitle text-slate-300">
+            Forascom شركة تكنولوجيا عربية بتبني حلول برمجية وذكية عشان تحوّل
+            الأفكار لفرص حقيقية للنمو.
+          </p>
 
-            <!-- Pills Row -->
-            <div
-              class="about-hero-pills flex flex-wrap items-center gap-3 pt-1"
-            >
-              <span>أداء مستدام</span>
-              <span>تطوير عربي</span>
-              <span>حلول ذكية</span>
-            </div>
+          <!-- Pills Row -->
+          <div class="about-hero-pills flex flex-wrap items-center gap-3 pt-1">
+            <span>أداء مستدام</span>
+            <span>تطوير عربي</span>
+            <span>حلول ذكية</span>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Bottom Scroll Arrow -->
-      <a href="#story" class="hero-scroll-indicator" aria-label="Scroll down">
-        <svg
-          width="26"
-          height="26"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#00d2ff"
-          stroke-width="2.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path d="M19 9l-7 7-7-7" />
-        </svg>
-      </a>
-    </section>
+    <!-- Bottom Scroll Arrow -->
+    <a href="#story" class="hero-scroll-indicator" aria-label="Scroll down">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 9l-7 7-7-7" />
+      </svg>
+    </a>
+  </section>
 
-    <!-- ======================================================================
+  <!-- ======================================================================
        SECTION 02: WHO WE ARE & STATS
        ====================================================================== -->
-    <section class="n-story who-we-are who-we-are-section" id="story">
-      <div class="n-story-bg" aria-hidden="true">
-        <div class="n-story-bg-grid"></div>
-        <div class="n-story-bg-glow"></div>
+  <section class="n-story who-we-are who-we-are-section" id="story">
+    <div class="n-story-bg" aria-hidden="true">
+      <div class="n-story-bg-grid"></div>
+      <div class="n-story-bg-glow"></div>
+    </div>
+
+    <div class="who-we-are-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- LEFT: Illustration -->
+      <div class="who-we-are-left">
+        <div class="who-we-are-visual" aria-hidden="true">
+          <img class="who-we-are-illustration" src="assets/images/image-removebg-preview.png"
+            alt="Forascom technology illustration" />
+          <div class="who-we-are-visual-glow" aria-hidden="true"></div>
+        </div>
       </div>
 
-      <div class="who-we-are-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- LEFT: Illustration -->
-        <div class="who-we-are-left">
-          <div class="who-we-are-visual" aria-hidden="true">
-            <img
-              class="who-we-are-illustration"
-              src="assets/images/image-removebg-preview.png"
-              alt="Forascom technology illustration"
-            />
-            <div class="who-we-are-visual-glow" aria-hidden="true"></div>
-          </div>
-        </div>
-
-        <!-- RIGHT: Content -->
-        <div class="who-we-are-right">
-          <header class="who-we-are-header">
-            <h3 class="who-we-are-title">
-              <span class="who-we-are-line"
-                >نحن نخلق <span class="who-we-are-white">الفرص</span></span
-              >
-              <span class="who-we-are-line who-we-are-line-secondary"
-                ><span class="cyan-text">من خلال التكنولوجيا</span></span
-              >
-            </h3>
-            <p class="who-we-are-description">
-              في فرصكم، بنبدأ من مبدأ أساسي: التكنولوجيا مجرد أداة، والمهم هو
-              فهم اللي شغلك محتاجه فعلًا. إحنا فريق بيجمع بين فهم السوق وخبرة
-              بناء الأنظمة الرقمية الحديثة. مش بنؤمن بالحلول الجاهزة أو المعقدة
-              اللي بتضيّع الوقت والموارد، لكن بنشتغل جنبًا إلى جنب مع عملائنا
-              عشان نفهم مشاكل الشغل ونحوّلها لأدوات سهلة وذكية ومباشرة، هدفها
-              تفتح فرص جديدة للنمو وتزود الكفاءة. شراكتنا بتبدأ من الفهم العميق،
-              ومش بتنتهي عند التنفيذ؛ بنكمّل معاك عشان نضمن نتائج ملموسة في
-              كفاءة شغلك وسرعة إنجازه.
-            </p>
-            <p style="margin-top: 1rem">
-              <a href="portfolio.html" class="who-we-are-cta"
-                >تعرف على قصة نجاحنا</a
-              >
-            </p>
-          </header>
-        </div>
+      <!-- RIGHT: Content -->
+      <div class="who-we-are-right">
+        <header class="who-we-are-header">
+          <h3 class="who-we-are-title">
+            <span class="who-we-are-line">نحن نخلق <span class="who-we-are-white">الفرص</span></span>
+            <span class="who-we-are-line who-we-are-line-secondary"><span class="cyan-text">من خلال
+                التكنولوجيا</span></span>
+          </h3>
+          <p class="who-we-are-description">
+            في فرصكم، بنبدأ من مبدأ أساسي: التكنولوجيا مجرد أداة، والمهم هو
+            فهم اللي شغلك محتاجه فعلًا. إحنا فريق بيجمع بين فهم السوق وخبرة
+            بناء الأنظمة الرقمية الحديثة. مش بنؤمن بالحلول الجاهزة أو المعقدة
+            اللي بتضيّع الوقت والموارد، لكن بنشتغل جنبًا إلى جنب مع عملائنا
+            عشان نفهم مشاكل الشغل ونحوّلها لأدوات سهلة وذكية ومباشرة، هدفها
+            تفتح فرص جديدة للنمو وتزود الكفاءة. شراكتنا بتبدأ من الفهم العميق،
+            ومش بتنتهي عند التنفيذ؛ بنكمّل معاك عشان نضمن نتائج ملموسة في
+            كفاءة شغلك وسرعة إنجازه.
+          </p>
+          <p style="margin-top: 1rem">
+            <a href="portfolio.html" class="who-we-are-cta">تعرف على قصة نجاحنا</a>
+          </p>
+        </header>
       </div>
-      <!-- نهاية who-we-are-inner -->
+    </div>
+    <!-- نهاية who-we-are-inner -->
 
-      <div class="forascom-about-metrics">
-        <div class="forascom-about-metric">
-          <span class="forascom-about-metric-icon" aria-hidden="true">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-              <circle cx="10" cy="7" r="4" />
-              <path d="M20 8v6M23 11h-6" />
-            </svg>
-          </span>
-          <span
-            class="forascom-about-metric-value"
-            data-target="20"
-            data-prefix="+"
-            >0</span
-          >
-          <span class="forascom-about-metric-label">أعضاء في الفريق</span>
-        </div>
-        <div class="forascom-about-metric">
-          <span class="forascom-about-metric-icon" aria-hidden="true">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path
-                d="M4 7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v9A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5v-9Z"
-              />
-              <path d="M8 9h8M8 13h8M8 17h5" />
-            </svg>
-          </span>
-          <span
-            class="forascom-about-metric-value"
-            data-target="30"
-            data-prefix="+"
-            >0</span
-          >
-          <span class="forascom-about-metric-label">مشاريع مكتملة</span>
-        </div>
-        <div class="forascom-about-metric">
-          <span class="forascom-about-metric-icon" aria-hidden="true">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M12 2v20M4 6l8-4 8 4-8 4-8-4Z" />
-              <path d="M4 10l8 4 8-4M4 14l8 4 8-4" />
-            </svg>
-          </span>
-          <span class="forascom-about-metric-value" data-target="2">0</span>
-          <span class="forascom-about-metric-label">منصات قيد التطوير</span>
-        </div>
-        <div class="forascom-about-metric">
-          <span class="forascom-about-metric-icon" aria-hidden="true">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M20 6 9 17l-5-5" />
-              <path d="M20 6v6M20 6h-6" />
-            </svg>
-          </span>
-          <span
-            class="forascom-about-metric-value"
-            data-target="100"
-            data-suffix="%"
-            >0</span
-          >
-          <span class="forascom-about-metric-label">جاهزية الإنتاج</span>
-        </div>
+    <div class="forascom-about-metrics">
+      <div class="forascom-about-metric">
+        <span class="forascom-about-metric-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="10" cy="7" r="4" />
+            <path d="M20 8v6M23 11h-6" />
+          </svg>
+        </span>
+        <span class="forascom-about-metric-value" data-target="20" data-prefix="+">0</span>
+        <span class="forascom-about-metric-label">أعضاء في الفريق</span>
       </div>
-    </section>
-    <!-- ==========================================================================
+      <div class="forascom-about-metric">
+        <span class="forascom-about-metric-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path
+              d="M4 7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v9A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5v-9Z" />
+            <path d="M8 9h8M8 13h8M8 17h5" />
+          </svg>
+        </span>
+        <span class="forascom-about-metric-value" data-target="30" data-prefix="+">0</span>
+        <span class="forascom-about-metric-label">مشاريع مكتملة</span>
+      </div>
+      <div class="forascom-about-metric">
+        <span class="forascom-about-metric-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M12 2v20M4 6l8-4 8 4-8 4-8-4Z" />
+            <path d="M4 10l8 4 8-4M4 14l8 4 8-4" />
+          </svg>
+        </span>
+        <span class="forascom-about-metric-value" data-target="2">0</span>
+        <span class="forascom-about-metric-label">منصات قيد التطوير</span>
+      </div>
+      <div class="forascom-about-metric">
+        <span class="forascom-about-metric-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M20 6 9 17l-5-5" />
+            <path d="M20 6v6M20 6h-6" />
+          </svg>
+        </span>
+        <span class="forascom-about-metric-value" data-target="100" data-suffix="%">0</span>
+        <span class="forascom-about-metric-label">جاهزية الإنتاج</span>
+      </div>
+    </div>
+  </section>
+  <!-- ==========================================================================
        SECTION 03: WHAT WE BUILD — THE FORASCOM BUILD SYSTEM
        ========================================================================== -->
-    <section class="n-build" id="build">
-      <div class="n-build-bg" aria-hidden="true">
-        <div class="n-build-bg-grid"></div>
-        <div class="n-build-bg-glow"></div>
+  <section class="n-build" id="build">
+    <div class="n-build-bg" aria-hidden="true">
+      <div class="n-build-bg-grid"></div>
+      <div class="n-build-bg-glow"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="n-build-solution-header">
+        <h2 class="n-build-solution-title">اختار الفكرة الأقرب لاحتياجك</h2>
+        <p class="n-build-solution-subtitle">
+          اختار الفكرة الأقرب لاحتياجك، وإحنا نساعدك تبني الحل المناسب لشغلك.
+        </p>
       </div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="n-build-solution-header">
-          <h2 class="n-build-solution-title">اختار الفكرة الأقرب لاحتياجك</h2>
-          <p class="n-build-solution-subtitle">
-            اختار الفكرة الأقرب لاحتياجك، وإحنا نساعدك تبني الحل المناسب لشغلك.
+      <div class="n-build-solution-grid">
+        <!-- 1. DIGITAL PRESENCE -->
+        <article class="n-build-solution-card n-build-solution-card--blue">
+          <div class="n-build-solution-icon" aria-hidden="true">▤</div>
+          <div class="n-build-solution-tag">DIGITAL PRESENCE</div>
+          <h3>محتاج موقع أو منصة رقمية؟</h3>
+          <div class="n-build-solution-subdesc">
+            خلي عملك يظهر بشكل احترافي على الإنترنت
+          </div>
+          <p>
+            نبني مواقع ومنصات رقمية تساعدك على عرض خدماتك، الوصول لعملائك، بيع
+            منتجاتك، أو تقديم تجربة رقمية متكاملة تناسب طبيعة عملك.
           </p>
-        </div>
 
-        <div class="n-build-solution-grid">
-          <!-- 1. DIGITAL PRESENCE -->
-          <article class="n-build-solution-card n-build-solution-card--blue">
-            <div class="n-build-solution-icon" aria-hidden="true">▤</div>
-            <div class="n-build-solution-tag">DIGITAL PRESENCE</div>
-            <h3>محتاج موقع أو منصة رقمية؟</h3>
-            <div class="n-build-solution-subdesc">
-              خلي عملك يظهر بشكل احترافي على الإنترنت
+          <span class="n-build-solution-list-label">ممكن نبني لك:</span>
+          <ul class="n-build-solution-list">
+            <li>Business Websites</li>
+            <li>Landing Pages</li>
+            <li>Online Stores</li>
+            <li>Custom Web Applications</li>
+          </ul>
+
+          <div class="n-build-solution-note">
+            <strong>يناسب:</strong> الشركات والمصانع والمتاجر والشركات الناشئة
+            ومقدمي الخدمات.
+          </div>
+
+          <div class="n-build-solution-bottom">
+            <span>التقنيات:</span>
+            <div class="n-build-solution-stack">
+              WordPress · WooCommerce · Full-Stack Web
             </div>
-            <p>
-              نبني مواقع ومنصات رقمية تساعدك على عرض خدماتك، الوصول لعملائك، بيع
-              منتجاتك، أو تقديم تجربة رقمية متكاملة تناسب طبيعة عملك.
-            </p>
+          </div>
 
-            <span class="n-build-solution-list-label">ممكن نبني لك:</span>
-            <ul class="n-build-solution-list">
-              <li>Business Websites</li>
-              <li>Landing Pages</li>
-              <li>Online Stores</li>
-              <li>Custom Web Applications</li>
-            </ul>
+        </article>
 
-            <div class="n-build-solution-note">
-              <strong>يناسب:</strong> الشركات والمصانع والمتاجر والشركات الناشئة
-              ومقدمي الخدمات.
+        <!-- 2. BUSINESS SYSTEMS -->
+        <article class="n-build-solution-card n-build-solution-card--cyan">
+          <div class="n-build-solution-icon" aria-hidden="true">▣</div>
+          <div class="n-build-solution-tag">BUSINESS SYSTEMS</div>
+          <h3>محتاج نظام يساعدك في إدارة شغلك؟</h3>
+          <div class="n-build-solution-subdesc">
+            حوّل طريقة شغلك إلى نظام مصمم على احتياجاتك
+          </div>
+          <p>
+            لو شغلك يعتمد على Excel، ملفات متفرقة، أو خطوات يدوية كثيرة، نبني
+            لك نظاماً مخصصاً يجمع عملياتك وبياناتك في مكان واحد ويساعد فريقك
+            على العمل بشكل أكثر تنظيماً.
+          </p>
+
+          <span class="n-build-solution-list-label">ممكن نبني لك:</span>
+          <ul class="n-build-solution-list">
+            <li>Management Systems</li>
+            <li>Internal Dashboards</li>
+            <li>Employee Portals</li>
+            <li>Custom Business Applications</li>
+          </ul>
+
+          <div class="n-build-solution-note">
+            <strong>ينظم:</strong> العملاء والطلبات والمخزون والموظفين
+            والعمليات والتقارير.
+          </div>
+
+          <div class="n-build-solution-bottom">
+            <span>التقنيات:</span>
+            <div class="n-build-solution-stack">
+              Full-Stack Web · Power Apps · Dataverse
             </div>
+          </div>
 
-            <div class="n-build-solution-bottom">
-              <span>التقنيات:</span>
-              <div class="n-build-solution-stack">
-                WordPress · WooCommerce · Full-Stack Web
-              </div>
+        </article>
+
+        <!-- 3. WORKFLOW AUTOMATION -->
+        <article class="n-build-solution-card n-build-solution-card--orange">
+          <div class="n-build-solution-icon" aria-hidden="true">⟡</div>
+          <div class="n-build-solution-tag">WORKFLOW AUTOMATION</div>
+          <h3>بتكرر نفس المهام كل يوم؟</h3>
+          <div class="n-build-solution-subdesc">
+            خلي المهام المتكررة تشتغل تلقائياً
+          </div>
+          <p>
+            لو فريقك بيكرر نفس الخطوات كل يوم، أو بينقل البيانات يدوياً بين
+            أكثر من نظام، نقدر نخلي العمليات دي تتم تلقائياً بدون تدخل يدوي في
+            كل مرة.
+          </p>
+
+          <span class="n-build-solution-list-label">ممكن نساعدك في:</span>
+          <ul class="n-build-solution-list">
+            <li>نقل البيانات تلقائياً بين الأنظمة</li>
+            <li>إرسال الإشعارات والرسائل</li>
+            <li>تحديث السجلات وإنشاء التقارير</li>
+            <li>متابعة الطلبات وربط الأنظمة</li>
+          </ul>
+
+          <div class="n-build-solution-note">
+            <strong>النتيجة:</strong> توفير وقت الفريق، وتقليل العمل اليدوي
+            والأخطاء، وتسريع العمليات.
+          </div>
+
+          <div class="n-build-solution-bottom">
+            <span>التقنيات:</span>
+            <div class="n-build-solution-stack">
+              n8n · Power Automate · APIs · Integrations
             </div>
+          </div>
 
-          </article>
+        </article>
 
-          <!-- 2. BUSINESS SYSTEMS -->
-          <article class="n-build-solution-card n-build-solution-card--cyan">
-            <div class="n-build-solution-icon" aria-hidden="true">▣</div>
-            <div class="n-build-solution-tag">BUSINESS SYSTEMS</div>
-            <h3>محتاج نظام يساعدك في إدارة شغلك؟</h3>
-            <div class="n-build-solution-subdesc">
-              حوّل طريقة شغلك إلى نظام مصمم على احتياجاتك
+        <!-- 4. PRACTICAL AI -->
+        <article class="n-build-solution-card n-build-solution-card--purple">
+          <div class="n-build-solution-icon" aria-hidden="true">✦</div>
+          <div class="n-build-solution-tag">PRACTICAL AI</div>
+          <h3>عايز تستخدم الذكاء الاصطناعي في شغلك؟</h3>
+          <div class="n-build-solution-subdesc">
+            حوّل الذكاء الاصطناعي إلى أداة تساعد فريقك
+          </div>
+          <p>
+            نبني حلول ذكاء اصطناعي عملية تساعدك على الوصول للمعلومات، التعامل
+            مع المستندات والبيانات، خدمة العملاء، وتحسين المهام التي تحتاج
+            وقتاً أو مجهوداً كبيراً.
+          </p>
+
+          <span class="n-build-solution-list-label">ممكن نبني لك:</span>
+          <ul class="n-build-solution-list">
+            <li>AI Chatbots &amp; Assistants</li>
+            <li>Smart Knowledge Search</li>
+            <li>Document Analysis</li>
+            <li>AI Agents &amp; Intelligent Data Processing</li>
+          </ul>
+
+          <div class="n-build-solution-note">
+            <strong>يساعدك في:</strong> البحث داخل مستندات الشركة، والرد على
+            العملاء، واستخراج المعلومات وتحليل الصور.
+          </div>
+
+          <div class="n-build-solution-bottom">
+            <span>التقنيات:</span>
+            <div class="n-build-solution-stack">
+              LLMs · RAG · AI Agents · Computer Vision
             </div>
-            <p>
-              لو شغلك يعتمد على Excel، ملفات متفرقة، أو خطوات يدوية كثيرة، نبني
-              لك نظاماً مخصصاً يجمع عملياتك وبياناتك في مكان واحد ويساعد فريقك
-              على العمل بشكل أكثر تنظيماً.
-            </p>
+          </div>
 
-            <span class="n-build-solution-list-label">ممكن نبني لك:</span>
-            <ul class="n-build-solution-list">
-              <li>Management Systems</li>
-              <li>Internal Dashboards</li>
-              <li>Employee Portals</li>
-              <li>Custom Business Applications</li>
-            </ul>
-
-            <div class="n-build-solution-note">
-              <strong>ينظم:</strong> العملاء والطلبات والمخزون والموظفين
-              والعمليات والتقارير.
-            </div>
-
-            <div class="n-build-solution-bottom">
-              <span>التقنيات:</span>
-              <div class="n-build-solution-stack">
-                Full-Stack Web · Power Apps · Dataverse
-              </div>
-            </div>
-
-          </article>
-
-          <!-- 3. WORKFLOW AUTOMATION -->
-          <article class="n-build-solution-card n-build-solution-card--orange">
-            <div class="n-build-solution-icon" aria-hidden="true">⟡</div>
-            <div class="n-build-solution-tag">WORKFLOW AUTOMATION</div>
-            <h3>بتكرر نفس المهام كل يوم؟</h3>
-            <div class="n-build-solution-subdesc">
-              خلي المهام المتكررة تشتغل تلقائياً
-            </div>
-            <p>
-              لو فريقك بيكرر نفس الخطوات كل يوم، أو بينقل البيانات يدوياً بين
-              أكثر من نظام، نقدر نخلي العمليات دي تتم تلقائياً بدون تدخل يدوي في
-              كل مرة.
-            </p>
-
-            <span class="n-build-solution-list-label">ممكن نساعدك في:</span>
-            <ul class="n-build-solution-list">
-              <li>نقل البيانات تلقائياً بين الأنظمة</li>
-              <li>إرسال الإشعارات والرسائل</li>
-              <li>تحديث السجلات وإنشاء التقارير</li>
-              <li>متابعة الطلبات وربط الأنظمة</li>
-            </ul>
-
-            <div class="n-build-solution-note">
-              <strong>النتيجة:</strong> توفير وقت الفريق، وتقليل العمل اليدوي
-              والأخطاء، وتسريع العمليات.
-            </div>
-
-            <div class="n-build-solution-bottom">
-              <span>التقنيات:</span>
-              <div class="n-build-solution-stack">
-                n8n · Power Automate · APIs · Integrations
-              </div>
-            </div>
-
-          </article>
-
-          <!-- 4. PRACTICAL AI -->
-          <article class="n-build-solution-card n-build-solution-card--purple">
-            <div class="n-build-solution-icon" aria-hidden="true">✦</div>
-            <div class="n-build-solution-tag">PRACTICAL AI</div>
-            <h3>عايز تستخدم الذكاء الاصطناعي في شغلك؟</h3>
-            <div class="n-build-solution-subdesc">
-              حوّل الذكاء الاصطناعي إلى أداة تساعد فريقك
-            </div>
-            <p>
-              نبني حلول ذكاء اصطناعي عملية تساعدك على الوصول للمعلومات، التعامل
-              مع المستندات والبيانات، خدمة العملاء، وتحسين المهام التي تحتاج
-              وقتاً أو مجهوداً كبيراً.
-            </p>
-
-            <span class="n-build-solution-list-label">ممكن نبني لك:</span>
-            <ul class="n-build-solution-list">
-              <li>AI Chatbots &amp; Assistants</li>
-              <li>Smart Knowledge Search</li>
-              <li>Document Analysis</li>
-              <li>AI Agents &amp; Intelligent Data Processing</li>
-            </ul>
-
-            <div class="n-build-solution-note">
-              <strong>يساعدك في:</strong> البحث داخل مستندات الشركة، والرد على
-              العملاء، واستخراج المعلومات وتحليل الصور.
-            </div>
-
-            <div class="n-build-solution-bottom">
-              <span>التقنيات:</span>
-              <div class="n-build-solution-stack">
-                LLMs · RAG · AI Agents · Computer Vision
-              </div>
-            </div>
-
-          </article>
-        </div>
-
-        <div class="n-build-cta">
-          <a href="portfolio.html" class="n-build-solution-cta">ابدأ مشروع</a>
-        </div>
+        </article>
       </div>
-    </section>
 
-    <!-- ==========================================================================
+      <div class="n-build-cta">
+        <a href="portfolio.html" class="n-build-solution-cta">ابدأ مشروع</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
        PREMIUM INTERACTIVE CLIENT JOURNEY TIMELINE (#how-we-work)
        ========================================================================== -->
-    <section
-      id="how-we-work"
-      class="py-28 relative overflow-hidden"
-      style="
+  <section id="how-we-work" class="py-28 relative overflow-hidden" style="
         background: linear-gradient(
           180deg,
           #001d33 0%,
           #00152a 50%,
           #001d33 100%
         );
-      "
-    >
-      <!-- Subtle Technical Background Ambient Accents -->
-      <div
-        class="absolute top-1/4 right-0 w-[600px] h-[600px] rounded-full blur-[150px] pointer-events-none"
-        style="
+      ">
+    <!-- Subtle Technical Background Ambient Accents -->
+    <div class="absolute top-1/4 right-0 w-[600px] h-[600px] rounded-full blur-[150px] pointer-events-none" style="
           background: radial-gradient(
             circle,
             rgba(6, 182, 212, 0.05) 0%,
             transparent 70%
           );
-        "
-      ></div>
-      <div
-        class="absolute bottom-1/4 left-0 w-[500px] h-[500px] rounded-full blur-[130px] pointer-events-none"
-        style="
+        "></div>
+    <div class="absolute bottom-1/4 left-0 w-[500px] h-[500px] rounded-full blur-[130px] pointer-events-none" style="
           background: radial-gradient(
             circle,
             rgba(56, 189, 248, 0.035) 0%,
             transparent 70%
           );
-        "
-      ></div>
+        "></div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <!-- 1. Section Header -->
-        <div
-          class="text-center max-w-3xl mx-auto mb-8 space-y-3 reveal-on-scroll reveal-blur"
-        >
-          <h2 class="text-3xl sm:text-5xl font-black leading-tight text-white">
-            رحلة واضحة من <span class="text-cyan">الفكرة إلى الإطلاق</span>
-          </h2>
-          <p class="text-slate-300 text-base leading-relaxed max-w-2xl mx-auto">
-            مش محتاج تعرف الحل التقني من البداية.شاركنا المشكلة أو الهدف، وإحنا نساعدك نحدد الطريق الأنسب.
-          </p>
-        </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <!-- 1. Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-8 space-y-3 reveal-on-scroll reveal-blur">
+        <h2 class="text-3xl sm:text-5xl font-black leading-tight text-white">
+          رحلة واضحة من <span class="text-cyan">الفكرة إلى الإطلاق</span>
+        </h2>
+        <p class="text-slate-300 text-base leading-relaxed max-w-2xl mx-auto">
+          مش محتاج تعرف الحل التقني من البداية.شاركنا المشكلة أو الهدف، وإحنا نساعدك نحدد الطريق الأنسب.
+        </p>
+      </div>
 
-        <!-- 2. Core Reassurance Statement -->
+      <!-- 2. Core Reassurance Statement -->
 
-        <!-- 4. Interactive Timeline Nav -->
-        <div class="max-w-5xl mx-auto mb-10 reveal-on-scroll">
-          <div class="journey-timeline-wrapper">
-            <!-- Timeline Track Bar with Dynamic Active Fill -->
-            <div class="journey-timeline-track" aria-hidden="true">
-              <div
-                class="journey-timeline-fill"
-                id="journey-timeline-progress"
-                style="width: 0%"
-              ></div>
-            </div>
-
-            <!-- 6 Milestone Tabs -->
-            <div
-              class="journey-milestones"
-              role="tablist"
-              aria-label="مراحل رحلة العميل مع Forascom"
-            >
-              <!-- Milestone 01 -->
-              <button
-                class="journey-milestone-btn is-active"
-                role="tab"
-                id="tab-step-1"
-                aria-selected="true"
-                aria-controls="panel-step-1"
-                onclick="selectJourneyStep(1)"
-                data-step-idx="1"
-              >
-                <div class="journey-node">
-                  <span class="journey-node-num">01</span>
-                  <span class="journey-node-check">
-                    <svg
-                      class="w-3.5 h-3.5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="3"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </span>
-                </div>
-                <div class="journey-milestone-labels">
-                  <span class="journey-milestone-en">DISCOVER</span>
-                  <span class="journey-milestone-ar">استكشاف</span>
-                </div>
-              </button>
-
-              <!-- Milestone 02 -->
-              <button
-                class="journey-milestone-btn"
-                role="tab"
-                id="tab-step-2"
-                aria-selected="false"
-                aria-controls="panel-step-2"
-                onclick="selectJourneyStep(2)"
-                data-step-idx="2"
-              >
-                <div class="journey-node">
-                  <span class="journey-node-num">02</span>
-                  <span class="journey-node-check">
-                    <svg
-                      class="w-3.5 h-3.5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="3"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </span>
-                </div>
-                <div class="journey-milestone-labels">
-                  <span class="journey-milestone-en">UNDERSTAND</span>
-                  <span class="journey-milestone-ar">فهم وتوافق</span>
-                </div>
-              </button>
-
-              <!-- Milestone 03 -->
-              <button
-                class="journey-milestone-btn"
-                role="tab"
-                id="tab-step-3"
-                aria-selected="false"
-                aria-controls="panel-step-3"
-                onclick="selectJourneyStep(3)"
-                data-step-idx="3"
-              >
-                <div class="journey-node">
-                  <span class="journey-node-num">03</span>
-                  <span class="journey-node-check">
-                    <svg
-                      class="w-3.5 h-3.5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="3"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </span>
-                </div>
-                <div class="journey-milestone-labels">
-                  <span class="journey-milestone-en">PLAN</span>
-                  <span class="journey-milestone-ar">خطة العمل</span>
-                </div>
-              </button>
-
-              <!-- Milestone 04 -->
-              <button
-                class="journey-milestone-btn"
-                role="tab"
-                id="tab-step-4"
-                aria-selected="false"
-                aria-controls="panel-step-4"
-                onclick="selectJourneyStep(4)"
-                data-step-idx="4"
-              >
-                <div class="journey-node">
-                  <span class="journey-node-num">04</span>
-                  <span class="journey-node-check">
-                    <svg
-                      class="w-3.5 h-3.5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="3"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </span>
-                </div>
-                <div class="journey-milestone-labels">
-                  <span class="journey-milestone-en">DESIGN</span>
-                  <span class="journey-milestone-ar">التصميم والاعتماد</span>
-                </div>
-              </button>
-
-              <!-- Milestone 05 -->
-              <button
-                class="journey-milestone-btn"
-                role="tab"
-                id="tab-step-5"
-                aria-selected="false"
-                aria-controls="panel-step-5"
-                onclick="selectJourneyStep(5)"
-                data-step-idx="5"
-              >
-                <div class="journey-node">
-                  <span class="journey-node-num">05</span>
-                  <span class="journey-node-check">
-                    <svg
-                      class="w-3.5 h-3.5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="3"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </span>
-                </div>
-                <div class="journey-milestone-labels">
-                  <span class="journey-milestone-en">BUILD</span>
-                  <span class="journey-milestone-ar">التطوير المرن</span>
-                </div>
-              </button>
-
-              <!-- Milestone 06 -->
-              <button
-                class="journey-milestone-btn"
-                role="tab"
-                id="tab-step-6"
-                aria-selected="false"
-                aria-controls="panel-step-6"
-                onclick="selectJourneyStep(6)"
-                data-step-idx="6"
-              >
-                <div class="journey-node node-final">
-                  <span class="journey-node-num">06</span>
-                  <span class="journey-node-check">
-                    <svg
-                      class="w-3.5 h-3.5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="3"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </span>
-                </div>
-                <div class="journey-milestone-labels">
-                  <span class="journey-milestone-en">LAUNCH</span>
-                  <span class="journey-milestone-ar">الإطلاق والدعم</span>
-                </div>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5. Active Step Detail Showcase -->
-        <div class="max-w-5xl mx-auto" id="journey-panels-container">
-          <!-- =================== PANEL 01 =================== -->
-          <div
-            class="journey-stage-panel is-active"
-            id="panel-step-1"
-            role="tabpanel"
-            aria-labelledby="tab-step-1"
-            data-step="1"
-          >
-            <div class="journey-panel-card">
-              <div class="journey-panel-header">
-                <div class="flex items-center gap-3">
-                  <span class="journey-panel-badge tag-free"
-                    >مجاناً بالكامل</span
-                  >
-                  <span class="journey-panel-phase"
-                    >01 DISCOVER · مرحلة الاستكشاف الأولى</span
-                  >
-                </div>
-                <span class="journey-panel-big-num" aria-hidden="true">01</span>
-              </div>
-
-              <div class="journey-panel-grid">
-                <!-- Left Narrative Area -->
-                <div class="journey-panel-narrative">
-                  <h3 class="journey-panel-title">تواصل معنا واشرح فكرتك</h3>
-                  <p class="journey-panel-desc">
-                    تواصل معنا عبر صفحة <strong>اتصل بنا</strong> في الموقع أو
-                    مباشرةً عبر <strong>WhatsApp وقنواتنا الرقمية</strong>. لست
-                    بحاجة إلى أي معرفة تقنية مسبقة أو تحديد نوع الأدوات
-                    والبرمجيات — فقط اشرح المشكلة التي تعطل عملك أو الفكرة التي
-                    تطمح لتحقيقها لنشاطك التجاري.
-                  </p>
-
-                  <div class="journey-key-takeaway">
-                    <div
-                      class="w-2 h-2 rounded-full bg-cyan shrink-0 mt-1"
-                    ></div>
-                    <p>
-                      <strong>المطلوب منك في هذه الخطوة:</strong> مشاركة فكرتك
-                      أو الفكرة بس، وإحنا نوجّهك للمسار الأنسب.
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Right Deliverables Box -->
-                <div class="journey-panel-deliverables-box">
-                  <div class="journey-deliv-title">
-                    <svg
-                      class="w-4 h-4 text-cyan"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span>ما الذي ستحصل عليه في هذه الخطوة:</span>
-                  </div>
-                  <ul class="journey-deliv-list">
-                    <li>
-                      <span class="jd-dot"></span>
-                      <div>
-                        استجابة وتأكيد استلام طلبك من فريقنا خلال
-                        <strong>24 ساعة</strong>
-                      </div>
-                    </li>
-                    <li>
-                      <span class="jd-dot"></span>
-                      <div>
-                        تحديد موعد ملائم لجلسة الاستشارة والاستكشاف المجانية
-                      </div>
-                    </li>
-                    <li>
-                      <span class="jd-dot"></span>
-                      <div>فهم أولي ومباشر لطبيعة الاحتياج وأولويات العمل</div>
-                    </li>
-                  </ul>
-
-                  <div class="journey-deliv-meta">
-                    <svg
-                      class="w-3.5 h-3.5 text-slate-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M12 6v6l4 2"
-                      />
-                    </svg>
-                    <span>الاستجابة: خلال 24 ساعة · بلا أي التزام</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Stepper Footer Navigation -->
-              <div class="journey-panel-footer">
-                <span class="text-xs text-slate-400 font-semibold"
-                  >الخطوة 1 من 6</span
-                >
-                <button class="journey-next-btn" onclick="selectJourneyStep(2)">
-                  <span>التالي: نفهم احتياجك</span>
-                  <svg
-                    class="w-4 h-4 rtl:rotate-180"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
+      <!-- 4. Interactive Timeline Nav -->
+      <div class="max-w-5xl mx-auto mb-10 reveal-on-scroll">
+        <div class="journey-timeline-wrapper">
+          <!-- Timeline Track Bar with Dynamic Active Fill -->
+          <div class="journey-timeline-track" aria-hidden="true">
+            <div class="journey-timeline-fill" id="journey-timeline-progress" style="width: 0%"></div>
           </div>
 
-          <!-- =================== PANEL 02 =================== -->
-          <div
-            class="journey-stage-panel"
-            id="panel-step-2"
-            role="tabpanel"
-            aria-labelledby="tab-step-2"
-            data-step="2"
-          >
-            <div class="journey-panel-card">
-              <div class="journey-panel-header">
-                <div class="flex items-center gap-3">
-                  <span class="journey-panel-badge tag-free">جلسة مجانية</span>
-                  <span class="journey-panel-phase"
-                    >02 UNDERSTAND · فهم وتوافق الأهداف</span
-                  >
-                </div>
-                <span class="journey-panel-big-num" aria-hidden="true">02</span>
-              </div>
-
-              <div class="journey-panel-grid">
-                <div class="journey-panel-narrative">
-                  <h3 class="journey-panel-title">نفهم احتياجك</h3>
-                  <p class="journey-panel-desc">
-                    <strong>هذه الجلسة ليست مكالمة بيعية</strong>، بل جلسة
-                    استكشاف مخصصة لفهم طبيعة نشاطك التجاري، واحتياجاتك اليومية،
-                    وأهدافك. مبدأنا الأساسي:
-                    <strong
-                      >نفهم المشكلة أولاً بعمق، ثم نحدد التقنية والحل الأنسب
-                      لاحقاً</strong
-                    >
-                    (سواء كان موقعاً، تطبيقاً، نظام إدارة، أو أتمتة وذكاء
-                    اصطناعي).
-                  </p>
-
-                  <div class="journey-key-takeaway">
-                    <div
-                      class="w-2 h-2 rounded-full bg-cyan shrink-0 mt-1"
-                    ></div>
-                    <p>
-                      <strong>قاعدة العمل:</strong> تحديد التقنية يأتي دائماً
-                      لخدمة أهداف عملك، وليس العكس.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="journey-panel-deliverables-box">
-                  <div class="journey-deliv-title">
-                    <svg
-                      class="w-4 h-4 text-cyan"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span>ما الذي ستحصل عليه في هذه الخطوة:</span>
-                  </div>
-                  <ul class="journey-deliv-list">
-                    <li>
-                      <span class="jd-dot"></span>
-                      <div>
-                        تحليل أولي لمتطلبات العمل وتحديد مسار الحل الأمثل
-                      </div>
-                    </li>
-                    <li>
-                      <span class="jd-dot"></span>
-                      <div>
-                        فهم واضح للأهداف، مؤشرات النجاح، والقيود التشغيلية
-                      </div>
-                    </li>
-                    <li>
-                      <span class="jd-dot"></span>
-                      <div>
-                        توصية بالاتجاه التقني الأنسب لاحتياجاتك وميزانيتك
-                      </div>
-                    </li>
-                  </ul>
-
-                  <div class="journey-deliv-meta">
-                    <svg
-                      class="w-3.5 h-3.5 text-slate-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M12 6v6l4 2"
-                      />
-                    </svg>
-                    <span
-                      >المدة: 30–45 دقيقة · عبر الإنترنت أو حضورياً ·
-                      مجانية</span
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="journey-panel-footer">
-                <button class="journey-prev-btn" onclick="selectJourneyStep(1)">
-                  <svg
-                    class="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M10 19l-7-7m0 0l7-7m-7 7h18"
-                    />
+          <!-- 6 Milestone Tabs -->
+          <div class="journey-milestones" role="tablist" aria-label="مراحل رحلة العميل مع Forascom">
+            <!-- Milestone 01 -->
+            <button class="journey-milestone-btn is-active" role="tab" id="tab-step-1" aria-selected="true"
+              aria-controls="panel-step-1" onclick="selectJourneyStep(1)" data-step-idx="1">
+              <div class="journey-node">
+                <span class="journey-node-num">01</span>
+                <span class="journey-node-check">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
                   </svg>
-                  <span>السابق: تواصل معنا</span>
-                </button>
-                <span class="text-xs text-slate-400 font-semibold"
-                  >الخطوة 2 من 6</span
-                >
-                <button class="journey-next-btn" onclick="selectJourneyStep(3)">
-                  <span>التالي: نحدد الحل والخطة</span>
-                  <svg
-                    class="w-4 h-4 rtl:rotate-180"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                </button>
+                </span>
               </div>
-            </div>
+              <div class="journey-milestone-labels">
+                <span class="journey-milestone-en">DISCOVER</span>
+                <span class="journey-milestone-ar">استكشاف</span>
+              </div>
+            </button>
+
+            <!-- Milestone 02 -->
+            <button class="journey-milestone-btn" role="tab" id="tab-step-2" aria-selected="false"
+              aria-controls="panel-step-2" onclick="selectJourneyStep(2)" data-step-idx="2">
+              <div class="journey-node">
+                <span class="journey-node-num">02</span>
+                <span class="journey-node-check">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+              </div>
+              <div class="journey-milestone-labels">
+                <span class="journey-milestone-en">UNDERSTAND</span>
+                <span class="journey-milestone-ar">فهم وتوافق</span>
+              </div>
+            </button>
+
+            <!-- Milestone 03 -->
+            <button class="journey-milestone-btn" role="tab" id="tab-step-3" aria-selected="false"
+              aria-controls="panel-step-3" onclick="selectJourneyStep(3)" data-step-idx="3">
+              <div class="journey-node">
+                <span class="journey-node-num">03</span>
+                <span class="journey-node-check">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+              </div>
+              <div class="journey-milestone-labels">
+                <span class="journey-milestone-en">PLAN</span>
+                <span class="journey-milestone-ar">خطة العمل</span>
+              </div>
+            </button>
+
+            <!-- Milestone 04 -->
+            <button class="journey-milestone-btn" role="tab" id="tab-step-4" aria-selected="false"
+              aria-controls="panel-step-4" onclick="selectJourneyStep(4)" data-step-idx="4">
+              <div class="journey-node">
+                <span class="journey-node-num">04</span>
+                <span class="journey-node-check">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+              </div>
+              <div class="journey-milestone-labels">
+                <span class="journey-milestone-en">DESIGN</span>
+                <span class="journey-milestone-ar">التصميم والاعتماد</span>
+              </div>
+            </button>
+
+            <!-- Milestone 05 -->
+            <button class="journey-milestone-btn" role="tab" id="tab-step-5" aria-selected="false"
+              aria-controls="panel-step-5" onclick="selectJourneyStep(5)" data-step-idx="5">
+              <div class="journey-node">
+                <span class="journey-node-num">05</span>
+                <span class="journey-node-check">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+              </div>
+              <div class="journey-milestone-labels">
+                <span class="journey-milestone-en">BUILD</span>
+                <span class="journey-milestone-ar">التطوير المرن</span>
+              </div>
+            </button>
+
+            <!-- Milestone 06 -->
+            <button class="journey-milestone-btn" role="tab" id="tab-step-6" aria-selected="false"
+              aria-controls="panel-step-6" onclick="selectJourneyStep(6)" data-step-idx="6">
+              <div class="journey-node node-final">
+                <span class="journey-node-num">06</span>
+                <span class="journey-node-check">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+              </div>
+              <div class="journey-milestone-labels">
+                <span class="journey-milestone-en">LAUNCH</span>
+                <span class="journey-milestone-ar">الإطلاق والدعم</span>
+              </div>
+            </button>
           </div>
-
-          <!-- =================== PANEL 03 =================== -->
-          <div
-            class="journey-stage-panel"
-            id="panel-step-3"
-            role="tabpanel"
-            aria-labelledby="tab-step-3"
-            data-step="3"
-          >
-            <div class="journey-panel-card">
-              <div class="journey-panel-header">
-                <div class="flex items-center gap-3">
-                  <span class="journey-panel-badge tag-plan">خطة شفافة</span>
-                  <span class="journey-panel-phase"
-                    >03 PLAN · خطة العمل ونطاق المشروع</span
-                  >
-                </div>
-                <span class="journey-panel-big-num" aria-hidden="true">03</span>
-              </div>
-
-              <div class="journey-panel-grid">
-                <div class="journey-panel-narrative">
-                  <h3 class="journey-panel-title">نحدد الحل والخطة</h3>
-                  <p class="journey-panel-desc">
-                    نعد لك خطة مشروع ومقترح عمل واضحاً ومفصلاً يتضمن:
-                    <strong>نطاق العمل (Scope)</strong>،
-                    <strong>الميزات والوظائف المطلوبة</strong>،
-                    <strong>الجدول الزمني التقديري</strong>، و<strong
-                      >هيكل التكلفة والدفعات المرحلية</strong
-                    >. هدفنا أن
-                    <strong
-                      >تعرف بالضبط ماذا ستدفع، وماذا ستحصل عليه قبل اتخاذ أي
-                      التزام</strong
-                    >.
-                  </p>
-
-                  <div class="journey-key-takeaway">
-                    <div
-                      class="w-2 h-2 rounded-full bg-cyan shrink-0 mt-1"
-                    ></div>
-                    <p>
-                      <strong>شفافية تامة:</strong> لا توجد أي بنود خفية أو
-                      تكاليف غير معلنة في خطة المشروع.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="journey-panel-deliverables-box">
-                  <div class="journey-deliv-title">
-                    <svg
-                      class="w-4 h-4 text-cyan"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span>ما الذي ستحصل عليه في هذه الخطوة:</span>
-                  </div>
-                  <ul class="journey-deliv-list">
-                    <li>
-                      <span class="jd-dot"></span>
-                      <div>
-                        مقترح عمل واضح يحدد تفاصيل النطاق والمخرجات المتوقعة
-                      </div>
-                    </li>
-                    <li>
-                      <span class="jd-dot"></span>
-                      <div>
-                        جدول زمني تقديري لمراحل التطوير والإنجاز الأسبوعي
-                      </div>
-                    </li>
-                    <li>
-                      <span class="jd-dot"></span>
-                      <div>
-                        هيكل دفعات مرحلي واضح يرتبط بكل مرحلة تسليم قبل البدء
-                      </div>
-                    </li>
-                  </ul>
-
-                  <div class="journey-deliv-meta">
-                    <svg
-                      class="w-3.5 h-3.5 text-slate-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M12 6v6l4 2"
-                      />
-                    </svg>
-                    <span>تسليم المقترح: خلال 2–3 أيام عمل من الجلسة</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="journey-panel-footer">
-                <button class="journey-prev-btn" onclick="selectJourneyStep(2)">
-                  <svg
-                    class="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M10 19l-7-7m0 0l7-7m-7 7h18"
-                    />
-                  </svg>
-                  <span>السابق: نفهم احتياجك</span>
-                </button>
-                <span class="text-xs text-slate-400 font-semibold"
-                  >الخطوة 3 من 6</span
-                >
-                <button class="journey-next-btn" onclick="selectJourneyStep(4)">
-                  <span>التالي: نصمم ونحصل على اعتمادك</span>
-                  <svg
-                    class="w-4 h-4 rtl:rotate-180"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- =================== PANEL 04 =================== -->
-          <div
-            class="journey-stage-panel"
-            id="panel-step-4"
-            role="tabpanel"
-            aria-labelledby="tab-step-4"
-            data-step="4"
-          >
-            <div class="journey-panel-card">
-              <div class="journey-panel-header">
-                <div class="flex items-center gap-3">
-                  <span class="journey-panel-badge tag-payment"
-                    >دفعة البدء</span
-                  >
-                  <span class="journey-panel-phase"
-                    >04 DESIGN · التصميم والاعتماد المسبق</span
-                  >
-                </div>
-                <span class="journey-panel-big-num" aria-hidden="true">04</span>
-              </div>
-
-              <div class="journey-panel-grid">
-                <div class="journey-panel-narrative">
-                  <h3 class="journey-panel-title">نصمم ونحصل على اعتمادك</h3>
-                  <p class="journey-panel-desc">
-                    قبل أن نكتب سطراً برمجياً واحداً، نصمم
-                    <strong>الواجهات وتجربة المستخدم (UI/UX Mockups)</strong>
-                    لتشاهد كيف سيبدو المنتج وتجرب مسار الاستخدام بنفسك. بعد
-                    مراجعتك واعتمادك للتصميم وخطة الانطلاق، نبدأ مرحلة التطوير
-                    الفعلي بسداد الدفعة الأولى.
-                  </p>
-
-                  <!-- Reassuring Checkpoint Banner -->
-                  <div class="journey-checkpoint-banner">
-                    <div class="journey-checkpoint-icon">
-                      <svg
-                        class="w-5 h-5 text-amber-400"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <strong
-                        class="text-amber-300 block text-xs sm:text-sm mb-0.5"
-                        >ضمان التحكم والشفافية:</strong
-                      >
-                      <p class="text-slate-300 text-xs leading-relaxed m-0">
-                        لا يبدأ أي تطوير برمجي مدفوع قبل اعتمادك الرسمي للتصميم
-                        والخطة المتفق عليها.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="journey-panel-deliverables-box">
-                  <div class="journey-deliv-title">
-                    <svg
-                      class="w-4 h-4 text-cyan"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span>ما الذي ستحصل عليه في هذه الخطوة:</span>
-                  </div>
-                  <ul class="journey-deliv-list">
-                    <li>
-                      <span class="jd-dot"></span>
-                      <div>
-                        تصاميم واجهات المستخدم (UI/UX) ومسار التنقل الكامل
-                      </div>
-                    </li>
-                    <li>
-                      <span class="jd-dot"></span>
-                      <div>
-                        نموذج تفاعلي لتجربة الشكل والوظائف الحيوية قبل التطوير
-                      </div>
-                    </li>
-                    <li>
-                      <span class="jd-dot"></span>
-                      <div>
-                        خطة عمل تفصيلية واعتماد محطات التسليم (Milestones)
-                      </div>
-                    </li>
-                  </ul>
-
-                  <div class="journey-deliv-meta">
-                    <svg
-                      class="w-3.5 h-3.5 text-slate-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M12 6v6l4 2"
-                      />
-                    </svg>
-                    <span>الاعتماد أولاً · تحكم كامل في مخرجات التصميم</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="journey-panel-footer">
-                <button class="journey-prev-btn" onclick="selectJourneyStep(3)">
-                  <svg
-                    class="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M10 19l-7-7m0 0l7-7m-7 7h18"
-                    />
-                  </svg>
-                  <span>السابق: نحدد الحل والخطة</span>
-                </button>
-                <span class="text-xs text-slate-400 font-semibold"
-                  >الخطوة 4 من 6</span
-                >
-                <button class="journey-next-btn" onclick="selectJourneyStep(5)">
-                  <span>التالي: نبني ونطوّر على مراحل</span>
-                  <svg
-                    class="w-4 h-4 rtl:rotate-180"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- =================== PANEL 05 =================== -->
-          <div
-            class="journey-stage-panel"
-            id="panel-step-5"
-            role="tabpanel"
-            aria-labelledby="tab-step-5"
-            data-step="5"
-          >
-            <div class="journey-panel-card">
-              <div class="journey-panel-header">
-                <div class="flex items-center gap-3">
-                  <span class="journey-panel-badge tag-payment"
-                    >تسليم ودفع تدريجي</span
-                  >
-                  <span class="journey-panel-phase"
-                    >05 BUILD · التطوير المرن (Agile Sprints)</span
-                  >
-                </div>
-                <span class="journey-panel-big-num" aria-hidden="true">05</span>
-              </div>
-
-              <div class="journey-panel-grid">
-                <div class="journey-panel-narrative">
-                  <h3 class="journey-panel-title">نبني ونطوّر على مراحل</h3>
-                  <p class="journey-panel-desc">
-                    نعتمد منهجية <strong>Agile</strong> المرنة؛ حيث نقسم المشروع
-                    إلى دورات تطوير قصيرة (Sprints). في نهاية كل مرحلة، نتيح لك
-                    تجربة الميزات المنجزة عملياً على بيئة تجريبية حية، ومع
-                    اعتمادك لكل مرحلة يتم سداد قيمتها والانتقال فوراً للميزات
-                    التالية.
-                  </p>
-
-                  <!-- Agile Loop Visual -->
-                  <div class="journey-agile-loop">
-                    <div class="journey-agile-loop-title">
-                      دورة التطوير والمراجعة المستمرة:
-                    </div>
-                    <div class="journey-agile-steps">
-                      <div class="journey-agile-item">
-                        <div class="journey-agile-icon">
-                          <svg
-                            class="w-4 h-4 text-cyan"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                            />
-                          </svg>
-                        </div>
-                        <strong>1. بناء</strong>
-                        <span>برمجة الميزات</span>
-                      </div>
-
-                      <div class="journey-agile-arrow">
-                        <svg
-                          class="w-3.5 h-3.5 text-cyan/50 rtl:rotate-180"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"
-                          />
-                        </svg>
-                      </div>
-
-                      <div class="journey-agile-item">
-                        <div class="journey-agile-icon">
-                          <svg
-                            class="w-4 h-4 text-cyan"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                            />
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                            />
-                          </svg>
-                        </div>
-                        <strong>2. معاينة</strong>
-                        <span>تجربة حية</span>
-                      </div>
-
-                      <div class="journey-agile-arrow">
-                        <svg
-                          class="w-3.5 h-3.5 text-cyan/50 rtl:rotate-180"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"
-                          />
-                        </svg>
-                      </div>
-
-                      <div class="journey-agile-item">
-                        <div class="journey-agile-icon">
-                          <svg
-                            class="w-4 h-4 text-cyan"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                            />
-                          </svg>
-                        </div>
-                        <strong>3. مراجعة</strong>
-                        <span>اعتماد وسداد</span>
-                      </div>
-
-                      <div class="journey-agile-arrow">
-                        <svg
-                          class="w-3.5 h-3.5 text-cyan/50 rtl:rotate-180"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"
-                          />
-                        </svg>
-                      </div>
-
-                      <div class="journey-agile-item">
-                        <div class="journey-agile-icon">
-                          <svg
-                            class="w-4 h-4 text-cyan"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-                            />
-                          </svg>
-                        </div>
-                        <strong>4. تكرار</strong>
-                        <span>المرحلة التالية</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="journey-panel-deliverables-box">
-                  <div class="journey-deliv-title">
-                    <svg
-                      class="w-4 h-4 text-cyan"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span>ما الذي ستحصل عليه في هذه الخطوة:</span>
-                  </div>
-                  <ul class="journey-deliv-list">
-                    <li>
-                      <span class="jd-dot"></span>
-                      <div>ميزات برمجية منجزة ومختبرة وقابلة للتجربة الحية</div>
-                    </li>
-                    <li>
-                      <span class="jd-dot"></span>
-                      <div>
-                        تقرير دوري يوضح المنجز وخطة العمل للمرحلة المقبلة
-                      </div>
-                    </li>
-                    <li>
-                      <span class="jd-dot"></span>
-                      <div>
-                        اجتماعات متابعة منتظمة لضمان التوافق وتضمين الملاحظات
-                      </div>
-                    </li>
-                  </ul>
-
-                  <div class="journey-deliv-meta">
-                    <svg
-                      class="w-3.5 h-3.5 text-slate-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M12 6v6l4 2"
-                      />
-                    </svg>
-                    <span>تطوير تدريجي · تجربة حية لكل مرحلة قبل السداد</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="journey-panel-footer">
-                <button class="journey-prev-btn" onclick="selectJourneyStep(4)">
-                  <svg
-                    class="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M10 19l-7-7m0 0l7-7m-7 7h18"
-                    />
-                  </svg>
-                  <span>السابق: نصمم ونحصل على اعتمادك</span>
-                </button>
-                <span class="text-xs text-slate-400 font-semibold"
-                  >الخطوة 5 من 6</span
-                >
-                <button class="journey-next-btn" onclick="selectJourneyStep(6)">
-                  <span>التالي: نطلق ونكمل معاك</span>
-                  <svg
-                    class="w-4 h-4 rtl:rotate-180"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- =================== PANEL 06 =================== -->
-          <div
-            class="journey-stage-panel"
-            id="panel-step-6"
-            role="tabpanel"
-            aria-labelledby="tab-step-6"
-            data-step="6"
-          >
-            <div class="journey-panel-card step-final-card">
-              <div class="journey-panel-header">
-                <div class="flex items-center gap-3">
-                  <span class="journey-panel-badge tag-launch"
-                    >🚀 إطلاق وضمان</span
-                  >
-                  <span class="journey-panel-phase"
-                    >06 LAUNCH &amp; SUPPORT · الإطلاق السحابي والدعم
-                    المستمر</span
-                  >
-                </div>
-                <span class="journey-panel-big-num final-num" aria-hidden="true"
-                  >06</span
-                >
-              </div>
-
-              <div class="journey-panel-grid">
-                <div class="journey-panel-narrative">
-                  <h3 class="journey-panel-title">نطلق ونكمل معاك</h3>
-                  <p class="journey-panel-desc">
-                    علاقتنا لا تنتهي عند الإطلاق. بعد اكتمال التطوير واجتياز
-                    اختبارات الأداء والأمان، نقوم بـ
-                    <strong
-                      >النشر والإطلاق السحابي الشامل (Full Deployment)</strong
-                    >، ونسلمك كامل الشيفرة المصدرية (Source Code) وبيانات
-                    الإدارة، ونبدأ معك فترة الدعم الفني والصيانة لضمان استقرار
-                    العمل.
-                  </p>
-
-                  <!-- Warranty Banner -->
-                  <div class="journey-warranty-box">
-                    <div class="journey-warranty-icon">
-                      <svg
-                        class="w-5 h-5 text-cyan"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <strong
-                        class="text-cyan-300 block text-xs sm:text-sm mb-0.5"
-                        >6 أشهر دعم وصيانة فنية مجانية:</strong
-                      >
-                      <p class="text-slate-300 text-xs leading-relaxed m-0">
-                        نلتزم بمتابعة استقرار النظام بعد الإطلاق ومعالجة أي
-                        أخطاء برمجية أو ملاحظات تقنية مجاناً وبدون أي تكاليف
-                        إضافية طوال فترة الضمان.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="journey-panel-deliverables-box">
-                  <div class="journey-deliv-title">
-                    <svg
-                      class="w-4 h-4 text-cyan"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span>ما الذي ستحصل عليه في هذه الخطوة:</span>
-                  </div>
-                  <ul class="journey-deliv-list">
-                    <li>
-                      <span class="jd-dot"></span>
-                      <div>
-                        نظام حي يعمل بكفاءة على بيئة الإنتاج السحابية (Full
-                        Cloud Deployment)
-                      </div>
-                    </li>
-                    <li>
-                      <span class="jd-dot"></span>
-                      <div>
-                        تسليم كامل للشيفرة المصدرية (Source Code)، الحسابات،
-                        ودليل التوثيق
-                      </div>
-                    </li>
-                    <li>
-                      <span class="jd-dot"></span>
-                      <div>
-                        تدريب عملي لفريقك على إدارة واستخدام النظام بسهولة
-                      </div>
-                    </li>
-                    <li>
-                      <span class="jd-dot"></span>
-                      <div>
-                        6 أشهر دعم وصيانة فنية مجانية لمعالجة أي ملاحظات
-                      </div>
-                    </li>
-                  </ul>
-
-                  <div class="journey-deliv-meta">
-                    <svg
-                      class="w-3.5 h-3.5 text-slate-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M12 6v6l4 2"
-                      />
-                    </svg>
-                    <span>تسليم كامل وموثق · صيانة ودعم لمدة 6 أشهر</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="journey-panel-footer">
-                <button class="journey-prev-btn" onclick="selectJourneyStep(5)">
-                  <svg
-                    class="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M10 19l-7-7m0 0l7-7m-7 7h18"
-                    />
-                  </svg>
-                  <span>السابق: نبني ونطوّر على مراحل</span>
-                </button>
-                <span class="text-xs text-slate-400 font-semibold"
-                  >الخطوة 6 من 6 · اكتملت الرحلة</span
-                >
-                <a href="contact.html" class="journey-next-btn btn-cyan-glow">
-                  <span>ابدأ رحلتك معنا</span>
-                  <svg
-                    class="w-4 h-4 rtl:rotate-180"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 6. Calm, High-Trust Final CTA -->
-        <div class="mt-20 text-center max-w-2xl mx-auto reveal-on-scroll">
-          <h4 class="text-xl sm:text-2xl font-bold text-white mb-3">
-            عندك فكرة أو مشكلة ومش عارف تبدأ منين؟
-          </h4>
-          <p class="text-slate-300 text-sm leading-relaxed mb-6">
-            احكيلنا عنها، ونبدأ معاك من أول خطوة — بدون ما تحتاج تحدد الحل
-            التقني بنفسك، وبجلسة استشارية مجانية بالكامل.
-          </p>
-          <a
-            href="contact.html"
-            class="btn-cyan font-bold text-base px-8 py-4 rounded-xl shadow-xl inline-flex items-center gap-3 hover:scale-[1.02] transition-transform"
-            style="text-decoration: none"
-          >
-            <span>احكيلنا عن فكرتك</span>
-            <svg
-              class="w-5 h-5 rtl:rotate-180"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-              />
-            </svg>
-          </a>
         </div>
       </div>
-    </section>
 
-    <!-- ==========================================================================
+      <!-- 5. Active Step Detail Showcase -->
+      <div class="max-w-5xl mx-auto" id="journey-panels-container">
+        <!-- =================== PANEL 01 =================== -->
+        <div class="journey-stage-panel is-active" id="panel-step-1" role="tabpanel" aria-labelledby="tab-step-1"
+          data-step="1">
+          <div class="journey-panel-card">
+            <div class="journey-panel-header">
+              <div class="flex items-center gap-3">
+                <span class="journey-panel-badge tag-free">مجاناً بالكامل</span>
+                <span class="journey-panel-phase">01 DISCOVER · مرحلة الاستكشاف الأولى</span>
+              </div>
+              <span class="journey-panel-big-num" aria-hidden="true">01</span>
+            </div>
+
+            <div class="journey-panel-grid">
+              <!-- Left Narrative Area -->
+              <div class="journey-panel-narrative">
+                <h3 class="journey-panel-title">تواصل معنا واشرح فكرتك</h3>
+                <p class="journey-panel-desc">
+                  تواصل معنا عبر صفحة <strong>اتصل بنا</strong> في الموقع أو
+                  مباشرةً عبر <strong>WhatsApp وقنواتنا الرقمية</strong>. لست
+                  بحاجة إلى أي معرفة تقنية مسبقة أو تحديد نوع الأدوات
+                  والبرمجيات — فقط اشرح المشكلة التي تعطل عملك أو الفكرة التي
+                  تطمح لتحقيقها لنشاطك التجاري.
+                </p>
+
+                <div class="journey-key-takeaway">
+                  <div class="w-2 h-2 rounded-full bg-cyan shrink-0 mt-1"></div>
+                  <p>
+                    <strong>المطلوب منك في هذه الخطوة:</strong> مشاركة فكرتك
+                    أو الفكرة بس، وإحنا نوجّهك للمسار الأنسب.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Right Deliverables Box -->
+              <div class="journey-panel-deliverables-box">
+                <div class="journey-deliv-title">
+                  <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>ما الذي ستحصل عليه في هذه الخطوة:</span>
+                </div>
+                <ul class="journey-deliv-list">
+                  <li>
+                    <span class="jd-dot"></span>
+                    <div>
+                      استجابة وتأكيد استلام طلبك من فريقنا خلال
+                      <strong>24 ساعة</strong>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="jd-dot"></span>
+                    <div>
+                      تحديد موعد ملائم لجلسة الاستشارة والاستكشاف المجانية
+                    </div>
+                  </li>
+                  <li>
+                    <span class="jd-dot"></span>
+                    <div>فهم أولي ومباشر لطبيعة الاحتياج وأولويات العمل</div>
+                  </li>
+                </ul>
+
+                <div class="journey-deliv-meta">
+                  <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2" />
+                  </svg>
+                  <span>الاستجابة: خلال 24 ساعة · بلا أي التزام</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stepper Footer Navigation -->
+            <div class="journey-panel-footer">
+              <span class="text-xs text-slate-400 font-semibold">الخطوة 1 من 6</span>
+              <button class="journey-next-btn" onclick="selectJourneyStep(2)">
+                <span>التالي: نفهم احتياجك</span>
+                <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- =================== PANEL 02 =================== -->
+        <div class="journey-stage-panel" id="panel-step-2" role="tabpanel" aria-labelledby="tab-step-2" data-step="2">
+          <div class="journey-panel-card">
+            <div class="journey-panel-header">
+              <div class="flex items-center gap-3">
+                <span class="journey-panel-badge tag-free">جلسة مجانية</span>
+                <span class="journey-panel-phase">02 UNDERSTAND · فهم وتوافق الأهداف</span>
+              </div>
+              <span class="journey-panel-big-num" aria-hidden="true">02</span>
+            </div>
+
+            <div class="journey-panel-grid">
+              <div class="journey-panel-narrative">
+                <h3 class="journey-panel-title">نفهم احتياجك</h3>
+                <p class="journey-panel-desc">
+                  <strong>هذه الجلسة ليست مكالمة بيعية</strong>، بل جلسة
+                  استكشاف مخصصة لفهم طبيعة نشاطك التجاري، واحتياجاتك اليومية،
+                  وأهدافك. مبدأنا الأساسي:
+                  <strong>نفهم المشكلة أولاً بعمق، ثم نحدد التقنية والحل الأنسب
+                    لاحقاً</strong>
+                  (سواء كان موقعاً، تطبيقاً، نظام إدارة، أو أتمتة وذكاء
+                  اصطناعي).
+                </p>
+
+                <div class="journey-key-takeaway">
+                  <div class="w-2 h-2 rounded-full bg-cyan shrink-0 mt-1"></div>
+                  <p>
+                    <strong>قاعدة العمل:</strong> تحديد التقنية يأتي دائماً
+                    لخدمة أهداف عملك، وليس العكس.
+                  </p>
+                </div>
+              </div>
+
+              <div class="journey-panel-deliverables-box">
+                <div class="journey-deliv-title">
+                  <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>ما الذي ستحصل عليه في هذه الخطوة:</span>
+                </div>
+                <ul class="journey-deliv-list">
+                  <li>
+                    <span class="jd-dot"></span>
+                    <div>
+                      تحليل أولي لمتطلبات العمل وتحديد مسار الحل الأمثل
+                    </div>
+                  </li>
+                  <li>
+                    <span class="jd-dot"></span>
+                    <div>
+                      فهم واضح للأهداف، مؤشرات النجاح، والقيود التشغيلية
+                    </div>
+                  </li>
+                  <li>
+                    <span class="jd-dot"></span>
+                    <div>
+                      توصية بالاتجاه التقني الأنسب لاحتياجاتك وميزانيتك
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="journey-deliv-meta">
+                  <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2" />
+                  </svg>
+                  <span>المدة: 30–45 دقيقة · عبر الإنترنت أو حضورياً ·
+                    مجانية</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="journey-panel-footer">
+              <button class="journey-prev-btn" onclick="selectJourneyStep(1)">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                <span>السابق: تواصل معنا</span>
+              </button>
+              <span class="text-xs text-slate-400 font-semibold">الخطوة 2 من 6</span>
+              <button class="journey-next-btn" onclick="selectJourneyStep(3)">
+                <span>التالي: نحدد الحل والخطة</span>
+                <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- =================== PANEL 03 =================== -->
+        <div class="journey-stage-panel" id="panel-step-3" role="tabpanel" aria-labelledby="tab-step-3" data-step="3">
+          <div class="journey-panel-card">
+            <div class="journey-panel-header">
+              <div class="flex items-center gap-3">
+                <span class="journey-panel-badge tag-plan">خطة شفافة</span>
+                <span class="journey-panel-phase">03 PLAN · خطة العمل ونطاق المشروع</span>
+              </div>
+              <span class="journey-panel-big-num" aria-hidden="true">03</span>
+            </div>
+
+            <div class="journey-panel-grid">
+              <div class="journey-panel-narrative">
+                <h3 class="journey-panel-title">نحدد الحل والخطة</h3>
+                <p class="journey-panel-desc">
+                  نعد لك خطة مشروع ومقترح عمل واضحاً ومفصلاً يتضمن:
+                  <strong>نطاق العمل (Scope)</strong>،
+                  <strong>الميزات والوظائف المطلوبة</strong>،
+                  <strong>الجدول الزمني التقديري</strong>، و<strong>هيكل التكلفة والدفعات المرحلية</strong>. هدفنا أن
+                  <strong>تعرف بالضبط ماذا ستدفع، وماذا ستحصل عليه قبل اتخاذ أي
+                    التزام</strong>.
+                </p>
+
+                <div class="journey-key-takeaway">
+                  <div class="w-2 h-2 rounded-full bg-cyan shrink-0 mt-1"></div>
+                  <p>
+                    <strong>شفافية تامة:</strong> لا توجد أي بنود خفية أو
+                    تكاليف غير معلنة في خطة المشروع.
+                  </p>
+                </div>
+              </div>
+
+              <div class="journey-panel-deliverables-box">
+                <div class="journey-deliv-title">
+                  <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>ما الذي ستحصل عليه في هذه الخطوة:</span>
+                </div>
+                <ul class="journey-deliv-list">
+                  <li>
+                    <span class="jd-dot"></span>
+                    <div>
+                      مقترح عمل واضح يحدد تفاصيل النطاق والمخرجات المتوقعة
+                    </div>
+                  </li>
+                  <li>
+                    <span class="jd-dot"></span>
+                    <div>
+                      جدول زمني تقديري لمراحل التطوير والإنجاز الأسبوعي
+                    </div>
+                  </li>
+                  <li>
+                    <span class="jd-dot"></span>
+                    <div>
+                      هيكل دفعات مرحلي واضح يرتبط بكل مرحلة تسليم قبل البدء
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="journey-deliv-meta">
+                  <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2" />
+                  </svg>
+                  <span>تسليم المقترح: خلال 2–3 أيام عمل من الجلسة</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="journey-panel-footer">
+              <button class="journey-prev-btn" onclick="selectJourneyStep(2)">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                <span>السابق: نفهم احتياجك</span>
+              </button>
+              <span class="text-xs text-slate-400 font-semibold">الخطوة 3 من 6</span>
+              <button class="journey-next-btn" onclick="selectJourneyStep(4)">
+                <span>التالي: نصمم ونحصل على اعتمادك</span>
+                <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- =================== PANEL 04 =================== -->
+        <div class="journey-stage-panel" id="panel-step-4" role="tabpanel" aria-labelledby="tab-step-4" data-step="4">
+          <div class="journey-panel-card">
+            <div class="journey-panel-header">
+              <div class="flex items-center gap-3">
+                <span class="journey-panel-badge tag-payment">دفعة البدء</span>
+                <span class="journey-panel-phase">04 DESIGN · التصميم والاعتماد المسبق</span>
+              </div>
+              <span class="journey-panel-big-num" aria-hidden="true">04</span>
+            </div>
+
+            <div class="journey-panel-grid">
+              <div class="journey-panel-narrative">
+                <h3 class="journey-panel-title">نصمم ونحصل على اعتمادك</h3>
+                <p class="journey-panel-desc">
+                  قبل أن نكتب سطراً برمجياً واحداً، نصمم
+                  <strong>الواجهات وتجربة المستخدم (UI/UX Mockups)</strong>
+                  لتشاهد كيف سيبدو المنتج وتجرب مسار الاستخدام بنفسك. بعد
+                  مراجعتك واعتمادك للتصميم وخطة الانطلاق، نبدأ مرحلة التطوير
+                  الفعلي بسداد الدفعة الأولى.
+                </p>
+
+                <!-- Reassuring Checkpoint Banner -->
+                <div class="journey-checkpoint-banner">
+                  <div class="journey-checkpoint-icon">
+                    <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <strong class="text-amber-300 block text-xs sm:text-sm mb-0.5">ضمان التحكم والشفافية:</strong>
+                    <p class="text-slate-300 text-xs leading-relaxed m-0">
+                      لا يبدأ أي تطوير برمجي مدفوع قبل اعتمادك الرسمي للتصميم
+                      والخطة المتفق عليها.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="journey-panel-deliverables-box">
+                <div class="journey-deliv-title">
+                  <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>ما الذي ستحصل عليه في هذه الخطوة:</span>
+                </div>
+                <ul class="journey-deliv-list">
+                  <li>
+                    <span class="jd-dot"></span>
+                    <div>
+                      تصاميم واجهات المستخدم (UI/UX) ومسار التنقل الكامل
+                    </div>
+                  </li>
+                  <li>
+                    <span class="jd-dot"></span>
+                    <div>
+                      نموذج تفاعلي لتجربة الشكل والوظائف الحيوية قبل التطوير
+                    </div>
+                  </li>
+                  <li>
+                    <span class="jd-dot"></span>
+                    <div>
+                      خطة عمل تفصيلية واعتماد محطات التسليم (Milestones)
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="journey-deliv-meta">
+                  <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2" />
+                  </svg>
+                  <span>الاعتماد أولاً · تحكم كامل في مخرجات التصميم</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="journey-panel-footer">
+              <button class="journey-prev-btn" onclick="selectJourneyStep(3)">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                <span>السابق: نحدد الحل والخطة</span>
+              </button>
+              <span class="text-xs text-slate-400 font-semibold">الخطوة 4 من 6</span>
+              <button class="journey-next-btn" onclick="selectJourneyStep(5)">
+                <span>التالي: نبني ونطوّر على مراحل</span>
+                <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- =================== PANEL 05 =================== -->
+        <div class="journey-stage-panel" id="panel-step-5" role="tabpanel" aria-labelledby="tab-step-5" data-step="5">
+          <div class="journey-panel-card">
+            <div class="journey-panel-header">
+              <div class="flex items-center gap-3">
+                <span class="journey-panel-badge tag-payment">تسليم ودفع تدريجي</span>
+                <span class="journey-panel-phase">05 BUILD · التطوير المرن (Agile Sprints)</span>
+              </div>
+              <span class="journey-panel-big-num" aria-hidden="true">05</span>
+            </div>
+
+            <div class="journey-panel-grid">
+              <div class="journey-panel-narrative">
+                <h3 class="journey-panel-title">نبني ونطوّر على مراحل</h3>
+                <p class="journey-panel-desc">
+                  نعتمد منهجية <strong>Agile</strong> المرنة؛ حيث نقسم المشروع
+                  إلى دورات تطوير قصيرة (Sprints). في نهاية كل مرحلة، نتيح لك
+                  تجربة الميزات المنجزة عملياً على بيئة تجريبية حية، ومع
+                  اعتمادك لكل مرحلة يتم سداد قيمتها والانتقال فوراً للميزات
+                  التالية.
+                </p>
+
+                <!-- Agile Loop Visual -->
+                <div class="journey-agile-loop">
+                  <div class="journey-agile-loop-title">
+                    دورة التطوير والمراجعة المستمرة:
+                  </div>
+                  <div class="journey-agile-steps">
+                    <div class="journey-agile-item">
+                      <div class="journey-agile-icon">
+                        <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                      </div>
+                      <strong>1. بناء</strong>
+                      <span>برمجة الميزات</span>
+                    </div>
+
+                    <div class="journey-agile-arrow">
+                      <svg class="w-3.5 h-3.5 text-cyan/50 rtl:rotate-180" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </div>
+
+                    <div class="journey-agile-item">
+                      <div class="journey-agile-icon">
+                        <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                      </div>
+                      <strong>2. معاينة</strong>
+                      <span>تجربة حية</span>
+                    </div>
+
+                    <div class="journey-agile-arrow">
+                      <svg class="w-3.5 h-3.5 text-cyan/50 rtl:rotate-180" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </div>
+
+                    <div class="journey-agile-item">
+                      <div class="journey-agile-icon">
+                        <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <strong>3. مراجعة</strong>
+                      <span>اعتماد وسداد</span>
+                    </div>
+
+                    <div class="journey-agile-arrow">
+                      <svg class="w-3.5 h-3.5 text-cyan/50 rtl:rotate-180" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </div>
+
+                    <div class="journey-agile-item">
+                      <div class="journey-agile-icon">
+                        <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                        </svg>
+                      </div>
+                      <strong>4. تكرار</strong>
+                      <span>المرحلة التالية</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="journey-panel-deliverables-box">
+                <div class="journey-deliv-title">
+                  <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>ما الذي ستحصل عليه في هذه الخطوة:</span>
+                </div>
+                <ul class="journey-deliv-list">
+                  <li>
+                    <span class="jd-dot"></span>
+                    <div>ميزات برمجية منجزة ومختبرة وقابلة للتجربة الحية</div>
+                  </li>
+                  <li>
+                    <span class="jd-dot"></span>
+                    <div>
+                      تقرير دوري يوضح المنجز وخطة العمل للمرحلة المقبلة
+                    </div>
+                  </li>
+                  <li>
+                    <span class="jd-dot"></span>
+                    <div>
+                      اجتماعات متابعة منتظمة لضمان التوافق وتضمين الملاحظات
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="journey-deliv-meta">
+                  <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2" />
+                  </svg>
+                  <span>تطوير تدريجي · تجربة حية لكل مرحلة قبل السداد</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="journey-panel-footer">
+              <button class="journey-prev-btn" onclick="selectJourneyStep(4)">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                <span>السابق: نصمم ونحصل على اعتمادك</span>
+              </button>
+              <span class="text-xs text-slate-400 font-semibold">الخطوة 5 من 6</span>
+              <button class="journey-next-btn" onclick="selectJourneyStep(6)">
+                <span>التالي: نطلق ونكمل معاك</span>
+                <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- =================== PANEL 06 =================== -->
+        <div class="journey-stage-panel" id="panel-step-6" role="tabpanel" aria-labelledby="tab-step-6" data-step="6">
+          <div class="journey-panel-card step-final-card">
+            <div class="journey-panel-header">
+              <div class="flex items-center gap-3">
+                <span class="journey-panel-badge tag-launch">🚀 إطلاق وضمان</span>
+                <span class="journey-panel-phase">06 LAUNCH &amp; SUPPORT · الإطلاق السحابي والدعم
+                  المستمر</span>
+              </div>
+              <span class="journey-panel-big-num final-num" aria-hidden="true">06</span>
+            </div>
+
+            <div class="journey-panel-grid">
+              <div class="journey-panel-narrative">
+                <h3 class="journey-panel-title">نطلق ونكمل معاك</h3>
+                <p class="journey-panel-desc">
+                  علاقتنا لا تنتهي عند الإطلاق. بعد اكتمال التطوير واجتياز
+                  اختبارات الأداء والأمان، نقوم بـ
+                  <strong>النشر والإطلاق السحابي الشامل (Full Deployment)</strong>، ونسلمك كامل الشيفرة المصدرية (Source
+                  Code) وبيانات
+                  الإدارة، ونبدأ معك فترة الدعم الفني والصيانة لضمان استقرار
+                  العمل.
+                </p>
+
+                <!-- Warranty Banner -->
+                <div class="journey-warranty-box">
+                  <div class="journey-warranty-icon">
+                    <svg class="w-5 h-5 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <strong class="text-cyan-300 block text-xs sm:text-sm mb-0.5">6 أشهر دعم وصيانة فنية
+                      مجانية:</strong>
+                    <p class="text-slate-300 text-xs leading-relaxed m-0">
+                      نلتزم بمتابعة استقرار النظام بعد الإطلاق ومعالجة أي
+                      أخطاء برمجية أو ملاحظات تقنية مجاناً وبدون أي تكاليف
+                      إضافية طوال فترة الضمان.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="journey-panel-deliverables-box">
+                <div class="journey-deliv-title">
+                  <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>ما الذي ستحصل عليه في هذه الخطوة:</span>
+                </div>
+                <ul class="journey-deliv-list">
+                  <li>
+                    <span class="jd-dot"></span>
+                    <div>
+                      نظام حي يعمل بكفاءة على بيئة الإنتاج السحابية (Full
+                      Cloud Deployment)
+                    </div>
+                  </li>
+                  <li>
+                    <span class="jd-dot"></span>
+                    <div>
+                      تسليم كامل للشيفرة المصدرية (Source Code)، الحسابات،
+                      ودليل التوثيق
+                    </div>
+                  </li>
+                  <li>
+                    <span class="jd-dot"></span>
+                    <div>
+                      تدريب عملي لفريقك على إدارة واستخدام النظام بسهولة
+                    </div>
+                  </li>
+                  <li>
+                    <span class="jd-dot"></span>
+                    <div>
+                      6 أشهر دعم وصيانة فنية مجانية لمعالجة أي ملاحظات
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="journey-deliv-meta">
+                  <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2" />
+                  </svg>
+                  <span>تسليم كامل وموثق · صيانة ودعم لمدة 6 أشهر</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="journey-panel-footer">
+              <button class="journey-prev-btn" onclick="selectJourneyStep(5)">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                <span>السابق: نبني ونطوّر على مراحل</span>
+              </button>
+              <span class="text-xs text-slate-400 font-semibold">الخطوة 6 من 6 · اكتملت الرحلة</span>
+              <a href="contact.html" class="journey-next-btn btn-cyan-glow">
+                <span>ابدأ رحلتك معنا</span>
+                <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Calm, High-Trust Final CTA -->
+      <div class="mt-20 text-center max-w-2xl mx-auto reveal-on-scroll">
+        <h4 class="text-xl sm:text-2xl font-bold text-white mb-3">
+          عندك فكرة أو مشكلة ومش عارف تبدأ منين؟
+        </h4>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+          احكيلنا عنها، ونبدأ معاك من أول خطوة — بدون ما تحتاج تحدد الحل
+          التقني بنفسك، وبجلسة استشارية مجانية بالكامل.
+        </p>
+        <a href="contact.html"
+          class="btn-cyan font-bold text-base px-8 py-4 rounded-xl shadow-xl inline-flex items-center gap-3 hover:scale-[1.02] transition-transform"
+          style="text-decoration: none">
+          <span>احكيلنا عن فكرتك</span>
+          <svg class="w-5 h-5 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
        FOOTER
        ========================================================================== -->
-    <footer
-      class="bg-slate-950 text-slate-400 text-xs py-14 border-t border-slate-900"
-    >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          <div class="space-y-3">
-            <img
-              src="assets/images/Logo.png"
-              alt="Forascom — فرصكم"
-              class="h-11 w-auto object-contain rounded-lg"
-              style="display: block; object-fit: contain; max-width: 100%"
-            />
-            <p class="leading-relaxed max-w-xs">
-              شركة تقنية عربية ناشئة — نخلق الفرص من خلال التكنولوجيا بجودة
-              هندسية عالمية.
-            </p>
+  <!-- ==========================================================================
+       PROFESSIONAL UNIFIED FOOTER
+       ========================================================================== -->
+  <footer class="relative bg-[#070D1B] text-slate-400 border-t border-slate-800/80 pt-16 pb-12 overflow-hidden">
+    <!-- Ambient Backlight Glowing Orbs -->
+    <!-- <div class="absolute top-0 right-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl pointer-events-none"></div> -->
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
+      <!-- 1. Top Closing CTA Box
+        <div class="relative bg-gradient-to-r from-[#0F172A] via-[#0B1528] to-[#0F172A] border border-cyan-500/20 rounded-3xl p-8 sm:p-10 lg:p-12 shadow-[0_15px_40px_rgba(0,0,0,0.4)] overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></div>
+          
+          <div class="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-right">
+            <div class="space-y-3 max-w-2xl">
+              <span class="inline-flex items-center gap-2 text-xs font-bold text-cyan-400 bg-cyan-950/60 border border-cyan-500/30 px-3.5 py-1 rounded-full tracking-wide">
+                <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                استشارة تقنية مجانية
+              </span>
+              <h3 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white leading-tight">
+                عندك فكرة أو تحدي تقني؟ <span class="text-cyan-400">خلينا نبني الحل معًا.</span>
+              </h3>
+              <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                فريق Forascom مستعد لدراسة احتياجك وتحويل فكرتك إلى برمجيات حقيقية فائقة الأداء والتكامل.
+              </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center gap-4 shrink-0 w-full sm:w-auto">
+              <a
+                href="contact.html"
+                class="w-full sm:w-auto btn-cyan inline-flex items-center justify-center gap-2.5 font-bold text-sm px-7 py-3.5 rounded-xl shadow-lg transition-transform hover:-translate-y-0.5"
+              >
+                <span>ابدأ مشروعك الآن</span>
+                <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </a>
+              <a
+                href="https://wa.me/201090000000"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-slate-900/90 hover:bg-slate-800 text-white font-bold text-sm px-6 py-3.5 rounded-xl border border-slate-700 hover:border-emerald-500/50 transition-all group"
+              >
+                <svg class="w-5 h-5 fill-emerald-400 group-hover:scale-110 transition-transform" viewBox="0 0 24 24">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+                <span>محادثة واتساب مباشرة</span>
+              </a>
+            </div>
           </div>
-          <div>
-            <h4 class="text-white font-bold mb-3">روابط سريعة</h4>
-            <ul class="space-y-2">
-              <li>
-                <a href="index.html" class="hover:text-cyan transition-colors"
-                  >الرئيسية</a
-                >
-              </li>
-              <li>
-                <a href="about.html" class="hover:text-cyan transition-colors"
-                  >عن فرصكم</a
-                >
-              </li>
-              <li>
-                <a
-                  href="services.html"
-                  class="hover:text-cyan transition-colors"
-                  >خدماتنا</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="text-white font-bold mb-3">أعمالنا</h4>
-            <ul class="space-y-2">
-              <li>
-                <a
-                  href="portfolio.html"
-                  class="hover:text-cyan transition-colors"
-                  >معرض الأعمال</a
-                >
-              </li>
-              <li>
-                <a href="contact.html" class="hover:text-cyan transition-colors"
-                  >تواصل معنا</a
-                >
-              </li>
-              <li>
-                <a href="contact.html" class="hover:text-cyan transition-colors"
-                  >استشارة مجانية</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="text-white font-bold mb-3">تواصل</h4>
-            <ul class="space-y-2">
-              <li class="flex items-center gap-2">
-                <span class="text-cyan">▸</span> WhatsApp مباشر
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="text-cyan">▸</span> hello@forascom.com
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="text-cyan">▸</span> LinkedIn
-              </li>
-            </ul>
+        </div> -->
+
+      <!-- 2. Main Footer Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pt-4">
+        <!-- Col 1: Branding -->
+        <div class="lg:col-span-4 space-y-5">
+          <a href="index.html" class="inline-block focus:outline-none">
+            <img src="assets/images/Logo.png" alt="Forascom — فرصكم" class="h-11 w-auto object-contain rounded-lg" />
+          </a>
+          <p class="text-slate-300 text-sm leading-relaxed max-w-sm">
+            شركة حلول برمجية وتطوير تقني — نخلق الفرص للأعمال من خلال تقنيات الويب المستدامة، الذكاء الاصطناعي، وأتمتة
+            العمليات بجودة هندسية راقية.
+          </p>
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            متاحون حالياً لاستقبال مشاريع جديدة
           </div>
         </div>
-        <div
-          class="mt-10 pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4"
-        >
-          <p>
-            © 2026 Forascom. جميع الحقوق محفوظة — Technology that creates
-            opportunities.
-          </p>
-          <div class="flex items-center gap-4 font-bold text-slate-300">
-            <a
-              href="https://www.instagram.com/foras_com?stkn=MWg1amRsY3NucHMyNg=="
-              target="_blank"
-              rel="noopener noreferrer"
-              class="hover:text-cyan"
-              >Instagram</a
-            >
-            <a
-              href="https://www.facebook.com/people/Forascom/61592914277326/?sk=directory_names"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="hover:text-cyan"
-              >Facebook</a
-            >
-            <a
-              href="https://www.linkedin.com/company/forascom/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="hover:text-cyan"
-              >LinkedIn</a
-            >
+
+        <!-- Col 2: Navigation Links -->
+        <div class="lg:col-span-3 space-y-4">
+          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
+            الروابط الرئيسية
+          </h4>
+          <ul class="space-y-2.5 text-sm">
+            <li>
+              <a href="index.html" class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">◀</span>
+                الرئيسية
+              </a>
+            </li>
+            <li>
+              <a href="about.html" class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">◀</span>
+                عن فرصكم
+              </a>
+            </li>
+            <li>
+              <a href="services.html"
+                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">◀</span>
+                خدماتنا
+              </a>
+            </li>
+            <li>
+              <a href="portfolio.html"
+                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">◀</span>
+                معرض الأعمال
+              </a>
+            </li>
+            <li>
+              <a href="contact.html" class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">◀</span>
+                تواصل معنا
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services & Solutions Links -->
+        <div class="lg:col-span-2 space-y-4">
+          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
+            خدماتنا
+          </h4>
+          <ul class="space-y-2.5 text-sm">
+            <li>
+              <a href="portfolio.html?category=web-development"
+                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                تطوير المواقع (Web Dev)
+              </a>
+            </li>
+            <li>
+              <a href="portfolio.html?category=wordpress"
+                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                مواقع وردبرس (WordPress)
+              </a>
+            </li>
+            <li>
+              <a href="portfolio.html?category=power-platform"
+                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                أنظمة Power Platform
+              </a>
+            </li>
+            <li>
+              <a href="portfolio.html?category=ai"
+                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                حلول الذكاء الاصطناعي
+              </a>
+            </li>
+            <li>
+              <a href="portfolio.html?category=automation"
+                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                الأتمتة والعمليات الذكية
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact Info & Socials -->
+        <div class="lg:col-span-3 space-y-4">
+          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
+            التواصل المباشر
+          </h4>
+          <ul class="space-y-3 text-sm">
+            <li>
+              <a href="mailto:hello@forascom.com"
+                class="flex items-center gap-3 text-slate-300 hover:text-cyan-400 transition-colors group">
+                <span
+                  class="w-8 h-8 rounded-lg bg-slate-800/80 flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500/20 transition-colors">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </span>
+                <span>hello@forascom.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/201090000000" target="_blank" rel="noopener noreferrer"
+                class="flex items-center gap-3 text-slate-300 hover:text-emerald-400 transition-colors group">
+                <span
+                  class="w-8 h-8 rounded-lg bg-slate-800/80 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500/20 transition-colors">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path
+                      d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                  </svg>
+                </span>
+                <span>WhatsApp (+20 109 000 0000)</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="pt-2">
+            <span class="block text-xs font-semibold text-slate-400 mb-3">تواجدنا الرقمي:</span>
+            <div class="flex items-center gap-3">
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/company/forascom/" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-cyan-950/40 transition-all hover:-translate-y-1">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.75a1.49 1.49 0 1 0 0 2.98 1.49 1.49 0 0 0 0-2.98z" />
+                </svg>
+              </a>
+              <!-- Facebook -->
+              <a href="https://www.facebook.com/people/Forascom/61592914277326/?sk=directory_names" target="_blank"
+                rel="noopener noreferrer" aria-label="Facebook"
+                class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-cyan-950/40 transition-all hover:-translate-y-1">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H7.5v-3H10V9.5C10 7.01 11.49 5.65 13.75 5.65c1.08 0 2.2.19 2.2.19v2.42h-1.24c-1.23 0-1.61.77-1.61 1.56V12h2.73l-.44 3h-2.29v6.8c4.56-.93 8-4.96 8-9.8z" />
+                </svg>
+              </a>
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/foras_com?stkn=MWg1amRsY3NucHMyNg==" target="_blank"
+                rel="noopener noreferrer" aria-label="Instagram"
+                class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-cyan-950/40 transition-all hover:-translate-y-1">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+              </a>
+              <!-- WhatsApp Direct -->
+              <a href="https://wa.me/201090000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+                class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-emerald-400 hover:border-emerald-500/40 hover:bg-emerald-950/40 transition-all hover:-translate-y-1">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </footer>
 
-    <!-- Floating Sticky WhatsApp Action Button (Expand on Hover) -->
-    <div class="fixed bottom-6 left-6 z-50">
-      <a
-        href="https://wa.me/201090000000?text=%D8%A3%D9%87%D9%84%D8%A3%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20Forascom%20%F0%9F%90%8B%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D9%8A..."
-        target="_blank"
-        class="group flex items-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs p-3.5 rounded-full shadow-2xl transition-all duration-500 ease-in-out hover:px-5"
-      >
-        <div class="relative flex items-center justify-center">
-          <span class="absolute -top-1 -right-1 flex h-3 w-3">
-            <span
-              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"
-            ></span>
-            <span
-              class="relative inline-flex rounded-full h-3 w-3 bg-white"
-            ></span>
-          </span>
-          <svg class="w-6 h-6 fill-current shrink-0" viewBox="0 0 24 24">
-            <path
-              d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
-            />
-          </svg>
+      <!-- 3. Bottom Bar Divider & Copyright -->
+      <div
+        class="pt-8 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <p class="text-center md:text-right">
+          © <span id="footer-year">2026</span> <strong class="text-slate-200">Forascom</strong>. جميع الحقوق محفوظة —
+          <span class="text-cyan-400 font-medium">Technology that creates opportunities</span>
+        </p>
+        <div class="flex items-center gap-6 text-slate-400">
+          <span class="hover:text-slate-200 transition-colors cursor-pointer">الخصوصية والشروط</span>
+          <span class="w-1 h-1 rounded-full bg-slate-700"></span>
+          <a href="contact.html" class="hover:text-cyan-400 transition-colors">الدعم التقني</a>
         </div>
-        <span
-          class="max-w-0 opacity-0 overflow-hidden whitespace-nowrap transition-all duration-500 ease-in-out group-hover:max-w-xs group-hover:opacity-100 group-hover:mr-2.5"
-        >
-          تحدث مع مهندس Forascom الآن 💬
-        </span>
-      </a>
+      </div>
     </div>
+  </footer>
 
-    <!-- Back To Top Button -->
-    <button
-      id="back-to-top"
-      aria-label="العودة إلى الأعلى"
-      class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-white text-navy border border-slate-200 shadow-xl flex items-center justify-center hover:bg-navy hover:text-white hover:-translate-y-1 transition-all"
-    >
-      <svg
-        class="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2.2"
-          d="M5 15l7-7 7 7"
-        />
-      </svg>
-    </button>
+  <!-- Floating Sticky WhatsApp Action Button (Expand on Hover) -->
+  <div class="fixed bottom-6 left-6 z-50">
+    <a href="https://wa.me/201090000000?text=%D8%A3%D9%87%D9%84%D8%A3%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20Forascom%20%F0%9F%90%8B%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D9%8A..."
+      target="_blank"
+      class="group flex items-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs p-3.5 rounded-full shadow-2xl transition-all duration-500 ease-in-out hover:px-5">
+      <div class="relative flex items-center justify-center">
+        <span class="absolute -top-1 -right-1 flex h-3 w-3">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+        </span>
+        <svg class="w-6 h-6 fill-current shrink-0" viewBox="0 0 24 24">
+          <path
+            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+        </svg>
+      </div>
+      <span
+        class="max-w-0 opacity-0 overflow-hidden whitespace-nowrap transition-all duration-500 ease-in-out group-hover:max-w-xs group-hover:opacity-100 group-hover:mr-2.5">
+        تحدث مع مهندس Forascom الآن 💬
+      </span>
+    </a>
+  </div>
 
-    <!-- App JavaScript Modules -->
-    <script src="assets/js/main.js"></script>
-    <!-- About Page JS -->
-    <script src="assets/js/about.js" defer></script>
+  <!-- Back To Top Button -->
+  <button id="back-to-top" aria-label="العودة إلى الأعلى"
+    class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-white text-navy border border-slate-200 shadow-xl flex items-center justify-center hover:bg-navy hover:text-white hover:-translate-y-1 transition-all">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
 
-    <!-- Metric Counters — standalone, no GSAP dependency -->
-    <script>
-      (function () {
-        function runCounters() {
-          var metricsBar = document.querySelector(".forascom-about-metrics");
-          if (!metricsBar) return;
-          var metrics = metricsBar.querySelectorAll(
-            ".forascom-about-metric-value",
+  <!-- App JavaScript Modules -->
+  <script src="assets/js/main.js"></script>
+  <!-- About Page JS -->
+  <script src="assets/js/about.js" defer></script>
+
+  <!-- Metric Counters — standalone, no GSAP dependency -->
+  <script>
+    (function () {
+      function runCounters() {
+        var metricsBar = document.querySelector(".forascom-about-metrics");
+        if (!metricsBar) return;
+        var metrics = metricsBar.querySelectorAll(
+          ".forascom-about-metric-value",
+        );
+        if (!metrics.length) return;
+
+        function resetMetric(el) {
+          var prefix = el.dataset.prefix || "";
+          var suffix = el.dataset.suffix || "";
+          el.textContent = prefix + "0" + suffix;
+          delete el.dataset.animated;
+        }
+
+        function animateMetric(el) {
+          var target = Number(el.dataset.target || 0);
+          var prefix = el.dataset.prefix || "";
+          var suffix = el.dataset.suffix || "";
+          if (target === 0) {
+            el.textContent = prefix + "0" + suffix;
+            return;
+          }
+
+          el.dataset.animated = "true";
+          el.textContent = prefix + "0" + suffix;
+
+          var duration = 1400;
+          var startTime = null;
+          function step(ts) {
+            if (!startTime) startTime = ts;
+            var elapsed = ts - startTime;
+            var progress = Math.min(elapsed / duration, 1);
+            var easeOut = 1 - Math.pow(1 - progress, 3);
+            el.textContent = prefix + Math.round(easeOut * target) + suffix;
+            if (progress < 1) requestAnimationFrame(step);
+            else {
+              el.textContent = prefix + target + suffix;
+              delete el.dataset.animated;
+            }
+          }
+          requestAnimationFrame(step);
+        }
+
+        if ("IntersectionObserver" in window) {
+          var obs = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  metrics.forEach(function (m) {
+                    animateMetric(m);
+                  });
+                } else {
+                  metrics.forEach(function (m) {
+                    resetMetric(m);
+                  });
+                }
+              });
+            },
+            { threshold: 0.25 },
           );
-          if (!metrics.length) return;
-
-          function resetMetric(el) {
-            var prefix = el.dataset.prefix || "";
-            var suffix = el.dataset.suffix || "";
-            el.textContent = prefix + "0" + suffix;
-            delete el.dataset.animated;
-          }
-
-          function animateMetric(el) {
-            var target = Number(el.dataset.target || 0);
-            var prefix = el.dataset.prefix || "";
-            var suffix = el.dataset.suffix || "";
-            if (target === 0) {
-              el.textContent = prefix + "0" + suffix;
-              return;
-            }
-
-            el.dataset.animated = "true";
-            el.textContent = prefix + "0" + suffix;
-
-            var duration = 1400;
-            var startTime = null;
-            function step(ts) {
-              if (!startTime) startTime = ts;
-              var elapsed = ts - startTime;
-              var progress = Math.min(elapsed / duration, 1);
-              var easeOut = 1 - Math.pow(1 - progress, 3);
-              el.textContent = prefix + Math.round(easeOut * target) + suffix;
-              if (progress < 1) requestAnimationFrame(step);
-              else {
-                el.textContent = prefix + target + suffix;
-                delete el.dataset.animated;
-              }
-            }
-            requestAnimationFrame(step);
-          }
-
-          if ("IntersectionObserver" in window) {
-            var obs = new IntersectionObserver(
-              function (entries) {
-                entries.forEach(function (entry) {
-                  if (entry.isIntersecting) {
-                    metrics.forEach(function (m) {
-                      animateMetric(m);
-                    });
-                  } else {
-                    metrics.forEach(function (m) {
-                      resetMetric(m);
-                    });
-                  }
-                });
-              },
-              { threshold: 0.25 },
-            );
-            obs.observe(metricsBar);
-          } else {
-            metrics.forEach(function (m) {
-              animateMetric(m);
-            });
-          }
-        }
-
-        if (document.readyState === "loading") {
-          document.addEventListener("DOMContentLoaded", runCounters);
+          obs.observe(metricsBar);
         } else {
-          runCounters();
+          metrics.forEach(function (m) {
+            animateMetric(m);
+          });
         }
-      })();
-    </script>
-  </body>
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", runCounters);
+      } else {
+        runCounters();
+      }
+    })();
+  </script>
+</body>
+
 </html>

@@ -27,7 +27,7 @@ const projectsDetailsData = {
     heroImageAlt: "Pizza Paradiso Digital Transformation",
 
     liveUrl: "",
-    demoVideo: "assets/videos/pizza (power Apps).mp4",
+    demoVideo: "assets/videos/Pizza.mp4",
 
     metaTelemetry: {
       label: "RESTAURANT MANAGEMENT",
@@ -733,7 +733,7 @@ const projectsDetailsData = {
 
     liveUrl: "",
 
-    demoVideo: "assets/videos/ClinicAssistant.mp4",
+    demoVideo: "assets/videos/clinicreservation.mp4",
 
     metaTelemetry: {
       label: "AI AUTOMATION WORKFLOW",

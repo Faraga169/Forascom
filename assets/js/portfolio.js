@@ -1,8 +1,10 @@
 /* ==========================================================================
    FORASCOM - PORTFOLIO & CASE STUDIES MODULE (FOCUSED TARGET STACK)
-   1. Web Development (Custom Code or WordPress)
-   2. AI & RAG Chatbots (Document Search & AI Assistants)
-   3. Process Automation (n8n & Power Platform)
+   1. Web Development (Custom Code)
+   2. WordPress & Digital Experiences
+   3. Power Platform & Enterprise Solutions
+   4. AI & Machine Learning
+   5. Workflow Automation & Integrations
    ========================================================================== */
 
 /* ==========================================================================
@@ -14,14 +16,17 @@ const PROJECT_CATEGORIES = {
     label: "All",
   },
   "web-development": {
-    label: "Web Development",
-  },
-  "business-automation": {
-    label: "Business Automation",
+    label: "Web Development & AI",
   },
   wordpress: {
-    label: "Wordpress",
+    label: "WordPress",
   },
+  "Automation-BussinessSolution": {
+    label: "Automation & Business Solutions",
+  },
+  // automation: {
+  //   label: "الأتمتة وربط الأنظمة",
+  // },
 };
 
 const PROJECT_FILTER_ACTIVE_CLASSES = [
@@ -47,8 +52,96 @@ const PROJECT_FILTER_INACTIVE_CLASSES = [
 function getProjects() {
   if (typeof projectsDetailsData === "undefined") return [];
   return Object.values(projectsDetailsData).filter(
-    (project) => project && project.id && project.categoryKey,
+    (project) =>
+      project && project.id && (project.categoryKey || project.category),
   );
+}
+
+function projectMatchesCategory(project, categoryKey) {
+  if (!project) return false;
+  if (!categoryKey || categoryKey === "all") return true;
+
+  if (project.categoryKey === categoryKey) return true;
+
+  const tags = (project.tags || []).map((t) => t.toLowerCase());
+
+  switch (categoryKey) {
+    case "web-development":
+      return (
+        project.categoryKey === "web-development" ||
+        tags.some((t) =>
+          [
+            "angular",
+            "react",
+            "next.js",
+            ".net",
+            "asp.net",
+            "typescript",
+            "bootstrap",
+            "c#",
+          ].includes(t),
+        )
+      );
+
+    case "wordpress":
+      return (
+        project.categoryKey === "wordpress" ||
+        tags.some((t) => t.includes("wordpress") || t.includes("elementor"))
+      );
+
+    case "Automation-BussinessSolution":
+      return (
+        project.categoryKey === "Automation-BussinessSolution" ||
+        tags.some((t) =>
+          [
+            "power apps",
+            "power automate",
+            "power bi",
+            "sharepoint",
+            "copilot studio",
+          ].includes(t),
+        ) ||
+        (project.categoryKey === "Automation-BussinessSolution" &&
+          ["pizza", "skilling", "memo", "it", "hospital"].includes(project.id))
+      );
+
+    case "web-development":
+      return (
+        project.categoryKey === "web-development" ||
+        tags.some((t) =>
+          [
+            "ai",
+            "rag",
+            "qdrant",
+            "cohere",
+            "copilot studio",
+            "ai builder",
+          ].includes(t),
+        ) ||
+        ["focuszone", "watchify", "it", "fishbowl"].includes(project.id)
+      );
+
+    case "Automation-BussinessSolution":
+      return (
+        project.categoryKey === "Automation-BussinessSolution" ||
+        tags.some((t) =>
+          [
+            "power automate",
+            "n8n",
+            "slack api",
+            "outlook api",
+            "ai builder",
+          ].includes(t),
+        ) ||
+        (project.categoryKey === "Automation-BussinessSolution" &&
+          ["fishbowl", "memo", "skilling", "pizza", "hospital"].includes(
+            project.id,
+          ))
+      );
+
+    default:
+      return project.categoryKey === categoryKey;
+  }
 }
 
 function getCategoryCount(category) {
@@ -56,18 +149,49 @@ function getCategoryCount(category) {
     return getProjects().length;
   }
 
-  return getProjects().filter((project) => project.categoryKey === category)
-    .length;
+  return getProjects().filter((project) =>
+    projectMatchesCategory(project, category),
+  ).length;
 }
 
-function renderProjectFilters() {
+function getCategoryFromUrl() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const categoryParam = params.get("category");
+    if (
+      categoryParam &&
+      Object.prototype.hasOwnProperty.call(PROJECT_CATEGORIES, categoryParam)
+    ) {
+      return categoryParam;
+    }
+  } catch (e) {
+    // Fallback if URL parsing fails
+  }
+  return "all";
+}
+
+function updateUrlQueryParam(filter) {
+  try {
+    const url = new URL(window.location.href);
+    if (filter && filter !== "all") {
+      url.searchParams.set("category", filter);
+    } else {
+      url.searchParams.delete("category");
+    }
+    window.history.pushState({ category: filter }, "", url.toString());
+  } catch (e) {
+    // Ignore history errors if any
+  }
+}
+
+function renderProjectFilters(initialActiveFilter = "all") {
   const container = document.getElementById("category-filters");
 
   if (!container) return;
 
   container.innerHTML = Object.entries(PROJECT_CATEGORIES)
-    .map(([key, category], index) => {
-      const isActive = index === 0;
+    .map(([key, category]) => {
+      const isActive = key === initialActiveFilter;
       const count = getCategoryCount(key);
 
       return `
@@ -104,7 +228,7 @@ function renderProjectFilters() {
 
       const filter = button.dataset.filter || "all";
 
-      setActiveProjectFilter(filter);
+      setActiveProjectFilter(filter, true);
     });
   }
 }
@@ -153,16 +277,12 @@ function renderProjectCard(project, index) {
               <span class="material-symbols-outlined text-sm">arrow_back</span>
             </span>
           </div>
-
-          
         </div>
 
         <div class="flex items-center justify-between gap-4 mb-3">
           <span class="text-xs font-bold uppercase tracking-wider text-tertiary font-mono">
             ${PROJECT_CATEGORIES[project.categoryKey]?.label || project.category}
           </span>
-
-         
         </div>
 
         <h3 class="text-xl sm:text-2xl font-black text-white mb-3 group-hover:text-tertiary transition-colors">
@@ -172,11 +292,7 @@ function renderProjectCard(project, index) {
         <p class="text-sm text-on-surface-variant leading-relaxed mb-5 line-clamp-2">
           ${project.subtitle || project.description || ""}
         </p>
-
-        
       </div>
-
-      
     </a>
   `;
 }
@@ -223,8 +339,6 @@ function renderFeaturedProject(project) {
           <div class="absolute inset-0 bg-gradient-to-t from-[#00080F]/90 via-[#00080F]/20 to-transparent pointer-events-none z-10"></div>
           <div class="absolute inset-0 bg-gradient-to-tr from-tertiary/15 via-transparent to-transparent opacity-0 group-hover/visual:opacity-100 transition-opacity duration-500 pointer-events-none z-10"></div>
 
-          
-
           <!-- Center Hover Button -->
           <div class="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover/visual:opacity-100 transition-all duration-300 pointer-events-none">
             <span class="btn-smooth inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-tertiary text-[#00101D] font-extrabold text-sm shadow-[0_0_30px_rgba(0,196,238,0.5)] transform translate-y-3 group-hover/visual:translate-y-0 transition-transform duration-300">
@@ -232,8 +346,6 @@ function renderFeaturedProject(project) {
               <span class="material-symbols-outlined text-base">arrow_back</span>
             </span>
           </div>
-
-          
         </div>
 
         <!-- Content Column (5 cols) -->
@@ -250,14 +362,9 @@ function renderFeaturedProject(project) {
           <p class="text-sm sm:text-base text-on-surface-variant font-normal leading-relaxed">
             ${project.subtitle || project.description || ""}
           </p>
-
-         
-
-         
         </div>
 
       </div>
-
     </a>
   `;
 }
@@ -266,9 +373,7 @@ function renderProjectShowcase(filter = "all") {
   const featuredContainer = document.getElementById(
     "featured-project-container",
   );
-
   const grid = document.getElementById("secondary-projects-grid");
-
   const emptyNotice = document.getElementById("empty-category-notice");
 
   if (!featuredContainer || !grid) return;
@@ -278,7 +383,7 @@ function renderProjectShowcase(filter = "all") {
   const filteredProjects =
     filter === "all"
       ? projects
-      : projects.filter((project) => project.categoryKey === filter);
+      : projects.filter((project) => projectMatchesCategory(project, filter));
 
   const featuredProject = filteredProjects.find((project) => project.featured);
 
@@ -303,11 +408,18 @@ function renderProjectShowcase(filter = "all") {
   }
 }
 
-function setActiveProjectFilter(filter) {
+function setActiveProjectFilter(filter, updateHistory = true) {
+  const validFilter = Object.prototype.hasOwnProperty.call(
+    PROJECT_CATEGORIES,
+    filter,
+  )
+    ? filter
+    : "all";
+
   const buttons = document.querySelectorAll("#category-filters .filter-btn");
 
   buttons.forEach((button) => {
-    const isActive = button.dataset.filter === filter;
+    const isActive = button.dataset.filter === validFilter;
 
     button.classList.remove(
       ...PROJECT_FILTER_ACTIVE_CLASSES,
@@ -333,14 +445,34 @@ function setActiveProjectFilter(filter) {
     }
   });
 
-  renderProjectShowcase(filter);
+  renderProjectShowcase(validFilter);
+
+  if (updateHistory) {
+    updateUrlQueryParam(validFilter);
+  }
 }
 
 function initDynamicProjectShowcase() {
   if (!document.getElementById("category-filters")) return;
 
-  renderProjectFilters();
-  renderProjectShowcase("all");
+  const initialCategory = getCategoryFromUrl();
+
+  renderProjectFilters(initialCategory);
+  renderProjectShowcase(initialCategory);
+
+  if (initialCategory !== "all") {
+    setTimeout(() => {
+      const showcaseSection = document.getElementById("projects-showcase");
+      if (showcaseSection) {
+        showcaseSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 200);
+  }
+
+  window.addEventListener("popstate", () => {
+    const activeCategory = getCategoryFromUrl();
+    setActiveProjectFilter(activeCategory, false);
+  });
 }
 
 function initApp() {

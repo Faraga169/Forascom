@@ -103,18 +103,20 @@
       style="border-color: rgba(56, 189, 248, 0.12)"
     >
       <div
-        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
+        class="nav-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4"
       >
-        <a href="index.html" class="flex items-center gap-3 group">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 group shrink-0">
           <img
             src="assets/images/Logo.png"
             alt="Forascom — فرصكم"
-            class="h-12 w-auto object-contain hover:scale-105 transition-transform"
+            class="h-10 sm:h-12 w-auto object-contain hover:scale-105 transition-transform"
           />
         </a>
 
+        <!-- Desktop Navigation -->
         <nav
-          class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-7 font-semibold text-sm"
+          class="hidden lg:flex items-center justify-center gap-5 xl:gap-8 font-semibold text-sm flex-1 mx-4"
         >
           <a
             href="index.html"
@@ -144,31 +146,41 @@
           >
         </nav>
 
-        <button
-          id="mobile-menu-btn"
-          class="md:hidden text-text-primary p-2 rounded-lg"
-          style="background: rgba(56, 189, 248, 0.1)"
-          aria-label="القائمة"
-        >
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+        <!-- Desktop CTA & Mobile Toggle -->
+        <div class="flex items-center gap-4 shrink-0">
+          <a
+            href="contact.html"
+            class="hidden lg:inline-flex btn-cyan font-bold text-sm px-6 py-2.5 rounded-xl shadow-lg transition-all"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
+            استشارة مجانية
+          </a>
+          <button
+            id="mobile-menu-btn"
+            class="lg:hidden text-text-primary p-2 rounded-lg hover:bg-white/5 transition-colors"
+            style="background: rgba(56, 189, 248, 0.1)"
+            aria-label="القائمة"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
 
+      <!-- Mobile Dropdown Menu -->
       <div
         id="mobile-menu-container"
-        class="hidden md:hidden bg-navy-secondary border-b px-4 pt-2 pb-6 space-y-3 font-semibold text-text-secondary"
+        class="hidden lg:hidden bg-navy-secondary border-b px-4 pt-2 pb-6 space-y-3 font-semibold text-text-secondary max-h-[calc(100vh-5rem)] overflow-y-auto"
         style="border-color: rgba(56, 189, 248, 0.12)"
       >
         <a
@@ -209,7 +221,7 @@
        HERO SECTION (FAANG AESTHETIC WITH TECH MATRIX BACKDROP)
        ========================================================================== -->
     <section
-      class="relative h-screen min-h-screen py-12 lg:py-16 flex items-center overflow-visible"
+      class="relative min-h-[100svh] lg:h-screen lg:min-h-screen pt-28 pb-12 lg:py-16 flex items-center overflow-hidden lg:overflow-visible"
       style="
         background: linear-gradient(
           180deg,
@@ -267,7 +279,7 @@
       <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <!-- Hero Text Content -->
-          <div class="lg:col-span-7 self-center space-y-6 text-right">
+          <div class="lg:col-span-7 self-center space-y-6 text-center lg:text-right">
             <!-- Badge -->
             <div class="badge hero-enter" style="--d: 0.05s">
               فرصكم | Technology That Creates Opportunities
@@ -275,7 +287,7 @@
 
             <!-- Headline -->
             <h1
-              class="hero-enter text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary leading-[1.15]"
+              class="hero-enter text-[clamp(1.65rem,5.5vw,2.25rem)] sm:text-5xl lg:text-6xl font-bold text-text-primary leading-[1.15]"
               style="--d: 0.15s"
             >
               نحوّل الأفكار إلى برمجيات، أنظمة ذكية ومُنتجات رقمية عالية الجودة.
@@ -293,12 +305,12 @@
 
             <!-- Action Buttons -->
             <div
-              class="hero-enter flex flex-wrap items-center gap-4 pt-2"
+              class="hero-enter flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start items-stretch sm:items-center gap-3 sm:gap-4 pt-2"
               style="--d: 0.35s"
             >
               <a
                 href="contact.html"
-                class="btn-cyan font-bold text-base px-8 py-4 rounded-xl shadow-xl flex items-center gap-3"
+                class="btn-cyan font-bold text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl shadow-xl flex items-center justify-center gap-3"
               >
                 <span>ابدأ استشارتك التقنية</span>
                 <svg
@@ -317,7 +329,7 @@
               </a>
               <a
                 href="portfolio.html"
-                class="font-bold text-base px-7 py-4 rounded-xl border transition-all flex items-center gap-2"
+                class="font-bold text-sm sm:text-base px-5 sm:px-7 py-3.5 sm:py-4 rounded-xl border transition-all flex items-center justify-center gap-2"
                 style="
                   background: rgba(8, 35, 58, 0.4);
                   border-color: rgba(56, 189, 248, 0.12);
@@ -331,7 +343,7 @@
 
             <!-- Trust Highlights -->
             <div
-              class="hero-enter pt-6 border-t flex flex-wrap items-center gap-6 text-xs font-bold text-text-muted"
+              class="hero-enter pt-4 sm:pt-6 border-t flex flex-wrap justify-center lg:justify-start items-center gap-3 sm:gap-6 text-[0.65rem] sm:text-xs font-bold text-text-muted"
               style="--d: 0.45s; border-color: rgba(56, 189, 248, 0.12)"
             >
               <div class="flex items-center gap-2">
@@ -387,7 +399,7 @@
 
           <!-- Hero Visual Showcase -->
           <div
-            class="hero-enter hero-image-area lg:col-span-5 flex items-center justify-center"
+            class="hero-enter hero-image-area lg:col-span-5 flex items-center justify-center max-w-md sm:max-w-lg lg:max-w-none mx-auto w-full"
             style="--d: 0.3s"
           >
             <img
@@ -410,7 +422,7 @@
         >
           <!-- Left Column: 4 Connected Cards with Central Technology Core -->
           <div
-            class="lg:col-span-7 forascom-about-ecosystem-wrapper relative order-1 lg:order-1"
+            class="lg:col-span-7 forascom-about-ecosystem-wrapper relative order-2 lg:order-1"
           >
             <svg
               class="forascom-about-svg absolute inset-0 w-full h-full pointer-events-none z-0 hidden sm:block"
@@ -669,10 +681,10 @@
           </div>
 
           <div
-            class="lg:col-span-5 space-y-5 forascom-about-content order-2 lg:order-2"
+            class="lg:col-span-5 space-y-5 forascom-about-content order-1 lg:order-2"
           >
             <h2
-              class="forascom-about-heading text-3xl sm:text-4xl font-black leading-tight"
+              class="forascom-about-heading text-2xl sm:text-3xl lg:text-4xl font-black leading-tight"
             >
               <span class="forascom-about-title-line block"
                 >نحن نخلق الفرص</span
@@ -883,7 +895,7 @@
        ========================================================================== -->
     <section
       id="tech-orbit-section"
-      class="tech-orbit-section py-24 lg:py-32 bg-[#0B1120] text-slate-100 relative overflow-hidden border-y border-slate-800/80"
+      class="tech-orbit-section py-16 sm:py-24 lg:py-32 bg-[#0B1120] text-slate-100 relative overflow-hidden border-y border-slate-800/80"
     >
       <!-- Subtle Ambient Glowing Atmosphere -->
       <div class="tech-orbit-bg-glow absolute inset-0 pointer-events-none z-0">
@@ -898,7 +910,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="tech-orbit-heading mx-auto mb-12 max-w-3xl text-center">
           <h2
-            class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight tracking-tight"
+            class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-white leading-tight tracking-tight"
           >
             قدراتنا التقنية
           </h2>
@@ -913,7 +925,7 @@
           class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center"
         >
           <!-- Right Column in RTL: Dynamic Technology Detail Card -->
-          <div class="lg:col-span-5 tech-orbit-content">
+          <div class="lg:col-span-5 tech-orbit-content order-2 lg:order-1">
             <div
               id="tech-orbit-dynamic-card"
               class="tech-orbit-dynamic-card bg-[#0F172A]/85 backdrop-blur-xl border border-cyan-500/20 rounded-3xl p-6 sm:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.5)] space-y-4 relative overflow-hidden transition-all duration-300"
@@ -1017,11 +1029,11 @@
 
           <!-- Left Column in RTL: Interactive Orbit Hub -->
           <div
-            class="lg:col-span-7 flex justify-center items-center py-6 relative tech-orbit-hub-wrapper"
+            class="lg:col-span-7 flex justify-center items-center py-6 relative tech-orbit-hub-wrapper order-1 lg:order-2"
           >
             <div
               id="tech-orbit-hub"
-              class="tech-orbit-hub relative w-[330px] h-[330px] sm:w-[500px] sm:h-[500px] lg:w-[540px] lg:h-[540px]"
+              class="tech-orbit-hub relative w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] lg:w-[540px] lg:h-[540px]"
             >
               <!-- Concentric Orbit SVG Rings & Traveling Particles -->
               <svg
@@ -1130,7 +1142,7 @@
        ========================================================================== -->
     <section
       id="philosophy"
-      class="py-28 text-text-primary relative overflow-hidden"
+      class="py-14 sm:py-20 lg:py-28 text-text-primary relative overflow-hidden"
       style="
         background: linear-gradient(
           180deg,
@@ -1153,9 +1165,9 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <!-- Section Header -->
         <div
-          class="text-center max-w-3xl mx-auto mb-20 space-y-5 reveal-on-scroll reveal-blur"
+          class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 lg:mb-20 space-y-4 sm:space-y-5 reveal-on-scroll reveal-blur"
         >
-          <h2 class="text-3xl sm:text-5xl font-black leading-tight">
+          <h2 class="text-2xl sm:text-3xl lg:text-5xl font-black leading-tight">
             التكنولوجيا <span class="text-cyan">وسيلة</span> وليست الهدف
           </h2>
           <p
@@ -1170,21 +1182,21 @@
         <div class="relative">
           <!-- Horizontal connecting line (desktop only) -->
           <div
-            class="philosophy-line hidden md:block absolute top-12 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent"
+            class="philosophy-line hidden lg:block absolute top-12 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-cyan/40 to-transparent"
           ></div>
 
           <div
-            class="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-5 reveal-on-scroll reveal-group"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-5 reveal-on-scroll reveal-group"
           >
             <!-- Step 01 -->
             <div class="relative group">
               <div
-                class="hidden md:flex absolute top-6 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-dark border-2 border-cyan items-center justify-center z-10 group-hover:scale-125 transition-transform"
+                class="hidden lg:flex absolute top-6 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-dark border-2 border-cyan items-center justify-center z-10 group-hover:scale-125 transition-transform"
               >
                 <span class="w-2 h-2 rounded-full bg-cyan"></span>
               </div>
               <div
-                class="md:pt-20 bg-white/[0.04] backdrop-blur-sm p-6 rounded-2xl border border-slate-800/80 hover:border-cyan/50 transition-all group-hover:-translate-y-1 duration-300"
+                class="lg:pt-20 bg-white/[0.04] backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-slate-800/80 hover:border-cyan/50 transition-all group-hover:-translate-y-1 duration-300"
               >
                 <div
                   class="text-cyan/80 font-black text-5xl mb-3 opacity-30 group-hover:opacity-60 transition-opacity"
@@ -1202,12 +1214,12 @@
             <!-- Step 02 -->
             <div class="relative group">
               <div
-                class="hidden md:flex absolute top-6 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-dark border-2 border-cyan items-center justify-center z-10 group-hover:scale-125 transition-transform"
+                class="hidden lg:flex absolute top-6 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-dark border-2 border-cyan items-center justify-center z-10 group-hover:scale-125 transition-transform"
               >
                 <span class="w-2 h-2 rounded-full bg-cyan"></span>
               </div>
               <div
-                class="md:pt-20 bg-white/[0.04] backdrop-blur-sm p-6 rounded-2xl border border-slate-800/80 hover:border-cyan/50 transition-all group-hover:-translate-y-1 duration-300"
+                class="lg:pt-20 bg-white/[0.04] backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-slate-800/80 hover:border-cyan/50 transition-all group-hover:-translate-y-1 duration-300"
               >
                 <div
                   class="text-cyan/80 font-black text-5xl mb-3 opacity-30 group-hover:opacity-60 transition-opacity"
@@ -1227,12 +1239,12 @@
             <!-- Step 03 -->
             <div class="relative group">
               <div
-                class="hidden md:flex absolute top-6 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-dark border-2 border-cyan items-center justify-center z-10 group-hover:scale-125 transition-transform"
+                class="hidden lg:flex absolute top-6 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-dark border-2 border-cyan items-center justify-center z-10 group-hover:scale-125 transition-transform"
               >
                 <span class="w-2 h-2 rounded-full bg-cyan"></span>
               </div>
               <div
-                class="md:pt-20 bg-white/[0.04] backdrop-blur-sm p-6 rounded-2xl border border-slate-800/80 hover:border-cyan/50 transition-all group-hover:-translate-y-1 duration-300"
+                class="lg:pt-20 bg-white/[0.04] backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-slate-800/80 hover:border-cyan/50 transition-all group-hover:-translate-y-1 duration-300"
               >
                 <div
                   class="text-cyan/80 font-black text-5xl mb-3 opacity-30 group-hover:opacity-60 transition-opacity"
@@ -1252,12 +1264,12 @@
             <!-- Step 04 -->
             <div class="relative group">
               <div
-                class="hidden md:flex absolute top-6 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-dark border-2 border-cyan items-center justify-center z-10 group-hover:scale-125 transition-transform"
+                class="hidden lg:flex absolute top-6 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-dark border-2 border-cyan items-center justify-center z-10 group-hover:scale-125 transition-transform"
               >
                 <span class="w-2 h-2 rounded-full bg-cyan"></span>
               </div>
               <div
-                class="md:pt-20 bg-white/[0.04] backdrop-blur-sm p-6 rounded-2xl border border-slate-800/80 hover:border-cyan/50 transition-all group-hover:-translate-y-1 duration-300"
+                class="lg:pt-20 bg-white/[0.04] backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-slate-800/80 hover:border-cyan/50 transition-all group-hover:-translate-y-1 duration-300"
               >
                 <div
                   class="text-cyan/80 font-black text-5xl mb-3 opacity-30 group-hover:opacity-60 transition-opacity"
@@ -1277,12 +1289,12 @@
             <!-- Step 05 -->
             <div class="relative group">
               <div
-                class="hidden md:flex absolute top-6 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-dark border-2 border-cyan items-center justify-center z-10 group-hover:scale-125 transition-transform shadow-[0_0_12px_rgba(25,169,229,0.4)]"
+                class="hidden lg:flex absolute top-6 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-dark border-2 border-cyan items-center justify-center z-10 group-hover:scale-125 transition-transform shadow-[0_0_12px_rgba(25,169,229,0.4)]"
               >
                 <span class="w-2 h-2 rounded-full bg-cyan"></span>
               </div>
               <div
-                class="md:pt-20 bg-white/[0.04] backdrop-blur-sm p-6 rounded-2xl border border-slate-800/80 hover:border-cyan/60 transition-all group-hover:-translate-y-1 duration-300"
+                class="lg:pt-20 bg-white/[0.04] backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-slate-800/80 hover:border-cyan/60 transition-all group-hover:-translate-y-1 duration-300"
               >
                 <div
                   class="text-cyan font-black text-5xl mb-3 opacity-50 group-hover:opacity-80 transition-opacity"
@@ -1304,13 +1316,13 @@
     <!-- ==========================================================================
        FEATURED PROJECTS PORTFOLIO (INSPIRATION INTEGRATED)
        ========================================================================== -->
-    <section id="portfolio" class="py-24 bg-surface">
+    <section id="portfolio" class="py-14 sm:py-20 lg:py-24 bg-surface">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
         <div
-          class="text-center max-w-3xl mx-auto mb-20 space-y-5 reveal-on-scroll reveal-blur"
+          class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 lg:mb-20 space-y-4 sm:space-y-5 reveal-on-scroll reveal-blur"
         >
-          <h2 class="text-3xl sm:text-5xl font-black leading-tight">
+          <h2 class="text-2xl sm:text-3xl lg:text-5xl font-black leading-tight">
             مشاريع تم تنفيذها <span class="text-cyan">بحرفية</span>
           </h2>
           <p
@@ -1370,14 +1382,14 @@
     <!-- ==========================================================================
        CONTACT & LEAD CAPTURE SECTION
        ========================================================================== -->
-    <section id="contact" class="py-24 bg-dark text-white relative">
+    <section id="contact" class="py-14 sm:py-20 lg:py-24 bg-dark text-white relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div class="lg:col-span-5 space-y-6">
             <span class="text-cyan font-bold text-xs tracking-widest uppercase"
               >تواصل معنا | Let's Talk</span
             >
-            <h2 class="text-3xl sm:text-5xl font-black leading-tight">
+            <h2 class="text-2xl sm:text-3xl lg:text-5xl font-black leading-tight">
               جاهز تحوّل فكرتك لواقع تقني؟
             </h2>
             <p class="text-slate-300 text-base leading-relaxed">
@@ -1411,7 +1423,7 @@
           <div class="lg:col-span-7">
             <form
               id="lead-contact-form"
-              class="field-glow bg-navy/90 p-8 rounded-3xl border border-slate-800 shadow-2xl space-y-5 reveal-on-scroll reveal-right"
+              class="field-glow bg-navy/90 p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-800 shadow-2xl space-y-4 sm:space-y-5 reveal-on-scroll reveal-right"
             >
               <h3 class="font-black text-2xl text-white mb-2">
                 أرسل تفاصيل مشروعك
@@ -1499,7 +1511,7 @@
        PROFESSIONAL UNIFIED FOOTER
        ========================================================================== -->
     <footer
-      class="relative bg-[#070D1B] text-slate-400 border-t border-slate-800/80 pt-16 pb-12 overflow-hidden"
+      class="relative bg-[#070D1B] text-slate-400 border-t border-slate-800/80 pt-10 sm:pt-16 pb-8 sm:pb-12 overflow-hidden"
     >
       <!-- Ambient Backlight Glowing Orbs -->
       <!-- <div class="absolute top-0 right-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none"></div>
@@ -1553,7 +1565,7 @@
 
         <!-- 2. Main Footer Grid -->
         <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pt-4"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-8 pt-4"
         >
           <!-- Col 1: Branding -->
           <div class="lg:col-span-4 space-y-5">

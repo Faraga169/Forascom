@@ -98,3 +98,130 @@
 #philosophy .reveal-group > * > div:last-child {
   flex: 1 1 auto;
 }
+
+/* =========================================================
+   RESPONSIVE — HOMEPAGE
+   Targets: 320 · 375 · 390 · 414 · 640 · 768 · 820 · 1024
+            · 1280 · 1440 · 1536 · 1920
+   ========================================================= */
+
+/* ---- Global viewport overflow prevention ---- */
+html {
+  overflow-x: hidden;
+}
+
+/* ---- Extra-small phones (320px–374px) ---- */
+@media (max-width: 374px) {
+  /* Hero */
+  .hero-image {
+    transform: scale(1);
+  }
+  .hero-image-area {
+    overflow: hidden;
+  }
+
+  /* Badge */
+  .badge {
+    font-size: 0.65rem;
+    padding: 0.35rem 0.75rem;
+  }
+
+  /* About cards min-height removal — already set in styles.css for ≤639,
+     but we also tighten padding */
+  .forascom-about-card {
+    padding: 1rem 0.85rem;
+  }
+
+  /* Philosophy step numbers */
+  #philosophy .group .text-5xl {
+    font-size: 2.25rem;
+  }
+
+  /* Contact form tighter padding */
+  #lead-contact-form {
+    padding: 1.25rem;
+  }
+}
+
+/* ---- Small phones (375px–639px) ---- */
+@media (max-width: 639px) {
+  /* Scale down the hero image for mobile — avoids horizontal bleed */
+  .hero-image {
+    transform: scale(1);
+  }
+  .hero-image-area {
+    overflow: hidden;
+    margin-top: 1.5rem;
+  }
+
+  /* Hero glow accent: clamp to viewport */
+  section.h-screen .absolute.w-\[600px\] {
+    width: 300px;
+    height: 300px;
+  }
+
+  /* Contact form padding */
+  #lead-contact-form {
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+  }
+
+  /* Tech orbit section: prevent glow orbs from causing overflow */
+  .tech-orbit-glow-orb {
+    max-width: 100vw;
+  }
+
+  /* Footer bottom bar: stack on small screens */
+  footer .pt-8.border-t {
+    text-align: center;
+  }
+
+  /* WhatsApp floating button: prevent overflow by limiting expanded text */
+  .fixed.bottom-6.left-6 a span:last-child {
+    max-width: 0 !important;
+    opacity: 0 !important;
+  }
+}
+
+/* ---- Tablet portrait (640px–767px) ---- */
+@media (min-width: 640px) and (max-width: 1023px) {
+  /* Hero image scale + containment — FIX: was falling back to base
+     scale(1.2) + overflow: visible, causing overflow on this range */
+  .hero-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    transform: none !important; /* يضمن إلغاء أي scale قديم متبقي في أي مكان */
+    /* filter: drop-shadow(0 0 35px rgba(0, 210, 255, 0.25)); */
+  }
+
+  .hero-image-area {
+    overflow: hidden; /* ✅ يرجع لـ hidden عشان يمنع أي طلوع بره حدود الصفحة */
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Tech orbit glow orb containment (existing rule) */
+  .tech-orbit-glow-orb {
+    max-width: 90vw;
+  }
+}
+
+/* ---- Desktop (1024px+): hero image keeps the designed scale ---- */
+@media (min-width: 1024px) {
+  .hero-image {
+    transform: scale(1.2);
+  }
+  .hero-image-area {
+    overflow: visible;
+  }
+}
+
+/* ---- Large desktop cap (1920px+) ---- */
+@media (min-width: 1920px) {
+  /* Prevent ultra-wide content stretch */
+  .max-w-7xl {
+    max-width: 80rem; /* keeps current 1280px cap */
+  }
+}

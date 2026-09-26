@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    FORASCOM - CUSTOM STYLES & ANIMATIONS
    Colors Palette:
    Navy: #011F47 | Blue: #1368B9 | Cyan: #19A9E5 | Dark: #001C41
@@ -119,10 +119,11 @@ body::after {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
 }
 
-.glass-nav > div {
+.glass-nav .nav-inner {
   position: relative;
   z-index: 1001 !important;
   border-bottom: 1px solid rgba(56, 189, 248, 0.1);
+  transition: height 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* Custom Gradients & Glows */
@@ -435,12 +436,12 @@ body::after {
   box-shadow: 0 10px 35px -14px rgba(0, 0, 0, 0.5);
 }
 
-.glass-nav.nav-scrolled > div {
+.glass-nav.nav-scrolled .nav-inner {
   height: 64px;
 }
 
 @media (max-width: 640px) {
-  .glass-nav.nav-scrolled > div {
+  .glass-nav.nav-scrolled .nav-inner {
     height: 60px;
   }
 }

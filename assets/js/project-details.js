@@ -27,7 +27,8 @@ const projectsDetailsData = {
     heroImageAlt: "Pizza Paradiso Digital Transformation",
 
     liveUrl: "",
-    demoVideo: "assets/videos/Pizza.mp4",
+    demoVideo:
+      "https://res.cloudinary.com/hhfm3zpe/video/upload/v1790352563/Pizza.mp4",
 
     metaTelemetry: {
       label: "RESTAURANT MANAGEMENT",
@@ -239,7 +240,8 @@ const projectsDetailsData = {
     heroImageAlt: "Fishbowl Inventory Automation and Cloud Migration",
 
     liveUrl: "",
-    demoVideo: "assets/videos/FishBowl.mp4",
+    demoVideo:
+      "https://res.cloudinary.com/hhfm3zpe/video/upload/v1790352332/FishBowl.mp4",
 
     metaTelemetry: {
       label: "CLOUD AUTOMATION",
@@ -310,7 +312,8 @@ const projectsDetailsData = {
     heroImageAlt: "Intelligent IT Support Agent",
 
     liveUrl: "",
-    demoVideo: "assets/videos/Itsupport.mp4",
+    demoVideo:
+      "https://res.cloudinary.com/hhfm3zpe/video/upload/v1790352429/ItSupport.mp4",
 
     metaTelemetry: {
       label: "AI AGENT",
@@ -394,7 +397,8 @@ const projectsDetailsData = {
     heroImageAlt: "FocusZone AI Learning Platform",
 
     liveUrl: "",
-    demoVideo: "assets/videos/Demo.mp4",
+    demoVideo:
+      "https://res.cloudinary.com/hhfm3zpe/video/upload/v1790384011/Focuszone.mp4",
 
     metaTelemetry: {
       label: "AI LEARNING ECOSYSTEM",
@@ -466,7 +470,8 @@ const projectsDetailsData = {
     heroImage: "assets/images/ClinicManagmentSystem.jpg",
     heroImageAlt: "Clinic Management System UI",
     liveUrl: "",
-    demoVideo: "assets/videos/Clinic.mp4",
+    demoVideo:
+      "https://res.cloudinary.com/hhfm3zpe/video/upload/v1790352050/Clinic.mp4",
     metaTelemetry: {
       label: "CLINIC MANAGEMENT PLATFORM",
       status: "Completed",
@@ -533,7 +538,8 @@ const projectsDetailsData = {
     heroImage: "assets/images/Watchify.png",
     heroImageAlt: "Watchify intelligent streaming platform interface",
     liveUrl: "",
-    demoVideo: "assets/videos/Watchify.mp4",
+    demoVideo:
+      "https://res.cloudinary.com/hhfm3zpe/video/upload/v1790353391/Watchify.mp4",
     metaTelemetry: {
       label: "AI RECOMMENDATION PIPELINE",
       status: "Completed",
@@ -598,7 +604,8 @@ const projectsDetailsData = {
     cardImage: "assets/images/Ecommerce.png",
     cardImageAlt: "FreshCart E-Commerce Platform UI",
     liveUrl: "",
-    demoVideo: "assets/videos/Ecommerce.mp4",
+    demoVideo:
+      "https://res.cloudinary.com/hhfm3zpe/video/upload/v1790383891/Ecommerce.mp4",
     featured: false,
     metaTelemetry: {
       label: "E-COMMERCE PLATFORM",
@@ -660,7 +667,7 @@ const projectsDetailsData = {
 
     liveUrl: "",
     demoVideo:
-      "assets/videos/power_apps_studio_hospital_application_editing_and_3_more_pages.mp4",
+      "https://res.cloudinary.com/hhfm3zpe/video/upload/v1790351761/power_apps_studio_hospital_application_editing_and_3_more_pages.mp4",
 
     metaTelemetry: {
       label: "HEALTHCARE BUSINESS APPLICATION",
@@ -733,7 +740,8 @@ const projectsDetailsData = {
 
     liveUrl: "",
 
-    demoVideo: "assets/videos/clinicreservation.mp4",
+    demoVideo:
+      "https://res.cloudinary.com/hhfm3zpe/video/upload/v1790352075/clinicreservation.mp4",
 
     metaTelemetry: {
       label: "AI AUTOMATION WORKFLOW",
@@ -807,7 +815,8 @@ const projectsDetailsData = {
     heroImageAlt: "AINS Group Corporate Website UI",
 
     liveUrl: "https://ains-group.com/",
-    demoVideo: "assets/videos/Ansigroup.mp4",
+    demoVideo:
+      "https://res.cloudinary.com/hhfm3zpe/video/upload/v1790384426/Ansigroup.mp4",
 
     metaTelemetry: {
       label: "CORPORATE WEBSITE",

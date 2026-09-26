@@ -1542,6 +1542,7 @@ body::after {
 }
 
 /* Technology Orbit Floating Glass Nodes */
+/* Technology Orbit Floating Glass Nodes */
 #tech-orbit-section .tech-orbit-node {
   position: absolute;
   top: 0;
@@ -1555,9 +1556,9 @@ body::after {
     0 10px 25px -5px rgba(0, 0, 0, 0.6),
     0 0 15px rgba(6, 182, 212, 0.08);
   color: #f8fafc;
-  width: 76px;
-  height: 76px;
-  padding: 0.45rem;
+  width: 52px;
+  height: 52px;
+  padding: 0.35rem;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -1572,33 +1573,53 @@ body::after {
   outline: none;
 }
 
-#tech-orbit-section .tech-orbit-node:hover,
-#tech-orbit-section .tech-orbit-node:focus-visible {
-  border-color: rgba(6, 182, 212, 0.85);
-  background: rgba(15, 23, 42, 0.98);
+#tech-orbit-section .tech-orbit-node.is-parent-node {
+  width: 62px;
+  height: 62px;
+  border: 1.5px solid rgba(103, 232, 249, 0.35);
   box-shadow:
-    0 0 25px rgba(6, 182, 212, 0.4),
-    0 12px 30px -5px rgba(0, 0, 0, 0.8);
-  z-index: 30;
+    0 12px 28px -5px rgba(0, 0, 0, 0.7),
+    0 0 20px rgba(6, 182, 212, 0.15);
 }
 
-#tech-orbit-section .tech-orbit-node.is-active {
+#tech-orbit-section .tech-orbit-node:hover,
+#tech-orbit-section .tech-orbit-node:focus-visible {
+  border-color: rgba(6, 182, 212, 0.95);
+  background: rgba(15, 23, 42, 0.98);
+  box-shadow:
+    0 0 25px rgba(6, 182, 212, 0.5),
+    0 12px 30px -5px rgba(0, 0, 0, 0.8);
+  z-index: 40;
+}
+
+#tech-orbit-section .tech-orbit-node.is-active,
+#tech-orbit-section .tech-orbit-node.is-group-active {
   border-color: #06b6d4;
   background: rgba(11, 17, 32, 0.98);
   box-shadow:
-    0 0 30px rgba(6, 182, 212, 0.55),
-    0 0 10px rgba(6, 182, 212, 0.3);
-  z-index: 25;
+    0 0 25px rgba(6, 182, 212, 0.65),
+    0 0 8px rgba(6, 182, 212, 0.4);
+  z-index: 30;
 }
 
-#tech-orbit-section .tech-orbit-node.is-active .tech-orbit-node-icon {
-  filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.8));
+#tech-orbit-section .tech-orbit-node.is-parent-node.is-active,
+#tech-orbit-section .tech-orbit-node.is-parent-node.is-group-active {
+  border-color: #38bdf8;
+  box-shadow:
+    0 0 35px rgba(56, 189, 248, 0.8),
+    0 0 12px rgba(6, 182, 212, 0.6);
+  z-index: 35;
+}
+
+#tech-orbit-section .tech-orbit-node.is-active .tech-orbit-node-icon,
+#tech-orbit-section .tech-orbit-node.is-group-active .tech-orbit-node-icon {
+  filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.85));
 }
 
 #tech-orbit-section .tech-orbit-node-icon {
   width: 100%;
   height: 100%;
-  padding: 0.55rem;
+  padding: 0.38rem;
   border-radius: 50%;
   background: rgba(248, 250, 252, 0.96);
   border: 1px solid rgba(103, 232, 249, 0.25);
@@ -1607,6 +1628,10 @@ body::after {
   justify-content: center;
   flex-shrink: 0;
   transition: filter 0.3s ease;
+}
+
+#tech-orbit-section .tech-orbit-node.is-parent-node .tech-orbit-node-icon {
+  padding: 0.42rem;
 }
 
 #tech-orbit-section .tech-orbit-node-icon img,
@@ -1621,12 +1646,13 @@ body::after {
 }
 
 #tech-orbit-section #tech-orbit-big-icon {
-  width: 68px;
-  height: 68px;
-  flex: 0 0 68px;
-  padding: 0.65rem;
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
+  padding: 0.6rem;
   border-radius: 50%;
   overflow: hidden;
+  background: rgba(248, 250, 252, 0.96);
 }
 
 /* Keyword Pills inside Dynamic Card */
@@ -1657,15 +1683,18 @@ body::after {
 
 @media (max-width: 639px) {
   #tech-orbit-section .tech-orbit-node {
-    width: 58px;
-    height: 58px;
-    padding: 0.3rem;
-    font-size: 0.7rem;
+    width: 42px;
+    height: 42px;
+    padding: 0.2rem;
     border-radius: 50%;
-    gap: 0.35rem;
+  }
+
+  #tech-orbit-section .tech-orbit-node.is-parent-node {
+    width: 50px;
+    height: 50px;
   }
 
   #tech-orbit-section .tech-orbit-node-icon {
-    padding: 0.3rem;
+    padding: 0.22rem;
   }
 }

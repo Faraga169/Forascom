@@ -477,10 +477,78 @@ function initDynamicProjectShowcase() {
 
 function initApp() {
   initDynamicProjectShowcase();
+  renderHomeFeaturedProjects();
 }
 
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initApp);
 } else {
   initApp();
+}
+
+const HOME_FEATURED_PROJECTS = ["focuszone", "pizza", "ainsgroup"];
+
+function renderHomeFeaturedProjects() {
+  const grid = document.getElementById("projects-grid");
+
+  if (!grid || typeof projectsDetailsData === "undefined") return;
+
+  grid.innerHTML = HOME_FEATURED_PROJECTS.map((projectId) => {
+    const project = projectsDetailsData[projectId];
+
+    if (!project) return "";
+
+    return `
+        <a
+          href="project-details.html?project=${encodeURIComponent(project.id)}"
+          class="project-card group block relative overflow-hidden rounded-3xl bg-surface-container-low/90 border border-white/10 hover:border-tertiary/40 shadow-2xl transition-all duration-500 hover:-translate-y-2"
+        >
+          <div class="relative aspect-video overflow-hidden bg-[#00080F]">
+            ${
+              project.cardImage
+                ? `
+                  <img
+                    src="${project.cardImage}"
+                    alt="${project.cardImageAlt || project.title}"
+                    loading="lazy"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                `
+                : ""
+            }
+
+            <div class="absolute inset-0 bg-gradient-to-t from-[#00080F]/90 via-transparent to-transparent"></div>
+
+            <div class="absolute top-4 right-4">
+              <span class="px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-xs font-bold text-white">
+                ${
+                  PROJECT_CATEGORIES[project.categoryKey]?.label ||
+                  project.category
+                }
+              </span>
+            </div>
+          </div>
+
+          <div class="p-6">
+            <h3 class="text-xl sm:text-2xl font-black text-white group-hover:text-tertiary transition-colors">
+              ${project.title}
+            </h3>
+
+            <p class="mt-3 text-sm text-on-surface-variant leading-relaxed line-clamp-2">
+              ${project.subtitle || project.description || ""}
+            </p>
+
+            <div class="mt-5 flex items-center justify-between">
+              <span class="text-sm font-bold text-tertiary">
+                استكشف المشروع
+              </span>
+
+              <span class="material-symbols-outlined text-tertiary transition-transform duration-300 group-hover:-translate-x-1">
+                arrow_back
+              </span>
+            </div>
+          </div>
+        </a>
+      `;
+  }).join("");
 }

@@ -1110,12 +1110,14 @@ function renderProjectDetails(projectKey) {
 
   // 5. FINAL CTA
   const ctaPrimaryBtn = document.getElementById("cta-primary-btn");
+
   if (ctaPrimaryBtn) {
     const encodedMsg = encodeURIComponent(
       project.ctaWhatsAppMessage ||
         `مرحباً فريق فرصكم، حابب أستفسر عن تنفيذ مشروع مشابه لـ ${project.title}`,
     );
-    ctaPrimaryBtn.href = `https://wa.me/201090000000?text=${encodedMsg}`;
+
+    ctaPrimaryBtn.href = `https://wa.me/201501795004?text=${encodedMsg}`;
   }
 }
 

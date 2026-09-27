@@ -1,709 +1,1100 @@
 <!doctype html>
 <html class="dark" dir="rtl" lang="ar">
-
-<head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>تفاصيل المشروع | Forascom فرصكم</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@500;700&amp;family=Plus+Jakarta+Sans:wght@500;700;800&amp;display=swap"
-    rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            surface: "#00101D",
-            "surface-dim": "#000B14",
-            "surface-container-lowest": "#00080F",
-            "surface-container-low": "#001525",
-            "surface-container": "#001A2E",
-            "surface-container-high": "#03243F",
-            "surface-container-highest": "#072F50",
-            "surface-bright": "#0B3960",
-            primary: "#99CBFF",
-            "primary-container": "#1D9BF0",
-            tertiary: "#00C4EE",
-            "tertiary-glow": "rgba(0, 196, 238, 0.4)",
-            "on-surface": "#E0E3E5",
-            "on-surface-variant": "#94A3B8",
-            outline: "#64748B",
-            "outline-variant": "#1E293B",
-            error: "#FF6B6B",
-          },
-          fontFamily: {
-            sans: ["Cairo", "Plus Jakarta Sans", "sans-serif"],
-            mono: ["JetBrains Mono", "monospace"],
-            body: ["Cairo", "sans-serif"],
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>تفاصيل المشروع | Forascom فرصكم</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@500;700&amp;family=Plus+Jakarta+Sans:wght@500;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              surface: "#00101D",
+              "surface-dim": "#000B14",
+              "surface-container-lowest": "#00080F",
+              "surface-container-low": "#001525",
+              "surface-container": "#001A2E",
+              "surface-container-high": "#03243F",
+              "surface-container-highest": "#072F50",
+              "surface-bright": "#0B3960",
+              primary: "#99CBFF",
+              "primary-container": "#1D9BF0",
+              tertiary: "#00C4EE",
+              "tertiary-glow": "rgba(0, 196, 238, 0.4)",
+              "on-surface": "#E0E3E5",
+              "on-surface-variant": "#94A3B8",
+              outline: "#64748B",
+              "outline-variant": "#1E293B",
+              error: "#FF6B6B",
+            },
+            fontFamily: {
+              sans: ["Cairo", "Plus Jakarta Sans", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+              body: ["Cairo", "sans-serif"],
+            },
           },
         },
-      },
-    };
-  </script>
+      };
+    </script>
 
-  <style>
-    @layer base {
-      body {
-        font-family: "Cairo", sans-serif;
-        background-color: #00101d;
-        color: #e0e3e5;
-        overflow-x: hidden;
-      }
-    }
-
-    @keyframes ambientDrift {
-
-      0%,
-      100% {
-        transform: translate(0, 0) scale(1);
-        opacity: 0.15;
+    <style>
+      @layer base {
+        body {
+          font-family: "Cairo", sans-serif;
+          background-color: #00101d;
+          color: #e0e3e5;
+          overflow-x: hidden;
+        }
       }
 
-      50% {
-        transform: translate(30px, -20px) scale(1.1);
-        opacity: 0.25;
-      }
-    }
+      @keyframes ambientDrift {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+          opacity: 0.15;
+        }
 
-    .animate-ambient-1 {
-      animation: ambientDrift 14s ease-in-out infinite alternate;
-    }
-
-    .animate-ambient-2 {
-      animation: ambientDrift 18s ease-in-out 4s infinite alternate;
-    }
-
-    .cyan-glow-text {
-      text-shadow: 0 0 20px rgba(0, 196, 238, 0.4);
-    }
-
-    .cyan-glow-box {
-      box-shadow: 0 0 30px -5px rgba(0, 196, 238, 0.2);
-    }
-
-    .cyan-glow-box-subtle {
-      box-shadow: 0 0 20px -5px rgba(0, 196, 238, 0.15);
-    }
-
-    .cyan-border {
-      border: 1px solid rgba(0, 196, 238, 0.25);
-    }
-
-    .btn-smooth {
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .btn-smooth:hover {
-      transform: translateY(-2px);
-    }
-
-    /* Utility classes for micro‑interactions */
-    .hover-scale {
-      transition: transform 0.5s ease;
-    }
-
-    .hover-scale:hover {
-      transform: scale(1.02);
-    }
-
-    .btn-hover {
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-    }
-
-    .btn-hover:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 196, 238, 0.2);
-    }
-
-    /* Subtle pulse on connectors */
-    @keyframes pulseGlow {
-
-      0%,
-      100% {
-        opacity: 0.4;
+        50% {
+          transform: translate(30px, -20px) scale(1.1);
+          opacity: 0.25;
+        }
       }
 
-      50% {
-        opacity: 0.9;
+      .animate-ambient-1 {
+        animation: ambientDrift 14s ease-in-out infinite alternate;
       }
-    }
 
-    .pulse-connector {
-      animation: pulseGlow 3s ease-in-out infinite;
-    }
-  </style>
-</head>
+      .animate-ambient-2 {
+        animation: ambientDrift 18s ease-in-out 4s infinite alternate;
+      }
 
-<body class="bg-surface min-h-screen text-on-surface antialiased selection:bg-tertiary/20 selection:text-tertiary">
-  <!-- GLOBAL AMBIENT BACKDROPS -->
-  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
-    <div
-      class="absolute -top-40 -right-40 w-[650px] h-[650px] rounded-full bg-tertiary/10 blur-[130px] animate-ambient-1">
+      .cyan-glow-text {
+        text-shadow: 0 0 20px rgba(0, 196, 238, 0.4);
+      }
+
+      .cyan-glow-box {
+        box-shadow: 0 0 30px -5px rgba(0, 196, 238, 0.2);
+      }
+
+      .cyan-glow-box-subtle {
+        box-shadow: 0 0 20px -5px rgba(0, 196, 238, 0.15);
+      }
+
+      .cyan-border {
+        border: 1px solid rgba(0, 196, 238, 0.25);
+      }
+
+      .btn-smooth {
+        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .btn-smooth:hover {
+        transform: translateY(-2px);
+      }
+
+      /* Utility classes for micro‑interactions */
+      .hover-scale {
+        transition: transform 0.5s ease;
+      }
+
+      .hover-scale:hover {
+        transform: scale(1.02);
+      }
+
+      .btn-hover {
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .btn-hover:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 196, 238, 0.2);
+      }
+
+      /* Subtle pulse on connectors */
+      @keyframes pulseGlow {
+        0%,
+        100% {
+          opacity: 0.4;
+        }
+
+        50% {
+          opacity: 0.9;
+        }
+      }
+
+      .pulse-connector {
+        animation: pulseGlow 3s ease-in-out infinite;
+      }
+
+      @media (max-width: 480px) {
+
+        body:has(#project-hero) > header > div.max-w-7xl > div:last-child {
+          gap: 0.5rem;
+        }
+
+        body:has(#project-hero)
+          > header
+          > div.max-w-7xl
+          > div:last-child
+          > .btn-smooth {
+          gap: 0.35rem;
+          padding-inline: 0.5rem !important;
+          font-size: 0.75rem;
+          white-space: nowrap;
+        }
+
+        body:has(#project-hero) > header > div.max-w-7xl > div:first-child img {
+          width: min(38vw, 7.5rem);
+          height: auto;
+          max-height: 2.75rem;
+        }
+
+        #project-hero,
+        #project-outcome,
+        #project-cta {
+          padding-inline: 1rem !important;
+        }
+
+        #project-hero {
+          padding-top: 2rem;
+          padding-bottom: 2rem;
+        }
+
+        #project-hero > .grid {
+          gap: 2rem;
+        }
+
+        #project-title {
+          font-size: clamp(1.75rem, 7vw, 2.25rem);
+          line-height: 1.2;
+          overflow-wrap: break-word;
+        }
+
+        #project-tags {
+          gap: 0.4rem;
+        }
+
+        #project-desc {
+          max-width: 100%;
+          font-size: 0.9rem;
+          line-height: 1.7;
+        }
+
+        #hero-actions-container {
+          gap: 0.55rem;
+          padding-top: 0.25rem;
+        }
+
+        #hero-actions-container > a {
+          min-width: 0;
+          max-width: 100%;
+          justify-content: center;
+          text-align: center;
+        }
+
+        #project-outcome,
+        #project-cta {
+          padding-top: 3rem;
+          padding-bottom: 3rem;
+        }
+
+        #outcome-before-card,
+        #outcome-after-card {
+          padding: 1.25rem;
+        }
+
+        #project-cta .cta-inner-card {
+          padding: 1.25rem;
+        }
+
+        #project-cta .cta-inner-card h2 {
+          font-size: clamp(1.65rem, 7vw, 2.3rem);
+          line-height: 1.2;
+        }
+
+        #project-cta .cta-inner-card p {
+          font-size: 0.95rem;
+          line-height: 1.7;
+        }
+
+        #project-cta .cta-inner-card .max-w-xl {
+          width: 100%;
+          gap: 0.75rem;
+        }
+
+        #project-cta .cta-inner-card .max-w-xl > a {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+
+      @media (min-width: 481px) and (max-width: 1024px) {
+        #project-hero,
+        #project-outcome,
+        #project-cta {
+          padding-inline: clamp(1.5rem, 3.5vw, 2rem) !important;
+        }
+      }
+
+      @media (min-width: 768px) and (max-width: 839px) {
+        #project-hero > .grid {
+          grid-template-columns: minmax(0, 1fr) !important;
+          gap: 2rem;
+        }
+
+        #project-hero > .grid > div {
+          grid-column: auto !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-surface min-h-screen text-on-surface antialiased selection:bg-tertiary/20 selection:text-tertiary"
+  >
+    <!-- GLOBAL AMBIENT BACKDROPS -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+      <div
+        class="absolute -top-40 -right-40 w-[650px] h-[650px] rounded-full bg-tertiary/10 blur-[130px] animate-ambient-1"
+      ></div>
+      <div
+        class="absolute top-1/3 -left-48 w-[600px] h-[600px] rounded-full bg-primary-container/10 blur-[140px] animate-ambient-2"
+      ></div>
+      <div
+        class="absolute bottom-10 right-1/4 w-[700px] h-[700px] rounded-full bg-tertiary/10 blur-[160px] animate-ambient-1"
+      ></div>
     </div>
-    <div
-      class="absolute top-1/3 -left-48 w-[600px] h-[600px] rounded-full bg-primary-container/10 blur-[140px] animate-ambient-2">
-    </div>
-    <div
-      class="absolute bottom-10 right-1/4 w-[700px] h-[700px] rounded-full bg-tertiary/10 blur-[160px] animate-ambient-1">
-    </div>
-  </div>
 
-  <!-- ==========================================================================
+    <!-- ==========================================================================
        HEADER & NAVIGATION BAR (MULTI-PAGE NAVIGATION)
        ========================================================================== -->
-  <header class="fixed top-0 inset-x-0 z-50 bg-[#00101D]/80 backdrop-blur-xl border-b border-white/5 shadow-2xl">
-    <div class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
-      <div class="flex items-center gap-10">
-        <a href="index.html" class="flex items-center gap-3 group">
-          <img src="assets/images/Logo.png" alt="Forascom — فرصكم"
-            class="h-12 w-auto object-contain hover:scale-105 transition-transform" />
+    <header
+      class="fixed top-0 inset-x-0 z-50 bg-[#00101D]/80 backdrop-blur-xl border-b border-white/5 shadow-2xl"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4"
+      >
+        <a href="index.html" class="flex items-center gap-3 group shrink-0">
+          <img
+            src="assets/images/Logo.png"
+            alt="Forascom — فرصكم"
+            class="h-10 sm:h-11 w-auto object-contain hover:scale-105 transition-transform"
+          />
         </a>
 
-        <nav class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-7 font-semibold text-sm">
-          <a class="text-sm font-semibold text-on-surface-variant hover:text-white transition-colors" href="index.html">
-            الرئيسية
-          </a>
-
-          <a class="text-sm font-semibold text-on-surface-variant hover:text-white transition-colors" href="about.html">
-            عن فرصكم
-          </a>
-
-          <a class="text-sm font-semibold text-on-surface-variant hover:text-white transition-colors"
-            href="services.html">
-            خدماتنا</a>
-
-          <div class="relative py-2">
-            <a class="text-sm font-bold text-tertiary cyan-glow-text transition-colors" href="portfolio.html">معرض
-              الأعمال</a>
-            <span class="absolute bottom-0 inset-x-0 h-0.5 bg-tertiary shadow-[0_0_8px_#00C4EE] rounded-full"></span>
-          </div>
-
-          <a class="text-sm font-semibold text-on-surface-variant hover:text-white transition-colors"
-            href="contact.html">تواصل معنا</a>
+        <nav
+          class="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-5 xl:gap-7 font-semibold text-sm"
+        >
+          <a class="nav-link hover:text-cyan-bright transition-colors" href="index.html">الرئيسية</a>
+          <a class="nav-link hover:text-cyan-bright transition-colors" href="about.html">عن فرصكم</a>
+          <a class="nav-link hover:text-cyan-bright transition-colors" href="services.html">خدماتنا</a>
+          <a class="nav-link nav-active hover:text-cyan-bright transition-colors" href="portfolio.html" aria-current="page">معرض الأعمال</a>
+          <a class="nav-link hover:text-cyan-bright transition-colors" href="contact.html">تواصل معنا</a>
         </nav>
+
+        <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+          <a
+            class="hidden lg:inline-flex btn-cyan font-bold text-sm px-5 py-2.5 rounded-xl shadow-lg transition-all"
+            href="contact.html"
+          >استشارة مجانية</a>
+          <button
+            id="mobile-menu-btn"
+            class="lg:hidden text-white p-2 rounded-lg bg-white/10 border border-white/10 shrink-0"
+            aria-label="القائمة"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
       </div>
 
-      <div class="flex items-center gap-4">
-        <a class="btn-smooth inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-[#00101D] bg-tertiary hover:bg-[#34d4f6] shadow-[0_0_20px_rgba(0,196,238,0.4)]"
-          href="contact.html">
-          <span>استشارة مجانية</span>
-          <span class="material-symbols-outlined text-base">arrow_back</span>
-        </a>
-
-        <button id="mobile-menu-btn"
-          class="md:hidden text-white p-2 rounded-lg bg-surface-bright/50 border border-white/10" aria-label="القائمة">
-          <span class="material-symbols-outlined text-2xl">menu</span>
-        </button>
+      <!-- Mobile Navigation Drawer -->
+      <div
+        id="mobile-menu-container"
+        class="hidden lg:hidden bg-surface-container border-b border-white/10 px-4 sm:px-6 py-5 space-y-3 font-semibold text-sm"
+      >
+        <a
+          href="index.html"
+          class="block py-2 text-on-surface-variant hover:text-white"
+          >الرئيسية</a
+        >
+        <a
+          href="about.html"
+          class="block py-2 text-on-surface-variant hover:text-white"
+          >عن فرصكم</a
+        >
+        <a
+          href="services.html"
+          class="block py-2 text-on-surface-variant hover:text-white"
+          >خدماتنا</a
+        >
+        <a href="portfolio.html" class="block py-2 text-tertiary font-bold"
+          >معرض الأعمال</a
+        >
+        <a
+          href="contact.html"
+          class="block py-2 text-on-surface-variant hover:text-white"
+          >تواصل معنا</a
+        >
       </div>
-    </div>
+    </header>
 
-    <!-- Mobile Navigation Drawer -->
-    <div id="mobile-menu-container"
-      class="hidden md:hidden bg-surface-container border-b border-white/10 px-8 py-5 space-y-3 font-semibold text-sm">
-      <a href="index.html" class="block py-2 text-on-surface-variant hover:text-white">الرئيسية</a>
-      <a href="about.html" class="block py-2 text-on-surface-variant hover:text-white">عن فرصكم</a>
-      <a href="services.html" class="block py-2 text-on-surface-variant hover:text-white">خدماتنا</a>
-      <a href="portfolio.html" class="block py-2 text-tertiary font-bold">معرض الأعمال</a>
-      <a href="contact.html" class="block py-2 text-on-surface-variant hover:text-white">تواصل معنا</a>
-    </div>
-  </header>
-
-  <!-- ==========================================================================
+    <!-- ==========================================================================
        MAIN CONTENT: PROJECT CASE STUDY
        ========================================================================== -->
-  <main class="relative z-10 pt-28 pb-16">
-    <!-- ========================================================================
+    <main class="relative z-10 pt-28 pb-16">
+      <!-- ========================================================================
          01 — HERO SECTION
          ======================================================================== -->
-    <section class="max-w-7xl mx-auto px-6 sm:px-8 py-10 lg:py-16" id="project-hero">
-      <!-- Breadcrumb / Back Link -->
-      <div class="mb-6">
-        <a href="portfolio.html" id="hero-back-link"
-          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container/80 hover:bg-surface-container-high border border-white/10 text-xs font-mono font-medium text-on-surface-variant hover:text-white transition-all duration-300 group">
-          <span
-            class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
-          <span>العودة إلى معرض الأعمال</span>
-        </a>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-12 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-        <!-- Hero Content Column (6 Cols on Desktop) -->
-        <div class="lg:col-span-6 md:col-span-6 flex flex-col gap-6">
-          <!-- Project Title -->
-          <h1 id="project-title"
-            class="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.2] tracking-tight text-white">
-            تحميل تفاصيل المشروع...
-          </h1>
-
-          <!-- Technology Tags -->
-          <div id="project-tags" class="flex flex-wrap items-center gap-2 pt-0.5">
-            <!-- Rendered dynamically -->
-          </div>
-
-          <!-- Short Description -->
-          <p id="project-desc"
-            class="text-sm sm:text-base text-on-surface-variant font-normal leading-relaxed max-w-xl">
-            جاري استعراض البنية التشغيلية والحل الهندسي الذي تم تنفيذه في بيئة
-            إنتاج حقيقية...
-          </p>
-
-          <!-- Hero Action Buttons -->
-          <div id="hero-actions-container" class="flex flex-wrap items-center gap-3 pt-2">
-            <!-- 1. View Live Project Button (Primary CTA - Shown only if liveUrl exists) -->
-            <a id="hero-live-btn" href="#" target="_blank" rel="noopener noreferrer"
-              class="hidden btn-smooth items-center gap-2 px-5 py-3 rounded-xl bg-tertiary hover:bg-[#34d4f6] text-[#00101D] font-bold text-sm shadow-[0_0_20px_rgba(0,196,238,0.35)] transition-all duration-300">
-              <span>مشاهدة المشروع المباشر</span>
-              <span class="material-symbols-outlined text-base">north_east</span>
-            </a>
-
-            <!-- 2. Watch Demo Button (Secondary Interactive CTA - Shown only if demoVideo exists) -->
-            <a id="hero-demo-btn" href="#project-hero"
-              class="hidden btn-smooth items-center gap-2 px-4.5 py-3 rounded-xl bg-surface-container-high/90 hover:bg-surface-bright text-white font-bold text-sm border border-white/15 hover:border-tertiary/40 transition-all duration-300">
-              <span class="material-symbols-outlined text-base text-tertiary">play_circle</span>
-              <span>مشاهدة العرض التوضيحي</span>
-            </a>
-
-            <!-- 3. Consult CTA Button (Tertiary Action) -->
-            <a id="hero-consult-btn"
-              href="https://wa.me/201090000000?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20%D9%81%D8%B1%D8%B5%D9%83%D9%85%D8%8C%20%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%AD%D9%84%D9%88%D9%84%20%D8%A7%D9%84%D9%87%D9%86%D8%AF%D8%B3%D9%8A%D8%A9."
-              target="_blank"
-              class="btn-smooth inline-flex items-center gap-2 px-4.5 py-3 rounded-xl bg-surface-container/80 hover:bg-surface-container-high text-on-surface-variant hover:text-white font-bold text-sm border border-white/10 hover:border-white/20 transition-all duration-300">
-              <span>استشر مهندسينا حول هذا الحل</span>
-              <span class="material-symbols-outlined text-base">chat</span>
-            </a>
-          </div>
+      <section
+        class="max-w-7xl mx-auto px-6 sm:px-8 py-10 lg:py-16"
+        id="project-hero"
+      >
+        <!-- Breadcrumb / Back Link -->
+        <div class="mb-6">
+          <a
+            href="portfolio.html"
+            id="hero-back-link"
+            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container/80 hover:bg-surface-container-high border border-white/10 text-xs font-mono font-medium text-on-surface-variant hover:text-white transition-all duration-300 group"
+          >
+            <span
+              class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform"
+              >arrow_forward</span
+            >
+            <span>العودة إلى معرض الأعمال</span>
+          </a>
         </div>
 
-        <!-- Hero Visual / Demo Showcase Column (6 Cols on Desktop) -->
-        <div class="lg:col-span-6 md:col-span-6">
-          <div id="project-hero-card"
-            class="relative rounded-3xl bg-surface-container-low/90 backdrop-blur-xl p-3 sm:p-4 border border-white/10 hover:border-tertiary/30 shadow-2xl transition-all duration-500 overflow-hidden group">
-            <!-- Ambient corner decoration -->
-            <div class="absolute -top-16 -left-16 w-40 h-40 rounded-full bg-tertiary/10 blur-2xl pointer-events-none">
+        <div
+          class="grid grid-cols-1 md:grid-cols-12 lg:grid-cols-12 gap-10 lg:gap-12 items-center"
+        >
+          <!-- Hero Content Column (6 Cols on Desktop) -->
+          <div class="lg:col-span-6 md:col-span-6 flex flex-col gap-6">
+            <!-- Project Title -->
+            <h1
+              id="project-title"
+              class="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.2] tracking-tight text-white"
+            >
+              تحميل تفاصيل المشروع...
+            </h1>
+
+            <!-- Technology Tags -->
+            <div
+              id="project-tags"
+              class="flex flex-wrap items-center gap-2 pt-0.5"
+            >
+              <!-- Rendered dynamically -->
             </div>
 
-            <!-- Main Product Demo / Media Viewport -->
-            <div id="hero-media-viewport"
-              class="relative rounded-2xl overflow-hidden bg-[#00080F] aspect-video border border-white/10 flex flex-col justify-between group/media">
-              <!-- Product Preview Image -->
-              <img id="project-hero-image" src="assets/images/Logo.png" alt="Product Mockup Preview"
-                class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.02]" />
+            <!-- Short Description -->
+            <p
+              id="project-desc"
+              class="text-sm sm:text-base text-on-surface-variant font-normal leading-relaxed max-w-xl"
+            >
+              جاري استعراض البنية التشغيلية والحل الهندسي الذي تم تنفيذه في بيئة
+              إنتاج حقيقية...
+            </p>
 
-              <!-- Contrast Gradient Overlay -->
-              <div id="hero-media-overlay"
-                class="absolute inset-0 bg-gradient-to-t from-[#00080F]/90 via-transparent to-transparent pointer-events-none transition-opacity duration-300">
-              </div>
+            <!-- Hero Action Buttons -->
+            <div
+              id="hero-actions-container"
+              class="flex flex-wrap items-center gap-3 pt-2"
+            >
+              <!-- 1. View Live Project Button (Primary CTA - Shown only if liveUrl exists) -->
+              <a
+                id="hero-live-btn"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hidden btn-smooth items-center gap-2 px-5 py-3 rounded-xl bg-tertiary hover:bg-[#34d4f6] text-[#00101D] font-bold text-sm shadow-[0_0_20px_rgba(0,196,238,0.35)] transition-all duration-300"
+              >
+                <span>مشاهدة المشروع المباشر</span>
+                <span class="material-symbols-outlined text-base"
+                  >north_east</span
+                >
+              </a>
 
-              <!-- Top Floating Badge: Single Clean Status (PRODUCT DEMO / LIVE DEMO) -->
-              <div id="hero-demo-badge" class="absolute top-3 right-3 z-10">
-                <span
-                  class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#00101D]/90 backdrop-blur-md border border-white/10 text-[10px] font-mono text-white/90">
-                  <span class="w-1.5 h-1.5 rounded-full bg-[#25D366]"></span>
-                  <span id="hero-demo-badge-text">PRODUCT DEMO</span>
-                </span>
-              </div>
+              <!-- 2. Watch Demo Button (Secondary Interactive CTA - Shown only if demoVideo exists) -->
+              <a
+                id="hero-demo-btn"
+                href="#project-hero"
+                class="hidden btn-smooth items-center justify-center gap-2 px-5 py-3 rounded-xl bg-surface-container-high/90 hover:bg-surface-bright text-white font-bold text-sm border border-white/15 hover:border-tertiary/40 transition-all duration-300"
+              >
+                <span class="material-symbols-outlined text-base text-tertiary"
+                  >play_circle</span
+                >
+                <span>مشاهدة العرض التوضيحي</span>
+              </a>
 
-              <!-- Center Interactive Play Button (Real semantic button) -->
-              <div id="hero-play-container" class="absolute inset-0 z-10 flex items-center justify-center">
-                <button type="button" id="hero-play-media-btn" aria-label="تشغيل العرض التوضيحي"
-                  class="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#00101D]/85 backdrop-blur-md border border-white/20 text-white hover:text-tertiary hover:border-tertiary/60 hover:scale-105 shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tertiary transition-all duration-300 flex items-center justify-center cursor-pointer">
-                  <span class="material-symbols-outlined text-2xl font-bold translate-x-[-1px]">play_arrow</span>
-                </button>
-              </div>
+              <!-- 3. Consult CTA Button (Tertiary Action) -->
+              <a
+                id="hero-consult-btn"
+                href="https://wa.me/201090000000?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20%D9%81%D8%B1%D8%B5%D9%83%D9%85%D8%8C%20%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%AD%D9%84%D9%88%D9%84%20%D8%A7%D9%84%D9%87%D9%86%D8%AF%D8%B3%D9%8A%D8%A9."
+                target="_blank"
+                class="btn-smooth inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-surface-container/80 hover:bg-surface-container-high text-on-surface-variant hover:text-white font-bold text-sm border border-white/10 hover:border-white/20 transition-all duration-300"
+              >
+                <span>استشر مهندسينا حول هذا الحل</span>
+                <span class="material-symbols-outlined text-base">chat</span>
+              </a>
+            </div>
+          </div>
 
-              <!-- Bottom Telemetry Indicator -->
-              <div id="hero-telemetry-container"
-                class="relative z-10 m-2.5 sm:m-3 px-3.5 py-2.5 bg-[#00101D]/90 backdrop-blur-md rounded-xl border border-white/10 flex items-center justify-between text-xs font-mono">
-                <span class="text-on-surface-variant flex items-center gap-1.5 text-[11px] sm:text-xs">
-                  <span class="w-1.5 h-1.5 rounded-full bg-[#25D366]"></span>
-                  <span>البيئة التشغيلية:</span>
-                </span>
-                <span id="hero-telemetry-highlight" class="text-tertiary font-bold text-[11px] sm:text-xs">معالجة
-                  فورية</span>
+          <!-- Hero Visual / Demo Showcase Column (6 Cols on Desktop) -->
+          <div class="lg:col-span-6 md:col-span-6">
+            <div
+              id="project-hero-card"
+              class="relative rounded-3xl bg-surface-container-low/90 backdrop-blur-xl p-3 sm:p-4 border border-white/10 hover:border-tertiary/30 shadow-2xl transition-all duration-500 overflow-hidden group"
+            >
+              <!-- Ambient corner decoration -->
+              <div
+                class="absolute -top-16 -left-16 w-40 h-40 rounded-full bg-tertiary/10 blur-2xl pointer-events-none"
+              ></div>
+
+              <!-- Main Product Demo / Media Viewport -->
+              <div
+                id="hero-media-viewport"
+                class="relative rounded-2xl overflow-hidden bg-[#00080F] aspect-video border border-white/10 flex flex-col justify-between group/media"
+              >
+                <!-- Product Preview Image -->
+                <img
+                  id="project-hero-image"
+                  src="assets/images/Logo.png"
+                  alt="Product Mockup Preview"
+                  class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                />
+
+                <!-- Contrast Gradient Overlay -->
+                <div
+                  id="hero-media-overlay"
+                  class="absolute inset-0 bg-gradient-to-t from-[#00080F]/90 via-transparent to-transparent pointer-events-none transition-opacity duration-300"
+                ></div>
+
+                <!-- Top Floating Badge: Single Clean Status (PRODUCT DEMO / LIVE DEMO) -->
+                <div id="hero-demo-badge" class="absolute top-3 right-3 z-10">
+                  <span
+                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#00101D]/90 backdrop-blur-md border border-white/10 text-[10px] font-mono text-white/90"
+                  >
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#25D366]"></span>
+                    <span id="hero-demo-badge-text">PRODUCT DEMO</span>
+                  </span>
+                </div>
+
+                <!-- Center Interactive Play Button (Real semantic button) -->
+                <div
+                  id="hero-play-container"
+                  class="absolute inset-0 z-10 flex items-center justify-center"
+                >
+                  <button
+                    type="button"
+                    id="hero-play-media-btn"
+                    aria-label="تشغيل العرض التوضيحي"
+                    class="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#00101D]/85 backdrop-blur-md border border-white/20 text-white hover:text-tertiary hover:border-tertiary/60 hover:scale-105 shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tertiary transition-all duration-300 flex items-center justify-center cursor-pointer"
+                  >
+                    <span
+                      class="material-symbols-outlined text-2xl font-bold translate-x-[-1px]"
+                      >play_arrow</span
+                    >
+                  </button>
+                </div>
+
+                <!-- Bottom Telemetry Indicator -->
+                <div
+                  id="hero-telemetry-container"
+                  class="relative z-10 m-2.5 sm:m-3 px-3.5 py-2.5 bg-[#00101D]/90 backdrop-blur-md rounded-xl border border-white/10 flex items-center justify-between text-xs font-mono"
+                >
+                  <span
+                    class="text-on-surface-variant flex items-center gap-1.5 text-[11px] sm:text-xs"
+                  >
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#25D366]"></span>
+                    <span>البيئة التشغيلية:</span>
+                  </span>
+                  <span
+                    id="hero-telemetry-highlight"
+                    class="text-tertiary font-bold text-[11px] sm:text-xs"
+                    >معالجة فورية</span
+                  >
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ========================================================================
+      <!-- ========================================================================
          02 — TRANSFORMATION SECTION
          ======================================================================== -->
-    <section class="max-w-7xl mx-auto px-6 sm:px-8 py-14 lg:py-20" id="project-outcome">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
-        <div>
-          <h2 id="outcome-title" class="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
-            <!-- dynamic title -->
-          </h2>
-          <p id="outcome-description"
-            class="text-on-surface-variant text-sm sm:text-base mt-2 max-w-2xl leading-relaxed">
-            <!-- dynamic description -->
-          </p>
-        </div>
-      </div>
-
-      <!-- Before → After Comparative Container -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-        <!-- Before Card -->
-        <div id="outcome-before-card"
-          class="lg:col-span-5 p-7 lg:p-8 rounded-3xl bg-surface-container-lowest/70 border border-white/10 shadow-lg flex flex-col justify-between h-full">
+      <section
+        class="max-w-7xl mx-auto px-6 sm:px-8 py-14 lg:py-20"
+        id="project-outcome"
+      >
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4"
+        >
           <div>
-            <div class="flex items-center justify-between mb-4">
-              <span
-                class="px-2.5 py-1 rounded-full bg-error/10 text-error text-xs font-mono font-medium border border-error/20"
-                id="outcome-before-badge"></span>
-              <span class="material-symbols-outlined text-error/60 text-xl">history_toggle_off</span>
-            </div>
-            <h3 id="outcome-before-title" class="text-xl font-black text-white mb-2"></h3>
-            <p id="outcome-before-subtitle" class="text-xs font-mono text-outline mb-6"></p>
-            <ul id="outcome-before-points" class="space-y-3.5">
-              <!-- rendered dynamically -->
-            </ul>
-          </div>
-          <div class="mt-8 pt-4 border-t border-white/5 text-xs font-mono text-outline">
-            <span>عوائق تم تفكيكها بنجاح</span>
+            <h2
+              id="outcome-title"
+              class="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight"
+            >
+              <!-- dynamic title -->
+            </h2>
+            <p
+              id="outcome-description"
+              class="text-on-surface-variant text-sm sm:text-base mt-2 max-w-2xl leading-relaxed"
+            >
+              <!-- dynamic description -->
+            </p>
           </div>
         </div>
 
-        <!-- Center Transition Connector -->
-        <div id="outcome-arrow-connector" class="lg:col-span-2 flex flex-col items-center justify-center py-4 lg:py-0">
+        <!-- Before → After Comparative Container -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <!-- Before Card -->
           <div
-            class="w-11 h-11 rounded-full bg-surface-container border border-tertiary/30 flex items-center justify-center text-tertiary shadow-md">
-            <span class="material-symbols-outlined text-xl hidden lg:inline">west</span>
-            <span class="material-symbols-outlined text-xl lg:hidden">south</span>
-          </div>
-          <span class="text-[11px] font-mono font-medium text-tertiary/80 mt-2">تحول هندسي</span>
-        </div>
-
-        <!-- After Card -->
-        <div id="outcome-after-card"
-          class="lg:col-span-5 p-7 lg:p-8 rounded-3xl bg-surface-container-high/80 border border-tertiary/30 shadow-xl flex flex-col justify-between h-full">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span
-                class="px-2.5 py-1 rounded-full bg-tertiary/10 text-tertiary text-xs font-mono font-medium border border-tertiary/25"
-                id="outcome-after-badge"></span>
-              <span class="material-symbols-outlined text-tertiary text-xl">verified</span>
+            id="outcome-before-card"
+            class="lg:col-span-5 p-7 lg:p-8 rounded-3xl bg-surface-container-lowest/70 border border-white/10 shadow-lg flex flex-col justify-between h-full"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span
+                  class="px-2.5 py-1 rounded-full bg-error/10 text-error text-xs font-mono font-medium border border-error/20"
+                  id="outcome-before-badge"
+                ></span>
+                <span class="material-symbols-outlined text-error/60 text-xl"
+                  >history_toggle_off</span
+                >
+              </div>
+              <h3
+                id="outcome-before-title"
+                class="text-xl font-black text-white mb-2"
+              ></h3>
+              <p
+                id="outcome-before-subtitle"
+                class="text-xs font-mono text-outline mb-6"
+              ></p>
+              <ul id="outcome-before-points" class="space-y-3.5">
+                <!-- rendered dynamically -->
+              </ul>
             </div>
-            <h3 id="outcome-after-title" class="text-xl font-black text-white mb-2"></h3>
-            <p id="outcome-after-subtitle" class="text-xs font-mono text-tertiary mb-6"></p>
-            <ul id="outcome-after-points" class="space-y-3.5">
-              <!-- rendered dynamically -->
-            </ul>
+            <div
+              class="mt-8 pt-4 border-t border-white/5 text-xs font-mono text-outline"
+            >
+              <span>عوائق تم تفكيكها بنجاح</span>
+            </div>
           </div>
+
+          <!-- Center Transition Connector -->
           <div
-            class="mt-8 pt-4 border-t border-white/10 text-xs font-mono text-tertiary font-bold flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
-            <span id="outcome-after-footer"></span>
+            id="outcome-arrow-connector"
+            class="lg:col-span-2 flex flex-col items-center justify-center py-4 lg:py-0"
+          >
+            <div
+              class="w-11 h-11 rounded-full bg-surface-container border border-tertiary/30 flex items-center justify-center text-tertiary shadow-md"
+            >
+              <span class="material-symbols-outlined text-xl hidden lg:inline"
+                >west</span
+              >
+              <span class="material-symbols-outlined text-xl lg:hidden"
+                >south</span
+              >
+            </div>
+            <span
+              class="text-[11px] font-mono font-medium text-tertiary/80 mt-2"
+              >تحول هندسي</span
+            >
+          </div>
+
+          <!-- After Card -->
+          <div
+            id="outcome-after-card"
+            class="lg:col-span-5 p-7 lg:p-8 rounded-3xl bg-surface-container-high/80 border border-tertiary/30 shadow-xl flex flex-col justify-between h-full"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span
+                  class="px-2.5 py-1 rounded-full bg-tertiary/10 text-tertiary text-xs font-mono font-medium border border-tertiary/25"
+                  id="outcome-after-badge"
+                ></span>
+                <span class="material-symbols-outlined text-tertiary text-xl"
+                  >verified</span
+                >
+              </div>
+              <h3
+                id="outcome-after-title"
+                class="text-xl font-black text-white mb-2"
+              ></h3>
+              <p
+                id="outcome-after-subtitle"
+                class="text-xs font-mono text-tertiary mb-6"
+              ></p>
+              <ul id="outcome-after-points" class="space-y-3.5">
+                <!-- rendered dynamically -->
+              </ul>
+            </div>
+            <div
+              class="mt-8 pt-4 border-t border-white/10 text-xs font-mono text-tertiary font-bold flex items-center gap-2"
+            >
+              <span
+                class="w-2 h-2 rounded-full bg-tertiary animate-pulse"
+              ></span>
+              <span id="outcome-after-footer"></span>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ========================================================================
+      <!-- ========================================================================
          03 — FINAL CTA SECTION
          ======================================================================== -->
-    <section class="max-w-7xl mx-auto px-6 sm:px-8 py-14 lg:py-20" id="project-cta">
-      <div
-        class="cta-inner-card relative rounded-3xl bg-gradient-to-b from-surface-container-high/80 to-surface-container-low/90 border border-white/10 p-8 sm:p-12 lg:p-16 text-center overflow-hidden shadow-2xl">
-        <!-- Ambient corner decorative glow -->
-        <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-tertiary/10 blur-3xl pointer-events-none">
-        </div>
+      <section
+        class="max-w-7xl mx-auto px-6 sm:px-8 py-14 lg:py-20"
+        id="project-cta"
+      >
         <div
-          class="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-primary-container/10 blur-3xl pointer-events-none">
-        </div>
-
-        <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center gap-6">
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight tracking-tight">
-            عندك فكرة مشابهة؟ خلّينا نحوّلها لـ
-            <span class="text-tertiary cyan-glow-text">فرصة</span>.
-          </h2>
-
-          <p class="text-base sm:text-lg text-on-surface-variant max-w-2xl leading-relaxed">
-            فريقنا الهندسي جاهز لتحليل متطلباتك، تصميم المعمارية المناسبة،
-            وبناء حل رقمي مخصص يرفع كفاءة أعمالك ويحقق أهدافك التنافسية.
-          </p>
-
-          <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
-            <a id="cta-primary-btn"
-              href="https://wa.me/201090000000?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20%D9%81%D8%B1%D8%B5%D9%83%D9%85%D8%8C%20%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%A8%D8%AF%D8%A3%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D9%8A%20%D9%85%D8%B9%D9%83%D9%85."
-              target="_blank"
-              class="btn-smooth inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-tertiary hover:bg-[#34d4f6] text-[#00101D] font-bold text-sm sm:text-base shadow-[0_0_20px_rgba(0,196,238,0.35)]">
-              <span>ابدأ مشروعك الآن</span>
-              <span class="material-symbols-outlined text-lg">arrow_back</span>
-            </a>
-
-            <a href="portfolio.html"
-              class="btn-smooth inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-white font-bold text-sm border border-white/10 hover:border-white/20">
-              <span>تصفّح جميع المشاريع</span>
-            </a>
-          </div>
-
-          <div class="flex flex-wrap items-center justify-center gap-6 pt-4 text-xs font-mono text-outline">
-            <span class="flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
-              استشارة تقنية أولية مجانية
-            </span>
-            <span>•</span>
-            <span class="flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#25D366]"></span>
-              الرد السريع والمباشر
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ==========================================================================
-       FOOTER
-       ========================================================================== -->
-  <!-- ==========================================================================
-       PROFESSIONAL UNIFIED FOOTER
-       ========================================================================== -->
-  <footer class="relative bg-[#070D1B] text-slate-400 border-t border-slate-800/80 pt-16 pb-12 overflow-hidden">
-    <!-- Ambient Backlight Glowing Orbs -->
-
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
-
-
-      <!-- 2. Main Footer Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pt-4">
-        <!-- Col 1: Branding -->
-        <div class="lg:col-span-4 space-y-5">
-          <a href="index.html" class="inline-block focus:outline-none">
-            <img src="assets/images/Logo.png" alt="Forascom — فرصكم" class="h-11 w-auto object-contain rounded-lg" />
-          </a>
-          <p class="text-slate-300 text-sm leading-relaxed max-w-sm">
-            شركة حلول برمجية وتطوير تقني — نخلق الفرص للأعمال من خلال تقنيات الويب المستدامة، الذكاء الاصطناعي، وأتمتة
-            العمليات بجودة هندسية راقية.
-          </p>
+          class="cta-inner-card relative rounded-3xl bg-gradient-to-b from-surface-container-high/80 to-surface-container-low/90 border border-white/10 p-8 sm:p-12 lg:p-16 text-center overflow-hidden shadow-2xl"
+        >
+          <!-- Ambient corner decorative glow -->
           <div
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-            متاحون حالياً لاستقبال مشاريع جديدة
-          </div>
-        </div>
+            class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-tertiary/10 blur-3xl pointer-events-none"
+          ></div>
+          <div
+            class="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-primary-container/10 blur-3xl pointer-events-none"
+          ></div>
 
-        <!-- Col 2: Navigation Links -->
-        <div class="lg:col-span-3 space-y-4">
-          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
-            الروابط الرئيسية
-          </h4>
-          <ul class="space-y-2.5 text-sm">
-            <li>
-              <a href="index.html" class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">◀</span>
-                الرئيسية
-              </a>
-            </li>
-            <li>
-              <a href="about.html" class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">◀</span>
-                عن فرصكم
-              </a>
-            </li>
-            <li>
-              <a href="services.html"
-                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">◀</span>
-                خدماتنا
-              </a>
-            </li>
-            <li>
-              <a href="portfolio.html"
-                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">◀</span>
-                معرض الأعمال
-              </a>
-            </li>
-            <li>
-              <a href="contact.html" class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">◀</span>
-                تواصل معنا
-              </a>
-            </li>
-          </ul>
-        </div>
+          <div
+            class="relative z-10 max-w-3xl mx-auto flex flex-col items-center gap-6"
+          >
+            <h2
+              class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight tracking-tight"
+            >
+              عندك فكرة مشابهة؟ خلّينا نحوّلها لـ
+              <span class="text-tertiary cyan-glow-text">فرصة</span>.
+            </h2>
 
-        <!-- Col 3: Services & Solutions Links -->
-        <div class="lg:col-span-2 space-y-4">
-          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
-            خدماتنا
-          </h4>
-          <ul class="space-y-2.5 text-sm">
-            <li>
-              <a href="portfolio.html?category=web-development"
-                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                تطوير المواقع (Web Dev)
-              </a>
-            </li>
-            <li>
-              <a href="portfolio.html?category=wordpress"
-                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                مواقع وردبرس (WordPress)
-              </a>
-            </li>
-            <li>
-              <a href="portfolio.html?category=power-platform"
-                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                أنظمة Power Platform
-              </a>
-            </li>
-            <li>
-              <a href="portfolio.html?category=ai"
-                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                حلول الذكاء الاصطناعي
-              </a>
-            </li>
-            <li>
-              <a href="portfolio.html?category=automation"
-                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                الأتمتة والعمليات الذكية
-              </a>
-            </li>
-          </ul>
-        </div>
+            <p
+              class="text-base sm:text-lg text-on-surface-variant max-w-2xl leading-relaxed"
+            >
+              فريقنا الهندسي جاهز لتحليل متطلباتك، تصميم المعمارية المناسبة،
+              وبناء حل رقمي مخصص يرفع كفاءة أعمالك ويحقق أهدافك التنافسية.
+            </p>
 
-        <!-- Col 4: Contact Info & Socials -->
-        <div class="lg:col-span-3 space-y-4">
-          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
-            التواصل المباشر
-          </h4>
-          <ul class="space-y-3 text-sm">
-            <li>
-              <a href="mailto:hello@forascom.com"
-                class="flex items-center gap-3 text-slate-300 hover:text-cyan-400 transition-colors group">
-                <span
-                  class="w-8 h-8 rounded-lg bg-slate-800/80 flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500/20 transition-colors">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </span>
-                <span>hello@forascom.com</span>
+            <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+              <a
+                id="cta-primary-btn"
+                href="https://wa.me/201090000000?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20%D9%81%D8%B1%D8%B5%D9%83%D9%85%D8%8C%20%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%A8%D8%AF%D8%A3%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D9%8A%20%D9%85%D8%B9%D9%83%D9%85."
+                target="_blank"
+                class="btn-smooth inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-tertiary hover:bg-[#34d4f6] text-[#00101D] font-bold text-sm sm:text-base shadow-[0_0_20px_rgba(0,196,238,0.35)]"
+              >
+                <span>ابدأ مشروعك الآن</span>
+                <span class="material-symbols-outlined text-lg"
+                  >arrow_back</span
+                >
               </a>
-            </li>
-            <li>
-              <a href="https://wa.me/201090000000" target="_blank" rel="noopener noreferrer"
-                class="flex items-center gap-3 text-slate-300 hover:text-emerald-400 transition-colors group">
-                <span
-                  class="w-8 h-8 rounded-lg bg-slate-800/80 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500/20 transition-colors">
-                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                    <path
-                      d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
-                  </svg>
-                </span>
-                <span>WhatsApp (+20 109 000 0000)</span>
-              </a>
-            </li>
-          </ul>
 
-          <div class="pt-2">
-            <span class="block text-xs font-semibold text-slate-400 mb-3">تواجدنا الرقمي:</span>
-            <div class="flex items-center gap-3">
-              <!-- LinkedIn -->
-              <a href="https://www.linkedin.com/company/forascom/" target="_blank" rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-cyan-950/40 transition-all hover:-translate-y-1">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path
-                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.75a1.49 1.49 0 1 0 0 2.98 1.49 1.49 0 0 0 0-2.98z" />
-                </svg>
+              <a
+                href="portfolio.html"
+                class="btn-smooth inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-white font-bold text-sm border border-white/10 hover:border-white/20"
+              >
+                <span>تصفّح جميع المشاريع</span>
               </a>
-              <!-- Facebook -->
-              <a href="https://www.facebook.com/people/Forascom/61592914277326/?sk=directory_names" target="_blank"
-                rel="noopener noreferrer" aria-label="Facebook"
-                class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-cyan-950/40 transition-all hover:-translate-y-1">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path
-                    d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H7.5v-3H10V9.5C10 7.01 11.49 5.65 13.75 5.65c1.08 0 2.2.19 2.2.19v2.42h-1.24c-1.23 0-1.61.77-1.61 1.56V12h2.73l-.44 3h-2.29v6.8c4.56-.93 8-4.96 8-9.8z" />
-                </svg>
-              </a>
-              <!-- Instagram -->
-              <a href="https://www.instagram.com/foras_com?stkn=MWg1amRsY3NucHMyNg==" target="_blank"
-                rel="noopener noreferrer" aria-label="Instagram"
-                class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-cyan-950/40 transition-all hover:-translate-y-1">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path
-                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                </svg>
-              </a>
-              <!-- WhatsApp Direct -->
-              <a href="https://wa.me/201090000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
-                class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-emerald-400 hover:border-emerald-500/40 hover:bg-emerald-950/40 transition-all hover:-translate-y-1">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path
-                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
-                </svg>
-              </a>
+            </div>
+
+            <div
+              class="flex flex-wrap items-center justify-center gap-6 pt-4 text-xs font-mono text-outline"
+            >
+              <span class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                استشارة تقنية أولية مجانية
+              </span>
+              <span>•</span>
+              <span class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#25D366]"></span>
+                الرد السريع والمباشر
+              </span>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+    </main>
 
-      <!-- 3. Bottom Bar Divider & Copyright -->
+    <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+    <!-- ==========================================================================
+       PROFESSIONAL UNIFIED FOOTER
+       ========================================================================== -->
+    <footer
+      class="relative bg-[#070D1B] text-slate-400 border-t border-slate-800/80 pt-16 pb-12 overflow-hidden"
+    >
+      <!-- Ambient Backlight Glowing Orbs -->
+
       <div
-        class="pt-8 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-        <p class="text-center md:text-right">
-          © <span id="footer-year">2026</span> <strong class="text-slate-200">Forascom</strong>. جميع الحقوق محفوظة —
-          <span class="text-cyan-400 font-medium">Technology that creates opportunities</span>
-        </p>
-        <div class="flex items-center gap-6 text-slate-400">
-          <span class="hover:text-slate-200 transition-colors cursor-pointer">الخصوصية والشروط</span>
-          <span class="w-1 h-1 rounded-full bg-slate-700"></span>
-          <a href="contact.html" class="hover:text-cyan-400 transition-colors">الدعم التقني</a>
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16"
+      >
+        <!-- 2. Main Footer Grid -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pt-4"
+        >
+          <!-- Col 1: Branding -->
+          <div class="lg:col-span-4 space-y-5">
+            <a href="index.html" class="inline-block focus:outline-none">
+              <img
+                src="assets/images/Logo.png"
+                alt="Forascom — فرصكم"
+                class="h-11 w-auto object-contain rounded-lg"
+              />
+            </a>
+            <p class="text-slate-300 text-sm leading-relaxed max-w-sm">
+              شركة حلول برمجية وتطوير تقني — نخلق الفرص للأعمال من خلال تقنيات
+              الويب المستدامة، الذكاء الاصطناعي، وأتمتة العمليات بجودة هندسية
+              راقية.
+            </p>
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 text-xs font-semibold"
+            >
+              <span
+                class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"
+              ></span>
+              متاحون حالياً لاستقبال مشاريع جديدة
+            </div>
+          </div>
+
+          <!-- Col 2: Navigation Links -->
+          <div class="lg:col-span-3 space-y-4">
+            <h4
+              class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3"
+            >
+              الروابط الرئيسية
+            </h4>
+            <ul class="space-y-2.5 text-sm">
+              <li>
+                <a
+                  href="index.html"
+                  class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group"
+                >
+                  <span
+                    class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs"
+                    >◀</span
+                  >
+                  الرئيسية
+                </a>
+              </li>
+              <li>
+                <a
+                  href="about.html"
+                  class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group"
+                >
+                  <span
+                    class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs"
+                    >◀</span
+                  >
+                  عن فرصكم
+                </a>
+              </li>
+              <li>
+                <a
+                  href="services.html"
+                  class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group"
+                >
+                  <span
+                    class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs"
+                    >◀</span
+                  >
+                  خدماتنا
+                </a>
+              </li>
+              <li>
+                <a
+                  href="portfolio.html"
+                  class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group"
+                >
+                  <span
+                    class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs"
+                    >◀</span
+                  >
+                  معرض الأعمال
+                </a>
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group"
+                >
+                  <span
+                    class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs"
+                    >◀</span
+                  >
+                  تواصل معنا
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Services & Solutions Links -->
+          <div class="lg:col-span-2 space-y-4">
+            <h4
+              class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3"
+            >
+              خدماتنا
+            </h4>
+            <ul class="space-y-2.5 text-sm">
+              <li>
+                <a
+                  href="portfolio.html?category=web-development"
+                  class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group"
+                >
+                  تطوير المواقع (Web Dev)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="portfolio.html?category=wordpress"
+                  class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group"
+                >
+                  مواقع وردبرس (WordPress)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="portfolio.html?category=power-platform"
+                  class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group"
+                >
+                  أنظمة Power Platform
+                </a>
+              </li>
+              <li>
+                <a
+                  href="portfolio.html?category=ai"
+                  class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group"
+                >
+                  حلول الذكاء الاصطناعي
+                </a>
+              </li>
+              <li>
+                <a
+                  href="portfolio.html?category=automation"
+                  class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group"
+                >
+                  الأتمتة والعمليات الذكية
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Contact Info & Socials -->
+          <div class="lg:col-span-3 space-y-4">
+            <h4
+              class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3"
+            >
+              التواصل المباشر
+            </h4>
+            <ul class="space-y-3 text-sm">
+              <li>
+                <a
+                  href="mailto:hello@forascom.com"
+                  class="flex items-center gap-3 text-slate-300 hover:text-cyan-400 transition-colors group"
+                >
+                  <span
+                    class="w-8 h-8 rounded-lg bg-slate-800/80 flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500/20 transition-colors"
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                  </span>
+                  <span>hello@forascom.com</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://wa.me/201090000000"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center gap-3 text-slate-300 hover:text-emerald-400 transition-colors group"
+                >
+                  <span
+                    class="w-8 h-8 rounded-lg bg-slate-800/80 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500/20 transition-colors"
+                  >
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                      <path
+                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
+                      />
+                    </svg>
+                  </span>
+                  <span>WhatsApp (+20 109 000 0000)</span>
+                </a>
+              </li>
+            </ul>
+
+            <div class="pt-2">
+              <span class="block text-xs font-semibold text-slate-400 mb-3"
+                >تواجدنا الرقمي:</span
+              >
+              <div class="flex items-center gap-3">
+                <!-- LinkedIn -->
+                <a
+                  href="https://www.linkedin.com/company/forascom/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-cyan-950/40 transition-all hover:-translate-y-1"
+                >
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path
+                      d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.75a1.49 1.49 0 1 0 0 2.98 1.49 1.49 0 0 0 0-2.98z"
+                    />
+                  </svg>
+                </a>
+                <!-- Facebook -->
+                <a
+                  href="https://www.facebook.com/people/Forascom/61592914277326/?sk=directory_names"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-cyan-950/40 transition-all hover:-translate-y-1"
+                >
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path
+                      d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H7.5v-3H10V9.5C10 7.01 11.49 5.65 13.75 5.65c1.08 0 2.2.19 2.2.19v2.42h-1.24c-1.23 0-1.61.77-1.61 1.56V12h2.73l-.44 3h-2.29v6.8c4.56-.93 8-4.96 8-9.8z"
+                    />
+                  </svg>
+                </a>
+                <!-- Instagram -->
+                <a
+                  href="https://www.instagram.com/foras_com?stkn=MWg1amRsY3NucHMyNg=="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-cyan-950/40 transition-all hover:-translate-y-1"
+                >
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                    />
+                  </svg>
+                </a>
+                <!-- WhatsApp Direct -->
+                <a
+                  href="https://wa.me/201090000000"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp"
+                  class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-emerald-400 hover:border-emerald-500/40 hover:bg-emerald-950/40 transition-all hover:-translate-y-1"
+                >
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path
+                      d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Bottom Bar Divider & Copyright -->
+        <div
+          class="pt-8 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400"
+        >
+          <p class="text-center md:text-right">
+            © <span id="footer-year">2026</span>
+            <strong class="text-slate-200">Forascom</strong>. جميع الحقوق محفوظة
+            —
+            <span class="text-cyan-400 font-medium"
+              >Technology that creates opportunities</span
+            >
+          </p>
+          <div class="flex items-center gap-6 text-slate-400">
+            <span class="hover:text-slate-200 transition-colors cursor-pointer"
+              >الخصوصية والشروط</span
+            >
+            <span class="w-1 h-1 rounded-full bg-slate-700"></span>
+            <a href="contact.html" class="hover:text-cyan-400 transition-colors"
+              >الدعم التقني</a
+            >
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- Floating Sticky WhatsApp Action Button -->
-  <div class="fixed bottom-6 left-6 z-50">
-    <a href="https://wa.me/201090000000?text=%D8%A3%D9%87%D9%84%D8%A3%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20Forascom%20%F0%9F%90%8B"
-      target="_blank"
-      class="group flex items-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs p-3.5 rounded-full shadow-2xl transition-all duration-500 ease-in-out hover:px-5">
-      <div class="relative flex items-center justify-center">
-        <span class="absolute -top-1 -right-1 flex h-3 w-3">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+    <!-- Floating Sticky WhatsApp Action Button -->
+    <div class="fixed bottom-6 left-6 z-50">
+      <a
+        href="https://wa.me/201090000000?text=%D8%A3%D9%87%D9%84%D8%A3%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20Forascom%20%F0%9F%90%8B"
+        target="_blank"
+        class="group flex items-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs p-3.5 rounded-full shadow-2xl transition-all duration-500 ease-in-out hover:px-5"
+      >
+        <div class="relative flex items-center justify-center">
+          <span class="absolute -top-1 -right-1 flex h-3 w-3">
+            <span
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"
+            ></span>
+            <span
+              class="relative inline-flex rounded-full h-3 w-3 bg-white"
+            ></span>
+          </span>
+          <svg class="w-6 h-6 fill-current shrink-0" viewBox="0 0 24 24">
+            <path
+              d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
+            />
+          </svg>
+        </div>
+        <span
+          class="max-w-0 opacity-0 overflow-hidden whitespace-nowrap transition-all duration-500 ease-in-out group-hover:max-w-xs group-hover:opacity-100 group-hover:mr-2.5"
+        >
+          تحدث مع مهندس Forascom الآن 💬
         </span>
-        <svg class="w-6 h-6 fill-current shrink-0" viewBox="0 0 24 24">
-          <path
-            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
-        </svg>
-      </div>
-      <span
-        class="max-w-0 opacity-0 overflow-hidden whitespace-nowrap transition-all duration-500 ease-in-out group-hover:max-w-xs group-hover:opacity-100 group-hover:mr-2.5">
-        تحدث مع مهندس Forascom الآن 💬
-      </span>
-    </a>
-  </div>
+      </a>
+    </div>
 
-  <!-- Back To Top Button -->
-  <button id="back-to-top" aria-label="العودة إلى الأعلى"
-    class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-white text-[#00101D] border border-slate-200 shadow-xl flex items-center justify-center hover:bg-[#00101D] hover:text-white hover:-translate-y-1 transition-all">
-    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 15l7-7 7 7" />
-    </svg>
-  </button>
+    <!-- Back To Top Button -->
+    <button
+      id="back-to-top"
+      aria-label="العودة إلى الأعلى"
+      class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-white text-[#00101D] border border-slate-200 shadow-xl flex items-center justify-center hover:bg-[#00101D] hover:text-white hover:-translate-y-1 transition-all"
+    >
+      <svg
+        class="w-5 h-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2.2"
+          d="M5 15l7-7 7 7"
+        />
+      </svg>
+    </button>
 
-  <!-- GSAP & ScrollTrigger Libraries -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- GSAP & ScrollTrigger Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-  <!-- App JavaScript Modules -->
-  <script src="assets/js/project-details.js"></script>
-  <script src="assets/js/main.js"></script>
-</body>
-
+    <!-- App JavaScript Modules -->
+    <script src="assets/js/project-details.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>

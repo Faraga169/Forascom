@@ -77,38 +77,40 @@
 
   <!-- Scroll Progress Indicator -->
   <div id="scroll-progress" aria-hidden="true"></div>
-  ```html
+
   <!-- ========================================================================== 
        HEADER & NAVIGATION BAR (MULTI-PAGE NAVIGATION) 
        ========================================================================== -->
   <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b" style="border-color: rgba(56, 189, 248, 0.12)">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3 group">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-3 group shrink-0">
         <img src="assets/images/Logo.png" alt="Forascom — فرصكم"
-          class="h-12 w-auto object-contain hover:scale-105 transition-transform" />
+          class="h-10 sm:h-11 w-auto object-contain hover:scale-105 transition-transform" />
       </a>
 
-      <nav class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-7 font-semibold text-sm">
+      <nav class="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-5 xl:gap-7 font-semibold text-sm">
         <a href="index.html" class="nav-link hover:text-cyan-bright transition-colors">الرئيسية</a>
-
-        <a href="about.html" aria-current="page" class="nav-active nav-link hover:text-cyan-bright transition-colors">عن
-          فرصكم</a>
-
+        <a href="about.html" aria-current="page" class="nav-active nav-link hover:text-cyan-bright transition-colors">عن فرصكم</a>
         <a href="services.html" class="nav-link hover:text-cyan-bright transition-colors">خدماتنا</a>
         <a href="portfolio.html" class="nav-link hover:text-cyan-bright transition-colors">معرض الأعمال</a>
         <a href="contact.html" class="nav-link hover:text-cyan-bright transition-colors">تواصل معنا</a>
       </nav>
 
-      <button id="mobile-menu-btn" class="md:hidden text-text-primary p-2 rounded-lg"
-        style="background: rgba(56, 189, 248, 0.1)" aria-label="القائمة">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
+      <div class="flex items-center gap-3 shrink-0">
+        <a href="contact.html" class="hidden lg:inline-flex btn-cyan font-bold text-sm px-5 py-2.5 rounded-xl shadow-lg transition-all">
+          استشارة مجانية
+        </a>
+        <button id="mobile-menu-btn" class="lg:hidden text-text-primary p-2 rounded-lg"
+          style="background: rgba(56, 189, 248, 0.1)" aria-label="القائمة">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
     </div>
 
     <div id="mobile-menu-container"
-      class="hidden md:hidden bg-navy-secondary border-b px-4 pt-2 pb-6 space-y-3 font-semibold text-text-secondary"
+      class="hidden lg:hidden bg-navy-secondary border-b px-4 pt-2 pb-6 space-y-3 font-semibold text-text-secondary"
       style="border-color: rgba(56, 189, 248, 0.12)">
       <a href="index.html" class="block py-2 border-b hover:text-text-primary"
         style="border-color: rgba(56, 189, 248, 0.12)">الرئيسية</a>

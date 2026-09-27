@@ -183,21 +183,19 @@ html {
   }
 }
 
-/* ---- Tablet portrait (640px–767px) ---- */
+/* ---- Tablet portrait (640px–1023px) ---- */
 @media (min-width: 640px) and (max-width: 1023px) {
-  /* Hero image scale + containment — FIX: was falling back to base
-     scale(1.2) + overflow: visible, causing overflow on this range */
+  /* Hero image safely scaled since HTML wrapper constraints width */
   .hero-image {
     display: block;
     width: 100%;
     height: auto;
     max-width: 100%;
-    transform: none !important; /* يضمن إلغاء أي scale قديم متبقي في أي مكان */
-    /* filter: drop-shadow(0 0 35px rgba(0, 210, 255, 0.25)); */
+    transform: scale(1.05); 
   }
 
   .hero-image-area {
-    overflow: hidden; /* ✅ يرجع لـ hidden عشان يمنع أي طلوع بره حدود الصفحة */
+    overflow: visible; 
     width: 100%;
     max-width: 100%;
   }

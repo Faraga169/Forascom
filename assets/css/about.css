@@ -30,7 +30,6 @@ body {
   );
   background-attachment: fixed;
   color: var(--color-text-primary);
-  overflow-x: hidden;
   scroll-behavior: smooth;
   min-height: 100vh;
   position: relative;
@@ -1137,7 +1136,6 @@ html body .about-hero-section .hero-watermark-img {
 
 .n-about-page {
   width: 100%;
-  overflow-x: hidden;
   direction: rtl;
 }
 
@@ -1166,7 +1164,6 @@ html body .about-hero-section .hero-watermark-img {
 
 html,
 body {
-  overflow-x: hidden;
   background-color: var(--color-dark);
 }
 
@@ -7409,12 +7406,10 @@ html body .about-hero-section .hero-watermark-img {
    MASTER ABOUT PAGE RESPONSIVE REFINEMENTS
    ========================================================================== */
 
-/* Prevent horizontal overflow globally */
+/* Keep the document width intrinsic; responsive sections own their sizing. */
 html,
 body {
-  overflow-x: hidden !important;
-  width: 100% !important;
-  max-width: 100vw !important;
+  width: 100%;
 }
 
 /* Hero Section Responsiveness */
@@ -8309,5 +8304,922 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 0.85rem;
+  }
+}
+
+/* ========================================================================== 
+   ABOUT PAGE RESPONSIVE ART DIRECTION
+   ========================================================================== */
+
+/* The shared navbar is fixed in the page markup; preserve that behavior here. */
+body > header.glass-nav {
+  position: fixed !important;
+  inset: 0 0 auto;
+  z-index: 1000 !important;
+}
+
+#scroll-progress {
+  z-index: 1100;
+}
+
+#mobile-menu-btn {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+@media (max-width: 640px) {
+  body > header.glass-nav > div > a > img {
+    width: min(42vw, 150px) !important;
+    height: auto !important;
+    max-height: 54px;
+  }
+
+  body > footer img[src$="Logo.png"] {
+    width: min(42vw, 150px) !important;
+    height: auto !important;
+    max-height: 54px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  body > header.glass-nav > div > a > img {
+    width: clamp(130px, 16vw, 160px) !important;
+    height: auto !important;
+    max-height: 62px;
+  }
+
+  body > footer img[src$="Logo.png"] {
+    width: clamp(119px, 15.5vw, 158px) !important;
+    height: auto !important;
+    max-height: 62px;
+  }
+}
+
+/* Replace the percentage columns plus gap with a true, bounded grid. */
+.who-we-are-inner {
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.who-we-are-left,
+.who-we-are-right,
+.who-we-are-header {
+  min-width: 0;
+}
+
+.who-we-are-illustration {
+  display: block;
+  max-width: 100%;
+  max-height: none;
+  height: auto;
+  padding: 0;
+  object-fit: contain;
+  object-position: center;
+}
+
+.about-hero-3d-img {
+  display: block !important;
+  height: auto !important;
+  max-height: none !important;
+  margin: 0 !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+.who-we-are-title .who-we-are-line-secondary {
+  white-space: normal;
+}
+
+/* The metrics exist in the markup but previously had no layout styles. */
+.forascom-about-metrics {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  width: min(calc(100% - 3rem), 1180px);
+  margin: 1.5rem auto 3rem;
+}
+
+.forascom-about-metric {
+  display: grid;
+  min-width: 0;
+  min-height: 132px;
+  justify-items: center;
+  align-content: center;
+  gap: 0.35rem;
+  padding: 1rem 0.75rem;
+  border: 1px solid rgba(56, 189, 248, 0.16);
+  border-radius: 0.9rem;
+  background: rgba(0, 29, 51, 0.62);
+  text-align: center;
+}
+
+.forascom-about-metric-icon {
+  display: grid;
+  width: 2.5rem;
+  aspect-ratio: 1;
+  place-items: center;
+  color: var(--color-cyan-bright);
+}
+
+.forascom-about-metric-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.forascom-about-metric-value {
+  color: #ffffff;
+  font-family: var(--font-latin);
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  direction: ltr;
+}
+
+.forascom-about-metric-label {
+  color: var(--color-text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+/* Tablets get a balanced split in the intro, with the visual kept secondary. */
+@media (min-width: 769px) and (max-width: 1024px) {
+  html body .about-hero-section {
+    min-height: 660px !important;
+  }
+
+  html body .about-hero-section .about-hero-container {
+    min-height: 660px !important;
+    padding-top: 7rem !important;
+    padding-bottom: 5rem !important;
+  }
+
+  html body .about-hero-section .about-hero-container .grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  html body .about-hero-section .about-hero-container .grid > div {
+    width: min(100%, 700px);
+    max-width: 700px;
+  }
+
+  html body .about-hero-section h1.n-hero-title {
+    font-size: clamp(2.8rem, 5.2vw, 3.6rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  html body .about-hero-section .about-hero-bg-visual-wrapper {
+    top: 58% !important;
+    left: 50% !important;
+    width: min(86vw, 760px);
+    max-width: none;
+    transform: translate(-58.25%, -50%) !important;
+  }
+
+  html body .about-hero-section .about-hero-3d-img {
+    width: 100% !important;
+    max-width: 100% !important;
+    opacity: 0.27 !important;
+  }
+
+  html body .about-hero-section .hero-visual-glow-aura {
+    width: 420px;
+    height: 420px;
+    filter: blur(42px);
+  }
+
+  .who-we-are-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+
+  .who-we-are-right {
+    grid-column: auto;
+    order: 1;
+  }
+
+  .who-we-are-left {
+    grid-column: auto;
+    order: 2;
+  }
+
+  .who-we-are-header {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .who-we-are-description {
+    max-width: min(100%, 760px);
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  .who-we-are-visual {
+    width: min(100%, max(340px, 90vw), 560px);
+    max-width: 560px;
+    margin-inline: auto;
+  }
+
+  #story.who-we-are {
+    padding-block: 4rem 1.5rem;
+  }
+
+  .who-we-are-illustration {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .who-we-are-title {
+    font-size: clamp(2rem, 3.6vw, 2.7rem);
+  }
+
+  .who-we-are-description {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .forascom-about-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(calc(100% - 3rem), 760px);
+  }
+
+  .n-build-solution-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  #build {
+    padding-block: 6rem;
+  }
+
+  .n-build-solution-card {
+    min-width: 0;
+    min-height: 0;
+    padding: 1.45rem 1.3rem;
+  }
+
+  #how-we-work {
+    padding-block: 5.5rem;
+  }
+
+  .journey-timeline-wrapper {
+    overflow: visible;
+    padding-bottom: 0.5rem;
+  }
+
+  .journey-milestones {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .journey-timeline-track {
+    display: none;
+  }
+
+  .journey-milestone-btn {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    align-items: center;
+    justify-items: start;
+    gap: 0.65rem;
+    min-width: 0;
+    min-height: 72px;
+    padding: 0.65rem;
+    border: 1px solid rgba(56, 189, 248, 0.15);
+    background: rgba(8, 35, 58, 0.36);
+  }
+
+  .journey-node {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .journey-milestone-labels {
+    min-width: 0;
+    align-items: flex-start;
+    text-align: start;
+  }
+
+  .journey-milestone-ar {
+    white-space: normal;
+    line-height: 1.4;
+  }
+
+  .journey-milestone-en {
+    font-size: 0.56rem;
+  }
+}
+
+/* Phones prioritize the story, stack its artwork after the copy, and reflow
+   the interactive timeline into a compact two-column step selector. */
+@media (max-width: 768px) {
+  html body .about-hero-section {
+    min-height: 680px !important;
+    min-height: max(640px, 92svh) !important;
+  }
+
+  html body .about-hero-section .about-hero-container {
+    display: block !important;
+    min-height: 0 !important;
+    padding: 7.5rem 1rem 5.25rem !important;
+  }
+
+  html body .about-hero-section .about-hero-container .grid {
+    display: block !important;
+    width: 100%;
+  }
+
+  html body .about-hero-section .about-hero-container .grid > div {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  html body .about-hero-section h1.n-hero-title {
+    max-width: 100% !important;
+    font-size: clamp(2.15rem, 9vw, 3.35rem) !important;
+    line-height: 1.25 !important;
+  }
+
+  html body .about-hero-section .n-hero-subtitle {
+    max-width: 36rem !important;
+    margin-top: 1rem !important;
+    font-size: 1rem !important;
+    line-height: 1.8 !important;
+  }
+
+  html body .about-hero-section .about-hero-pills {
+    justify-content: flex-start !important;
+    gap: 0.5rem !important;
+    margin-top: 1rem;
+  }
+
+  html body .about-hero-section .about-hero-pills span {
+    padding: 0.45rem 0.7rem;
+    font-size: 0.76rem;
+    white-space: normal;
+  }
+
+  html body .about-hero-section .about-hero-bg-visual-wrapper {
+    top: 68% !important;
+    left: 50% !important;
+    width: min(100vw, max(90vw, 360px), 700px);
+    max-width: none;
+    transform: translate(-58.25%, -50%) !important;
+  }
+
+  html body .about-hero-section .about-hero-3d-img {
+    width: 100% !important;
+    max-width: 100% !important;
+    opacity: 0.25 !important;
+  }
+
+  html body .about-hero-section .hero-visual-glow-aura {
+    width: min(78vw, 520px);
+    height: min(78vw, 520px);
+    filter: blur(34px);
+  }
+
+  .who-we-are {
+    min-height: 0;
+    padding-block: 2.75rem 1rem;
+  }
+
+  .who-we-are-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(1.25rem, 4vw, 2rem);
+    min-height: 0;
+    padding-top: 0;
+    padding-bottom: 1.5rem;
+  }
+
+  .who-we-are-left,
+  .who-we-are-right {
+    grid-column: auto;
+  }
+
+  .who-we-are-right {
+    order: 1;
+  }
+
+  .who-we-are-left {
+    order: 2;
+  }
+
+  .who-we-are-header {
+    max-width: none;
+    margin: 0;
+  }
+
+  .who-we-are-title {
+    margin: 0 0 1rem;
+    font-size: clamp(1.85rem, 7vw, 2.5rem);
+    line-height: 1.25;
+  }
+
+  .who-we-are-description {
+    max-width: 62ch;
+    margin-bottom: 1rem;
+    font-size: 0.98rem;
+    line-height: 1.8;
+  }
+
+  .who-we-are-cta {
+    min-height: 44px;
+    justify-content: center;
+  }
+
+  .who-we-are-visual {
+    width: min(100%, max(340px, 90vw), 560px);
+    max-width: 560px;
+    margin-inline: auto;
+  }
+
+  .who-we-are-illustration {
+    width: 100%;
+    max-width: 100%;
+    animation-duration: 16s;
+  }
+
+  .forascom-about-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
+    width: calc(100% - 2rem);
+    margin: 0 auto 2.5rem;
+  }
+
+  .forascom-about-metric {
+    min-height: 116px;
+    padding: 0.8rem 0.55rem;
+  }
+
+  .forascom-about-metric-label {
+    font-size: 0.8rem;
+  }
+
+  #build {
+    padding-block: 4.5rem;
+  }
+
+  .n-build-solution-header {
+    margin-bottom: 1.75rem;
+  }
+
+  .n-build-solution-title {
+    font-size: clamp(1.8rem, 7.2vw, 2.5rem);
+  }
+
+  .n-build-solution-subtitle {
+    font-size: 0.96rem;
+    line-height: 1.75;
+  }
+
+  .n-build-solution-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.85rem;
+  }
+
+  .n-build-solution-card {
+    min-width: 0;
+    min-height: 0;
+    padding: 1.3rem 1.15rem;
+    border-radius: 1rem;
+  }
+
+  .n-build-solution-card h3 {
+    font-size: clamp(1.25rem, 5.4vw, 1.6rem);
+  }
+
+  .n-build-solution-card p,
+  .n-build-solution-list li {
+    font-size: 0.92rem;
+  }
+
+  .n-build-solution-stack {
+    overflow-wrap: anywhere;
+    letter-spacing: 0;
+  }
+
+  #how-we-work {
+    padding-block: 4.5rem;
+  }
+
+  #how-we-work .max-w-7xl {
+    padding-inline: 1rem;
+  }
+
+  #how-we-work h2 {
+    font-size: clamp(1.8rem, 7vw, 2.65rem);
+    line-height: 1.3;
+  }
+
+  #how-we-work .text-center.max-w-3xl {
+    margin-bottom: 1.5rem;
+  }
+
+  #how-we-work .journey-timeline-wrapper {
+    overflow: visible;
+    padding: 0;
+  }
+
+  #how-we-work .journey-timeline-track {
+    display: none;
+  }
+
+  #how-we-work .journey-milestones {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+    min-width: 0;
+    padding: 0;
+  }
+
+  #how-we-work .journey-milestone-btn {
+    display: grid;
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    align-items: center;
+    justify-items: start;
+    gap: 0.5rem;
+    min-width: 0;
+    min-height: 68px;
+    padding: 0.5rem;
+    border: 1px solid rgba(56, 189, 248, 0.15);
+    background: rgba(8, 35, 58, 0.36);
+  }
+
+  #how-we-work .journey-node {
+    width: 2.35rem;
+    height: 2.35rem;
+    border-radius: 0.7rem;
+  }
+
+  #how-we-work .journey-node-num {
+    font-size: 0.7rem;
+  }
+
+  #how-we-work .journey-milestone-labels {
+    min-width: 0;
+    align-items: flex-start;
+    text-align: start;
+  }
+
+  #how-we-work .journey-milestone-en {
+    font-size: 0.5rem;
+    letter-spacing: 0.04em;
+    overflow-wrap: anywhere;
+  }
+
+  #how-we-work .journey-milestone-ar {
+    font-size: 0.72rem;
+    line-height: 1.35;
+    white-space: normal;
+  }
+
+  .journey-panel-card {
+    padding: 1.15rem;
+    border-radius: 1rem;
+  }
+
+  .journey-panel-header,
+  .journey-panel-header > .flex {
+    min-width: 0;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .journey-panel-phase {
+    min-width: 0;
+    font-size: 0.62rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .journey-panel-big-num {
+    font-size: 2.2rem;
+  }
+
+  .journey-panel-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .journey-panel-deliverables-box {
+    min-width: 0;
+    padding: 1rem;
+  }
+
+  .journey-panel-desc,
+  .journey-deliv-list li,
+  .journey-deliv-meta {
+    overflow-wrap: anywhere;
+  }
+
+  .journey-panel-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .journey-panel-footer > span {
+    order: -1;
+    text-align: center;
+  }
+
+  .journey-panel-footer > button,
+  .journey-panel-footer > a {
+    min-height: 44px;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  html body .about-hero-section {
+    min-height: 660px !important;
+  }
+
+  html body .about-hero-section .about-hero-container {
+    min-height: 660px !important;
+    padding: 7rem 1.5rem 4.5rem !important;
+  }
+
+  html body .about-hero-section h1.n-hero-title {
+    font-size: clamp(2.7rem, 6vw, 3.5rem) !important;
+  }
+
+  html body .about-hero-section .about-hero-bg-visual-wrapper {
+    top: 58% !important;
+    left: 50% !important;
+    width: min(100vw, max(90vw, 360px), 700px);
+    max-width: none;
+    transform: translate(-58.25%, -50%) !important;
+  }
+
+  html body .about-hero-section .about-hero-3d-img {
+    width: 100% !important;
+    max-width: 100% !important;
+    opacity: 0.25 !important;
+  }
+
+  .who-we-are-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .who-we-are-left,
+  .who-we-are-right {
+    grid-column: auto;
+  }
+
+  .who-we-are-right {
+    order: 1;
+  }
+
+  .who-we-are-left {
+    order: 2;
+  }
+
+  .who-we-are-visual {
+    width: min(100%, max(340px, 90vw), 560px);
+    max-width: 560px;
+    margin-inline: auto;
+  }
+
+  .who-we-are-illustration {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .who-we-are-title {
+    font-size: clamp(1.9rem, 4vw, 2.25rem);
+  }
+
+  .who-we-are-description {
+    font-size: 0.98rem;
+  }
+
+  #story.who-we-are {
+    padding-block: 4.5rem 1.25rem;
+  }
+
+  #build {
+    padding-block: 5rem;
+  }
+
+  .journey-milestones {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .n-build-solution-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .n-build-solution-card {
+    padding: 1.35rem 1.2rem;
+  }
+}
+
+@media (max-width: 360px) {
+  html body .about-hero-section .about-hero-container {
+    padding-inline: 0.85rem !important;
+  }
+
+  .forascom-about-metrics {
+    width: calc(100% - 1.5rem);
+    gap: 0.45rem;
+  }
+
+  .forascom-about-metric {
+    padding-inline: 0.4rem;
+  }
+
+  #how-we-work .max-w-7xl {
+    padding-inline: 0.75rem;
+  }
+
+  #how-we-work .journey-milestones {
+    gap: 0.4rem;
+  }
+
+  #how-we-work .journey-milestone-btn {
+    grid-template-columns: 2.2rem minmax(0, 1fr);
+    gap: 0.35rem;
+    padding: 0.4rem;
+  }
+
+  #how-we-work .journey-node {
+    width: 2.1rem;
+    height: 2.1rem;
+  }
+
+  .journey-panel-card {
+    padding: 0.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .who-we-are-illustration {
+    animation: none !important;
+  }
+}
+
+/* About-page actions: consistent touch targets without stretching every CTA. */
+.who-we-are-cta,
+.n-build-solution-cta,
+.journey-panel-footer > .journey-prev-btn,
+.journey-panel-footer > .journey-next-btn {
+  min-height: 44px;
+  max-width: 100%;
+  align-items: center;
+}
+
+.who-we-are-cta {
+  width: fit-content;
+  height: auto;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.n-build-solution-cta {
+  justify-content: center;
+  text-align: center;
+  line-height: 1.4;
+}
+
+#mobile-menu-container > a {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+}
+
+body > footer .pt-2 .flex.items-center.gap-3 > a[aria-label] {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+}
+
+@media (max-width: 640px) {
+  .journey-panel-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  .journey-panel-footer > span {
+    width: 100%;
+    order: -1;
+    text-align: center;
+  }
+
+  .journey-panel-footer > .journey-prev-btn,
+  .journey-panel-footer > .journey-next-btn {
+    width: min(100%, 24rem);
+    min-height: 48px;
+    justify-content: center;
+    padding: 0.65rem 0.85rem;
+    line-height: 1.4;
+    text-align: center;
+    white-space: normal;
+  }
+
+  #how-we-work .btn-cyan {
+    min-height: 48px;
+    max-width: 100%;
+    justify-content: center;
+    gap: 0.65rem;
+    padding-inline: clamp(1rem, 5vw, 2rem);
+    text-align: center;
+    white-space: normal;
+  }
+
+  body > footer .pt-2 .flex.items-center.gap-3 > a[aria-label] {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .journey-panel-footer {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .journey-panel-footer > span {
+    grid-column: 1 / -1;
+    order: 0;
+    justify-self: center;
+    text-align: center;
+  }
+
+  .journey-panel-footer > .journey-prev-btn,
+  .journey-panel-footer > .journey-next-btn {
+    min-width: 0;
+    min-height: 48px;
+    padding: 0.6rem 0.75rem;
+    justify-content: center;
+    line-height: 1.4;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .journey-panel-footer > .journey-prev-btn {
+    grid-column: 1;
+    justify-self: start;
+  }
+
+  .journey-panel-footer > .journey-next-btn {
+    grid-column: 2;
+    justify-self: end;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .journey-panel-footer {
+    gap: 0.75rem;
+  }
+
+  .journey-panel-footer > .journey-prev-btn,
+  .journey-panel-footer > .journey-next-btn {
+    min-width: 0;
+    min-height: 48px;
+    padding-inline: 0.9rem;
+    justify-content: center;
+    line-height: 1.4;
+    text-align: center;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 424px) {
+  #how-we-work .journey-milestones {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.5rem;
+  }
+
+  #how-we-work .journey-milestone-btn {
+    grid-template-columns: 2.75rem minmax(0, 1fr);
+    width: min(100%, 28rem);
+    min-height: 64px;
+    justify-self: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  #how-we-work .journey-node {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  #how-we-work .journey-milestone-en {
+    font-size: 0.58rem;
+  }
+
+  #how-we-work .journey-milestone-ar {
+    font-size: 0.78rem;
   }
 }

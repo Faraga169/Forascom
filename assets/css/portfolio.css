@@ -123,6 +123,21 @@
   margin-bottom: 2.5rem;
 }
 
+/* Tablet: allow wrap, centered */
+@media (min-width: 768px) and (max-width: 1023px) {
+  #portfolio .portfolio-filters {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* Desktop: single row without wrap */
+@media (min-width: 1024px) {
+  #portfolio .portfolio-filters {
+    flex-wrap: nowrap;
+  }
+}
+
 #portfolio .portfolio-filter {
   position: relative;
   display: inline-flex;

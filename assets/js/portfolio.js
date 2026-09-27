@@ -201,7 +201,7 @@ function renderProjectFilters(initialActiveFilter = "all") {
             isActive
               ? PROJECT_FILTER_ACTIVE_CLASSES.join(" ")
               : PROJECT_FILTER_INACTIVE_CLASSES.join(" ")
-          } py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm transition-all duration-200 flex items-center gap-2 cursor-pointer select-none"
+          } py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm transition-all duration-200 flex items-center gap-2 cursor-pointer select-none whitespace-nowrap shrink-0"
           data-filter="${key}"
           aria-pressed="${isActive}"
         >
@@ -244,8 +244,8 @@ function renderProjectCard(project, index) {
     >
       <div class="absolute -top-24 -left-24 w-52 h-52 rounded-full bg-tertiary/[0.04] blur-2xl pointer-events-none group-hover:bg-tertiary/[0.1] transition-all duration-500"></div>
 
-      <div>
-        <div class="relative rounded-2xl overflow-hidden bg-[#00080F] aspect-video border border-white/10 mb-6 group/img">
+      <div class="flex flex-col flex-1">
+        <div class="relative rounded-2xl overflow-hidden bg-[#00080F] aspect-video border border-white/10 mb-6 group/img shrink-0">
           <div class="skeleton-loader absolute inset-0 bg-surface-container-high/70 animate-pulse transition-opacity duration-500 pointer-events-none z-10"></div>
           ${
             project.cardImage
@@ -254,7 +254,7 @@ function renderProjectCard(project, index) {
                   src="${project.cardImage}"
                   alt="${project.cardImageAlt || project.title}"
                   loading="lazy"
-                  class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                  class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                   onload="this.style.opacity='1'; const s = this.parentElement.querySelector('.skeleton-loader'); if(s) s.style.opacity='0';"
                   style="opacity:0; transition: opacity 0.4s ease, transform 0.7s ease-out;"
                 />
@@ -268,7 +268,7 @@ function renderProjectCard(project, index) {
               `
           }
 
-          <div class="absolute inset-0 bg-gradient-to-t from-[#00080F]/85 via-transparent to-transparent pointer-events-none z-10"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-[#00080F]/85 via-[#00080F]/10 to-transparent pointer-events-none z-10"></div>
 
           <!-- Hover Overlay Button -->
           <div class="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">
@@ -279,19 +279,21 @@ function renderProjectCard(project, index) {
           </div>
         </div>
 
-        <div class="flex items-center justify-between gap-4 mb-3">
-          <span class="text-xs font-bold uppercase tracking-wider text-tertiary font-mono">
-            ${PROJECT_CATEGORIES[project.categoryKey]?.label || project.category}
-          </span>
+        <div class="flex flex-col flex-1">
+          <div class="flex items-center justify-between gap-4 mb-3 shrink-0">
+            <span class="text-xs font-bold uppercase tracking-wider text-tertiary font-mono">
+              ${PROJECT_CATEGORIES[project.categoryKey]?.label || project.category}
+            </span>
+          </div>
+
+          <h3 class="text-xl sm:text-2xl font-black text-white mb-3 group-hover:text-tertiary transition-colors line-clamp-2">
+            ${project.title}
+          </h3>
+
+          <p class="text-sm text-on-surface-variant leading-relaxed mt-auto line-clamp-2">
+            ${project.subtitle || project.description || ""}
+          </p>
         </div>
-
-        <h3 class="text-xl sm:text-2xl font-black text-white mb-3 group-hover:text-tertiary transition-colors">
-          ${project.title}
-        </h3>
-
-        <p class="text-sm text-on-surface-variant leading-relaxed mb-5 line-clamp-2">
-          ${project.subtitle || project.description || ""}
-        </p>
       </div>
     </a>
   `;

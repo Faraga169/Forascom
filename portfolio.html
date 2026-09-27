@@ -1,377 +1,351 @@
 <!doctype html>
 
 <html class="dark" dir="rtl" lang="ar">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Forascom فرصكم — المشاريع والحلول الرقمية</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@500;700&amp;family=Plus+Jakarta+Sans:wght@500;700;800&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              surface: "#00101D",
-              "surface-dim": "#000B14",
-              "surface-container-lowest": "#00080F",
-              "surface-container-low": "#001525",
-              "surface-container": "#001A2E",
-              "surface-container-high": "#03243F",
-              "surface-container-highest": "#072F50",
-              "surface-bright": "#0B3960",
-              primary: "#99CBFF",
-              "primary-container": "#1D9BF0",
-              tertiary: "#00C4EE",
-              "tertiary-glow": "rgba(0, 196, 238, 0.4)",
-              "on-surface": "#E0E3E5",
-              "on-surface-variant": "#94A3B8",
-              outline: "#64748B",
-              "outline-variant": "#1E293B",
-              error: "#FF6B6B",
-            },
-            fontFamily: {
-              sans: ["Cairo", "Plus Jakarta Sans", "sans-serif"],
-              mono: ["JetBrains Mono", "monospace"],
-              body: ["Cairo", "sans-serif"],
-            },
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Forascom فرصكم — المشاريع والحلول الرقمية</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@500;700&amp;family=Plus+Jakarta+Sans:wght@500;700;800&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            surface: "#00101D",
+            "surface-dim": "#000B14",
+            "surface-container-lowest": "#00080F",
+            "surface-container-low": "#001525",
+            "surface-container": "#001A2E",
+            "surface-container-high": "#03243F",
+            "surface-container-highest": "#072F50",
+            "surface-bright": "#0B3960",
+            primary: "#99CBFF",
+            "primary-container": "#1D9BF0",
+            tertiary: "#00C4EE",
+            "tertiary-glow": "rgba(0, 196, 238, 0.4)",
+            "on-surface": "#E0E3E5",
+            "on-surface-variant": "#94A3B8",
+            outline: "#64748B",
+            "outline-variant": "#1E293B",
+            error: "#FF6B6B",
+          },
+          fontFamily: {
+            sans: ["Cairo", "Plus Jakarta Sans", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"],
+            body: ["Cairo", "sans-serif"],
           },
         },
-      };
-    </script>
+      },
+    };
+  </script>
 
-    <style>
-      @layer base {
-        body {
-          font-family: "Cairo", sans-serif;
-          background-color: #00101d;
-          color: #e0e3e5;
-          overflow-x: hidden;
-        }
+  <style>
+    @layer base {
+      body {
+        font-family: "Cairo", sans-serif;
+        background-color: #00101d;
+        color: #e0e3e5;
+        overflow-x: hidden;
+      }
+    }
+
+    /* Ambient glow & backdrop animations */
+    @keyframes ambientDrift {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.15;
       }
 
-      /* Ambient glow & backdrop animations */
-      @keyframes ambientDrift {
-        0%,
-        100% {
-          transform: translate(0, 0) scale(1);
-          opacity: 0.15;
-        }
+      50% {
+        transform: translate(30px, -20px) scale(1.1);
+        opacity: 0.25;
+      }
+    }
 
-        50% {
-          transform: translate(30px, -20px) scale(1.1);
-          opacity: 0.25;
-        }
+    .animate-ambient-1 {
+      animation: ambientDrift 14s ease-in-out infinite alternate;
+    }
+
+    .animate-ambient-2 {
+      animation: ambientDrift 18s ease-in-out 4s infinite alternate;
+    }
+
+    .cyan-glow-text {
+      text-shadow:
+        0 0 24px rgba(0, 196, 238, 0.55),
+        0 0 45px rgba(0, 196, 238, 0.25);
+    }
+
+    .cyan-glow-box {
+      box-shadow:
+        0 0 35px -5px rgba(0, 196, 238, 0.3),
+        inset 0 0 20px -5px rgba(0, 196, 238, 0.15);
+    }
+
+    .cyan-glow-box-subtle {
+      box-shadow: 0 0 25px -8px rgba(0, 196, 238, 0.22);
+    }
+
+    .cyan-border {
+      border: 1px solid rgba(0, 196, 238, 0.3);
+    }
+
+    .btn-smooth {
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .btn-smooth:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Project card transitions */
+    .project-card {
+      transition:
+        opacity 0.35s ease,
+        transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .project-card.filter-hidden {
+      display: none !important;
+      opacity: 0;
+      transform: scale(0.96);
+    }
+
+    /* Subtle line glow animation */
+    @keyframes lineGlow {
+
+      0%,
+      100% {
+        opacity: 0.4;
       }
 
-      .animate-ambient-1 {
-        animation: ambientDrift 14s ease-in-out infinite alternate;
+      50% {
+        opacity: 0.8;
+      }
+    }
+
+    .active-line {
+      animation: lineGlow 2.5s ease-in-out infinite;
+    }
+
+    /* Evidence Dashboard Impact Styles */
+    .impact-card {
+      transition:
+        opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+      will-change: opacity, transform;
+    }
+
+    .impact-counter-glow-cyan {
+      text-shadow:
+        0 0 calc(16px * var(--glow-ratio, 1)) rgba(0, 196, 238, calc(0.45 * var(--glow-ratio, 1))),
+        0 0 calc(32px * var(--glow-ratio, 1)) rgba(0, 196, 238, calc(0.2 * var(--glow-ratio, 1)));
+    }
+
+    .impact-counter-glow-primary {
+      text-shadow:
+        0 0 calc(16px * var(--glow-ratio, 1)) rgba(153, 203, 255, calc(0.45 * var(--glow-ratio, 1))),
+        0 0 calc(32px * var(--glow-ratio, 1)) rgba(153, 203, 255, calc(0.2 * var(--glow-ratio, 1)));
+    }
+
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    @media (max-width: 480px) {
+      body>header>div.max-w-7xl {
+        padding-inline: 1rem;
       }
 
-      .animate-ambient-2 {
-        animation: ambientDrift 18s ease-in-out 4s infinite alternate;
+      main>section:first-of-type {
+        padding: 2rem 1rem;
       }
 
-      .cyan-glow-text {
-        text-shadow:
-          0 0 24px rgba(0, 196, 238, 0.55),
-          0 0 45px rgba(0, 196, 238, 0.25);
+      main>section:first-of-type>.grid {
+        gap: 2rem;
       }
 
-      .cyan-glow-box {
-        box-shadow:
-          0 0 35px -5px rgba(0, 196, 238, 0.3),
-          inset 0 0 20px -5px rgba(0, 196, 238, 0.15);
+      #projects-showcase,
+      #impact,
+      #contact {
+        padding-inline: 1rem !important;
       }
 
-      .cyan-glow-box-subtle {
-        box-shadow: 0 0 25px -8px rgba(0, 196, 238, 0.22);
+      #projects-showcase {
+        padding-top: 2.25rem;
+        padding-bottom: 2.25rem;
       }
 
-      .cyan-border {
-        border: 1px solid rgba(0, 196, 238, 0.3);
+      #category-filters .filter-counter {
+        flex: 0 0 auto;
+        padding-inline: 0.4rem;
       }
 
-      .btn-smooth {
-        transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      #impact {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
       }
 
-      .btn-smooth:hover {
-        transform: translateY(-2px);
+      #impact>.grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1rem;
       }
 
-      /* Project card transitions */
-      .project-card {
-        transition:
-          opacity 0.35s ease,
-          transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-          border-color 0.3s ease,
-          box-shadow 0.3s ease;
+      #contact {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
       }
 
-      .project-card.filter-hidden {
-        display: none !important;
-        opacity: 0;
-        transform: scale(0.96);
+      #contact .cta-inner-card {
+        padding: 1.25rem;
       }
 
-      /* Subtle line glow animation */
-      @keyframes lineGlow {
-        0%,
-        100% {
-          opacity: 0.4;
-        }
-
-        50% {
-          opacity: 0.8;
-        }
+      #contact .cta-inner-card h2 {
+        font-size: clamp(1.65rem, 6.5vw, 2.25rem);
+        line-height: 1.2;
       }
 
-      .active-line {
-        animation: lineGlow 2.5s ease-in-out infinite;
+      #contact .cta-inner-card>.relative.z-10,
+      #contact .cta-inner-card .max-w-xl {
+        width: 100%;
+      }
+    }
+
+    @media (min-width: 481px) and (max-width: 1024px) {
+
+      #projects-showcase,
+      #impact,
+      #contact {
+        padding-inline: clamp(1.5rem, 3.5vw, 2rem) !important;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      #impact>.grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem;
       }
 
-      /* Evidence Dashboard Impact Styles */
-      .impact-card {
-        transition:
-          opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-          transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-          border-color 0.3s ease,
-          box-shadow 0.3s ease;
-        will-change: opacity, transform;
+      #impact>.grid>.impact-card:last-child {
+        grid-column: 1 / -1;
+        width: min(100%, calc((100% - 1.25rem) / 2));
+        justify-self: center;
       }
+    }
+  </style>
+</head>
 
-      .impact-counter-glow-cyan {
-        text-shadow:
-          0 0 calc(16px * var(--glow-ratio, 1))
-            rgba(0, 196, 238, calc(0.45 * var(--glow-ratio, 1))),
-          0 0 calc(32px * var(--glow-ratio, 1))
-            rgba(0, 196, 238, calc(0.2 * var(--glow-ratio, 1)));
-      }
-
-      .impact-counter-glow-primary {
-        text-shadow:
-          0 0 calc(16px * var(--glow-ratio, 1))
-            rgba(153, 203, 255, calc(0.45 * var(--glow-ratio, 1))),
-          0 0 calc(32px * var(--glow-ratio, 1))
-            rgba(153, 203, 255, calc(0.2 * var(--glow-ratio, 1)));
-      }
-
-      .hide-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      .hide-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-
-      @media (max-width: 480px) {
-        body > header > div.max-w-7xl {
-          padding-inline: 1rem;
-        }
-
-        main > section:first-of-type {
-          padding: 2rem 1rem;
-        }
-
-        main > section:first-of-type > .grid {
-          gap: 2rem;
-        }
-
-        #projects-showcase,
-        #impact,
-        #contact {
-          padding-inline: 1rem !important;
-        }
-
-        #projects-showcase {
-          padding-top: 2.25rem;
-          padding-bottom: 2.25rem;
-        }
-
-        #category-filters .filter-counter {
-          flex: 0 0 auto;
-          padding-inline: 0.4rem;
-        }
-
-        #impact {
-          padding-top: 3rem;
-          padding-bottom: 3rem;
-        }
-
-        #impact > .grid {
-          grid-template-columns: minmax(0, 1fr);
-          gap: 1rem;
-        }
-
-        #contact {
-          padding-top: 3rem;
-          padding-bottom: 3rem;
-        }
-
-        #contact .cta-inner-card {
-          padding: 1.25rem;
-        }
-
-        #contact .cta-inner-card h2 {
-          font-size: clamp(1.65rem, 6.5vw, 2.25rem);
-          line-height: 1.2;
-        }
-
-        #contact .cta-inner-card > .relative.z-10,
-        #contact .cta-inner-card .max-w-xl {
-          width: 100%;
-        }
-      }
-
-      @media (min-width: 481px) and (max-width: 1024px) {
-        #projects-showcase,
-        #impact,
-        #contact {
-          padding-inline: clamp(1.5rem, 3.5vw, 2rem) !important;
-        }
-      }
-
-      @media (min-width: 768px) and (max-width: 1024px) {
-        #impact > .grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 1.25rem;
-        }
-
-        #impact > .grid > .impact-card:last-child {
-          grid-column: 1 / -1;
-          width: min(100%, calc((100% - 1.25rem) / 2));
-          justify-self: center;
-        }
-      }
-    </style>
-  </head>
-
-  <body
-    class="bg-surface min-h-screen text-on-surface antialiased selection:bg-tertiary/20 selection:text-tertiary"
-  >
-    <!-- GLOBAL AMBIENT BACKDROPS -->
-    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
-      <div
-        class="absolute -top-40 -right-40 w-[650px] h-[650px] rounded-full bg-tertiary/10 blur-[130px] animate-ambient-1"
-      ></div>
-      <div
-        class="absolute top-1/3 -left-48 w-[600px] h-[600px] rounded-full bg-primary-container/10 blur-[140px] animate-ambient-2"
-      ></div>
-      <div
-        class="absolute bottom-10 right-1/4 w-[700px] h-[700px] rounded-full bg-tertiary/10 blur-[160px] animate-ambient-1"
-      ></div>
+<body class="bg-surface min-h-screen text-on-surface antialiased selection:bg-tertiary/20 selection:text-tertiary">
+  <!-- GLOBAL AMBIENT BACKDROPS -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div
+      class="absolute -top-40 -right-40 w-[650px] h-[650px] rounded-full bg-tertiary/10 blur-[130px] animate-ambient-1">
     </div>
+    <div
+      class="absolute top-1/3 -left-48 w-[600px] h-[600px] rounded-full bg-primary-container/10 blur-[140px] animate-ambient-2">
+    </div>
+    <div
+      class="absolute bottom-10 right-1/4 w-[700px] h-[700px] rounded-full bg-tertiary/10 blur-[160px] animate-ambient-1">
+    </div>
+  </div>
 
-    <!-- ==========================================================================
+  <!-- ==========================================================================
        HEADER & NAVIGATION BAR (MULTI-PAGE NAVIGATION)
        ========================================================================== -->
-    <!-- GLOBAL AMBIENT BACKDROPS -->
-    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
-      <div
-        class="absolute -top-40 -right-40 w-[650px] h-[650px] rounded-full bg-tertiary/10 blur-[130px] animate-ambient-1"
-      ></div>
-      <div
-        class="absolute top-1/3 -left-48 w-[600px] h-[600px] rounded-full bg-primary-container/10 blur-[140px] animate-ambient-2"
-      ></div>
-      <div
-        class="absolute bottom-10 right-1/4 w-[700px] h-[700px] rounded-full bg-tertiary/10 blur-[160px] animate-ambient-1"
-      ></div>
+  <!-- GLOBAL AMBIENT BACKDROPS -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div
+      class="absolute -top-40 -right-40 w-[650px] h-[650px] rounded-full bg-tertiary/10 blur-[130px] animate-ambient-1">
+    </div>
+    <div
+      class="absolute top-1/3 -left-48 w-[600px] h-[600px] rounded-full bg-primary-container/10 blur-[140px] animate-ambient-2">
+    </div>
+    <div
+      class="absolute bottom-10 right-1/4 w-[700px] h-[700px] rounded-full bg-tertiary/10 blur-[160px] animate-ambient-1">
+    </div>
+  </div>
+
+  <!-- 1. DESKTOP TOP NAVIGATION HEADER -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-[#00101D]/80 backdrop-blur-xl border-b border-white/5 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-3 group shrink-0">
+        <img src="assets/images/Logo.png" alt="Forascom — فرصكم"
+          class="h-10 sm:h-11 w-auto object-contain hover:scale-105 transition-transform" />
+      </a>
+
+      <nav class="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-5 xl:gap-7 font-semibold text-sm">
+        <a class="nav-link hover:text-cyan-bright transition-colors" href="index.html">الرئيسية</a>
+        <a class="nav-link hover:text-cyan-bright transition-colors" href="about.html">عن فرصكم</a>
+        <a class="nav-link hover:text-cyan-bright transition-colors" href="services.html">خدماتنا</a>
+        <a class="nav-link nav-active hover:text-cyan-bright transition-colors" href="portfolio.html"
+          aria-current="page">معرض الأعمال</a>
+        <a class="nav-link hover:text-cyan-bright transition-colors" href="contact.html">تواصل معنا</a>
+      </nav>
+
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <a class="hidden lg:inline-flex btn-cyan font-bold text-sm px-5 py-2.5 rounded-xl shadow-lg transition-all"
+          href="contact.html">استشارة مجانية</a>
+        <button id="mobile-menu-btn"
+          class="lg:hidden text-white p-2 rounded-lg bg-white/10 border border-white/10 shrink-0" aria-label="القائمة">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
     </div>
 
-    <!-- 1. DESKTOP TOP NAVIGATION HEADER -->
-    <header
-      class="fixed top-0 inset-x-0 z-50 bg-[#00101D]/80 backdrop-blur-xl border-b border-white/5 shadow-2xl"
-    >
-      <div
-        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4"
-      >
-        <a href="index.html" class="flex items-center gap-3 group shrink-0">
-          <img
-            src="assets/images/Logo.png"
-            alt="Forascom — فرصكم"
-            class="h-10 sm:h-11 w-auto object-contain hover:scale-105 transition-transform"
-          />
-        </a>
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu-container"
+      class="hidden lg:hidden bg-surface-container border-b border-white/10 px-4 sm:px-6 py-5 space-y-3 font-semibold text-sm">
+      <a href="index.html" class="block py-2 text-on-surface-variant hover:text-white">الرئيسية</a>
+      <a href="about.html" class="block py-2 text-on-surface-variant hover:text-white">عن فرصكم</a>
+      <a href="services.html" class="block py-2 text-on-surface-variant hover:text-white">خدماتنا</a>
+      <a href="portfolio.html" class="block py-2 text-tertiary font-bold">معرض الأعمال</a>
+      <a href="contact.html" class="block py-2 text-on-surface-variant hover:text-white">تواصل معنا</a>
+    </div>
+  </header>
 
-        <nav
-          class="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-5 xl:gap-7 font-semibold text-sm"
-        >
-          <a class="nav-link hover:text-cyan-bright transition-colors" href="index.html">الرئيسية</a>
-          <a class="nav-link hover:text-cyan-bright transition-colors" href="about.html">عن فرصكم</a>
-          <a class="nav-link hover:text-cyan-bright transition-colors" href="services.html">خدماتنا</a>
-          <a class="nav-link nav-active hover:text-cyan-bright transition-colors" href="portfolio.html" aria-current="page">معرض الأعمال</a>
-          <a class="nav-link hover:text-cyan-bright transition-colors" href="contact.html">تواصل معنا</a>
-        </nav>
-
-        <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-          <a
-            class="hidden lg:inline-flex btn-cyan font-bold text-sm px-5 py-2.5 rounded-xl shadow-lg transition-all"
-            href="contact.html"
-          >استشارة مجانية</a>
-          <button
-            id="mobile-menu-btn"
-            class="lg:hidden text-white p-2 rounded-lg bg-white/10 border border-white/10 shrink-0"
-            aria-label="القائمة"
-          >
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      <!-- Mobile Navigation Drawer -->
-      <div
-        id="mobile-menu-container"
-        class="hidden lg:hidden bg-surface-container border-b border-white/10 px-4 sm:px-6 py-5 space-y-3 font-semibold text-sm"
-      >
-        <a href="index.html" class="block py-2 text-on-surface-variant hover:text-white">الرئيسية</a>
-        <a href="about.html" class="block py-2 text-on-surface-variant hover:text-white">عن فرصكم</a>
-        <a href="services.html" class="block py-2 text-on-surface-variant hover:text-white">خدماتنا</a>
-        <a href="portfolio.html" class="block py-2 text-tertiary font-bold">معرض الأعمال</a>
-        <a href="contact.html" class="block py-2 text-on-surface-variant hover:text-white">تواصل معنا</a>
-      </div>
-    </header>
-
-    <!-- ==========================================================================
+  <!-- ==========================================================================
        PAGE HERO — PORTFOLIO & CASE STUDIES (FORASCOM SHOWCASE)
        ========================================================================== -->
 
-    <!-- 2. HERO SECTION (Desktop 2-Column Split) -->
-    <main class="relative z-10 pt-20 pb-16">
-      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div
-          class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center"
-        >
-          <!-- Left Editorial Copy (7 Cols) -->
-          <div class="lg:col-span-7 flex flex-col gap-6">
-            <h1
-              class="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.2] tracking-tight text-white break-words"
-            >
-              حلول تحوّل
-              <span class="text-tertiary cyan-glow-text inline-block"
-                >الأفكار</span
-              >
-              إلى فرص.
-            </h1>
-            <p
-              class="text-base sm:text-lg lg:text-xl text-on-surface-variant font-normal leading-[1.6] max-w-2xl"
-            >
-              مجموعة مختارة من الأنظمة والحلول الرقمية التي بنيناها لمعالجة
-              مشكلات أعمال حقيقية، وتحويل الاختناقات التشغيلية إلى قنوات نمو
-              مستدام، كفاءة غير مسبوقة، وقيمة ملموسة تظهر في نتائج الشركات.
-            </p>
-            <!-- Quick Metrics Bar -->
-            <!-- <div class="grid grid-cols-3 gap-4 pt-4 border-t border-white/10 max-w-xl">
+  <!-- 2. HERO SECTION (Desktop 2-Column Split) -->
+  <main class="relative z-10 pt-20 pb-16">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <!-- Left Editorial Copy (7 Cols) -->
+        <div class="lg:col-span-7 flex flex-col gap-6">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.2] tracking-tight text-white break-words">
+            حلول تحوّل
+            <span class="text-tertiary cyan-glow-text inline-block">الأفكار</span>
+            إلى فرص.
+          </h1>
+          <p class="text-base sm:text-lg lg:text-xl text-on-surface-variant font-normal leading-[1.6] max-w-2xl">
+            مجموعة مختارة من الأنظمة والحلول الرقمية التي بنيناها لمعالجة
+            مشكلات أعمال حقيقية، وتحويل الاختناقات التشغيلية إلى قنوات نمو
+            مستدام، كفاءة غير مسبوقة، وقيمة ملموسة تظهر في نتائج الشركات.
+          </p>
+          <!-- Quick Metrics Bar -->
+          <!-- <div class="grid grid-cols-3 gap-4 pt-4 border-t border-white/10 max-w-xl">
             <div class="flex flex-col">
               <span class="text-2xl lg:text-3xl font-black text-tertiary font-mono">12+</span>
               <span class="text-xs font-medium text-on-surface-variant mt-0.5">مشروع تم تسليمه</span>
@@ -385,245 +359,185 @@
               <span class="text-xs font-medium text-on-surface-variant mt-0.5">بيئات إنتاج نشطة</span>
             </div>
           </div> -->
-          </div>
-          <!-- Right System Architecture Visual Card (5 Cols) -->
-          <div class="lg:col-span-5">
-            <div
-              class="relative rounded-3xl bg-surface-container/90 backdrop-blur-xl p-4 sm:p-6 lg:p-8 cyan-border cyan-glow-box shadow-2xl overflow-hidden"
-            >
-              <!-- Ambient corner decoration -->
+        </div>
+        <!-- Right System Architecture Visual Card (5 Cols) -->
+        <div class="lg:col-span-5">
+          <div
+            class="relative rounded-3xl bg-surface-container/90 backdrop-blur-xl p-4 sm:p-6 lg:p-8 cyan-border cyan-glow-box shadow-2xl overflow-hidden">
+            <!-- Ambient corner decoration -->
+            <div class="absolute -top-16 -left-16 w-40 h-40 rounded-full bg-tertiary/20 blur-2xl pointer-events-none">
+            </div>
+            <div class="flex items-center justify-between pb-6 border-b border-white/10">
+              <div class="flex items-center gap-2.5">
+                <span class="w-3 h-3 rounded-full bg-error"></span>
+                <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                <span class="w-3 h-3 rounded-full bg-tertiary"></span>
+                <span class="text-xs font-mono tracking-widest text-outline uppercase mr-2">SYSTEM PIPELINE</span>
+              </div>
+              <span
+                class="px-2.5 py-1 rounded-md bg-tertiary/10 border border-tertiary/30 text-tertiary text-xs font-bold font-mono">منهجية
+                فرصكم</span>
+            </div>
+            <!-- Pipeline Flow Stack -->
+            <div class="relative flex flex-col gap-4 mt-6">
+              <!-- Step 1 -->
               <div
-                class="absolute -top-16 -left-16 w-40 h-40 rounded-full bg-tertiary/20 blur-2xl pointer-events-none"
-              ></div>
-              <div
-                class="flex items-center justify-between pb-6 border-b border-white/10"
-              >
-                <div class="flex items-center gap-2.5">
-                  <span class="w-3 h-3 rounded-full bg-error"></span>
-                  <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
-                  <span class="w-3 h-3 rounded-full bg-tertiary"></span>
-                  <span
-                    class="text-xs font-mono tracking-widest text-outline uppercase mr-2"
-                    >SYSTEM PIPELINE</span
-                  >
+                class="flex items-center justify-between p-4 rounded-xl bg-surface-container-high/80 border border-white/5 hover:border-tertiary/40 transition-all group">
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-outline group-hover:text-tertiary border border-white/5 transition-colors">
+                    <span class="material-symbols-outlined text-xl">lightbulb</span>
+                  </div>
+                  <div>
+                    <span class="block text-xs font-mono text-outline">STAGE 01</span>
+                    <h4 class="text-base font-bold text-white">
+                      الفكرة — Idea
+                    </h4>
+                  </div>
                 </div>
                 <span
-                  class="px-2.5 py-1 rounded-md bg-tertiary/10 border border-tertiary/30 text-tertiary text-xs font-bold font-mono"
-                  >منهجية فرصكم</span
-                >
+                  class="w-2.5 h-2.5 rounded-full bg-outline-variant group-hover:bg-tertiary transition-colors"></span>
               </div>
-              <!-- Pipeline Flow Stack -->
-              <div class="relative flex flex-col gap-4 mt-6">
-                <!-- Step 1 -->
-                <div
-                  class="flex items-center justify-between p-4 rounded-xl bg-surface-container-high/80 border border-white/5 hover:border-tertiary/40 transition-all group"
-                >
-                  <div class="flex items-center gap-4">
-                    <div
-                      class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-outline group-hover:text-tertiary border border-white/5 transition-colors"
-                    >
-                      <span class="material-symbols-outlined text-xl"
-                        >lightbulb</span
-                      >
-                    </div>
-                    <div>
-                      <span class="block text-xs font-mono text-outline"
-                        >STAGE 01</span
-                      >
-                      <h4 class="text-base font-bold text-white">
-                        الفكرة — Idea
-                      </h4>
-                    </div>
+              <!-- Connecting Line -->
+              <div class="w-0.5 h-4 sm:h-6 mx-auto bg-gradient-to-b from-tertiary/60 to-primary-container"></div>
+              <!-- Step 2 -->
+              <div
+                class="flex items-center justify-between p-4 rounded-xl bg-surface-container-high/80 border border-white/5 hover:border-tertiary/40 transition-all group">
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary-container border border-primary-container/30">
+                    <span class="material-symbols-outlined text-xl">terminal</span>
                   </div>
-                  <span
-                    class="w-2.5 h-2.5 rounded-full bg-outline-variant group-hover:bg-tertiary transition-colors"
-                  ></span>
-                </div>
-                <!-- Connecting Line -->
-                <div
-                  class="w-0.5 h-4 sm:h-6 mx-auto bg-gradient-to-b from-tertiary/60 to-primary-container"
-                ></div>
-                <!-- Step 2 -->
-                <div
-                  class="flex items-center justify-between p-4 rounded-xl bg-surface-container-high/80 border border-white/5 hover:border-tertiary/40 transition-all group"
-                >
-                  <div class="flex items-center gap-4">
-                    <div
-                      class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary-container border border-primary-container/30"
-                    >
-                      <span class="material-symbols-outlined text-xl"
-                        >terminal</span
-                      >
-                    </div>
-                    <div>
-                      <span class="block text-xs font-mono text-outline"
-                        >STAGE 02</span
-                      >
-                      <h4 class="text-base font-bold text-white">
-                        البرمجة — Code
-                      </h4>
-                    </div>
+                  <div>
+                    <span class="block text-xs font-mono text-outline">STAGE 02</span>
+                    <h4 class="text-base font-bold text-white">
+                      البرمجة — Code
+                    </h4>
                   </div>
-                  <span
-                    class="w-2.5 h-2.5 rounded-full bg-primary-container shadow-[0_0_8px_#1D9BF0]"
-                  ></span>
                 </div>
-                <!-- Connecting Line -->
-                <div
-                  class="w-0.5 h-4 sm:h-6 mx-auto bg-gradient-to-b from-primary-container to-tertiary"
-                ></div>
-                <!-- Step 3 -->
-                <div
-                  class="flex items-center justify-between p-4 rounded-xl bg-surface-container-high/80 border border-white/5 hover:border-tertiary/40 transition-all group"
-                >
-                  <div class="flex items-center gap-4">
-                    <div
-                      class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-tertiary border border-tertiary/30"
-                    >
-                      <span class="material-symbols-outlined text-xl"
-                        >check_circle</span
-                      >
-                    </div>
-                    <div>
-                      <span class="block text-xs font-mono text-outline"
-                        >STAGE 03</span
-                      >
-                      <h4 class="text-base font-bold text-white">
-                        الحل — Solution
-                      </h4>
-                    </div>
+                <span class="w-2.5 h-2.5 rounded-full bg-primary-container shadow-[0_0_8px_#1D9BF0]"></span>
+              </div>
+              <!-- Connecting Line -->
+              <div class="w-0.5 h-4 sm:h-6 mx-auto bg-gradient-to-b from-primary-container to-tertiary"></div>
+              <!-- Step 3 -->
+              <div
+                class="flex items-center justify-between p-4 rounded-xl bg-surface-container-high/80 border border-white/5 hover:border-tertiary/40 transition-all group">
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-tertiary border border-tertiary/30">
+                    <span class="material-symbols-outlined text-xl">check_circle</span>
                   </div>
-                  <span
-                    class="w-2.5 h-2.5 rounded-full bg-tertiary shadow-[0_0_8px_#00C4EE] animate-pulse"
-                  ></span>
-                </div>
-                <!-- Connecting Line (Glowing Active) -->
-                <div
-                  class="w-0.5 h-4 sm:h-6 mx-auto bg-gradient-to-b from-tertiary to-tertiary shadow-[0_0_8px_#00C4EE] active-line"
-                ></div>
-                <!-- Step 4 (Active Opportunity) -->
-                <div
-                  class="flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-surface-bright/70 via-surface-container-high to-surface-container border border-tertiary shadow-[0_0_20px_rgba(0,196,238,0.25)]"
-                >
-                  <div class="flex items-center gap-4">
-                    <div
-                      class="w-10 h-10 rounded-lg bg-tertiary/20 flex items-center justify-center text-tertiary border border-tertiary shadow-[0_0_12px_rgba(0,196,238,0.5)]"
-                    >
-                      <span class="material-symbols-outlined text-xl"
-                        >rocket_launch</span
-                      >
-                    </div>
-                    <div>
-                      <span
-                        class="block text-xs font-mono text-tertiary font-bold"
-                        >STAGE 04 — DELIVERED</span
-                      >
-                      <h4 class="text-base font-extrabold text-white">
-                        الفرصة — Opportunity
-                      </h4>
-                    </div>
+                  <div>
+                    <span class="block text-xs font-mono text-outline">STAGE 03</span>
+                    <h4 class="text-base font-bold text-white">
+                      الحل — Solution
+                    </h4>
                   </div>
-                  <span
-                    class="w-3.5 h-3.5 rounded-full bg-tertiary shadow-[0_0_12px_#00C4EE] animate-ping"
-                  ></span>
                 </div>
+                <span class="w-2.5 h-2.5 rounded-full bg-tertiary shadow-[0_0_8px_#00C4EE] animate-pulse"></span>
+              </div>
+              <!-- Connecting Line (Glowing Active) -->
+              <div
+                class="w-0.5 h-4 sm:h-6 mx-auto bg-gradient-to-b from-tertiary to-tertiary shadow-[0_0_8px_#00C4EE] active-line">
+              </div>
+              <!-- Step 4 (Active Opportunity) -->
+              <div
+                class="flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-surface-bright/70 via-surface-container-high to-surface-container border border-tertiary shadow-[0_0_20px_rgba(0,196,238,0.25)]">
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-tertiary/20 flex items-center justify-center text-tertiary border border-tertiary shadow-[0_0_12px_rgba(0,196,238,0.5)]">
+                    <span class="material-symbols-outlined text-xl">rocket_launch</span>
+                  </div>
+                  <div>
+                    <span class="block text-xs font-mono text-tertiary font-bold">STAGE 04 — DELIVERED</span>
+                    <h4 class="text-base font-extrabold text-white">
+                      الفرصة — Opportunity
+                    </h4>
+                  </div>
+                </div>
+                <span class="w-3.5 h-3.5 rounded-full bg-tertiary shadow-[0_0_12px_#00C4EE] animate-ping"></span>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Unified Section Header -->
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-10">
-        <div
-          class="flex flex-col md:flex-row md:items-end justify-between gap-4"
-        >
-          <div>
-            <h2
-              class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight break-words mb-3 sm:mb-4"
-            >
-              قصص مشاريع حقيقية
-            </h2>
-            <p
-              class="text-on-surface-variant text-base sm:text-lg leading-[1.7] max-w-3xl font-normal"
-            >
-              مجموعة مختارة من الحلول الرقمية والأنظمة المؤسسية التي تم تنفيذها
-              وتعمل حالياً في بيئات إنتاج حقيقية وملموسة.
-            </p>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- ==========================================================================
+    <!-- Unified Section Header -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-10">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight break-words mb-3 sm:mb-4">
+            قصص مشاريع حقيقية
+          </h2>
+          <p class="text-on-surface-variant text-base sm:text-lg leading-[1.7] max-w-3xl font-normal">
+            مجموعة مختارة من الحلول الرقمية والأنظمة المؤسسية التي تم تنفيذها
+            وتعمل حالياً في بيئات إنتاج حقيقية وملموسة.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
        UNIFIED PROJECTS SHOWCASE (قصص مشاريع حقيقية)
        ========================================================================== -->
-      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10" id="projects-showcase">
-        <div class="flex flex-col gap-8" id="projects-container">
-          <!-- PROJECT FILTERS -->
-          <div class="relative w-full overflow-hidden">
-            <div
-              id="category-filters"
-              class="flex flex-nowrap md:flex-wrap items-center justify-start md:justify-center gap-2 sm:gap-3 overflow-x-auto pb-4 -mb-4 hide-scrollbar scroll-smooth"
-            >
-              <!-- Filters are generated dynamically by JavaScript -->
-            </div>
-          </div>
-
-          <!-- FEATURED PROJECT -->
-          <div id="featured-project-container">
-            <!-- Featured project is generated dynamically -->
-          </div>
-
-          <!-- SECONDARY PROJECTS -->
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
-            id="secondary-projects-grid"
-          >
-            <!-- Projects are generated dynamically -->
-          </div>
-
-          <!-- EMPTY STATE -->
-          <div
-            class="hidden p-8 rounded-3xl bg-surface-container/60 border border-white/10 text-center flex flex-col items-center justify-center gap-3"
-            id="empty-category-notice"
-          >
-            <div
-              class="w-12 h-12 rounded-full bg-surface-bright flex items-center justify-center text-tertiary border border-tertiary/30"
-            >
-              <span class="material-symbols-outlined text-2xl"> dataset </span>
-            </div>
-
-            <h4 class="text-lg font-bold text-white">
-              يتم تحديث وإدراج المزيد من المشاريع في هذا التصنيف
-            </h4>
-
-            <p class="text-sm text-on-surface-variant max-w-md">
-              لدينا سجل إنجازات أوسع قيد التوثيق، تواصل معنا مباشرة للاطلاع على
-              نماذج حية مطابقة لقطاعك.
-            </p>
-          </div>
-
-          <!-- UNIFIED SECTION FOOTER CTA -->
-          <div class="pt-6 flex justify-center">
-            <a
-              class="btn-smooth inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-surface-container-high hover:bg-tertiary text-white hover:text-[#00101D] font-extrabold text-sm border border-tertiary/30 hover:border-tertiary shadow-[0_0_20px_rgba(0,196,238,0.15)] hover:shadow-[0_0_30px_rgba(0,196,238,0.4)] transition-all group"
-              href="https://wa.me/?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20%D9%81%D8%B1%D8%B5%D9%83%D9%85%D8%8C%20%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%A3%D8%B1%D8%B4%D9%8A%D9%81%20%D9%85%D8%B4%D8%A7%D8%B1%D9%8A%D8%B9%D9%83%D9%85%20%D9%88%D8%A7%D9%84%D8%AD%D9%84%D9%88%D9%84%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D8%A7%D8%AD%D8%A9."
-              target="_blank"
-            >
-              <span> تصفّح جميع المشاريع والأرشيف الكامل </span>
-
-              <span
-                class="material-symbols-outlined text-lg group-hover:-translate-x-1 transition-transform"
-              >
-                arrow_back
-              </span>
-            </a>
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10" id="projects-showcase">
+      <div class="flex flex-col gap-8" id="projects-container">
+        <!-- PROJECT FILTERS -->
+        <div class="relative w-full overflow-hidden">
+          <div id="category-filters"
+            class="flex flex-nowrap md:flex-wrap items-center justify-start md:justify-center gap-2 sm:gap-3 overflow-x-auto pb-4 -mb-4 hide-scrollbar scroll-smooth">
+            <!-- Filters are generated dynamically by JavaScript -->
           </div>
         </div>
-      </section>
 
-      <!-- 7. CORE CAPABILITIES (ما نبنيه للأعمال الحقيقية - Desktop 4 Cards) -->
-      <!-- <section class="max-w-7xl mx-auto px-8 py-14" id="capabilities">
+        <!-- FEATURED PROJECT -->
+        <div id="featured-project-container">
+          <!-- Featured project is generated dynamically -->
+        </div>
+
+        <!-- SECONDARY PROJECTS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8" id="secondary-projects-grid">
+          <!-- Projects are generated dynamically -->
+        </div>
+
+        <!-- EMPTY STATE -->
+        <div
+          class="hidden p-8 rounded-3xl bg-surface-container/60 border border-white/10 text-center flex flex-col items-center justify-center gap-3"
+          id="empty-category-notice">
+          <div
+            class="w-12 h-12 rounded-full bg-surface-bright flex items-center justify-center text-tertiary border border-tertiary/30">
+            <span class="material-symbols-outlined text-2xl"> dataset </span>
+          </div>
+
+          <h4 class="text-lg font-bold text-white">
+            يتم تحديث وإدراج المزيد من المشاريع في هذا التصنيف
+          </h4>
+
+          <p class="text-sm text-on-surface-variant max-w-md">
+            لدينا سجل إنجازات أوسع قيد التوثيق، تواصل معنا مباشرة للاطلاع على
+            نماذج حية مطابقة لقطاعك.
+          </p>
+        </div>
+
+        <!-- UNIFIED SECTION FOOTER CTA -->
+        <div class="pt-6 flex justify-center">
+          <a class="btn-smooth inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-surface-container-high hover:bg-tertiary text-white hover:text-[#00101D] font-extrabold text-sm border border-tertiary/30 hover:border-tertiary shadow-[0_0_20px_rgba(0,196,238,0.15)] hover:shadow-[0_0_30px_rgba(0,196,238,0.4)] transition-all group"
+            href="https://wa.me/?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20%D9%81%D8%B1%D8%B5%D9%83%D9%85%D8%8C%20%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%A3%D8%B1%D8%B4%D9%8A%D9%81%20%D9%85%D8%B4%D8%A7%D8%B1%D9%8A%D8%B9%D9%83%D9%85%20%D9%88%D8%A7%D9%84%D8%AD%D9%84%D9%88%D9%84%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D8%A7%D8%AD%D8%A9."
+            target="_blank">
+            <span> تصفّح جميع المشاريع والأرشيف الكامل </span>
+
+            <span class="material-symbols-outlined text-lg group-hover:-translate-x-1 transition-transform">
+              arrow_back
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CORE CAPABILITIES (ما نبنيه للأعمال الحقيقية - Desktop 4 Cards) -->
+    <!-- <section class="max-w-7xl mx-auto px-8 py-14" id="capabilities">
     <div class="text-center max-w-3xl mx-auto mb-12">
       <span class="text-xs font-mono font-bold text-tertiary tracking-widest uppercase">CORE CAPABILITIES</span>
       <h2 class="text-3xl lg:text-4xl font-black text-white mt-1">ما نبنيه للأعمال الحقيقية</h2>
@@ -713,838 +627,750 @@
 
  -->
 
-      <!-- 8. REAL WORLD EVIDENCE (أثر حقيقي ملموس على أرض الواقع - Desktop 3 Columns) -->
-      <section class="max-w-7xl mx-auto px-8 py-14" id="impact">
-        <div
-          class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4"
-        >
-          <div>
-            <h2 class="text-3xl lg:text-4xl font-black text-white mt-1">
-              أثر حقيقي ملموس على أرض الواقع
-            </h2>
-            <p class="text-on-surface-variant text-base mt-2">
-              أرقام وإجراءات فعلية تعيش في بيئات عمل حية كل يوم، موثقة بالنتائج.
-            </p>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          <!-- Impact 1: 99.98% SLA -->
-          <div
-            class="impact-card group relative p-7 lg:p-8 rounded-3xl bg-surface-container-low/90 border border-tertiary/20 hover:border-tertiary/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(0,196,238,0.12)] flex flex-col justify-between overflow-hidden shadow-xl"
-          >
-            <div
-              class="absolute -top-24 -left-24 w-64 h-64 rounded-full bg-tertiary/[0.05] blur-[80px] pointer-events-none group-hover:bg-tertiary/[0.12] transition-all duration-700"
-            ></div>
-            <div class="relative z-10">
-              <div class="flex items-center justify-between mb-6">
-                <div
-                  class="flex items-center gap-2 text-tertiary font-bold text-sm"
-                >
-                  <span
-                    class="material-symbols-outlined text-xl group-hover:scale-105 transition-transform duration-300"
-                    >verified</span
-                  >
-                  <span>استقرار البنية التشغيلية</span>
-                </div>
-                <span
-                  class="text-xs font-mono text-outline uppercase tracking-wider px-2 py-0.5 rounded bg-surface-bright/40 border border-white/5"
-                  >UPTIME SLA</span
-                >
-              </div>
-              <!-- Big Glowing Metric -->
-              <div class="py-4 my-1">
-                <span
-                  class="impact-counter text-5xl lg:text-6xl font-black text-tertiary font-mono tracking-tight block transition-all duration-500 impact-counter-glow-cyan"
-                  data-target="99.98"
-                  data-decimals="2"
-                  data-suffix="%"
-                  >99.98%</span
-                >
-                <span class="text-sm font-semibold text-white mt-2 block"
-                  >جاهزية الخدمة دون انقطاع</span
-                >
-              </div>
-              <p class="text-sm text-on-surface-variant leading-relaxed mt-2">
-                بنى تحتية سحابية متقدمة قادرة على استيعاب مئات الآلاف من
-                العمليات اليومية مع مرونة عالية في التوسع وتوزيع الأحمال.
-              </p>
-            </div>
-            <div
-              class="mt-8 pt-4 border-t border-white/10 flex items-center gap-2 text-xs font-semibold text-on-surface-variant relative z-10"
-            >
-              <span
-                class="w-2 h-2 rounded-full bg-tertiary animate-pulse shadow-[0_0_8px_rgba(0,196,238,0.6)]"
-              ></span>
-              <span>جاهزية إنتاجية معتمدة ومراقبة 24/7</span>
-            </div>
-          </div>
-          <!-- Impact 2: +120h Saved -->
-          <div
-            class="impact-card group relative p-7 lg:p-8 rounded-3xl bg-surface-container-low/90 border border-primary/20 hover:border-primary/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(153,203,255,0.12)] flex flex-col justify-between overflow-hidden shadow-xl"
-          >
-            <div
-              class="absolute -top-24 -left-24 w-64 h-64 rounded-full bg-primary/[0.05] blur-[80px] pointer-events-none group-hover:bg-primary/[0.12] transition-all duration-700"
-            ></div>
-            <div class="relative z-10">
-              <div class="flex items-center justify-between mb-6">
-                <div
-                  class="flex items-center gap-2 text-primary font-bold text-sm"
-                >
-                  <span
-                    class="material-symbols-outlined text-xl group-hover:scale-105 transition-transform duration-300"
-                    >timer</span
-                  >
-                  <span>تقليص دورات العمل</span>
-                </div>
-                <span
-                  class="text-xs font-mono text-outline uppercase tracking-wider px-2 py-0.5 rounded bg-surface-bright/40 border border-white/5"
-                  >TIME SAVED</span
-                >
-              </div>
-              <!-- Big Glowing Metric -->
-              <div class="py-4 my-1">
-                <span
-                  class="impact-counter text-5xl lg:text-6xl font-black text-primary font-mono tracking-tight block transition-all duration-500 impact-counter-glow-primary"
-                  data-target="120"
-                  data-prefix="+"
-                  data-suffix=" س"
-                  data-decimals="0"
-                  >+120 س</span
-                >
-                <span class="text-sm font-semibold text-white mt-2 block"
-                  >وفر شهري مباشر للفريق</span
-                >
-              </div>
-              <p class="text-sm text-on-surface-variant leading-relaxed mt-2">
-                تحويل دورات الموافقات الإدارية، إدخال البيانات، ومطابقة الفواتير
-                من أيام عمل كاملة إلى دقائق معدودة وبدون خطأ بشري.
-              </p>
-            </div>
-            <div
-              class="mt-8 pt-4 border-t border-white/10 flex items-center gap-2 text-xs font-semibold text-on-surface-variant relative z-10"
-            >
-              <span
-                class="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(153,203,255,0.6)]"
-              ></span>
-              <span>وفر تشغيلي يعادل طاقة موظفين إضافيين</span>
-            </div>
-          </div>
-          <!-- Impact 3: 100% Deployed -->
-          <div
-            class="impact-card group relative p-7 lg:p-8 rounded-3xl bg-surface-container-low/90 border border-tertiary/20 hover:border-tertiary/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(0,196,238,0.12)] flex flex-col justify-between overflow-hidden shadow-xl"
-          >
-            <div
-              class="absolute -top-24 -left-24 w-64 h-64 rounded-full bg-tertiary/[0.05] blur-[80px] pointer-events-none group-hover:bg-tertiary/[0.12] transition-all duration-700"
-            ></div>
-            <div class="relative z-10">
-              <div class="flex items-center justify-between mb-6">
-                <div
-                  class="flex items-center gap-2 text-tertiary font-bold text-sm"
-                >
-                  <span
-                    class="material-symbols-outlined text-xl group-hover:scale-105 transition-transform duration-300"
-                    >devices</span
-                  >
-                  <span>منتجات حية قيد الاستخدام</span>
-                </div>
-                <span
-                  class="text-xs font-mono text-outline uppercase tracking-wider px-2 py-0.5 rounded bg-surface-bright/40 border border-white/5"
-                  >DEPLOYMENT</span
-                >
-              </div>
-              <!-- Big Glowing Metric -->
-              <div class="py-4 my-1">
-                <span
-                  class="impact-counter text-5xl lg:text-6xl font-black text-tertiary font-mono tracking-tight block transition-all duration-500 impact-counter-glow-cyan"
-                  data-target="100"
-                  data-decimals="0"
-                  data-suffix="%"
-                  >100%</span
-                >
-                <span class="text-sm font-semibold text-white mt-2 block"
-                  >بيئات إنتاج حية ومفعلة</span
-                >
-              </div>
-              <p class="text-sm text-on-surface-variant leading-relaxed mt-2">
-                تطبيقات ولوحات تحكم مدمجة يعتمد عليها الموظفون والعملاء بشكل
-                يومي لتحقيق أهداف أعمالهم ومتابعة أرقامهم.
-              </p>
-            </div>
-            <div
-              class="mt-8 pt-4 border-t border-white/10 flex items-center gap-2 text-xs font-semibold text-on-surface-variant relative z-10"
-            >
-              <span
-                class="w-2 h-2 rounded-full bg-tertiary animate-pulse shadow-[0_0_8px_rgba(0,196,238,0.6)]"
-              ></span>
-              <span>مدمجة بشكل كامل مع أنظمة الشركات</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 9. FINAL FRICTIONLESS CTA (Desktop Side-by-Side Dual Buttons) -->
-      <section class="max-w-5xl mx-auto px-8 py-16" id="contact">
-        <div
-          class="relative rounded-3xl bg-gradient-to-b from-surface-container to-surface-container-low border border-tertiary/40 cyan-glow-box p-10 lg:p-14 text-center overflow-hidden shadow-2xl"
-        >
-          <!-- Radial Glow in Center -->
-          <div
-            class="absolute inset-0 bg-radial from-tertiary/15 via-transparent to-transparent blur-3xl pointer-events-none"
-          ></div>
-          <div
-            class="w-16 h-16 rounded-2xl bg-tertiary/15 border border-tertiary/40 text-tertiary flex items-center justify-center mx-auto mb-6 shadow-[0_0_20px_rgba(0,196,238,0.3)]"
-          >
-            <span class="material-symbols-outlined text-3xl">chat_bubble</span>
-          </div>
-          <h2
-            class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight"
-          >
-            عندك فكرة؟
-            <span class="text-tertiary cyan-glow-text"
-              >خلّينا نحوّلها لفرصة.</span
-            >
+    <!-- 8. REAL WORLD EVIDENCE (أثر حقيقي ملموس على أرض الواقع - Desktop 3 Columns) -->
+    <section class="max-w-7xl mx-auto px-8 py-14" id="impact">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <h2 class="text-3xl lg:text-4xl font-black text-white mt-1">
+            أثر حقيقي ملموس على أرض الواقع
           </h2>
-          <p
-            class="text-base lg:text-lg text-on-surface-variant max-w-2xl mx-auto mt-4 leading-relaxed"
-          >
-            لا تحتاج لأن تكون خبيراً في التكنولوجيا أو تملك مواصفات برمجية
-            تفصيلية مسبقة. كل ما عليك هو إخبارنا بمشكلتك التشغيلية الحالية، ونحن
-            نتكفل بهندسة وتطوير الحل الأنسب لنموك.
+          <p class="text-on-surface-variant text-base mt-2">
+            أرقام وإجراءات فعلية تعيش في بيئات عمل حية كل يوم، موثقة بالنتائج.
           </p>
-          <!-- Desktop Dual CTAs Side-by-Side with Exact Target Links -->
-          <div
-            class="flex flex-col sm:flex-row items-center justify-center gap-5 mt-8 max-w-xl mx-auto"
-          >
-            <!-- Direct WhatsApp Button (Green) -->
-            <a
-              class="btn-smooth w-full sm:w-1/2 py-4 px-6 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-[#00101D] flex items-center justify-center gap-3 font-extrabold text-base shadow-[0_0_25px_rgba(37,211,102,0.4)] hover:shadow-[0_0_35px_rgba(37,211,102,0.6)]"
-              href="https://wa.me/?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20%D9%81%D8%B1%D8%B5%D9%83%D9%85%D8%8C%20%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%A3%D8%AA%D9%85%D8%AA%D8%A9%20%D9%88%D8%AA%D8%B7%D9%88%D9%8A%D8%B1%20%D8%AD%D9%84%20%D8%AA%D9%82%D9%86%D9%8A%20%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D9%8A."
-              target="_blank"
-            >
-              <span class="material-symbols-outlined text-2xl">chat</span>
-              <span class="">واتساب مباشر</span>
-            </a>
-            <!-- Primary Cyan CTA -->
-            <a
-              class="btn-smooth w-full sm:w-1/2 py-4 px-6 rounded-xl bg-tertiary hover:bg-[#34d4f6] text-[#00101D] flex items-center justify-center gap-3 font-extrabold text-base shadow-[0_0_25px_rgba(0,196,238,0.4)] hover:shadow-[0_0_35px_rgba(0,196,238,0.65)]"
-              href="#contact"
-            >
-              <span class="material-symbols-outlined text-xl">send</span>
-              <span class="">ابدأ محادثة معنا الآن</span>
-            </a>
-          </div>
-          <div
-            class="flex items-center justify-center gap-6 mt-8 text-xs font-mono text-outline"
-          >
-            <span class="flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
-              استشارة تقنية أولية مباشرة ومجانية
-            </span>
-            <span class="hidden sm:inline text-outline/40">•</span>
-            <span class="flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#25D366]"></span>
-              الرد السريع خلال دقائق
-            </span>
-          </div>
         </div>
-      </section>
-    </main>
-
-    <!-- ==========================================================================
-       FOOTER
-       ========================================================================== -->
-    <!-- ==========================================================================
-       PROFESSIONAL UNIFIED FOOTER
-       ========================================================================== -->
-    <footer
-      class="relative bg-[#070D1B] text-slate-400 border-t border-slate-800/80 pt-16 pb-12 overflow-hidden"
-    >
-      <!-- Ambient Backlight Glowing Orbs -->
-
-      <div
-        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16"
-      >
-        <!-- 2. Main Footer Grid -->
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <!-- Impact 1: 99.98% SLA -->
         <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pt-4"
-        >
-          <!-- Col 1: Branding -->
-          <div class="lg:col-span-4 space-y-5">
-            <a href="index.html" class="inline-block focus:outline-none">
-              <img
-                src="assets/images/Logo.png"
-                alt="Forascom — فرصكم"
-                class="h-11 w-auto object-contain rounded-lg"
-              />
-            </a>
-            <p class="text-slate-300 text-sm leading-relaxed max-w-sm">
-              شركة حلول برمجية وتطوير تقني — نخلق الفرص للأعمال من خلال تقنيات
-              الويب المستدامة، الذكاء الاصطناعي، وأتمتة العمليات بجودة هندسية
-              راقية.
-            </p>
-            <div
-              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 text-xs font-semibold"
-            >
-              <span
-                class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"
-              ></span>
-              متاحون حالياً لاستقبال مشاريع جديدة
-            </div>
+          class="impact-card group relative p-7 lg:p-8 rounded-3xl bg-surface-container-low/90 border border-tertiary/20 hover:border-tertiary/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(0,196,238,0.12)] flex flex-col justify-between overflow-hidden shadow-xl">
+          <div
+            class="absolute -top-24 -left-24 w-64 h-64 rounded-full bg-tertiary/[0.05] blur-[80px] pointer-events-none group-hover:bg-tertiary/[0.12] transition-all duration-700">
           </div>
-
-          <!-- Col 2: Navigation Links -->
-          <div class="lg:col-span-3 space-y-4">
-            <h4
-              class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3"
-            >
-              الروابط الرئيسية
-            </h4>
-            <ul class="space-y-2.5 text-sm">
-              <li>
-                <a
-                  href="index.html"
-                  class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group"
-                >
-                  <span
-                    class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs"
-                    >◀</span
-                  >
-                  الرئيسية
-                </a>
-              </li>
-              <li>
-                <a
-                  href="about.html"
-                  class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group"
-                >
-                  <span
-                    class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs"
-                    >◀</span
-                  >
-                  عن فرصكم
-                </a>
-              </li>
-              <li>
-                <a
-                  href="services.html"
-                  class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group"
-                >
-                  <span
-                    class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs"
-                    >◀</span
-                  >
-                  خدماتنا
-                </a>
-              </li>
-              <li>
-                <a
-                  href="portfolio.html"
-                  class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group"
-                >
-                  <span
-                    class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs"
-                    >◀</span
-                  >
-                  معرض الأعمال
-                </a>
-              </li>
-              <li>
-                <a
-                  href="contact.html"
-                  class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group"
-                >
-                  <span
-                    class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs"
-                    >◀</span
-                  >
-                  تواصل معنا
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Col 3: Services & Solutions Links -->
-          <div class="lg:col-span-2 space-y-4">
-            <h4
-              class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3"
-            >
-              خدماتنا
-            </h4>
-            <ul class="space-y-2.5 text-sm">
-              <li>
-                <a
-                  href="portfolio.html?category=web-development"
-                  class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group"
-                >
-                  تطوير المواقع (Web Dev)
-                </a>
-              </li>
-              <li>
-                <a
-                  href="portfolio.html?category=wordpress"
-                  class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group"
-                >
-                  مواقع وردبرس (WordPress)
-                </a>
-              </li>
-              <li>
-                <a
-                  href="portfolio.html?category=power-platform"
-                  class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group"
-                >
-                  أنظمة Power Platform
-                </a>
-              </li>
-              <li>
-                <a
-                  href="portfolio.html?category=ai"
-                  class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group"
-                >
-                  حلول الذكاء الاصطناعي
-                </a>
-              </li>
-              <li>
-                <a
-                  href="portfolio.html?category=automation"
-                  class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group"
-                >
-                  الأتمتة والعمليات الذكية
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Col 4: Contact Info & Socials -->
-          <div class="lg:col-span-3 space-y-4">
-            <h4
-              class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3"
-            >
-              التواصل المباشر
-            </h4>
-            <ul class="space-y-3 text-sm">
-              <li>
-                <a
-                  href="mailto:hello@forascom.com"
-                  class="flex items-center gap-3 text-slate-300 hover:text-cyan-400 transition-colors group"
-                >
-                  <span
-                    class="w-8 h-8 rounded-lg bg-slate-800/80 flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500/20 transition-colors"
-                  >
-                    <svg
-                      class="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
-                  </span>
-                  <span>hello@forascom.com</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://wa.me/201090000000"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex items-center gap-3 text-slate-300 hover:text-emerald-400 transition-colors group"
-                >
-                  <span
-                    class="w-8 h-8 rounded-lg bg-slate-800/80 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500/20 transition-colors"
-                  >
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                      <path
-                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
-                      />
-                    </svg>
-                  </span>
-                  <span>WhatsApp (+20 109 000 0000)</span>
-                </a>
-              </li>
-            </ul>
-
-            <div class="pt-2">
-              <span class="block text-xs font-semibold text-slate-400 mb-3"
-                >تواجدنا الرقمي:</span
-              >
-              <div class="flex items-center gap-3">
-                <!-- LinkedIn -->
-                <a
-                  href="https://www.linkedin.com/company/forascom/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                  class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-cyan-950/40 transition-all hover:-translate-y-1"
-                >
-                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                    <path
-                      d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.75a1.49 1.49 0 1 0 0 2.98 1.49 1.49 0 0 0 0-2.98z"
-                    />
-                  </svg>
-                </a>
-                <!-- Facebook -->
-                <a
-                  href="https://www.facebook.com/people/Forascom/61592914277326/?sk=directory_names"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                  class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-cyan-950/40 transition-all hover:-translate-y-1"
-                >
-                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                    <path
-                      d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H7.5v-3H10V9.5C10 7.01 11.49 5.65 13.75 5.65c1.08 0 2.2.19 2.2.19v2.42h-1.24c-1.23 0-1.61.77-1.61 1.56V12h2.73l-.44 3h-2.29v6.8c4.56-.93 8-4.96 8-9.8z"
-                    />
-                  </svg>
-                </a>
-                <!-- Instagram -->
-                <a
-                  href="https://www.instagram.com/foras_com?stkn=MWg1amRsY3NucHMyNg=="
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-cyan-950/40 transition-all hover:-translate-y-1"
-                >
-                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                    <path
-                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-                    />
-                  </svg>
-                </a>
-                <!-- WhatsApp Direct -->
-                <a
-                  href="https://wa.me/201090000000"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="WhatsApp"
-                  class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-emerald-400 hover:border-emerald-500/40 hover:bg-emerald-950/40 transition-all hover:-translate-y-1"
-                >
-                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                    <path
-                      d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
-                    />
-                  </svg>
-                </a>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center gap-2 text-tertiary font-bold text-sm">
+                <span
+                  class="material-symbols-outlined text-xl group-hover:scale-105 transition-transform duration-300">verified</span>
+                <span>استقرار البنية التشغيلية</span>
               </div>
+              <span
+                class="text-xs font-mono text-outline uppercase tracking-wider px-2 py-0.5 rounded bg-surface-bright/40 border border-white/5">UPTIME
+                SLA</span>
             </div>
+            <!-- Big Glowing Metric -->
+            <div class="py-4 my-1">
+              <span
+                class="impact-counter text-5xl lg:text-6xl font-black text-tertiary font-mono tracking-tight block transition-all duration-500 impact-counter-glow-cyan"
+                data-target="99.98" data-decimals="2" data-suffix="%">99.98%</span>
+              <span class="text-sm font-semibold text-white mt-2 block">جاهزية الخدمة دون انقطاع</span>
+            </div>
+            <p class="text-sm text-on-surface-variant leading-relaxed mt-2">
+              بنى تحتية سحابية متقدمة قادرة على استيعاب مئات الآلاف من
+              العمليات اليومية مع مرونة عالية في التوسع وتوزيع الأحمال.
+            </p>
+          </div>
+          <div
+            class="mt-8 pt-4 border-t border-white/10 flex items-center gap-2 text-xs font-semibold text-on-surface-variant relative z-10">
+            <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse shadow-[0_0_8px_rgba(0,196,238,0.6)]"></span>
+            <span>جاهزية إنتاجية معتمدة ومراقبة 24/7</span>
           </div>
         </div>
-
-        <!-- 3. Bottom Bar Divider & Copyright -->
+        <!-- Impact 2: +120h Saved -->
         <div
-          class="pt-8 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400"
-        >
-          <p class="text-center md:text-right">
-            © <span id="footer-year">2026</span>
-            <strong class="text-slate-200">Forascom</strong>. جميع الحقوق محفوظة
-            —
-            <span class="text-cyan-400 font-medium"
-              >Technology that creates opportunities</span
-            >
-          </p>
-          <div class="flex items-center gap-6 text-slate-400">
-            <span class="hover:text-slate-200 transition-colors cursor-pointer"
-              >الخصوصية والشروط</span
-            >
-            <span class="w-1 h-1 rounded-full bg-slate-700"></span>
-            <a href="contact.html" class="hover:text-cyan-400 transition-colors"
-              >الدعم التقني</a
-            >
+          class="impact-card group relative p-7 lg:p-8 rounded-3xl bg-surface-container-low/90 border border-primary/20 hover:border-primary/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(153,203,255,0.12)] flex flex-col justify-between overflow-hidden shadow-xl">
+          <div
+            class="absolute -top-24 -left-24 w-64 h-64 rounded-full bg-primary/[0.05] blur-[80px] pointer-events-none group-hover:bg-primary/[0.12] transition-all duration-700">
+          </div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center gap-2 text-primary font-bold text-sm">
+                <span
+                  class="material-symbols-outlined text-xl group-hover:scale-105 transition-transform duration-300">timer</span>
+                <span>تقليص دورات العمل</span>
+              </div>
+              <span
+                class="text-xs font-mono text-outline uppercase tracking-wider px-2 py-0.5 rounded bg-surface-bright/40 border border-white/5">TIME
+                SAVED</span>
+            </div>
+            <!-- Big Glowing Metric -->
+            <div class="py-4 my-1">
+              <span
+                class="impact-counter text-5xl lg:text-6xl font-black text-primary font-mono tracking-tight block transition-all duration-500 impact-counter-glow-primary"
+                data-target="120" data-prefix="+" data-suffix=" س" data-decimals="0">+120 س</span>
+              <span class="text-sm font-semibold text-white mt-2 block">وفر شهري مباشر للفريق</span>
+            </div>
+            <p class="text-sm text-on-surface-variant leading-relaxed mt-2">
+              تحويل دورات الموافقات الإدارية، إدخال البيانات، ومطابقة الفواتير
+              من أيام عمل كاملة إلى دقائق معدودة وبدون خطأ بشري.
+            </p>
+          </div>
+          <div
+            class="mt-8 pt-4 border-t border-white/10 flex items-center gap-2 text-xs font-semibold text-on-surface-variant relative z-10">
+            <span class="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(153,203,255,0.6)]"></span>
+            <span>وفر تشغيلي يعادل طاقة موظفين إضافيين</span>
+          </div>
+        </div>
+        <!-- Impact 3: 100% Deployed -->
+        <div
+          class="impact-card group relative p-7 lg:p-8 rounded-3xl bg-surface-container-low/90 border border-tertiary/20 hover:border-tertiary/50 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(0,196,238,0.12)] flex flex-col justify-between overflow-hidden shadow-xl">
+          <div
+            class="absolute -top-24 -left-24 w-64 h-64 rounded-full bg-tertiary/[0.05] blur-[80px] pointer-events-none group-hover:bg-tertiary/[0.12] transition-all duration-700">
+          </div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center gap-2 text-tertiary font-bold text-sm">
+                <span
+                  class="material-symbols-outlined text-xl group-hover:scale-105 transition-transform duration-300">devices</span>
+                <span>منتجات حية قيد الاستخدام</span>
+              </div>
+              <span
+                class="text-xs font-mono text-outline uppercase tracking-wider px-2 py-0.5 rounded bg-surface-bright/40 border border-white/5">DEPLOYMENT</span>
+            </div>
+            <!-- Big Glowing Metric -->
+            <div class="py-4 my-1">
+              <span
+                class="impact-counter text-5xl lg:text-6xl font-black text-tertiary font-mono tracking-tight block transition-all duration-500 impact-counter-glow-cyan"
+                data-target="100" data-decimals="0" data-suffix="%">100%</span>
+              <span class="text-sm font-semibold text-white mt-2 block">بيئات إنتاج حية ومفعلة</span>
+            </div>
+            <p class="text-sm text-on-surface-variant leading-relaxed mt-2">
+              تطبيقات ولوحات تحكم مدمجة يعتمد عليها الموظفون والعملاء بشكل
+              يومي لتحقيق أهداف أعمالهم ومتابعة أرقامهم.
+            </p>
+          </div>
+          <div
+            class="mt-8 pt-4 border-t border-white/10 flex items-center gap-2 text-xs font-semibold text-on-surface-variant relative z-10">
+            <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse shadow-[0_0_8px_rgba(0,196,238,0.6)]"></span>
+            <span>مدمجة بشكل كامل مع أنظمة الشركات</span>
           </div>
         </div>
       </div>
-    </footer>
+    </section>
 
-    <!-- Floating Sticky WhatsApp Action Button -->
-    <div class="fixed bottom-6 left-6 z-50">
-      <a
-        href="https://wa.me/201090000000?text=%D8%A3%D9%87%D9%84%D8%A3%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20Forascom%20%F0%9F%90%8B"
-        target="_blank"
-        class="group flex items-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs p-3.5 rounded-full shadow-2xl transition-all duration-500 ease-in-out hover:px-5"
-      >
-        <div class="relative flex items-center justify-center">
-          <span class="absolute -top-1 -right-1 flex h-3 w-3">
-            <span
-              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"
-            ></span>
-            <span
-              class="relative inline-flex rounded-full h-3 w-3 bg-white"
-            ></span>
+
+    <!-- 9. FINAL FRICTIONLESS CTA -->
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16" id="contact">
+      <div
+        class="relative rounded-3xl bg-gradient-to-b from-surface-container to-surface-container-low border border-tertiary/40 cyan-glow-box p-6 sm:p-8 lg:p-14 text-center overflow-hidden shadow-2xl">
+        <!-- Radial Glow -->
+        <div
+          class="absolute inset-0 bg-radial from-tertiary/15 via-transparent to-transparent blur-3xl pointer-events-none"
+          aria-hidden="true"></div>
+
+        <!-- CTA Icon -->
+        <div
+          class="relative w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-tertiary/15 border border-tertiary/40 text-tertiary flex items-center justify-center mx-auto mb-5 sm:mb-6 shadow-[0_0_20px_rgba(0,196,238,0.3)]">
+          <span class="material-symbols-outlined text-2xl sm:text-3xl">
+            chat_bubble
           </span>
-          <svg class="w-6 h-6 fill-current shrink-0" viewBox="0 0 24 24">
-            <path
-              d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
-            />
-          </svg>
         </div>
-        <span
-          class="max-w-0 opacity-0 overflow-hidden whitespace-nowrap transition-all duration-500 ease-in-out group-hover:max-w-xs group-hover:opacity-100 group-hover:mr-2.5"
-        >
-          تحدث مع مهندس Forascom الآن 💬
-        </span>
-      </a>
+
+        <!-- Heading -->
+        <h2 class="relative text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
+          عندك فكرة؟
+          <span class="block sm:inline text-tertiary cyan-glow-text">
+            خلّينا نحوّلها لفرصة.
+          </span>
+        </h2>
+
+        <!-- Description -->
+        <p
+          class="relative text-sm sm:text-base lg:text-lg text-on-surface-variant max-w-2xl mx-auto mt-4 leading-relaxed">
+          لا تحتاج لأن تكون خبيراً في التكنولوجيا أو تملك مواصفات برمجية
+          تفصيلية مسبقة. كل ما عليك هو إخبارنا بمشكلتك التشغيلية الحالية، ونحن
+          نتكفل بهندسة وتطوير الحل الأنسب لنموك.
+        </p>
+
+        <!-- Dual CTAs -->
+        <div
+          class="relative flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 lg:gap-5 mt-7 sm:mt-8 max-w-xl mx-auto">
+          <!-- Direct WhatsApp -->
+          <a class="btn-smooth w-full sm:flex-1 py-3.5 sm:py-4 px-5 sm:px-6 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-[#00101D] flex items-center justify-center gap-2.5 sm:gap-3 font-extrabold text-sm sm:text-base shadow-[0_0_25px_rgba(37,211,102,0.4)] hover:shadow-[0_0_35px_rgba(37,211,102,0.6)] transition-all duration-300"
+            href="https://wa.me/201501795004?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20%D9%81%D8%B1%D8%B5%D9%83%D9%85%D8%8C%20%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%A3%D8%AA%D9%85%D8%AA%D8%A9%20%D9%88%D8%AA%D8%B7%D9%88%D9%8A%D8%B1%20%D8%AD%D9%84%20%D8%AA%D9%82%D9%86%D9%8A%20%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D9%8A."
+            target="_blank" rel="noopener noreferrer" aria-label="تواصل معنا عبر واتساب">
+            <span class="material-symbols-outlined text-xl sm:text-2xl">
+              chat
+            </span>
+            <span>واتساب مباشر</span>
+          </a>
+
+          <!-- Contact Form CTA -->
+          <a class="btn-smooth w-full sm:flex-1 py-3.5 sm:py-4 px-5 sm:px-6 rounded-xl bg-tertiary hover:bg-[#34d4f6] text-[#00101D] flex items-center justify-center gap-2.5 sm:gap-3 font-extrabold text-sm sm:text-base shadow-[0_0_25px_rgba(0,196,238,0.4)] hover:shadow-[0_0_35px_rgba(0,196,238,0.65)] transition-all duration-300"
+            href="contact.html" aria-label="ابدأ محادثة معنا الآن">
+            <span class="material-symbols-outlined text-xl">
+              send
+            </span>
+            <span>ابدأ محادثة معنا الآن</span>
+          </a>
+        </div>
+
+        <!-- Trust Points -->
+        <div
+          class="relative flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mt-7 sm:mt-8 text-[11px] sm:text-xs font-mono text-outline">
+          <span class="flex items-center gap-1.5 text-center">
+            <span class="w-1.5 h-1.5 rounded-full bg-tertiary shrink-0"></span>
+            استشارة تقنية أولية مباشرة ومجانية
+          </span>
+
+          <span class="hidden sm:inline text-outline/40" aria-hidden="true">•</span>
+
+          <span class="flex items-center gap-1.5 text-center">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#25D366] shrink-0"></span>
+            الرد السريع خلال دقائق
+          </span>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <!-- ==========================================================================
+       PROFESSIONAL UNIFIED FOOTER
+       ========================================================================== -->
+  <footer
+    class="relative bg-[#070D1B] text-slate-400 border-t border-slate-800/80 pt-10 sm:pt-16 pb-8 sm:pb-12 overflow-hidden">
+    <!-- Ambient Backlight Glowing Orbs -->
+    <!--
+  <div
+    class="absolute top-0 right-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none"
+  ></div>
+
+  <div
+    class="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl pointer-events-none"
+  ></div>
+  -->
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
+      <!-- =====================================================
+         MAIN FOOTER GRID
+         ===================================================== -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-8 pt-4">
+        <!-- ===================================================
+           COLUMN 1: BRANDING
+           =================================================== -->
+        <div class="lg:col-span-4 space-y-5">
+          <a href="index.html"
+            class="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-lg"
+            aria-label="العودة إلى الصفحة الرئيسية">
+            <img src="assets/images/Logo.png" alt="Forascom — فرصكم" class="h-11 w-auto object-contain rounded-lg" />
+          </a>
+
+          <p class="text-slate-300 text-sm leading-relaxed max-w-sm">
+            شركة حلول برمجية وتطوير تقني — نخلق الفرص للأعمال من خلال تقنيات
+            الويب المستدامة، الذكاء الاصطناعي، وأتمتة العمليات بجودة هندسية
+            راقية.
+          </p>
+
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+
+            متاحون حالياً لاستقبال مشاريع جديدة
+          </div>
+        </div>
+
+        <!-- ===================================================
+           COLUMN 2: MAIN NAVIGATION
+           =================================================== -->
+        <div class="lg:col-span-3 space-y-4">
+          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
+            الروابط الرئيسية
+          </h4>
+
+          <ul class="space-y-2.5 text-sm">
+            <li>
+              <a href="index.html" class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
+                الرئيسية
+              </a>
+            </li>
+
+            <li>
+              <a href="about.html" class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
+                عن فرصكم
+              </a>
+            </li>
+
+            <li>
+              <a href="services.html"
+                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
+                خدماتنا
+              </a>
+            </li>
+
+            <li>
+              <a href="portfolio.html"
+                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
+                معرض الأعمال
+              </a>
+            </li>
+
+            <li>
+              <a href="contact.html" class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
+                تواصل معنا
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ===================================================
+           COLUMN 3: SERVICES & SOLUTIONS
+           =================================================== -->
+        <div class="lg:col-span-2 space-y-4">
+          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
+            خدماتنا
+          </h4>
+
+          <ul class="space-y-2.5 text-sm">
+            <!-- Web Development -->
+            <li>
+              <a href="portfolio.html?category=web-development"
+                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
+                تطوير المواقع
+              </a>
+            </li>
+
+            <!-- WordPress -->
+            <li>
+              <a href="portfolio.html?category=wordpress"
+                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
+                مواقع WordPress
+              </a>
+            </li>
+
+            <!-- AI -->
+            <li>
+              <a href="portfolio.html?category=web-development"
+                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
+                حلول الذكاء الاصطناعي
+              </a>
+            </li>
+
+            <!-- Automation -->
+            <li>
+              <a href="portfolio.html?category=Automation-BussinessSolution"
+                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
+                الأتمتة والعمليات الذكية
+              </a>
+            </li>
+
+            <!-- Power Platform -->
+            <li>
+              <a href="portfolio.html?category=Automation-BussinessSolution"
+                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
+                حلول Power Platform
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ===================================================
+           COLUMN 4: CONTACT & SOCIALS
+           =================================================== -->
+        <div class="lg:col-span-3 space-y-4">
+          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
+            التواصل المباشر
+          </h4>
+
+          <ul class="space-y-3 text-sm">
+            <!-- Email -->
+            <li>
+              <a href="mailto:forascomteam@gmail.com"
+                class="inline-flex items-center gap-3 hover:text-cyan-400 transition-colors"
+                aria-label="راسلنا عبر البريد الإلكتروني">
+                <span class="material-symbols-outlined text-cyan-400 text-lg">
+                  mail
+                </span>
+
+                <span>forascomteam@gmail.com</span>
+              </a>
+            </li>
+
+
+          </ul>
+
+
+          <div class="pt-2">
+            <span class="block text-xs font-semibold text-slate-400 mb-3">
+              تواجدنا الرقمي:
+            </span>
+
+            <div class="flex items-center gap-3">
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/company/forascom/" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-cyan-950/40 transition-all hover:-translate-y-1">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.75a1.49 1.49 0 1 0 0 2.98 1.49 1.49 0 0 0 0-2.98z" />
+                </svg>
+              </a>
+
+              <!-- Facebook -->
+              <a href="https://www.facebook.com/profile.php?id=61592914277326" target="_blank" rel="noopener noreferrer"
+                aria-label="Facebook"
+                class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-cyan-950/40 transition-all hover:-translate-y-1">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H7.5v-3H10V9.5C10 7.01 11.49 5.65 13.75 5.65c1.08 0 2.2.19 2.2.19v2.42h-1.24c-1.23 0-1.61.77-1.61 1.56V12h2.73l-.44 3h-2.29v6.8c4.56-.93 8-4.96 8-9.8z" />
+                </svg>
+              </a>
+
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/foras_com/" target="_blank" rel="noopener noreferrer"
+                aria-label="Instagram"
+                class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-cyan-950/40 transition-all hover:-translate-y-1">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.79 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+              </a>
+
+              <!-- WhatsApp Direct -->
+              <a href="https://wa.me/201501795004" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+                class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-emerald-400 hover:border-emerald-500/40 hover:bg-emerald-950/40 transition-all hover:-translate-y-1">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+      <!-- =====================================================
+         BOTTOM BAR
+         ===================================================== -->
+      <div
+        class="pt-8 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <p class="text-center md:text-right">
+          © <span id="footer-year">2026</span>
+          <strong class="text-slate-200">Forascom</strong>.
+          جميع الحقوق محفوظة —
+          <span class="text-cyan-400 font-medium">
+            Technology that creates opportunities
+          </span>
+        </p>
+
+        <div class="flex items-center gap-6 text-slate-400">
+          <!-- Privacy & Terms -->
+          <span class="text-slate-500">
+            الخصوصية والشروط
+          </span>
+
+          <span class="w-1 h-1 rounded-full bg-slate-700"></span>
+
+          <!-- Technical Support -->
+          <a href="contact.html" class="hover:text-cyan-400 transition-colors">
+            الدعم التقني
+          </a>
+        </div>
+      </div>
     </div>
+  </footer>
 
-    <!-- Back To Top Button -->
-    <button
-      id="back-to-top"
-      aria-label="العودة إلى الأعلى"
-      class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-white text-navy border border-slate-200 shadow-xl flex items-center justify-center hover:bg-navy hover:text-white hover:-translate-y-1 transition-all"
-    >
-      <svg
-        class="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2.2"
-          d="M5 15l7-7 7 7"
-        />
-      </svg>
-    </button>
+  <!-- Floating Sticky WhatsApp Action Button -->
+  <div class="fixed bottom-6 left-6 z-50">
+    <a href="https://wa.me/201501795004?text=%D8%A3%D9%87%D9%84%D8%A3%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20Forascom%20%F0%9F%90%8B"
+      target="_blank"
+      class="group flex items-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs p-3.5 rounded-full shadow-2xl transition-all duration-500 ease-in-out hover:px-5">
+      <div class="relative flex items-center justify-center">
+        <span class="absolute -top-1 -right-1 flex h-3 w-3">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+        </span>
+        <svg class="w-6 h-6 fill-current shrink-0" viewBox="0 0 24 24">
+          <path
+            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+        </svg>
+      </div>
+      <span
+        class="max-w-0 opacity-0 overflow-hidden whitespace-nowrap transition-all duration-500 ease-in-out group-hover:max-w-xs group-hover:opacity-100 group-hover:mr-2.5">
+        تحدث مع مهندس Forascom الآن 💬
+      </span>
+    </a>
+  </div>
 
-    <!-- GSAP & ScrollTrigger Libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Back To Top Button -->
+  <button id="back-to-top" aria-label="العودة إلى الأعلى"
+    class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-white text-navy border border-slate-200 shadow-xl flex items-center justify-center hover:bg-navy hover:text-white hover:-translate-y-1 transition-all">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
 
-    <!-- Hero Section Animations (Strictly scoped to Section 01 #hero) -->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // 1. Right Side: Existing approved fade-in animations (preserved 100% untouched)
-        const heroFadeElements = document.querySelectorAll(
-          "#hero .hero-fade-enter",
+  <!-- GSAP & ScrollTrigger Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Hero Section Animations (Strictly scoped to Section 01 #hero) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Right Side: Existing approved fade-in animations (preserved 100% untouched)
+      const heroFadeElements = document.querySelectorAll(
+        "#hero .hero-fade-enter",
+      );
+      heroFadeElements.forEach((el, index) => {
+        setTimeout(
+          () => {
+            el.classList.add("hero-visible");
+          },
+          100 * (index + 1),
         );
-        heroFadeElements.forEach((el, index) => {
-          setTimeout(
-            () => {
-              el.classList.add("hero-visible");
-            },
-            100 * (index + 1),
-          );
-        });
-
-        // 2. Left Side: System Pipeline GSAP Timeline (Scoped to Section 01 #hero)
-        function initHeroPipelineAnimation() {
-          const heroSection = document.getElementById("hero");
-          if (!heroSection) return;
-
-          const card = heroSection.querySelector("#hero-pipeline-card");
-          const stages = heroSection.querySelectorAll(".hero-pipeline-stage");
-          const connectors = heroSection.querySelectorAll(
-            ".hero-pipeline-connector .connector-line",
-          );
-          const stage4 = heroSection.querySelector(".hero-stage-4");
-
-          const prefersReducedMotion = window.matchMedia(
-            "(prefers-reduced-motion: reduce)",
-          ).matches;
-
-          if (prefersReducedMotion || typeof gsap === "undefined") {
-            if (card) {
-              card.style.opacity = "1";
-              card.style.transform = "none";
-            }
-            stages.forEach((s) => {
-              s.style.opacity = "1";
-              s.style.transform = "none";
-            });
-            connectors.forEach((c) => {
-              c.style.transform = "none";
-              c.style.opacity = "1";
-            });
-            if (stage4) stage4.classList.add("hero-stage-4-active");
-            return;
-          }
-
-          if (typeof ScrollTrigger !== "undefined") {
-            gsap.registerPlugin(ScrollTrigger);
-          }
-
-          // Initial setup for Section 01 pipeline elements
-          gsap.set(card, { opacity: 0, x: 20 });
-          gsap.set(stages, { opacity: 0, y: 12 });
-          gsap.set(connectors, { scaleY: 0, transformOrigin: "top center" });
-
-          const tl = gsap.timeline({
-            delay: 0.25,
-            defaults: { ease: "power2.out" },
-          });
-
-          // Pipeline entrance: card fades in + subtle x movement (0.65s)
-          tl.to(card, {
-            opacity: 1,
-            x: 0,
-            duration: 0.65,
-          });
-
-          // Sequential stage reveals (~0.14s stagger) + progressive connector draws
-          stages.forEach((stage, idx) => {
-            tl.to(
-              stage,
-              {
-                opacity: 1,
-                y: 0,
-                duration: 0.48,
-              },
-              idx === 0 ? "-=0.3" : "-=0.34",
-            );
-
-            // Progressive connector draw to the next stage
-            if (connectors[idx]) {
-              tl.to(
-                connectors[idx],
-                {
-                  scaleY: 1,
-                  duration: 0.24,
-                  ease: "power1.inOut",
-                },
-                "-=0.2",
-              );
-            }
-          });
-
-          // Stage 04 activates after previous stages with continuous subtle cyan glow
-          tl.add(() => {
-            if (stage4) {
-              stage4.classList.add("hero-stage-4-active");
-            }
-          }, "+=0.08");
-        }
-
-        initHeroPipelineAnimation();
       });
-    </script>
 
-    <!-- Evidence Dashboard Counter & Scroll Reveal Script (Scoped to #impact) -->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const impactSection = document.getElementById("impact");
-        if (!impactSection) return;
+      // 2. Left Side: System Pipeline GSAP Timeline (Scoped to Section 01 #hero)
+      function initHeroPipelineAnimation() {
+        const heroSection = document.getElementById("hero");
+        if (!heroSection) return;
 
-        const impactCards = impactSection.querySelectorAll(".impact-card");
-        const impactCounters =
-          impactSection.querySelectorAll(".impact-counter");
+        const card = heroSection.querySelector("#hero-pipeline-card");
+        const stages = heroSection.querySelectorAll(".hero-pipeline-stage");
+        const connectors = heroSection.querySelectorAll(
+          ".hero-pipeline-connector .connector-line",
+        );
+        const stage4 = heroSection.querySelector(".hero-stage-4");
+
         const prefersReducedMotion = window.matchMedia(
           "(prefers-reduced-motion: reduce)",
         ).matches;
 
-        function setFinalValue(el) {
+        if (prefersReducedMotion || typeof gsap === "undefined") {
+          if (card) {
+            card.style.opacity = "1";
+            card.style.transform = "none";
+          }
+          stages.forEach((s) => {
+            s.style.opacity = "1";
+            s.style.transform = "none";
+          });
+          connectors.forEach((c) => {
+            c.style.transform = "none";
+            c.style.opacity = "1";
+          });
+          if (stage4) stage4.classList.add("hero-stage-4-active");
+          return;
+        }
+
+        if (typeof ScrollTrigger !== "undefined") {
+          gsap.registerPlugin(ScrollTrigger);
+        }
+
+        // Initial setup for Section 01 pipeline elements
+        gsap.set(card, { opacity: 0, x: 20 });
+        gsap.set(stages, { opacity: 0, y: 12 });
+        gsap.set(connectors, { scaleY: 0, transformOrigin: "top center" });
+
+        const tl = gsap.timeline({
+          delay: 0.25,
+          defaults: { ease: "power2.out" },
+        });
+
+        // Pipeline entrance: card fades in + subtle x movement (0.65s)
+        tl.to(card, {
+          opacity: 1,
+          x: 0,
+          duration: 0.65,
+        });
+
+        // Sequential stage reveals (~0.14s stagger) + progressive connector draws
+        stages.forEach((stage, idx) => {
+          tl.to(
+            stage,
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.48,
+            },
+            idx === 0 ? "-=0.3" : "-=0.34",
+          );
+
+          // Progressive connector draw to the next stage
+          if (connectors[idx]) {
+            tl.to(
+              connectors[idx],
+              {
+                scaleY: 1,
+                duration: 0.24,
+                ease: "power1.inOut",
+              },
+              "-=0.2",
+            );
+          }
+        });
+
+        // Stage 04 activates after previous stages with continuous subtle cyan glow
+        tl.add(() => {
+          if (stage4) {
+            stage4.classList.add("hero-stage-4-active");
+          }
+        }, "+=0.08");
+      }
+
+      initHeroPipelineAnimation();
+    });
+  </script>
+
+  <!-- Evidence Dashboard Counter & Scroll Reveal Script (Scoped to #impact) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const impactSection = document.getElementById("impact");
+      if (!impactSection) return;
+
+      const impactCards = impactSection.querySelectorAll(".impact-card");
+      const impactCounters =
+        impactSection.querySelectorAll(".impact-counter");
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      function setFinalValue(el) {
+        const target = parseFloat(el.dataset.target || "0");
+        const prefix = el.dataset.prefix || "";
+        const suffix = el.dataset.suffix || "";
+        const decimals = parseInt(el.dataset.decimals || "0", 10);
+        el.textContent =
+          prefix +
+          (decimals > 0 ? target.toFixed(decimals) : Math.round(target)) +
+          suffix;
+        el.style.setProperty("--glow-ratio", "1");
+      }
+
+      if (prefersReducedMotion) {
+        impactCards.forEach((card) => {
+          card.classList.remove("opacity-0", "translate-y-6");
+          card.classList.add("opacity-100", "translate-y-0");
+        });
+        impactCounters.forEach(setFinalValue);
+        return;
+      }
+
+      // Initial state for animation
+      impactCards.forEach((card) => {
+        card.classList.add("opacity-0", "translate-y-6");
+      });
+      impactCounters.forEach((el) => {
+        const prefix = el.dataset.prefix || "";
+        const suffix = el.dataset.suffix || "";
+        const decimals = parseInt(el.dataset.decimals || "0", 10);
+        el.textContent =
+          prefix + (decimals > 0 ? (0).toFixed(decimals) : "0") + suffix;
+        el.style.setProperty("--glow-ratio", "0");
+      });
+
+      function animateCounter(el, delay = 0) {
+        setTimeout(() => {
           const target = parseFloat(el.dataset.target || "0");
           const prefix = el.dataset.prefix || "";
           const suffix = el.dataset.suffix || "";
           const decimals = parseInt(el.dataset.decimals || "0", 10);
-          el.textContent =
-            prefix +
-            (decimals > 0 ? target.toFixed(decimals) : Math.round(target)) +
-            suffix;
-          el.style.setProperty("--glow-ratio", "1");
-        }
+          const duration = 1400; // 1.4s smooth duration
+          let startTime = null;
 
-        if (prefersReducedMotion) {
-          impactCards.forEach((card) => {
-            card.classList.remove("opacity-0", "translate-y-6");
-            card.classList.add("opacity-100", "translate-y-0");
+          function easeOutQuart(x) {
+            return 1 - Math.pow(1 - x, 4);
+          }
+
+          function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            const elapsed = timestamp - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = easeOutQuart(progress);
+            const currentVal = target * eased;
+
+            el.textContent =
+              prefix +
+              (decimals > 0
+                ? currentVal.toFixed(decimals)
+                : Math.round(currentVal)) +
+              suffix;
+            el.style.setProperty("--glow-ratio", eased.toFixed(3));
+
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            } else {
+              setFinalValue(el);
+            }
+          }
+
+          requestAnimationFrame(step);
+        }, delay);
+      }
+
+      // IntersectionObserver: trigger once when scrolled into view
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              observer.disconnect();
+
+              // Reveal cards with smooth subtle stagger
+              impactCards.forEach((card, index) => {
+                setTimeout(() => {
+                  card.classList.remove("opacity-0", "translate-y-6");
+                  card.classList.add("opacity-100", "translate-y-0");
+                }, index * 100);
+
+                // Animate counters aligned with card entrance
+                const counterEl = card.querySelector(".impact-counter");
+                if (counterEl) {
+                  animateCounter(counterEl, index * 100 + 60);
+                }
+              });
+            }
           });
-          impactCounters.forEach(setFinalValue);
-          return;
-        }
+        },
+        {
+          threshold: 0.15,
+          rootMargin: "0px 0px -30px 0px",
+        },
+      );
 
-        // Initial state for animation
-        impactCards.forEach((card) => {
-          card.classList.add("opacity-0", "translate-y-6");
-        });
-        impactCounters.forEach((el) => {
-          const prefix = el.dataset.prefix || "";
-          const suffix = el.dataset.suffix || "";
-          const decimals = parseInt(el.dataset.decimals || "0", 10);
-          el.textContent =
-            prefix + (decimals > 0 ? (0).toFixed(decimals) : "0") + suffix;
-          el.style.setProperty("--glow-ratio", "0");
-        });
+      observer.observe(impactSection);
+    });
+  </script>
 
-        function animateCounter(el, delay = 0) {
-          setTimeout(() => {
-            const target = parseFloat(el.dataset.target || "0");
-            const prefix = el.dataset.prefix || "";
-            const suffix = el.dataset.suffix || "";
-            const decimals = parseInt(el.dataset.decimals || "0", 10);
-            const duration = 1400; // 1.4s smooth duration
-            let startTime = null;
+  <!-- App JavaScript Modules -->
+  <script src="assets/js/orbit.js"></script>
+  <script src="assets/js/project-details.js"></script>
+  <script src="assets/js/portfolio.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
 
-            function easeOutQuart(x) {
-              return 1 - Math.pow(1 - x, 4);
-            }
-
-            function step(timestamp) {
-              if (!startTime) startTime = timestamp;
-              const elapsed = timestamp - startTime;
-              const progress = Math.min(elapsed / duration, 1);
-              const eased = easeOutQuart(progress);
-              const currentVal = target * eased;
-
-              el.textContent =
-                prefix +
-                (decimals > 0
-                  ? currentVal.toFixed(decimals)
-                  : Math.round(currentVal)) +
-                suffix;
-              el.style.setProperty("--glow-ratio", eased.toFixed(3));
-
-              if (progress < 1) {
-                requestAnimationFrame(step);
-              } else {
-                setFinalValue(el);
-              }
-            }
-
-            requestAnimationFrame(step);
-          }, delay);
-        }
-
-        // IntersectionObserver: trigger once when scrolled into view
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                observer.disconnect();
-
-                // Reveal cards with smooth subtle stagger
-                impactCards.forEach((card, index) => {
-                  setTimeout(() => {
-                    card.classList.remove("opacity-0", "translate-y-6");
-                    card.classList.add("opacity-100", "translate-y-0");
-                  }, index * 100);
-
-                  // Animate counters aligned with card entrance
-                  const counterEl = card.querySelector(".impact-counter");
-                  if (counterEl) {
-                    animateCounter(counterEl, index * 100 + 60);
-                  }
-                });
-              }
-            });
-          },
-          {
-            threshold: 0.15,
-            rootMargin: "0px 0px -30px 0px",
-          },
-        );
-
-        observer.observe(impactSection);
-      });
-    </script>
-
-    <!-- App JavaScript Modules -->
-    <script src="assets/js/orbit.js"></script>
-    <script src="assets/js/project-details.js"></script>
-    <script src="assets/js/portfolio.js"></script>
-    <script src="assets/js/main.js"></script>
-  </body>
 </html>

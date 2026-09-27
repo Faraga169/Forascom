@@ -63,11 +63,13 @@
         <a href="about.html" class="nav-link hover:text-cyan-bright transition-colors">عن فرصكم</a>
         <a href="services.html" class="nav-link hover:text-cyan-bright transition-colors">خدماتنا</a>
         <a href="portfolio.html" class="nav-link hover:text-cyan-bright transition-colors">معرض الأعمال</a>
-        <a href="contact.html" aria-current="page" class="nav-link nav-active hover:text-cyan-bright transition-colors">تواصل معنا</a>
+        <a href="contact.html" aria-current="page"
+          class="nav-link nav-active hover:text-cyan-bright transition-colors">تواصل معنا</a>
       </nav>
 
       <div class="flex items-center gap-3 shrink-0">
-        <a href="contact.html" class="hidden lg:inline-flex btn-cyan font-bold text-sm px-5 py-2.5 rounded-xl shadow-lg transition-all">
+        <a href="contact.html"
+          class="hidden lg:inline-flex btn-cyan font-bold text-sm px-5 py-2.5 rounded-xl shadow-lg transition-all">
           استشارة مجانية
         </a>
         <button id="mobile-menu-btn" class="lg:hidden text-text-primary p-2 rounded-lg"
@@ -107,8 +109,8 @@
             نساعدك في تحويل أفكارك إلى<br /><span>حلول رقمية متكاملة</span>
           </h1>
           <p class="contact-intro-copy">
-            تواصل مع مهندسي Forascom للحصول على استشارة تقنية وفهم متطلبات مشروعك، والتخطيط لأفضل مسار للتنفيذ والقيمة
-            التشغيلية.
+            تواصل مع مهندسي Forascom للحصول على استشارة تقنية وفهم متطلبات
+            مشروعك، والتخطيط لأفضل مسار للتنفيذ والقيمة التشغيلية.
           </p>
 
           <div class="contact-benefits">
@@ -141,7 +143,7 @@
             </div>
           </div>
 
-          <a href="https://wa.me/201090000000" target="_blank" rel="noopener noreferrer" class="contact-whatsapp group">
+          <a href="https://wa.me/201501795004" target="_blank" rel="noopener noreferrer" class="contact-whatsapp group">
             <span class="contact-whatsapp-icon">WA</span>
             <span><strong>تفضل التواصل المباشر عبر واتساب؟</strong>
               <small>اضغط هنا للانتقال مباشرة إلى المحادثة</small></span>
@@ -179,17 +181,32 @@
                   <option value="" selected disabled>
                     اختر الخدمة المناسبة لمشروعك
                   </option>
-                  <option value="Web Development">Web Development (تطوير المواقع والأنظمة)</option>
-                  <option value="WordPress">WordPress & Digital Experiences</option>
-                  <option value="Power Platform">Power Platform & Business Solutions</option>
-                  <option value="AI Solutions">AI Solutions (الذكاء الاصطناعي)</option>
-                  <option value="Automation & Integration">Automation & Integrations (الأتمتة)</option>
+                  <option value="Web Development">
+                    Web Development (تطوير المواقع والأنظمة)
+                  </option>
+                  <option value="WordPress">
+                    WordPress & Digital Experiences
+                  </option>
+                  <option value="Power Platform">
+                    Power Platform & Business Solutions
+                  </option>
+                  <option value="AI Solutions">
+                    AI Solutions (الذكاء الاصطناعي)
+                  </option>
+                  <option value="Automation & Integration">
+                    Automation & Integrations (الأتمتة)
+                  </option>
                   <option value="Other">خدمة أخرى</option>
                 </select>
               </div>
+
+              <!-- Budget -->
               <div class="contact-field">
-                <label for="contact-budget">الميزانية المتوقعة
-                  <span class="contact-optional">(اختياري)</span></label><select id="contact-budget" name="budget">
+                <label for="contact-budget">
+                  الميزانية المتوقعة
+                  <span class="contact-optional">(اختياري)</span>
+                </label>
+                <select id="contact-budget" name="budget">
                   <option value="" selected disabled>
                     اختر النطاق المناسب
                   </option>
@@ -206,11 +223,19 @@
                     أكثر من 300,000 جنيه
                   </option>
                   <option value="غير محددة بعد">غير محددة بعد</option>
+                  <option value="custom">ميزانية أخرى</option>
                 </select>
+                <input type="text" id="contact-budget-custom" name="budget-custom" class="hidden"
+                  placeholder="اكتب الميزانية المتوقعة — مثال: 75,000 جنيه" inputmode="decimal" autocomplete="off" />
               </div>
+
+              <!-- Timeline -->
               <div class="contact-field">
-                <label for="contact-timeline">متى تريد إطلاق المشروع؟
-                  <span class="contact-optional">(اختياري)</span></label><select id="contact-timeline" name="timeline">
+                <label for="contact-timeline">
+                  متى تريد إطلاق المشروع؟
+                  <span class="contact-optional">(اختياري)</span>
+                </label>
+                <select id="contact-timeline" name="timeline">
                   <option value="" selected disabled>
                     اختر الإطار الزمني
                   </option>
@@ -219,7 +244,10 @@
                   <option value="خلال 3 - 6 أشهر">خلال 3 - 6 أشهر</option>
                   <option value="أكثر من 6 أشهر">أكثر من 6 أشهر</option>
                   <option value="غير محدد بعد">غير محدد بعد</option>
+                  <option value="custom">موعد / مدة أخرى</option>
                 </select>
+                <input type="text" id="contact-timeline-custom" name="timeline-custom" class="hidden"
+                  placeholder="اكتب الموعد أو المدة — مثال: خلال 6 أسابيع" autocomplete="off" />
               </div>
             </div>
             <div class="contact-field">
@@ -232,7 +260,8 @@
               <span aria-hidden="true">🚀</span>
             </button>
             <p class="contact-privacy">
-              نحافظ على خصوصية بياناتك ومعلومات مشروعك، ولن يتم استخدامها إلا للتواصل معك.
+              نحافظ على خصوصية بياناتك ومعلومات مشروعك، ولن يتم استخدامها إلا
+              للتواصل معك.
             </p>
           </form>
         </div>
@@ -248,8 +277,8 @@
           <div class="contact-trust-brand-text">
             <span>ماذا يحدث بعد إرسال طلبك؟</span>
             <p>
-              بمجرد إرسال النموذج، يبدأ معك فريق Forascom بخطوات واضحة — من فهم احتياجك إلى تحديد أفضل طريقة لتنفيذ
-              فكرتك.
+              بمجرد إرسال النموذج، يبدأ معك فريق Forascom بخطوات واضحة — من
+              فهم احتياجك إلى تحديد أفضل طريقة لتنفيذ فكرتك.
             </p>
           </div>
         </div>
@@ -298,148 +327,203 @@
   <!-- ==========================================================================
        PROFESSIONAL UNIFIED FOOTER
        ========================================================================== -->
-  <footer class="relative bg-[#070D1B] text-slate-400 border-t border-slate-800/80 pt-16 pb-12 overflow-hidden">
+  <footer
+    class="relative bg-[#070D1B] text-slate-400 border-t border-slate-800/80 pt-10 sm:pt-16 pb-8 sm:pb-12 overflow-hidden">
     <!-- Ambient Backlight Glowing Orbs -->
-    <!-- <div class="absolute top-0 right-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl pointer-events-none"></div> -->
+    <!--
+  <div
+    class="absolute top-0 right-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none"
+  ></div>
+
+  <div
+    class="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl pointer-events-none"
+  ></div>
+  -->
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
-
-
-      <!-- 2. Main Footer Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pt-4">
-        <!-- Col 1: Branding -->
+      <!-- =====================================================
+         MAIN FOOTER GRID
+         ===================================================== -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-8 pt-4">
+        <!-- ===================================================
+           COLUMN 1: BRANDING
+           =================================================== -->
         <div class="lg:col-span-4 space-y-5">
-          <a href="index.html" class="inline-block focus:outline-none">
+          <a href="index.html"
+            class="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-lg"
+            aria-label="العودة إلى الصفحة الرئيسية">
             <img src="assets/images/Logo.png" alt="Forascom — فرصكم" class="h-11 w-auto object-contain rounded-lg" />
           </a>
+
           <p class="text-slate-300 text-sm leading-relaxed max-w-sm">
-            شركة حلول برمجية وتطوير تقني — نخلق الفرص للأعمال من خلال تقنيات الويب المستدامة، الذكاء الاصطناعي، وأتمتة
-            العمليات بجودة هندسية راقية.
+            شركة حلول برمجية وتطوير تقني — نخلق الفرص للأعمال من خلال تقنيات
+            الويب المستدامة، الذكاء الاصطناعي، وأتمتة العمليات بجودة هندسية
+            راقية.
           </p>
+
           <div
             class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+
             متاحون حالياً لاستقبال مشاريع جديدة
           </div>
         </div>
 
-        <!-- Col 2: Navigation Links -->
+        <!-- ===================================================
+           COLUMN 2: MAIN NAVIGATION
+           =================================================== -->
         <div class="lg:col-span-3 space-y-4">
           <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
             الروابط الرئيسية
           </h4>
+
           <ul class="space-y-2.5 text-sm">
             <li>
               <a href="index.html" class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">◀</span>
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
                 الرئيسية
               </a>
             </li>
+
             <li>
               <a href="about.html" class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">◀</span>
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
                 عن فرصكم
               </a>
             </li>
+
             <li>
               <a href="services.html"
                 class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">◀</span>
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
                 خدماتنا
               </a>
             </li>
+
             <li>
               <a href="portfolio.html"
                 class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">◀</span>
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
                 معرض الأعمال
               </a>
             </li>
+
             <li>
               <a href="contact.html" class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">◀</span>
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
                 تواصل معنا
               </a>
             </li>
           </ul>
         </div>
 
-        <!-- Col 3: Services & Solutions Links -->
+        <!-- ===================================================
+           COLUMN 3: SERVICES & SOLUTIONS
+           =================================================== -->
         <div class="lg:col-span-2 space-y-4">
           <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
             خدماتنا
           </h4>
+
           <ul class="space-y-2.5 text-sm">
+            <!-- Web Development -->
             <li>
               <a href="portfolio.html?category=web-development"
                 class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                تطوير المواقع (Web Dev)
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
+                تطوير المواقع
               </a>
             </li>
+
+            <!-- WordPress -->
             <li>
               <a href="portfolio.html?category=wordpress"
                 class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                مواقع وردبرس (WordPress)
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
+                مواقع WordPress
               </a>
             </li>
+
+            <!-- AI -->
             <li>
-              <a href="portfolio.html?category=power-platform"
+              <a href="portfolio.html?category=web-development"
                 class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                أنظمة Power Platform
-              </a>
-            </li>
-            <li>
-              <a href="portfolio.html?category=ai"
-                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
                 حلول الذكاء الاصطناعي
               </a>
             </li>
+
+            <!-- Automation -->
             <li>
-              <a href="portfolio.html?category=automation"
+              <a href="portfolio.html?category=Automation-BussinessSolution"
                 class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
                 الأتمتة والعمليات الذكية
+              </a>
+            </li>
+
+            <!-- Power Platform -->
+            <li>
+              <a href="portfolio.html?category=Automation-BussinessSolution"
+                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
+                حلول Power Platform
               </a>
             </li>
           </ul>
         </div>
 
-        <!-- Col 4: Contact Info & Socials -->
+        <!-- ===================================================
+           COLUMN 4: CONTACT & SOCIALS
+           =================================================== -->
         <div class="lg:col-span-3 space-y-4">
           <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
             التواصل المباشر
           </h4>
+
           <ul class="space-y-3 text-sm">
+            <!-- Email -->
             <li>
-              <a href="mailto:hello@forascom.com"
-                class="flex items-center gap-3 text-slate-300 hover:text-cyan-400 transition-colors group">
-                <span
-                  class="w-8 h-8 rounded-lg bg-slate-800/80 flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500/20 transition-colors">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
+              <a href="mailto:forascomteam@gmail.com"
+                class="inline-flex items-center gap-3 hover:text-cyan-400 transition-colors"
+                aria-label="راسلنا عبر البريد الإلكتروني">
+                <span class="material-symbols-outlined text-cyan-400 text-lg">
+                  mail
                 </span>
-                <span>hello@forascom.com</span>
+
+                <span>forascomteam@gmail.com</span>
               </a>
             </li>
-            <li>
-              <a href="https://wa.me/201090000000" target="_blank" rel="noopener noreferrer"
-                class="flex items-center gap-3 text-slate-300 hover:text-emerald-400 transition-colors group">
-                <span
-                  class="w-8 h-8 rounded-lg bg-slate-800/80 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500/20 transition-colors">
-                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                    <path
-                      d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
-                  </svg>
-                </span>
-                <span>WhatsApp (+20 109 000 0000)</span>
-              </a>
-            </li>
+
+
           </ul>
 
+
           <div class="pt-2">
-            <span class="block text-xs font-semibold text-slate-400 mb-3">تواجدنا الرقمي:</span>
+            <span class="block text-xs font-semibold text-slate-400 mb-3">
+              تواجدنا الرقمي:
+            </span>
+
             <div class="flex items-center gap-3">
               <!-- LinkedIn -->
               <a href="https://www.linkedin.com/company/forascom/" target="_blank" rel="noopener noreferrer"
@@ -450,26 +534,29 @@
                     d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.75a1.49 1.49 0 1 0 0 2.98 1.49 1.49 0 0 0 0-2.98z" />
                 </svg>
               </a>
+
               <!-- Facebook -->
-              <a href="https://www.facebook.com/people/Forascom/61592914277326/?sk=directory_names" target="_blank"
-                rel="noopener noreferrer" aria-label="Facebook"
+              <a href="https://www.facebook.com/profile.php?id=61592914277326" target="_blank" rel="noopener noreferrer"
+                aria-label="Facebook"
                 class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-cyan-950/40 transition-all hover:-translate-y-1">
                 <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path
                     d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H7.5v-3H10V9.5C10 7.01 11.49 5.65 13.75 5.65c1.08 0 2.2.19 2.2.19v2.42h-1.24c-1.23 0-1.61.77-1.61 1.56V12h2.73l-.44 3h-2.29v6.8c4.56-.93 8-4.96 8-9.8z" />
                 </svg>
               </a>
+
               <!-- Instagram -->
-              <a href="https://www.instagram.com/foras_com?stkn=MWg1amRsY3NucHMyNg==" target="_blank"
-                rel="noopener noreferrer" aria-label="Instagram"
+              <a href="https://www.instagram.com/foras_com/" target="_blank" rel="noopener noreferrer"
+                aria-label="Instagram"
                 class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-cyan-950/40 transition-all hover:-translate-y-1">
                 <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path
-                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.79 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                 </svg>
               </a>
+
               <!-- WhatsApp Direct -->
-              <a href="https://wa.me/201090000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+              <a href="https://wa.me/201501795004" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
                 class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-emerald-400 hover:border-emerald-500/40 hover:bg-emerald-950/40 transition-all hover:-translate-y-1">
                 <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path
@@ -478,20 +565,37 @@
               </a>
             </div>
           </div>
+
+
         </div>
       </div>
 
-      <!-- 3. Bottom Bar Divider & Copyright -->
+      <!-- =====================================================
+         BOTTOM BAR
+         ===================================================== -->
       <div
         class="pt-8 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
         <p class="text-center md:text-right">
-          © <span id="footer-year">2026</span> <strong class="text-slate-200">Forascom</strong>. جميع الحقوق محفوظة —
-          <span class="text-cyan-400 font-medium">Technology that creates opportunities</span>
+          © <span id="footer-year">2026</span>
+          <strong class="text-slate-200">Forascom</strong>.
+          جميع الحقوق محفوظة —
+          <span class="text-cyan-400 font-medium">
+            Technology that creates opportunities
+          </span>
         </p>
+
         <div class="flex items-center gap-6 text-slate-400">
-          <span class="hover:text-slate-200 transition-colors cursor-pointer">الخصوصية والشروط</span>
+          <!-- Privacy & Terms -->
+          <span class="text-slate-500">
+            الخصوصية والشروط
+          </span>
+
           <span class="w-1 h-1 rounded-full bg-slate-700"></span>
-          <a href="contact.html" class="hover:text-cyan-400 transition-colors">الدعم التقني</a>
+
+          <!-- Technical Support -->
+          <a href="contact.html" class="hover:text-cyan-400 transition-colors">
+            الدعم التقني
+          </a>
         </div>
       </div>
     </div>
@@ -499,7 +603,7 @@
 
   <!-- Floating Sticky WhatsApp Action Button -->
   <div class="fixed bottom-6 left-6 z-50">
-    <a href="https://wa.me/201090000000?text=%D8%A3%D9%87%D9%84%D8%A3%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20Forascom%20%F0%9F%90%8B"
+    <a href="https://wa.me/201501795004?text=%D8%A3%D9%87%D9%84%D8%A3%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20Forascom%20%F0%9F%90%8B"
       target="_blank" rel="noopener noreferrer" aria-label="التواصل المباشر عبر واتساب"
       class="group flex items-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs p-3.5 rounded-full shadow-2xl transition-all duration-500 ease-in-out hover:px-5">
       <div class="relative flex items-center justify-center">

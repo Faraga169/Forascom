@@ -20,22 +20,23 @@
         theme: {
           extend: {
             colors: {
-              surface: "#00101D",
-              "surface-dim": "#000B14",
-              "surface-container-lowest": "#00080F",
-              "surface-container-low": "#001525",
-              "surface-container": "#001A2E",
-              "surface-container-high": "#03243F",
-              "surface-container-highest": "#072F50",
-              "surface-bright": "#0B3960",
-              primary: "#99CBFF",
-              "primary-container": "#1D9BF0",
-              tertiary: "#00C4EE",
-              "tertiary-glow": "rgba(0, 196, 238, 0.4)",
-              "on-surface": "#E0E3E5",
-              "on-surface-variant": "#94A3B8",
-              outline: "#64748B",
-              "outline-variant": "#1E293B",
+              surface: "#00152A",
+              "surface-dim": "#00152A",
+              "surface-container-lowest": "#00152A",
+              "surface-container-low": "#001D33",
+              "surface-container": "#002442",
+              "surface-container-high": "#00345A",
+              "surface-container-highest": "#004270",
+              "surface-bright": "#1368B9",
+              primary: "#38BDF8",
+              "primary-container": "#1368B9",
+              secondary: "#1368B9",
+              tertiary: "#06B6D4",
+              "tertiary-glow": "rgba(6, 182, 212, 0.4)",
+              "on-surface": "#F8FAFC",
+              "on-surface-variant": "#CBD5E1",
+              outline: "#94A3B8",
+              "outline-variant": "#334155",
               error: "#FF6B6B",
             },
             fontFamily: {
@@ -52,10 +53,27 @@
       @layer base {
         body {
           font-family: "Cairo", sans-serif;
-          background-color: #00101d;
-          color: #e0e3e5;
+          background-color: #00152a;
+          background-image:
+            radial-gradient(circle at top, rgba(6, 182, 212, 0.14), transparent 32%),
+            linear-gradient(180deg, #00111f 0%, #001d33 26%, #001d33 100%);
+          background-attachment: fixed;
+          color: #f8fafc;
           overflow-x: hidden;
         }
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        background:
+          linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+        background-size: 48px 48px;
+        mask-image: radial-gradient(circle at center, black 0%, transparent 78%);
+        pointer-events: none;
       }
 
       /* Ambient glow & backdrop animations */
@@ -82,22 +100,22 @@
 
       .cyan-glow-text {
         text-shadow:
-          0 0 24px rgba(0, 196, 238, 0.55),
-          0 0 45px rgba(0, 196, 238, 0.25);
+          0 0 24px rgba(6, 182, 212, 0.55),
+          0 0 45px rgba(6, 182, 212, 0.25);
       }
 
       .cyan-glow-box {
         box-shadow:
-          0 0 35px -5px rgba(0, 196, 238, 0.3),
-          inset 0 0 20px -5px rgba(0, 196, 238, 0.15);
+          0 0 35px -5px rgba(6, 182, 212, 0.3),
+          inset 0 0 20px -5px rgba(6, 182, 212, 0.15);
       }
 
       .cyan-glow-box-subtle {
-        box-shadow: 0 0 25px -8px rgba(0, 196, 238, 0.22);
+        box-shadow: 0 0 25px -8px rgba(6, 182, 212, 0.22);
       }
 
       .cyan-border {
-        border: 1px solid rgba(0, 196, 238, 0.3);
+        border: 1px solid rgba(6, 182, 212, 0.3);
       }
 
       .btn-smooth {
@@ -152,17 +170,17 @@
       .impact-counter-glow-cyan {
         text-shadow:
           0 0 calc(16px * var(--glow-ratio, 1))
-            rgba(0, 196, 238, calc(0.45 * var(--glow-ratio, 1))),
+            rgba(6, 182, 212, calc(0.45 * var(--glow-ratio, 1))),
           0 0 calc(32px * var(--glow-ratio, 1))
-            rgba(0, 196, 238, calc(0.2 * var(--glow-ratio, 1)));
+            rgba(6, 182, 212, calc(0.2 * var(--glow-ratio, 1)));
       }
 
       .impact-counter-glow-primary {
         text-shadow:
           0 0 calc(16px * var(--glow-ratio, 1))
-            rgba(153, 203, 255, calc(0.45 * var(--glow-ratio, 1))),
+            rgba(56, 189, 248, calc(0.45 * var(--glow-ratio, 1))),
           0 0 calc(32px * var(--glow-ratio, 1))
-            rgba(153, 203, 255, calc(0.2 * var(--glow-ratio, 1)));
+            rgba(56, 189, 248, calc(0.2 * var(--glow-ratio, 1)));
       }
 
       .hide-scrollbar::-webkit-scrollbar {
@@ -289,7 +307,7 @@
 
     <!-- 1. DESKTOP TOP NAVIGATION HEADER -->
     <header
-      class="fixed top-0 inset-x-0 z-50 bg-[#00101D]/80 backdrop-blur-xl border-b border-white/5 shadow-2xl"
+      class="fixed top-0 inset-x-0 z-50 bg-[#00152A]/80 backdrop-blur-xl border-b border-white/5 shadow-2xl"
     >
       <div
         class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4"
@@ -313,10 +331,6 @@
         </nav>
 
         <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-          <a
-            class="hidden lg:inline-flex btn-cyan font-bold text-sm px-5 py-2.5 rounded-xl shadow-lg transition-all"
-            href="contact.html"
-          >استشارة مجانية</a>
           <button
             id="mobile-menu-btn"
             class="lg:hidden text-white p-2 rounded-lg bg-white/10 border border-white/10 shrink-0"
@@ -366,9 +380,9 @@
             <p
               class="text-base sm:text-lg lg:text-xl text-on-surface-variant font-normal leading-[1.6] max-w-2xl"
             >
-              مجموعة مختارة من الأنظمة والحلول الرقمية التي بنيناها لمعالجة
-              مشكلات أعمال حقيقية، وتحويل الاختناقات التشغيلية إلى قنوات نمو
-              مستدام، كفاءة غير مسبوقة، وقيمة ملموسة تظهر في نتائج الشركات.
+              نستعرض هنا مجموعة مختارة من الأنظمة والحلول الرقمية المخصصة لحل
+              مشكلات الأعمال الواقعية؛ حيث نحول الاختناقات التشغيلية إلى فرص
+              للنمو المستدام، مع رفع الكفاءة وتحقيق عائد ملموس على أداء الشركات.
             </p>
             <!-- Quick Metrics Bar -->
             <!-- <div class="grid grid-cols-3 gap-4 pt-4 border-t border-white/10 max-w-xl">
@@ -465,7 +479,7 @@
                     </div>
                   </div>
                   <span
-                    class="w-2.5 h-2.5 rounded-full bg-primary-container shadow-[0_0_8px_#1D9BF0]"
+                    class="w-2.5 h-2.5 rounded-full bg-primary-container shadow-[0_0_8px_#1368B9]"
                   ></span>
                 </div>
                 <!-- Connecting Line -->
@@ -494,12 +508,12 @@
                     </div>
                   </div>
                   <span
-                    class="w-2.5 h-2.5 rounded-full bg-tertiary shadow-[0_0_8px_#00C4EE] animate-pulse"
+                    class="w-2.5 h-2.5 rounded-full bg-tertiary shadow-[0_0_8px_#06B6D4] animate-pulse"
                   ></span>
                 </div>
                 <!-- Connecting Line (Glowing Active) -->
                 <div
-                  class="w-0.5 h-4 sm:h-6 mx-auto bg-gradient-to-b from-tertiary to-tertiary shadow-[0_0_8px_#00C4EE] active-line"
+                  class="w-0.5 h-4 sm:h-6 mx-auto bg-gradient-to-b from-tertiary to-tertiary shadow-[0_0_8px_#06B6D4] active-line"
                 ></div>
                 <!-- Step 4 (Active Opportunity) -->
                 <div
@@ -524,7 +538,7 @@
                     </div>
                   </div>
                   <span
-                    class="w-3.5 h-3.5 rounded-full bg-tertiary shadow-[0_0_12px_#00C4EE] animate-ping"
+                    class="w-3.5 h-3.5 rounded-full bg-tertiary shadow-[0_0_12px_#06B6D4] animate-ping"
                   ></span>
                 </div>
               </div>
@@ -547,8 +561,8 @@
             <p
               class="text-on-surface-variant text-base sm:text-lg leading-[1.7] max-w-3xl font-normal"
             >
-              مجموعة مختارة من الحلول الرقمية والأنظمة المؤسسية التي تم تنفيذها
-              وتعمل حالياً في بيئات إنتاج حقيقية وملموسة.
+              مجموعة مختارة من الحلول الرقمية والأنظمة المؤسسية التي تم تنفيذها،
+              وتعمل حالياً في بيئات إنتاج حقيقية لتُحقق نتائج ملموسة.
             </p>
           </div>
         </div>
@@ -606,7 +620,7 @@
           <!-- UNIFIED SECTION FOOTER CTA -->
           <div class="pt-6 flex justify-center">
             <a
-              class="btn-smooth inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-surface-container-high hover:bg-tertiary text-white hover:text-[#00101D] font-extrabold text-sm border border-tertiary/30 hover:border-tertiary shadow-[0_0_20px_rgba(0,196,238,0.15)] hover:shadow-[0_0_30px_rgba(0,196,238,0.4)] transition-all group"
+              class="btn-smooth inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-surface-container-high hover:bg-tertiary text-white hover:text-[#00152A] font-extrabold text-sm border border-tertiary/30 hover:border-tertiary shadow-[0_0_20px_rgba(6,182,212,0.15)] hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] transition-all group"
               href="https://wa.me/?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20%D9%81%D8%B1%D8%B5%D9%83%D9%85%D8%8C%20%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%A3%D8%B1%D8%B4%D9%8A%D9%81%20%D9%85%D8%B4%D8%A7%D8%B1%D9%8A%D8%B9%D9%83%D9%85%20%D9%88%D8%A7%D9%84%D8%AD%D9%84%D9%88%D9%84%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D8%A7%D8%AD%D8%A9."
               target="_blank"
             >
@@ -723,7 +737,7 @@
               أثر حقيقي ملموس على أرض الواقع
             </h2>
             <p class="text-on-surface-variant text-base mt-2">
-              أرقام وإجراءات فعلية تعيش في بيئات عمل حية كل يوم، موثقة بالنتائج.
+              أرقام وإجراءات فعلية تُطبق في بيئات عمل حقيقية كل يوم، وموثقة بالنتائج
             </p>
           </div>
         </div>
@@ -766,7 +780,7 @@
               </div>
               <p class="text-sm text-on-surface-variant leading-relaxed mt-2">
                 بنى تحتية سحابية متقدمة قادرة على استيعاب مئات الآلاف من
-                العمليات اليومية مع مرونة عالية في التوسع وتوزيع الأحمال.
+                العمليات اليومية، مع مرونة عالية في التوسع وتوزيع الأحمال.
               </p>
             </div>
             <div
@@ -816,8 +830,8 @@
                 >
               </div>
               <p class="text-sm text-on-surface-variant leading-relaxed mt-2">
-                تحويل دورات الموافقات الإدارية، إدخال البيانات، ومطابقة الفواتير
-                من أيام عمل كاملة إلى دقائق معدودة وبدون خطأ بشري.
+                تحويل دورات الموافقات الإدارية، وإدخال البيانات، ومطابقة الفواتير
+                من أيام عمل كاملة إلى دقائق معدودة دون أخطاء بشرية.
               </p>
             </div>
             <div
@@ -866,8 +880,8 @@
                 >
               </div>
               <p class="text-sm text-on-surface-variant leading-relaxed mt-2">
-                تطبيقات ولوحات تحكم مدمجة يعتمد عليها الموظفون والعملاء بشكل
-                يومي لتحقيق أهداف أعمالهم ومتابعة أرقامهم.
+                تطبيقات ولوحات تحكم مدمجة يعتمد عليها الموظفون والعملاء يومياً
+                لتحقيق أهداف أعمالهم ومتابعة مؤشرات الأداء.
               </p>
             </div>
             <div
@@ -917,7 +931,7 @@
           >
             <!-- Direct WhatsApp Button (Green) -->
             <a
-              class="btn-smooth w-full sm:w-1/2 py-4 px-6 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-[#00101D] flex items-center justify-center gap-3 font-extrabold text-base shadow-[0_0_25px_rgba(37,211,102,0.4)] hover:shadow-[0_0_35px_rgba(37,211,102,0.6)]"
+              class="btn-smooth w-full sm:w-1/2 py-4 px-6 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-[#00152A] flex items-center justify-center gap-3 font-extrabold text-base shadow-[0_0_25px_rgba(37,211,102,0.4)] hover:shadow-[0_0_35px_rgba(37,211,102,0.6)]"
               href="https://wa.me/?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20%D9%81%D8%B1%D8%B5%D9%83%D9%85%D8%8C%20%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%A3%D8%AA%D9%85%D8%AA%D8%A9%20%D9%88%D8%AA%D8%B7%D9%88%D9%8A%D8%B1%20%D8%AD%D9%84%20%D8%AA%D9%82%D9%86%D9%8A%20%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D9%8A."
               target="_blank"
             >
@@ -926,7 +940,7 @@
             </a>
             <!-- Primary Cyan CTA -->
             <a
-              class="btn-smooth w-full sm:w-1/2 py-4 px-6 rounded-xl bg-tertiary hover:bg-[#34d4f6] text-[#00101D] flex items-center justify-center gap-3 font-extrabold text-base shadow-[0_0_25px_rgba(0,196,238,0.4)] hover:shadow-[0_0_35px_rgba(0,196,238,0.65)]"
+              class="btn-smooth w-full sm:w-1/2 py-4 px-6 rounded-xl bg-tertiary hover:bg-[#22d3ee] text-[#00152A] flex items-center justify-center gap-3 font-extrabold text-base shadow-[0_0_25px_rgba(6,182,212,0.4)] hover:shadow-[0_0_35px_rgba(6,182,212,0.65)]"
               href="#contact"
             >
               <span class="material-symbols-outlined text-xl">send</span>

@@ -3,12 +3,28 @@
    ========================================================= */
 
 .contact-page {
-  background: #00152a;
+  background:
+    radial-gradient(circle at top, rgba(6, 182, 212, 0.14), transparent 32%),
+    linear-gradient(180deg, #00111f 0%, #001d33 26%, #001d33 100%);
+  background-attachment: fixed;
+}
+
+.contact-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at center, black 0%, transparent 78%);
+  pointer-events: none;
 }
 
 .contact-page .contact-main,
 .contact-page .contact-trust {
-  background: #00152a;
+  background: transparent;
 }
 
 /* Background Grid & Ambient Glow Effects */
@@ -16,11 +32,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(56, 189, 248, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(56, 189, 248, 0.035) 1px, transparent 1px);
-  background-size: 48px 48px;
-  opacity: 0.5;
+  background: none;
   pointer-events: none;
 }
 

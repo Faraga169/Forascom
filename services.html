@@ -503,10 +503,6 @@
 
       <!-- Desktop CTA & Mobile Toggle -->
       <div class="flex items-center gap-4 shrink-0">
-        <a href="contact.html"
-          class="hidden lg:inline-flex btn-cyan font-bold text-sm px-6 py-2.5 rounded-xl shadow-lg transition-all">
-          استشارة مجانية
-        </a>
         <button id="mobile-menu-btn" class="lg:hidden text-text-primary p-2 rounded-lg"
           style="background: rgba(56, 189, 248, 0.1)" aria-label="القائمة">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -606,176 +602,134 @@
           </div>
         </a>
 
-        <nav
-          class="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-5 xl:gap-7 font-semibold text-sm">
-          <a href="index.html" class="nav-link hover:text-cyan-bright transition-colors">الرئيسية</a>
-          <a href="about.html" class="nav-link hover:text-cyan-bright transition-colors">عن فرصكم</a>
-          <a href="services.html" aria-current="page"
-            class="nav-link nav-active hover:text-cyan-bright transition-colors">خدماتنا</a>
-          <a href="portfolio.html" class="nav-link hover:text-cyan-bright transition-colors">معرض الأعمال</a>
-          <a href="contact.html" class="nav-link hover:text-cyan-bright transition-colors">تواصل معنا</a>
-        </nav>
-
-        <div class="flex items-center gap-3 shrink-0">
-          <button id="mobile-menu-btn" class="lg:hidden text-text-primary p-2 rounded-lg"
-            style="background: rgba(56, 189, 248, 0.1)" aria-label="القائمة">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      <div id="mobile-menu-container"
-        class="hidden lg:hidden bg-navy-secondary border-b px-4 pt-2 pb-6 space-y-3 font-semibold text-text-secondary"
-        style="border-color: rgba(56, 189, 248, 0.12)">
-        <a href="index.html" class="block py-2 border-b hover:text-text-primary"
-          style="border-color: rgba(56, 189, 248, 0.12)">الرئيسية</a>
-        <a href="about.html" class="block py-2 border-b hover:text-text-primary"
-          style="border-color: rgba(56, 189, 248, 0.12)">عن فرصكم</a>
-        <a href="services.html" aria-current="page" class="block py-2 border-b text-cyan font-bold"
-          style="border-color: rgba(56, 189, 248, 0.12)">خدماتنا</a>
-        <a href="portfolio.html" class="block py-2 border-b hover:text-text-primary"
-          style="border-color: rgba(56, 189, 248, 0.12)">معرض الأعمال</a>
-        <a href="contact.html" class="block py-2 hover:text-text-primary"
-          style="border-color: rgba(56, 189, 248, 0.12)">تواصل معنا</a>
-      </div>
-      </header>
-
-      <main class="services-page">
-        <section class="services-hero">
-          <div class="services-ambient services-ambient--one"></div>
-          <div class="services-ambient services-ambient--two"></div>
-          <div class="services-grid-overlay"></div>
-
-          <div class="forascom-services-shell services-hero__layout">
-            <div class="service-hero-copy">
-              <h1 class="hero-title">
-                نبني الحلول التي
-                <span class="gradient-text animate-gradient-text">تحوّل</span>
-                <span class="hero-title__line">الأفكار إلى فرص</span>
-              </h1>
-              <p class="hero-deck">
-                من تطوير المواقع والأنظمة، إلى الأتمتة والذكاء الاصطناعي؛<br />
-                نوفر حلولاً تقنية مخصصة تُلبي كافة احتياجات مشروعك.
-              </p>
+        <a href="portfolio.html?category=wordpress" class="service-card service-card--wordpress"
+          data-service="wordpress">
+          <div class="service-card__header">
+            <span class="service-number">02</span>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2.5A9.5 9.5 0 1 1 2.5 12 9.51 9.51 0 0 1 12 2.5Zm0 2.5a7 7 0 1 0 7 7 7 7 0 0 0-7-7Zm-1.25 3.5h2.5v5.5h-2.5Zm0 7h2.5v2h-2.5Z" />
+              </svg>
             </div>
-            <div class="service-card__body">
-              <h3>WordPress & Digital Experiences</h3>
-              <p>
-                نصمم ونطور مواقع WordPress احترافية تجمع بين الأداء، سهولة
-                الإدارة، التصميم المتجاوب وتجربة المستخدم.
-              </p>
-              <div class="service-tags">
-                <span>WordPress</span>
-                <span>Elementor</span>
-                <span>WooCommerce</span>
-                <span>Custom Themes</span>
-                <span>SEO</span>
-                <span>Performance</span>
-              </div>
-            </div>
-            <div class="service-card__visual" aria-hidden="true">
-              <img src="assets/images/Gemini_Generated_Image_rpq1serpq1serpq1.jfif" alt="WordPress وتجارب رقمية" />
-            </div>
-            <span class="service-link">اكتشف الخدمة</span>
-            </a>
-
-            <a href="portfolio.html?category=Automation-BussinessSolution"
-              class="service-card service-card--power service-card--featured" data-service="power">
-              <div class="service-card__header">
-                <span class="service-number">03</span>
-                <div class="service-icon">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M11 2.5 4 12h4.5L7 21.5 18 9.5h-5L17 2.5h-6Z" />
-                  </svg>
-                </div>
-              </div>
-              <div class="service-card__body">
-                <h3>Power Platform & Business Automation</h3>
-                <p>
-                  بنحوّل العمليات اليدوية لحلول رقمية مترابطة باستخدام Power Apps
-                  وPower Automate وSharePoint وPower BI.
-                </p>
-                <div class="service-tags">
-                  <span>Power Apps</span>
-                  <span>Power Automate</span>
-                  <span>SharePoint</span>
-                  <span>Power BI</span>
-                  <span>Dataverse</span>
-                </div>
-              </div>
-              <div class="service-card__visual" aria-hidden="true">
-                <img src="assets/images/Gemini_Generated_Image_xtn3prxtn3prxtn3.jfif" alt="Power Platform والأتمتة" />
-              </div>
-              <span class="service-link">اكتشف الخدمة</span>
-            </a>
-
-            <a href="portfolio.html?category=web-development" class="service-card service-card--ai" data-service="ai">
-              <div class="service-card__header">
-                <span class="service-number">04</span>
-                <div class="service-icon">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      d="M12 2.5a7.5 7.5 0 0 1 7.5 7.5v1.13c.76.36 1.3 1.1 1.3 2.02 0 1.2-.98 2.18-2.18 2.18-.4 0-.79-.1-1.12-.29A3.75 3.75 0 0 1 12 18.5a3.74 3.74 0 0 1-5.5-3.18 2.18 2.18 0 0 1 1.3-2.02V10A7.5 7.5 0 0 1 12 2.5Zm-4 8.72v.1a2.5 2.5 0 0 0 2.5 2.5h3a2.5 2.5 0 0 0 2.5-2.5v-.1a2.5 2.5 0 0 0-2.5-2.5h-3a2.5 2.5 0 0 0-2.5 2.5Zm3 3.17h2v3h-2v-3Zm-4 2.5h2v2h-2v-2Zm8 0h2v2h-2v-2Z" />
-                  </svg>
-                </div>
-              </div>
-              <div class="service-card__body">
-                <h3>الذكاء الاصطناعي والتعلم الآلي</h3>
-                <p>
-                  نوظف الذكاء الاصطناعي لبناء حلول قادرة على تحليل البيانات، فهم
-                  المحتوى، أتمتة القرارات وتحسين العمليات.
-                </p>
-                <div class="service-tags">
-                  <span>AI</span>
-                  <span>Machine Learning</span>
-                  <span>LLMs</span>
-                  <span>RAG</span>
-                  <span>Python</span>
-                </div>
-              </div>
-              <div class="service-card__visual" aria-hidden="true">
-                <img src="assets/images/Gemini_Generated_Image_z00iofz00iofz00i.jfif"
-                  alt="الذكاء الاصطناعي والتعلم الآلي" />
-              </div>
-              <span class="service-link">اكتشف الخدمة</span>
-            </a>
-
-            <a href="portfolio.html?category=Automation-BussinessSolution" class="service-card service-card--automation"
-              data-service="automation">
-              <div class="service-card__header">
-                <span class="service-number">05</span>
-                <div class="service-icon">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      d="M13 3.5c2.21 0 4 1.79 4 4 0 1.37-.69 2.58-1.74 3.3l1.08 5.55-4.16-2.28-4.16 2.28 1.08-5.55A3.98 3.98 0 0 1 7 7.5c0-2.21 1.79-4 4-4Zm1 2.5h-2v2h2V6Zm-7 5h2v2H7v-2Zm10 0h2v2h-2v-2Zm-5 3h2v2h-2v-2Z" />
-                  </svg>
-                </div>
-              </div>
-              <div class="service-card__body">
-                <h3>الأتمتة وربط الأنظمة</h3>
-                <p>
-                  نربط الأنظمة والأدوات المختلفة في workflows ذكية تقلل العمل
-                  اليدوي وتخلق تدفقًا آليًا للبيانات والعمليات.
-                </p>
-                <div class="service-tags">
-                  <span>n8n</span>
-                  <span>APIs</span>
-                  <span>Webhooks</span>
-                  <span>Automation</span>
-                  <span>Integrations</span>
-                </div>
-              </div>
-              <div class="service-card__visual" aria-hidden="true">
-                <img src="assets/images/Gemini_Generated_Image_qv4h1gqv4h1gqv4h.jfif" alt="الأتمتة وربط الأنظمة" />
-              </div>
-              <span class="service-link">اكتشف الخدمة</span>
-            </a>
           </div>
-        </section>
+          <div class="service-card__body">
+            <h3>WordPress & Digital Experiences</h3>
+            <p>
+              نصمم ونطور مواقع WordPress احترافية تجمع بين الأداء، سهولة
+              الإدارة، التصميم المتجاوب وتجربة المستخدم.
+            </p>
+            <div class="service-tags">
+              <span>WordPress</span>
+              <span>Elementor</span>
+              <span>WooCommerce</span>
+              <span>Custom Themes</span>
+              <span>SEO</span>
+              <span>Performance</span>
+            </div>
+          </div>
+          <div class="service-card__visual" aria-hidden="true">
+            <img src="assets/images/Gemini_Generated_Image_rpq1serpq1serpq1.jfif" alt="WordPress وتجارب رقمية" />
+          </div>
+          <span class="service-link">اكتشف الخدمة</span>
+        </a>
 
-        <!-- <section class="service-process" id="service-process">
+        <a href="portfolio.html?category=Automation-BussinessSolution"
+          class="service-card service-card--power service-card--featured" data-service="power">
+          <div class="service-card__header">
+            <span class="service-number">03</span>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M11 2.5 4 12h4.5L7 21.5 18 9.5h-5L17 2.5h-6Z" />
+              </svg>
+            </div>
+          </div>
+          <div class="service-card__body">
+            <h3>Power Platform & Business Automation</h3>
+            <p>
+              بنحوّل العمليات اليدوية لحلول رقمية مترابطة باستخدام Power Apps
+              وPower Automate وSharePoint وPower BI.
+            </p>
+            <div class="service-tags">
+              <span>Power Apps</span>
+              <span>Power Automate</span>
+              <span>SharePoint</span>
+              <span>Power BI</span>
+              <span>Dataverse</span>
+            </div>
+          </div>
+          <div class="service-card__visual" aria-hidden="true">
+            <img src="assets/images/Gemini_Generated_Image_xtn3prxtn3prxtn3.jfif" alt="Power Platform والأتمتة" />
+          </div>
+          <span class="service-link">اكتشف الخدمة</span>
+        </a>
+
+        <a href="portfolio.html?category=web-development" class="service-card service-card--ai" data-service="ai">
+          <div class="service-card__header">
+            <span class="service-number">04</span>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2.5a7.5 7.5 0 0 1 7.5 7.5v1.13c.76.36 1.3 1.1 1.3 2.02 0 1.2-.98 2.18-2.18 2.18-.4 0-.79-.1-1.12-.29A3.75 3.75 0 0 1 12 18.5a3.74 3.74 0 0 1-5.5-3.18 2.18 2.18 0 0 1 1.3-2.02V10A7.5 7.5 0 0 1 12 2.5Zm-4 8.72v.1a2.5 2.5 0 0 0 2.5 2.5h3a2.5 2.5 0 0 0 2.5-2.5v-.1a2.5 2.5 0 0 0-2.5-2.5h-3a2.5 2.5 0 0 0-2.5 2.5Zm3 3.17h2v3h-2v-3Zm-4 2.5h2v2h-2v-2Zm8 0h2v2h-2v-2Z" />
+              </svg>
+            </div>
+          </div>
+          <div class="service-card__body">
+            <h3>الذكاء الاصطناعي والتعلم الآلي</h3>
+            <p>
+              نوظف الذكاء الاصطناعي لبناء حلول قادرة على تحليل البيانات، فهم
+              المحتوى، أتمتة القرارات وتحسين العمليات.
+            </p>
+            <div class="service-tags">
+              <span>AI</span>
+              <span>Machine Learning</span>
+              <span>LLMs</span>
+              <span>RAG</span>
+              <span>Python</span>
+            </div>
+          </div>
+          <div class="service-card__visual" aria-hidden="true">
+            <img src="assets/images/Gemini_Generated_Image_z00iofz00iofz00i.jfif"
+              alt="الذكاء الاصطناعي والتعلم الآلي" />
+          </div>
+          <span class="service-link">اكتشف الخدمة</span>
+        </a>
+
+        <a href="portfolio.html?category=Automation-BussinessSolution" class="service-card service-card--automation"
+          data-service="automation">
+          <div class="service-card__header">
+            <span class="service-number">05</span>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M13 3.5c2.21 0 4 1.79 4 4 0 1.37-.69 2.58-1.74 3.3l1.08 5.55-4.16-2.28-4.16 2.28 1.08-5.55A3.98 3.98 0 0 1 7 7.5c0-2.21 1.79-4 4-4Zm1 2.5h-2v2h2V6Zm-7 5h2v2H7v-2Zm10 0h2v2h-2v-2Zm-5 3h2v2h-2v-2Z" />
+              </svg>
+            </div>
+          </div>
+          <div class="service-card__body">
+            <h3>الأتمتة وربط الأنظمة</h3>
+            <p>
+              نربط الأنظمة والأدوات المختلفة في workflows ذكية تقلل العمل
+              اليدوي وتخلق تدفقًا آليًا للبيانات والعمليات.
+            </p>
+            <div class="service-tags">
+              <span>n8n</span>
+              <span>APIs</span>
+              <span>Webhooks</span>
+              <span>Automation</span>
+              <span>Integrations</span>
+            </div>
+          </div>
+          <div class="service-card__visual" aria-hidden="true">
+            <img src="assets/images/Gemini_Generated_Image_qv4h1gqv4h1gqv4h.jfif" alt="الأتمتة وربط الأنظمة" />
+          </div>
+          <span class="service-link">اكتشف الخدمة</span>
+        </a>
+      </div>
+    </section>
+
+
+    <!-- <section class="service-process" id="service-process">
         <div class="services-shell">
           <div class="section-heading section-heading--light">
             <h2>إزاي نحوّل احتياجك لحل؟</h2>
@@ -832,71 +786,70 @@
         </div>
       </section> -->
 
-        <section class="tech-ecosystem" id="tech-ecosystem">
-          <div class="services-shell">
-            <div class="section-heading section-heading--center">
-              <h2>منطق تقني متكامل</h2>
+    <section class="tech-ecosystem" id="tech-ecosystem">
+      <div class="services-shell">
+        <div class="section-heading section-heading--center">
+          <h2>منطق تقني متكامل</h2>
+        </div>
+
+        <div class="tech-stack">
+          <div class="tech-cluster">
+            <h3>WEB</h3>
+            <div class="tech-pill-row">
+              <span class="tech-pill tech-pill--logo"><img src="assets/images/react-svgrepo-com.svg" alt=""
+                  aria-hidden="true" />React</span>
+              <span class="tech-pill tech-pill--logo">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg"
+                  alt="" aria-hidden="true" />
+                SQL Server
+              </span>
+
+              <span class="tech-pill tech-pill--logo">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg"
+                  alt="" aria-hidden="true" />
+                ASP.NET
+              </span>
+
+              <span class="tech-pill tech-pill--logo">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg" alt=""
+                  aria-hidden="true" />
+                Angular
+              </span>
+              <span class="tech-pill tech-pill--logo"><img src="assets/images/wordpress-color-svgrepo-com.svg" alt=""
+                  aria-hidden="true" />WordPress</span>
             </div>
+          </div>
 
-            <div class="tech-stack">
-              <div class="tech-cluster">
-                <h3>WEB</h3>
-                <div class="tech-pill-row">
-                  <span class="tech-pill tech-pill--logo"><img src="assets/images/react-svgrepo-com.svg" alt=""
-                      aria-hidden="true" />React</span>
-                  <span class="tech-pill tech-pill--logo">
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg"
-                      alt="" aria-hidden="true" />
-                    SQL Server
-                  </span>
+          <div class="tech-cluster">
+            <h3>AUTOMATION</h3>
+            <div class="tech-pill-row">
+              <span class="tech-pill tech-pill--logo"><img src="assets/images/image-removebg-preview (1).png" alt=""
+                  aria-hidden="true" />Power Apps</span>
+              <span class="tech-pill tech-pill--logo"><img src="assets/images/image-removebg-preview (2).png" alt=""
+                  aria-hidden="true" />Power Automate</span>
+              <span class="tech-pill tech-pill--logo"><img src="assets/images/image-removebg-preview (4).png" alt=""
+                  aria-hidden="true" />n8n</span>
+              <span class="tech-pill tech-pill--logo"><img src="assets/images/image-removebg-preview (5).png" alt=""
+                  aria-hidden="true" />APIs</span>
+            </div>
+          </div>
 
-                  <span class="tech-pill tech-pill--logo">
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg"
-                      alt="" aria-hidden="true" />
-                    ASP.NET
-                  </span>
+          <div class="tech-cluster">
+            <h3>AI</h3>
+            <div class="tech-pill-row">
+              <span class="tech-pill tech-pill--logo"><img src="assets/images/python-svgrepo-com.svg" alt=""
+                  aria-hidden="true" />Python</span>
+              <span class="tech-pill tech-pill--logo"><img src="assets/images/image-removebg-preview (7).png" alt=""
+                  aria-hidden="true" />Machine Learning</span>
+              <span class="tech-pill tech-pill--logo"><img src="assets/images/image-removebg-preview (21).png" alt=""
+                  aria-hidden="true" />LLMs</span>
+              <span class="tech-pill tech-pill--logo"><img src="assets/images/image-removebg-preview (8).png" alt=""
+                  aria-hidden="true" />RAG</span>
+            </div>
+          </div>
 
-                  <span class="tech-pill tech-pill--logo">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg"
-                      alt="" aria-hidden="true" />
-                    Angular
-                  </span>
-                  <span class="tech-pill tech-pill--logo"><img src="assets/images/wordpress-color-svgrepo-com.svg"
-                      alt="" aria-hidden="true" />WordPress</span>
-                </div>
-              </div>
-
-              <div class="tech-cluster">
-                <h3>AUTOMATION</h3>
-                <div class="tech-pill-row">
-                  <span class="tech-pill tech-pill--logo"><img src="assets/images/image-removebg-preview (1).png" alt=""
-                      aria-hidden="true" />Power Apps</span>
-                  <span class="tech-pill tech-pill--logo"><img src="assets/images/image-removebg-preview (2).png" alt=""
-                      aria-hidden="true" />Power Automate</span>
-                  <span class="tech-pill tech-pill--logo"><img src="assets/images/image-removebg-preview (4).png" alt=""
-                      aria-hidden="true" />n8n</span>
-                  <span class="tech-pill tech-pill--logo"><img src="assets/images/image-removebg-preview (5).png" alt=""
-                      aria-hidden="true" />APIs</span>
-                </div>
-              </div>
-
-              <div class="tech-cluster">
-                <h3>AI</h3>
-                <div class="tech-pill-row">
-                  <span class="tech-pill tech-pill--logo"><img src="assets/images/python-svgrepo-com.svg" alt=""
-                      aria-hidden="true" />Python</span>
-                  <span class="tech-pill tech-pill--logo"><img src="assets/images/image-removebg-preview (7).png" alt=""
-                      aria-hidden="true" />Machine Learning</span>
-                  <span class="tech-pill tech-pill--logo"><img src="assets/images/image-removebg-preview (21).png"
-                      alt="" aria-hidden="true" />LLMs</span>
-                  <span class="tech-pill tech-pill--logo"><img src="assets/images/image-removebg-preview (8).png" alt=""
-                      aria-hidden="true" />RAG</span>
-                </div>
-              </div>
-
-              <!-- <div class="tech-cluster">
+          <!-- <div class="tech-cluster">
               <h3>DATA & CLOUD</h3>
               <div class="tech-pill-row">
                 <span class="tech-pill tech-pill--logo"
@@ -929,36 +882,36 @@
                 >
               </div>
             </div> -->
-            </div>
-          </div>
-        </section>
+        </div>
+      </div>
+    </section>
 
-        <section class="services-cta">
-          <div class="services-shell services-cta__panel">
-            <div class="services-cta__content">
-              <h2>عندك فكرة؟ خلّينا نحوّلها لحل.</h2>
-              <p>
-                شاركنا الفكرة اللي في دماغك، وإحنا نساعدك تبني الحل التقني
-                المناسب.
-              </p>
-            </div>
-            <div class="services-cta__actions">
-              <a href="contact.html" class="btn-cyan">ابدأ مشروعك</a>
-            </div>
-          </div>
-        </section>
-      </main>
+    <section class="services-cta">
+      <div class="services-shell services-cta__panel">
+        <div class="services-cta__content">
+          <h2>عندك فكرة؟ خلّينا نحوّلها لحل.</h2>
+          <p>
+            شاركنا الفكرة اللي في دماغك، وإحنا نساعدك تبني الحل التقني
+            المناسب.
+          </p>
+        </div>
+        <div class="services-cta__actions">
+          <a href="contact.html" class="btn-cyan">ابدأ مشروعك</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-      <!-- ==========================================================================
+  <!-- ==========================================================================
        FOOTER
        ========================================================================== -->
-      <!-- ==========================================================================
+  <!-- ==========================================================================
        PROFESSIONAL UNIFIED FOOTER
        ========================================================================== -->
-      <footer
-        class="relative bg-[#070D1B] text-slate-400 border-t border-slate-800/80 pt-10 sm:pt-16 pb-8 sm:pb-12 overflow-hidden">
-        <!-- Ambient Backlight Glowing Orbs -->
-        <!--
+  <footer
+    class="relative bg-[#070D1B] text-slate-400 border-t border-slate-800/80 pt-10 sm:pt-16 pb-8 sm:pb-12 overflow-hidden">
+    <!-- Ambient Backlight Glowing Orbs -->
+    <!--
   <div
     class="absolute top-0 right-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none"
   ></div>
@@ -968,309 +921,304 @@
   ></div>
   -->
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
-          <!-- =====================================================
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
+      <!-- =====================================================
          MAIN FOOTER GRID
          ===================================================== -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-8 pt-4">
-            <!-- ===================================================
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-8 pt-4">
+        <!-- ===================================================
            COLUMN 1: BRANDING
            =================================================== -->
-            <div class="lg:col-span-4 space-y-5">
-              <a href="index.html"
-                class="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-lg"
-                aria-label="العودة إلى الصفحة الرئيسية">
-                <img src="assets/images/Logo.png" alt="Forascom — فرصكم"
-                  class="h-11 w-auto object-contain rounded-lg" />
-              </a>
+        <div class="lg:col-span-4 space-y-5">
+          <a href="index.html"
+            class="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-lg"
+            aria-label="العودة إلى الصفحة الرئيسية">
+            <img src="assets/images/Logo.png" alt="Forascom — فرصكم" class="h-11 w-auto object-contain rounded-lg" />
+          </a>
 
-              <p class="text-slate-300 text-sm leading-relaxed max-w-sm">
-                شركة حلول برمجية وتطوير تقني — نخلق الفرص للأعمال من خلال تقنيات
-                الويب المستدامة، الذكاء الاصطناعي، وأتمتة العمليات بجودة هندسية
-                راقية.
-              </p>
+          <p class="text-slate-300 text-sm leading-relaxed max-w-sm">
+            شركة حلول برمجية وتطوير تقني — نخلق الفرص للأعمال من خلال تقنيات
+            الويب المستدامة، الذكاء الاصطناعي، وأتمتة العمليات بجودة هندسية
+            راقية.
+          </p>
 
-              <div
-                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-
-                متاحون حالياً لاستقبال مشاريع جديدة
-              </div>
-            </div>
-
-            <!-- ===================================================
-           COLUMN 2: MAIN NAVIGATION
-           =================================================== -->
-            <div class="lg:col-span-3 space-y-4">
-              <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
-                الروابط الرئيسية
-              </h4>
-
-              <ul class="space-y-2.5 text-sm">
-                <li>
-                  <a href="index.html"
-                    class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                    <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
-                      ◀
-                    </span>
-                    الرئيسية
-                  </a>
-                </li>
-
-                <li>
-                  <a href="about.html"
-                    class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                    <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
-                      ◀
-                    </span>
-                    عن فرصكم
-                  </a>
-                </li>
-
-                <li>
-                  <a href="services.html"
-                    class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                    <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
-                      ◀
-                    </span>
-                    خدماتنا
-                  </a>
-                </li>
-
-                <li>
-                  <a href="portfolio.html"
-                    class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                    <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
-                      ◀
-                    </span>
-                    معرض الأعمال
-                  </a>
-                </li>
-
-                <li>
-                  <a href="contact.html"
-                    class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                    <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
-                      ◀
-                    </span>
-                    تواصل معنا
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <!-- ===================================================
-           COLUMN 3: SERVICES & SOLUTIONS
-           =================================================== -->
-            <div class="lg:col-span-2 space-y-4">
-              <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
-                خدماتنا
-              </h4>
-
-              <ul class="space-y-2.5 text-sm">
-                <!-- Web Development -->
-                <li>
-                  <a href="portfolio.html?category=web-development"
-                    class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                    <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
-                      ◀
-                    </span>
-                    تطوير المواقع
-                  </a>
-                </li>
-
-                <!-- WordPress -->
-                <li>
-                  <a href="portfolio.html?category=wordpress"
-                    class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                    <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
-                      ◀
-                    </span>
-                    مواقع WordPress
-                  </a>
-                </li>
-
-                <!-- AI -->
-                <li>
-                  <a href="portfolio.html?category=web-development"
-                    class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                    <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
-                      ◀
-                    </span>
-                    حلول الذكاء الاصطناعي
-                  </a>
-                </li>
-
-                <!-- Automation -->
-                <li>
-                  <a href="portfolio.html?category=Automation-BussinessSolution"
-                    class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                    <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
-                      ◀
-                    </span>
-                    الأتمتة والعمليات الذكية
-                  </a>
-                </li>
-
-                <!-- Power Platform -->
-                <li>
-                  <a href="portfolio.html?category=Automation-BussinessSolution"
-                    class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
-                    <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
-                      ◀
-                    </span>
-                    حلول Power Platform
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <!-- ===================================================
-           COLUMN 4: CONTACT & SOCIALS
-           =================================================== -->
-            <div class="lg:col-span-3 space-y-4">
-              <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
-                التواصل المباشر
-              </h4>
-
-              <ul class="space-y-3 text-sm">
-                <!-- Email -->
-                <li>
-                  <a href="mailto:forascomteam@gmail.com"
-                    class="inline-flex items-center gap-3 hover:text-cyan-400 transition-colors"
-                    aria-label="راسلنا عبر البريد الإلكتروني">
-                    <span class="material-symbols-outlined text-cyan-400 text-lg">
-                      mail
-                    </span>
-
-                    <span>forascomteam@gmail.com</span>
-                  </a>
-                </li>
-
-
-              </ul>
-
-
-              <div class="pt-2">
-                <span class="block text-xs font-semibold text-slate-400 mb-3">
-                  تواجدنا الرقمي:
-                </span>
-
-                <div class="flex items-center gap-3">
-                  <!-- LinkedIn -->
-                  <a href="https://www.linkedin.com/company/forascom/" target="_blank" rel="noopener noreferrer"
-                    aria-label="LinkedIn"
-                    class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-cyan-950/40 transition-all hover:-translate-y-1">
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                      <path
-                        d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.75a1.49 1.49 0 1 0 0 2.98 1.49 1.49 0 0 0 0-2.98z" />
-                    </svg>
-                  </a>
-
-                  <!-- Facebook -->
-                  <a href="https://www.facebook.com/profile.php?id=61592914277326" target="_blank"
-                    rel="noopener noreferrer" aria-label="Facebook"
-                    class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-cyan-950/40 transition-all hover:-translate-y-1">
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                      <path
-                        d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H7.5v-3H10V9.5C10 7.01 11.49 5.65 13.75 5.65c1.08 0 2.2.19 2.2.19v2.42h-1.24c-1.23 0-1.61.77-1.61 1.56V12h2.73l-.44 3h-2.29v6.8c4.56-.93 8-4.96 8-9.8z" />
-                    </svg>
-                  </a>
-
-                  <!-- Instagram -->
-                  <a href="https://www.instagram.com/foras_com/" target="_blank" rel="noopener noreferrer"
-                    aria-label="Instagram"
-                    class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-cyan-950/40 transition-all hover:-translate-y-1">
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                      <path
-                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.79 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                    </svg>
-                  </a>
-
-                  <!-- WhatsApp Direct -->
-                  <a href="https://wa.me/201501795004" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
-                    class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-emerald-400 hover:border-emerald-500/40 hover:bg-emerald-950/40 transition-all hover:-translate-y-1">
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                      <path
-                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-
-
-            </div>
-          </div>
-
-          <!-- =====================================================
-         BOTTOM BAR
-         ===================================================== -->
           <div
-            class="pt-8 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-            <p class="text-center md:text-right">
-              © <span id="footer-year">2026</span>
-              <strong class="text-slate-200">Forascom</strong>.
-              جميع الحقوق محفوظة —
-              <span class="text-cyan-400 font-medium">
-                Technology that creates opportunities
-              </span>
-            </p>
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
 
-            <div class="flex items-center gap-6 text-slate-400">
-              <!-- Privacy & Terms -->
-              <span class="text-slate-500">
-                الخصوصية والشروط
-              </span>
-
-              <span class="w-1 h-1 rounded-full bg-slate-700"></span>
-
-              <!-- Technical Support -->
-              <a href="contact.html" class="hover:text-cyan-400 transition-colors">
-                الدعم التقني
-              </a>
-            </div>
+            متاحون حالياً لاستقبال مشاريع جديدة
           </div>
         </div>
-      </footer>
 
-      <!-- Floating Sticky WhatsApp Action Button -->
-      <div class="fixed bottom-6 left-6 z-50">
-        <a href="https://wa.me/201501795004?text=%D8%A3%D9%87%D9%84%D8%A3%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20Forascom%20%F0%9F%90%8B"
-          target="_blank"
-          class="group flex items-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs p-3.5 rounded-full shadow-2xl transition-all duration-500 ease-in-out hover:px-5">
-          <div class="relative flex items-center justify-center">
-            <span class="absolute -top-1 -right-1 flex h-3 w-3">
-              <span
-                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+        <!-- ===================================================
+           COLUMN 2: MAIN NAVIGATION
+           =================================================== -->
+        <div class="lg:col-span-3 space-y-4">
+          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
+            الروابط الرئيسية
+          </h4>
+
+          <ul class="space-y-2.5 text-sm">
+            <li>
+              <a href="index.html" class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
+                الرئيسية
+              </a>
+            </li>
+
+            <li>
+              <a href="about.html" class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
+                عن فرصكم
+              </a>
+            </li>
+
+            <li>
+              <a href="services.html"
+                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
+                خدماتنا
+              </a>
+            </li>
+
+            <li>
+              <a href="portfolio.html"
+                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
+                معرض الأعمال
+              </a>
+            </li>
+
+            <li>
+              <a href="contact.html" class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
+                تواصل معنا
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ===================================================
+           COLUMN 3: SERVICES & SOLUTIONS
+           =================================================== -->
+        <div class="lg:col-span-2 space-y-4">
+          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
+            خدماتنا
+          </h4>
+
+          <ul class="space-y-2.5 text-sm">
+            <!-- Web Development -->
+            <li>
+              <a href="portfolio.html?category=web-development"
+                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
+                تطوير المواقع
+              </a>
+            </li>
+
+            <!-- WordPress -->
+            <li>
+              <a href="portfolio.html?category=wordpress"
+                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
+                مواقع WordPress
+              </a>
+            </li>
+
+            <!-- AI -->
+            <li>
+              <a href="portfolio.html?category=web-development"
+                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
+                حلول الذكاء الاصطناعي
+              </a>
+            </li>
+
+            <!-- Automation -->
+            <li>
+              <a href="portfolio.html?category=Automation-BussinessSolution"
+                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
+                الأتمتة والعمليات الذكية
+              </a>
+            </li>
+
+            <!-- Power Platform -->
+            <li>
+              <a href="portfolio.html?category=Automation-BussinessSolution"
+                class="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 group">
+                <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
+                  ◀
+                </span>
+                حلول Power Platform
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ===================================================
+           COLUMN 4: CONTACT & SOCIALS
+           =================================================== -->
+        <div class="lg:col-span-3 space-y-4">
+          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
+            التواصل المباشر
+          </h4>
+
+          <ul class="space-y-3 text-sm">
+            <!-- Email -->
+            <li>
+              <a href="mailto:forascomteam@gmail.com"
+                class="inline-flex items-center gap-3 hover:text-cyan-400 transition-colors"
+                aria-label="راسلنا عبر البريد الإلكتروني">
+                <span class="material-symbols-outlined text-cyan-400 text-lg">
+                  mail
+                </span>
+
+                <span>forascomteam@gmail.com</span>
+              </a>
+            </li>
+
+
+          </ul>
+
+
+          <div class="pt-2">
+            <span class="block text-xs font-semibold text-slate-400 mb-3">
+              تواجدنا الرقمي:
             </span>
-            <svg class="w-6 h-6 fill-current shrink-0" viewBox="0 0 24 24">
-              <path
-                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
-            </svg>
+
+            <div class="flex items-center gap-3">
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/company/forascom/" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-cyan-950/40 transition-all hover:-translate-y-1">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.75a1.49 1.49 0 1 0 0 2.98 1.49 1.49 0 0 0 0-2.98z" />
+                </svg>
+              </a>
+
+              <!-- Facebook -->
+              <a href="https://www.facebook.com/profile.php?id=61592914277326" target="_blank" rel="noopener noreferrer"
+                aria-label="Facebook"
+                class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-cyan-950/40 transition-all hover:-translate-y-1">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H7.5v-3H10V9.5C10 7.01 11.49 5.65 13.75 5.65c1.08 0 2.2.19 2.2.19v2.42h-1.24c-1.23 0-1.61.77-1.61 1.56V12h2.73l-.44 3h-2.29v6.8c4.56-.93 8-4.96 8-9.8z" />
+                </svg>
+              </a>
+
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/foras_com/" target="_blank" rel="noopener noreferrer"
+                aria-label="Instagram"
+                class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 hover:bg-cyan-950/40 transition-all hover:-translate-y-1">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.79 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+              </a>
+
+              <!-- WhatsApp Direct -->
+              <a href="https://wa.me/201501795004" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+                class="w-9 h-9 rounded-xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-emerald-400 hover:border-emerald-500/40 hover:bg-emerald-950/40 transition-all hover:-translate-y-1">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                </svg>
+              </a>
+            </div>
           </div>
-          <span
-            class="max-w-0 opacity-0 overflow-hidden whitespace-nowrap transition-all duration-500 ease-in-out group-hover:max-w-xs group-hover:opacity-100 group-hover:mr-2.5">
-            تحدث مع مهندس Forascom الآن 💬
-          </span>
-        </a>
+
+
+        </div>
       </div>
 
-      <!-- Back To Top Button -->
-      <button id="back-to-top" aria-label="العودة إلى الأعلى"
-        class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-white text-navy border border-slate-200 shadow-xl flex items-center justify-center hover:bg-navy hover:text-white hover:-translate-y-1 transition-all">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 15l7-7 7 7" />
-        </svg>
-      </button>
+      <!-- =====================================================
+         BOTTOM BAR
+         ===================================================== -->
+      <div
+        class="pt-8 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <p class="text-center md:text-right">
+          © <span id="footer-year">2026</span>
+          <strong class="text-slate-200">Forascom</strong>.
+          جميع الحقوق محفوظة —
+          <span class="text-cyan-400 font-medium">
+            Technology that creates opportunities
+          </span>
+        </p>
 
-      <!-- App JavaScript Modules -->
-      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-      <script src="assets/js/orbit.js"></script>
-      <script src="assets/js/portfolio.js"></script>
-      <script src="assets/js/main.js"></script>
-      <script src="assets/js/services.js"></script>
+        <div class="flex items-center gap-6 text-slate-400">
+          <!-- Privacy & Terms -->
+          <span class="text-slate-500">
+            الخصوصية والشروط
+          </span>
+
+          <span class="w-1 h-1 rounded-full bg-slate-700"></span>
+
+          <!-- Technical Support -->
+          <a href="contact.html" class="hover:text-cyan-400 transition-colors">
+            الدعم التقني
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Sticky WhatsApp Action Button -->
+  <div class="fixed bottom-6 left-6 z-50">
+    <a href="https://wa.me/201501795004?text=%D8%A3%D9%87%D9%84%D8%A3%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20Forascom%20%F0%9F%90%8B"
+      target="_blank"
+      class="group flex items-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs p-3.5 rounded-full shadow-2xl transition-all duration-500 ease-in-out hover:px-5">
+      <div class="relative flex items-center justify-center">
+        <span class="absolute -top-1 -right-1 flex h-3 w-3">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+        </span>
+        <svg class="w-6 h-6 fill-current shrink-0" viewBox="0 0 24 24">
+          <path
+            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+        </svg>
+      </div>
+      <span
+        class="max-w-0 opacity-0 overflow-hidden whitespace-nowrap transition-all duration-500 ease-in-out group-hover:max-w-xs group-hover:opacity-100 group-hover:mr-2.5">
+        تحدث مع مهندس Forascom الآن 💬
+      </span>
+    </a>
+  </div>
+
+  <!-- Back To Top Button -->
+  <button id="back-to-top" aria-label="العودة إلى الأعلى"
+    class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-white text-navy border border-slate-200 shadow-xl flex items-center justify-center hover:bg-navy hover:text-white hover:-translate-y-1 transition-all">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
+
+  <!-- App JavaScript Modules -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="assets/js/orbit.js"></script>
+  <script src="assets/js/portfolio.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/services.js"></script>
 </body>
 
 </html>

@@ -277,7 +277,7 @@
   font-weight: 700;
 }
 
-.contact-page .contact-field label > span[aria-hidden="true"] {
+.contact-page .contact-field label>span[aria-hidden="true"] {
   color: #22d3ee;
 }
 

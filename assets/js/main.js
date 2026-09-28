@@ -209,13 +209,13 @@ function bootForascom() {
 function selectJourneyStep(stepIndex) {
   const totalSteps = 6;
   const clampedStep = Math.max(1, Math.min(totalSteps, parseInt(stepIndex, 10)));
-  
+
   // 1. Update Milestone Tabs
   const milestoneBtns = document.querySelectorAll(".journey-milestone-btn");
   milestoneBtns.forEach((btn) => {
     const idx = parseInt(btn.getAttribute("data-step-idx"), 10);
     btn.classList.remove("is-active", "is-completed");
-    
+
     if (idx === clampedStep) {
       btn.classList.add("is-active");
       btn.setAttribute("aria-selected", "true");

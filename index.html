@@ -33,7 +33,11 @@
     </script>
 
   <!-- Tailwind CSS via CDN with Custom Palette Config -->
-  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -44,6 +48,20 @@
             "dark-blue": "#002442",
             "blue-depth": "#00345A",
             cyan: "#06B6D4",
+            cyan: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              300: '#67e8f9',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              700: '#0e7490',
+              800: '#155e75',
+              900: '#164e63',
+              950: '#083344',
+              DEFAULT: '#06B6D4',
+            },
             "cyan-bright": "#22D3EE",
             "blue-soft": "#38BDF8",
             "text-primary": "#F8FAFC",
@@ -78,6 +96,7 @@
 
   <!-- Custom Stylesheets -->
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/navbar.css" />
   <link rel="stylesheet" href="assets/css/index.css" />
 </head>
 
@@ -106,12 +125,9 @@
         <a href="contact.html" class="nav-link hover:text-cyan-bright transition-colors">تواصل معنا</a>
       </nav>
 
-
-
-
-
       <!-- Desktop CTA & Mobile Toggle -->
       <div class="flex items-center gap-4 shrink-0">
+
         <button id="mobile-menu-btn"
           class="lg:hidden text-text-primary p-2 rounded-lg hover:bg-white/5 transition-colors"
           style="background: rgba(56, 189, 248, 0.1)" aria-label="القائمة">
@@ -120,7 +136,6 @@
           </svg>
         </button>
       </div>
-    </div>
     </div>
 
     <!-- Mobile Dropdown Menu -->
@@ -1231,7 +1246,6 @@
       </div>
     </div>
   </footer>
-
 
 
   <!-- Floating Sticky WhatsApp Action Button (Expand on Hover) -->

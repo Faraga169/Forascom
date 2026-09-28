@@ -10,7 +10,10 @@
   <meta property="og:type" content="website" />
   <title>تواصل معنا | Forascom — ابدأ مشروعك التقني</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -21,6 +24,20 @@
             "dark-blue": "#002442",
             "blue-depth": "#00345A",
             cyan: "#06B6D4",
+            cyan: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              300: '#67e8f9',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              700: '#0e7490',
+              800: '#155e75',
+              900: '#164e63',
+              950: '#083344',
+              DEFAULT: '#06B6D4',
+            },
             "cyan-bright": "#22D3EE",
             "blue-soft": "#38BDF8",
             "text-primary": "#F8FAFC",
@@ -42,6 +59,7 @@
     href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/navbar.css" />
   <link rel="stylesheet" href="assets/css/contact.css" />
 </head>
 
@@ -52,13 +70,15 @@
        HEADER & NAVIGATION BAR (MULTI-PAGE NAVIGATION)
        ========================================================================== -->
   <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b" style="border-color: rgba(56, 189, 248, 0.12)">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+    <div class="nav-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      <!-- Logo -->
       <a href="index.html" class="flex items-center gap-3 group shrink-0">
         <img src="assets/images/Logo.png" alt="Forascom — فرصكم"
-          class="h-10 sm:h-11 w-auto object-contain hover:scale-105 transition-transform" />
+          class="h-10 sm:h-12 w-auto object-contain hover:scale-105 transition-transform" />
       </a>
 
-      <nav class="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-5 xl:gap-7 font-semibold text-sm">
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center justify-center gap-5 xl:gap-8 font-semibold text-sm flex-1 mx-4">
         <a href="index.html" class="nav-link hover:text-cyan-bright transition-colors">الرئيسية</a>
         <a href="about.html" class="nav-link hover:text-cyan-bright transition-colors">عن فرصكم</a>
         <a href="services.html" class="nav-link hover:text-cyan-bright transition-colors">خدماتنا</a>
@@ -67,8 +87,11 @@
           class="nav-link nav-active hover:text-cyan-bright transition-colors">تواصل معنا</a>
       </nav>
 
-      <div class="flex items-center gap-3 shrink-0">
-        <button id="mobile-menu-btn" class="lg:hidden text-text-primary p-2 rounded-lg"
+      <!-- Desktop CTA & Mobile Toggle -->
+      <div class="flex items-center gap-4 shrink-0">
+
+        <button id="mobile-menu-btn"
+          class="lg:hidden text-text-primary p-2 rounded-lg hover:bg-white/5 transition-colors"
           style="background: rgba(56, 189, 248, 0.1)" aria-label="القائمة">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -77,8 +100,9 @@
       </div>
     </div>
 
+    <!-- Mobile Dropdown Menu -->
     <div id="mobile-menu-container"
-      class="hidden lg:hidden bg-navy-secondary border-b px-4 pt-2 pb-6 space-y-3 font-semibold text-text-secondary"
+      class="hidden lg:hidden bg-navy-secondary border-b px-4 pt-2 pb-6 space-y-3 font-semibold text-text-secondary max-h-[calc(100vh-5rem)] overflow-y-auto"
       style="border-color: rgba(56, 189, 248, 0.12)">
       <a href="index.html" class="block py-2 border-b hover:text-text-primary"
         style="border-color: rgba(56, 189, 248, 0.12)">الرئيسية</a>

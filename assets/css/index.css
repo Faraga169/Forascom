@@ -69,16 +69,12 @@
     linear-gradient(rgba(25, 169, 229, 0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(25, 169, 229, 0.08) 1px, transparent 1px);
   background-size: 46px 46px;
-  -webkit-mask-image: radial-gradient(
-    ellipse at center,
-    rgba(0, 0, 0, 0.85),
-    transparent 72%
-  );
-  mask-image: radial-gradient(
-    ellipse at center,
-    rgba(0, 0, 0, 0.85),
-    transparent 72%
-  );
+  -webkit-mask-image: radial-gradient(ellipse at center,
+      rgba(0, 0, 0, 0.85),
+      transparent 72%);
+  mask-image: radial-gradient(ellipse at center,
+      rgba(0, 0, 0, 0.85),
+      transparent 72%);
 }
 
 /* =========================================================
@@ -90,12 +86,12 @@
    so all 5 cards end up exactly the same height, without stretching or
    distorting their inner content (content stays top-aligned, spacing intact).
    The step dot is absolutely positioned, so the card is the last in-flow child. */
-#philosophy .reveal-group > * {
+#philosophy .reveal-group>* {
   display: flex;
   flex-direction: column;
 }
 
-#philosophy .reveal-group > * > div:last-child {
+#philosophy .reveal-group>*>div:last-child {
   flex: 1 1 auto;
 }
 
@@ -112,10 +108,12 @@ html {
 
 /* ---- Extra-small phones (320px–374px) ---- */
 @media (max-width: 374px) {
+
   /* Hero */
   .hero-image {
     transform: scale(1);
   }
+
   .hero-image-area {
     overflow: hidden;
   }
@@ -145,10 +143,12 @@ html {
 
 /* ---- Small phones (375px–639px) ---- */
 @media (max-width: 639px) {
+
   /* Scale down the hero image for mobile — avoids horizontal bleed */
   .hero-image {
     transform: scale(1);
   }
+
   .hero-image-area {
     overflow: hidden;
     margin-top: 1.5rem;
@@ -185,17 +185,18 @@ html {
 
 /* ---- Tablet portrait (640px–1023px) ---- */
 @media (min-width: 640px) and (max-width: 1023px) {
+
   /* Hero image safely scaled since HTML wrapper constraints width */
   .hero-image {
     display: block;
     width: 100%;
     height: auto;
     max-width: 100%;
-    transform: scale(1.05); 
+    transform: scale(1.05);
   }
 
   .hero-image-area {
-    overflow: visible; 
+    overflow: visible;
     width: 100%;
     max-width: 100%;
   }
@@ -211,6 +212,7 @@ html {
   .hero-image {
     transform: scale(1.2);
   }
+
   .hero-image-area {
     overflow: visible;
   }
@@ -218,8 +220,10 @@ html {
 
 /* ---- Large desktop cap (1920px+) ---- */
 @media (min-width: 1920px) {
+
   /* Prevent ultra-wide content stretch */
   .max-w-7xl {
-    max-width: 80rem; /* keeps current 1280px cap */
+    max-width: 80rem;
+    /* keeps current 1280px cap */
   }
 }

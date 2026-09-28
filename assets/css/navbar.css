@@ -1,0 +1,123 @@
+/* ==========================================================================
+   FORASCOM - GLOBAL UNIFIED NAVBAR STYLES
+   Single Source of Truth: index.html
+   ========================================================================== */
+
+/* 1. Header Container */
+.glass-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000 !important;
+  isolation: isolate;
+  background: rgba(0, 29, 51, 0.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.12);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
+  transition:
+    box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.4s ease;
+}
+
+.glass-nav.nav-scrolled {
+  background: rgba(0, 29, 51, 0.9) !important;
+  box-shadow: 0 10px 35px -14px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* 2. Inner Container */
+.glass-nav .nav-inner {
+  position: relative;
+  z-index: 1001 !important;
+  transition: height 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.glass-nav.nav-scrolled .nav-inner {
+  height: 64px;
+}
+
+@media (max-width: 640px) {
+  .glass-nav.nav-scrolled .nav-inner {
+    height: 60px;
+  }
+}
+
+/* 3. Desktop Navigation Links */
+.glass-nav .nav-link {
+  position: relative;
+  color: #cbd5e1;
+  font-family: "Cairo", sans-serif;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.glass-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #06b6d4, #38bdf8);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.glass-nav .nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.glass-nav .nav-link:hover {
+  color: #f8fafc;
+}
+
+/* Active current page state */
+.glass-nav .nav-link.nav-active {
+  color: #38bdf8 !important;
+}
+
+.glass-nav .nav-link.nav-active::after {
+  transform: scaleX(1) !important;
+}
+
+/* 4. Consultation CTA Button (استشارة مجانية) */
+.glass-nav .btn-cyan,
+.btn-cyan {
+  background: linear-gradient(135deg, #0284c7, #06b6d4) !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 30px rgba(6, 182, 212, 0.18) !important;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  border: none !important;
+  text-decoration: none !important;
+  white-space: nowrap;
+}
+
+.glass-nav .btn-cyan:hover,
+.btn-cyan:hover {
+  box-shadow: 0 12px 35px rgba(6, 182, 212, 0.25) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* 5. Mobile Menu Drawer */
+#mobile-menu-container {
+  background-color: #00152a !important;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.12) !important;
+}
+
+@keyframes drawer-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.drawer-enter {
+  animation: drawer-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}

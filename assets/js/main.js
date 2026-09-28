@@ -257,7 +257,7 @@ function initClientJourneyTimeline() {
   const journeySection = document.getElementById("how-we-work");
   if (!journeySection) return;
 
-  selectJourneyStep(1);
+  selectJourneyStep(3);
 
   // Enable keyboard arrow navigation across timeline milestones
   document.addEventListener("keydown", (e) => {

@@ -9007,6 +9007,256 @@ body>header.glass-nav {
   }
 }
 
+/* Keep English About copy and artwork balanced independently of RTL composition. */
+html[lang="en"] body .about-hero-section .about-hero-container .grid>div {
+  max-width: 760px !important;
+  text-align: left;
+}
+
+html[lang="en"] body .about-hero-section h1.n-hero-title {
+  max-width: 760px !important;
+  font-family: var(--font-latin);
+  font-size: clamp(2.5rem, 3.8vw, 3.5rem) !important;
+  line-height: 1.14 !important;
+  letter-spacing: -0.035em !important;
+  text-wrap: balance;
+}
+
+html[lang="en"] body .about-hero-section .n-hero-subtitle {
+  max-width: 570px !important;
+  margin-top: 1rem !important;
+  font-family: var(--font-latin);
+  font-size: clamp(1rem, 1.45vw, 1.15rem) !important;
+  line-height: 1.7 !important;
+}
+
+html[lang="en"] body .about-hero-section .about-hero-pills {
+  direction: ltr;
+  justify-content: flex-start;
+  width: min(100%, 700px) !important;
+  margin-top: 1rem;
+}
+
+html[lang="en"] body .about-hero-section .about-hero-pills span {
+  font-family: var(--font-latin);
+  letter-spacing: normal;
+}
+
+html[lang="en"] body #story .who-we-are-header,
+html[lang="en"] body #story .who-we-are-title,
+html[lang="en"] body #story .who-we-are-description {
+  direction: ltr;
+  text-align: left;
+}
+
+html[lang="ar"] #how-we-work .journey-milestone-en {
+  display: none;
+}
+
+html[lang="en"] #how-we-work .journey-milestone-ar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  html[lang="en"] body .about-hero-section .about-hero-container .grid>div {
+    text-align: left;
+  }
+
+  html[lang="en"] body .about-hero-section h1.n-hero-title {
+    font-size: clamp(1.8rem, 8.5vw, 3.35rem) !important;
+    line-height: 1.18 !important;
+    letter-spacing: -0.025em !important;
+    text-wrap: balance;
+  }
+
+  html[lang="en"] body .about-hero-section .n-hero-subtitle {
+    margin-inline: auto;
+  }
+
+  html[lang="en"] body .about-hero-section .about-hero-pills {
+    justify-content: flex-start !important;
+    margin-inline: auto;
+  }
+}
+
+@media (min-width: 769px) {
+  html[lang="en"] body .about-hero-section {
+    min-height: max(30rem, 100svh) !important;
+  }
+
+  html[lang="en"] body .about-hero-section .n-hero-bg-overlay {
+    background:
+      radial-gradient(circle at 72% 48%, rgba(0, 194, 255, 0.14), transparent 44%),
+      linear-gradient(90deg, rgba(10, 17, 40, 0.72), rgba(10, 17, 40, 0.05));
+  }
+
+  html[lang="en"] body .about-hero-section .about-hero-container {
+    min-height: max(30rem, 100svh) !important;
+    box-sizing: border-box;
+    padding-block: 5rem 4rem !important;
+  }
+
+  html[lang="en"] body .about-hero-section .about-hero-container>.grid {
+    display: block !important;
+  }
+
+  html[lang="en"] body .about-hero-section .about-hero-container .grid>div {
+    width: min(100%, 50rem);
+    max-width: 50rem !important;
+    margin-inline-start: 0;
+    margin-inline-end: auto;
+    text-align: left;
+  }
+
+  html[lang="en"] body .about-hero-section .about-hero-bg-visual-wrapper {
+    left: auto !important;
+    right: 28px !important;
+    top: 50% !important;
+    width: min(85vw, 1050px);
+    max-width: none;
+    transform: translateY(-50%) !important;
+  }
+
+  html[lang="en"] body .about-hero-section .about-hero-3d-img {
+    width: 100% !important;
+    max-width: 100% !important;
+    opacity: 0.96 !important;
+  }
+
+  html[lang="en"] body .about-hero-section h1.n-hero-title {
+    max-width: 48rem !important;
+    font-size: clamp(2rem, 3.05vw, 3.25rem) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.035em !important;
+    text-wrap: balance;
+  }
+
+  html[lang="en"] body .about-hero-section .n-hero-subtitle {
+    max-width: 24rem !important;
+    margin-top: 0.75rem !important;
+    font-size: clamp(0.78rem, 1.05vw, 1rem) !important;
+    line-height: 1.5 !important;
+  }
+
+  html[lang="en"] body .about-hero-section .about-hero-pills {
+    width: min(100%, 28rem) !important;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+  }
+
+  html[lang="en"] body .about-hero-section .about-hero-pills span {
+    padding: 0.35rem 0.55rem;
+    font-size: 0.62rem;
+  }
+}
+
+@media (min-width: 1101px) {
+  html[lang="en"] body .about-hero-section .about-hero-container .grid>div {
+    width: min(100%, 50rem);
+    max-width: 50rem !important;
+  }
+
+  html[lang="en"] body .about-hero-section h1.n-hero-title {
+    max-width: 48rem !important;
+    font-size: clamp(2rem, 2.3vw, 2.75rem) !important;
+    line-height: 1.12 !important;
+  }
+
+  html[lang="en"] body .about-hero-section .n-hero-subtitle {
+    max-width: 35rem !important;
+    font-size: clamp(0.85rem, 0.95vw, 0.95rem) !important;
+    line-height: 1.6 !important;
+  }
+
+}
+
+.about-hero-learn-more {
+  display: none;
+}
+
+html[lang="en"] body .about-hero-section .about-hero-learn-more {
+  display: inline-flex;
+  width: auto;
+  min-height: 0;
+  margin-top: 0.8rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-family: var(--font-latin);
+  font-size: 0.72rem;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  html[lang="en"] body .about-hero-section .about-hero-bg-visual-wrapper {
+    top: 68% !important;
+    left: 50% !important;
+    right: auto !important;
+    width: min(100vw, max(90vw, 360px), 700px);
+    transform: translate(calc(-41.75% - clamp(29px, 8vw, 60px)), -50%) !important;
+  }
+
+  html[lang="en"] body .about-hero-section .about-hero-3d-img {
+    opacity: 0.25 !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  html[lang="en"] body .about-hero-section,
+  html[lang="en"] body .about-hero-section .about-hero-container {
+    min-height: 660px !important;
+  }
+
+  html[lang="en"] body .about-hero-section .about-hero-container {
+    padding: 7rem 1.5rem 4.5rem !important;
+  }
+
+  html[lang="en"] body .about-hero-section .about-hero-container .grid>div {
+    width: min(100%, 700px);
+    max-width: 700px !important;
+    margin-inline-start: 0;
+    margin-inline-end: auto;
+  }
+
+  html[lang="en"] body .about-hero-section .about-hero-bg-visual-wrapper {
+    top: 58% !important;
+    left: 50% !important;
+    right: auto !important;
+    width: min(86vw, 760px);
+    transform: translate(calc(-41.75% - 16px), -50%) !important;
+  }
+
+  html[lang="en"] body .about-hero-section .about-hero-3d-img {
+    opacity: 0.27 !important;
+  }
+}
+
+@media (min-width: 900px) {
+  html[lang="en"] body #story .who-we-are-inner {
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  }
+
+  html[lang="en"] body #story .who-we-are-left {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  html[lang="en"] body #story .who-we-are-right {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: left;
+  }
+
+  html[lang="en"] body #story .who-we-are-header {
+    width: 100%;
+    max-width: 800px;
+    margin-inline: 0;
+  }
+}
+
+html[lang="en"] body #story .who-we-are-header {
+  text-align: left;
+}
+
 /* About-page actions: consistent touch targets without stretching every CTA. */
 .who-we-are-cta,
 .n-build-solution-cta,

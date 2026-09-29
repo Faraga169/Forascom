@@ -979,8 +979,13 @@ function renderProjectDetails(projectKey) {
 
   // BEFORE CARD
   const outcomeBeforeBadge = document.getElementById("outcome-before-badge");
-  if (outcomeBeforeBadge && trans.before?.badge)
-    outcomeBeforeBadge.textContent = trans.before.badge;
+  if (outcomeBeforeBadge) {
+    outcomeBeforeBadge.textContent =
+      window.forascomI18n?.t(
+        "projectDetails.sections.beforeBadge",
+        trans.before?.badge || "",
+      ) || trans.before?.badge || "";
+  }
   const outcomeBeforeTitle = document.getElementById("outcome-before-title");
   if (outcomeBeforeTitle && trans.before?.title)
     outcomeBeforeTitle.textContent = trans.before.title;
@@ -1001,8 +1006,13 @@ function renderProjectDetails(projectKey) {
 
   // AFTER CARD
   const outcomeAfterBadge = document.getElementById("outcome-after-badge");
-  if (outcomeAfterBadge && trans.after?.badge)
-    outcomeAfterBadge.textContent = trans.after.badge;
+  if (outcomeAfterBadge) {
+    outcomeAfterBadge.textContent =
+      window.forascomI18n?.t(
+        "projectDetails.sections.afterBadge",
+        trans.after?.badge || "",
+      ) || trans.after?.badge || "";
+  }
   const outcomeAfterTitle = document.getElementById("outcome-after-title");
   if (outcomeAfterTitle && trans.after?.title)
     outcomeAfterTitle.textContent = trans.after.title;

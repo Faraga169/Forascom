@@ -673,10 +673,10 @@
     <section class="max-w-7xl mx-auto px-8 py-14" id="impact">
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
         <div>
-          <h2 class="text-3xl lg:text-4xl font-black text-white mt-1">
+          <h2 class="text-3xl lg:text-4xl font-black text-white mt-1" data-i18n="portfolio.impact.title">
             أثر حقيقي ملموس على أرض الواقع
           </h2>
-          <p class="text-on-surface-variant text-base mt-2">
+          <p class="text-on-surface-variant text-base mt-2" data-i18n="portfolio.impact.subtitle">
             أرقام وإجراءات فعلية تُطبق في بيئات عمل حقيقية كل يوم، وموثقة بالنتائج
           </p>
         </div>
@@ -738,7 +738,7 @@
             <div class="py-4 my-1">
               <span
                 class="impact-counter text-5xl lg:text-6xl font-black text-primary font-mono tracking-tight block transition-all duration-500 impact-counter-glow-primary"
-                data-target="120" data-prefix="+" data-suffix=" س" data-decimals="0">+120 س</span>
+                data-target="120" data-prefix="+" data-suffix=" س" data-suffix-key="portfolio.impact.metric2Suffix" data-decimals="0">+120 س</span>
               <span class="text-sm font-semibold text-white mt-2 block" data-i18n="portfolio.impact.metric2Value">وفر شهري مباشر للفريق</span>
             </div>
             <p class="text-sm text-on-surface-variant leading-relaxed mt-2" data-i18n="portfolio.impact.metric2Desc">
@@ -1102,7 +1102,7 @@
           © <span id="footer-year">2026</span>
           <strong class="text-slate-200">Forascom</strong>.
           <span data-i18n="common.footer.copyright">جميع الحقوق محفوظة</span> —
-          <span class="text-cyan-400 font-medium">
+          <span class="text-cyan-400 font-medium" data-i18n="common.footer.slogan">
             Technology that creates opportunities
           </span>
         </p>
@@ -1275,6 +1275,23 @@
       const impactCards = impactSection.querySelectorAll(".impact-card");
       const impactCounters =
         impactSection.querySelectorAll(".impact-counter");
+      function localizeCounterSuffixes() {
+        impactCounters.forEach((el) => {
+          const key = el.dataset.suffixKey;
+          if (!key) return;
+          const suffix = window.forascomI18n?.t(key, el.dataset.suffix || "") ?? "";
+          const previousSuffix = el.dataset.suffix || "";
+          const currentValue = el.textContent || "";
+          if (previousSuffix && currentValue.endsWith(previousSuffix)) {
+            el.textContent =
+              currentValue.slice(0, -previousSuffix.length) + suffix;
+          }
+          el.dataset.suffix = suffix;
+        });
+      }
+
+      localizeCounterSuffixes();
+      window.addEventListener("forascom:langchange", localizeCounterSuffixes);
       const prefersReducedMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)",
       ).matches;
@@ -1282,12 +1299,11 @@
       function setFinalValue(el) {
         const target = parseFloat(el.dataset.target || "0");
         const prefix = el.dataset.prefix || "";
-        const suffix = el.dataset.suffix || "";
         const decimals = parseInt(el.dataset.decimals || "0", 10);
         el.textContent =
           prefix +
           (decimals > 0 ? target.toFixed(decimals) : Math.round(target)) +
-          suffix;
+          (el.dataset.suffix || "");
         el.style.setProperty("--glow-ratio", "1");
       }
 
@@ -1317,7 +1333,6 @@
         setTimeout(() => {
           const target = parseFloat(el.dataset.target || "0");
           const prefix = el.dataset.prefix || "";
-          const suffix = el.dataset.suffix || "";
           const decimals = parseInt(el.dataset.decimals || "0", 10);
           const duration = 1400; // 1.4s smooth duration
           let startTime = null;
@@ -1338,7 +1353,7 @@
               (decimals > 0
                 ? currentVal.toFixed(decimals)
                 : Math.round(currentVal)) +
-              suffix;
+              (el.dataset.suffix || "");
             el.style.setProperty("--glow-ratio", eased.toFixed(3));
 
             if (progress < 1) {

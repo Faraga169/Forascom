@@ -95,6 +95,9 @@ window.forascomTranslations.en = {
       badge: "Integrated Technology Stack",
       title: "World-class technologies converging into unified digital solutions",
       subtitle: "Leveraging state-of-the-art frameworks, cloud infrastructures, and AI pipelines to deliver bulletproof software products.",
+      activeLabel: "Active Technology",
+      useCasesLabel: "Use cases:",
+      technologiesLabel: "Technologies used:",
       centerBadge: "Forascom Engineering Core",
       ai: {
         name: "AI & LLM Solutions",
@@ -332,7 +335,7 @@ window.forascomTranslations.en = {
       }
     },
     page: {
-      heroTitleHtml: "<span class=\"block text-white\">We build solutions,</span><span class=\"block\" style=\"color: var(--color-blue-soft)\">and create opportunities.</span>",
+      heroTitleHtml: "We build solutions, <span style=\"color: var(--color-blue-soft)\">and create opportunities.</span>",
       pill1: "Sustainable performance",
       pill2: "Arabic at the core",
       pill3: "Intelligent solutions",
@@ -356,6 +359,7 @@ window.forascomTranslations.en = {
       automationListTitle: "Automation use cases:",
       techLabel: "Technologies:",
       web: {
+        tag: "DIGITAL PRESENCE",
         title: "Need a website or digital platform?",
         subtitle: "Present your business professionally online",
         description: "We build websites and digital platforms that help you present services, reach customers, and provide an experience tailored to your business.",
@@ -366,6 +370,7 @@ window.forascomTranslations.en = {
         noteHtml: "<strong>Ideal for:</strong> companies, manufacturers, growing retailers, and service providers."
       },
       systems: {
+        tag: "BUSINESS SYSTEMS",
         title: "Need a system to manage your business?",
         subtitle: "Turn your work into a system tailored to your needs",
         description: "If your operations rely on scattered spreadsheets or complex manual processes, we can build a custom system that brings your data together and improves team efficiency.",
@@ -376,6 +381,7 @@ window.forascomTranslations.en = {
         noteHtml: "<strong>Organizes:</strong> customers, orders, inventory, employees, operations, and reporting."
       },
       automation: {
+        tag: "WORKFLOW AUTOMATION",
         title: "Turn repetitive tasks into automated workflows",
         subtitle: "Let processes run automatically with less manual effort",
         description: "If your team repeats the same steps or moves data between systems by hand, we automate those processes so work flows reliably without constant intervention.",
@@ -386,6 +392,7 @@ window.forascomTranslations.en = {
         noteHtml: "<strong>Result:</strong> save team time, reduce manual errors, and improve operational speed."
       },
       ai: {
+        tag: "PRACTICAL AI",
         title: "Use AI to improve your team's productivity",
         subtitle: "Get more done with less time and effort",
         description: "We build practical AI solutions for faster information access, document and data management, and customer-service automation.",
@@ -456,6 +463,15 @@ window.forascomTranslations.en = {
       overviewDesc: "We do not provide disconnected tools. We build an integrated technology ecosystem connecting development, automation, data, and AI.",
       visualAria: "A connected digital technology ecosystem",
       techTitle: "An integrated technology stack",
+      techWeb: "WEB",
+      techAutomation: "AUTOMATION",
+      techAi: "AI",
+      responsiveDesign: "Responsive Design",
+      customThemes: "Custom Themes",
+      performance: "Performance",
+      machineLearning: "Machine Learning",
+      automation: "Automation",
+      integrations: "Integrations",
       learnMore: "Explore service"
     },
     hero: {
@@ -567,6 +583,7 @@ window.forascomTranslations.en = {
       metric1Foot: "Production-ready and monitored 24/7",
       metric2Title: "Shorter work cycles",
       metric2Value: "Direct monthly hours saved",
+      metric2Suffix: " hrs",
       metric2Desc: "Administrative approvals, data entry, and invoice matching reduced from days to minutes with fewer manual errors.",
       metric2Foot: "Operational capacity equivalent to additional staff",
       metric3Title: "Products in active use",

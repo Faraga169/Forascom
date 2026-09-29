@@ -117,7 +117,12 @@
     if (lines.length)
       tl.from(lines, { y: "110%", duration: 0.9, stagger: 0.15 }, 0.25);
     if (subtitle)
-      tl.from(subtitle, { opacity: 0, y: 30, duration: 0.85 }, "-=0.4");
+      tl.fromTo(
+        subtitle,
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.85 },
+        "-=0.4",
+      );
     if (pills.length)
       tl.from(
         pills,
@@ -211,6 +216,7 @@
           duration: 0.6,
           stagger: 0.1,
           ease: "power2.out",
+          immediateRender: false,
         });
       if (cards.length) {
         entrance.from(
@@ -221,6 +227,7 @@
             duration: 0.5,
             stagger: 0.12,
             ease: "power2.out",
+            immediateRender: false,
           },
           "-=0.35",
         );
@@ -244,7 +251,13 @@
       if (centerNode) {
         entrance.from(
           centerNode,
-          { scale: 0, opacity: 0, duration: 0.4, ease: "back.out(1.7)" },
+          {
+            scale: 0,
+            opacity: 0,
+            duration: 0.4,
+            ease: "back.out(1.7)",
+            immediateRender: false,
+          },
           "-=0.2",
         );
         gsap.to(centerNode, {

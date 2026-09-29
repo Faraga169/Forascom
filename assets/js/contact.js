@@ -12,6 +12,21 @@
     return window.forascomI18n?.t(key, fallback) || fallback;
   }
 
+  function initDirectWhatsAppLink() {
+    const link = document.querySelector('[data-whatsapp-message-key]');
+    if (!link) return;
+
+    const updateMessage = () => {
+      const messageKey = link.dataset.whatsappMessageKey;
+      if (!messageKey) return;
+      const message = translate(messageKey, '');
+      link.href = `https://wa.me/${FORASCOM_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    };
+
+    updateMessage();
+    window.addEventListener('forascom:langchange', updateMessage);
+  }
+
   function initContactForm() {
     const form = document.getElementById('lead-contact-form');
     if (!form) return;
@@ -152,8 +167,12 @@
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initContactForm);
+    document.addEventListener('DOMContentLoaded', () => {
+      initDirectWhatsAppLink();
+      initContactForm();
+    });
   } else {
+    initDirectWhatsAppLink();
     initContactForm();
   }
 })();

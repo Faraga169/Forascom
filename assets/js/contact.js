@@ -8,6 +8,10 @@
 
   const FORASCOM_WHATSAPP_NUMBER = '201501795004';
 
+  function translate(key, fallback) {
+    return window.forascomI18n?.t(key, fallback) || fallback;
+  }
+
   function initContactForm() {
     const form = document.getElementById('lead-contact-form');
     if (!form) return;
@@ -60,11 +64,13 @@
       const name = nameInput ? nameInput.value.trim() : '';
       const phone = phoneInput ? phoneInput.value.trim() : '';
       const email = emailInput ? emailInput.value.trim() : '';
-      const service = serviceSelect ? serviceSelect.value.trim() : '';
+      const service = serviceSelect
+        ? serviceSelect.selectedOptions[0]?.textContent.trim() || serviceSelect.value.trim()
+        : '';
       const message = messageInput ? messageInput.value.trim() : '';
 
       // Get budget value
-      let budget = 'غير محددة';
+      let budget = translate('contact.whatsapp.unspecifiedBudget', 'Not specified');
 
       if (budgetSelect) {
         if (budgetSelect.value === 'custom') {
@@ -72,14 +78,14 @@
             ? budgetCustomInput.value.trim()
             : '';
 
-          budget = customBudget || 'غير محددة';
+          budget = customBudget || translate('contact.whatsapp.unspecifiedBudget', 'Not specified');
         } else if (budgetSelect.value) {
-          budget = budgetSelect.value;
+          budget = budgetSelect.selectedOptions[0]?.textContent.trim() || budgetSelect.value;
         }
       }
 
       // Get timeline value
-      let timeline = 'غير محدد';
+      let timeline = translate('contact.whatsapp.unspecifiedTimeline', 'Not specified');
 
       if (timelineSelect) {
         if (timelineSelect.value === 'custom') {
@@ -87,19 +93,19 @@
             ? timelineCustomInput.value.trim()
             : '';
 
-          timeline = customTimeline || 'غير محدد';
+          timeline = customTimeline || translate('contact.whatsapp.unspecifiedTimeline', 'Not specified');
         } else if (timelineSelect.value) {
-          timeline = timelineSelect.value;
+          timeline = timelineSelect.selectedOptions[0]?.textContent.trim() || timelineSelect.value;
         }
       }
 
       // Basic client validation
-      if (!name || !phone || !email || !service || !message) {
+      if (!name || !phone || (emailInput && !email) || !service || !message) {
         if (!name && nameInput) {
           nameInput.focus();
         } else if (!phone && phoneInput) {
           phoneInput.focus();
-        } else if (!email && emailInput) {
+        } else if (emailInput && !email) {
           emailInput.focus();
         } else if (!service && serviceSelect) {
           serviceSelect.focus();
@@ -111,30 +117,32 @@
       }
 
       // Build structured WhatsApp lead message
-      const formattedMessage = `🌐 *Forascom Website — New Project Lead*
-
-أهلاً فريق Forascom 👋
-
-وصل طلب مشروع جديد من خلال الموقع.
-
-📋 *بيانات العميل*
-• الاسم: ${name}
-• الهاتف: ${phone}
-• البريد الإلكتروني: ${email}
-
-🛠️ *الخدمة المطلوبة*
-${service}
-
-💰 *الميزانية المتوقعة*
-${budget}
-
-📅 *موعد الإطلاق المتوقع*
-${timeline}
-
-💬 *تفاصيل المشروع*
-${message}
-
-📞 يرجى التواصل مع العميل لمناقشة التفاصيل والخطوات القادمة.`;
+      const formattedMessage = [
+        `🌐 *${translate('contact.whatsapp.title', 'Forascom Website — New Project Lead')}*`,
+        '',
+        `${translate('contact.whatsapp.greeting', 'Hello Forascom team,')} 👋`,
+        '',
+        translate('contact.whatsapp.request', 'A new project request was submitted through the website.'),
+        '',
+        `📋 *${translate('contact.whatsapp.details', 'Client details')}*`,
+        `• ${translate('contact.whatsapp.name', 'Name')}: ${name}`,
+        `• ${translate('contact.whatsapp.phone', 'Phone')}: ${phone}`,
+        ...(email ? [`• ${translate('contact.whatsapp.email', 'Email')}: ${email}`] : []),
+        '',
+        `🛠️ *${translate('contact.whatsapp.service', 'Required service')}*`,
+        service,
+        '',
+        `💰 *${translate('contact.whatsapp.budget', 'Estimated budget')}*`,
+        budget,
+        '',
+        `📅 *${translate('contact.whatsapp.timeline', 'Target launch')}*`,
+        timeline,
+        '',
+        `💬 *${translate('contact.whatsapp.project', 'Project details')}*`,
+        message,
+        '',
+        `📞 ${translate('contact.whatsapp.closing', 'Please contact the client to discuss the details and next steps.')}`,
+      ].join('\n');
 
       const whatsappUrl =
         `https://wa.me/${FORASCOM_WHATSAPP_NUMBER}?text=${encodeURIComponent(formattedMessage)}`;

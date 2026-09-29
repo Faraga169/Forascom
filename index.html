@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forascom — فرصكم | حلول برمجية وتطوير تقني</title>
+  <meta name="description" content="نطوّر البرمجيات وحلول الذكاء الاصطناعي وأتمتة الأعمال لخلق فرص جديدة ونمو مستدام." />
   <!-- OpenGraph & Social Sharing Meta Tags -->
   <meta property="og:title" content="Forascom — فرصكم | حلول برمجية وذكاء اصطناعي نخلق بها الفرص" />
   <meta property="og:description"
@@ -98,6 +100,7 @@
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="stylesheet" href="assets/css/navbar.css" />
   <link rel="stylesheet" href="assets/css/index.css" />
+  <link rel="stylesheet" href="assets/css/i18n.css" />
 </head>
 
 <body class="bg-navy text-text-primary font-arabic antialiased selection:bg-cyan selection:text-white">
@@ -117,20 +120,23 @@
 
       <!-- Desktop Navigation -->
       <nav class="hidden lg:flex items-center justify-center gap-5 xl:gap-8 font-semibold text-sm flex-1 mx-4">
-        <a href="index.html" aria-current="page"
+        <a href="index.html" aria-current="page" data-i18n="common.nav.home"
           class="nav-active nav-link hover:text-cyan-bright transition-colors">الرئيسية</a>
-        <a href="about.html" class="nav-link hover:text-cyan-bright transition-colors">عن فرصكم</a>
-        <a href="services.html" class="nav-link hover:text-cyan-bright transition-colors">خدماتنا</a>
-        <a href="portfolio.html" class="nav-link hover:text-cyan-bright transition-colors">معرض الأعمال</a>
-        <a href="contact.html" class="nav-link hover:text-cyan-bright transition-colors">تواصل معنا</a>
+        <a href="about.html" data-i18n="common.nav.about" class="nav-link hover:text-cyan-bright transition-colors">عن فرصكم</a>
+        <a href="services.html" data-i18n="common.nav.services" class="nav-link hover:text-cyan-bright transition-colors">خدماتنا</a>
+        <a href="portfolio.html" data-i18n="common.nav.portfolio" class="nav-link hover:text-cyan-bright transition-colors">معرض الأعمال</a>
+        <a href="contact.html" data-i18n="common.nav.contact" class="nav-link hover:text-cyan-bright transition-colors">تواصل معنا</a>
       </nav>
 
       <!-- Desktop CTA & Mobile Toggle -->
       <div class="flex items-center gap-4 shrink-0">
-
+        <div class="lang-switcher-pill shrink-0" role="group" data-i18n-aria="common.nav.language" aria-label="اللغة">
+          <button type="button" data-lang-switch="ar" aria-pressed="true">العربية</button>
+          <button type="button" data-lang-switch="en" aria-pressed="false">EN</button>
+        </div>
         <button id="mobile-menu-btn"
           class="lg:hidden text-text-primary p-2 rounded-lg hover:bg-white/5 transition-colors"
-          style="background: rgba(56, 189, 248, 0.1)" aria-label="القائمة">
+          style="background: rgba(56, 189, 248, 0.1)" aria-label="القائمة" data-i18n-aria="common.nav.menuAria">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -142,15 +148,15 @@
     <div id="mobile-menu-container"
       class="hidden lg:hidden bg-navy-secondary border-b px-4 pt-2 pb-6 space-y-3 font-semibold text-text-secondary max-h-[calc(100vh-5rem)] overflow-y-auto"
       style="border-color: rgba(56, 189, 248, 0.12)">
-      <a href="index.html" aria-current="page" class="block py-2 text-cyan font-bold"
+      <a href="index.html" aria-current="page" data-i18n="common.nav.home" class="block py-2 text-cyan font-bold"
         style="border-color: rgba(56, 189, 248, 0.12)">الرئيسية</a>
-      <a href="about.html" class="block py-2 border-b hover:text-text-primary"
+      <a href="about.html" data-i18n="common.nav.about" class="block py-2 border-b hover:text-text-primary"
         style="border-color: rgba(56, 189, 248, 0.12)">عن فرصكم</a>
-      <a href="services.html" class="block py-2 border-b hover:text-text-primary"
+      <a href="services.html" data-i18n="common.nav.services" class="block py-2 border-b hover:text-text-primary"
         style="border-color: rgba(56, 189, 248, 0.12)">خدماتنا</a>
-      <a href="portfolio.html" class="block py-2 border-b hover:text-text-primary"
+      <a href="portfolio.html" data-i18n="common.nav.portfolio" class="block py-2 border-b hover:text-text-primary"
         style="border-color: rgba(56, 189, 248, 0.12)">معرض الأعمال</a>
-      <a href="contact.html" class="block py-2 border-b hover:text-text-primary"
+      <a href="contact.html" data-i18n="common.nav.contact" class="block py-2 border-b hover:text-text-primary"
         style="border-color: rgba(56, 189, 248, 0.12)">تواصل معنا</a>
     </div>
   </header>
@@ -195,19 +201,19 @@
         <div
           class="lg:col-span-7 self-center space-y-6 text-center lg:text-right lg:-translate-x-6 xl:-translate-x-10 2xl:-translate-x-16">
           <!-- Badge -->
-          <div class="badge hero-enter" style="--d: 0.05s">
+          <div class="badge hero-enter" style="--d: 0.05s" data-i18n="home.hero.badge">
             فرصكم | Technology That Creates Opportunities
           </div>
 
           <!-- Headline -->
           <h1
-            class="hero-enter text-[clamp(1.65rem,5.5vw,2.25rem)] sm:text-5xl lg:text-6xl font-bold text-text-primary leading-[1.15]"
+            class="hero-enter text-[clamp(1.65rem,5.5vw,2.25rem)] sm:text-5xl lg:text-6xl font-bold text-text-primary leading-[1.15]" data-i18n="home.hero.title"
             style="--d: 0.15s">
             نحوّل الأفكار إلى برمجيات، أنظمة ذكية ومُنتجات رقمية عالية الجودة.
           </h1>
 
           <!-- Subtitle -->
-          <p class="hero-enter text-base sm:text-lg text-text-secondary font-medium leading-relaxed max-w-2xl"
+          <p class="hero-enter text-base sm:text-lg text-text-secondary font-medium leading-relaxed max-w-2xl" data-i18n="home.hero.subtitle"
             style="--d: 0.25s">
             لسنا مجرد منفذين للمشاريع، بل فريق عربي متمكن يجمع بين الدقة
             الهندسية ورؤية الأعمال؛ لنبني معاً حلولاً تقنية مستدامة وقابلة
@@ -220,7 +226,7 @@
             style="--d: 0.35s">
             <a href="contact.html"
               class="btn-cyan font-bold text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl shadow-xl flex items-center justify-center gap-3">
-              <span>ابدأ استشارتك التقنية</span>
+              <span data-i18n="home.hero.ctaPrimary">ابدأ استشارتك التقنية</span>
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
@@ -233,7 +239,7 @@
                   color: #f8fafc;
                   backdrop-filter: blur(18px);
                 ">
-              <span>استكشف مشاريعنا</span>
+              <span data-i18n="home.hero.ctaSecondary">استكشف مشاريعنا</span>
             </a>
           </div>
 
@@ -245,19 +251,19 @@
               <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
-              <span>Arabic at the Core</span>
+              <span data-i18n="home.hero.trust1">Arabic at the Core</span>
             </div>
             <div class="flex items-center gap-2">
               <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
-              <span>Global Engineering Standard</span>
+              <span data-i18n="home.hero.trust2">Global Engineering Standard</span>
             </div>
             <div class="flex items-center gap-2">
               <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
-              <span>Reusable SaaS Architecture</span>
+              <span data-i18n="home.hero.trust3">Reusable SaaS Architecture</span>
             </div>
           </div>
         </div>
@@ -335,10 +341,10 @@
                     d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 class="forascom-about-card-title">
+              <h3 class="forascom-about-card-title" data-i18n="home.about.card1Title">
                 حلول تقنية لا مجرد كود
               </h3>
-              <p class="forascom-about-card-copy">
+              <p class="forascom-about-card-copy" data-i18n="home.about.card1Desc">
                 نحلل المشكلة، ونحدد هدفك التجاري، ثم نبتكر أسهل وأكفأ حل
                 برمجي قابل للتوسع والنمو.
               </p>
@@ -357,10 +363,10 @@
                     d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
               </div>
-              <h3 class="forascom-about-card-title">
+              <h3 class="forascom-about-card-title" data-i18n="home.about.card2Title">
                 دمج حقيقي للذكاء الاصطناعي
               </h3>
-              <p class="forascom-about-card-copy">
+              <p class="forascom-about-card-copy" data-i18n="home.about.card2Desc">
                 ندمج نماذج اللغات الكبيرة (LLMs) والوكلاء الذكاء
                 الاصطناعيين (AI Agents)، ونُؤتمِت العمليات لزيادة إنتاجية
                 شركتك بفاعلية ملموسة.
@@ -380,10 +386,10 @@
                     d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                 </svg>
               </div>
-              <h3 class="forascom-about-card-title">
+              <h3 class="forascom-about-card-title" data-i18n="home.about.card3Title">
                 هوية عربية بجودة عالمية
               </h3>
-              <p class="forascom-about-card-copy">
+              <p class="forascom-about-card-copy" data-i18n="home.about.card3Desc">
                 نعتز بالهوية العربية والتواصل الفعّال، مع دقة في التنفيذ
                 والتصميم تضاهي أحدث الممارسات العالمية.
               </p>
@@ -402,10 +408,10 @@
                     d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 class="forascom-about-card-title">
+              <h3 class="forascom-about-card-title" data-i18n="home.about.card4Title">
                 التحول المستقبلي إلى Products
               </h3>
-              <p class="forascom-about-card-copy">
+              <p class="forascom-about-card-copy" data-i18n="home.about.card4Desc">
                 نعالج المشكلات المتكررة ونحوّل الأنظمة الناجحة إلى منتجات
                 سحابية متعددة الاستخدام (<strong>Reusable SaaS</strong>).
               </p>
@@ -414,26 +420,26 @@
         </div>
 
         <div class="lg:col-span-5 space-y-5 forascom-about-content order-1 lg:order-2">
-          <h2 class="forascom-about-heading text-2xl sm:text-3xl lg:text-4xl font-black leading-tight">
+          <h2 class="forascom-about-heading text-2xl sm:text-3xl lg:text-4xl font-black leading-tight" data-i18n-html="home.about.headingHtml">
             <span class="forascom-about-title-line block">نحن نخلق الفرص</span>
             <span class="forascom-about-highlight-block block">من خلال
               <span class="forascom-about-highlight">التكنولوجيا</span></span>
           </h2>
-          <p class="forascom-about-desc leading-relaxed text-base">
+          <p class="forascom-about-desc leading-relaxed text-base" data-i18n-html="home.about.descriptionHtml">
             يعبر اسم <strong>فرصكم / Forascom</strong> عن فلسفتنا الجوهرية؛
             فنحن فريق تطوير وتقنية عربي يدرك أهمية تقديم حلول عملية تُعالج
             المشكلات الواقعية، وتفتح آفاقاً جديدة للأعمال والشركات والأفراد.
           </p>
 
           <div class="forascom-about-value-strip">
-            <span>حلول عملية</span>
-            <span>تطوير عربي</span>
-            <span>أداء مستدام</span>
+            <span data-i18n="home.about.value1">حلول عملية</span>
+            <span data-i18n="home.about.value2">تطوير عربي</span>
+            <span data-i18n="home.about.value3">أداء مستدام</span>
           </div>
 
           <a href="about.html"
             class="btn-cyan inline-flex items-center gap-3 font-bold text-base px-7 py-3 rounded-xl shadow-xl">
-            <span>اعرف عنا أكثر</span>
+            <span data-i18n="home.about.button">اعرف عنا أكثر</span>
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
@@ -714,10 +720,10 @@
       <!-- Section Header -->
       <div
         class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 lg:mb-20 space-y-4 sm:space-y-5 reveal-on-scroll reveal-blur">
-        <h2 class="text-2xl sm:text-3xl lg:text-5xl font-black leading-tight">
+        <h2 class="text-2xl sm:text-3xl lg:text-5xl font-black leading-tight" data-i18n-html="home.philosophy.titleHtml">
           التكنولوجيا <span class="text-cyan">وسيلة</span> وليست الهدف
         </h2>
-        <p class="text-text-secondary text-base leading-relaxed max-w-xl mx-auto">
+        <p class="text-text-secondary text-base leading-relaxed max-w-xl mx-auto" data-i18n="home.philosophy.subtitle">
           <em>قبل أن نكتب أي سطر برمجي، نتبع مساراً هندسياً مدروساً يضمن أن كل
             قرار تقني يحل مشكلة حقيقية ويحقق عائداً ملموساً لأعمالك.</em>
         </p>
@@ -743,8 +749,8 @@
               <div class="text-cyan/80 font-black text-5xl mb-3 opacity-30 group-hover:opacity-60 transition-opacity">
                 01
               </div>
-              <h4 class="font-bold text-lg text-white mb-2">ما المشكلة؟</h4>
-              <p class="text-slate-400 text-xs leading-relaxed">
+              <h4 class="font-bold text-lg text-white mb-2" data-i18n="home.philosophy.step1Title">ما المشكلة؟</h4>
+              <p class="text-slate-400 text-xs leading-relaxed" data-i18n="home.philosophy.step1Desc">
                 نفهم احتياجك الحقيقي، ونحدد ما يقتضي التحسين بدقة قبل الشروع
                 في التصميم والابتكار.
               </p>
@@ -762,10 +768,10 @@
               <div class="text-cyan/80 font-black text-5xl mb-3 opacity-30 group-hover:opacity-60 transition-opacity">
                 02
               </div>
-              <h4 class="font-bold text-lg text-white mb-2">
+              <h4 class="font-bold text-lg text-white mb-2" data-i18n="home.philosophy.step2Title">
                 من سيستخدم الحل؟
               </h4>
-              <p class="text-slate-400 text-xs leading-relaxed">
+              <p class="text-slate-400 text-xs leading-relaxed" data-i18n="home.philosophy.step2Desc">
                 نتعرف على مستخدمي النظام وطبيعة عملهم اليومية، لنصمم تجربة
                 استخدام سلسة تناسب أسلوبهم.
               </p>
@@ -783,10 +789,10 @@
               <div class="text-cyan/80 font-black text-5xl mb-3 opacity-30 group-hover:opacity-60 transition-opacity">
                 03
               </div>
-              <h4 class="font-bold text-lg text-white mb-2">
+              <h4 class="font-bold text-lg text-white mb-2" data-i18n="home.philosophy.step3Title">
                 ما الهدف التجاري؟
               </h4>
-              <p class="text-slate-400 text-xs leading-relaxed">
+              <p class="text-slate-400 text-xs leading-relaxed" data-i18n="home.philosophy.step3Desc">
                 نحدد القيمة الفعلية للحل؛ سواء بتوفير الوقت، خفض التكاليف،
                 زيادة المبيعات، أو رفع كفاءة التشغيل.
               </p>
@@ -804,10 +810,10 @@
               <div class="text-cyan/80 font-black text-5xl mb-3 opacity-30 group-hover:opacity-60 transition-opacity">
                 04
               </div>
-              <h4 class="font-bold text-lg text-white mb-2">
+              <h4 class="font-bold text-lg text-white mb-2" data-i18n="home.philosophy.step4Title">
                 أبسط حل يحقق الهدف
               </h4>
-              <p class="text-slate-400 text-xs leading-relaxed">
+              <p class="text-slate-400 text-xs leading-relaxed" data-i18n="home.philosophy.step4Desc">
                 نبتكر النظام الأقل تعقيداً والأسرع تنفيذاً لتحقيق هدفك، ثم
                 نواصل تطويره بالتوازي مع نمو متطلباتك.
               </p>
@@ -825,8 +831,8 @@
               <div class="text-cyan font-black text-5xl mb-3 opacity-50 group-hover:opacity-80 transition-opacity">
                 05
               </div>
-              <h4 class="font-bold text-lg text-white mb-2">التوسع والنمو</h4>
-              <p class="text-slate-400 text-xs leading-relaxed">
+              <h4 class="font-bold text-lg text-white mb-2" data-i18n="home.philosophy.step5Title">التوسع والنمو</h4>
+              <p class="text-slate-400 text-xs leading-relaxed" data-i18n="home.philosophy.step5Desc">
                 نبني الحل بمعمارية مرنة تتيح التوسع المستقبلي بسهولة؛ سواء
                 باستيعاب مستخدمين جدد، إضافة مزايا، أو الربط مع أنظمة أخرى.
               </p>
@@ -845,10 +851,10 @@
       <!-- Section Header -->
       <div
         class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 lg:mb-20 space-y-4 sm:space-y-5 reveal-on-scroll reveal-blur">
-        <h2 class="text-2xl sm:text-3xl lg:text-5xl font-black leading-tight">
+        <h2 class="text-2xl sm:text-3xl lg:text-5xl font-black leading-tight" data-i18n-html="home.portfolio.titleHtml">
           مشاريع تم تنفيذها <span class="text-cyan">بحرفية</span>
         </h2>
-        <p class="text-text-secondary text-base leading-relaxed max-w-xl mx-auto">
+        <p class="text-text-secondary text-base leading-relaxed max-w-xl mx-auto" data-i18n="home.portfolio.subtitle">
           نستعرض مجموعة من المشاريع التي تعكس قدرتنا على تحويل الأفكار
           والتحديات إلى حلول تقنية عملية وذات أثر حقيقي.
         </p>
@@ -863,7 +869,7 @@
       <div class="mt-12 flex justify-center reveal-on-scroll">
         <a href="portfolio.html"
           class="btn-cyan inline-flex items-center gap-3 font-bold text-base px-8 py-4 rounded-xl shadow-xl">
-          <span>استكشف جميع مشاريعنا</span>
+          <span data-i18n="home.portfolio.viewAll">استكشف جميع مشاريعنا</span>
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
@@ -888,11 +894,11 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <div class="lg:col-span-5 space-y-6">
-          <span class="text-cyan font-bold text-xs tracking-widest uppercase">تواصل معنا | Let's Talk</span>
-          <h2 class="text-2xl sm:text-3xl lg:text-5xl font-black leading-tight">
+          <span class="text-cyan font-bold text-xs tracking-widest uppercase" data-i18n="home.contactSection.badge">تواصل معنا | Let's Talk</span>
+          <h2 class="text-2xl sm:text-3xl lg:text-5xl font-black leading-tight" data-i18n="home.contactSection.title">
             جاهز تحوّل فكرتك لواقع تقني؟
           </h2>
-          <p class="text-slate-300 text-base leading-relaxed">
+          <p class="text-slate-300 text-base leading-relaxed" data-i18n="home.contactSection.subtitle">
             تواصل مع فريق Forascom عشان تاخد استشارة تقنية مجانية ونناقش
             تفاصيل مشروعك والقيمة اللي ممكن نضيفها لشغلك.
           </p>
@@ -906,10 +912,10 @@
               </div>
               <div>
                 <div class="text-xs text-slate-400">
-                  محادثة مباشرة على WhatsApp
+                  <span data-i18n="home.contactSection.whatsappLabel">محادثة مباشرة على WhatsApp</span>
                 </div>
                 <div class="font-bold text-sm text-white">
-                  انقر للتواصل المباشر مع المهندس
+                  <span data-i18n="home.contactSection.whatsappCta">انقر للتواصل المباشر مع المهندس</span>
                 </div>
               </div>
             </a>
@@ -920,51 +926,51 @@
           <form id="lead-contact-form"
             class="field-glow bg-navy/90 p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-800 shadow-2xl space-y-4 sm:space-y-5 reveal-on-scroll reveal-right">
             <h3 class="font-black text-2xl text-white mb-2">
-              أرسل تفاصيل مشروعك
+              <span data-i18n="home.contactSection.formTitle">أرسل تفاصيل مشروعك</span>
             </h3>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block text-xs font-bold text-slate-300 mb-1">الاسم الكامل</label>
-                <input type="text" id="contact-name" required placeholder="أدخل اسمك "
+                <label class="block text-xs font-bold text-slate-300 mb-1" data-i18n="home.contactSection.nameLabel">الاسم الكامل</label>
+                <input type="text" id="contact-name" required placeholder="أدخل اسمك " data-i18n-placeholder="home.contactSection.namePlaceholder"
                   class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan" />
               </div>
               <div>
-                <label class="block text-xs font-bold text-slate-300 mb-1">رقم الهاتف / الواتساب</label>
+                <label class="block text-xs font-bold text-slate-300 mb-1" data-i18n="home.contactSection.phoneLabel">رقم الهاتف / الواتساب</label>
                 <input type="tel" id="contact-phone" required placeholder="+20 123 456 7890"
                   class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan" />
               </div>
             </div>
 
             <div>
-              <label class="block text-xs font-bold text-slate-300 mb-1">الخدمة المطلوبة</label>
+              <label class="block text-xs font-bold text-slate-300 mb-1" data-i18n="home.contactSection.serviceLabel">الخدمة المطلوبة</label>
               <select id="contact-service"
                 class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan">
-                <option value="Web Development (Custom Code / WordPress)">
+                <option value="Web Development (Custom Code / WordPress)" data-i18n="home.contactSection.homeServiceWeb">
                   Web Development (Custom Code or WordPress)
                 </option>
-                <option value="AI & Intelligent Automation">
+                <option value="AI & Intelligent Automation" data-i18n="home.contactSection.homeServiceAi">
                   AI & Intelligent Automation
                 </option>
-                <option value="Power Platform & Low-Code Workflows">
+                <option value="Power Platform & Low-Code Workflows" data-i18n="home.contactSection.homeServicePower">
                   Power Platform & Low-Code Workflows
                 </option>
-                <option value="SaaS Product MVP Development">
+                <option value="SaaS Product MVP Development" data-i18n="home.contactSection.homeServiceSaas">
                   SaaS Product / MVP Development
                 </option>
               </select>
             </div>
 
             <div>
-              <label class="block text-xs font-bold text-slate-300 mb-1">ملخص عن مشروعك أو المشكلة</label>
+              <label class="block text-xs font-bold text-slate-300 mb-1" data-i18n="home.contactSection.messageLabel">ملخص عن مشروعك أو المشكلة</label>
               <textarea id="contact-msg" rows="4" required
-                placeholder="اشرح لنا المشكلة أو الميزات المطلوبة في المشروع..."
+                placeholder="اشرح لنا المشكلة أو الميزات المطلوبة في المشروع..." data-i18n-placeholder="home.contactSection.messagePlaceholder"
                 class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan"></textarea>
             </div>
 
             <button type="submit"
               class="btn-cyan w-full font-bold text-base py-4 rounded-xl shadow-lg flex items-center justify-center gap-2">
-              <span>إرسال وفتح المحادثة 🚀</span>
+              <span data-i18n="home.contactSection.homeSubmitBtn">إرسال وفتح المحادثة 🚀</span>
             </button>
           </form>
         </div>
@@ -997,11 +1003,11 @@
         <div class="lg:col-span-4 space-y-5">
           <a href="index.html"
             class="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-lg"
-            aria-label="العودة إلى الصفحة الرئيسية">
+            aria-label="العودة إلى الصفحة الرئيسية" data-i18n-aria="common.nav.home">
             <img src="assets/images/Logo.png" alt="Forascom — فرصكم" class="h-11 w-auto object-contain rounded-lg" />
           </a>
 
-          <p class="text-slate-300 text-sm leading-relaxed max-w-sm">
+          <p class="text-slate-300 text-sm leading-relaxed max-w-sm" data-i18n="common.footer.aboutText">
             شركة حلول برمجية وتطوير تقني — نخلق الفرص للأعمال من خلال تقنيات
             الويب المستدامة، الذكاء الاصطناعي، وأتمتة العمليات بجودة هندسية
             راقية.
@@ -1011,7 +1017,7 @@
             class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
 
-            متاحون حالياً لاستقبال مشاريع جديدة
+            <span data-i18n="common.footer.availableBadge">متاحون حالياً لاستقبال مشاريع جديدة</span>
           </div>
         </div>
 
@@ -1019,7 +1025,7 @@
            COLUMN 2: MAIN NAVIGATION
            =================================================== -->
         <div class="lg:col-span-3 space-y-4">
-          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
+          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3" data-i18n="common.footer.mainLinksTitle">
             الروابط الرئيسية
           </h4>
 
@@ -1029,7 +1035,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                الرئيسية
+                <span data-i18n="common.nav.home">الرئيسية</span>
               </a>
             </li>
 
@@ -1038,7 +1044,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                عن فرصكم
+                <span data-i18n="common.nav.about">عن فرصكم</span>
               </a>
             </li>
 
@@ -1048,7 +1054,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                خدماتنا
+                <span data-i18n="common.nav.services">خدماتنا</span>
               </a>
             </li>
 
@@ -1058,7 +1064,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                معرض الأعمال
+                <span data-i18n="common.nav.portfolio">معرض الأعمال</span>
               </a>
             </li>
 
@@ -1067,7 +1073,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                تواصل معنا
+                <span data-i18n="common.nav.contact">تواصل معنا</span>
               </a>
             </li>
           </ul>
@@ -1077,7 +1083,7 @@
            COLUMN 3: SERVICES & SOLUTIONS
            =================================================== -->
         <div class="lg:col-span-2 space-y-4">
-          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
+          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3" data-i18n="common.footer.servicesTitle">
             خدماتنا
           </h4>
 
@@ -1089,7 +1095,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                تطوير المواقع
+                <span data-i18n="common.footer.servicesLinks.web">تطوير المواقع</span>
               </a>
             </li>
 
@@ -1100,7 +1106,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                مواقع WordPress
+                <span data-i18n="common.footer.servicesLinks.wordpress">مواقع WordPress</span>
               </a>
             </li>
 
@@ -1111,7 +1117,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                حلول الذكاء الاصطناعي
+                <span data-i18n="common.footer.servicesLinks.ai">حلول الذكاء الاصطناعي</span>
               </a>
             </li>
 
@@ -1122,7 +1128,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                الأتمتة والعمليات الذكية
+                <span data-i18n="common.footer.servicesLinks.automation">الأتمتة والعمليات الذكية</span>
               </a>
             </li>
 
@@ -1133,7 +1139,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                حلول Power Platform
+                <span data-i18n="common.footer.servicesLinks.powerPlatform">حلول Power Platform</span>
               </a>
             </li>
           </ul>
@@ -1143,7 +1149,7 @@
            COLUMN 4: CONTACT & SOCIALS
            =================================================== -->
         <div class="lg:col-span-3 space-y-4">
-          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
+          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3" data-i18n="common.footer.contactTitle">
             التواصل المباشر
           </h4>
 
@@ -1152,7 +1158,7 @@
             <li>
               <a href="mailto:forascomteam@gmail.com"
                 class="inline-flex items-center gap-3 hover:text-cyan-400 transition-colors"
-                aria-label="راسلنا عبر البريد الإلكتروني">
+                aria-label="راسلنا عبر البريد الإلكتروني" data-i18n-aria="contact.info.emailLabel">
                 <span class="material-symbols-outlined text-cyan-400 text-lg">
                   mail
                 </span>
@@ -1166,7 +1172,7 @@
 
 
           <div class="pt-2">
-            <span class="block text-xs font-semibold text-slate-400 mb-3">
+            <span class="block text-xs font-semibold text-slate-400 mb-3" data-i18n="common.footer.digitalPresence">
               تواجدنا الرقمي:
             </span>
 
@@ -1224,7 +1230,7 @@
         <p class="text-center md:text-right">
           © <span id="footer-year">2026</span>
           <strong class="text-slate-200">Forascom</strong>.
-          جميع الحقوق محفوظة —
+          <span data-i18n="common.footer.copyright">جميع الحقوق محفوظة</span> —
           <span class="text-cyan-400 font-medium">
             Technology that creates opportunities
           </span>
@@ -1232,14 +1238,14 @@
 
         <div class="flex items-center gap-6 text-slate-400">
           <!-- Privacy & Terms -->
-          <span class="text-slate-500">
+          <span class="text-slate-500" data-i18n="common.footer.privacyTerms">
             الخصوصية والشروط
           </span>
 
           <span class="w-1 h-1 rounded-full bg-slate-700"></span>
 
           <!-- Technical Support -->
-          <a href="contact.html" class="hover:text-cyan-400 transition-colors">
+          <a href="contact.html" class="hover:text-cyan-400 transition-colors" data-i18n="common.footer.techSupport">
             الدعم التقني
           </a>
         </div>
@@ -1263,7 +1269,7 @@
             d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
         </svg>
       </div>
-      <span
+      <span data-i18n="common.footer.floatingWhatsApp"
         class="max-w-0 opacity-0 overflow-hidden whitespace-nowrap transition-all duration-500 ease-in-out group-hover:max-w-xs group-hover:opacity-100 group-hover:mr-2.5">
         تحدث مع مهندس Forascom الآن 💬
       </span>
@@ -1271,7 +1277,7 @@
   </div>
 
   <!-- Back To Top Button -->
-  <button id="back-to-top" aria-label="العودة إلى الأعلى"
+  <button id="back-to-top" aria-label="العودة إلى الأعلى" data-i18n-aria="common.cta.backToTop"
     class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-white text-navy border border-slate-200 shadow-xl flex items-center justify-center hover:bg-navy hover:text-white hover:-translate-y-1 transition-all">
     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 15l7-7 7 7" />
@@ -1283,6 +1289,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <!-- App JavaScript Modules -->
+  <script src="assets/js/translations/ar.js"></script>
+  <script src="assets/js/translations/en.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/contact.js"></script>
   <script src="assets/js/about-ecosystem.js"></script>
   <script src="assets/js/orbit.js"></script>
   <!-- Shared project data source (identical to portfolio.html / project-details.html) -->

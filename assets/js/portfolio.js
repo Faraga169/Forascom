@@ -28,6 +28,18 @@ const PROJECT_CATEGORIES = {
   //   label: "الأتمتة وربط الأنظمة",
   // },
 };
+  function getProjectCategoryLabel(categoryKey, fallback) {
+    const translationKeys = {
+      all: "portfolio.filters.all",
+      "web-development": "portfolio.filters.web",
+      wordpress: "portfolio.filters.wordpress",
+      "Automation-BussinessSolution": "portfolio.filters.automation",
+    };
+    const key = translationKeys[categoryKey];
+    return key && window.forascomI18n
+      ? window.forascomI18n.t(key, fallback)
+      : fallback;
+  }
 
 const PROJECT_FILTER_ACTIVE_CLASSES = [
   "px-6",
@@ -205,7 +217,7 @@ function renderProjectFilters(initialActiveFilter = "all") {
           data-filter="${key}"
           aria-pressed="${isActive}"
         >
-          <span>${category.label}</span>
+          <span>${getProjectCategoryLabel(key, category.label)}</span>
 
           <span
             class="filter-counter px-2 py-0.5 rounded-full ${
@@ -234,13 +246,16 @@ function renderProjectFilters(initialActiveFilter = "all") {
 }
 
 function renderProjectCard(project, index) {
+  const displayProject = typeof getLocalizedProject === "function"
+    ? getLocalizedProject(project)
+    : project;
   return `
     <a
       href="project-details.html?project=${encodeURIComponent(project.id)}"
       class="project-card cursor-pointer group block relative rounded-3xl bg-surface-container-low/90 border border-white/10 hover:border-tertiary/40 overflow-hidden shadow-2xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(0,196,238,0.12)] flex flex-col justify-between"
       data-project="${project.id}"
       data-category="${project.categoryKey}"
-      aria-label="${project.title} project details"
+      aria-label="${displayProject.title} ${window.forascomI18n?.t("projectDetails.actions.projectDetails", "project details")}"
     >
       <div class="absolute -top-24 -left-24 w-52 h-52 rounded-full bg-tertiary/[0.04] blur-2xl pointer-events-none group-hover:bg-tertiary/[0.1] transition-all duration-500"></div>
 
@@ -252,7 +267,7 @@ function renderProjectCard(project, index) {
               ? `
                 <img
                   src="${project.cardImage}"
-                  alt="${project.cardImageAlt || project.title}"
+                  alt="${displayProject.cardImageAlt || displayProject.title}"
                   loading="lazy"
                   class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                   onload="this.style.opacity='1'; const s = this.parentElement.querySelector('.skeleton-loader'); if(s) s.style.opacity='0';"
@@ -262,7 +277,7 @@ function renderProjectCard(project, index) {
               : `
                 <div class="w-full h-full flex items-center justify-center">
                   <span class="text-4xl font-black text-tertiary/60">
-                    ${project.title.charAt(0)}
+                    ${displayProject.title.charAt(0)}
                   </span>
                 </div>
               `
@@ -273,7 +288,7 @@ function renderProjectCard(project, index) {
           <!-- Hover Overlay Button -->
           <div class="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">
             <span class="btn-smooth inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-tertiary text-[#00101D] font-bold text-xs shadow-[0_0_20px_rgba(0,196,238,0.4)] transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-              <span>استكشف المشروع</span>
+              <span>${window.forascomI18n?.t("portfolio.card.explore", "استكشف المشروع")}</span>
               <span class="material-symbols-outlined text-sm">arrow_back</span>
             </span>
           </div>
@@ -282,16 +297,16 @@ function renderProjectCard(project, index) {
         <div class="flex flex-col flex-1">
           <div class="flex items-center justify-between gap-4 mb-3 shrink-0">
             <span class="text-xs font-bold uppercase tracking-wider text-tertiary font-mono">
-              ${PROJECT_CATEGORIES[project.categoryKey]?.label || project.category}
+              ${getProjectCategoryLabel(project.categoryKey, displayProject.category || project.category)}
             </span>
           </div>
 
           <h3 class="text-xl sm:text-2xl font-black text-white mb-3 group-hover:text-tertiary transition-colors line-clamp-2">
-            ${project.title}
+            ${displayProject.title}
           </h3>
 
           <p class="text-sm text-on-surface-variant leading-relaxed mt-auto line-clamp-2">
-            ${project.subtitle || project.description || ""}
+            ${displayProject.subtitle || displayProject.description || ""}
           </p>
         </div>
       </div>
@@ -311,6 +326,9 @@ function renderFeaturedProject(project) {
   }
 
   container.classList.remove("hidden");
+  const displayProject = typeof getLocalizedProject === "function"
+    ? getLocalizedProject(project)
+    : project;
 
   container.innerHTML = `
     <a
@@ -318,7 +336,7 @@ function renderFeaturedProject(project) {
       class="project-card cursor-pointer group block relative rounded-3xl bg-surface-container-low/90 backdrop-blur-xl border border-tertiary/30 hover:border-tertiary/60 p-6 sm:p-8 lg:p-10 shadow-2xl transition-all duration-500 overflow-hidden cyan-glow-box-subtle"
       data-project="${project.id}"
       data-category="${project.categoryKey}"
-      aria-label="${project.title} project details"
+      aria-label="${displayProject.title} ${window.forascomI18n?.t("projectDetails.actions.projectDetails", "project details")}"
     >
       <!-- Ambient corner glow -->
       <div class="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-tertiary/10 blur-3xl pointer-events-none group-hover:bg-tertiary/20 transition-all duration-700"></div>
@@ -330,7 +348,7 @@ function renderFeaturedProject(project) {
           <div class="skeleton-loader absolute inset-0 bg-surface-container-high/70 animate-pulse transition-opacity duration-500 pointer-events-none z-10"></div>
           <img
             src="${project.cardImage}"
-            alt="${project.cardImageAlt || project.title}"
+            alt="${displayProject.cardImageAlt || displayProject.title}"
             loading="lazy"
             class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover/visual:scale-[1.03]"
             onload="this.style.opacity='1'; const s = this.parentElement.querySelector('.skeleton-loader'); if(s) s.style.opacity='0';"
@@ -344,7 +362,7 @@ function renderFeaturedProject(project) {
           <!-- Center Hover Button -->
           <div class="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover/visual:opacity-100 transition-all duration-300 pointer-events-none">
             <span class="btn-smooth inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-tertiary text-[#00101D] font-extrabold text-sm shadow-[0_0_30px_rgba(0,196,238,0.5)] transform translate-y-3 group-hover/visual:translate-y-0 transition-transform duration-300">
-              <span>استكشف المشروع</span>
+              <span>${window.forascomI18n?.t("portfolio.card.explore", "استكشف المشروع")}</span>
               <span class="material-symbols-outlined text-base">arrow_back</span>
             </span>
           </div>
@@ -354,15 +372,15 @@ function renderFeaturedProject(project) {
         <div class="lg:col-span-5 flex flex-col justify-between gap-5">
           <div class="inline-flex items-center self-start gap-2 px-3 py-1 rounded-full bg-surface-container-high/90 text-tertiary text-xs font-mono font-medium border border-tertiary/20">
             <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
-            <span>${PROJECT_CATEGORIES[project.categoryKey]?.label || project.category}</span>
+            <span>${getProjectCategoryLabel(project.categoryKey, displayProject.category || project.category)}</span>
           </div>
 
           <h3 class="text-2xl sm:text-3xl lg:text-4xl font-black text-white leading-[1.25] tracking-tight group-hover:text-tertiary transition-colors">
-            ${project.title}
+            ${displayProject.title}
           </h3>
 
           <p class="text-sm sm:text-base text-on-surface-variant font-normal leading-relaxed">
-            ${project.subtitle || project.description || ""}
+            ${displayProject.subtitle || displayProject.description || ""}
           </p>
         </div>
 
@@ -477,9 +495,34 @@ function initDynamicProjectShowcase() {
   });
 }
 
+window.reRenderPortfolioWithLanguage = function () {
+  if (document.getElementById("category-filters")) {
+    const activeFilter = getCategoryFromUrl();
+    renderProjectFilters(activeFilter);
+    renderProjectShowcase(activeFilter);
+  }
+  renderHomeFeaturedProjects();
+  updatePortfolioWhatsAppLinks();
+};
+
+function updatePortfolioWhatsAppLinks() {
+  const links = [
+    ["portfolio-archive-whatsapp", "portfolio.impact.archiveWhatsAppMessage"],
+    ["portfolio-contact-whatsapp", "portfolio.cta.whatsappMessage"],
+  ];
+
+  links.forEach(([id, key]) => {
+    const link = document.getElementById(id);
+    if (!link || !window.forascomI18n) return;
+    const message = window.forascomI18n.t(key, "");
+    link.href = `https://wa.me/201501795004?text=${encodeURIComponent(message)}`;
+  });
+}
+
 function initApp() {
   initDynamicProjectShowcase();
   renderHomeFeaturedProjects();
+  updatePortfolioWhatsAppLinks();
 }
 
 if (document.readyState === "loading") {
@@ -499,6 +542,9 @@ function renderHomeFeaturedProjects() {
     const project = projectsDetailsData[projectId];
 
     if (!project) return "";
+    const displayProject = typeof getLocalizedProject === "function"
+      ? getLocalizedProject(project)
+      : project;
 
     return `
         <a
@@ -511,7 +557,7 @@ function renderHomeFeaturedProjects() {
                 ? `
                   <img
                     src="${project.cardImage}"
-                    alt="${project.cardImageAlt || project.title}"
+                    alt="${displayProject.cardImageAlt || displayProject.title}"
                     loading="lazy"
                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -524,8 +570,7 @@ function renderHomeFeaturedProjects() {
             <div class="absolute top-4 right-4">
               <span class="px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-xs font-bold text-white">
                 ${
-                  PROJECT_CATEGORIES[project.categoryKey]?.label ||
-                  project.category
+                  getProjectCategoryLabel(project.categoryKey, displayProject.category || project.category)
                 }
               </span>
             </div>
@@ -533,16 +578,16 @@ function renderHomeFeaturedProjects() {
 
           <div class="p-6">
             <h3 class="text-xl sm:text-2xl font-black text-white group-hover:text-tertiary transition-colors">
-              ${project.title}
+              ${displayProject.title}
             </h3>
 
             <p class="mt-3 text-sm text-on-surface-variant leading-relaxed line-clamp-2">
-              ${project.subtitle || project.description || ""}
+              ${displayProject.subtitle || displayProject.description || ""}
             </p>
 
             <div class="mt-5 flex items-center justify-between">
               <span class="text-sm font-bold text-tertiary">
-                استكشف المشروع
+                ${window.forascomI18n?.t("portfolio.card.explore", "استكشف المشروع")}
               </span>
 
               <span class="material-symbols-outlined text-tertiary transition-transform duration-300 group-hover:-translate-x-1">

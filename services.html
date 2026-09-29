@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>خدماتنا | حلول برمجية وذكاء اصطناعي — فرصكم</title>
+  <meta name="description" content="استكشف خدمات فرصكم في هندسة البرمجيات ومنصات الويب والذكاء الاصطناعي وأتمتة الأعمال." />
   <meta property="og:title" content="خدماتنا | Forascom — Full-Stack, AI, Low-Code" />
   <meta property="og:description" content="تطوير مواقع وأنظمة متكاملة، ذكاء اصطناعي وأتمتة، وحلول Low-Code سريعة." />
   <meta property="og:image" content="assets/images/Logo.jpeg" />
@@ -62,6 +64,7 @@
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="stylesheet" href="assets/css/navbar.css" />
   <link rel="stylesheet" href="assets/css/services.css" />
+  <link rel="stylesheet" href="assets/css/i18n.css" />
   <style>
     .forascom-services-shell {
       width: min(1280px, calc(100% - 32px));
@@ -513,20 +516,23 @@
 
       <!-- Desktop Navigation -->
       <nav class="hidden lg:flex items-center justify-center gap-5 xl:gap-8 font-semibold text-sm flex-1 mx-4">
-        <a href="index.html" class="nav-link hover:text-cyan-bright transition-colors">الرئيسية</a>
-        <a href="about.html" class="nav-link hover:text-cyan-bright transition-colors">عن فرصكم</a>
-        <a href="services.html" aria-current="page"
+        <a href="index.html" data-i18n="common.nav.home" class="nav-link hover:text-cyan-bright transition-colors">الرئيسية</a>
+        <a href="about.html" data-i18n="common.nav.about" class="nav-link hover:text-cyan-bright transition-colors">عن فرصكم</a>
+        <a href="services.html" aria-current="page" data-i18n="common.nav.services"
           class="nav-active nav-link hover:text-cyan-bright transition-colors">خدماتنا</a>
-        <a href="portfolio.html" class="nav-link hover:text-cyan-bright transition-colors">معرض الأعمال</a>
-        <a href="contact.html" class="nav-link hover:text-cyan-bright transition-colors">تواصل معنا</a>
+        <a href="portfolio.html" data-i18n="common.nav.portfolio" class="nav-link hover:text-cyan-bright transition-colors">معرض الأعمال</a>
+        <a href="contact.html" data-i18n="common.nav.contact" class="nav-link hover:text-cyan-bright transition-colors">تواصل معنا</a>
       </nav>
 
       <!-- Desktop CTA & Mobile Toggle -->
       <div class="flex items-center gap-4 shrink-0">
-
+        <div class="lang-switcher-pill shrink-0" role="group" data-i18n-aria="common.nav.language" aria-label="اللغة">
+          <button type="button" data-lang-switch="ar" aria-pressed="true">العربية</button>
+          <button type="button" data-lang-switch="en" aria-pressed="false">EN</button>
+        </div>
         <button id="mobile-menu-btn"
           class="lg:hidden text-text-primary p-2 rounded-lg hover:bg-white/5 transition-colors"
-          style="background: rgba(56, 189, 248, 0.1)" aria-label="القائمة">
+          style="background: rgba(56, 189, 248, 0.1)" aria-label="القائمة" data-i18n-aria="common.nav.menuAria">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -538,15 +544,15 @@
     <div id="mobile-menu-container"
       class="hidden lg:hidden bg-navy-secondary border-b px-4 pt-2 pb-6 space-y-3 font-semibold text-text-secondary max-h-[calc(100vh-5rem)] overflow-y-auto"
       style="border-color: rgba(56, 189, 248, 0.12)">
-      <a href="index.html" class="block py-2 border-b hover:text-text-primary"
+      <a href="index.html" data-i18n="common.nav.home" class="block py-2 border-b hover:text-text-primary"
         style="border-color: rgba(56, 189, 248, 0.12)">الرئيسية</a>
-      <a href="about.html" class="block py-2 border-b hover:text-text-primary"
+      <a href="about.html" data-i18n="common.nav.about" class="block py-2 border-b hover:text-text-primary"
         style="border-color: rgba(56, 189, 248, 0.12)">عن فرصكم</a>
-      <a href="services.html" aria-current="page" class="block py-2 text-cyan font-bold"
+      <a href="services.html" aria-current="page" data-i18n="common.nav.services" class="block py-2 text-cyan font-bold"
         style="border-color: rgba(56, 189, 248, 0.12)">خدماتنا</a>
-      <a href="portfolio.html" class="block py-2 border-b hover:text-text-primary"
+      <a href="portfolio.html" data-i18n="common.nav.portfolio" class="block py-2 border-b hover:text-text-primary"
         style="border-color: rgba(56, 189, 248, 0.12)">معرض الأعمال</a>
-      <a href="contact.html" class="block py-2 border-b hover:text-text-primary"
+      <a href="contact.html" data-i18n="common.nav.contact" class="block py-2 border-b hover:text-text-primary"
         style="border-color: rgba(56, 189, 248, 0.12)">تواصل معنا</a>
     </div>
   </header>
@@ -559,18 +565,18 @@
 
       <div class="forascom-services-shell services-hero__layout">
         <div class="service-hero-copy">
-          <h1 class="hero-title">
+          <h1 class="hero-title" data-i18n-html="services.page.heroTitleHtml">
             نبني الحلول التي
             <span class="gradient-text animate-gradient-text">تحوّل</span>
             <span class="hero-title__line">الأفكار إلى فرص</span>
           </h1>
-          <p class="hero-deck">
+          <p class="hero-deck" data-i18n-html="services.page.heroSubtitleHtml">
             من تطوير المواقع والأنظمة، إلى الأتمتة والذكاء الاصطناعي.<br />
             نبني حلولًا تقنية مصممة حول احتياجات مشروعك.
           </p>
         </div>
 
-        <div class="services-hero-visual" aria-label="تجربة تقنية للنظام الرقمي">
+        <div class="services-hero-visual" aria-label="تجربة تقنية للنظام الرقمي" data-i18n-aria="services.page.visualAria">
           <img src="assets/images/serv.png" alt="Forascom technology ecosystem" class="services-hero-image" />
         </div>
       </div>
@@ -579,8 +585,8 @@
     <section class="services-overview" id="services-overview">
       <div class="services-shell">
         <div class="section-heading">
-          <h2>حلول تقنية مصممة حول مشروعك</h2>
-          <p>
+          <h2 data-i18n="services.page.overviewTitle">حلول تقنية مصممة حول مشروعك</h2>
+          <p data-i18n="services.page.overviewDesc">
             مش بنقدّم أدوات منفصلة؛ إحنا بنبني منظومة تقنية متكاملة بتربط
             التطوير والأتمتة والبيانات والذكاء الاصطناعي.
           </p>
@@ -602,8 +608,8 @@
               </div>
             </div>
             <div class="service-card__body">
-              <h3>تطوير المواقع والأنظمة</h3>
-              <p>
+              <h3 data-i18n="services.showcase.s1Title">تطوير المواقع والأنظمة</h3>
+              <p data-i18n="services.showcase.s1Desc">
                 بنبني مواقع ومنصات رقمية سريعة ومرنة وقابلة للتوسع، مصممة عشان
                 تقدم تجربة استخدام احترافية وتحقق أهداف مشروعك.
               </p>
@@ -617,11 +623,11 @@
                 <span>Responsive Design</span>
               </div>
             </div>
-            <span class="service-link">اكتشف الخدمة</span>
+            <span class="service-link" data-i18n="services.page.learnMore">اكتشف الخدمة</span>
           </div>
           <div class="service-card__visual">
             <img src="assets/images/Gemini_Generated_Image_9tabrs9tabrs9tab-removebg-preview.png"
-              alt="تطوير المواقع والأنظمة" />
+              alt="تطوير المواقع والأنظمة" data-i18n-alt="services.showcase.s1Title" />
           </div>
         </a>
 
@@ -637,8 +643,8 @@
             </div>
           </div>
           <div class="service-card__body">
-            <h3>WordPress & Digital Experiences</h3>
-            <p>
+            <h3 data-i18n="services.showcase.s5Title">WordPress & Digital Experiences</h3>
+            <p data-i18n="services.showcase.s5Desc">
               نصمم ونطور مواقع WordPress احترافية تجمع بين الأداء، سهولة
               الإدارة، التصميم المتجاوب وتجربة المستخدم.
             </p>
@@ -652,9 +658,9 @@
             </div>
           </div>
           <div class="service-card__visual" aria-hidden="true">
-            <img src="assets/images/Gemini_Generated_Image_rpq1serpq1serpq1.jfif" alt="WordPress وتجارب رقمية" />
+            <img src="assets/images/Gemini_Generated_Image_rpq1serpq1serpq1.jfif" alt="WordPress وتجارب رقمية" data-i18n-alt="services.showcase.s5Title" />
           </div>
-          <span class="service-link">اكتشف الخدمة</span>
+          <span class="service-link" data-i18n="services.page.learnMore">اكتشف الخدمة</span>
         </a>
 
         <a href="portfolio.html?category=Automation-BussinessSolution"
@@ -668,8 +674,8 @@
             </div>
           </div>
           <div class="service-card__body">
-            <h3>Power Platform & Business Automation</h3>
-            <p>
+            <h3 data-i18n="services.showcase.s4Title">Power Platform & Business Automation</h3>
+            <p data-i18n="services.showcase.s4Desc">
               بنحوّل العمليات اليدوية لحلول رقمية مترابطة باستخدام Power Apps
               وPower Automate وSharePoint وPower BI.
             </p>
@@ -682,9 +688,9 @@
             </div>
           </div>
           <div class="service-card__visual" aria-hidden="true">
-            <img src="assets/images/Gemini_Generated_Image_xtn3prxtn3prxtn3.jfif" alt="Power Platform والأتمتة" />
+            <img src="assets/images/Gemini_Generated_Image_xtn3prxtn3prxtn3.jfif" alt="Power Platform والأتمتة" data-i18n-alt="services.showcase.s4Title" />
           </div>
-          <span class="service-link">اكتشف الخدمة</span>
+          <span class="service-link" data-i18n="services.page.learnMore">اكتشف الخدمة</span>
         </a>
 
         <a href="portfolio.html?category=web-development" class="service-card service-card--ai" data-service="ai">
@@ -698,8 +704,8 @@
             </div>
           </div>
           <div class="service-card__body">
-            <h3>الذكاء الاصطناعي والتعلم الآلي</h3>
-            <p>
+            <h3 data-i18n="services.showcase.s2Title">الذكاء الاصطناعي والتعلم الآلي</h3>
+            <p data-i18n="services.showcase.s2Desc">
               نوظف الذكاء الاصطناعي لبناء حلول قادرة على تحليل البيانات، فهم
               المحتوى، أتمتة القرارات وتحسين العمليات.
             </p>
@@ -713,9 +719,9 @@
           </div>
           <div class="service-card__visual" aria-hidden="true">
             <img src="assets/images/Gemini_Generated_Image_z00iofz00iofz00i.jfif"
-              alt="الذكاء الاصطناعي والتعلم الآلي" />
+              alt="الذكاء الاصطناعي والتعلم الآلي" data-i18n-alt="services.showcase.s2Title" />
           </div>
-          <span class="service-link">اكتشف الخدمة</span>
+          <span class="service-link" data-i18n="services.page.learnMore">اكتشف الخدمة</span>
         </a>
 
         <a href="portfolio.html?category=Automation-BussinessSolution" class="service-card service-card--automation"
@@ -730,8 +736,8 @@
             </div>
           </div>
           <div class="service-card__body">
-            <h3>الأتمتة وربط الأنظمة</h3>
-            <p>
+            <h3 data-i18n="services.showcase.s3Title">الأتمتة وربط الأنظمة</h3>
+            <p data-i18n="services.showcase.s3Desc">
               نربط الأنظمة والأدوات المختلفة في workflows ذكية تقلل العمل
               اليدوي وتخلق تدفقًا آليًا للبيانات والعمليات.
             </p>
@@ -744,9 +750,9 @@
             </div>
           </div>
           <div class="service-card__visual" aria-hidden="true">
-            <img src="assets/images/Gemini_Generated_Image_qv4h1gqv4h1gqv4h.jfif" alt="الأتمتة وربط الأنظمة" />
+            <img src="assets/images/Gemini_Generated_Image_qv4h1gqv4h1gqv4h.jfif" alt="الأتمتة وربط الأنظمة" data-i18n-alt="services.showcase.s3Title" />
           </div>
-          <span class="service-link">اكتشف الخدمة</span>
+          <span class="service-link" data-i18n="services.page.learnMore">اكتشف الخدمة</span>
         </a>
       </div>
     </section>
@@ -812,7 +818,7 @@
     <section class="tech-ecosystem" id="tech-ecosystem">
       <div class="services-shell">
         <div class="section-heading section-heading--center">
-          <h2>منطق تقني متكامل</h2>
+          <h2 data-i18n="services.page.techTitle">منطق تقني متكامل</h2>
         </div>
 
         <div class="tech-stack">
@@ -912,14 +918,14 @@
     <section class="services-cta">
       <div class="services-shell services-cta__panel">
         <div class="services-cta__content">
-          <h2>عندك فكرة؟ خلّينا نحوّلها لحل.</h2>
-          <p>
+          <h2 data-i18n="services.cta.title">عندك فكرة؟ خلّينا نحوّلها لحل.</h2>
+          <p data-i18n="services.cta.subtitle">
             شاركنا الفكرة اللي في دماغك، وإحنا نساعدك تبني الحل التقني
             المناسب.
           </p>
         </div>
         <div class="services-cta__actions">
-          <a href="contact.html" class="btn-cyan">ابدأ مشروعك</a>
+          <a href="contact.html" class="btn-cyan" data-i18n="services.cta.btn">ابدأ مشروعك</a>
         </div>
       </div>
     </section>
@@ -955,11 +961,11 @@
         <div class="lg:col-span-4 space-y-5">
           <a href="index.html"
             class="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-lg"
-            aria-label="العودة إلى الصفحة الرئيسية">
+            aria-label="العودة إلى الصفحة الرئيسية" data-i18n-aria="common.nav.home">
             <img src="assets/images/Logo.png" alt="Forascom — فرصكم" class="h-11 w-auto object-contain rounded-lg" />
           </a>
 
-          <p class="text-slate-300 text-sm leading-relaxed max-w-sm">
+          <p class="text-slate-300 text-sm leading-relaxed max-w-sm" data-i18n="common.footer.aboutText">
             شركة حلول برمجية وتطوير تقني — نخلق الفرص للأعمال من خلال تقنيات
             الويب المستدامة، الذكاء الاصطناعي، وأتمتة العمليات بجودة هندسية
             راقية.
@@ -969,7 +975,7 @@
             class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
 
-            متاحون حالياً لاستقبال مشاريع جديدة
+            <span data-i18n="common.footer.availableBadge">متاحون حالياً لاستقبال مشاريع جديدة</span>
           </div>
         </div>
 
@@ -977,7 +983,7 @@
            COLUMN 2: MAIN NAVIGATION
            =================================================== -->
         <div class="lg:col-span-3 space-y-4">
-          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
+          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3" data-i18n="common.footer.mainLinksTitle">
             الروابط الرئيسية
           </h4>
 
@@ -987,7 +993,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                الرئيسية
+                <span data-i18n="common.nav.home">الرئيسية</span>
               </a>
             </li>
 
@@ -996,7 +1002,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                عن فرصكم
+                <span data-i18n="common.nav.about">عن فرصكم</span>
               </a>
             </li>
 
@@ -1006,7 +1012,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                خدماتنا
+                <span data-i18n="common.nav.services">خدماتنا</span>
               </a>
             </li>
 
@@ -1016,7 +1022,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                معرض الأعمال
+                <span data-i18n="common.nav.portfolio">معرض الأعمال</span>
               </a>
             </li>
 
@@ -1025,7 +1031,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                تواصل معنا
+                <span data-i18n="common.nav.contact">تواصل معنا</span>
               </a>
             </li>
           </ul>
@@ -1035,7 +1041,7 @@
            COLUMN 3: SERVICES & SOLUTIONS
            =================================================== -->
         <div class="lg:col-span-2 space-y-4">
-          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
+          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3" data-i18n="common.footer.servicesTitle">
             خدماتنا
           </h4>
 
@@ -1047,7 +1053,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                تطوير المواقع
+                <span data-i18n="common.footer.servicesLinks.web">تطوير المواقع</span>
               </a>
             </li>
 
@@ -1058,7 +1064,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                مواقع WordPress
+                <span data-i18n="common.footer.servicesLinks.wordpress">مواقع WordPress</span>
               </a>
             </li>
 
@@ -1069,7 +1075,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                حلول الذكاء الاصطناعي
+                <span data-i18n="common.footer.servicesLinks.ai">حلول الذكاء الاصطناعي</span>
               </a>
             </li>
 
@@ -1080,7 +1086,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                الأتمتة والعمليات الذكية
+                <span data-i18n="common.footer.servicesLinks.automation">الأتمتة والعمليات الذكية</span>
               </a>
             </li>
 
@@ -1091,7 +1097,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                حلول Power Platform
+                <span data-i18n="common.footer.servicesLinks.powerPlatform">حلول Power Platform</span>
               </a>
             </li>
           </ul>
@@ -1101,7 +1107,7 @@
            COLUMN 4: CONTACT & SOCIALS
            =================================================== -->
         <div class="lg:col-span-3 space-y-4">
-          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
+          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3" data-i18n="common.footer.contactTitle">
             التواصل المباشر
           </h4>
 
@@ -1110,7 +1116,7 @@
             <li>
               <a href="mailto:forascomteam@gmail.com"
                 class="inline-flex items-center gap-3 hover:text-cyan-400 transition-colors"
-                aria-label="راسلنا عبر البريد الإلكتروني">
+                aria-label="راسلنا عبر البريد الإلكتروني" data-i18n-aria="contact.info.emailLabel">
                 <span class="material-symbols-outlined text-cyan-400 text-lg">
                   mail
                 </span>
@@ -1123,7 +1129,7 @@
 
 
           <div class="pt-2">
-            <span class="block text-xs font-semibold text-slate-400 mb-3">
+            <span class="block text-xs font-semibold text-slate-400 mb-3" data-i18n="common.footer.digitalPresence">
               تواجدنا الرقمي:
             </span>
 
@@ -1181,7 +1187,7 @@
         <p class="text-center md:text-right">
           © <span id="footer-year">2026</span>
           <strong class="text-slate-200">Forascom</strong>.
-          جميع الحقوق محفوظة —
+          <span data-i18n="common.footer.copyright">جميع الحقوق محفوظة</span> —
           <span class="text-cyan-400 font-medium">
             Technology that creates opportunities
           </span>
@@ -1189,14 +1195,14 @@
 
         <div class="flex items-center gap-6 text-slate-400">
           <!-- Privacy & Terms -->
-          <span class="text-slate-500">
+          <span class="text-slate-500" data-i18n="common.footer.privacyTerms">
             الخصوصية والشروط
           </span>
 
           <span class="w-1 h-1 rounded-full bg-slate-700"></span>
 
           <!-- Technical Support -->
-          <a href="contact.html" class="hover:text-cyan-400 transition-colors">
+          <a href="contact.html" class="hover:text-cyan-400 transition-colors" data-i18n="common.footer.techSupport">
             الدعم التقني
           </a>
         </div>
@@ -1219,7 +1225,7 @@
             d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
         </svg>
       </div>
-      <span
+      <span data-i18n="common.footer.floatingWhatsApp"
         class="max-w-0 opacity-0 overflow-hidden whitespace-nowrap transition-all duration-500 ease-in-out group-hover:max-w-xs group-hover:opacity-100 group-hover:mr-2.5">
         تحدث مع مهندس Forascom الآن 💬
       </span>
@@ -1227,7 +1233,7 @@
   </div>
 
   <!-- Back To Top Button -->
-  <button id="back-to-top" aria-label="العودة إلى الأعلى"
+  <button id="back-to-top" aria-label="العودة إلى الأعلى" data-i18n-aria="common.cta.backToTop"
     class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-white text-navy border border-slate-200 shadow-xl flex items-center justify-center hover:bg-navy hover:text-white hover:-translate-y-1 transition-all">
     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 15l7-7 7 7" />
@@ -1237,6 +1243,9 @@
   <!-- App JavaScript Modules -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="assets/js/translations/ar.js"></script>
+  <script src="assets/js/translations/en.js"></script>
+  <script src="assets/js/i18n.js"></script>
   <script src="assets/js/orbit.js"></script>
   <script src="assets/js/portfolio.js"></script>
   <script src="assets/js/main.js"></script>

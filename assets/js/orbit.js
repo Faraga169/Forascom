@@ -5,17 +5,19 @@
    ========================================================================== */
 
 (function () {
+  const t = (key, fallback) => window.forascomI18n?.t(key, fallback) ?? fallback;
+
   // 5 Main Technology Categories (The Parent Pillars)
   const techGroups = {
     ai: {
       id: "ai",
-      name: "AI & LLM Solutions",
-      tag: "ARTIFICIAL INTELLIGENCE",
-      desc: "نحوّل الذكاء الاصطناعي من مجرد فكرة إلى حلول ونماذج لغوية (LLMs) عملية تساعد شركتك على الوصول للمعلومات، أتمتة المهام، وتحسين طريقة اتخاذ القرار.",
+      name: t("home.orbit.ai.name", "AI & LLM Solutions"),
+      tag: t("home.orbit.ai.tag", "ARTIFICIAL INTELLIGENCE"),
+      desc: t("home.orbit.ai.desc", "نحوّل الذكاء الاصطناعي من مجرد فكرة إلى حلول ونماذج لغوية (LLMs) عملية تساعد شركتك على الوصول للمعلومات، أتمتة المهام، وتحسين طريقة اتخاذ القرار."),
       useCases: [
-        "مساعدات وروبوتات ذكية",
-        "البحث الذكي في معلومات الشركة (RAG)",
-        "تحليل المستندات والبيانات",
+        t("home.orbit.ai.useCase1", "مساعدات وروبوتات ذكية"),
+        t("home.orbit.ai.useCase2", "البحث الذكي في معلومات الشركة (RAG)"),
+        t("home.orbit.ai.useCase3", "تحليل المستندات والبيانات"),
       ],
       poweredBy: ["LLMs", "RAG", "AI Agents", "OpenAI Models"],
       logo: "assets/images/Ai.png",
@@ -24,13 +26,13 @@
 
     "power-platform": {
       id: "power-platform",
-      name: "Microsoft Power Platform",
-      tag: "BUSINESS APPLICATIONS",
-      desc: "نحوّل العمليات اليومية المعقدة إلى تطبيقات وأنظمة سهلة الاستخدام تساعد فريقك على إنجاز العمل بشكل أسرع وأكثر تنظيمًا.",
+      name: t("home.orbit.powerPlatform.name", "Microsoft Power Platform"),
+      tag: t("home.orbit.powerPlatform.tag", "BUSINESS APPLICATIONS"),
+      desc: t("home.orbit.powerPlatform.desc", "نحوّل العمليات اليومية المعقدة إلى تطبيقات وأنظمة سهلة الاستخدام تساعد فريقك على إنجاز العمل بشكل أسرع وأكثر تنظيمًا."),
       useCases: [
-        "تطبيقات داخلية لإدارة العمل",
-        "رقمنة وأتمتة إجراءات الشركة",
-        "ربط الفرق والبيانات في نظام واحد",
+        t("home.orbit.powerPlatform.useCase1", "تطبيقات داخلية لإدارة العمل"),
+        t("home.orbit.powerPlatform.useCase2", "رقمنة وأتمتة إجراءات الشركة"),
+        t("home.orbit.powerPlatform.useCase3", "ربط الفرق والبيانات في نظام واحد"),
       ],
       poweredBy: ["Power Apps", "Power Automate", "Power BI", "SharePoint"],
       logo: "assets/images/PowerPlatform.webp",
@@ -39,13 +41,13 @@
 
     "web-dev": {
       id: "web-dev",
-      name: "Full-Stack Web Development",
-      tag: "WEB DEVELOPMENT",
-      desc: "نبني أنظمة ومواقع ومنصات رقمية مصممة حول احتياجات عملك، من واجهات العملاء إلى الأنظمة الداخلية ولوحات التحكم.",
+      name: t("home.orbit.webDev.name", "Full-Stack Web Development"),
+      tag: t("home.orbit.webDev.tag", "WEB DEVELOPMENT"),
+      desc: t("home.orbit.webDev.desc", "نبني أنظمة ومواقع ومنصات رقمية مصممة حول احتياجات عملك، من واجهات العملاء إلى الأنظمة الداخلية ولوحات التحكم."),
       useCases: [
-        "مواقع للشركات والأعمال",
-        "تطبيقات ومنصات مخصصة",
-        "لوحات تحكم وأنظمة داخلية",
+        t("home.orbit.webDev.useCase1", "مواقع للشركات والأعمال"),
+        t("home.orbit.webDev.useCase2", "تطبيقات ومنصات مخصصة"),
+        t("home.orbit.webDev.useCase3", "لوحات تحكم وأنظمة داخلية"),
       ],
       poweredBy: ["Angular", "JavaScript", "Tailwind CSS", "HTML5"],
       logo: "assets/images/web.jpg",
@@ -54,13 +56,13 @@
 
     wordpress: {
       id: "wordpress",
-      name: "WordPress & WooCommerce",
-      tag: "WEB SOLUTIONS",
-      desc: "ننشئ مواقع احترافية وسريعة تساعد شركتك على الظهور بشكل قوي على الإنترنت، مع إمكانية إدارة المحتوى والمنتجات بسهولة دون تعقيد تقني.",
+      name: t("home.orbit.wordpress.name", "WordPress & WooCommerce"),
+      tag: t("home.orbit.wordpress.tag", "WEB SOLUTIONS"),
+      desc: t("home.orbit.wordpress.desc", "ننشئ مواقع احترافية وسريعة تساعد شركتك على الظهور بشكل قوي على الإنترنت، مع إمكانية إدارة المحتوى والمنتجات بسهولة دون تعقيد تقني."),
       useCases: [
-        "مواقع الشركات والأعمال",
-        "صفحات الهبوط والتعريف بالخدمات",
-        "المتاجر الإلكترونية",
+        t("home.orbit.wordpress.useCase1", "مواقع الشركات والأعمال"),
+        t("home.orbit.wordpress.useCase2", "صفحات الهبوط والتعريف بالخدمات"),
+        t("home.orbit.wordpress.useCase3", "المتاجر الإلكترونية"),
       ],
       poweredBy: [
         "WordPress",
@@ -74,13 +76,13 @@
 
     n8n: {
       id: "n8n",
-      name: "n8n Workflow Automation",
-      tag: "WORKFLOW AUTOMATION",
-      desc: "نربط الأنظمة والخدمات ونؤتمت المهام المتكررة لتقليل العمل اليدوي، تسريع العمليات، وتقليل الأخطاء داخل شركتك.",
+      name: t("home.orbit.automation.name", "n8n Workflow Automation"),
+      tag: t("home.orbit.automation.tag", "WORKFLOW AUTOMATION"),
+      desc: t("home.orbit.automation.desc", "نربط الأنظمة والخدمات ونؤتمت المهام المتكررة لتقليل العمل اليدوي، تسريع العمليات، وتقليل الأخطاء داخل شركتك."),
       useCases: [
-        "تشغيل المهام المتكررة تلقائيًا",
-        "ربط الأنظمة ونقل البيانات بينها",
-        "تحديث البيانات وإرسال التنبيهات تلقائيًا",
+        t("home.orbit.automation.useCase1", "تشغيل المهام المتكررة تلقائيًا"),
+        t("home.orbit.automation.useCase2", "ربط الأنظمة ونقل البيانات بينها"),
+        t("home.orbit.automation.useCase3", "تحديث البيانات وإرسال التنبيهات تلقائيًا"),
       ],
       poweredBy: ["n8n", "Webhooks", "REST APIs", "Integrations"],
       logo: "assets/images/n8n.png",
@@ -90,6 +92,13 @@
 
   // Group Order for Auto-Cycling
   const groupOrder = ["ai", "power-platform", "web-dev", "wordpress", "n8n"];
+  const groupTranslationKeys = {
+    ai: "home.orbit.ai",
+    "power-platform": "home.orbit.powerPlatform",
+    "web-dev": "home.orbit.webDev",
+    wordpress: "home.orbit.wordpress",
+    n8n: "home.orbit.automation",
+  };
 
   // All Nodes on the Orbit (Distributed / Interspersed across the 3 rings)
   const techOrbitNodes = [
@@ -393,10 +402,26 @@
     });
   }
 
+  function getLocalizedGroupData(groupId) {
+    const groupData = techGroups[groupId];
+    const translationKey = groupTranslationKeys[groupId];
+    if (!groupData || !translationKey) return groupData;
+
+    return {
+      ...groupData,
+      name: t(`${translationKey}.name`, groupData.name),
+      tag: t(`${translationKey}.tag`, groupData.tag),
+      desc: t(`${translationKey}.desc`, groupData.desc),
+      useCases: groupData.useCases.map((fallback, index) =>
+        t(`${translationKey}.useCase${index + 1}`, fallback),
+      ),
+    };
+  }
+
   /* Activate an entire Technology Family and update Left Detail Card */
   function selectGroup(groupId, manualLock = false) {
     activeGroupId = groupId;
-    const groupData = techGroups[groupId];
+    const groupData = getLocalizedGroupData(groupId);
     if (!groupData) return;
 
     // Highlight all nodes in this technology group simultaneously
@@ -626,6 +651,9 @@
     initTravelingParticles();
     initMouseParallax();
     startAutoCycle();
+    window.addEventListener("forascom:langchange", () => {
+      selectGroup(activeGroupId);
+    });
 
     if (animFrameId) cancelAnimationFrame(animFrameId);
     animFrameId = requestAnimationFrame(animationLoop);

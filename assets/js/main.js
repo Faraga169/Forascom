@@ -84,25 +84,28 @@ function calculateAndShowEstimate() {
   const resultTime = document.getElementById("estimate-rec-time");
   const resultStack = document.getElementById("estimate-rec-stack");
 
-  let title = "تطوير موقع/تطبيق ويب (Web Development - Custom / WordPress)";
-  let desc = "بناء نظام سحابي موسع بقواعد بيانات مخصصة أو موقع WordPress فائق الأداء لخدمة أهداف نشاطك.";
-  let time = "2 - 4 أسابيع";
+  const t = (key, fallback) => window.forascomI18n?.t(key, fallback) ?? fallback;
+  const isEnglish = window.forascomI18n?.currentLang === "en";
+
+  let title = t("home.estimator.optWeb", "تطوير موقع/تطبيق ويب (Web Development - Custom / WordPress)");
+  let desc = t("home.estimator.optWebDesc", "بناء نظام سحابي موسع بقواعد بيانات مخصصة أو موقع WordPress فائق الأداء لخدمة أهداف نشاطك.");
+  let time = isEnglish ? "2 - 4 weeks" : "2 - 4 أسابيع";
   let stack = ["React.js", "Node.js / WordPress", "PostgreSQL / WooCommerce", "Tailwind CSS"];
 
   if (estimatorStepsData.serviceType === "ai") {
-    title = "منظومة ذكاء اصطناعي وأتمتة (AI & Intelligent Automation)";
-    desc = "بناء نماذج لغوية مخصصة، معالجة مستندات، أو رؤية حاسوبية مع دمج خوادم سريعة الاستجابة.";
-    time = "2 - 4 أسابيع";
+    title = t("home.estimator.optAi", "منظومة ذكاء اصطناعي وأتمتة (AI & Intelligent Automation)");
+    desc = t("home.estimator.optAiDesc", "بناء نماذج لغوية مخصصة، معالجة مستندات، أو رؤية حاسوبية مع دمج خوادم سريعة الاستجابة.");
+    time = isEnglish ? "2 - 4 weeks" : "2 - 4 أسابيع";
     stack = ["OpenAI API", "Python / PyTorch", "LangChain", "Vector Database"];
   } else if (estimatorStepsData.serviceType === "powerplatform") {
-    title = "أتمتة الأعمال وبوابات المهام (Power Platform & Low-Code)";
-    desc = "تصميم سير عمل Power Automate وتطبيقات Power Apps لربط وتسهيل الموافقات الإدارية.";
-    time = "1 - 2 أسابيع";
+    title = t("home.estimator.optPower", "أتمتة الأعمال وبوابات المهام (Power Platform & Low-Code)");
+    desc = t("home.estimator.optPowerDesc", "تصميم سير عمل Power Automate وتطبيقات Power Apps لربط وتسهيل الموافقات الإدارية.");
+    time = isEnglish ? "1 - 2 weeks" : "1 - 2 أسابيع";
     stack = ["Power Automate", "Power Apps", "Dataverse / SharePoint", "Microsoft Teams API"];
   }
 
   if (estimatorStepsData.projectScale === "enterprise") {
-    time = "5 - 8 أسابيع";
+    time = isEnglish ? "5 - 8 weeks" : "5 - 8 أسابيع";
   }
 
   if (resultTitle) resultTitle.textContent = title;

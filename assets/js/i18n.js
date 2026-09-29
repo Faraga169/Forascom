@@ -72,47 +72,18 @@
    */
   function updateMetadata() {
     const pageKey = getPageKey();
-    const trans = window.forascomTranslations?.[currentLang];
-
-    // Meta titles by page
-    const titles = {
-      index: {
-        ar: "Forascom — فرصكم | حلول برمجية وتطوير تقني",
-        en: "Forascom | Enterprise Software, AI & Digital Solutions"
-      },
-      about: {
-        ar: "عن فرصكم | حلول برمجية وتطوير تقني متقدم",
-        en: "About Us | Forascom Software Studio"
-      },
-      services: {
-        ar: "خدماتنا | حلول البرمجيات والذكاء الاصطناعي — فرصكم",
-        en: "Our Services | Enterprise Software & AI — Forascom"
-      },
-      portfolio: {
-        ar: "معرض الأعمال | مشاريع ودراسات حالة — فرصكم",
-        en: "Portfolio & Case Studies | Forascom"
-      },
-      "project-details": {
-        ar: "تفاصيل المشروع | Forascom فرصكم",
-        en: "Project Details | Forascom"
-      },
-      contact: {
-        ar: "تواصل معنا | Forascom — ابدأ مشروعك التقني",
-        en: "Contact Us | Start Your Project — Forascom"
-      }
-    };
-
-    if (pageKey && titles[pageKey] && pageKey !== "project-details") {
-      document.title = titles[pageKey][currentLang] || titles[pageKey].ar;
+    const pageMetadata = t(`meta.pages.${pageKey}`, null);
+    if (pageMetadata?.title && pageKey !== "project-details") {
+      document.title = pageMetadata.title;
     }
 
     // Meta description
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      const descKey = currentLang === "en"
-        ? "Software engineering and digital technology studio. We create business opportunities through sustainable web platforms, practical AI, and resilient automation."
-        : "شركة حلول برمجية وتطوير تقني — نخلق الفرص للأعمال من خلال تقنيات الويب المستدامة، الذكاء الاصطناعي، وأتمتة العمليات بجودة هندسية راقية.";
-      metaDesc.setAttribute("content", descKey);
+      metaDesc.setAttribute(
+        "content",
+        pageMetadata?.description || t("meta.siteDescription", ""),
+      );
     }
   }
 

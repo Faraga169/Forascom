@@ -80,6 +80,7 @@
   <link rel="stylesheet" href="assets/css/navbar.css" />
   <!-- About Page Stylesheet -->
   <link rel="stylesheet" href="assets/css/about.css" />
+  <link rel="stylesheet" href="assets/css/i18n.css" />
 
   <!-- GSAP + ScrollTrigger -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
@@ -108,20 +109,23 @@
 
       <!-- Desktop Navigation -->
       <nav class="hidden lg:flex items-center justify-center gap-5 xl:gap-8 font-semibold text-sm flex-1 mx-4">
-        <a href="index.html" class="nav-link hover:text-cyan-bright transition-colors">الرئيسية</a>
-        <a href="about.html" aria-current="page" class="nav-active nav-link hover:text-cyan-bright transition-colors">عن
+        <a href="index.html" data-i18n="common.nav.home" class="nav-link hover:text-cyan-bright transition-colors">الرئيسية</a>
+        <a href="about.html" aria-current="page" data-i18n="common.nav.about" class="nav-active nav-link hover:text-cyan-bright transition-colors">عن
           فرصكم</a>
-        <a href="services.html" class="nav-link hover:text-cyan-bright transition-colors">خدماتنا</a>
-        <a href="portfolio.html" class="nav-link hover:text-cyan-bright transition-colors">معرض الأعمال</a>
-        <a href="contact.html" class="nav-link hover:text-cyan-bright transition-colors">تواصل معنا</a>
+        <a href="services.html" data-i18n="common.nav.services" class="nav-link hover:text-cyan-bright transition-colors">خدماتنا</a>
+        <a href="portfolio.html" data-i18n="common.nav.portfolio" class="nav-link hover:text-cyan-bright transition-colors">معرض الأعمال</a>
+        <a href="contact.html" data-i18n="common.nav.contact" class="nav-link hover:text-cyan-bright transition-colors">تواصل معنا</a>
       </nav>
 
       <!-- Desktop CTA & Mobile Toggle -->
       <div class="flex items-center gap-4 shrink-0">
-
+        <div class="lang-switcher-pill shrink-0" role="group" data-i18n-aria="common.nav.language" aria-label="اللغة">
+          <button type="button" data-lang-switch="ar" aria-pressed="true">العربية</button>
+          <button type="button" data-lang-switch="en" aria-pressed="false">EN</button>
+        </div>
         <button id="mobile-menu-btn"
           class="lg:hidden text-text-primary p-2 rounded-lg hover:bg-white/5 transition-colors"
-          style="background: rgba(56, 189, 248, 0.1)" aria-label="القائمة">
+          style="background: rgba(56, 189, 248, 0.1)" aria-label="القائمة" data-i18n-aria="common.nav.menuAria">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -133,15 +137,15 @@
     <div id="mobile-menu-container"
       class="hidden lg:hidden bg-navy-secondary border-b px-4 pt-2 pb-6 space-y-3 font-semibold text-text-secondary max-h-[calc(100vh-5rem)] overflow-y-auto"
       style="border-color: rgba(56, 189, 248, 0.12)">
-      <a href="index.html" class="block py-2 border-b hover:text-text-primary"
+      <a href="index.html" data-i18n="common.nav.home" class="block py-2 border-b hover:text-text-primary"
         style="border-color: rgba(56, 189, 248, 0.12)">الرئيسية</a>
-      <a href="about.html" aria-current="page" class="block py-2 text-cyan font-bold"
+      <a href="about.html" aria-current="page" data-i18n="common.nav.about" class="block py-2 text-cyan font-bold"
         style="border-color: rgba(56, 189, 248, 0.12)">عن فرصكم</a>
-      <a href="services.html" class="block py-2 border-b hover:text-text-primary"
+      <a href="services.html" data-i18n="common.nav.services" class="block py-2 border-b hover:text-text-primary"
         style="border-color: rgba(56, 189, 248, 0.12)">خدماتنا</a>
-      <a href="portfolio.html" class="block py-2 border-b hover:text-text-primary"
+      <a href="portfolio.html" data-i18n="common.nav.portfolio" class="block py-2 border-b hover:text-text-primary"
         style="border-color: rgba(56, 189, 248, 0.12)">معرض الأعمال</a>
-      <a href="contact.html" class="block py-2 border-b hover:text-text-primary"
+      <a href="contact.html" data-i18n="common.nav.contact" class="block py-2 border-b hover:text-text-primary"
         style="border-color: rgba(56, 189, 248, 0.12)">تواصل معنا</a>
     </div>
   </header>
@@ -165,22 +169,22 @@
         <!-- Text Column (sitting in front of background visual) -->
         <div class="lg:col-span-8 space-y-6 text-right relative z-10">
           <!-- Title -->
-          <h1 class="n-hero-title">
+          <h1 class="n-hero-title" data-i18n-html="about.page.heroTitleHtml">
             <span class="block text-white">نبني الحلول،</span>
             <span class="block" style="color: var(--color-blue-soft)">ونصنع الفرص.</span>
           </h1>
 
           <!-- Subtitle -->
-          <p class="n-hero-subtitle text-slate-300">
+          <p class="n-hero-subtitle text-slate-300" data-i18n="about.hero.subtitle">
             شركة تكنولوجيا عربية تُطوّر حلولاً برمجية وذكية، تُحوّل الأفكار إلى
             فرص حقيقية للنمو والنجاح.
           </p>
 
           <!-- Pills Row -->
           <div class="about-hero-pills flex flex-wrap items-center gap-3 pt-1">
-            <span>أداء مستدام</span>
-            <span>تطوير عربي</span>
-            <span>حلول ذكية</span>
+            <span data-i18n="about.page.pill1">أداء مستدام</span>
+            <span data-i18n="about.page.pill2">تطوير عربي</span>
+            <span data-i18n="about.page.pill3">حلول ذكية</span>
           </div>
         </div>
       </div>
@@ -217,12 +221,12 @@
       <!-- RIGHT: Content -->
       <div class="who-we-are-right">
         <header class="who-we-are-header">
-          <h3 class="who-we-are-title">
+          <h3 class="who-we-are-title" data-i18n-html="about.page.storyTitleHtml">
             <span class="who-we-are-line">نحن نخلق <span class="who-we-are-white">الفرص</span></span>
             <span class="who-we-are-line who-we-are-line-secondary"><span class="cyan-text">من خلال
                 التكنولوجيا</span></span>
           </h3>
-          <p class="who-we-are-description">
+          <p class="who-we-are-description" data-i18n-html="about.page.storyDescriptionHtml">
             في <strong>فرصكم</strong>، ننطلق من مبدأ أساسي: التكنولوجيا مجرد
             أداة، والمحرك الحقيقي هو الفهم العميق لما تحتاجه أعمالك بالفعل.
             <br /><br />
@@ -235,7 +239,7 @@
             نستمر معك لنضمن تحقيق نتائج ملموسة تُعزز كفاءة عملك وسرعة إنجازه.
           </p>
           <p style="margin-top: 1rem">
-            <a href="portfolio.html" class="who-we-are-cta">تعرف على قصة نجاحنا</a>
+            <a href="portfolio.html" class="who-we-are-cta" data-i18n="about.page.storyCta">تعرف على قصة نجاحنا</a>
           </p>
         </header>
       </div>
@@ -253,7 +257,7 @@
           </svg>
         </span>
         <span class="forascom-about-metric-value" data-target="20" data-prefix="+">0</span>
-        <span class="forascom-about-metric-label">أعضاء في الفريق</span>
+        <span class="forascom-about-metric-label" data-i18n="about.page.metric1">أعضاء في الفريق</span>
       </div>
       <div class="forascom-about-metric">
         <span class="forascom-about-metric-icon" aria-hidden="true">
@@ -265,7 +269,7 @@
           </svg>
         </span>
         <span class="forascom-about-metric-value" data-target="30" data-prefix="+">0</span>
-        <span class="forascom-about-metric-label">مشاريع مكتملة</span>
+        <span class="forascom-about-metric-label" data-i18n="about.page.metric2">مشاريع مكتملة</span>
       </div>
       <div class="forascom-about-metric">
         <span class="forascom-about-metric-icon" aria-hidden="true">
@@ -276,7 +280,7 @@
           </svg>
         </span>
         <span class="forascom-about-metric-value" data-target="2">0</span>
-        <span class="forascom-about-metric-label">منصات قيد التطوير</span>
+        <span class="forascom-about-metric-label" data-i18n="about.page.metric3">منصات قيد التطوير</span>
       </div>
       <div class="forascom-about-metric">
         <span class="forascom-about-metric-icon" aria-hidden="true">
@@ -287,7 +291,7 @@
           </svg>
         </span>
         <span class="forascom-about-metric-value" data-target="100" data-suffix="%">0</span>
-        <span class="forascom-about-metric-label">جاهزية الإنتاج</span>
+        <span class="forascom-about-metric-label" data-i18n="about.page.metric4">جاهزية الإنتاج</span>
       </div>
     </div>
   </section>
@@ -302,8 +306,8 @@
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="n-build-solution-header">
-        <h2 class="n-build-solution-title">حدد تطلعاتك</h2>
-        <p class="n-build-solution-subtitle">
+        <h2 class="n-build-solution-title" data-i18n="about.page.buildTitle">حدد تطلعاتك</h2>
+        <p class="n-build-solution-subtitle" data-i18n="about.page.buildSubtitle">
           ونحن نساعدك في تطوير الحل البرمجي الأمثل لأعمالك.
         </p>
       </div>
@@ -313,30 +317,30 @@
         <article class="n-build-solution-card n-build-solution-card--blue">
           <div class="n-build-solution-icon" aria-hidden="true">▤</div>
           <div class="n-build-solution-tag">DIGITAL PRESENCE</div>
-          <h3>هل تحتاج إلى موقع أو منصة رقمية؟</h3>
-          <div class="n-build-solution-subdesc">
+          <h3 data-i18n="about.build.web.title">هل تحتاج إلى موقع أو منصة رقمية؟</h3>
+          <div class="n-build-solution-subdesc" data-i18n="about.build.web.subtitle">
             أظهر أعمالك باحترافية على الإنترنت
           </div>
-          <p>
+          <p data-i18n="about.build.web.description">
             نبني مواقع ومنصات رقمية تُمكنك من عرض خدماتك، الوصول لعملائك بسهولة،
             وتوفير تجربة مستخدم متكاملة تناسب طبيعة نشاطك.
           </p>
 
-          <span class="n-build-solution-list-label">الحلول التي نصممها:</span>
+          <span class="n-build-solution-list-label" data-i18n="about.build.listTitle">الحلول التي نصممها:</span>
           <ul class="n-build-solution-list">
-            <li>مواقع الشركات والأعمال (Business Websites)</li>
-            <li>صفحات الهبوط (Landing Pages)</li>
-            <li>المتاجر الإلكترونية (Online Stores)</li>
-            <li>تطبيقات الويب المخصصة (Custom Web Applications)</li>
+            <li data-i18n="about.build.web.item1">مواقع الشركات والأعمال (Business Websites)</li>
+            <li data-i18n="about.build.web.item2">صفحات الهبوط (Landing Pages)</li>
+            <li data-i18n="about.build.web.item3">المتاجر الإلكترونية (Online Stores)</li>
+            <li data-i18n="about.build.web.item4">تطبيقات الويب المخصصة (Custom Web Applications)</li>
           </ul>
 
-          <div class="n-build-solution-note">
+          <div class="n-build-solution-note" data-i18n-html="about.build.web.noteHtml">
             <strong>تناسب:</strong> الشركات، المصانع، المتاجر الناشئة، ومقدمي
             الخدمات.
           </div>
 
           <div class="n-build-solution-bottom">
-            <span>التقنيات:</span>
+            <span data-i18n="about.build.techLabel">التقنيات:</span>
             <div class="n-build-solution-stack">
               WordPress · WooCommerce · Full-Stack Web
             </div>
@@ -348,31 +352,31 @@
         <article class="n-build-solution-card n-build-solution-card--cyan">
           <div class="n-build-solution-icon" aria-hidden="true">▣</div>
           <div class="n-build-solution-tag">BUSINESS SYSTEMS</div>
-          <h3>هل تحتاج إلى نظام لإدارة أعمالك؟</h3>
-          <div class="n-build-solution-subdesc">
+          <h3 data-i18n="about.build.systems.title">هل تحتاج إلى نظام لإدارة أعمالك؟</h3>
+          <div class="n-build-solution-subdesc" data-i18n="about.build.systems.subtitle">
             حوّل طريقة عملك إلى نظام مخصص لاحتياجاتك
           </div>
-          <p>
+          <p data-i18n="about.build.systems.description">
             إذا كانت عملياتك تعتمد على ملفات Excel المتفرقة أو الإجراءات اليدوية
             المعقدة، فنحن نبني لك نظاماً مخصصاً يجمع بياناتك في مكان واحد ويرفع
             كفاءة فريقك.
           </p>
 
-          <span class="n-build-solution-list-label">الحلول التي نصممها:</span>
+          <span class="n-build-solution-list-label" data-i18n="about.build.listTitle">الحلول التي نصممها:</span>
           <ul class="n-build-solution-list">
-            <li>أنظمة الإدارة المتكاملة (Management Systems)</li>
-            <li>لوحات التحكم والتقارير (Internal Dashboards)</li>
-            <li>بوابات الموظفين (Employee Portals)</li>
-            <li>تطبيقات الأعمال المخصصة (Custom Business Applications)</li>
+            <li data-i18n="about.build.systems.item1">أنظمة الإدارة المتكاملة (Management Systems)</li>
+            <li data-i18n="about.build.systems.item2">لوحات التحكم والتقارير (Internal Dashboards)</li>
+            <li data-i18n="about.build.systems.item3">بوابات الموظفين (Employee Portals)</li>
+            <li data-i18n="about.build.systems.item4">تطبيقات الأعمال المخصصة (Custom Business Applications)</li>
           </ul>
 
-          <div class="n-build-solution-note">
+          <div class="n-build-solution-note" data-i18n-html="about.build.systems.noteHtml">
             <strong>ينظم:</strong> العملاء، الطلبات، المخزون، الموظفين،
             العمليات، والتقارير.
           </div>
 
           <div class="n-build-solution-bottom">
-            <span>التقنيات:</span>
+            <span data-i18n="about.build.techLabel">التقنيات:</span>
             <div class="n-build-solution-stack">
               Full-Stack Web · Power Apps · Dataverse
             </div>
@@ -384,31 +388,31 @@
         <article class="n-build-solution-card n-build-solution-card--orange">
           <div class="n-build-solution-icon" aria-hidden="true">⟡</div>
           <div class="n-build-solution-tag">WORKFLOW AUTOMATION</div>
-          <h3>حوّل المهام المتكررة إلى عمليات آلية تُنفذ بذاتها</h3>
-          <div class="n-build-solution-subdesc">
+          <h3 data-i18n="about.build.automation.title">حوّل المهام المتكررة إلى عمليات آلية تُنفذ بذاتها</h3>
+          <div class="n-build-solution-subdesc" data-i18n="about.build.automation.subtitle">
             أتمتة العمليات لتعمل بتلقائية ودون تدخل بشري
           </div>
-          <p>
+          <p data-i18n="about.build.automation.description">
             إذا كان فريقك يقضي وقتاً طويلاً في تكرار ذات الخطوات يومياً أو نقل
             البيانات يدوياً بين الأنظمة المختلفة، فنحن نُؤتمِت هذه العمليات
             لتعمل بتلقائية ودون تدخل بشري.
           </p>
 
-          <span class="n-build-solution-list-label">مجالات الأتمتة:</span>
+          <span class="n-build-solution-list-label" data-i18n="about.build.automationListTitle">مجالات الأتمتة:</span>
           <ul class="n-build-solution-list">
-            <li>نقل البيانات تلقائياً بين الأنظمة والتطبيقات</li>
-            <li>إرسال الإشعارات والرسائل التنبيهية فوراً</li>
-            <li>تحديث السجلات وتوليد التقارير دورياً</li>
-            <li>متابعة الطلبات والربط بين المنصات</li>
+            <li data-i18n="about.build.automation.item1">نقل البيانات تلقائياً بين الأنظمة والتطبيقات</li>
+            <li data-i18n="about.build.automation.item2">إرسال الإشعارات والرسائل التنبيهية فوراً</li>
+            <li data-i18n="about.build.automation.item3">تحديث السجلات وتوليد التقارير دورياً</li>
+            <li data-i18n="about.build.automation.item4">متابعة الطلبات والربط بين المنصات</li>
           </ul>
 
-          <div class="n-build-solution-note">
+          <div class="n-build-solution-note" data-i18n-html="about.build.automation.noteHtml">
             <strong>النتيجة:</strong> توفير وقت الفريق، تقليل الأخطاء البشرية،
             وتسريع العمليات ورفع كفاءتها.
           </div>
 
           <div class="n-build-solution-bottom">
-            <span>التقنيات:</span>
+            <span data-i18n="about.build.techLabel">التقنيات:</span>
             <div class="n-build-solution-stack">
               n8n · Power Automate · APIs · Integrations
             </div>
@@ -420,31 +424,31 @@
         <article class="n-build-solution-card n-build-solution-card--purple">
           <div class="n-build-solution-icon" aria-hidden="true">✦</div>
           <div class="n-build-solution-tag">PRACTICAL AI</div>
-          <h3>حوّل الذكاء الاصطناعي إلى أداة تُعزز إنتاجية فريقك</h3>
-          <div class="n-build-solution-subdesc">
+          <h3 data-i18n="about.build.ai.title">حوّل الذكاء الاصطناعي إلى أداة تُعزز إنتاجية فريقك</h3>
+          <div class="n-build-solution-subdesc" data-i18n="about.build.ai.subtitle">
             أنجز المهام بوقت وجهد أقل
           </div>
-          <p>
+          <p data-i18n="about.build.ai.description">
             نبني حلول ذكاء اصطناعي عملية تُساعدك في الوصول السريع للمعلومات،
             وإدارة المستندات والبيانات، وأتمتة خدمة العملاء، لإنجاز المهام
             التنافسية بوقت وجُهد أقل.
           </p>
 
-          <span class="n-build-solution-list-label">الحلول التي نصممها:</span>
+          <span class="n-build-solution-list-label" data-i18n="about.build.listTitle">الحلول التي نصممها:</span>
           <ul class="n-build-solution-list">
-            <li>المساعدات الذكية وروبوتات المحادثة (AI Chatbots &amp; Assistants)</li>
-            <li>محركات البحث الذكية في قاعدة المعرفة (Smart Knowledge Search)</li>
-            <li>تحليل وتلخيص المستندات تلقائياً (Document Analysis)</li>
-            <li>الوكلاء الذكيون والمعالجة المتقدمة للبيانات (AI Agents &amp; Intelligent Data Processing)</li>
+            <li data-i18n="about.build.ai.item1">المساعدات الذكية وروبوتات المحادثة (AI Chatbots &amp; Assistants)</li>
+            <li data-i18n="about.build.ai.item2">محركات البحث الذكية في قاعدة المعرفة (Smart Knowledge Search)</li>
+            <li data-i18n="about.build.ai.item3">تحليل وتلخيص المستندات تلقائياً (Document Analysis)</li>
+            <li data-i18n="about.build.ai.item4">الوكلاء الذكيون والمعالجة المتقدمة للبيانات (AI Agents &amp; Intelligent Data Processing)</li>
           </ul>
 
-          <div class="n-build-solution-note">
+          <div class="n-build-solution-note" data-i18n-html="about.build.ai.noteHtml">
             <strong>يُساعدك في:</strong> البحث داخل مستندات الشركة، الرد الآلي
             على العملاء، استخراج المعلومات، وتحليل الصور.
           </div>
 
           <div class="n-build-solution-bottom">
-            <span>التقنيات:</span>
+            <span data-i18n="about.build.techLabel">التقنيات:</span>
             <div class="n-build-solution-stack">
               LLMs · RAG · AI Agents · Computer Vision
             </div>
@@ -454,7 +458,7 @@
       </div>
 
       <div class="n-build-cta">
-        <a href="portfolio.html" class="n-build-solution-cta">ابدأ مشروع</a>
+        <a href="portfolio.html" class="n-build-solution-cta" data-i18n="about.build.cta">ابدأ مشروع</a>
       </div>
     </div>
   </section>
@@ -489,10 +493,10 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <!-- 1. Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-8 space-y-3 reveal-on-scroll reveal-blur">
-        <h2 class="text-3xl sm:text-5xl font-black leading-tight text-white">
+        <h2 class="text-3xl sm:text-5xl font-black leading-tight text-white" data-i18n-html="about.page.journeyTitleHtml">
           رحلة واضحة من <span class="text-cyan">الفكرة إلى الإطلاق</span>
         </h2>
-        <p class="text-slate-300 text-base leading-relaxed max-w-2xl mx-auto">
+        <p class="text-slate-300 text-base leading-relaxed max-w-2xl mx-auto" data-i18n="about.page.journeySubtitle">
           مش محتاج تعرف الحل التقني من البداية.شاركنا المشكلة أو الهدف، وإحنا نساعدك نحدد الطريق الأنسب.
         </p>
       </div>
@@ -508,7 +512,7 @@
           </div>
 
           <!-- 6 Milestone Tabs -->
-          <div class="journey-milestones" role="tablist" aria-label="مراحل رحلة العميل مع Forascom">
+          <div class="journey-milestones" role="tablist" aria-label="مراحل رحلة العميل مع Forascom" data-i18n-aria="about.journey.ariaLabel">
             <!-- Milestone 01 
             <button class="journey-milestone-btn is-active" role="tab" id="tab-step-1" aria-selected="true"
               aria-controls="panel-step-1" onclick="selectJourneyStep(1)" data-step-idx="1">
@@ -557,7 +561,7 @@
               </div>
               <div class="journey-milestone-labels">
                 <span class="journey-milestone-en">PLAN</span>
-                <span class="journey-milestone-ar">خطة العمل</span>
+                <span class="journey-milestone-ar" data-i18n="about.journey.planTab">خطة العمل</span>
               </div>
             </button>
 
@@ -574,7 +578,7 @@
               </div>
               <div class="journey-milestone-labels">
                 <span class="journey-milestone-en">DESIGN</span>
-                <span class="journey-milestone-ar">التصميم والاعتماد</span>
+                <span class="journey-milestone-ar" data-i18n="about.journey.designTab">التصميم والاعتماد</span>
               </div>
             </button>
 
@@ -591,7 +595,7 @@
               </div>
               <div class="journey-milestone-labels">
                 <span class="journey-milestone-en">BUILD</span>
-                <span class="journey-milestone-ar">التطوير المرن</span>
+                <span class="journey-milestone-ar" data-i18n="about.journey.buildTab">التطوير المرن</span>
               </div>
             </button>
 
@@ -608,7 +612,7 @@
               </div>
               <div class="journey-milestone-labels">
                 <span class="journey-milestone-en">LAUNCH</span>
-                <span class="journey-milestone-ar">الإطلاق والدعم</span>
+                <span class="journey-milestone-ar" data-i18n="about.journey.launchTab">الإطلاق والدعم</span>
               </div>
             </button>
           </div>
@@ -657,7 +661,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span>ما الذي ستحصل عليه في هذه الخطوة:</span>
+                  <span data-i18n="about.journey.deliverablesTitle">ما الذي ستحصل عليه في هذه الخطوة:</span>
                 </div>
                 <ul class="journey-deliv-list">
                   <li>
@@ -741,7 +745,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span>ما الذي ستحصل عليه في هذه الخطوة:</span>
+                  <span data-i18n="about.journey.deliverablesTitle">ما الذي ستحصل عليه في هذه الخطوة:</span>
                 </div>
                 <ul class="journey-deliv-list">
                   <li>
@@ -799,16 +803,16 @@
           <div class="journey-panel-card">
             <div class="journey-panel-header">
               <div class="flex items-center gap-3">
-                <span class="journey-panel-badge tag-plan">خطة شفافة</span>
-                <span class="journey-panel-phase">PLAN 01 · خطة العمل ونطاق المشروع</span>
+                <span class="journey-panel-badge tag-plan" data-i18n="about.journey.plan.badge">خطة شفافة</span>
+                <span class="journey-panel-phase" data-i18n="about.journey.plan.phase">PLAN 01 · خطة العمل ونطاق المشروع</span>
               </div>
               <span class="journey-panel-big-num" aria-hidden="true">01</span>
             </div>
 
             <div class="journey-panel-grid">
               <div class="journey-panel-narrative">
-                <h3 class="journey-panel-title">اشرح فكرتك... ونحن نحدد الحل والخطة</h3>
-                <p class="journey-panel-desc">
+                <h3 class="journey-panel-title" data-i18n="about.journey.plan.title">اشرح فكرتك... ونحن نحدد الحل والخطة</h3>
+                <p class="journey-panel-desc" data-i18n-html="about.journey.plan.descriptionHtml">
                   تواصل معنا واشرح التحدي أو الفكرة التي تطمح لتحقيقها، وسنتواصل معك خلال
                   <strong>24 ساعة</strong> لعقد جلسة استشارية مجانية لنفهم احتياجاتك بعمق. نُعد لك بعدها خطة عمل
                   ومقترح مشروع شاملاً يتضمن: <strong>نطاق العمل (Scope)</strong>،
@@ -820,8 +824,8 @@
                 <div class="journey-key-takeaway">
                   <div class="w-2 h-2 rounded-full bg-cyan shrink-0 mt-1"></div>
                   <p>
-                    <strong>شفافية تامة:</strong> لا توجد أي بنود خفية أو
-                    تكاليف غير معلنة في خطة المشروع.
+                    <strong data-i18n="about.journey.plan.highlightTitle">شفافية تامة:</strong>
+                    <span data-i18n="about.journey.plan.highlight">لا توجد أي بنود خفية أو تكاليف غير معلنة في خطة المشروع.</span>
                   </p>
                 </div>
               </div>
@@ -832,24 +836,24 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span>ما الذي ستحصل عليه في هذه الخطوة:</span>
+                  <span data-i18n="about.journey.deliverablesTitle">ما الذي ستحصل عليه في هذه الخطوة:</span>
                 </div>
                 <ul class="journey-deliv-list">
                   <li>
                     <span class="jd-dot"></span>
-                    <div>
+                    <div data-i18n="about.journey.plan.item1">
                       مقترح عمل مكتمل: يحدد تفاصيل النطاق والمخرجات المتوقعة بدقة.
                     </div>
                   </li>
                   <li>
                     <span class="jd-dot"></span>
-                    <div>
+                    <div data-i18n="about.journey.plan.item2">
                       جدول زمني تقديري: يوضح مراحل التطوير ونسب الإنجاز الأسبوعي.
                     </div>
                   </li>
                   <li>
                     <span class="jd-dot"></span>
-                    <div>
+                    <div data-i18n="about.journey.plan.item3">
                       هيكل دفعات مرن: يرتبط بكل مرحلة تسليم معتمدة قبل البدء.
                     </div>
                   </li>
@@ -860,7 +864,7 @@
                     <circle cx="12" cy="12" r="10" />
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2" />
                   </svg>
-                  <span>تسليم المقترح: خلال 2–3 أيام عمل من الجلسة الاستكشافية.</span>
+                  <span data-i18n="about.journey.plan.meta">تسليم المقترح: خلال 2–3 أيام عمل من الجلسة الاستكشافية.</span>
                 </div>
               </div>
             </div>
@@ -871,11 +875,11 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
-                <span>السابق: نفهم احتياجك</span>
+                <span data-i18n="about.journey.plan.previous">السابق: نفهم احتياجك</span>
               </button>
-              <span class="text-xs text-slate-400 font-semibold">الخطوة 1 من 4</span>
+              <span class="text-xs text-slate-400 font-semibold" data-i18n="about.journey.plan.step">الخطوة 1 من 4</span>
               <button class="journey-next-btn" onclick="selectJourneyStep(4)">
-                <span>التالي: نصمم ونحصل على اعتمادك</span>
+                <span data-i18n="about.journey.plan.next">التالي: نصمم ونحصل على اعتمادك</span>
                 <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
@@ -889,16 +893,16 @@
           <div class="journey-panel-card">
             <div class="journey-panel-header">
               <div class="flex items-center gap-3">
-                <span class="journey-panel-badge tag-payment">دفعة البدء</span>
-                <span class="journey-panel-phase">02 DESIGN · التصميم والاعتماد المسبق</span>
+                <span class="journey-panel-badge tag-payment" data-i18n="about.journey.design.badge">دفعة البدء</span>
+                <span class="journey-panel-phase" data-i18n="about.journey.design.phase">02 DESIGN · التصميم والاعتماد المسبق</span>
               </div>
               <span class="journey-panel-big-num" aria-hidden="true">02</span>
             </div>
 
             <div class="journey-panel-grid">
               <div class="journey-panel-narrative">
-                <h3 class="journey-panel-title">نصمم ونحصل على اعتمادك</h3>
-                <p class="journey-panel-desc">
+                <h3 class="journey-panel-title" data-i18n="about.journey.design.title">نصمم ونحصل على اعتمادك</h3>
+                <p class="journey-panel-desc" data-i18n-html="about.journey.design.descriptionHtml">
                   قبل أن نكتب سطراً برمجياً واحداً، نصمم
                   <strong>الواجهات وتجربة المستخدم (UI/UX Mockups)</strong>
                   لتشاهد كيف سيبدو المنتج وتجرب مسار الاستخدام بنفسك. بعد
@@ -915,8 +919,8 @@
                     </svg>
                   </div>
                   <div>
-                    <strong class="text-amber-300 block text-xs sm:text-sm mb-0.5">ضمان التحكم والشفافية:</strong>
-                    <p class="text-slate-300 text-xs leading-relaxed m-0">
+                    <strong class="text-amber-300 block text-xs sm:text-sm mb-0.5" data-i18n="about.journey.design.highlightTitle">ضمان التحكم والشفافية:</strong>
+                    <p class="text-slate-300 text-xs leading-relaxed m-0" data-i18n="about.journey.design.highlight">
                       لا يبدأ أي تطوير برمجي مدفوع قبل اعتمادك الرسمي للتصميم
                       والخطة المتفق عليها.
                     </p>
@@ -936,19 +940,19 @@
                   <li>
                     <span class="jd-dot"></span>
                     <div>
-                      تصاميم واجهات المستخدم (UI/UX) ومسار التنقل الكامل
+                      <span data-i18n="about.journey.design.item1">تصاميم واجهات المستخدم (UI/UX) ومسار التنقل الكامل</span>
                     </div>
                   </li>
                   <li>
                     <span class="jd-dot"></span>
                     <div>
-                      نموذج تفاعلي لتجربة الشكل والوظائف الحيوية قبل التطوير
+                      <span data-i18n="about.journey.design.item2">نموذج تفاعلي لتجربة الشكل والوظائف الحيوية قبل التطوير</span>
                     </div>
                   </li>
                   <li>
                     <span class="jd-dot"></span>
                     <div>
-                      خطة عمل تفصيلية واعتماد محطات التسليم (Milestones)
+                      <span data-i18n="about.journey.design.item3">خطة عمل تفصيلية واعتماد محطات التسليم (Milestones)</span>
                     </div>
                   </li>
                 </ul>
@@ -958,7 +962,7 @@
                     <circle cx="12" cy="12" r="10" />
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2" />
                   </svg>
-                  <span>الاعتماد أولاً · تحكم كامل في مخرجات التصميم</span>
+                  <span data-i18n="about.journey.design.meta">الاعتماد أولاً · تحكم كامل في مخرجات التصميم</span>
                 </div>
               </div>
             </div>
@@ -969,11 +973,11 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
-                <span>السابق: نحدد الحل والخطة</span>
+                <span data-i18n="about.journey.design.previous">السابق: نحدد الحل والخطة</span>
               </button>
-              <span class="text-xs text-slate-400 font-semibold">الخطوة 2 من 4</span>
+              <span class="text-xs text-slate-400 font-semibold" data-i18n="about.journey.design.step">الخطوة 2 من 4</span>
               <button class="journey-next-btn" onclick="selectJourneyStep(5)">
-                <span>التالي: نبني ونطوّر على مراحل</span>
+                <span data-i18n="about.journey.design.next">التالي: نبني ونطوّر على مراحل</span>
                 <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
@@ -987,16 +991,16 @@
           <div class="journey-panel-card">
             <div class="journey-panel-header">
               <div class="flex items-center gap-3">
-                <span class="journey-panel-badge tag-payment">تسليم ودفع تدريجي</span>
-                <span class="journey-panel-phase">03 BUILD · التطوير المرن (Agile Sprints)</span>
+                <span class="journey-panel-badge tag-payment" data-i18n="about.journey.build.badge">تسليم ودفع تدريجي</span>
+                <span class="journey-panel-phase" data-i18n="about.journey.build.phase">03 BUILD · التطوير المرن (Agile Sprints)</span>
               </div>
               <span class="journey-panel-big-num" aria-hidden="true">03</span>
             </div>
 
             <div class="journey-panel-grid">
               <div class="journey-panel-narrative">
-                <h3 class="journey-panel-title">نبني ونطوّر على مراحل</h3>
-                <p class="journey-panel-desc">
+                <h3 class="journey-panel-title" data-i18n="about.journey.build.title">نبني ونطوّر على مراحل</h3>
+                <p class="journey-panel-desc" data-i18n-html="about.journey.build.descriptionHtml">
                   نعتمد منهجية <strong>Agile</strong> المرنة؛ حيث نقسم المشروع
                   إلى دورات تطوير قصيرة (Sprints). في نهاية كل مرحلة، نتيح لك
                   تجربة الميزات المنجزة عملياً على بيئة تجريبية حية، ومع
@@ -1007,7 +1011,7 @@
                 <!-- Agile Loop Visual -->
                 <div class="journey-agile-loop">
                   <div class="journey-agile-loop-title">
-                    دورة التطوير والمراجعة المستمرة:
+                    <span data-i18n="about.journey.build.loopTitle">دورة التطوير والمراجعة المستمرة:</span>
                   </div>
                   <div class="journey-agile-steps">
                     <div class="journey-agile-item">
@@ -1017,8 +1021,8 @@
                             d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                         </svg>
                       </div>
-                      <strong>1. بناء</strong>
-                      <span>برمجة الميزات</span>
+                      <strong data-i18n="about.journey.build.loopBuild">1. بناء</strong>
+                      <span data-i18n="about.journey.build.loopBuildDesc">برمجة الميزات</span>
                     </div>
 
                     <div class="journey-agile-arrow">
@@ -1038,8 +1042,8 @@
                             d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                         </svg>
                       </div>
-                      <strong>2. معاينة</strong>
-                      <span>تجربة حية</span>
+                      <strong data-i18n="about.journey.build.loopPreview">2. معاينة</strong>
+                      <span data-i18n="about.journey.build.loopPreviewDesc">تجربة حية</span>
                     </div>
 
                     <div class="journey-agile-arrow">
@@ -1057,8 +1061,8 @@
                             d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>
-                      <strong>3. مراجعة</strong>
-                      <span>اعتماد وسداد</span>
+                      <strong data-i18n="about.journey.build.loopReview">3. مراجعة</strong>
+                      <span data-i18n="about.journey.build.loopReviewDesc">اعتماد وسداد</span>
                     </div>
 
                     <div class="journey-agile-arrow">
@@ -1076,8 +1080,8 @@
                             d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                         </svg>
                       </div>
-                      <strong>4. تكرار</strong>
-                      <span>المرحلة التالية</span>
+                      <strong data-i18n="about.journey.build.loopRepeat">4. تكرار</strong>
+                      <span data-i18n="about.journey.build.loopRepeatDesc">المرحلة التالية</span>
                     </div>
                   </div>
                 </div>
@@ -1094,18 +1098,18 @@
                 <ul class="journey-deliv-list">
                   <li>
                     <span class="jd-dot"></span>
-                    <div>ميزات برمجية منجزة ومختبرة وقابلة للتجربة الحية</div>
+                    <div data-i18n="about.journey.build.item1">ميزات برمجية منجزة ومختبرة وقابلة للتجربة الحية</div>
                   </li>
                   <li>
                     <span class="jd-dot"></span>
                     <div>
-                      تقرير دوري يوضح المنجز وخطة العمل للمرحلة المقبلة
+                      <span data-i18n="about.journey.build.item2">تقرير دوري يوضح المنجز وخطة العمل للمرحلة المقبلة</span>
                     </div>
                   </li>
                   <li>
                     <span class="jd-dot"></span>
                     <div>
-                      اجتماعات متابعة منتظمة لضمان التوافق وتضمين الملاحظات
+                      <span data-i18n="about.journey.build.item3">اجتماعات متابعة منتظمة لضمان التوافق وتضمين الملاحظات</span>
                     </div>
                   </li>
                 </ul>
@@ -1115,7 +1119,7 @@
                     <circle cx="12" cy="12" r="10" />
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2" />
                   </svg>
-                  <span>تطوير تدريجي · تجربة حية لكل مرحلة قبل السداد</span>
+                  <span data-i18n="about.journey.build.meta">تطوير تدريجي · تجربة حية لكل مرحلة قبل السداد</span>
                 </div>
               </div>
             </div>
@@ -1126,11 +1130,11 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
-                <span>السابق: نصمم ونحصل على اعتمادك</span>
+                <span data-i18n="about.journey.build.previous">السابق: نصمم ونحصل على اعتمادك</span>
               </button>
-              <span class="text-xs text-slate-400 font-semibold">>الخطوة 3 من 4</span>
+              <span class="text-xs text-slate-400 font-semibold" data-i18n="about.journey.build.step">&gt;الخطوة 3 من 4</span>
               <button class="journey-next-btn" onclick="selectJourneyStep(6)">
-                <span>التالي: نطلق ونكمل معاك</span>
+                <span data-i18n="about.journey.build.next">التالي: نطلق ونكمل معاك</span>
                 <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
@@ -1144,8 +1148,8 @@
           <div class="journey-panel-card step-final-card">
             <div class="journey-panel-header">
               <div class="flex items-center gap-3">
-                <span class="journey-panel-badge tag-launch">🚀 إطلاق وضمان</span>
-                <span class="journey-panel-phase">04 LAUNCH &amp; SUPPORT · الإطلاق السحابي والدعم
+                <span class="journey-panel-badge tag-launch" data-i18n="about.journey.launch.badge">🚀 إطلاق وضمان</span>
+                <span class="journey-panel-phase" data-i18n="about.journey.launch.phase">04 LAUNCH &amp; SUPPORT · الإطلاق السحابي والدعم
                   المستمر</span>
               </div>
               <span class="journey-panel-big-num final-num" aria-hidden="true">04</span>
@@ -1153,8 +1157,8 @@
 
             <div class="journey-panel-grid">
               <div class="journey-panel-narrative">
-                <h3 class="journey-panel-title">نطلق ونكمل معاك</h3>
-                <p class="journey-panel-desc">
+                <h3 class="journey-panel-title" data-i18n="about.journey.launch.title">نطلق ونكمل معاك</h3>
+                <p class="journey-panel-desc" data-i18n-html="about.journey.launch.descriptionHtml">
                   علاقتنا لا تنتهي عند الإطلاق. بعد اكتمال التطوير واجتياز
                   اختبارات الأداء والأمان، نقوم بـ
                   <strong>النشر والإطلاق السحابي الشامل (Full Deployment)</strong>، ونسلمك كامل الشيفرة المصدرية (Source
@@ -1172,9 +1176,9 @@
                     </svg>
                   </div>
                   <div>
-                    <strong class="text-cyan-300 block text-xs sm:text-sm mb-0.5">6 أشهر دعم وصيانة فنية
+                    <strong class="text-cyan-300 block text-xs sm:text-sm mb-0.5" data-i18n="about.journey.launch.warrantyTitle">6 أشهر دعم وصيانة فنية
                       مجانية:</strong>
-                    <p class="text-slate-300 text-xs leading-relaxed m-0">
+                    <p class="text-slate-300 text-xs leading-relaxed m-0" data-i18n="about.journey.launch.warranty">
                       نلتزم بمتابعة استقرار النظام بعد الإطلاق ومعالجة أي
                       أخطاء برمجية أو ملاحظات تقنية مجاناً وبدون أي تكاليف
                       إضافية طوال فترة الضمان.
@@ -1189,33 +1193,31 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span>ما الذي ستحصل عليه في هذه الخطوة:</span>
+                  <span data-i18n="about.journey.deliverablesTitle">ما الذي ستحصل عليه في هذه الخطوة:</span>
                 </div>
                 <ul class="journey-deliv-list">
                   <li>
                     <span class="jd-dot"></span>
                     <div>
-                      نظام حي يعمل بكفاءة على بيئة الإنتاج السحابية (Full
-                      Cloud Deployment)
+                      <span data-i18n="about.journey.launch.item1">نظام حي يعمل بكفاءة على بيئة الإنتاج السحابية (Full Cloud Deployment)</span>
                     </div>
                   </li>
                   <li>
                     <span class="jd-dot"></span>
                     <div>
-                      تسليم كامل للشيفرة المصدرية (Source Code)، الحسابات،
-                      ودليل التوثيق
+                      <span data-i18n="about.journey.launch.item2">تسليم كامل للشيفرة المصدرية (Source Code)، الحسابات، ودليل التوثيق</span>
                     </div>
                   </li>
                   <li>
                     <span class="jd-dot"></span>
                     <div>
-                      تدريب عملي لفريقك على إدارة واستخدام النظام بسهولة
+                      <span data-i18n="about.journey.launch.item3">تدريب عملي لفريقك على إدارة واستخدام النظام بسهولة</span>
                     </div>
                   </li>
                   <li>
                     <span class="jd-dot"></span>
                     <div>
-                      6 أشهر دعم وصيانة فنية مجانية لمعالجة أي ملاحظات
+                      <span data-i18n="about.journey.launch.item4">6 أشهر دعم وصيانة فنية مجانية لمعالجة أي ملاحظات</span>
                     </div>
                   </li>
                 </ul>
@@ -1225,7 +1227,7 @@
                     <circle cx="12" cy="12" r="10" />
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2" />
                   </svg>
-                  <span>تسليم كامل وموثق · صيانة ودعم لمدة 6 أشهر</span>
+                  <span data-i18n="about.journey.launch.meta">تسليم كامل وموثق · صيانة ودعم لمدة 6 أشهر</span>
                 </div>
               </div>
             </div>
@@ -1236,11 +1238,11 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
-                <span>السابق: نبني ونطوّر على مراحل</span>
+                <span data-i18n="about.journey.launch.previous">السابق: نبني ونطوّر على مراحل</span>
               </button>
-              <span class="text-xs text-slate-400 font-semibold">الخطوة 4 من 4 · اكتملت الرحلة</span>
+              <span class="text-xs text-slate-400 font-semibold" data-i18n="about.journey.launch.complete">الخطوة 4 من 4 · اكتملت الرحلة</span>
               <a href="contact.html" class="journey-next-btn btn-cyan-glow">
-                <span>ابدأ رحلتك معنا</span>
+                <span data-i18n="about.journey.launch.cta">ابدأ رحلتك معنا</span>
                 <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
@@ -1252,17 +1254,17 @@
 
       <!-- 6. Calm, High-Trust Final CTA -->
       <div class="mt-20 text-center max-w-2xl mx-auto reveal-on-scroll">
-        <h4 class="text-xl sm:text-2xl font-bold text-white mb-3">
+        <h4 class="text-xl sm:text-2xl font-bold text-white mb-3" data-i18n="about.page.finalTitle">
           عندك فكرة أو مشكلة ومش عارف تبدأ منين؟
         </h4>
-        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+        <p class="text-slate-300 text-sm leading-relaxed mb-6" data-i18n="about.page.finalSubtitle">
           احكيلنا عنها، ونبدأ معاك من أول خطوة — بدون ما تحتاج تحدد الحل
           التقني بنفسك، وبجلسة استشارية مجانية بالكامل.
         </p>
         <a href="contact.html"
           class="btn-cyan font-bold text-base px-8 py-4 rounded-xl shadow-xl inline-flex items-center gap-3 hover:scale-[1.02] transition-transform"
           style="text-decoration: none">
-          <span>احكيلنا عن فكرتك</span>
+          <span data-i18n="about.page.finalCta">احكيلنا عن فكرتك</span>
           <svg class="w-5 h-5 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
@@ -1301,11 +1303,11 @@
         <div class="lg:col-span-4 space-y-5">
           <a href="index.html"
             class="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-lg"
-            aria-label="العودة إلى الصفحة الرئيسية">
+            aria-label="العودة إلى الصفحة الرئيسية" data-i18n-aria="common.nav.home">
             <img src="assets/images/Logo.png" alt="Forascom — فرصكم" class="h-11 w-auto object-contain rounded-lg" />
           </a>
 
-          <p class="text-slate-300 text-sm leading-relaxed max-w-sm">
+          <p class="text-slate-300 text-sm leading-relaxed max-w-sm" data-i18n="common.footer.aboutText">
             شركة حلول برمجية وتطوير تقني — نخلق الفرص للأعمال من خلال تقنيات
             الويب المستدامة، الذكاء الاصطناعي، وأتمتة العمليات بجودة هندسية
             راقية.
@@ -1315,7 +1317,7 @@
             class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
 
-            متاحون حالياً لاستقبال مشاريع جديدة
+            <span data-i18n="common.footer.availableBadge">متاحون حالياً لاستقبال مشاريع جديدة</span>
           </div>
         </div>
 
@@ -1323,7 +1325,7 @@
            COLUMN 2: MAIN NAVIGATION
            =================================================== -->
         <div class="lg:col-span-3 space-y-4">
-          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
+          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3" data-i18n="common.footer.mainLinksTitle">
             الروابط الرئيسية
           </h4>
 
@@ -1333,7 +1335,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                الرئيسية
+                <span data-i18n="common.nav.home">الرئيسية</span>
               </a>
             </li>
 
@@ -1342,7 +1344,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                عن فرصكم
+                <span data-i18n="common.nav.about">عن فرصكم</span>
               </a>
             </li>
 
@@ -1352,7 +1354,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                خدماتنا
+                <span data-i18n="common.nav.services">خدماتنا</span>
               </a>
             </li>
 
@@ -1362,7 +1364,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                معرض الأعمال
+                <span data-i18n="common.nav.portfolio">معرض الأعمال</span>
               </a>
             </li>
 
@@ -1371,7 +1373,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                تواصل معنا
+                <span data-i18n="common.nav.contact">تواصل معنا</span>
               </a>
             </li>
           </ul>
@@ -1381,7 +1383,7 @@
            COLUMN 3: SERVICES & SOLUTIONS
            =================================================== -->
         <div class="lg:col-span-2 space-y-4">
-          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
+          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3" data-i18n="common.footer.servicesTitle">
             خدماتنا
           </h4>
 
@@ -1393,7 +1395,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                تطوير المواقع
+                <span data-i18n="common.footer.servicesLinks.web">تطوير المواقع</span>
               </a>
             </li>
 
@@ -1404,7 +1406,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                مواقع WordPress
+                <span data-i18n="common.footer.servicesLinks.wordpress">مواقع WordPress</span>
               </a>
             </li>
 
@@ -1415,7 +1417,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                حلول الذكاء الاصطناعي
+                <span data-i18n="common.footer.servicesLinks.ai">حلول الذكاء الاصطناعي</span>
               </a>
             </li>
 
@@ -1426,7 +1428,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                الأتمتة والعمليات الذكية
+                <span data-i18n="common.footer.servicesLinks.automation">الأتمتة والعمليات الذكية</span>
               </a>
             </li>
 
@@ -1437,7 +1439,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                حلول Power Platform
+                <span data-i18n="common.footer.servicesLinks.powerPlatform">حلول Power Platform</span>
               </a>
             </li>
           </ul>
@@ -1447,7 +1449,7 @@
            COLUMN 4: CONTACT & SOCIALS
            =================================================== -->
         <div class="lg:col-span-3 space-y-4">
-          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
+          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3" data-i18n="common.footer.contactTitle">
             التواصل المباشر
           </h4>
 
@@ -1456,7 +1458,7 @@
             <li>
               <a href="mailto:forascomteam@gmail.com"
                 class="inline-flex items-center gap-3 hover:text-cyan-400 transition-colors"
-                aria-label="راسلنا عبر البريد الإلكتروني">
+                aria-label="راسلنا عبر البريد الإلكتروني" data-i18n-aria="contact.info.emailLabel">
                 <span class="material-symbols-outlined text-cyan-400 text-lg">
                   mail
                 </span>
@@ -1470,7 +1472,7 @@
 
 
           <div class="pt-2">
-            <span class="block text-xs font-semibold text-slate-400 mb-3">
+            <span class="block text-xs font-semibold text-slate-400 mb-3" data-i18n="common.footer.digitalPresence">
               تواجدنا الرقمي:
             </span>
 
@@ -1528,7 +1530,7 @@
         <p class="text-center md:text-right">
           © <span id="footer-year">2026</span>
           <strong class="text-slate-200">Forascom</strong>.
-          جميع الحقوق محفوظة —
+          <span data-i18n="common.footer.copyright">جميع الحقوق محفوظة</span> —
           <span class="text-cyan-400 font-medium">
             Technology that creates opportunities
           </span>
@@ -1536,14 +1538,14 @@
 
         <div class="flex items-center gap-6 text-slate-400">
           <!-- Privacy & Terms -->
-          <span class="text-slate-500">
+          <span class="text-slate-500" data-i18n="common.footer.privacyTerms">
             الخصوصية والشروط
           </span>
 
           <span class="w-1 h-1 rounded-full bg-slate-700"></span>
 
           <!-- Technical Support -->
-          <a href="contact.html" class="hover:text-cyan-400 transition-colors">
+          <a href="contact.html" class="hover:text-cyan-400 transition-colors" data-i18n="common.footer.techSupport">
             الدعم التقني
           </a>
         </div>
@@ -1565,7 +1567,7 @@
             d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
         </svg>
       </div>
-      <span
+      <span data-i18n="common.footer.floatingWhatsApp"
         class="max-w-0 opacity-0 overflow-hidden whitespace-nowrap transition-all duration-500 ease-in-out group-hover:max-w-xs group-hover:opacity-100 group-hover:mr-2.5">
         تحدث مع مهندس Forascom الآن 💬
       </span>
@@ -1573,7 +1575,7 @@
   </div>
 
   <!-- Back To Top Button -->
-  <button id="back-to-top" aria-label="العودة إلى الأعلى"
+  <button id="back-to-top" aria-label="العودة إلى الأعلى" data-i18n-aria="common.cta.backToTop"
     class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-white text-navy border border-slate-200 shadow-xl flex items-center justify-center hover:bg-navy hover:text-white hover:-translate-y-1 transition-all">
     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 15l7-7 7 7" />
@@ -1581,6 +1583,9 @@
   </button>
 
   <!-- App JavaScript Modules -->
+  <script src="assets/js/translations/ar.js"></script>
+  <script src="assets/js/translations/en.js"></script>
+  <script src="assets/js/i18n.js"></script>
   <script src="assets/js/main.js"></script>
   <!-- About Page JS -->
   <script src="assets/js/about.js" defer></script>

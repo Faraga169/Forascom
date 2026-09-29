@@ -5,6 +5,7 @@
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>تفاصيل المشروع | Forascom فرصكم</title>
+  <meta name="description" content="تعرف على تحدي المشروع والحل الهندسي والتقنيات المستخدمة وأثر التحول الرقمي." />
   <link
     href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@500;700&amp;family=Plus+Jakarta+Sans:wght@500;700;800&amp;display=swap"
     rel="stylesheet" />
@@ -70,6 +71,7 @@
     };
   </script>
   <link rel="stylesheet" href="assets/css/navbar.css" />
+  <link rel="stylesheet" href="assets/css/i18n.css" />
 
   <style>
     @layer base {
@@ -324,17 +326,20 @@
 
       <!-- Desktop Navigation -->
       <nav class="hidden lg:flex items-center justify-center gap-5 xl:gap-8 font-semibold text-sm flex-1 mx-4">
-        <a href="index.html" class="nav-link hover:text-cyan-bright transition-colors">الرئيسية</a>
-        <a href="about.html" class="nav-link hover:text-cyan-bright transition-colors">عن فرصكم</a>
-        <a href="services.html" class="nav-link hover:text-cyan-bright transition-colors">خدماتنا</a>
-        <a href="portfolio.html" aria-current="page"
+        <a href="index.html" data-i18n="common.nav.home" class="nav-link hover:text-cyan-bright transition-colors">الرئيسية</a>
+        <a href="about.html" data-i18n="common.nav.about" class="nav-link hover:text-cyan-bright transition-colors">عن فرصكم</a>
+        <a href="services.html" data-i18n="common.nav.services" class="nav-link hover:text-cyan-bright transition-colors">خدماتنا</a>
+        <a href="portfolio.html" aria-current="page" data-i18n="common.nav.portfolio"
           class="nav-link nav-active hover:text-cyan-bright transition-colors">معرض الأعمال</a>
-        <a href="contact.html" class="nav-link hover:text-cyan-bright transition-colors">تواصل معنا</a>
+        <a href="contact.html" data-i18n="common.nav.contact" class="nav-link hover:text-cyan-bright transition-colors">تواصل معنا</a>
       </nav>
 
       <!-- Desktop CTA & Mobile Toggle -->
       <div class="flex items-center gap-4 shrink-0">
-
+        <div class="lang-switcher-pill shrink-0" role="group" data-i18n-aria="common.nav.language" aria-label="اللغة">
+          <button type="button" data-lang-switch="ar" aria-pressed="true">العربية</button>
+          <button type="button" data-lang-switch="en" aria-pressed="false">EN</button>
+        </div>
         <button id="mobile-menu-btn"
           class="lg:hidden text-text-primary p-2 rounded-lg hover:bg-white/5 transition-colors"
           style="background: rgba(56, 189, 248, 0.1)" aria-label="القائمة">
@@ -349,15 +354,15 @@
     <div id="mobile-menu-container"
       class="hidden lg:hidden bg-navy-secondary border-b px-4 pt-2 pb-6 space-y-3 font-semibold text-text-secondary max-h-[calc(100vh-5rem)] overflow-y-auto"
       style="border-color: rgba(56, 189, 248, 0.12)">
-      <a href="index.html" class="block py-2 border-b hover:text-text-primary"
+      <a href="index.html" data-i18n="common.nav.home" class="block py-2 border-b hover:text-text-primary"
         style="border-color: rgba(56, 189, 248, 0.12)">الرئيسية</a>
-      <a href="about.html" class="block py-2 border-b hover:text-text-primary"
+      <a href="about.html" data-i18n="common.nav.about" class="block py-2 border-b hover:text-text-primary"
         style="border-color: rgba(56, 189, 248, 0.12)">عن فرصكم</a>
-      <a href="services.html" class="block py-2 border-b hover:text-text-primary"
+      <a href="services.html" data-i18n="common.nav.services" class="block py-2 border-b hover:text-text-primary"
         style="border-color: rgba(56, 189, 248, 0.12)">خدماتنا</a>
-      <a href="portfolio.html" aria-current="page" class="block py-2 text-cyan font-bold"
+      <a href="portfolio.html" aria-current="page" data-i18n="common.nav.portfolio" class="block py-2 text-cyan font-bold"
         style="border-color: rgba(56, 189, 248, 0.12)">معرض الأعمال</a>
-      <a href="contact.html" class="block py-2 border-b hover:text-text-primary"
+      <a href="contact.html" data-i18n="common.nav.contact" class="block py-2 border-b hover:text-text-primary"
         style="border-color: rgba(56, 189, 248, 0.12)">تواصل معنا</a>
     </div>
   </header>
@@ -376,7 +381,7 @@
           class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container/80 hover:bg-surface-container-high border border-white/10 text-xs font-mono font-medium text-on-surface-variant hover:text-white transition-all duration-300 group">
           <span
             class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
-          <span>العودة إلى معرض الأعمال</span>
+          <span data-i18n="projectDetails.actions.backToPortfolio">العودة إلى معرض الأعمال</span>
         </a>
       </div>
 
@@ -384,7 +389,7 @@
         <!-- Hero Content Column (6 Cols on Desktop) -->
         <div class="lg:col-span-6 md:col-span-6 flex flex-col gap-6">
           <!-- Project Title -->
-          <h1 id="project-title"
+          <h1 id="project-title" data-i18n="projectDetails.sections.loadingTitle"
             class="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.2] tracking-tight text-white">
             تحميل تفاصيل المشروع...
           </h1>
@@ -395,7 +400,7 @@
           </div>
 
           <!-- Short Description -->
-          <p id="project-desc"
+          <p id="project-desc" data-i18n="projectDetails.sections.loadingDescription"
             class="text-sm sm:text-base text-on-surface-variant font-normal leading-relaxed max-w-xl">
             جاري استعراض البنية التشغيلية والحل الهندسي الذي تم تنفيذه في بيئة
             إنتاج حقيقية...
@@ -406,7 +411,7 @@
             <!-- 1. View Live Project Button (Primary CTA - Shown only if liveUrl exists) -->
             <a id="hero-live-btn" href="#" target="_blank" rel="noopener noreferrer"
               class="hidden btn-smooth items-center gap-2 px-5 py-3 rounded-xl bg-tertiary hover:bg-[#34d4f6] text-[#00101D] font-bold text-sm shadow-[0_0_20px_rgba(0,196,238,0.35)] transition-all duration-300">
-              <span>مشاهدة المشروع المباشر</span>
+              <span data-i18n="projectDetails.actions.liveDemo">مشاهدة المشروع المباشر</span>
               <span class="material-symbols-outlined text-base">north_east</span>
             </a>
 
@@ -414,7 +419,7 @@
             <a id="hero-demo-btn" href="#project-hero"
               class="hidden btn-smooth items-center justify-center gap-2 px-5 py-3 rounded-xl bg-surface-container-high/90 hover:bg-surface-bright text-white font-bold text-sm border border-white/15 hover:border-tertiary/40 transition-all duration-300">
               <span class="material-symbols-outlined text-base text-tertiary">play_circle</span>
-              <span>مشاهدة العرض التوضيحي</span>
+              <span data-i18n="projectDetails.actions.productDemo">مشاهدة العرض التوضيحي</span>
             </a>
 
             <!-- 3. Consult CTA Button (Tertiary Action) -->
@@ -422,7 +427,7 @@
               href="https://wa.me/201501795004?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20%D9%81%D8%B1%D8%B5%D9%83%D9%85%D8%8C%20%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%AD%D9%84%D9%88%D9%84%20%D8%A7%D9%84%D9%87%D9%86%D8%AF%D8%B3%D9%8A%D8%A9."
               target="_blank"
               class="btn-smooth inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-surface-container/80 hover:bg-surface-container-high text-on-surface-variant hover:text-white font-bold text-sm border border-white/10 hover:border-white/20 transition-all duration-300">
-              <span>استشر مهندسينا حول هذا الحل</span>
+              <span data-i18n="projectDetails.actions.consult">استشر مهندسينا حول هذا الحل</span>
               <span class="material-symbols-outlined text-base">chat</span>
             </a>
           </div>
@@ -459,7 +464,7 @@
 
               <!-- Center Interactive Play Button (Real semantic button) -->
               <div id="hero-play-container" class="absolute inset-0 z-10 flex items-center justify-center">
-                <button type="button" id="hero-play-media-btn" aria-label="تشغيل العرض التوضيحي"
+                <button type="button" id="hero-play-media-btn" aria-label="تشغيل العرض التوضيحي" data-i18n-aria="projectDetails.actions.playDemo"
                   class="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#00101D]/85 backdrop-blur-md border border-white/20 text-white hover:text-tertiary hover:border-tertiary/60 hover:scale-105 shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tertiary transition-all duration-300 flex items-center justify-center cursor-pointer">
                   <span class="material-symbols-outlined text-2xl font-bold translate-x-[-1px]">play_arrow</span>
                 </button>
@@ -470,7 +475,7 @@
                 class="relative z-10 m-2.5 sm:m-3 px-3.5 py-2.5 bg-[#00101D]/90 backdrop-blur-md rounded-xl border border-white/10 flex items-center justify-between text-xs font-mono">
                 <span class="text-on-surface-variant flex items-center gap-1.5 text-[11px] sm:text-xs">
                   <span class="w-1.5 h-1.5 rounded-full bg-[#25D366]"></span>
-                  <span>البيئة التشغيلية:</span>
+                  <span data-i18n="projectDetails.actions.operatingEnvironment">البيئة التشغيلية:</span>
                 </span>
                 <span id="hero-telemetry-highlight" class="text-tertiary font-bold text-[11px] sm:text-xs">معالجة
                   فورية</span>
@@ -516,7 +521,7 @@
             </ul>
           </div>
           <div class="mt-8 pt-4 border-t border-white/5 text-xs font-mono text-outline">
-            <span>عوائق تم تفكيكها بنجاح</span>
+            <span data-i18n="projectDetails.actions.removedObstacles">عوائق تم تفكيكها بنجاح</span>
           </div>
         </div>
 
@@ -527,7 +532,7 @@
             <span class="material-symbols-outlined text-xl hidden lg:inline">west</span>
             <span class="material-symbols-outlined text-xl lg:hidden">south</span>
           </div>
-          <span class="text-[11px] font-mono font-medium text-tertiary/80 mt-2">تحول هندسي</span>
+          <span class="text-[11px] font-mono font-medium text-tertiary/80 mt-2" data-i18n="projectDetails.actions.engineeringTransformation">تحول هندسي</span>
         </div>
 
         <!-- After Card -->
@@ -569,12 +574,12 @@
         </div>
 
         <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center gap-6">
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight tracking-tight">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight tracking-tight" data-i18n-html="projectDetails.sections.ctaTitleHtml">
             عندك فكرة مشابهة؟ خلّينا نحوّلها لـ
             <span class="text-tertiary cyan-glow-text">فرصة</span>.
           </h2>
 
-          <p class="text-base sm:text-lg text-on-surface-variant max-w-2xl leading-relaxed">
+          <p class="text-base sm:text-lg text-on-surface-variant max-w-2xl leading-relaxed" data-i18n="projectDetails.sections.ctaSubtitle">
             فريقنا الهندسي جاهز لتحليل متطلباتك، تصميم المعمارية المناسبة،
             وبناء حل رقمي مخصص يرفع كفاءة أعمالك ويحقق أهدافك التنافسية.
           </p>
@@ -584,25 +589,25 @@
               href="https://wa.me/201501795004?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%81%D8%B1%D9%8A%D9%82%20%D9%81%D8%B1%D8%B5%D9%83%D9%85%D8%8C%20%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%A8%D8%AF%D8%A3%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D9%8A%20%D9%85%D8%B9%D9%83%D9%85."
               target="_blank"
               class="btn-smooth inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-tertiary hover:bg-[#34d4f6] text-[#00101D] font-bold text-sm sm:text-base shadow-[0_0_20px_rgba(0,196,238,0.35)]">
-              <span>ابدأ مشروعك الآن</span>
+              <span data-i18n="projectDetails.actions.startProject">ابدأ مشروعك الآن</span>
               <span class="material-symbols-outlined text-lg">arrow_back</span>
             </a>
 
             <a href="portfolio.html"
               class="btn-smooth inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-white font-bold text-sm border border-white/10 hover:border-white/20">
-              <span>تصفّح جميع المشاريع</span>
+              <span data-i18n="projectDetails.actions.browseProjects">تصفّح جميع المشاريع</span>
             </a>
           </div>
 
           <div class="flex flex-wrap items-center justify-center gap-6 pt-4 text-xs font-mono text-outline">
             <span class="flex items-center gap-1.5">
               <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
-              استشارة تقنية أولية مجانية
+              <span data-i18n="projectDetails.actions.freeConsultation">استشارة تقنية أولية مجانية</span>
             </span>
             <span>•</span>
             <span class="flex items-center gap-1.5">
               <span class="w-1.5 h-1.5 rounded-full bg-[#25D366]"></span>
-              الرد السريع والمباشر
+              <span data-i18n="projectDetails.actions.fastResponse">الرد السريع والمباشر</span>
             </span>
           </div>
         </div>
@@ -640,11 +645,11 @@
         <div class="lg:col-span-4 space-y-5">
           <a href="index.html"
             class="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-lg"
-            aria-label="العودة إلى الصفحة الرئيسية">
+            aria-label="العودة إلى الصفحة الرئيسية" data-i18n-aria="common.nav.home">
             <img src="assets/images/Logo.png" alt="Forascom — فرصكم" class="h-11 w-auto object-contain rounded-lg" />
           </a>
 
-          <p class="text-slate-300 text-sm leading-relaxed max-w-sm">
+          <p class="text-slate-300 text-sm leading-relaxed max-w-sm" data-i18n="common.footer.aboutText">
             شركة حلول برمجية وتطوير تقني — نخلق الفرص للأعمال من خلال تقنيات
             الويب المستدامة، الذكاء الاصطناعي، وأتمتة العمليات بجودة هندسية
             راقية.
@@ -654,7 +659,7 @@
             class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
 
-            متاحون حالياً لاستقبال مشاريع جديدة
+            <span data-i18n="common.footer.availableBadge">متاحون حالياً لاستقبال مشاريع جديدة</span>
           </div>
         </div>
 
@@ -662,7 +667,7 @@
            COLUMN 2: MAIN NAVIGATION
            =================================================== -->
         <div class="lg:col-span-3 space-y-4">
-          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
+          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3" data-i18n="common.footer.mainLinksTitle">
             الروابط الرئيسية
           </h4>
 
@@ -672,7 +677,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                الرئيسية
+                <span data-i18n="common.nav.home">الرئيسية</span>
               </a>
             </li>
 
@@ -681,7 +686,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                عن فرصكم
+                <span data-i18n="common.nav.about">عن فرصكم</span>
               </a>
             </li>
 
@@ -691,7 +696,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                خدماتنا
+                <span data-i18n="common.nav.services">خدماتنا</span>
               </a>
             </li>
 
@@ -701,7 +706,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                معرض الأعمال
+                <span data-i18n="common.nav.portfolio">معرض الأعمال</span>
               </a>
             </li>
 
@@ -710,7 +715,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                تواصل معنا
+                <span data-i18n="common.nav.contact">تواصل معنا</span>
               </a>
             </li>
           </ul>
@@ -720,7 +725,7 @@
            COLUMN 3: SERVICES & SOLUTIONS
            =================================================== -->
         <div class="lg:col-span-2 space-y-4">
-          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
+          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3" data-i18n="common.footer.servicesTitle">
             خدماتنا
           </h4>
 
@@ -732,7 +737,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                تطوير المواقع
+                <span data-i18n="common.footer.servicesLinks.web">تطوير المواقع</span>
               </a>
             </li>
 
@@ -743,7 +748,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                مواقع WordPress
+                <span data-i18n="common.footer.servicesLinks.wordpress">مواقع WordPress</span>
               </a>
             </li>
 
@@ -754,7 +759,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                حلول الذكاء الاصطناعي
+                <span data-i18n="common.footer.servicesLinks.ai">حلول الذكاء الاصطناعي</span>
               </a>
             </li>
 
@@ -765,7 +770,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                الأتمتة والعمليات الذكية
+                <span data-i18n="common.footer.servicesLinks.automation">الأتمتة والعمليات الذكية</span>
               </a>
             </li>
 
@@ -776,7 +781,7 @@
                 <span class="text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs">
                   ◀
                 </span>
-                حلول Power Platform
+                <span data-i18n="common.footer.servicesLinks.powerPlatform">حلول Power Platform</span>
               </a>
             </li>
           </ul>
@@ -786,7 +791,7 @@
            COLUMN 4: CONTACT & SOCIALS
            =================================================== -->
         <div class="lg:col-span-3 space-y-4">
-          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3">
+          <h4 class="text-white font-bold text-base tracking-wide border-r-2 border-cyan-400 pr-3" data-i18n="common.footer.contactTitle">
             التواصل المباشر
           </h4>
 
@@ -795,7 +800,7 @@
             <li>
               <a href="mailto:forascomteam@gmail.com"
                 class="inline-flex items-center gap-3 hover:text-cyan-400 transition-colors"
-                aria-label="راسلنا عبر البريد الإلكتروني">
+                aria-label="راسلنا عبر البريد الإلكتروني" data-i18n-aria="contact.info.emailLabel">
                 <span class="material-symbols-outlined text-cyan-400 text-lg">
                   mail
                 </span>
@@ -806,7 +811,7 @@
           </ul>
 
           <div class="pt-2">
-            <span class="block text-xs font-semibold text-slate-400 mb-3">
+            <span class="block text-xs font-semibold text-slate-400 mb-3" data-i18n="common.footer.digitalPresence">
               تواجدنا الرقمي:
             </span>
 
@@ -861,7 +866,7 @@
         class="pt-8 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
         <p class="text-center md:text-right">
           © <span id="footer-year">2026</span>
-          <strong class="text-slate-200">Forascom</strong>. جميع الحقوق محفوظة
+          <strong class="text-slate-200">Forascom</strong>. <span data-i18n="common.footer.copyright">جميع الحقوق محفوظة</span>
           —
           <span class="text-cyan-400 font-medium">
             Technology that creates opportunities
@@ -870,12 +875,12 @@
 
         <div class="flex items-center gap-6 text-slate-400">
           <!-- Privacy & Terms -->
-          <span class="text-slate-500"> الخصوصية والشروط </span>
+          <span class="text-slate-500" data-i18n="common.footer.privacyTerms"> الخصوصية والشروط </span>
 
           <span class="w-1 h-1 rounded-full bg-slate-700"></span>
 
           <!-- Technical Support -->
-          <a href="contact.html" class="hover:text-cyan-400 transition-colors">
+          <a href="contact.html" class="hover:text-cyan-400 transition-colors" data-i18n="common.footer.techSupport">
             الدعم التقني
           </a>
         </div>
@@ -898,7 +903,7 @@
             d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
         </svg>
       </div>
-      <span
+      <span data-i18n="common.footer.floatingWhatsApp"
         class="max-w-0 opacity-0 overflow-hidden whitespace-nowrap transition-all duration-500 ease-in-out group-hover:max-w-xs group-hover:opacity-100 group-hover:mr-2.5">
         تحدث مع مهندس Forascom الآن 💬
       </span>
@@ -906,7 +911,7 @@
   </div>
 
   <!-- Back To Top Button -->
-  <button id="back-to-top" aria-label="العودة إلى الأعلى"
+  <button id="back-to-top" aria-label="العودة إلى الأعلى" data-i18n-aria="common.cta.backToTop"
     class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-white text-[#00101D] border border-slate-200 shadow-xl flex items-center justify-center hover:bg-[#00101D] hover:text-white hover:-translate-y-1 transition-all">
     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5 15l7-7 7 7" />
@@ -918,6 +923,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <!-- App JavaScript Modules -->
+  <script src="assets/js/translations/ar.js"></script>
+  <script src="assets/js/translations/en.js"></script>
+  <script src="assets/js/i18n.js"></script>
   <script src="assets/js/project-details.js"></script>
   <script src="assets/js/main.js"></script>
 </body>

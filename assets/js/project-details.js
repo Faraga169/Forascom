@@ -776,17 +776,41 @@ function getActiveProjectKey() {
   return "focuszone";
 }
 
+function getLocalizedProject(project) {
+  const language = window.forascomI18n?.currentLang || "ar";
+  const localized = window.forascomTranslations?.[language]?.projectDetails?.projects?.[project.id];
+  if (!localized) return project;
+
+  const merge = (source, translated) => {
+    const result = { ...source };
+    Object.entries(translated).forEach(([key, value]) => {
+      result[key] = value && typeof value === "object" && !Array.isArray(value)
+        ? merge(source[key] || {}, value)
+        : value;
+    });
+    return result;
+  };
+
+  return merge(project, localized);
+}
+
 /**
  * Render the project details into the DOM
  */
 function renderProjectDetails(projectKey) {
   const resolvedKey = projectAliases[projectKey] || projectKey;
-  const project =
+  const sourceProject =
     projectsDetailsData[resolvedKey] || projectsDetailsData["focuszone"];
-  if (!project) return;
+  if (!sourceProject) return;
+  const project = getLocalizedProject(sourceProject);
+  const language = window.forascomI18n?.currentLang || "ar";
 
   // Update page title
-  document.title = `${project.title} | Forascom فرصكم`;
+  document.title = language === "en"
+    ? `${project.title} | Forascom`
+    : `${project.title} | Forascom فرصكم`;
+  const metaDescription = document.querySelector('meta[name="description"]');
+  if (metaDescription) metaDescription.content = project.description;
 
   // 1. HERO SECTION
   const categoryBadge = document.getElementById("project-category-badge");
@@ -848,6 +872,15 @@ function renderProjectDetails(projectKey) {
     }
   }
 
+  const heroConsultBtn = document.getElementById("hero-consult-btn");
+  if (heroConsultBtn) {
+    const message = window.forascomI18n?.t(
+      "projectDetails.actions.consultWhatsAppMessage",
+      "مرحبًا فريق فرصكم، أرغب في مناقشة الحلول الهندسية المناسبة لمشروعي.",
+    );
+    heroConsultBtn.href = `https://wa.me/201501795004?text=${encodeURIComponent(message)}`;
+  }
+
   // Demo Video & Play Interaction Control
   const heroDemoBtn = document.getElementById("hero-demo-btn");
   const playMediaBtn = document.getElementById("hero-play-media-btn");
@@ -868,8 +901,8 @@ function renderProjectDetails(projectKey) {
 
   if (demoBadgeText) {
     demoBadgeText.textContent = hasDemoVideo
-      ? "PRODUCT DEMO"
-      : "PROJECT PREVIEW";
+      ? window.forascomI18n?.t("projectDetails.actions.productDemo", "PRODUCT DEMO")
+      : window.forascomI18n?.t("projectDetails.actions.projectPreview", "PROJECT PREVIEW");
   }
 
   function triggerDemoVideoPlayback() {
@@ -997,7 +1030,10 @@ function renderProjectDetails(projectKey) {
   if (ctaPrimaryBtn) {
     const encodedMsg = encodeURIComponent(
       project.ctaWhatsAppMessage ||
-      `مرحبًا فريق فرصكم، أرغب في معرفة المزيد عن تنفيذ حل مشابه لمشروع ${project.title}.`,
+      window.forascomI18n?.t(
+        "projectDetails.actions.defaultWhatsAppMessage",
+        `مرحبًا فريق فرصكم، أرغب في معرفة المزيد عن تنفيذ حل مشابه لمشروع ${project.title}.`,
+      ),
     );
 
     ctaPrimaryBtn.href = `https://wa.me/201501795004?text=${encodedMsg}`;
@@ -1170,8 +1206,15 @@ function initProjectDetailsPage() {
   initProjectDetailsMotion();
 }
 
+window.reRenderProjectDetailsWithLanguage = function () {
+  if (!document.getElementById("project-hero")) return;
+  renderProjectDetails(getActiveProjectKey());
+};
+
 if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initProjectDetailsPage);
+  document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(initProjectDetailsPage, 0);
+  }, { once: true });
 } else {
   initProjectDetailsPage();
 }

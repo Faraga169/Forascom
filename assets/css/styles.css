@@ -944,6 +944,11 @@ body::after {
   color: #f8fafc;
 }
 
+html[lang="en"] .forascom-about-content {
+  direction: ltr;
+  text-align: left;
+}
+
 .forascom-about-badge {
   display: inline-flex;
   align-items: center;

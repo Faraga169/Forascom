@@ -9016,7 +9016,7 @@ html[lang="en"] body .about-hero-section .about-hero-container .grid>div {
 html[lang="en"] body .about-hero-section h1.n-hero-title {
   max-width: 760px !important;
   font-family: var(--font-latin);
-  font-size: clamp(2.5rem, 3.8vw, 3.5rem) !important;
+  font-size: clamp(1.65rem, 2.6vw, 2.75rem) !important;
   line-height: 1.14 !important;
   letter-spacing: -0.035em !important;
   text-wrap: balance;
@@ -9053,6 +9053,11 @@ html[lang="ar"] #how-we-work .journey-milestone-en {
   display: none;
 }
 
+html[lang="en"] body #how-we-work .journey-timeline-fill {
+  right: auto;
+  left: 0;
+}
+
 html[lang="en"] #how-we-work .journey-milestone-ar {
   display: none;
 }
@@ -9063,7 +9068,7 @@ html[lang="en"] #how-we-work .journey-milestone-ar {
   }
 
   html[lang="en"] body .about-hero-section h1.n-hero-title {
-    font-size: clamp(1.8rem, 8.5vw, 3.35rem) !important;
+    font-size: clamp(1.65rem, 2.6vw, 2.75rem) !important;
     line-height: 1.18 !important;
     letter-spacing: -0.025em !important;
     text-wrap: balance;
@@ -9125,7 +9130,7 @@ html[lang="en"] #how-we-work .journey-milestone-ar {
 
   html[lang="en"] body .about-hero-section h1.n-hero-title {
     max-width: 48rem !important;
-    font-size: clamp(2rem, 3.05vw, 3.25rem) !important;
+    font-size: clamp(1.65rem, 2.6vw, 2.75rem) !important;
     line-height: 1.08 !important;
     letter-spacing: -0.035em !important;
     text-wrap: balance;
@@ -9158,7 +9163,7 @@ html[lang="en"] #how-we-work .journey-milestone-ar {
 
   html[lang="en"] body .about-hero-section h1.n-hero-title {
     max-width: 48rem !important;
-    font-size: clamp(2rem, 2.3vw, 2.75rem) !important;
+    font-size: clamp(1.65rem, 2.6vw, 2.75rem) !important;
     line-height: 1.12 !important;
   }
 

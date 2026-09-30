@@ -2410,34 +2410,33 @@ html[lang="ar"] .services-page .hero-title {
 @media (min-width: 820px) {
   .services-page .services-cta__panel {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr);
     align-items: center;
-    gap: clamp(1.5rem, 3vw, 3rem);
-    text-align: right;
+    gap: 1rem;
+    text-align: center;
   }
 
   .services-page .services-cta__content {
     width: 100%;
     max-width: none;
-    justify-self: stretch;
-    text-align: right;
+    justify-self: center;
+    text-align: center;
   }
 
   .services-page .services-cta__content h2,
   .services-page .services-cta__content p {
-    text-align: right;
+    text-align: center;
   }
 
   .services-page .services-cta__content p {
     max-width: 40rem;
-    margin-right: 0;
-    margin-left: auto;
+    margin-inline: auto;
   }
 
   .services-page .services-cta__actions {
     width: auto;
     justify-content: center;
-    justify-self: start;
-    align-self: center;
+    justify-self: center;
+    align-self: auto;
   }
 }

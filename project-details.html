@@ -77,10 +77,45 @@
     @layer base {
       body {
         font-family: "Cairo", sans-serif;
-        background-color: #00101d;
         color: #e0e3e5;
         overflow-x: hidden;
       }
+    }
+
+    body {
+      background: linear-gradient(180deg,
+          #00152a 0%,
+          #001d33 25%,
+          #002442 50%,
+          #001d33 75%,
+          #00152a 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(56, 189, 248, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 189, 248, 0.035) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 75% 10%, rgba(6, 182, 212, 0.08), transparent 35%),
+        radial-gradient(circle at 20% 50%, rgba(14, 116, 144, 0.06), transparent 40%),
+        radial-gradient(circle at 80% 85%, rgba(56, 189, 248, 0.05), transparent 35%);
+      pointer-events: none;
+      z-index: 1;
     }
 
     @keyframes ambientDrift {
@@ -299,7 +334,7 @@
   </style>
 </head>
 
-<body class="bg-surface min-h-screen text-on-surface antialiased selection:bg-tertiary/20 selection:text-tertiary">
+<body class="min-h-screen text-on-surface antialiased selection:bg-tertiary/20 selection:text-tertiary">
   <!-- GLOBAL AMBIENT BACKDROPS -->
   <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
     <div

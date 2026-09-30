@@ -8,6 +8,10 @@ html[dir="ltr"] body {
   text-align: left;
 }
 
+html[dir="ltr"] h1[data-i18n="home.hero.title"] {
+  font-size: clamp(1.65rem, 2.6vw, 2.75rem);
+}
+
 html[dir="ltr"] .font-arabic {
   font-family: "Plus Jakarta Sans", "Cairo", sans-serif;
 }

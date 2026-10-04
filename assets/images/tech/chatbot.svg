@@ -1,0 +1,36 @@
+<svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bot_head" x1="16" y1="18" x2="80" y2="82" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#06B6D4"/>
+      <stop offset="1" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="bot_glow" x1="28" y1="36" x2="68" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#60A5FA"/>
+    </linearGradient>
+  </defs>
+  <!-- Antenna -->
+  <path d="M48 10V22" stroke="#06B6D4" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="48" cy="10" r="4.5" fill="#38BDF8"/>
+  
+  <!-- Robot Head Body -->
+  <rect x="16" y="22" width="64" height="52" rx="18" fill="url(#bot_head)"/>
+  
+  <!-- Ear Headphones -->
+  <rect x="10" y="36" width="6" height="24" rx="3" fill="#0284C7"/>
+  <rect x="80" y="36" width="6" height="24" rx="3" fill="#0284C7"/>
+  
+  <!-- Visor / Screen Face -->
+  <rect x="24" y="32" width="48" height="32" rx="12" fill="#0B1120"/>
+  
+  <!-- Glowing Chatbot Eyes -->
+  <rect x="32" y="42" width="10" height="12" rx="5" fill="#22D3EE"/>
+  <rect x="54" y="42" width="10" height="12" rx="5" fill="#22D3EE"/>
+  
+  <!-- Cute Happy Smile -->
+  <path d="M41 57C43 59 45 60 48 60C51 60 53 59 55 57" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round"/>
+  
+  <!-- Chat Bubble Indicator -->
+  <circle cx="76" cy="20" r="6" fill="#10B981"/>
+  <path d="M74 19L76 21L79 18" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

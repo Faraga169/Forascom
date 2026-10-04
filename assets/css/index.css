@@ -1,0 +1,229 @@
+/* =========================================================
+   HOME PAGE
+   ========================================================= */
+
+/* Hero particle field */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  border-radius: 9999px;
+  background: rgba(8, 35, 58, 0.6);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+  color: #f8fafc;
+  font-size: 0.75rem;
+  font-weight: 700;
+  backdrop-filter: blur(18px);
+}
+
+.hero-image-area {
+  position: relative;
+  overflow: visible;
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 35px rgba(0, 210, 255, 0.25));
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(30vh) translateX(0);
+    opacity: 0;
+  }
+
+  12% {
+    opacity: 0.7;
+  }
+
+  75% {
+    opacity: 0.25;
+  }
+
+  100% {
+    transform: translateY(-75vh) translateX(38px);
+    opacity: 0;
+  }
+}
+
+.hero-particle {
+  position: absolute;
+  bottom: -14px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(25, 169, 229, 0.8);
+  filter: blur(0.4px);
+  box-shadow: 0 0 12px 2px rgba(25, 169, 229, 0.55);
+  animation: float-up var(--dur, 12s) linear infinite;
+  animation-delay: var(--d, 0s);
+  pointer-events: none;
+}
+
+.tech-grid {
+  background-image:
+    linear-gradient(rgba(25, 169, 229, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(25, 169, 229, 0.08) 1px, transparent 1px);
+  background-size: 46px 46px;
+  -webkit-mask-image: radial-gradient(ellipse at center,
+      rgba(0, 0, 0, 0.85),
+      transparent 72%);
+  mask-image: radial-gradient(ellipse at center,
+      rgba(0, 0, 0, 0.85),
+      transparent 72%);
+}
+
+/* =========================================================
+   WORK PHILOSOPHY TIMELINE — EQUAL HEIGHT CARDS
+   ========================================================= */
+
+/* The 5-step grid already stretches every step cell (grid item) to the height
+   of the tallest card. Let the card inside each cell fill that stretched cell
+   so all 5 cards end up exactly the same height, without stretching or
+   distorting their inner content (content stays top-aligned, spacing intact).
+   The step dot is absolutely positioned, so the card is the last in-flow child. */
+#philosophy .reveal-group>* {
+  display: flex;
+  flex-direction: column;
+}
+
+#philosophy .reveal-group>*>div:last-child {
+  flex: 1 1 auto;
+}
+
+/* =========================================================
+   RESPONSIVE — HOMEPAGE
+   Targets: 320 · 375 · 390 · 414 · 640 · 768 · 820 · 1024
+            · 1280 · 1440 · 1536 · 1920
+   ========================================================= */
+
+/* ---- Global viewport overflow prevention ---- */
+html {
+  overflow-x: hidden;
+}
+
+/* ---- Extra-small phones (320px–374px) ---- */
+@media (max-width: 374px) {
+
+  /* Hero */
+  .hero-image {
+    transform: scale(1);
+  }
+
+  .hero-image-area {
+    overflow: hidden;
+  }
+
+  /* Badge */
+  .badge {
+    font-size: 0.65rem;
+    padding: 0.35rem 0.75rem;
+  }
+
+  /* About cards min-height removal — already set in styles.css for ≤639,
+     but we also tighten padding */
+  .forascom-about-card {
+    padding: 1rem 0.85rem;
+  }
+
+  /* Philosophy step numbers */
+  #philosophy .group .text-5xl {
+    font-size: 2.25rem;
+  }
+
+  /* Contact form tighter padding */
+  #lead-contact-form {
+    padding: 1.25rem;
+  }
+}
+
+/* ---- Small phones (375px–639px) ---- */
+@media (max-width: 639px) {
+
+  /* Scale down the hero image for mobile — avoids horizontal bleed */
+  .hero-image {
+    transform: scale(1);
+  }
+
+  .hero-image-area {
+    overflow: hidden;
+    margin-top: 1.5rem;
+  }
+
+  /* Hero glow accent: clamp to viewport */
+  section.h-screen .absolute.w-\[600px\] {
+    width: 300px;
+    height: 300px;
+  }
+
+  /* Contact form padding */
+  #lead-contact-form {
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+  }
+
+  /* Tech orbit section: prevent glow orbs from causing overflow */
+  .tech-orbit-glow-orb {
+    max-width: 100vw;
+  }
+
+  /* Footer bottom bar: stack on small screens */
+  footer .pt-8.border-t {
+    text-align: center;
+  }
+
+  /* WhatsApp floating button: prevent overflow by limiting expanded text */
+  .fixed.bottom-6.left-6 a span:last-child {
+    max-width: 0 !important;
+    opacity: 0 !important;
+  }
+}
+
+/* ---- Tablet portrait (640px–1023px) ---- */
+@media (min-width: 640px) and (max-width: 1023px) {
+
+  /* Hero image safely scaled since HTML wrapper constraints width */
+  .hero-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    transform: scale(1.05);
+  }
+
+  .hero-image-area {
+    overflow: visible;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Tech orbit glow orb containment (existing rule) */
+  .tech-orbit-glow-orb {
+    max-width: 90vw;
+  }
+}
+
+/* ---- Desktop (1024px+): hero image keeps the designed scale ---- */
+@media (min-width: 1024px) {
+  .hero-image {
+    transform: scale(1.2);
+  }
+
+  .hero-image-area {
+    overflow: visible;
+  }
+}
+
+/* ---- Large desktop cap (1920px+) ---- */
+@media (min-width: 1920px) {
+
+  /* Prevent ultra-wide content stretch */
+  .max-w-7xl {
+    max-width: 80rem;
+    /* keeps current 1280px cap */
+  }
+}

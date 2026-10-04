@@ -1,0 +1,11 @@
+# Robots.txt for Forascom (https://forascom.com)
+# Allow all search engine crawlers to discover and index site content and assets
+
+User-agent: *
+Allow: /
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+
+# Sitemap location
+Sitemap: https://forascom.com/sitemap.xml

@@ -135,10 +135,6 @@ html {
     font-size: 2.25rem;
   }
 
-  /* Contact form tighter padding */
-  #lead-contact-form {
-    padding: 1.25rem;
-  }
 }
 
 /* ---- Small phones (375px–639px) ---- */
@@ -158,12 +154,6 @@ html {
   section.h-screen .absolute.w-\[600px\] {
     width: 300px;
     height: 300px;
-  }
-
-  /* Contact form padding */
-  #lead-contact-form {
-    padding: 1.5rem;
-    border-radius: 1.25rem;
   }
 
   /* Tech orbit section: prevent glow orbs from causing overflow */

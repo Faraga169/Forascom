@@ -267,11 +267,6 @@
         <!-- Hero Text Content -->
         <div
           class="lg:col-span-7 self-center space-y-6 text-center lg:text-right lg:-translate-x-6 xl:-translate-x-10 2xl:-translate-x-16">
-          <!-- Badge -->
-          <div class="badge hero-enter" style="--d: 0.05s" data-i18n="home.hero.badge">
-            فرصكم | Technology That Creates Opportunities
-          </div>
-
           <!-- Headline -->
           <h1
             class="hero-enter text-[clamp(1.65rem,5.5vw,2.25rem)] sm:text-5xl lg:text-6xl font-bold text-text-primary leading-[1.15]" data-i18n="home.hero.title"
@@ -310,29 +305,6 @@
             </a>
           </div>
 
-          <!-- Trust Highlights -->
-          <div
-            class="hero-enter pt-4 sm:pt-6 border-t flex flex-wrap justify-center lg:justify-start items-center gap-3 sm:gap-6 text-[0.65rem] sm:text-xs font-bold text-text-muted"
-            style="--d: 0.45s; border-color: rgba(56, 189, 248, 0.12)">
-            <div class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span data-i18n="home.hero.trust1">Arabic at the Core</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span data-i18n="home.hero.trust2">Global Engineering Standard</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-              <span data-i18n="home.hero.trust3">Reusable SaaS Architecture</span>
-            </div>
-          </div>
         </div>
 
         <!-- Hero Visual Showcase -->
@@ -958,93 +930,6 @@
   <!-- ==========================================================================
        CONTACT & LEAD CAPTURE SECTION
        ========================================================================== -->
-  <section id="contact" class="py-14 sm:py-20 lg:py-24 bg-dark text-white relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-5 space-y-6">
-          <span class="text-cyan font-bold text-xs tracking-widest uppercase" data-i18n="home.contactSection.badge">تواصل معنا | Let's Talk</span>
-          <h2 class="text-2xl sm:text-3xl lg:text-5xl font-black leading-tight" data-i18n="home.contactSection.title">
-            جاهز تحوّل فكرتك لواقع تقني؟
-          </h2>
-          <p class="text-slate-300 text-base leading-relaxed" data-i18n="home.contactSection.subtitle">
-            تواصل مع فريق Forascom عشان تاخد استشارة تقنية مجانية ونناقش
-            تفاصيل مشروعك والقيمة اللي ممكن نضيفها لشغلك.
-          </p>
-
-          <div class="space-y-4 pt-4">
-            <a href="https://wa.me/201501795004" target="_blank"
-              class="flex items-center gap-4 p-4 rounded-xl bg-navy/80 border border-slate-800 hover:border-cyan transition-all" rel="noopener noreferrer">
-              <div
-                class="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
-                WA
-              </div>
-              <div>
-                <div class="text-xs text-slate-400">
-                  <span data-i18n="home.contactSection.whatsappLabel">محادثة مباشرة على WhatsApp</span>
-                </div>
-                <div class="font-bold text-sm text-white">
-                  <span data-i18n="home.contactSection.whatsappCta">انقر للتواصل المباشر مع المهندس</span>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <div class="lg:col-span-7">
-          <form id="lead-contact-form"
-            class="field-glow bg-navy/90 p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-800 shadow-2xl space-y-4 sm:space-y-5 reveal-on-scroll reveal-right">
-            <h3 class="font-black text-2xl text-white mb-2">
-              <span data-i18n="home.contactSection.formTitle">أرسل تفاصيل مشروعك</span>
-            </h3>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs font-bold text-slate-300 mb-1" data-i18n="home.contactSection.nameLabel">الاسم الكامل</label>
-                <input type="text" id="contact-name" required placeholder="أدخل اسمك " data-i18n-placeholder="home.contactSection.namePlaceholder"
-                  class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan" />
-              </div>
-              <div>
-                <label class="block text-xs font-bold text-slate-300 mb-1" data-i18n="home.contactSection.phoneLabel">رقم الهاتف / الواتساب</label>
-                <input type="tel" id="contact-phone" required placeholder="+20 123 456 7890"
-                  class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan" />
-              </div>
-            </div>
-
-            <div>
-              <label class="block text-xs font-bold text-slate-300 mb-1" data-i18n="home.contactSection.serviceLabel">الخدمة المطلوبة</label>
-              <select id="contact-service"
-                class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan">
-                <option value="Web Development (Custom Code / WordPress)" data-i18n="home.contactSection.homeServiceWeb">
-                  Web Development (Custom Code or WordPress)
-                </option>
-                <option value="AI & Intelligent Automation" data-i18n="home.contactSection.homeServiceAi">
-                  AI & Intelligent Automation
-                </option>
-                <option value="Power Platform & Low-Code Workflows" data-i18n="home.contactSection.homeServicePower">
-                  Power Platform & Low-Code Workflows
-                </option>
-                <option value="SaaS Product MVP Development" data-i18n="home.contactSection.homeServiceSaas">
-                  SaaS Product / MVP Development
-                </option>
-              </select>
-            </div>
-
-            <div>
-              <label class="block text-xs font-bold text-slate-300 mb-1" data-i18n="home.contactSection.messageLabel">ملخص عن مشروعك أو المشكلة</label>
-              <textarea id="contact-msg" rows="4" required
-                placeholder="اشرح لنا المشكلة أو الميزات المطلوبة في المشروع..." data-i18n-placeholder="home.contactSection.messagePlaceholder"
-                class="w-full bg-slate-900/80 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan"></textarea>
-            </div>
-
-            <button type="submit"
-              class="btn-cyan w-full font-bold text-base py-4 rounded-xl shadow-lg flex items-center justify-center gap-2">
-              <span data-i18n="home.contactSection.homeSubmitBtn">إرسال وفتح المحادثة </span>
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
   </main>
 
   <footer

@@ -216,7 +216,7 @@ function selectJourneyStep(stepIndex) {
   const totalSteps = 6;
   const clampedStep = Math.max(1, Math.min(totalSteps, parseInt(stepIndex, 10)));
   currentJourneyStep = clampedStep;
-  const accordionMode = isEnglishJourneyAccordion();
+  const accordionMode = isJourneyAccordion();
   const section = document.getElementById("how-we-work");
 
   // 1. Update Milestone Tabs
@@ -256,19 +256,12 @@ function selectJourneyStep(stepIndex) {
       const accordionItem = btn.closest(".journey-accordion-item");
       const content = accordionItem?.querySelector(".journey-accordion-content");
       const isOpen = idx === clampedStep && clampedStep >= 3;
-      const wasOpen = content?.classList.contains("is-open") ?? false;
       accordionItem?.classList.toggle("is-open", isOpen);
       if (content) {
         content.classList.toggle("is-open", isOpen);
         content.setAttribute("aria-hidden", String(!isOpen));
         content.inert = !isOpen;
-        if (isOpen && !wasOpen) {
-          content.style.maxHeight = "0px";
-          void content.offsetHeight;
-          content.style.maxHeight = `${content.scrollHeight}px`;
-        } else {
-          content.style.maxHeight = isOpen ? `${content.scrollHeight}px` : "0px";
-        }
+        content.style.maxHeight = "0px";
       }
     }
   });
@@ -298,18 +291,28 @@ function selectJourneyStep(stepIndex) {
     }
   });
 
+  if (accordionMode && clampedStep >= 3) {
+    const openContent = section?.querySelector(
+      ".journey-accordion-content.is-open",
+    );
+    if (openContent) {
+      void openContent.offsetHeight;
+      openContent.style.maxHeight = `${openContent.scrollHeight}px`;
+    }
+  }
+
   section?.classList.toggle("has-accordion-panel", accordionMode && clampedStep >= 3);
 }
 
-function isEnglishJourneyAccordion() {
+function isJourneyAccordion() {
   return journeyAccordionEnabled
-    && document.documentElement.lang === "en"
+    && ["ar", "en"].includes(document.documentElement.lang)
     && window.matchMedia("(max-width: 1024px)").matches;
 }
 
 function handleJourneyMilestone(button) {
   const stepIndex = parseInt(button.getAttribute("data-step-idx"), 10);
-  if (!isEnglishJourneyAccordion()) {
+  if (!isJourneyAccordion()) {
     selectJourneyStep(stepIndex);
     return;
   }
@@ -405,12 +408,12 @@ function initClientJourneyTimeline() {
 
   selectJourneyStep(3);
   setJourneyAccordionMode(
-    document.documentElement.lang === "en"
+    ["ar", "en"].includes(document.documentElement.lang)
       && window.matchMedia("(max-width: 1024px)").matches
   );
 
   const updateAccordionMode = () => {
-    const shouldEnable = document.documentElement.lang === "en"
+    const shouldEnable = ["ar", "en"].includes(document.documentElement.lang)
       && window.matchMedia("(max-width: 1024px)").matches;
     setJourneyAccordionMode(shouldEnable);
     if (shouldEnable) {
@@ -424,6 +427,8 @@ function initClientJourneyTimeline() {
 
   // Enable keyboard arrow navigation across timeline milestones
   document.addEventListener("keydown", (e) => {
+    if (isJourneyAccordion()) return;
+
     const activeTab = document.querySelector(".journey-milestone-btn:focus");
     if (!activeTab) return;
 

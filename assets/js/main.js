@@ -209,9 +209,15 @@ function bootForascom() {
 /* ==========================================================================
    PREMIUM CLIENT JOURNEY TIMELINE INTERACTION
    ========================================================================== */
+let currentJourneyStep = 3;
+let journeyAccordionEnabled = false;
+
 function selectJourneyStep(stepIndex) {
   const totalSteps = 6;
   const clampedStep = Math.max(1, Math.min(totalSteps, parseInt(stepIndex, 10)));
+  currentJourneyStep = clampedStep;
+  const accordionMode = isEnglishJourneyAccordion();
+  const section = document.getElementById("how-we-work");
 
   // 1. Update Milestone Tabs
   const milestoneBtns = document.querySelectorAll(".journey-milestone-btn");
@@ -221,7 +227,11 @@ function selectJourneyStep(stepIndex) {
 
     if (idx === clampedStep) {
       btn.classList.add("is-active");
-      btn.setAttribute("aria-selected", "true");
+      if (accordionMode) {
+        btn.setAttribute("aria-expanded", idx === clampedStep ? "true" : "false");
+      } else {
+        btn.setAttribute("aria-selected", "true");
+      }
       // Scroll into view on mobile horizontally if overflowing
       const wrapper = document.querySelector(".journey-timeline-wrapper");
       if (wrapper && wrapper.scrollWidth > wrapper.clientWidth) {
@@ -229,9 +239,37 @@ function selectJourneyStep(stepIndex) {
       }
     } else if (idx < clampedStep) {
       btn.classList.add("is-completed");
-      btn.setAttribute("aria-selected", "false");
+      if (accordionMode) {
+        btn.setAttribute("aria-expanded", "false");
+      } else {
+        btn.setAttribute("aria-selected", "false");
+      }
     } else {
-      btn.setAttribute("aria-selected", "false");
+      if (accordionMode) {
+        btn.setAttribute("aria-expanded", "false");
+      } else {
+        btn.setAttribute("aria-selected", "false");
+      }
+    }
+
+    if (accordionMode) {
+      const accordionItem = btn.closest(".journey-accordion-item");
+      const content = accordionItem?.querySelector(".journey-accordion-content");
+      const isOpen = idx === clampedStep && clampedStep >= 3;
+      const wasOpen = content?.classList.contains("is-open") ?? false;
+      accordionItem?.classList.toggle("is-open", isOpen);
+      if (content) {
+        content.classList.toggle("is-open", isOpen);
+        content.setAttribute("aria-hidden", String(!isOpen));
+        content.inert = !isOpen;
+        if (isOpen && !wasOpen) {
+          content.style.maxHeight = "0px";
+          void content.offsetHeight;
+          content.style.maxHeight = `${content.scrollHeight}px`;
+        } else {
+          content.style.maxHeight = isOpen ? `${content.scrollHeight}px` : "0px";
+        }
+      }
     }
   });
 
@@ -246,14 +284,119 @@ function selectJourneyStep(stepIndex) {
   const panels = document.querySelectorAll(".journey-stage-panel");
   panels.forEach((panel) => {
     const pStep = parseInt(panel.getAttribute("data-step"), 10);
+    const inAccordion = accordionMode && panel.closest(".journey-accordion-content");
     if (pStep === clampedStep) {
       panel.classList.add("is-active");
       panel.removeAttribute("hidden");
     } else {
       panel.classList.remove("is-active");
-      panel.setAttribute("hidden", "true");
+      if (inAccordion) {
+        panel.removeAttribute("hidden");
+      } else {
+        panel.setAttribute("hidden", "true");
+      }
     }
   });
+
+  section?.classList.toggle("has-accordion-panel", accordionMode && clampedStep >= 3);
+}
+
+function isEnglishJourneyAccordion() {
+  return journeyAccordionEnabled
+    && document.documentElement.lang === "en"
+    && window.matchMedia("(max-width: 1024px)").matches;
+}
+
+function handleJourneyMilestone(button) {
+  const stepIndex = parseInt(button.getAttribute("data-step-idx"), 10);
+  if (!isEnglishJourneyAccordion()) {
+    selectJourneyStep(stepIndex);
+    return;
+  }
+
+  if (button.getAttribute("aria-expanded") === "true") {
+    button.setAttribute("aria-expanded", "false");
+    button.classList.remove("is-active");
+    const item = button.closest(".journey-accordion-item");
+    const content = item?.querySelector(".journey-accordion-content");
+    const panel = content?.querySelector(".journey-stage-panel");
+    item?.classList.remove("is-open");
+    content?.classList.remove("is-open");
+    if (content) content.style.maxHeight = "0px";
+    content?.setAttribute("aria-hidden", "true");
+    if (content) content.inert = true;
+    panel?.classList.remove("is-active");
+    document.getElementById("how-we-work")?.classList.remove("has-accordion-panel");
+    return;
+  }
+
+  selectJourneyStep(stepIndex);
+}
+
+function setJourneyAccordionMode(enable) {
+  const section = document.getElementById("how-we-work");
+  const milestones = section?.querySelector(".journey-milestones");
+  const panelsContainer = section?.querySelector("#journey-panels-container");
+  if (!section || !milestones || !panelsContainer || enable === journeyAccordionEnabled) return;
+
+  const journeyButtons = [...milestones.querySelectorAll(".journey-milestone-btn[data-step-idx]")];
+  const visibleButtons = journeyButtons.filter((button) => {
+    const step = parseInt(button.getAttribute("data-step-idx"), 10);
+    return step >= 3;
+  });
+
+  if (enable) {
+    milestones.setAttribute("role", "list");
+    visibleButtons.forEach((button) => {
+      const step = parseInt(button.getAttribute("data-step-idx"), 10);
+      const item = document.createElement("div");
+      item.className = "journey-accordion-item";
+      item.setAttribute("role", "listitem");
+      const content = document.createElement("div");
+      content.className = "journey-accordion-content";
+      content.id = `journey-accordion-content-${step}`;
+      content.setAttribute("aria-hidden", "true");
+      content.inert = true;
+      const inner = document.createElement("div");
+      inner.className = "journey-accordion-content-inner";
+      content.append(inner);
+
+      button.before(item);
+      item.append(button, content);
+      button.removeAttribute("role");
+      button.removeAttribute("aria-selected");
+      button.setAttribute("aria-expanded", "false");
+      button.setAttribute("aria-controls", `panel-step-${step}`);
+      const panel = panelsContainer.querySelector(`.journey-stage-panel[data-step="${step}"]`);
+      if (panel) {
+        panel.removeAttribute("hidden");
+        inner.append(panel);
+      }
+    });
+    journeyAccordionEnabled = true;
+    selectJourneyStep(currentJourneyStep);
+    return;
+  }
+
+  journeyAccordionEnabled = false;
+  journeyButtons.forEach((button) => {
+    const item = button.closest(".journey-accordion-item");
+    if (!item) return;
+    const panel = item.querySelector(".journey-stage-panel");
+    if (panel) {
+      const nextPanel = [...panelsContainer.querySelectorAll(".journey-stage-panel")]
+        .find((candidate) => parseInt(candidate.dataset.step, 10) > parseInt(panel.dataset.step, 10));
+      panelsContainer.insertBefore(panel, nextPanel || null);
+    }
+    item.before(button);
+    item.remove();
+    button.setAttribute("role", "tab");
+    button.removeAttribute("aria-expanded");
+    button.setAttribute("aria-controls", `panel-step-${button.dataset.stepIdx}`);
+  });
+  milestones.setAttribute("role", "tablist");
+  section.classList.remove("has-accordion-panel");
+  selectJourneyStep(currentJourneyStep);
 }
 
 function initClientJourneyTimeline() {
@@ -261,6 +404,23 @@ function initClientJourneyTimeline() {
   if (!journeySection) return;
 
   selectJourneyStep(3);
+  setJourneyAccordionMode(
+    document.documentElement.lang === "en"
+      && window.matchMedia("(max-width: 1024px)").matches
+  );
+
+  const updateAccordionMode = () => {
+    const shouldEnable = document.documentElement.lang === "en"
+      && window.matchMedia("(max-width: 1024px)").matches;
+    setJourneyAccordionMode(shouldEnable);
+    if (shouldEnable) {
+      journeySection.querySelectorAll(".journey-accordion-content.is-open").forEach((content) => {
+        content.style.maxHeight = `${content.scrollHeight}px`;
+      });
+    }
+  };
+  window.addEventListener("resize", updateAccordionMode, { passive: true });
+  window.addEventListener("forascom:langchange", updateAccordionMode);
 
   // Enable keyboard arrow navigation across timeline milestones
   document.addEventListener("keydown", (e) => {
@@ -299,4 +459,3 @@ function initClientJourneyTimeline() {
 }
 
 document.addEventListener("DOMContentLoaded", bootForascom);
-

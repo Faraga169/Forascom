@@ -101,6 +101,16 @@
             · 1280 · 1440 · 1536 · 1920
    ========================================================= */
 
+@media (min-width: 1024px) {
+  html[dir="rtl"] #about .forascom-about-layout {
+    direction: rtl;
+  }
+
+  html[dir="rtl"] #about .forascom-about-ecosystem-wrapper {
+    direction: ltr;
+  }
+}
+
 /* ---- Global viewport overflow prevention ---- */
 html {
   overflow-x: hidden;
@@ -135,6 +145,76 @@ html {
     font-size: 2.25rem;
   }
 
+}
+
+/* ---- Mobile and tablet hero ordering (up to 1024px) ---- */
+@media (max-width: 1024px) {
+  .home-hero.home-hero {
+    height: auto;
+  }
+
+  .home-hero .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-hero .grid > div {
+    grid-column: auto;
+  }
+
+  .home-hero .hero-image-area {
+    order: -1;
+  }
+
+  .home-hero .grid > div:first-child {
+    order: 1;
+  }
+
+  .home-hero .grid > div {
+    translate: none;
+  }
+}
+
+@media (max-width: 899px) {
+  #tech-orbit-section .tech-orbit-heading {
+    margin-bottom: clamp(2rem, 5vw, 2.5rem);
+  }
+
+  #tech-orbit-section > .max-w-7xl > .grid {
+    row-gap: clamp(2rem, 5vw, 2.5rem);
+  }
+
+  #tech-orbit-section .tech-orbit-hub-wrapper {
+    padding-block: clamp(0.75rem, 2.5vw, 1.25rem);
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1024px) {
+  #tech-orbit-section > .max-w-7xl > .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(2rem, 5vw, 4rem);
+  }
+
+  #tech-orbit-section .tech-orbit-content,
+  #tech-orbit-section .tech-orbit-hub-wrapper {
+    grid-column: auto;
+  }
+
+  #tech-orbit-section .tech-orbit-content {
+    order: 1;
+    min-width: 0;
+  }
+
+  #tech-orbit-section .tech-orbit-hub-wrapper {
+    order: 2;
+    min-width: 0;
+    padding-block: 0;
+  }
+
+  #tech-orbit-section #tech-orbit-hub {
+    width: min(100%, 540px);
+    height: auto;
+    aspect-ratio: 1;
+  }
 }
 
 /* ---- Small phones (375px–639px) ---- */
@@ -173,8 +253,8 @@ html {
   }
 }
 
-/* ---- Tablet portrait (640px–1023px) ---- */
-@media (min-width: 640px) and (max-width: 1023px) {
+/* ---- Tablet portrait (640px–1024px) ---- */
+@media (min-width: 640px) and (max-width: 1024px) {
 
   /* Hero image safely scaled since HTML wrapper constraints width */
   .hero-image {
@@ -197,8 +277,14 @@ html {
   }
 }
 
-/* ---- Desktop (1024px+): hero image keeps the designed scale ---- */
-@media (min-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
+  .home-hero .hero-image-area {
+    max-width: 80%;
+  }
+}
+
+/* ---- Desktop (1025px+): hero image keeps the designed scale ---- */
+@media (min-width: 1025px) {
   .hero-image {
     transform: scale(1.2);
   }
@@ -215,5 +301,119 @@ html {
   .max-w-7xl {
     max-width: 80rem;
     /* keeps current 1280px cap */
+  }
+}
+
+/* =========================================================
+   HOME PAGE — BILINGUAL RESPONSIVE TYPOGRAPHY
+   ========================================================= */
+
+html[lang="ar"] body.home-page {
+  font-family: var(--font-arabic);
+  line-height: 1.75;
+}
+
+html[lang="en"] body.home-page {
+  font-family: var(--font-latin);
+  line-height: 1.6;
+}
+
+.home-page #main-content h1,
+.home-page #main-content h2,
+.home-page #main-content h3,
+.home-page #main-content h4 {
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+.home-page #main-content p {
+  line-height: 1.75;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+html[lang="en"] .home-page #main-content p {
+  line-height: 1.65;
+}
+
+html[lang="ar"] .home-page #main-content h1,
+html[lang="ar"] .home-page #main-content h2,
+html[lang="ar"] .home-page #main-content h3,
+html[lang="ar"] .home-page #main-content h4 {
+  letter-spacing: normal;
+}
+
+html[lang="en"] .home-page #main-content h1,
+html[lang="en"] .home-page #main-content h2,
+html[lang="en"] .home-page #main-content h3,
+html[lang="en"] .home-page #main-content h4 {
+  letter-spacing: -0.02em;
+}
+
+html[dir="rtl"] body.home-page .home-hero h1[data-i18n="home.hero.title"],
+html[dir="ltr"] body.home-page .home-hero h1[data-i18n="home.hero.title"] {
+  font-size: clamp(1.75rem, 4.2vw, 3.75rem);
+}
+
+html[lang="ar"] body.home-page .home-hero h1[data-i18n="home.hero.title"] {
+  line-height: 1.35;
+}
+
+html[lang="en"] body.home-page .home-hero h1[data-i18n="home.hero.title"] {
+  font-size: clamp(1.75rem, 4.2vw, 3rem);
+  line-height: 1.15;
+}
+
+.home-page .forascom-about-card-title {
+  font-size: 1.125rem;
+  line-height: 1.45;
+  text-wrap: balance;
+}
+
+.home-page .forascom-about-card-copy {
+  font-size: 0.875rem;
+  line-height: 1.75;
+}
+
+.home-page #philosophy .reveal-group h4 {
+  line-height: 1.4;
+  text-wrap: balance;
+}
+
+.home-page #philosophy .reveal-group p {
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.home-page #tech-orbit-desc {
+  line-height: 1.75;
+}
+
+.home-page #tech-orbit-title {
+  line-height: 1.35;
+  text-wrap: balance;
+}
+
+.home-page #projects-grid h3 {
+  line-height: 1.35;
+  text-wrap: balance;
+}
+
+.home-page #projects-grid p {
+  line-height: 1.65;
+}
+
+.home-page .services-cta__content h2 {
+  line-height: 1.25;
+}
+
+.home-page a,
+.home-page button {
+  line-height: 1.4;
+}
+
+@media (max-width: 639px) {
+  .home-page #philosophy .reveal-group p {
+    font-size: 0.8125rem;
   }
 }

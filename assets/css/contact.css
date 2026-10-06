@@ -64,14 +64,27 @@
   -webkit-text-fill-color: transparent;
 }
 
-.contact-page .contact-intro-image {
-  display: block;
+.contact-page .contact-intro-visual {
+  display: flex;
   width: 100%;
   max-width: 34rem;
-  height: clamp(10rem, 25vw, 15rem);
+  align-items: center;
+  justify-content: center;
   margin: 0.25rem auto 0.5rem;
+  background: transparent;
+}
+
+.contact-page .contact-intro-image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
   object-position: center;
+  opacity: 1;
+  filter: none;
+  mix-blend-mode: normal;
 }
 
 .contact-page .contact-intro-copy {
@@ -551,8 +564,7 @@
     font-size: 0.92rem;
   }
 
-  .contact-page .contact-intro-image {
-    height: clamp(9rem, 48vw, 13rem);
+  .contact-page .contact-intro-visual {
     margin-top: 0.1rem;
     margin-bottom: 0.25rem;
   }
@@ -628,5 +640,233 @@
   .contact-page .contact-submit {
     font-size: 0.9rem;
     padding: 0.9rem;
+  }
+}
+
+/* Contact page typography: keep language fonts and text rhythm consistent. */
+html[lang="ar"] .contact-page {
+  font-family: var(--font-arabic, "Cairo"), sans-serif;
+}
+
+html[lang="en"] .contact-page {
+  font-family: var(--font-latin, "Plus Jakarta Sans"), sans-serif;
+}
+
+.contact-page .glass-nav .nav-link,
+.contact-page .lang-switcher-pill button,
+.contact-page #mobile-menu-container a,
+.contact-page footer a,
+.contact-page footer h4,
+.contact-page footer p,
+.contact-page footer li,
+.contact-page footer span {
+  font-family: inherit;
+  letter-spacing: normal;
+}
+
+.contact-page .contact-intro-title {
+  max-width: 18ch;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.contact-page .contact-intro-copy {
+  max-width: 38rem;
+  font-size: clamp(1rem, 1.15vw, 1.1rem);
+  line-height: 1.8;
+  text-wrap: pretty;
+}
+
+.contact-page .contact-benefit strong {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.contact-page .contact-benefit small {
+  font-size: 0.78rem;
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+.contact-page .contact-whatsapp strong {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.contact-page .contact-whatsapp small {
+  font-size: 0.8rem;
+  line-height: 1.65;
+}
+
+.contact-page .contact-form-heading h2,
+.contact-page .contact-form-heading h3 {
+  font-size: clamp(1.35rem, 1.8vw, 1.55rem);
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.contact-page .contact-form-heading p {
+  max-width: 34rem;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+.contact-page .contact-field label {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.contact-page .contact-field .contact-optional {
+  font-size: 0.78rem;
+}
+
+.contact-page .contact-field input,
+.contact-page .contact-field select,
+.contact-page .contact-field textarea {
+  line-height: 1.6;
+}
+
+.contact-page .contact-field input::placeholder,
+.contact-page .contact-field textarea::placeholder {
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.contact-page .contact-submit {
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.contact-page .contact-privacy {
+  font-size: 0.8rem;
+  line-height: 1.75;
+  text-wrap: pretty;
+}
+
+.contact-page .contact-trust-brand-text > span {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.contact-page .contact-trust-brand-text p {
+  font-size: 0.82rem;
+  line-height: 1.75;
+  text-wrap: pretty;
+}
+
+.contact-page .contact-industries span {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  text-wrap: balance;
+}
+
+.contact-page footer h4 {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.contact-page footer p,
+.contact-page footer li,
+.contact-page footer a {
+  line-height: 1.75;
+}
+
+html[dir="ltr"] .contact-page .contact-intro,
+html[dir="ltr"] .contact-page .contact-trust-brand-text {
+  text-align: left;
+}
+
+html[dir="ltr"] .contact-page .contact-intro-copy {
+  margin-inline-start: 0;
+  margin-inline-end: auto;
+}
+
+html[lang="ar"] .contact-page main {
+  letter-spacing: normal;
+}
+
+html[lang="ar"] .contact-page .contact-intro-title,
+html[lang="ar"] .contact-page .contact-form-heading h2,
+html[lang="ar"] .contact-page .contact-form-heading h3 {
+  letter-spacing: 0;
+  line-height: 1.45;
+}
+
+html[lang="ar"] .contact-page .contact-intro-copy,
+html[lang="ar"] .contact-page .contact-benefit small,
+html[lang="ar"] .contact-page .contact-form-heading p,
+html[lang="ar"] .contact-page .contact-privacy,
+html[lang="ar"] .contact-page .contact-trust-brand-text p {
+  line-height: 1.9;
+}
+
+html[lang="en"] .contact-page .contact-intro-title,
+html[lang="en"] .contact-page .contact-form-heading h2,
+html[lang="en"] .contact-page .contact-form-heading h3 {
+  line-height: 1.22;
+}
+
+@media (max-width: 767px) {
+  .contact-page .contact-intro-title {
+    max-width: 20ch;
+    font-size: clamp(1.85rem, 7.4vw, 2.35rem);
+  }
+
+  .contact-page .contact-intro-copy {
+    font-size: 0.98rem;
+  }
+
+  .contact-page .contact-benefit strong {
+    font-size: 0.86rem;
+  }
+
+  .contact-page .contact-benefit small {
+    font-size: 0.76rem;
+  }
+
+  .contact-page .contact-whatsapp strong {
+    font-size: 0.9rem;
+  }
+
+  .contact-page .contact-whatsapp small {
+    font-size: 0.76rem;
+  }
+
+  .contact-page .contact-form-heading h2,
+  .contact-page .contact-form-heading h3 {
+    font-size: 1.35rem;
+  }
+
+  .contact-page .contact-field label {
+    font-size: 0.88rem;
+  }
+
+  .contact-page .contact-privacy {
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-page .contact-intro-title {
+    font-size: clamp(1.8rem, 7.2vw, 2rem);
+  }
+
+  .contact-page .contact-form-heading h2,
+  .contact-page .contact-form-heading h3 {
+    font-size: 1.25rem;
+  }
+
+  .contact-page .contact-submit {
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .contact-page .contact-intro-title {
+    font-size: clamp(2.35rem, 4.6vw, 3rem);
   }
 }

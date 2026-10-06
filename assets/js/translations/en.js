@@ -346,7 +346,7 @@ window.forascomTranslations.en = {
       metric3: "Platforms in development",
       metric4: "Production readiness",
       buildTitle: "Define your goals",
-      buildSubtitle: "We help you develop the right software solution for your business.",
+      buildSubtitle: "Tell us what you want to achieve. We’ll help you find the right software solution.",
       journeyTitleHtml: "A clear journey from <span class=\"text-cyan\">idea to launch</span>",
       journeySubtitle: "You do not need to know the technical solution upfront. Share the problem or goal, and we will help find the right path.",
       finalTitle: "Have an idea or challenge and are not sure where to start?",
@@ -360,46 +360,46 @@ window.forascomTranslations.en = {
       web: {
         tag: "DIGITAL PRESENCE",
         title: "Need a website or digital platform?",
-        subtitle: "Present your business professionally online",
-        description: "We build websites and digital platforms that help you present services, reach customers, and provide an experience tailored to your business.",
+        subtitle: "Build a polished online presence",
+        description: "We create polished websites and platforms that showcase your services, connect you with customers, and deliver a smooth, tailored experience.",
         item1: "Business websites",
         item2: "Landing pages",
         item3: "Online stores",
         item4: "Custom web applications",
-        noteHtml: "<strong>Ideal for:</strong> companies, manufacturers, growing retailers, and service providers."
+        noteHtml: "<strong>Ideal for:</strong> growing businesses, manufacturers, retailers, and service providers."
       },
       systems: {
         tag: "BUSINESS SYSTEMS",
-        title: "Need a system to manage your business?",
-        subtitle: "Turn your work into a system tailored to your needs",
-        description: "If your operations rely on scattered spreadsheets or complex manual processes, we can build a custom system that brings your data together and improves team efficiency.",
+        title: "Need a better way to manage your business?",
+        subtitle: "Bring your processes together in a system built for your needs",
+        description: "We replace scattered spreadsheets and manual processes with a custom system that brings your data together and helps your team work efficiently.",
         item1: "Integrated management systems",
         item2: "Internal dashboards and reports",
         item3: "Employee portals",
         item4: "Custom business applications",
-        noteHtml: "<strong>Organizes:</strong> customers, orders, inventory, employees, operations, and reporting."
+        noteHtml: "<strong>Organizes:</strong> customers, orders, inventory, staff, operations, and reports."
       },
       automation: {
         tag: "WORKFLOW AUTOMATION",
-        title: "Turn repetitive tasks into automated workflows",
-        subtitle: "Let processes run automatically with less manual effort",
-        description: "If your team repeats the same steps or moves data between systems by hand, we automate those processes so work flows reliably without constant intervention.",
-        item1: "Move data automatically between systems and apps",
-        item2: "Send notifications and alerts instantly",
-        item3: "Update records and generate reports on schedule",
-        item4: "Track requests and connect platforms",
-        noteHtml: "<strong>Result:</strong> save team time, reduce manual errors, and improve operational speed."
+        title: "Automate repetitive tasks and keep work moving",
+        subtitle: "Reduce manual effort with reliable workflows",
+        description: "We connect your systems and automate routine work so your team saves time, avoids errors, and keeps processes moving.",
+        item1: "Move data across systems and apps",
+        item2: "Send alerts and notifications",
+        item3: "Update records and schedule reports",
+        item4: "Track requests across platforms",
+        noteHtml: "<strong>Result:</strong> save team time, reduce errors, and speed up operations."
       },
       ai: {
         tag: "PRACTICAL AI",
-        title: "Use AI to improve your team's productivity",
+        title: "Put AI to work for your team",
         subtitle: "Get more done with less time and effort",
-        description: "We build practical AI solutions for faster information access, document and data management, and customer-service automation.",
-        item1: "AI chatbots and assistants",
-        item2: "Smart knowledge search",
-        item3: "Automated document analysis and summaries",
-        item4: "AI agents and intelligent data processing",
-        noteHtml: "<strong>Helps with:</strong> searching company documents, customer responses, information extraction, and image analysis."
+        description: "We help your team find information, work with documents and data, and handle customer support with practical AI.",
+        item1: "AI assistants and chatbots",
+        item2: "Search internal knowledge",
+        item3: "Analyze and summarize documents",
+        item4: "AI agents and data processing",
+        noteHtml: "<strong>Use it to:</strong> search documents, answer customers, extract information, and analyze images."
       },
       cta: "Start a project"
     },

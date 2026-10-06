@@ -138,6 +138,7 @@
   <!-- About Page Stylesheet -->
   <link rel="stylesheet" href="assets/css/about.css" />
   <link rel="stylesheet" href="assets/css/i18n.css" />
+  <link rel="stylesheet" href="assets/css/services-cta.css" />
 
   <!-- GSAP + ScrollTrigger -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
@@ -390,7 +391,12 @@
       <div class="n-build-solution-grid">
         <!-- 1. DIGITAL PRESENCE -->
         <article class="n-build-solution-card n-build-solution-card--blue">
-          <div class="n-build-solution-icon" aria-hidden="true">▤</div>
+          <div class="n-build-solution-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3.5" y="4.5" width="17" height="15" rx="2" />
+              <path d="M3.5 8.5h17M7 6.5h.01M10 6.5h.01M8 12h4m-4 3h8" />
+            </svg>
+          </div>
           <div class="n-build-solution-tag" data-i18n="about.build.web.tag">DIGITAL PRESENCE</div>
           <h3 data-i18n="about.build.web.title">هل تحتاج إلى موقع أو منصة رقمية؟</h3>
           <div class="n-build-solution-subdesc" data-i18n="about.build.web.subtitle">
@@ -425,7 +431,12 @@
 
         <!-- 2. BUSINESS SYSTEMS -->
         <article class="n-build-solution-card n-build-solution-card--cyan">
-          <div class="n-build-solution-icon" aria-hidden="true">▣</div>
+          <div class="n-build-solution-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="4" width="16" height="16" rx="2" />
+              <path d="M8 8h8M8 12h2m4 0h2M8 16h8" />
+            </svg>
+          </div>
           <div class="n-build-solution-tag" data-i18n="about.build.systems.tag">BUSINESS SYSTEMS</div>
           <h3 data-i18n="about.build.systems.title">هل تحتاج إلى نظام لإدارة أعمالك؟</h3>
           <div class="n-build-solution-subdesc" data-i18n="about.build.systems.subtitle">
@@ -461,7 +472,13 @@
 
         <!-- 3. WORKFLOW AUTOMATION -->
         <article class="n-build-solution-card n-build-solution-card--orange">
-          <div class="n-build-solution-icon" aria-hidden="true">⟡</div>
+          <div class="n-build-solution-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3.5" y="4" width="6" height="5" rx="1.5" />
+              <rect x="14.5" y="15" width="6" height="5" rx="1.5" />
+              <path d="M9.5 6.5h3a3 3 0 0 1 3 3V15m-3-3 3 3 3-3" />
+            </svg>
+          </div>
           <div class="n-build-solution-tag" data-i18n="about.build.automation.tag">WORKFLOW AUTOMATION</div>
           <h3 data-i18n="about.build.automation.title">حوّل المهام المتكررة إلى عمليات آلية تُنفذ بذاتها</h3>
           <div class="n-build-solution-subdesc" data-i18n="about.build.automation.subtitle">
@@ -497,7 +514,12 @@
 
         <!-- 4. PRACTICAL AI -->
         <article class="n-build-solution-card n-build-solution-card--purple">
-          <div class="n-build-solution-icon" aria-hidden="true">✦</div>
+          <div class="n-build-solution-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z" />
+              <path d="m19 15 .9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15Z" />
+            </svg>
+          </div>
           <div class="n-build-solution-tag" data-i18n="about.build.ai.tag">PRACTICAL AI</div>
           <h3 data-i18n="about.build.ai.title">حوّل الذكاء الاصطناعي إلى أداة تُعزز إنتاجية فريقك</h3>
           <div class="n-build-solution-subdesc" data-i18n="about.build.ai.subtitle">
@@ -622,7 +644,7 @@
 
             <!-- Milestone 03 -->
             <button class="journey-milestone-btn" role="tab" id="tab-step-3" aria-selected="false"
-              aria-controls="panel-step-3" onclick="selectJourneyStep(3)" data-step-idx="3">
+              aria-controls="panel-step-3" onclick="handleJourneyMilestone(this)" data-step-idx="3">
               <div class="journey-node">
                 <span class="journey-node-num">01</span>
                 <span class="journey-node-check">
@@ -639,7 +661,7 @@
 
             <!-- Milestone 04 -->
             <button class="journey-milestone-btn" role="tab" id="tab-step-4" aria-selected="false"
-              aria-controls="panel-step-4" onclick="selectJourneyStep(4)" data-step-idx="4">
+              aria-controls="panel-step-4" onclick="handleJourneyMilestone(this)" data-step-idx="4">
               <div class="journey-node">
                 <span class="journey-node-num">02</span>
                 <span class="journey-node-check">
@@ -656,7 +678,7 @@
 
             <!-- Milestone 05 -->
             <button class="journey-milestone-btn" role="tab" id="tab-step-5" aria-selected="false"
-              aria-controls="panel-step-5" onclick="selectJourneyStep(5)" data-step-idx="5">
+              aria-controls="panel-step-5" onclick="handleJourneyMilestone(this)" data-step-idx="5">
               <div class="journey-node">
                 <span class="journey-node-num">03</span>
                 <span class="journey-node-check">
@@ -673,7 +695,7 @@
 
             <!-- Milestone 06 -->
             <button class="journey-milestone-btn" role="tab" id="tab-step-6" aria-selected="false"
-              aria-controls="panel-step-6" onclick="selectJourneyStep(6)" data-step-idx="6">
+              aria-controls="panel-step-6" onclick="handleJourneyMilestone(this)" data-step-idx="6">
               <div class="journey-node node-final">
                 <span class="journey-node-num">04</span>
                 <span class="journey-node-check">
@@ -1324,8 +1346,12 @@
         </div>
       </div>
 
-      <!-- 6. Calm, High-Trust Final CTA -->
-      <div class="mt-20 text-center max-w-2xl mx-auto reveal-on-scroll">
+    </div>
+  </section>
+
+  <section id="about-final-cta" class="services-cta">
+    <div class="services-shell services-cta__panel">
+      <div class="about-final-cta__content reveal-on-scroll">
         <h4 class="text-xl sm:text-2xl font-bold text-white mb-3" data-i18n="about.page.finalTitle">
           عندك فكرة أو مشكلة ومش عارف تبدأ منين؟
         </h4>
@@ -1333,14 +1359,16 @@
           احكيلنا عنها، ونبدأ معاك من أول خطوة — بدون ما تحتاج تحدد الحل
           التقني بنفسك، وبجلسة استشارية مجانية بالكامل.
         </p>
-        <a href="contact.html"
-          class="btn-cyan font-bold text-base px-8 py-4 rounded-xl shadow-xl inline-flex items-center gap-3 hover:scale-[1.02] transition-transform"
-          style="text-decoration: none">
-          <span data-i18n="about.page.finalCta">احكيلنا عن فكرتك</span>
-          <svg class="w-5 h-5 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </a>
+        <div class="services-cta__actions">
+          <a href="contact.html"
+            class="btn-cyan font-bold text-base px-8 py-4 rounded-xl shadow-xl inline-flex items-center gap-3 hover:scale-[1.02] transition-transform"
+            style="text-decoration: none">
+            <span data-i18n="about.page.finalCta">احكيلنا عن فكرتك</span>
+            <svg class="w-5 h-5 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>

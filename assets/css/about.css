@@ -9464,3 +9464,507 @@ body>footer .pt-2 .flex.items-center.gap-3>a[aria-label] {
     font-size: 0.78rem;
   }
 }
+
+/* Section 3: keep the English card layout and typography genuinely LTR. */
+html[lang="en"] #build .n-build-solution-title,
+html[lang="en"] #build .n-build-solution-subtitle,
+html[lang="en"] #build .n-build-solution-card,
+html[lang="en"] #build .n-build-solution-card h3,
+html[lang="en"] #build .n-build-solution-subdesc,
+html[lang="en"] #build .n-build-solution-card p,
+html[lang="en"] #build .n-build-solution-list-label,
+html[lang="en"] #build .n-build-solution-list li,
+html[lang="en"] #build .n-build-solution-note,
+html[lang="en"] #build .n-build-solution-bottom > span {
+  font-family: var(--font-latin);
+}
+
+html[lang="en"] #build .n-build-solution-card {
+  direction: ltr;
+  text-align: left;
+}
+
+html[lang="en"] #build .n-build-solution-list li {
+  padding-right: 0;
+  padding-left: 1.15rem;
+}
+
+html[lang="en"] #build .n-build-solution-list li::before {
+  right: auto;
+  left: 0;
+}
+
+#build .n-build-solution-icon {
+  flex: 0 0 3.25rem;
+}
+
+#build .n-build-solution-icon svg {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  html[lang] body #story .who-we-are-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  html[lang] body #story .who-we-are-left,
+  html[lang] body #story .who-we-are-right {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  html[lang] body #story .who-we-are-left {
+    order: 1;
+  }
+
+  html[lang] body #story .who-we-are-right {
+    order: 2;
+  }
+}
+
+html[lang="en"] #how-we-work .text-center.max-w-3xl h2,
+html[lang="en"] #how-we-work .text-center.max-w-3xl > p,
+html[lang="en"] #how-we-work .journey-panel-badge,
+html[lang="en"] #how-we-work .journey-panel-title,
+html[lang="en"] #how-we-work .journey-panel-desc,
+html[lang="en"] #how-we-work .journey-key-takeaway,
+html[lang="en"] #how-we-work .journey-deliv-title,
+html[lang="en"] #how-we-work .journey-deliv-list,
+html[lang="en"] #how-we-work .journey-deliv-meta,
+html[lang="en"] #how-we-work .journey-panel-footer button,
+html[lang="en"] #how-we-work .journey-panel-footer > span {
+  font-family: var(--font-latin);
+}
+
+html[lang="en"] #how-we-work .text-center.max-w-3xl h2 {
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+html[lang="en"] #how-we-work .text-center.max-w-3xl > p {
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+html[lang="en"] #how-we-work .journey-panel-narrative,
+html[lang="en"] #how-we-work .journey-panel-deliverables-box {
+  text-align: left;
+}
+
+html[lang="en"] #how-we-work .journey-panel-title {
+  font-size: clamp(1.15rem, 1.65vw, 1.4rem);
+  font-weight: 800;
+  line-height: 1.35;
+  text-wrap: balance;
+}
+
+html[lang="en"] #how-we-work .journey-panel-desc {
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+html[lang="en"] #how-we-work .journey-deliv-list li {
+  text-align: left;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+html[lang="en"] #how-we-work .journey-deliv-meta {
+  overflow-wrap: anywhere;
+}
+
+html[lang="en"] #how-we-work .journey-panel-footer button {
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 1024px) {
+  html[lang="en"] #how-we-work .journey-milestones {
+    display: block;
+    min-width: 0;
+  }
+
+  html[lang="en"] #how-we-work .journey-accordion-item {
+    margin-bottom: 0.65rem;
+    overflow: hidden;
+    border: 1px solid rgba(56, 189, 248, 0.15);
+    border-radius: 0.9rem;
+    background: rgba(8, 35, 58, 0.24);
+  }
+
+  html[lang="en"] #how-we-work .journey-accordion-item.is-open {
+    border-color: rgba(6, 182, 212, 0.35);
+    background: rgba(8, 35, 58, 0.42);
+  }
+
+  html[lang="en"] #how-we-work .journey-accordion-item > .journey-milestone-btn {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 2.75rem minmax(0, 1fr);
+    flex-direction: row;
+    align-items: center;
+    justify-items: start;
+    gap: 0.75rem;
+    min-width: 0;
+    min-height: 64px;
+    padding: 0.55rem 0.85rem;
+    text-align: left;
+  }
+
+  html[lang="en"] #how-we-work .journey-accordion-item > .journey-milestone-btn:hover {
+    transform: none;
+  }
+
+  html[lang="en"] #how-we-work .journey-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition:
+      max-height 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.24s ease;
+  }
+
+  html[lang="en"] #how-we-work .journey-accordion-content.is-open {
+    max-height: 160rem;
+    opacity: 1;
+  }
+
+  html[lang="en"] #how-we-work .journey-accordion-content-inner {
+    min-height: 0;
+  }
+
+  html[lang="en"] #how-we-work .journey-accordion-content .journey-stage-panel,
+  html[lang="en"] #how-we-work .journey-accordion-content .journey-stage-panel.is-active {
+    display: block;
+    opacity: 0;
+    transform: none;
+    animation: none;
+    transition: opacity 0.24s ease;
+  }
+
+  html[lang="en"] #how-we-work .journey-accordion-content.is-open .journey-stage-panel.is-active {
+    opacity: 1;
+  }
+
+  html[lang="en"] #how-we-work.has-accordion-panel #journey-panels-container {
+    display: none;
+  }
+
+  html[lang="en"] #how-we-work .journey-accordion-content .journey-panel-card {
+    margin-top: 0;
+    border-radius: 0;
+    border: 0;
+    border-top: 1px solid rgba(56, 189, 248, 0.12);
+    box-shadow: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[lang="en"] #how-we-work .journey-accordion-content {
+    transition: none;
+  }
+}
+
+/* About page typography: keep language fonts and reading rhythm consistent. */
+html[lang="ar"] body :is(h1, h2, h3, h4, h5, p, a, button, li, label, small, strong, em),
+html[lang="ar"] body>footer :is(span, div) {
+  font-family: var(--font-arabic);
+}
+
+html[lang="en"] body :is(h1, h2, h3, h4, h5, p, a, button, li, label, small, strong, em, span):not(.journey-milestone-ar):not(.material-symbols-outlined) {
+  font-family: var(--font-latin);
+}
+
+.about-hero-section h1.n-hero-title {
+  max-width: 48rem;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+.about-hero-section .n-hero-subtitle {
+  max-width: 39rem;
+  text-wrap: pretty;
+}
+
+html[lang] body .about-hero-section h1.n-hero-title {
+  font-size: clamp(2.5rem, 4.2vw, 3.9rem) !important;
+  line-height: 1.3 !important;
+  letter-spacing: normal !important;
+}
+
+html[lang] body .about-hero-section .n-hero-subtitle {
+  font-size: clamp(1rem, 1.2vw, 1.125rem) !important;
+  line-height: 1.8 !important;
+}
+
+.about-hero-section .about-hero-pills span {
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+#story .who-we-are-title {
+  max-width: 100%;
+  margin-block: 0.9rem 1.15rem;
+  font-size: clamp(2.25rem, 3.5vw, 3.35rem);
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+#story .who-we-are-title .who-we-are-line-secondary {
+  white-space: normal;
+}
+
+#story .who-we-are-description {
+  max-width: 46rem;
+  font-size: clamp(0.96rem, 1.08vw, 1.06rem);
+  line-height: 1.85;
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+}
+
+#story .who-we-are-cta {
+  font-size: 0.96rem;
+  line-height: 1.5;
+}
+
+.forascom-about-metric-value {
+  font-size: clamp(1.65rem, 2.2vw, 2.1rem);
+  line-height: 1.1;
+}
+
+.forascom-about-metric-label {
+  font-size: clamp(0.76rem, 0.9vw, 0.84rem);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+#build .n-build-solution-title {
+  max-width: 100%;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+#build .n-build-solution-subtitle {
+  max-width: 48rem;
+  font-size: clamp(0.96rem, 1.1vw, 1.1rem);
+  line-height: 1.8;
+  text-wrap: pretty;
+}
+
+#build .n-build-solution-card h3 {
+  font-size: clamp(1.25rem, 1.55vw, 1.6rem);
+  line-height: 1.4;
+  text-wrap: balance;
+}
+
+#build .n-build-solution-subdesc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+#build .n-build-solution-card p,
+#build .n-build-solution-list li,
+#build .n-build-solution-note {
+  font-size: 0.94rem;
+  line-height: 1.8;
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+}
+
+#build .n-build-solution-list-label,
+#build .n-build-solution-bottom>span {
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+#how-we-work .text-center.max-w-3xl h2 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+#how-we-work .text-center.max-w-3xl>p {
+  max-width: 42rem;
+  font-size: clamp(0.96rem, 1.08vw, 1.05rem);
+  line-height: 1.8;
+  text-wrap: pretty;
+}
+
+#how-we-work .journey-panel-title {
+  font-size: clamp(1.2rem, 1.65vw, 1.45rem);
+  line-height: 1.4;
+  text-wrap: balance;
+}
+
+#how-we-work .journey-panel-desc,
+#how-we-work .journey-key-takeaway,
+#how-we-work .journey-deliv-list li,
+#how-we-work .journey-deliv-meta {
+  font-size: 0.94rem;
+  line-height: 1.8;
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+}
+
+#how-we-work .journey-deliv-title {
+  font-size: 0.96rem;
+  line-height: 1.5;
+}
+
+#how-we-work .journey-panel-footer button,
+#how-we-work .journey-panel-footer>span {
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+html[lang] body #about-final-cta .about-final-cta__content h4 {
+  max-width: 48rem;
+  margin-inline: auto;
+  font-size: clamp(1.65rem, 2.75vw, 2.5rem);
+  line-height: 1.35;
+  text-wrap: balance;
+}
+
+html[lang] body #about-final-cta .about-final-cta__content p {
+  max-width: 40rem;
+  font-size: clamp(0.96rem, 1.05vw, 1.04rem);
+  line-height: 1.8;
+  text-wrap: pretty;
+}
+
+html[lang] body #about-final-cta .services-cta__actions .btn-cyan {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+body>header nav a,
+#mobile-menu-container>a {
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+body>footer h4 {
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+body>footer p,
+body>footer li,
+body>footer a {
+  line-height: 1.75;
+}
+
+@media (max-width: 639px) {
+  html[lang] body .about-hero-section h1.n-hero-title {
+    font-size: clamp(1.9rem, 7vw, 2.3rem) !important;
+    line-height: 1.4 !important;
+  }
+
+  html[lang] body .about-hero-section .n-hero-subtitle {
+    font-size: 0.98rem !important;
+    line-height: 1.85 !important;
+  }
+
+  .about-hero-section .n-hero-subtitle {
+    max-width: 34rem;
+    font-size: 0.98rem;
+    line-height: 1.85;
+  }
+
+  .about-hero-section .about-hero-pills span {
+    font-size: 0.78rem;
+  }
+
+  #story .who-we-are-title {
+    font-size: clamp(1.8rem, 7vw, 2.2rem);
+    line-height: 1.4;
+  }
+
+  #story .who-we-are-description {
+    font-size: 0.96rem;
+    line-height: 1.9;
+  }
+
+  .forascom-about-metric-label {
+    font-size: 0.78rem;
+  }
+
+  #build .n-build-solution-title,
+  #how-we-work .text-center.max-w-3xl h2 {
+    font-size: clamp(1.8rem, 7vw, 2.2rem);
+    line-height: 1.4;
+  }
+
+  #build .n-build-solution-card h3 {
+    font-size: 1.25rem;
+    line-height: 1.45;
+  }
+
+  #build .n-build-solution-card p,
+  #build .n-build-solution-list li,
+  #build .n-build-solution-note,
+  #how-we-work .journey-panel-desc,
+  #how-we-work .journey-key-takeaway,
+  #how-we-work .journey-deliv-list li,
+  #how-we-work .journey-deliv-meta {
+    font-size: 0.92rem;
+    line-height: 1.85;
+  }
+
+  #how-we-work .text-center.max-w-3xl>p {
+    font-size: 0.96rem;
+    line-height: 1.85;
+  }
+
+  #how-we-work .journey-panel-title {
+    font-size: 1.2rem;
+    line-height: 1.45;
+  }
+
+  html[lang] body #about-final-cta .about-final-cta__content h4 {
+    font-size: clamp(1.4rem, 5.6vw, 1.65rem);
+    line-height: 1.45;
+  }
+
+  html[lang] body #about-final-cta .about-final-cta__content p {
+    font-size: 0.96rem;
+    line-height: 1.85;
+  }
+
+  body>footer p,
+  body>footer li,
+  body>footer a {
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1024px) {
+  html[lang] body .about-hero-section h1.n-hero-title {
+    font-size: clamp(2.3rem, 4.2vw, 3rem) !important;
+    line-height: 1.35 !important;
+  }
+
+  html[lang] body .about-hero-section .n-hero-subtitle {
+    font-size: clamp(1rem, 1.25vw, 1.125rem) !important;
+    line-height: 1.8 !important;
+  }
+
+  #story .who-we-are-title {
+    font-size: clamp(2.15rem, 4vw, 2.75rem);
+    line-height: 1.35;
+  }
+
+  #build .n-build-solution-title,
+  #how-we-work .text-center.max-w-3xl h2 {
+    font-size: clamp(2.1rem, 4vw, 2.65rem);
+    line-height: 1.35;
+  }
+
+  html[lang] body #about-final-cta .about-final-cta__content h4 {
+    font-size: clamp(1.8rem, 3.5vw, 2.25rem);
+  }
+}

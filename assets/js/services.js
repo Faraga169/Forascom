@@ -19,12 +19,12 @@
         automation: 's3'
       };
       const modalImage = detailDialog.querySelector('[data-service-modal-image]');
+      const modalImageWide = detailDialog.querySelector('[data-service-modal-image-wide]');
       const modalTitle = detailDialog.querySelector('[data-service-modal-title]');
       const modalSubtitle = detailDialog.querySelector('[data-service-modal-subtitle]');
       const modalDescription = detailDialog.querySelector('[data-service-modal-description]');
       const modalBadge = detailDialog.querySelector('[data-service-modal-badge]');
       const modalNumber = detailDialog.querySelector('[data-service-modal-number]');
-      const modalVisual = detailDialog.querySelector('.service-modal__visual');
       const modalCapabilities = detailDialog.querySelector('[data-service-modal-capabilities]');
       const modalTags = detailDialog.querySelector('[data-service-modal-tags]');
       const modalLink = detailDialog.querySelector('[data-service-modal-link]');
@@ -46,7 +46,6 @@
           activeCard = card;
           const language = document.documentElement.lang === 'en' ? 'en' : 'ar';
           const copyKey = (suffix) => `${serviceKey}${suffix}`;
-          const visual = card.querySelector('.service-card__visual img');
           const tags = card.querySelectorAll('.service-tags span');
 
           detailDialog.lang = language;
@@ -56,8 +55,12 @@
           modalDescription.textContent = getServiceCopy(language, copyKey('Desc'));
           modalBadge.textContent = getServiceCopy(language, copyKey('Badge'));
           modalNumber.textContent = card.querySelector('.service-number')?.textContent.trim() || '';
-          modalVisual.classList.toggle('service-modal__visual--web-art', card.dataset.service === 'web');
-          modalImage.src = visual?.currentSrc || visual?.getAttribute('src') || '';
+          modalImage.src = card.dataset.modalImage || '';
+          if (card.dataset.modalImageWide) {
+            modalImageWide.srcset = card.dataset.modalImageWide;
+          } else {
+            modalImageWide.removeAttribute('srcset');
+          }
           modalImage.alt = modalTitle.textContent;
           modalLink.href = card.getAttribute('href');
 

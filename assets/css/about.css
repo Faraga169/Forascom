@@ -3068,9 +3068,9 @@ body>footer {
 .n-build-solution-icon {
   display: grid;
   place-items: center;
-  width: 3.25rem;
-  height: 3.25rem;
-  border-radius: 0.9rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1rem;
   color: #fff;
   font-size: 1.35rem;
   margin-bottom: 1.15rem;
@@ -9495,13 +9495,28 @@ html[lang="en"] #build .n-build-solution-list li::before {
 }
 
 #build .n-build-solution-icon {
-  flex: 0 0 3.25rem;
+  flex: 0 0 3.5rem;
 }
 
 #build .n-build-solution-icon svg {
   display: block;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.9rem;
+  height: 1.9rem;
+  stroke: #fff;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
+  transition: transform 0.25s ease;
+}
+
+#build .n-build-solution-card:hover .n-build-solution-icon svg {
+  transform: scale(1.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #build .n-build-solution-icon svg,
+  #build .n-build-solution-card:hover .n-build-solution-icon svg {
+    transform: none;
+    transition: none;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -9967,4 +9982,19 @@ body>footer a {
   html[lang] body #about-final-cta .about-final-cta__content h4 {
     font-size: clamp(1.8rem, 3.5vw, 2.25rem);
   }
+}
+
+footer .material-symbols-outlined {
+  font-family: "Material Symbols Outlined" !important;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
 }
